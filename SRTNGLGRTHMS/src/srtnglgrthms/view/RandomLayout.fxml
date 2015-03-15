@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="100.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="7.0" layoutY="42.0" text="Méret:" />
+      <TextField layoutX="48.0" layoutY="38.0" prefHeight="25.0" prefWidth="42.0" />
+      <ChoiceBox layoutX="97.0" layoutY="38.0" prefHeight="25.0" prefWidth="150.0" />
+      <Button layoutX="254.0" layoutY="38.0" mnemonicParsing="false" text="Ok" />
+   </children>
+</AnchorPane>
