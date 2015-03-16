@@ -16,7 +16,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.util.Duration;
-import srtnglgrthms.model.Algorithms;
+import srtnglgrthms.model.Algorithm;
 import srtnglgrthms.model.BackwardRadix;
 import srtnglgrthms.model.ForwardRadix;
 
@@ -52,7 +52,7 @@ public class DoubleOverviewController {
 	}
 	
 	private void initChart() {
-		int[] numbers = Algorithms.getNumbers();
+		int[] numbers = Algorithm.getNumbers();
 		for(int i=0; i<numbers.length; ++i) {
 			series.getData().add(new XYChart.Data<>("t[" + i + "]", numbers[i]));
 			series2.getData().add(new XYChart.Data<>("t[" + i + "]", 0));

@@ -10,7 +10,7 @@ import javafx.scene.chart.XYChart;
 public class BackwardRadix {	
 	private static int digitNumber = getMaxDigit();
 	private static int begin = 0;
-	private static int end = Algorithms.getNumbers().length - 1;
+	private static int end = Algorithm.getNumbers().length - 1;
 	private static int actualDigit = digitNumber-1;
 	private static int lower = begin;
 	private static int upper = end;
@@ -20,7 +20,7 @@ public class BackwardRadix {
 	private static int actualSeries = 0;
 	
 	private static int getMaxDigit() {
-		return Arrays.stream(Algorithms.getNumbers())
+		return Arrays.stream(Algorithm.getNumbers())
 				.map(n -> Integer.toBinaryString(n).length())
 				.max()
 				.getAsInt();
@@ -36,7 +36,7 @@ public class BackwardRadix {
 	}
 	
 	private static boolean checkEmpty(ObservableList<XYChart.Data<String,Integer>> data){
-		for(int i=0; i<Algorithms.getNumbers().length; ++i) {
+		for(int i=0; i<Algorithm.getNumbers().length; ++i) {
 			if(data.get(i).getYValue()!=0) {
 				return true;
 			}
@@ -89,19 +89,19 @@ public class BackwardRadix {
 				i = begin;
 				if(actualSeries%2==0) {
 					lower = 0;
-					upper = Algorithms.getNumbers().length - 1;
+					upper = Algorithm.getNumbers().length - 1;
 				}
 				if(checkEmpty(data1) || checkEmpty(data2)) {
 					actualSeries++;
 				}
 				actualDigit--;
 				if(begin<end) i=0;
-				else i=Algorithms.getNumbers().length - 1;
+				else i=Algorithm.getNumbers().length - 1;
 				stepNumber+=2;
 			}
 		}
 		else {
-			for(int i=0; i<Algorithms.getNumbers().length; ++i) {
+			for(int i=0; i<Algorithm.getNumbers().length; ++i) {
 				System.out.println(fillWithZeros(Integer.toBinaryString(data1.get(i).getYValue())));
 			}
 		}

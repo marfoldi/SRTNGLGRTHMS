@@ -4,21 +4,15 @@ import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import javafx.scene.Node;
 
-public class BubbleSort {
+public class BubbleSort extends Algorithm {
 	private static int j = 1;
 	private static int i = 0;
-	public static void BubbleStep(ObservableList<XYChart.Data<String,Integer>> data) {
-		int temp;
-		Node node = data.get(j - 1).getNode();
-		node.setStyle("-fx-bar-fill: navy;");
-		node = data.get(j).getNode();
-		node.setStyle("-fx-bar-fill: navy;");
-		if (data.get(j - 1).getYValue() > data.get(j)
-				.getYValue()) {
-			temp = data.get(j - 1).getYValue();
-			data.get(j - 1)
-					.setYValue(data.get(j).getYValue());
-			data.get(j).setYValue(temp);
+	private static ObservableList<XYChart.Data<String,Integer>> data = Algorithm.getData();
+	
+	public static void BubbleStep() {
+		setColor(j-1, j);
+		if (data.get(j - 1).getYValue() > data.get(j).getYValue()) {
+			swap(j-1, j);
 		}
 		j++;
 		if (j == data.size()-i) {

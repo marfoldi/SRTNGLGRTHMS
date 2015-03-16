@@ -11,7 +11,7 @@ import javafx.scene.Node;
 public class ForwardRadix {	
 	private static int digitNumber = getMaxDigit();
 	private static int begin = 0;
-	private static int end = Algorithms.getNumbers().length;
+	private static int end = Algorithm.getNumbers().length;
 	private static int actualDigit = 0;
 	private static int lower = begin;
 	private static int upper = end;
@@ -19,7 +19,7 @@ public class ForwardRadix {
 	private static List<Integer> recursiveCall = new ArrayList<>();
 	
 	private static int getMaxDigit() {
-		return Arrays.stream(Algorithms.getNumbers())
+		return Arrays.stream(Algorithm.getNumbers())
 				.map(n -> Integer.toBinaryString(n).length())
 				.max()
 				.getAsInt();

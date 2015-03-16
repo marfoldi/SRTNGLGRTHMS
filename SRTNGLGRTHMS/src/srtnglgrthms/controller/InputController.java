@@ -13,7 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import srtnglgrthms.MainApplication;
-import srtnglgrthms.model.Algorithms;
+import srtnglgrthms.model.Algorithm;
 
 public class InputController {
 	@FXML
@@ -73,6 +73,6 @@ public class InputController {
         for(int i=0; i<size; ++i) {
         	numbers[i] = Integer.parseInt(((TextField)nodes.get(i)).getText());
         }
-        Algorithms.setNumbers(numbers);
+        Algorithm.setNumbers(numbers);
 	}
 }
