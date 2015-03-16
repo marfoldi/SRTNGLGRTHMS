@@ -4,7 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.chart.XYChart;
 
-public class Algorithm {
+public class SortingAlgorithm {
 	private static int[] numbers;
 	private static ObservableList<XYChart.Data<String,Integer>> data;
 	
@@ -15,11 +15,11 @@ public class Algorithm {
 		data.get(secondIndex).setYValue(temp);
 	}
 	
-	protected static void setColor(int firstIndex, int secondIndex) {
+	protected static void setColor(int firstIndex, int secondIndex, String firstColor, String secondColor) {
 		Node node = data.get(firstIndex).getNode();
-		node.setStyle("-fx-bar-fill: navy;");
+		node.setStyle("-fx-bar-fill: " + firstColor + ";");
 		node = data.get(secondIndex).getNode();
-		node.setStyle("-fx-bar-fill: navy;");
+		node.setStyle("-fx-bar-fill: " + secondColor + ";");
 	}
 
 	public static int[] getNumbers() {
@@ -27,11 +27,11 @@ public class Algorithm {
 	}
 	
 	public static void setNumbers(int[] numbers) {
-		Algorithm.numbers = numbers;
+		SortingAlgorithm.numbers = numbers;
 	}
 	
 	public static void setData(ObservableList<XYChart.Data<String,Integer>> data) {
-		Algorithm.data = data;
+		SortingAlgorithm.data = data;
 	}
 	
 	public static ObservableList<XYChart.Data<String,Integer>> getData() {

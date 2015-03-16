@@ -4,13 +4,13 @@ import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import javafx.scene.Node;
 
-public class BubbleSort extends Algorithm {
+public class BubbleSort extends SortingAlgorithm {
 	private static int j = 1;
 	private static int i = 0;
-	private static ObservableList<XYChart.Data<String,Integer>> data = Algorithm.getData();
+	private static ObservableList<XYChart.Data<String,Integer>> data = SortingAlgorithm.getData();
 	
 	public static void BubbleStep() {
-		setColor(j-1, j);
+		setColor(j-1, j, "navy", "navy");
 		if (data.get(j - 1).getYValue() > data.get(j).getYValue()) {
 			swap(j-1, j);
 		}

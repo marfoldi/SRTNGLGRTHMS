@@ -7,12 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewController">
    <children>
       <BorderPane layoutX="125.0" layoutY="50.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <ListView fx:id="algorithmList" prefHeight="300.0" prefWidth="140.0" BorderPane.alignment="CENTER_LEFT" />
-         </left>
          <center>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
               <items>
@@ -26,6 +23,9 @@
               </items>
             </SplitPane>
          </center>
+         <left>
+            <fx:include source="ListViewLayout.fxml" />
+         </left>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -25,7 +25,6 @@ public class MainApplication extends Application {
         this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
 
         initMenuLayout();
-        //initBaseLayout();
     }
     
     public void initMenuLayout() {
