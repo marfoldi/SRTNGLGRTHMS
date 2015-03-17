@@ -19,7 +19,7 @@ import javafx.scene.chart.XYChart.Series;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-public class SingleBarChartController implements ChartController {
+public class BarChartController implements ChartController {
 	@FXML
 	private BarChart<String, Integer> barChart;
 	private static Series<String, Integer> series;
