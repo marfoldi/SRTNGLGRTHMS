@@ -15,7 +15,8 @@ public class InsertionSort extends SortingAlgorithm{
 		}
 		if ((i > -1) && ( data.get(i).getYValue() > data.get(i+1).getYValue() )) {
 			swap(i+1, i);
-			setColor(i+1, i, "navy", "red");
+			setColor(i+1, "navy");
+			setColor(i, "red");
 			i--;
 		}
 	}

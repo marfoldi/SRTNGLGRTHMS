@@ -15,11 +15,9 @@ public class SortingAlgorithm {
 		data.get(secondIndex).setYValue(temp);
 	}
 	
-	protected static void setColor(int firstIndex, int secondIndex, String firstColor, String secondColor) {
-		Node node = data.get(firstIndex).getNode();
-		node.setStyle("-fx-bar-fill: " + firstColor + ";");
-		node = data.get(secondIndex).getNode();
-		node.setStyle("-fx-bar-fill: " + secondColor + ";");
+	protected static void setColor(int index, String color) {
+		Node node = data.get(index).getNode();
+		node.setStyle("-fx-bar-fill: " + color + ";");
 	}
 
 	public static int[] getNumbers() {
