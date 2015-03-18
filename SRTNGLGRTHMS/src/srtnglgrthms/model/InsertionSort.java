@@ -1,14 +1,20 @@
 package srtnglgrthms.model;
 
-import javafx.collections.ObservableList;
-import javafx.scene.chart.XYChart;
-
 public class InsertionSort extends SortingAlgorithm{
 	private static int j = 1;
 	private static int i = j-1;
-	private static ObservableList<XYChart.Data<String,Integer>> data = SortingAlgorithm.getData();
+	
+	private InsertionSort() {}
+	
+	private static class SortHolder {
+        private static final InsertionSort INSTANCE = new InsertionSort();
+    }
+	
+    public static InsertionSort getInstance() {
+        return SortHolder.INSTANCE;
+    }
 
-	public static void InsertionStep() {
+	public void step() {
 		while ((i < 0) || ( data.get(i).getYValue() <= data.get(i+1).getYValue() )) {
 			j++;
 			i=j-1;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
@@ -13,7 +14,7 @@
          <center>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
               <items>
-                  <fx:include source="SingleBarChartLayout.fxml" />
+                  <fx:include source="BarChartLayout.fxml" />
                 <AnchorPane maxHeight="35.0" minHeight="35.0" minWidth="0.0" prefHeight="30.0" prefWidth="368.0">
                      <children>
                         <Button fx:id="stepBtn" alignment="BOTTOM_LEFT" layoutX="15.0" layoutY="5.0" mnemonicParsing="false" text="Léptet" />
@@ -24,7 +25,7 @@
             </SplitPane>
          </center>
          <left>
-            <fx:include source="ListViewLayout.fxml" />
+               	<fx:include source="ListViewLayout.fxml" />
          </left>
       </BorderPane>
    </children>

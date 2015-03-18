@@ -1,14 +1,23 @@
 package srtnglgrthms.model;
 
-import javafx.collections.ObservableList;
-import javafx.scene.chart.XYChart;
-
 public class BubbleSort extends SortingAlgorithm {
 	private static int j = 1;
 	private static int i = 0;
-	private static ObservableList<XYChart.Data<String,Integer>> data = SortingAlgorithm.getData();
 	
-	public static void BubbleStep() {
+	private BubbleSort() {}
+	
+	private static class SortHolder {
+        private static final BubbleSort INSTANCE = new BubbleSort();
+    }
+	
+    public static BubbleSort getInstance() {
+        return SortHolder.INSTANCE;
+    }
+	
+	public void step() {
+		if(i>0) {
+			setColor(data.size()-i-1, "orange");
+		}
 		setColor(j-1, "navy");
 		setColor(j, "navy");
 		if (data.get(j - 1).getYValue() > data.get(j).getYValue()) {
@@ -17,12 +26,14 @@ public class BubbleSort extends SortingAlgorithm {
 		j++;
 		if (j == data.size()-i) {
 			setColor(j-1, "red");
-			for (int i = 0; i < j-1; i++) {
-				setColor(i, "orange");
-			}
+			setRestColor();
 			j = 1;
 			i++;
 		}
+		setRestColor();
+	}
+	
+	private void setRestColor() {
 		for (int i = 0; i < j-2; i++) {
 			setColor(i, "orange");
 		}

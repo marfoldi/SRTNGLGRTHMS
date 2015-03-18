@@ -1,7 +1,7 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.BubbleSort;
 import srtnglgrthms.model.SortingAlgorithm;
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
@@ -29,6 +29,7 @@ public class BarChartController implements ChartController {
 	private void initialize() {
 		series = new Series<>();
 		animation = new Timeline();
+		animation.setCycleCount(Animation.INDEFINITE);
 		initChart();
 		setAnimation();
 	}
@@ -46,7 +47,7 @@ public class BarChartController implements ChartController {
 						Node oldNode, final Node node) {
 					if (node != null) {
 						// setNodeStyle(data);
-						displayLabelForData(data);
+						displayLegend(data);
 					}
 				}
 			});
@@ -57,26 +58,27 @@ public class BarChartController implements ChartController {
 	}
 
 	@Override
-	public void displayLabelForData(XYChart.Data<String, Integer> data) {
+	public void displayLegend(XYChart.Data<String, Integer> data) {
 		final Node node = data.getNode();
-		Text dataText = new Text(data.getYValue().toString());
+		Text barValue = new Text(data.getYValue().toString());
+		//Text barValue = new Text(Integer.toBinaryString(data.getYValue()));
 		node.parentProperty().addListener(new ChangeListener<Parent>() {
 			@Override
 			public void changed(ObservableValue<? extends Parent> ov,
 					Parent oldParent, Parent parent) {
-				Group parentGroup = (Group) parent;
-				parentGroup.getChildren().add(dataText);
+				((Group) parent).getChildren().add(barValue);
 			}
 		});
 		node.boundsInParentProperty().addListener(new ChangeListener<Bounds>() {
 			@Override
 			public void changed(ObservableValue<? extends Bounds> ov,
 					Bounds oldBounds, Bounds bounds) {
-				dataText.setLayoutX(Math.round(bounds.getMinX()
-						+ bounds.getWidth() / 2 - dataText.prefWidth(-1) / 2));
-				dataText.setLayoutY(Math.round(bounds.getMinY()
-						- dataText.prefHeight(-1) * 0.5));
-				dataText.setText(data.getYValue().toString());
+				barValue.setLayoutX(Math.round(bounds.getMinX()
+						+ bounds.getWidth() / 2 - barValue.prefWidth(-1) / 2));
+				barValue.setLayoutY(Math.round(bounds.getMinY()
+						- barValue.prefHeight(-1) * 0.5));
+				barValue.setText(data.getYValue().toString());
+				//barValue.setText(Integer.toBinaryString(data.getYValue()));
 			}
 		});
 	}
@@ -87,12 +89,16 @@ public class BarChartController implements ChartController {
 						new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent actionEvent) {
-								BubbleSort.BubbleStep();
+								(SortingAlgorithmFactory.getAlgorithm(ListViewController.getSelectedItem())).step();
 							}
 						}));
 	}
 
 	public static Series<String, Integer> getSeries() {
 		return series;
+	}
+	
+	public static Timeline getAnimation() {
+		return animation;
 	}
 }

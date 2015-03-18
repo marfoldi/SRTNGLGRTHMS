@@ -1,12 +1,15 @@
 package srtnglgrthms.model;
 
+import java.util.Queue;
+
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.chart.XYChart;
 
-public class SortingAlgorithm {
+public abstract class SortingAlgorithm {
 	private static int[] numbers;
-	private static ObservableList<XYChart.Data<String,Integer>> data;
+	protected static ObservableList<XYChart.Data<String,Integer>> data;
+	protected static Queue<RecursiveParameter> recursiveCall;
 	
 	protected static void swap(int firstIndex, int secondIndex) {
 		int temp;
@@ -19,7 +22,7 @@ public class SortingAlgorithm {
 		Node node = data.get(index).getNode();
 		node.setStyle("-fx-bar-fill: " + color + ";");
 	}
-
+    
 	public static int[] getNumbers() {
 		return numbers;
 	}
@@ -32,7 +35,5 @@ public class SortingAlgorithm {
 		SortingAlgorithm.data = data;
 	}
 	
-	public static ObservableList<XYChart.Data<String,Integer>> getData() {
-		return data;
-	}
+	public abstract void step();
 }

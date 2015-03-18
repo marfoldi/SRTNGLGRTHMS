@@ -56,9 +56,10 @@ public class DoubleOverviewController {
 			series.getData().add(new XYChart.Data<>("t[" + i + "]", numbers[i]));
 			series2.getData().add(new XYChart.Data<>("t[" + i + "]", 0));
 		}
-		
 		barChart.getData().add(series);
 		barChart2.getData().add(series2);
+		SortingAlgorithm.setData(series.getData());
+		BackwardRadix.setData2(series2.getData());
 		for (int i = 0; i < series.getData().size(); i++) {
 			Node n = series.getData().get(i).getNode();
 			n.setStyle("-fx-bar-fill: orange;");
@@ -82,7 +83,7 @@ public class DoubleOverviewController {
 							public void handle(ActionEvent actionEvent) {
 								//BubbleSort.BubbleStep(series.getData());
 								//InsertionSort.InsertionStep(series.getData());
-								BackwardRadix.RadixStep(series.getData(), series2.getData());
+								BackwardRadix.getInstance().step();
 							}
 						}));
 	}
@@ -93,7 +94,7 @@ public class DoubleOverviewController {
 			public void handle(ActionEvent event) {
 				//BubbleSort.BubbleStep(series.getData());
 				//InsertionSort.InsertionStep(series.getData());
-				BackwardRadix.RadixStep(series.getData(), series2.getData());
+				BackwardRadix.getInstance().step();
 			}
 		});
 

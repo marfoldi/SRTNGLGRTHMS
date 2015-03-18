@@ -1,109 +1,101 @@
 package srtnglgrthms.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.LinkedList;
 
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 
-public class BackwardRadix {	
-	private static int digitNumber = getMaxDigit();
-	private static int begin = 0;
-	private static int end = SortingAlgorithm.getNumbers().length - 1;
-	private static int actualDigit = digitNumber-1;
-	private static int lower = begin;
-	private static int upper = end;
-	private static int stepNumber = 0;
-	private static List<Integer> recursiveCall = new ArrayList<>();
+public class BackwardRadix extends Radix{	
 	private static int i = 0;
 	private static int actualSeries = 0;
+	private static String direction;
+	private static ObservableList<XYChart.Data<String,Integer>> data2;
 	
-	private static int getMaxDigit() {
-		return Arrays.stream(SortingAlgorithm.getNumbers())
-				.map(n -> Integer.toBinaryString(n).length())
-				.max()
-				.getAsInt();
+	private BackwardRadix() {
+		init();
 	}
 	
-	private static String fillWithZeros(String binaryNumber) {
-	       StringBuilder builder = new StringBuilder();
-	        while (builder.length() < digitNumber-binaryNumber.length()) {
-	            builder.append('0');
-	        }
-	        builder.append(binaryNumber);
-	        return builder.toString();
-	}
+	private static class SortHolder {
+        private static final BackwardRadix INSTANCE = new BackwardRadix();
+    }
+	
+    public static BackwardRadix getInstance() {
+        return SortHolder.INSTANCE;
+    }
+    
+    private static void init() {
+		actualDigit = getMaxDigit()-1;
+		begin = 0;
+		end = SortingAlgorithm.getNumbers().length-1;
+		lower = begin;
+		upper = end;
+		recursiveCall = new LinkedList<>();
+		direction = "forward";
+    }
 	
 	private static boolean checkEmpty(ObservableList<XYChart.Data<String,Integer>> data){
 		for(int i=0; i<SortingAlgorithm.getNumbers().length; ++i) {
 			if(data.get(i).getYValue()!=0) {
-				return true;
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 	
-	public static void RadixStep (ObservableList<XYChart.Data<String,Integer>> data1, ObservableList<XYChart.Data<String,Integer>> data2) {
+	@Override
+	public void step() {
 		if(actualDigit > 0) {
 			//BEGIN END csere van ha visszafelé megy, tehát nem megy bele az if-be...
-			if(i>=begin && i<=end) {
+			if(lower<=upper && i<=end && i>=0 && begin<=end) {
 				if(actualSeries%2==0) {
-					System.out.println(fillWithZeros(Integer.toBinaryString(data1.get(i).getYValue())));
-					System.out.println(actualDigit);
-					if(fillWithZeros(Integer.toBinaryString(data1.get(i).getYValue())).charAt(actualDigit) == '0') {
-						data2.get(lower).setYValue(data1.get(i).getYValue());
+					if(fillWithZeros(Integer.toBinaryString(data.get(i).getYValue())).charAt(actualDigit) == '0') {
+						data2.get(lower).setYValue(data.get(i).getYValue());
 						lower++;
 					}
-					if (fillWithZeros(Integer.toBinaryString(data1.get(i).getYValue())).charAt(actualDigit) == '1') {
-						data2.get(upper).setYValue(data1.get(i).getYValue());
+					else if (fillWithZeros(Integer.toBinaryString(data.get(i).getYValue())).charAt(actualDigit) == '1') {
+						data2.get(upper).setYValue(data.get(i).getYValue());
 						upper--;
 					}
-					data1.get(i).setYValue(0);
+					data.get(i).setYValue(0);
 				}
 				else {
-					System.out.println(fillWithZeros(Integer.toBinaryString(data2.get(i).getYValue())));
-					System.out.println(actualDigit);
 					if(fillWithZeros(Integer.toBinaryString(data2.get(i).getYValue())).charAt(actualDigit) == '0') {
-						data1.get(lower).setYValue(data2.get(i).getYValue());
+						data.get(lower).setYValue(data2.get(i).getYValue());
 						lower++;
 					}
 					if (fillWithZeros(Integer.toBinaryString(data2.get(i).getYValue())).charAt(actualDigit) == '1') {
-						data1.get(upper).setYValue(data2.get(i).getYValue());
+						data.get(upper).setYValue(data2.get(i).getYValue());
 						upper--;
 					}
 					data2.get(i).setYValue(0);
 				}
-				if(begin<end) i++;
-				if(begin>end) i--;
+				if(direction == "forward") i++;
+				else i--;
 			}
 			else {
-				recursiveCall.add(begin);
-				recursiveCall.add(lower-1);
-				recursiveCall.add(end);
-				recursiveCall.add(upper+1);
-				begin=recursiveCall.get(stepNumber);
-				System.out.println(begin);
-				end=recursiveCall.get(stepNumber+1);
-				System.out.println(end);
-				i = begin;
-				if(actualSeries%2==0) {
+				recursiveCall.add(new RecursiveParameter(0, lower-1, actualDigit-1, "forward"));
+				recursiveCall.add(new RecursiveParameter(lower, SortingAlgorithm.getNumbers().length - 1, actualDigit-1, "backward"));
+				RecursiveParameter nextParameters = recursiveCall.remove();
+				begin=nextParameters.getBegin();
+				end=nextParameters.getEnd();
+				actualDigit=nextParameters.getDigit();
+				direction=nextParameters.getDirection();
+				if(direction == "forward") i=begin;
+				else i=end;
+				if(checkEmpty(data) || checkEmpty(data2)) {
+					actualSeries++;
 					lower = 0;
 					upper = SortingAlgorithm.getNumbers().length - 1;
+					if(direction == "forward") i=begin;
+					else i=end;
 				}
-				if(checkEmpty(data1) || checkEmpty(data2)) {
-					actualSeries++;
-				}
-				actualDigit--;
-				if(begin<end) i=0;
-				else i=SortingAlgorithm.getNumbers().length - 1;
-				stepNumber+=2;
+				System.out.println(actualDigit);
 			}
 		}
-		else {
-			for(int i=0; i<SortingAlgorithm.getNumbers().length; ++i) {
-				System.out.println(fillWithZeros(Integer.toBinaryString(data1.get(i).getYValue())));
-			}
-		}
+	}
+	
+	public static void setData2(ObservableList<XYChart.Data<String,Integer>> data)
+	{
+		BackwardRadix.data2=data;
 	}
 }

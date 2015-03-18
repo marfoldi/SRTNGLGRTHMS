@@ -1,81 +1,62 @@
 package srtnglgrthms.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.LinkedList;
 
-import javafx.collections.ObservableList;
-import javafx.scene.chart.XYChart;
-import javafx.scene.Node;
-
-public class ForwardRadix {	
-	private static int digitNumber = getMaxDigit();
-	private static int begin = 0;
-	private static int end = SortingAlgorithm.getNumbers().length;
-	private static int actualDigit = 0;
-	private static int lower = begin;
-	private static int upper = end;
-	private static int stepNumber = 0;
-	private static List<Integer> recursiveCall = new ArrayList<>();
-	
-	private static int getMaxDigit() {
-		return Arrays.stream(SortingAlgorithm.getNumbers())
-				.map(n -> Integer.toBinaryString(n).length())
-				.max()
-				.getAsInt();
+public class ForwardRadix extends Radix {
+	private ForwardRadix() {
+		init();
 	}
 	
-	private static String fillWithZeros(String binaryNumber) {
-	       StringBuilder builder = new StringBuilder();
-	        while (builder.length() < digitNumber-binaryNumber.length()) {
-	            builder.append('0');
-	        }
-	        builder.append(binaryNumber);
-	        return builder.toString();
-	}
+	private static class SortHolder {
+        private static final ForwardRadix INSTANCE = new ForwardRadix();
+    }
 	
-	public static void RadixStep (ObservableList<XYChart.Data<String,Integer>> data) {
-		if(actualDigit < digitNumber) {
-			while(lower < end && 
+    public static ForwardRadix getInstance() {
+        return SortHolder.INSTANCE;
+    }
+    
+    private static void init() {
+		actualDigit = 0;
+		begin = 0;
+		end = SortingAlgorithm.getNumbers().length-1;
+		lower = begin;
+		upper = end;
+		recursiveCall = new LinkedList<>();
+    }
+
+	@Override
+	public void step() {
+		if(actualDigit < getMaxDigit()) {
+			if(lower<=upper) {
+			while(lower <= upper &&
 					fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())).charAt(actualDigit) == '0') ++lower;
-			while(lower < upper && 
-					fillWithZeros(Integer.toBinaryString(data.get(upper - 1).getYValue())).charAt(actualDigit) == '1') --upper;
-			if (lower < upper - 1) {
-			Node node = data.get(lower).getNode();
-			node.setStyle("-fx-bar-fill: navy;");
-			node = data.get(upper - 1).getNode();
-			node.setStyle("-fx-bar-fill: navy;");
-			/*System.out.println("ALSO:" + fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())));
-			System.out.println("ALSOSZAMA:" + fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())).charAt(actualDigit));
-			System.out.println("FELSO:" + fillWithZeros(Integer.toBinaryString(data.get(upper - 1).getYValue())));
-			System.out.println("FELSZOSZAMA:" + fillWithZeros(Integer.toBinaryString(data.get(upper - 1).getYValue())).charAt(actualDigit));
-			System.out.println("JEGY:" + actualDigit);*/
-			int temp = data.get(lower).getYValue();
-			data.get(lower).setYValue(data.get(upper - 1).getYValue());
-			data.get(upper - 1).setYValue(temp);
-			//--upper;
-			//++lower;
+			while(lower <= upper &&
+					fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
+			if (lower <= upper) {
+				System.out.println(fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())));
+				System.out.println(fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())));
+				System.out.println(actualDigit);
+				setColor(lower, "navy");
+				setColor(upper, "navy");
+				swap(lower, upper);
 			}
-		else {
-			for(int i=begin; i<lower; ++i) {
-				Node node = data.get(i).getNode();
-				node.setStyle("-fx-bar-fill: #c62b00;");
+			else step();
 			}
-			for(int i=upper; i<end; ++i) {
-				Node node = data.get(i).getNode();
-				node.setStyle("-fx-bar-fill: #a9e200;");
+			else {
+				recursiveCall.add(new RecursiveParameter(begin, lower-1, actualDigit+1, null));
+				recursiveCall.add(new RecursiveParameter(lower, end, actualDigit+1, null));
+				setBucketColor();
+				RecursiveParameter nextParameters = recursiveCall.remove();
+				begin=nextParameters.getBegin();
+				end=nextParameters.getEnd();
+				actualDigit=nextParameters.getDigit();
+				lower=begin;
+				upper=end;
 			}
-			recursiveCall.add(begin);
-			recursiveCall.add(upper);
-			recursiveCall.add(lower);
-			recursiveCall.add(end);
-			++actualDigit; //ez nem jó...
-			begin=recursiveCall.get(stepNumber);
-			end=recursiveCall.get(stepNumber+1);
-			lower=begin;
-			upper=end;
-			stepNumber+=2;
 		}
-		}
+	}
+	
+	private static void setBucketColor() {
+		
 	}
 }
