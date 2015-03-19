@@ -4,6 +4,7 @@ import srtnglgrthms.model.BubbleSort;
 import srtnglgrthms.model.ForwardRadix;
 import srtnglgrthms.model.InsertionSort;
 import srtnglgrthms.model.QuickSort;
+import srtnglgrthms.model.ShellSort;
 import srtnglgrthms.model.SortingAlgorithm;
 
 public class SortingAlgorithmFactory {
@@ -17,6 +18,8 @@ public class SortingAlgorithmFactory {
 	    	  return ForwardRadix.getInstance();
 	      case "Gyorsrendezés":
 	    	  return QuickSort.getInstance();
+	      case "Shell rendezés":
+	    	  return ShellSort.getInstance();
 	      }
 	      return null;
 	}

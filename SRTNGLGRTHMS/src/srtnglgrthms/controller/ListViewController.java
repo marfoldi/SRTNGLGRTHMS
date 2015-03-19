@@ -28,7 +28,7 @@ public class ListViewController {
 	
 	private void setList() {
 		ObservableList<String> algorithms =FXCollections.observableArrayList (
-			    "Buborékrendezés", "Beszúrórendezés", "Gyorsrendezés", "Radix \"elõre\"");
+			    "Buborékrendezés", "Beszúrórendezés", "Shell rendezés", "Gyorsrendezés", "Radix \"elõre\"");
 		algorithmList.setItems(algorithms);
 	}
 	

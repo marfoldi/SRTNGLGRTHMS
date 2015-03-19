@@ -33,9 +33,6 @@ public class ForwardRadix extends Radix {
 			while(lower <= upper &&
 					fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
 			if (lower <= upper) {
-				System.out.println(fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())));
-				System.out.println(fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())));
-				System.out.println(actualDigit);
 				setColor(lower, "navy");
 				setColor(upper, "navy");
 				swap(lower, upper);
@@ -52,11 +49,17 @@ public class ForwardRadix extends Radix {
 				actualDigit=nextParameters.getDigit();
 				lower=begin;
 				upper=end;
+				step();
 			}
 		}
 	}
 	
 	private static void setBucketColor() {
-		
+		for (int i = begin; i < lower; i++) {
+			setColor(i, "green");
+		}
+		for (int i = lower; i < end; i++) {
+			setColor(i, "black");
+		}
 	}
 }

@@ -18,8 +18,11 @@ public class InsertionSort extends SortingAlgorithm{
 		while ((i < 0) || ( data.get(i).getYValue() <= data.get(i+1).getYValue() )) {
 			j++;
 			i=j-1;
+			for (int i = 0; i < SortingAlgorithm.getNumbers().length-1; i++) {
+				setColor(i, "orange");
+			}
 		}
-		if ((i > -1) && ( data.get(i).getYValue() > data.get(i+1).getYValue() )) {
+		if ((i >= 0) && ( data.get(i).getYValue() > data.get(i+1).getYValue() )) {
 			swap(i+1, i);
 			setColor(i+1, "navy");
 			setColor(i, "red");

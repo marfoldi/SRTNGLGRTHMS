@@ -1,10 +1,12 @@
 package srtnglgrthms.model;
 
+import java.util.LinkedList;
+
 public class QuickSort extends SortingAlgorithm {
-	private static int left;
-	private static int right;
-	private static int i;
-	private static int j;
+	private static int begin;
+	private static int end;
+	private static int lower;
+	private static int upper;
 	private static int pivot;
 	
 	private QuickSort() {
@@ -20,40 +22,52 @@ public class QuickSort extends SortingAlgorithm {
     }
     
     private static void init() {
-    	left=0;
-    	right = SortingAlgorithm.getNumbers().length-1;
-    	pivot = data.get(left+(right-left)/2).getYValue();
-    	i = left;
-    	j = right;
+    	begin = 0;
+    	end = SortingAlgorithm.getNumbers().length-1;
+    	pivot = data.get(begin+(end-begin)/2).getYValue();
+    	lower = begin;
+    	upper = end;
+    	recursiveCall = new LinkedList<>();
     }
 	
 	public void step() {
-        if (i <= j) {
-            while (data.get(i).getYValue() < pivot) {
-                i++;
+		setColor(begin+(end-begin)/2, "red");
+		setRestColor();
+        if (lower <= upper) {
+            while (data.get(lower).getYValue() < pivot) {
+                lower++;
             }
-            while (data.get(j).getYValue() > pivot) {
-                j--;
+            while (data.get(upper).getYValue() > pivot) {
+                upper--;
             }
-            if (i <= j) {
-                swap(i,j);
-                i++;
-                j--;
+            if (lower <= upper) {
+                setColor(lower, "navy");
+                setColor(upper, "navy");
+                swap(lower,upper);
+                lower++;
+                upper--;
             }
         	}
         else {
-        	if(left < j) {
-        		i = left;
-        		right = j;
-        		j = right;
-        		pivot = data.get(left+(right-left)/2).getYValue();
+        	if(begin < upper) {
+        		recursiveCall.add(new RecursiveParameter(begin, upper));
         	}
-        	if(i < right)  {
-        		left = i;
-        		i = left;
-        		j = right;
-        		pivot = data.get(left+(right-left)/2).getYValue();
+        	if(lower < end)  {
+        		recursiveCall.add(new RecursiveParameter(lower, end));
         }
+            if(!recursiveCall.isEmpty()) {
+            	RecursiveParameter nextParameters = recursiveCall.remove();
+            	begin=nextParameters.getBegin();
+    			end=nextParameters.getEnd();
+    			lower=begin;
+    			upper=end;
+    			pivot = data.get(begin+(end-begin)/2).getYValue();
+            }
         }
+	}
+	private void setRestColor() {
+		for (int i = 0; i < SortingAlgorithm.getNumbers().length-1; i++) {
+			if(i!=begin+(end-begin)/2) setColor(i, "orange");
+		}
 	}
 }

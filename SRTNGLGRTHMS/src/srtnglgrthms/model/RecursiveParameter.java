@@ -12,6 +12,10 @@ public class RecursiveParameter {
 		this.digit = digit;
 		this.dir = dir;
 	}
+	
+	public RecursiveParameter(int begin, int end) {
+		this(begin, end, 0, null);
+	}
 
 	public int getBegin() {
 		return begin;
