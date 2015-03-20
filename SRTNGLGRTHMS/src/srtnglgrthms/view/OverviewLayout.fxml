@@ -19,15 +19,18 @@
                      <children>
                         <Button fx:id="stepBtn" alignment="BOTTOM_LEFT" layoutX="15.0" layoutY="5.0" mnemonicParsing="false" text="Léptet" />
                         <Button fx:id="animBtn" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="5.0" mnemonicParsing="false" text="Indít" />
-                        <Text layoutX="343.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cserék száma:" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="1.05078125" />
-                        <Text layoutX="282.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Összehasonlítások száma:" />
                      </children>
                   </AnchorPane>
               </items>
             </SplitPane>
          </center>
          <left>
-               	<fx:include source="ListViewLayout.fxml" />
+            <SplitPane dividerPositions="0.6879194630872483" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+              <items>
+                     	<fx:include source="ListViewLayout.fxml" />
+                  <fx:include source="InfoTableViewLayout.fxml" />
+              </items>
+            </SplitPane>
          </left>
       </BorderPane>
    </children>

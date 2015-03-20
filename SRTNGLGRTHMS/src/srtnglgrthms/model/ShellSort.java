@@ -1,12 +1,13 @@
 package srtnglgrthms.model;
 
-public class ShellSort extends SortingAlgorithm{
-	private static int j = 1;
-	int increment = SortingAlgorithm.getNumbers().length/2;
-	int i = increment;
-	int temp;
+public class ShellSort extends SortingAlgorithm {
+	private static int j;
+	private static int gap;
+	private static int i;
 	
-	private ShellSort() {}
+	private ShellSort() {
+		init();
+	}
 	
 	private static class SortHolder {
         private static final ShellSort INSTANCE = new ShellSort();
@@ -15,28 +16,34 @@ public class ShellSort extends SortingAlgorithm{
     public static ShellSort getInstance() {
         return SortHolder.INSTANCE;
     }
+    
+    private static void init() {
+    	j = 1;
+    	gap = SortingAlgorithm.getNumbers().length/2;
+    	i=gap;
+    }
 
 	public void step() {
-		if (increment > 0) {
+		if (gap > 0) {
 			if(i < SortingAlgorithm.getNumbers().length) {
 				j = i;
 				int temp = data.get(i).getYValue();
-				while (j >= increment && data.get(j-increment).getYValue() > temp) {
-					data.get(j).setYValue(data.get(j-increment).getYValue());
+				while (j >= gap && data.get(j-gap).getYValue() > temp) {
+					data.get(j).setYValue(data.get(j-gap).getYValue());
 					setColor(j, "navy");
-					setColor(j-increment, "navy");
-					j = j - increment;
+					setColor(j-gap, "navy");
+					j = j - gap;
 				}
 				data.get(j).setYValue(temp);
 				i++;
 			}
 			else {
-			if (increment == 2) {
-				increment = 1;
-				i=increment;
+			if (gap == 2) {
+				gap = 1;
+				i=gap;
 			} else {
-				increment *= (5.0 / 11);
-				i = increment;
+				gap *= (5.0 / 11);
+				i = gap;
 			}
 			step();
 		}
