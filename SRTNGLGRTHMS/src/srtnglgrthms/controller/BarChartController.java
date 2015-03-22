@@ -1,5 +1,6 @@
 package srtnglgrthms.controller;
 
+import srtnglgrthms.model.Radix;
 import srtnglgrthms.model.SortingAlgorithm;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -61,7 +62,7 @@ public class BarChartController implements ChartController {
 	public void displayLegend(XYChart.Data<String, Integer> data) {
 		final Node node = data.getNode();
 		Text barValue = new Text(data.getYValue().toString());
-		//Text barValue = new Text(Integer.toBinaryString(data.getYValue()));
+		//Text barValue = new Text(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
 		node.parentProperty().addListener(new ChangeListener<Parent>() {
 			@Override
 			public void changed(ObservableValue<? extends Parent> ov,
@@ -78,7 +79,7 @@ public class BarChartController implements ChartController {
 				barValue.setLayoutY(Math.round(bounds.getMinY()
 						- barValue.prefHeight(-1) * 0.5));
 				barValue.setText(data.getYValue().toString());
-				//barValue.setText(Integer.toBinaryString(data.getYValue()));
+				//barValue.setText(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
 			}
 		});
 	}

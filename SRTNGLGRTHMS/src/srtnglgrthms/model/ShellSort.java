@@ -41,9 +41,11 @@ public class ShellSort extends SortingAlgorithm {
 			if (gap == 2) {
 				gap = 1;
 				i=gap;
+				step();
 			} else {
 				gap *= (5.0 / 11);
 				i = gap;
+				step();
 			}
 			step();
 		}

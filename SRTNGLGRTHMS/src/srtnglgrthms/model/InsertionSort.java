@@ -1,8 +1,10 @@
 package srtnglgrthms.model;
 
+
 public class InsertionSort extends SortingAlgorithm{
-	private static int j = 1;
-	private static int i = j-1;
+	private static int innerIndex = 1;
+	private static int outerIndex = innerIndex-1;
+	private static boolean firstStep = true;
 	
 	private InsertionSort() {}
 	
@@ -15,18 +17,31 @@ public class InsertionSort extends SortingAlgorithm{
     }
 
 	public void step() {
-		while ((i < 0) || ( data.get(i).getYValue() <= data.get(i+1).getYValue() )) {
-			j++;
-			i=j-1;
-			for (int i = 0; i < SortingAlgorithm.getNumbers().length-1; i++) {
-				setColor(i, "orange");
-			}
+		System.out.println(outerIndex);
+		System.out.println(innerIndex);
+		if(firstStep){
+			setColor(outerIndex+1, "red");
+			firstStep = false;
+			return;
 		}
-		if ((i >= 0) && ( data.get(i).getYValue() > data.get(i+1).getYValue() )) {
-			swap(i+1, i);
-			setColor(i+1, "navy");
-			setColor(i, "red");
-			i--;
+		if (data.get(outerIndex).getYValue() <= data.get(outerIndex+1).getYValue()) {
+			setRestColor();
+			innerIndex++;
+			outerIndex=innerIndex-1;
+			setColor(outerIndex+1, "red");
+			//setColor(outerIndex, "navy");
+		}
+		else if (data.get(outerIndex).getYValue() > data.get(outerIndex+1).getYValue()) {
+			swap(outerIndex+1, outerIndex);
+			setColor(outerIndex+1, "navy");
+			setColor(outerIndex, "red");
+			if (outerIndex>0) outerIndex--;
+		}
+	}
+	
+	private void setRestColor() {
+		for (int i = 0; i < data.size(); i++) {
+			setColor(i, "orange");
 		}
 	}
 }

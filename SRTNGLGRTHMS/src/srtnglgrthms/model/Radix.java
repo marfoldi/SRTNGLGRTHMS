@@ -16,7 +16,7 @@ public abstract class Radix extends SortingAlgorithm {
 				.getAsInt();
 	}
 	
-	protected static String fillWithZeros(String binaryNumber) {
+	public static String fillWithZeros(String binaryNumber) {
 	       StringBuilder builder = new StringBuilder();
 	        while (builder.length() < getMaxDigit()-binaryNumber.length()) {
 	            builder.append('0');
