@@ -18,7 +18,7 @@ public class BubbleSort extends SortingAlgorithm {
 	public void step() {
 		if (j < data.size() - i) {
 			if (i > 0) {
-				setColor(data.size() - i - 1, "orange");
+				setColor(data.size() - i - 1, "default");
 			}
 			setColor(j - 1, "navy");
 			setColor(j, "navy");
@@ -41,7 +41,7 @@ public class BubbleSort extends SortingAlgorithm {
 
 	private void setRestColor() {
 		for (int i = 0; i < j - 2; i++) {
-			setColor(i, "orange");
+			setColor(i, "default");
 		}
 	}
 }

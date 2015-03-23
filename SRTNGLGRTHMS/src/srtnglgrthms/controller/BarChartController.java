@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -61,8 +62,8 @@ public class BarChartController implements ChartController {
 	@Override
 	public void displayLegend(XYChart.Data<String, Integer> data) {
 		final Node node = data.getNode();
-		Text barValue = new Text(data.getYValue().toString());
-		//Text barValue = new Text(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
+		//Text barValue = new Text(data.getYValue().toString());
+		Text barValue = new Text(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
 		node.parentProperty().addListener(new ChangeListener<Parent>() {
 			@Override
 			public void changed(ObservableValue<? extends Parent> ov,
@@ -78,8 +79,8 @@ public class BarChartController implements ChartController {
 						+ bounds.getWidth() / 2 - barValue.prefWidth(-1) / 2));
 				barValue.setLayoutY(Math.round(bounds.getMinY()
 						- barValue.prefHeight(-1) * 0.5));
-				barValue.setText(data.getYValue().toString());
-				//barValue.setText(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
+				//barValue.setText(data.getYValue().toString());
+				barValue.setText(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
 			}
 		});
 	}
@@ -102,4 +103,8 @@ public class BarChartController implements ChartController {
 	public static Timeline getAnimation() {
 		return animation;
 	}
+	
+	public static Color getRandomColor() {
+	     return new Color(Math.random(),  Math.random(),  Math.random(), 1);
+	    }
 }

@@ -2,6 +2,8 @@ package srtnglgrthms.model;
 
 import java.util.LinkedList;
 
+import srtnglgrthms.controller.BarChartController;
+
 public class ForwardRadix extends Radix {
 	private ForwardRadix() {
 		init();
@@ -49,17 +51,16 @@ public class ForwardRadix extends Radix {
 				actualDigit=nextParameters.getDigit();
 				lower=begin;
 				upper=end;
-				step();
 			}
 		}
 	}
 	
 	private static void setBucketColor() {
 		for (int i = begin; i < lower; i++) {
-			setColor(i, "green");
+			setColor(i, BarChartController.getRandomColor());
 		}
-		for (int i = lower; i < end; i++) {
-			setColor(i, "black");
+		for (int i = lower; i <= end; i++) {
+			setColor(i, BarChartController.getRandomColor());
 		}
 	}
 }

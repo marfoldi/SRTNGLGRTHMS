@@ -17,31 +17,32 @@ public class InsertionSort extends SortingAlgorithm{
     }
 
 	public void step() {
-		System.out.println(outerIndex);
-		System.out.println(innerIndex);
 		if(firstStep){
-			setColor(outerIndex+1, "red");
+			setColor(outerIndex+1, "green");
 			firstStep = false;
 			return;
 		}
 		if (data.get(outerIndex).getYValue() <= data.get(outerIndex+1).getYValue()) {
-			setRestColor();
-			innerIndex++;
+			setRestColor("default");
+			if(innerIndex<data.size()-1) innerIndex++;
+			else {
+				setRestColor("red");
+				return;
+			}
 			outerIndex=innerIndex-1;
-			setColor(outerIndex+1, "red");
-			//setColor(outerIndex, "navy");
+			setColor(outerIndex+1, "green");
 		}
 		else if (data.get(outerIndex).getYValue() > data.get(outerIndex+1).getYValue()) {
 			swap(outerIndex+1, outerIndex);
 			setColor(outerIndex+1, "navy");
-			setColor(outerIndex, "red");
+			setColor(outerIndex, "green");
 			if (outerIndex>0) outerIndex--;
 		}
 	}
 	
-	private void setRestColor() {
+	private void setRestColor(String color) {
 		for (int i = 0; i < data.size(); i++) {
-			setColor(i, "orange");
+			setColor(i, color);
 		}
 	}
 }
