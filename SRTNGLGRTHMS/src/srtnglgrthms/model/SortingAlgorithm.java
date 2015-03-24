@@ -5,7 +5,6 @@ import java.util.Queue;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.chart.XYChart;
-import javafx.scene.paint.Color;
 
 public abstract class SortingAlgorithm {
 	private static int[] numbers;
@@ -21,15 +20,23 @@ public abstract class SortingAlgorithm {
 	
 	protected static void setColor(int index, String color) {
 		Node node = data.get(index).getNode();
-		if(color.equals("default")) {
-			node.setStyle("-fx-bar-fill: #f3622d");
+		switch(color) {
+			case "default":	node.setStyle("-fx-bar-fill: #f3622d;");
+							break;
+			case "swap":	node.setStyle("-fx-bar-fill: #4258c9;");
+							break;
+			case "select":	node.setStyle("-fx-bar-fill: #57b757;");
+							break;
+			case "done":	node.setStyle("-fx-bar-fill: #8C2D46;");
+							break;
+			default:		node.setStyle("-fx-bar-fill: " + color.toString() + ";");
+							break;
 		}
-		else node.setStyle("-fx-bar-fill: " + color.toString() + ";");
+			
 	}
 	
-	protected static void setColor(int index, Color color) {
-		Node node = data.get(index).getNode();
-		node.setStyle("-fx-bar-fill: " + color.toString() + ";");
+	public static String getRandomColor() {
+		return "#" + Integer.toHexString((int)(Math.random()*16777215));
 	}
     
 	public static int[] getNumbers() {

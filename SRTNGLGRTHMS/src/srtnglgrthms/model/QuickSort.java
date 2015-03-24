@@ -8,6 +8,7 @@ public class QuickSort extends SortingAlgorithm {
 	private static int lower;
 	private static int upper;
 	private static int pivot;
+	private static boolean pivotSwapped = false;
 	
 	private QuickSort() {
 		init();
@@ -31,7 +32,7 @@ public class QuickSort extends SortingAlgorithm {
     }
 	
 	public void step() {
-		setColor(begin+(end-begin)/2, "red");
+		setColor(begin+(end-begin)/2, "select");
 		setRestColor();
         if (lower <= upper) {
             while (data.get(lower).getYValue() < pivot) {
@@ -40,9 +41,18 @@ public class QuickSort extends SortingAlgorithm {
             while (data.get(upper).getYValue() > pivot) {
                 upper--;
             }
-            if (lower <= upper) {
-                setColor(lower, "navy");
-                setColor(upper, "navy");
+            if (lower <= upper ) {
+                setColor(lower, "swap");
+                setColor(upper, "swap");
+                if(lower==begin+(end-begin)/2 && !pivotSwapped) {
+                	setColor(upper, "select");
+                	pivotSwapped=true;
+                }
+                else if(upper==begin+(end-begin)/2 && !pivotSwapped){
+                	setColor(lower, "select");
+                	pivotSwapped=true;
+                }
+                else pivotSwapped=false;
                 swap(lower,upper);
                 lower++;
                 upper--;
@@ -54,7 +64,7 @@ public class QuickSort extends SortingAlgorithm {
         	}
         	if(lower < end)  {
         		recursiveCall.add(new RecursiveParameter(lower, end));
-        }
+        	}
             if(!recursiveCall.isEmpty()) {
             	RecursiveParameter nextParameters = recursiveCall.remove();
             	begin=nextParameters.getBegin();
@@ -62,12 +72,19 @@ public class QuickSort extends SortingAlgorithm {
     			lower=begin;
     			upper=end;
     			pivot = data.get(begin+(end-begin)/2).getYValue();
+    			setColor(begin+(end-begin)/2, "select");
+    			setRestColor();
+            }
+            else {
+            	for (int i = 0; i < data.size(); i++) {
+        			setColor(i, "done");
+        		}
             }
         }
 	}
 	private void setRestColor() {
-		for (int i = 0; i < SortingAlgorithm.getNumbers().length-1; i++) {
-			if(i!=begin+(end-begin)/2) setColor(i, "orange");
+		for (int i = 0; i < data.size(); i++) {
+			if(i!=begin+(end-begin)/2) setColor(i, "default");
 		}
 	}
 }

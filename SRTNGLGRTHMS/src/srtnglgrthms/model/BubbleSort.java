@@ -1,8 +1,8 @@
 package srtnglgrthms.model;
 
 public class BubbleSort extends SortingAlgorithm {
-	private static int j = 1;
-	private static int i = 0;
+	private static int outerIndex = 0;
+	private static int innerIndex = 1;
 
 	private BubbleSort() {
 	}
@@ -16,31 +16,31 @@ public class BubbleSort extends SortingAlgorithm {
 	}
 
 	public void step() {
-		if (j < data.size() - i) {
-			if (i > 0) {
-				setColor(data.size() - i - 1, "default");
+		if (innerIndex < data.size() - outerIndex) {
+			if (outerIndex > 0) {
+				setColor(data.size() - outerIndex - 1, "default");
 			}
-			setColor(j - 1, "navy");
-			setColor(j, "navy");
-			if (data.get(j - 1).getYValue() > data.get(j).getYValue()) {
-				swap(j - 1, j);
+			setColor(innerIndex - 1, "swap");
+			setColor(innerIndex, "swap");
+			if (data.get(innerIndex - 1).getYValue() > data.get(innerIndex).getYValue()) {
+				swap(innerIndex - 1, innerIndex);
 			}
-			j++;
-			if (j == data.size() - i) {
-				setColor(j - 1, "red");
+			innerIndex++;
+			if (innerIndex == data.size() - outerIndex) {
+				setColor(innerIndex - 1, "done");
 				setRestColor();
-				j = 1;
-				i++;
+				innerIndex = 1;
+				outerIndex++;
 			}
 			setRestColor();
 		}
 		else {
-			setColor(0, "red");
+			setColor(0, "done");
 		}
 	}
 
 	private void setRestColor() {
-		for (int i = 0; i < j - 2; i++) {
+		for (int i = 0; i < innerIndex - 2; i++) {
 			setColor(i, "default");
 		}
 	}

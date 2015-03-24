@@ -18,7 +18,7 @@ public class InsertionSort extends SortingAlgorithm{
 
 	public void step() {
 		if(firstStep){
-			setColor(outerIndex+1, "green");
+			setColor(outerIndex+1, "select");
 			firstStep = false;
 			return;
 		}
@@ -26,16 +26,16 @@ public class InsertionSort extends SortingAlgorithm{
 			setRestColor("default");
 			if(innerIndex<data.size()-1) innerIndex++;
 			else {
-				setRestColor("red");
+				setRestColor("done");
 				return;
 			}
 			outerIndex=innerIndex-1;
-			setColor(outerIndex+1, "green");
+			setColor(outerIndex+1, "select");
 		}
 		else if (data.get(outerIndex).getYValue() > data.get(outerIndex+1).getYValue()) {
 			swap(outerIndex+1, outerIndex);
-			setColor(outerIndex+1, "navy");
-			setColor(outerIndex, "green");
+			setColor(outerIndex+1, "swap");
+			setColor(outerIndex, "select");
 			if (outerIndex>0) outerIndex--;
 		}
 	}

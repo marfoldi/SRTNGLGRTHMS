@@ -2,8 +2,6 @@ package srtnglgrthms.model;
 
 import java.util.LinkedList;
 
-import srtnglgrthms.controller.BarChartController;
-
 public class ForwardRadix extends Radix {
 	private ForwardRadix() {
 		init();
@@ -35,16 +33,21 @@ public class ForwardRadix extends Radix {
 			while(lower <= upper &&
 					fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
 			if (lower <= upper) {
-				setColor(lower, "navy");
-				setColor(upper, "navy");
+				setColor(lower, "swap");
+				setColor(upper, "swap");
 				swap(lower, upper);
 			}
 			else step();
 			}
 			else {
+				if(begin!=lower-1) {
 				recursiveCall.add(new RecursiveParameter(begin, lower-1, actualDigit+1, null));
+				setBucketColor(begin ,lower);
+				}
+				if(lower!=end) {
 				recursiveCall.add(new RecursiveParameter(lower, end, actualDigit+1, null));
-				setBucketColor();
+				setBucketColor(lower, end+1);
+				}
 				RecursiveParameter nextParameters = recursiveCall.remove();
 				begin=nextParameters.getBegin();
 				end=nextParameters.getEnd();
@@ -55,12 +58,11 @@ public class ForwardRadix extends Radix {
 		}
 	}
 	
-	private static void setBucketColor() {
-		for (int i = begin; i < lower; i++) {
-			setColor(i, BarChartController.getRandomColor());
+	private static void setBucketColor(int lower, int upper) {
+		String bucketColor = SortingAlgorithm.getRandomColor();
+		for (int i = lower; i < upper; i++) {
+			setColor(i, bucketColor);
 		}
-		for (int i = lower; i <= end; i++) {
-			setColor(i, BarChartController.getRandomColor());
-		}
+
 	}
 }

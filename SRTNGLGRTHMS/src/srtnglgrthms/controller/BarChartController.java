@@ -17,7 +17,6 @@ import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -103,8 +102,4 @@ public class BarChartController implements ChartController {
 	public static Timeline getAnimation() {
 		return animation;
 	}
-	
-	public static Color getRandomColor() {
-	     return new Color(Math.random(),  Math.random(),  Math.random(), 1);
-	    }
 }
