@@ -1,15 +1,9 @@
-package srtnglgrthms.controller;
+package srtnglgrthms.model;
 
-import srtnglgrthms.model.BubbleSort;
-import srtnglgrthms.model.ForwardRadix;
-import srtnglgrthms.model.InsertionSort;
-import srtnglgrthms.model.QuickSort;
-import srtnglgrthms.model.ShellSort;
-import srtnglgrthms.model.SortingAlgorithm;
 
 public class SortingAlgorithmFactory {
 	public static SortingAlgorithm getAlgorithm(String algorithmName){
-	      switch(algorithmName) {
+		switch(algorithmName) {
 	      case "Buborékrendezés":
 	    	  return BubbleSort.getInstance();
 	      case "Beszúrórendezés":

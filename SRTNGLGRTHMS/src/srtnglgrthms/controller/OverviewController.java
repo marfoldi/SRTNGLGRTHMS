@@ -1,5 +1,6 @@
 package srtnglgrthms.controller;
 
+import srtnglgrthms.model.SortingAlgorithmFactory;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

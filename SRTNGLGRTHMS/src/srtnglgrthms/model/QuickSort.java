@@ -2,6 +2,8 @@ package srtnglgrthms.model;
 
 import java.util.LinkedList;
 
+import srtnglgrthms.controller.BarChartController;
+
 public class QuickSort extends SortingAlgorithm {
 	private static int begin;
 	private static int end;
@@ -32,7 +34,7 @@ public class QuickSort extends SortingAlgorithm {
     }
 	
 	public void step() {
-		setColor(begin+(end-begin)/2, "select");
+		BarChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
 		setRestColor();
         if (lower <= upper) {
             while (data.get(lower).getYValue() < pivot) {
@@ -42,14 +44,14 @@ public class QuickSort extends SortingAlgorithm {
                 upper--;
             }
             if (lower <= upper ) {
-                setColor(lower, "swap");
-                setColor(upper, "swap");
+            	BarChartController.setColor(data.get(lower).getNode(), "swap");
+            	BarChartController.setColor(data.get(upper).getNode(), "swap");
                 if(lower==begin+(end-begin)/2 && !pivotSwapped) {
-                	setColor(upper, "select");
+                	BarChartController.setColor(data.get(upper).getNode(), "select");
                 	pivotSwapped=true;
                 }
                 else if(upper==begin+(end-begin)/2 && !pivotSwapped){
-                	setColor(lower, "select");
+                	BarChartController.setColor(data.get(lower).getNode(), "select");
                 	pivotSwapped=true;
                 }
                 else pivotSwapped=false;
@@ -72,19 +74,25 @@ public class QuickSort extends SortingAlgorithm {
     			lower=begin;
     			upper=end;
     			pivot = data.get(begin+(end-begin)/2).getYValue();
-    			setColor(begin+(end-begin)/2, "select");
+    			BarChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
     			setRestColor();
             }
             else {
             	for (int i = 0; i < data.size(); i++) {
-        			setColor(i, "done");
+            		BarChartController.setColor(data.get(i).getNode(), "done");
         		}
             }
         }
 	}
 	private void setRestColor() {
 		for (int i = 0; i < data.size(); i++) {
-			if(i!=begin+(end-begin)/2) setColor(i, "default");
+			if(i!=begin+(end-begin)/2) BarChartController.setColor(data.get(i).getNode(), "default");
 		}
+	}
+
+	@Override
+	public void setDefaults() {
+		// TODO Auto-generated method stub
+		
 	}
 }

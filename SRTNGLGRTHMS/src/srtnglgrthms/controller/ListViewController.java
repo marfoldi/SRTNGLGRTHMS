@@ -1,5 +1,6 @@
 package srtnglgrthms.controller;
 
+import srtnglgrthms.model.SortingAlgorithmFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -19,9 +20,8 @@ public class ListViewController {
 		    @Override
 		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 		        currentItem = newValue;
-		        reloadChart();
-		    }
-		    private void reloadChart() {
+		        BarChartController.reloadSeries();
+		        SortingAlgorithmFactory.getAlgorithm(currentItem).setDefaults();
 		    }
 		});
 	}

@@ -1,5 +1,7 @@
 package srtnglgrthms.model;
 
+import srtnglgrthms.controller.BarChartController;
+
 public class ShellSort extends SortingAlgorithm {
 	private static int j;
 	private static int gap;
@@ -30,8 +32,8 @@ public class ShellSort extends SortingAlgorithm {
 				int temp = data.get(i).getYValue();
 				while (j >= gap && data.get(j-gap).getYValue() > temp) {
 					data.get(j).setYValue(data.get(j-gap).getYValue());
-					setColor(j, "navy");
-					setColor(j-gap, "navy");
+					BarChartController.setColor(data.get(j).getNode(), "swap");
+					BarChartController.setColor(data.get(j-gap).getNode(), "swap");
 					j = j - gap;
 				}
 				data.get(j).setYValue(temp);
@@ -50,5 +52,11 @@ public class ShellSort extends SortingAlgorithm {
 			step();
 		}
 		}
+	}
+
+	@Override
+	public void setDefaults() {
+		// TODO Auto-generated method stub
+		
 	}
 }

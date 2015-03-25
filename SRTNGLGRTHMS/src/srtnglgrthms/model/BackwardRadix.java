@@ -98,4 +98,10 @@ public class BackwardRadix extends Radix{
 	{
 		BackwardRadix.data2=data;
 	}
+
+	@Override
+	public void setDefaults() {
+		// TODO Auto-generated method stub
+		
+	}
 }

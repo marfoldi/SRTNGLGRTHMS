@@ -2,6 +2,7 @@ package srtnglgrthms.controller;
 
 import srtnglgrthms.model.Radix;
 import srtnglgrthms.model.SortingAlgorithm;
+import srtnglgrthms.model.SortingAlgorithmFactory;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -38,8 +39,6 @@ public class BarChartController implements ChartController {
 	@Override
 	public void initChart() {
 		int[] numbers = SortingAlgorithm.getNumbers();
-		series.getData().clear();
-		barChart.getData().clear();
 		for (int i = 0; i < numbers.length; ++i) {
 			final XYChart.Data<String, Integer> data = new XYChart.Data<>("t["
 					+ i + "]", numbers[i]);
@@ -57,12 +56,41 @@ public class BarChartController implements ChartController {
 		SortingAlgorithm.setData(series.getData());
 		barChart.getData().add(series);
 	}
+	
+	public static void reloadSeries() {
+		int[] numbers = SortingAlgorithm.getNumbers();
+		for(int i=0; i< numbers.length; ++i) {
+			series.getData().get(i).setYValue(numbers[i]);
+			setColor(series.getData().get(i).getNode(), "default");
+		}
+	}
+	
+	public static void setColor(Node node, String color) {
+		switch(color) {
+			case "default":	node.setStyle("-fx-bar-fill: #f3622d;");
+							break;
+			case "swap":	node.setStyle("-fx-bar-fill: #4258c9;");
+							break;
+			case "select":	node.setStyle("-fx-bar-fill: #57b757;");
+							break;
+			case "done":	node.setStyle("-fx-bar-fill: #8C2D46;");
+							break;
+			default:		node.setStyle("-fx-bar-fill: " + color.toString() + ";");
+							break;
+		}
+			
+	}
+	
+	public static String getRandomColor() {
+		return "#" + Integer.toHexString((int)(Math.random()*16777215));
+	}
+    
 
 	@Override
 	public void displayLegend(XYChart.Data<String, Integer> data) {
 		final Node node = data.getNode();
-		//Text barValue = new Text(data.getYValue().toString());
-		Text barValue = new Text(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
+		Text barValue = new Text(data.getYValue().toString());
+		//Text barValue = new Text(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
 		node.parentProperty().addListener(new ChangeListener<Parent>() {
 			@Override
 			public void changed(ObservableValue<? extends Parent> ov,
@@ -77,9 +105,9 @@ public class BarChartController implements ChartController {
 				barValue.setLayoutX(Math.round(bounds.getMinX()
 						+ bounds.getWidth() / 2 - barValue.prefWidth(-1) / 2));
 				barValue.setLayoutY(Math.round(bounds.getMinY()
-						- barValue.prefHeight(-1) * 0.5));
-				//barValue.setText(data.getYValue().toString());
-				barValue.setText(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
+						- barValue.prefHeight(-1) * 0.3));
+				barValue.setText(data.getYValue().toString());
+				//barValue.setText(Radix.fillWithZeros(Integer.toBinaryString(data.getYValue())));
 			}
 		});
 	}

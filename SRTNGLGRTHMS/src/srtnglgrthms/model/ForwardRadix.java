@@ -2,6 +2,8 @@ package srtnglgrthms.model;
 
 import java.util.LinkedList;
 
+import srtnglgrthms.controller.BarChartController;
+
 public class ForwardRadix extends Radix {
 	private ForwardRadix() {
 		init();
@@ -33,8 +35,8 @@ public class ForwardRadix extends Radix {
 			while(lower <= upper &&
 					fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
 			if (lower <= upper) {
-				setColor(lower, "swap");
-				setColor(upper, "swap");
+				BarChartController.setColor(data.get(lower).getNode(), "swap");
+				BarChartController.setColor(data.get(upper).getNode(), "swap");
 				swap(lower, upper);
 			}
 			else step();
@@ -59,10 +61,16 @@ public class ForwardRadix extends Radix {
 	}
 	
 	private static void setBucketColor(int lower, int upper) {
-		String bucketColor = SortingAlgorithm.getRandomColor();
+		String bucketColor = BarChartController.getRandomColor();
 		for (int i = lower; i < upper; i++) {
-			setColor(i, bucketColor);
+			BarChartController.setColor(data.get(i).getNode(), bucketColor);
 		}
 
+	}
+
+	@Override
+	public void setDefaults() {
+		// TODO Auto-generated method stub
+		
 	}
 }

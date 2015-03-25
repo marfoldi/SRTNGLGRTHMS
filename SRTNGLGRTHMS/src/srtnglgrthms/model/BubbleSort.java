@@ -1,5 +1,7 @@
 package srtnglgrthms.model;
 
+import srtnglgrthms.controller.BarChartController;
+
 public class BubbleSort extends SortingAlgorithm {
 	private static int outerIndex = 0;
 	private static int innerIndex = 1;
@@ -14,20 +16,31 @@ public class BubbleSort extends SortingAlgorithm {
 	public static BubbleSort getInstance() {
 		return SortHolder.INSTANCE;
 	}
+	
+	public void setDefaults() {
+		outerIndex = 0;
+		innerIndex = 1;
+		counterData.clear();
+		counterData.add(new Counter("ÖH", 0));
+		counterData.add(new Counter("CS", 0));
+	}
 
+	@Override
 	public void step() {
 		if (innerIndex < data.size() - outerIndex) {
 			if (outerIndex > 0) {
-				setColor(data.size() - outerIndex - 1, "default");
+				BarChartController.setColor(data.get(data.size()-outerIndex-1).getNode(), "default");
 			}
-			setColor(innerIndex - 1, "swap");
-			setColor(innerIndex, "swap");
+			BarChartController.setColor(data.get(innerIndex-1).getNode(), "swap");
+			BarChartController.setColor(data.get(innerIndex).getNode(), "swap");
+			counterData.get(0).incValue();
 			if (data.get(innerIndex - 1).getYValue() > data.get(innerIndex).getYValue()) {
 				swap(innerIndex - 1, innerIndex);
+				counterData.get(1).incValue();
 			}
 			innerIndex++;
 			if (innerIndex == data.size() - outerIndex) {
-				setColor(innerIndex - 1, "done");
+				BarChartController.setColor(data.get(innerIndex-1).getNode(), "done");
 				setRestColor();
 				innerIndex = 1;
 				outerIndex++;
@@ -35,13 +48,14 @@ public class BubbleSort extends SortingAlgorithm {
 			setRestColor();
 		}
 		else {
-			setColor(0, "done");
+			BarChartController.setColor(data.get(0).getNode(), "done");
+			BarChartController.getAnimation().stop();
 		}
 	}
 
 	private void setRestColor() {
 		for (int i = 0; i < innerIndex - 2; i++) {
-			setColor(i, "default");
+			BarChartController.setColor(data.get(i).getNode(), "default");
 		}
 	}
 }
