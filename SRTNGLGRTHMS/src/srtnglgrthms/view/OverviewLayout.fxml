@@ -14,7 +14,7 @@
          <center>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
               <items>
-                  <fx:include source="BarChartLayout.fxml" />
+                  <fx:include source="OverviewChartLayout.fxml" />
                 <AnchorPane maxHeight="35.0" minHeight="35.0" minWidth="0.0" prefHeight="30.0" prefWidth="368.0">
                      <children>
                         <Button fx:id="stepBtn" alignment="BOTTOM_LEFT" layoutX="15.0" layoutY="5.0" mnemonicParsing="false" text="Léptet" />
@@ -27,8 +27,8 @@
          <left>
             <SplitPane dividerPositions="0.6879194630872483" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
               <items>
-                     	<fx:include source="ListViewLayout.fxml" />
-                  <fx:include source="InfoTableViewLayout.fxml" />
+                     	<fx:include source="OverviewListLayout.fxml" />
+                  <fx:include source="InfoTableLayout.fxml" />
               </items>
             </SplitPane>
          </left>

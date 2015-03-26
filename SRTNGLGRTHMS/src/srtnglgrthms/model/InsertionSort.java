@@ -1,6 +1,6 @@
 package srtnglgrthms.model;
 
-import srtnglgrthms.controller.BarChartController;
+import srtnglgrthms.controller.OverviewChartController;
 
 
 public class InsertionSort extends SortingAlgorithm{
@@ -23,14 +23,14 @@ public class InsertionSort extends SortingAlgorithm{
 		innerIndex = 1;
 		firstStep=true;
 		counterData.clear();
-		counterData.add(new Counter("ÖH", 0));
-		counterData.add(new Counter("CS", 0));
+		counterData.add(new CounterData("ÖH", 0));
+		counterData.add(new CounterData("CS", 0));
 	}
 
     @Override
 	public void step() {
 		if(firstStep){
-			BarChartController.setColor(data.get(outerIndex+1).getNode(), "select");
+			OverviewChartController.setColor(data.get(outerIndex+1).getNode(), "select");
 			firstStep = false;
 			return;
 		}
@@ -39,11 +39,11 @@ public class InsertionSort extends SortingAlgorithm{
 			if(innerIndex<data.size()-1) innerIndex++;
 			else {
 				setRestColor("done");
-				BarChartController.getAnimation().stop();
+				OverviewChartController.getAnimation().stop();
 				return;
 			}
 			outerIndex=innerIndex-1;
-			BarChartController.setColor(data.get(outerIndex+1).getNode(), "select");
+			OverviewChartController.setColor(data.get(outerIndex+1).getNode(), "select");
 			if (data.get(innerIndex-1).getYValue() < data.get(innerIndex).getYValue()) {
 				counterData.get(0).incValue();
 			}
@@ -52,15 +52,40 @@ public class InsertionSort extends SortingAlgorithm{
 			counterData.get(0).incValue();
 			swap(outerIndex+1, outerIndex);
 			counterData.get(1).incValue();
-			BarChartController.setColor(data.get(outerIndex+1).getNode(), "swap");
-			BarChartController.setColor(data.get(outerIndex).getNode(), "select");
+			OverviewChartController.setColor(data.get(outerIndex+1).getNode(), "swap");
+			OverviewChartController.setColor(data.get(outerIndex).getNode(), "select");
 			if (outerIndex>0) outerIndex--;
 		}
 	}
 	
 	private void setRestColor(String color) {
 		for (int i = 0; i < data.size(); i++) {
-			BarChartController.setColor(data.get(i).getNode(), color);
+			OverviewChartController.setColor(data.get(i).getNode(), color);
 		}
 	}
+	
+	public static Runnable sort = () -> {
+		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
+		System.arraycopy( SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
+	    int swapCounter = 0;//Increment this counter whenever a swap takes place
+	    int comparsionCounter=0;//Increment this counter whenever a comparison takes place
+	    for (int i=1; i < numbers.length; i++)
+	    {
+	       int index = numbers[i];
+	       int j=i-1;
+	       while (j >= 0)
+	       {
+	          // Every time this line is reached, a comparison will be performed
+	    	   comparsionCounter++;
+	          if (numbers[j] > index)
+	          {
+	        	 swapCounter++;
+	             numbers[j + 1] = numbers[j];
+	          }
+	          j--;
+	       }
+	       numbers[j+1] = index;
+	    }
+	    benchmarkData.add(new BenchmarkData("Beszúrórendezés", comparsionCounter, swapCounter));
+	};
 }

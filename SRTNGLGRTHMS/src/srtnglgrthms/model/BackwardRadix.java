@@ -46,7 +46,7 @@ public class BackwardRadix extends Radix{
 	public void step() {
 		if(actualDigit > 0) {
 			//BEGIN END csere van ha visszafelé megy, tehát nem megy bele az if-be...
-			if(lower<=upper && i<=end && i>=0 && begin<=end) {
+			if(lower<=upper && i<=end && i>=begin && begin<=end) {
 				if(actualSeries%2==0) {
 					if(fillWithZeros(Integer.toBinaryString(data.get(i).getYValue())).charAt(actualDigit) == '0') {
 						data2.get(lower).setYValue(data.get(i).getYValue());

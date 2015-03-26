@@ -2,7 +2,7 @@ package srtnglgrthms.model;
 
 import java.util.LinkedList;
 
-import srtnglgrthms.controller.BarChartController;
+import srtnglgrthms.controller.OverviewChartController;
 
 public class QuickSort extends SortingAlgorithm {
 	private static int begin;
@@ -32,9 +32,21 @@ public class QuickSort extends SortingAlgorithm {
     	upper = end;
     	recursiveCall = new LinkedList<>();
     }
+    
+    public void setDefaults() {
+    	begin = 0;
+    	end = SortingAlgorithm.getNumbers().length-1;
+    	pivot = data.get(begin+(end-begin)/2).getYValue();
+    	lower = begin;
+    	upper = end;
+		counterData.clear();
+		counterData.add(new CounterData("ÖH", 0));
+		counterData.add(new CounterData("CS", 0));
+		counterData.add(new CounterData("Vezérelem indexe", begin+(end-begin)/2));
+	}
 	
 	public void step() {
-		BarChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
+		OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
 		setRestColor();
         if (lower <= upper) {
             while (data.get(lower).getYValue() < pivot) {
@@ -43,18 +55,22 @@ public class QuickSort extends SortingAlgorithm {
             while (data.get(upper).getYValue() > pivot) {
                 upper--;
             }
+            counterData.get(0).incValue();
             if (lower <= upper ) {
-            	BarChartController.setColor(data.get(lower).getNode(), "swap");
-            	BarChartController.setColor(data.get(upper).getNode(), "swap");
+            	OverviewChartController.setColor(data.get(lower).getNode(), "swap");
+            	OverviewChartController.setColor(data.get(upper).getNode(), "swap");
                 if(lower==begin+(end-begin)/2 && !pivotSwapped) {
-                	BarChartController.setColor(data.get(upper).getNode(), "select");
+                	OverviewChartController.setColor(data.get(upper).getNode(), "select");
+                	counterData.get(2).setValue(upper);
                 	pivotSwapped=true;
                 }
                 else if(upper==begin+(end-begin)/2 && !pivotSwapped){
-                	BarChartController.setColor(data.get(lower).getNode(), "select");
+                	OverviewChartController.setColor(data.get(lower).getNode(), "select");
+                	counterData.get(2).setValue(lower);
                 	pivotSwapped=true;
                 }
                 else pivotSwapped=false;
+                counterData.get(1).incValue();
                 swap(lower,upper);
                 lower++;
                 upper--;
@@ -74,25 +90,21 @@ public class QuickSort extends SortingAlgorithm {
     			lower=begin;
     			upper=end;
     			pivot = data.get(begin+(end-begin)/2).getYValue();
-    			BarChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
+    			counterData.get(2).setValue(begin+(end-begin)/2);
+    			OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
     			setRestColor();
             }
             else {
             	for (int i = 0; i < data.size(); i++) {
-            		BarChartController.setColor(data.get(i).getNode(), "done");
+            		OverviewChartController.setColor(data.get(i).getNode(), "done");
+            		OverviewChartController.getAnimation().stop();
         		}
             }
         }
 	}
 	private void setRestColor() {
 		for (int i = 0; i < data.size(); i++) {
-			if(i!=begin+(end-begin)/2) BarChartController.setColor(data.get(i).getNode(), "default");
+			if(i!=begin+(end-begin)/2) OverviewChartController.setColor(data.get(i).getNode(), "default");
 		}
-	}
-
-	@Override
-	public void setDefaults() {
-		// TODO Auto-generated method stub
-		
 	}
 }

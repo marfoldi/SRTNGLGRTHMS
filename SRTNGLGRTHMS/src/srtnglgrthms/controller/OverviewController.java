@@ -25,14 +25,14 @@ public class OverviewController {
 		stepBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				(SortingAlgorithmFactory.getAlgorithm(ListViewController.getSelectedItem())).step();
+				(SortingAlgorithmFactory.getAlgorithm(OverviewListController.getSelectedItem())).step();
 			}
 		});
 
 		animBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				BarChartController.getAnimation().play();
+				OverviewChartController.getAnimation().play();
 			}
 		});
 	}

@@ -11,7 +11,8 @@ public abstract class SortingAlgorithm {
 	private static int[] numbers;
 	protected static ObservableList<XYChart.Data<String,Integer>> data;
 	protected static Queue<RecursiveParameter> recursiveCall;
-	protected static ObservableList<Counter> counterData = FXCollections.observableArrayList();
+	protected static ObservableList<CounterData> counterData = FXCollections.observableArrayList();
+	protected static ObservableList<BenchmarkData> benchmarkData = FXCollections.observableArrayList();
 	
 	protected static void swap(int firstIndex, int secondIndex) {
 		int temp;
@@ -28,8 +29,12 @@ public abstract class SortingAlgorithm {
 		return Arrays.stream(numbers).max().getAsInt();
 	}
 	
-	public static ObservableList<Counter> getCounterData() {
+	public static ObservableList<CounterData> getCounterData() {
 		return counterData;
+	}
+	
+	public static ObservableList<BenchmarkData> getBenchmarkData() {
+		return benchmarkData;
 	}
 	
 	public static void setNumbers(int[] numbers) {

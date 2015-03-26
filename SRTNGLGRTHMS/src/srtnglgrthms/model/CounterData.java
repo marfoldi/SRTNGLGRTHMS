@@ -5,15 +5,15 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Counter {
+public class CounterData {
 	private StringProperty name;
 	private IntegerProperty value;
 
-	public Counter() {
+	public CounterData() {
 		this(null, 0);
 	}
 
-	public Counter(String name, int value) {
+	public CounterData(String name, int value) {
 		this.name = new SimpleStringProperty(name);
 		this.value = new SimpleIntegerProperty(value);
 	}

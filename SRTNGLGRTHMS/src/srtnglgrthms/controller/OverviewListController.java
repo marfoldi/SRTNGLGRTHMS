@@ -8,7 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
-public class ListViewController {
+public class OverviewListController {
 	@FXML
 	private ListView<String> algorithmList;
 	private static String currentItem;
@@ -20,7 +20,7 @@ public class ListViewController {
 		    @Override
 		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 		        currentItem = newValue;
-		        BarChartController.reloadSeries();
+		        OverviewChartController.reloadSeries();
 		        SortingAlgorithmFactory.getAlgorithm(currentItem).setDefaults();
 		    }
 		});

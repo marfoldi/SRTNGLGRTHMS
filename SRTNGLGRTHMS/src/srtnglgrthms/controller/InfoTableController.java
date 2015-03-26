@@ -1,6 +1,6 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.Counter;
+import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.SortingAlgorithm;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -8,11 +8,11 @@ import javafx.scene.control.TableView;
 
 public class InfoTableController {
 	@FXML
-	private TableView<Counter> tableView;
+	private TableView<CounterData> tableView;
 	@FXML
-	private TableColumn<Counter, String> nameColumn;
+	private TableColumn<CounterData, String> nameColumn;
 	@FXML
-	private TableColumn<Counter, Number> valueColumn;
+	private TableColumn<CounterData, Number> valueColumn;
 	
 	@FXML
     private void initialize() {

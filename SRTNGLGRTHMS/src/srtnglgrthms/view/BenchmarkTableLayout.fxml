@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.BenchmarkTableController">
+   <children>
+      <TableView fx:id="tableView" layoutX="-94.0" layoutY="-105.0" prefHeight="95.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="70.0" sortable="false" text="Név"/>
+          <TableColumn fx:id="compareColumn" editable="false" sortable="false" text="ÖH"/>
+          <TableColumn fx:id="swapColumn" editable="false" sortable="false" text="CS"/>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
