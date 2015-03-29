@@ -11,7 +11,9 @@ import javafx.scene.control.ListView;
 public class OverviewListController {
 	@FXML
 	private ListView<String> algorithmList;
-	private static String currentItem;
+	@FXML 
+	private static OverviewController parentController;
+	private static String currentValue;
 	
 	@FXML
 	private void initialize() {
@@ -19,9 +21,11 @@ public class OverviewListController {
 		algorithmList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 		    @Override
 		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-		        currentItem = newValue;
+		    	OverviewListController.currentValue = newValue;
 		        OverviewChartController.reloadSeries();
-		        SortingAlgorithmFactory.getAlgorithm(currentItem).setDefaults();
+		        
+		        parentController.reloadButtons();
+		        SortingAlgorithmFactory.getAlgorithm(currentValue).setDefaults();
 		    }
 		});
 	}
@@ -33,6 +37,10 @@ public class OverviewListController {
 	}
 	
 	public static String getSelectedItem() {
-		return currentItem;
+		return currentValue;
+	}
+	
+	public static void setParentController(OverviewController parentController) {
+		OverviewListController.parentController=parentController;
 	}
 }

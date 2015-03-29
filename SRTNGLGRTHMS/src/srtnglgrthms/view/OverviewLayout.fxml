@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewController">
    <children>
       <BorderPane layoutX="125.0" layoutY="50.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -17,8 +17,8 @@
                   <fx:include source="OverviewChartLayout.fxml" />
                 <AnchorPane maxHeight="35.0" minHeight="35.0" minWidth="0.0" prefHeight="30.0" prefWidth="368.0">
                      <children>
-                        <Button fx:id="stepBtn" alignment="BOTTOM_LEFT" layoutX="15.0" layoutY="5.0" mnemonicParsing="false" text="Léptet" />
-                        <Button fx:id="animBtn" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="5.0" mnemonicParsing="false" text="Indít" />
+                        <Button fx:id="stepBtn" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" text="Léptetés" />
+                        <Button fx:id="animBtn" alignment="BOTTOM_LEFT" layoutX="82.0" layoutY="5.0" mnemonicParsing="false" text="Lejátszás" />
                      </children>
                   </AnchorPane>
               </items>

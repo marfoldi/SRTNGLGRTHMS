@@ -41,6 +41,10 @@ public abstract class SortingAlgorithm {
 		SortingAlgorithm.numbers = numbers;
 	}
 	
+	public static ObservableList<XYChart.Data<String,Integer>> getData() {
+		return data;
+	}
+	
 	public static void setData(ObservableList<XYChart.Data<String,Integer>> data) {
 		SortingAlgorithm.data = data;
 	}

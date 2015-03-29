@@ -44,7 +44,7 @@ public class BackwardRadix extends Radix{
 	
 	@Override
 	public void step() {
-		if(actualDigit > 0) {
+		if(actualDigit >= 0) {
 			//BEGIN END csere van ha visszafelé megy, tehát nem megy bele az if-be...
 			if(lower<=upper && i<=end && i>=begin && begin<=end) {
 				if(actualSeries%2==0) {
@@ -73,8 +73,13 @@ public class BackwardRadix extends Radix{
 				else i--;
 			}
 			else {
+				//attól függõen, hogy mi volt az utolsó lépés kell beállítani a határt nem jó a lower-1...
+				//az elseben csak akkor kell hozzáadni új hívást, ha már mindkettõ lement...
+				if (recursiveCall.isEmpty() && actualDigit!=0) {
 				recursiveCall.add(new RecursiveParameter(0, lower-1, actualDigit-1, "forward"));
 				recursiveCall.add(new RecursiveParameter(lower, SortingAlgorithm.getNumbers().length - 1, actualDigit-1, "backward"));
+				}
+				if(!recursiveCall.isEmpty()) {
 				RecursiveParameter nextParameters = recursiveCall.remove();
 				begin=nextParameters.getBegin();
 				end=nextParameters.getEnd();
@@ -82,14 +87,29 @@ public class BackwardRadix extends Radix{
 				direction=nextParameters.getDirection();
 				if(direction == "forward") i=begin;
 				else i=end;
-				if(checkEmpty(data) || checkEmpty(data2)) {
+				if(direction == "forward") {
 					actualSeries++;
-					lower = 0;
-					upper = SortingAlgorithm.getNumbers().length - 1;
+					begin=0;
+					end = SortingAlgorithm.getNumbers().length - 1;
+					lower = begin;
+					upper = end;
 					if(direction == "forward") i=begin;
 					else i=end;
+					/*for(int i=0; i<data.size(); ++i) {
+						System.out.print(SortingAlgorithm.getNumbers()[i] + " ");
+					}
+					System.out.println();
+					for(int i=0; i<data.size(); ++i) {
+						System.out.print(data.get(i).getYValue() + " ");
+					}
+					System.out.println();
+					for(int i=0; i<data.size(); ++i) {
+						System.out.print(data2.get(i).getYValue() + " ");
+					}
+					System.out.println();*/
 				}
-				System.out.println(actualDigit);
+				//System.out.println(actualDigit);
+			}
 			}
 		}
 	}

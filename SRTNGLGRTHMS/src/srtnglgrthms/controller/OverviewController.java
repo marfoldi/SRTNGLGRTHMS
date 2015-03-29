@@ -1,5 +1,6 @@
 package srtnglgrthms.controller;
 
+import srtnglgrthms.model.SortingAlgorithm;
 import srtnglgrthms.model.SortingAlgorithmFactory;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,9 +9,9 @@ import javafx.scene.control.Button;
 
 public class OverviewController {
 	@FXML
-	private Button stepBtn;
+	public Button stepBtn;
 	@FXML
-	private Button animBtn;
+	public Button animBtn;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -19,13 +20,27 @@ public class OverviewController {
 	@FXML
 	private void initialize() {
 		initBtns();
+		OverviewListController.setParentController(this);
+		OverviewChartController.setParentController(this);
 	}
 
 	private void initBtns() {
 		stepBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				(SortingAlgorithmFactory.getAlgorithm(OverviewListController.getSelectedItem())).step();
+				switch(stepBtn.getText()) {
+					case "Léptetés": {
+						(SortingAlgorithmFactory.getAlgorithm(OverviewListController.getSelectedItem())).step();
+						checkButtons();
+						break;
+					}
+					case "Újraindítás": {
+						OverviewChartController.reloadSeries();
+				        SortingAlgorithmFactory.getAlgorithm(OverviewListController.getSelectedItem()).setDefaults();
+				        reloadButtons();
+				        break;
+					}
+				}
 			}
 		});
 
@@ -35,6 +50,25 @@ public class OverviewController {
 				OverviewChartController.getAnimation().play();
 			}
 		});
+	}
+	
+	protected void checkButtons() {
+		boolean isDone = true;
+		for (int i = 0; i < SortingAlgorithm.getData().size(); i++) {
+			if(!(SortingAlgorithm.getData().get(i).getNode().getStyle().contains("-fx-bar-fill: #8C2D46;"))) {
+				isDone = false;
+				break;
+			}
+		}
+		if(isDone) {
+			stepBtn.setText("Újraindítás");
+			animBtn.setVisible(false);
+		}
+	}
+	
+	protected void reloadButtons() {
+		stepBtn.setText("Léptetés");
+		animBtn.setVisible(true);
 	}
 	
 	

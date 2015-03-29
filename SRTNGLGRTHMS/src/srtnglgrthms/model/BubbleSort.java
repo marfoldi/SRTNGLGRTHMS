@@ -3,8 +3,8 @@ package srtnglgrthms.model;
 import srtnglgrthms.controller.OverviewChartController;
 
 public class BubbleSort extends SortingAlgorithm {
-	private static int outerIndex = 0;
-	private static int innerIndex = 1;
+	private static int outerIdx = 0;
+	private static int innerIdx = 1;
 
 	private BubbleSort() {
 	}
@@ -18,32 +18,32 @@ public class BubbleSort extends SortingAlgorithm {
 	}
 	
 	public void setDefaults() {
-		outerIndex = 0;
-		innerIndex = 1;
+		outerIdx = 0;
+		innerIdx = 1;
 		counterData.clear();
-		counterData.add(new CounterData("ÖH", 0));
-		counterData.add(new CounterData("CS", 0));
+		counterData.add(new CounterData("Összehasonlítások", 0));
+		counterData.add(new CounterData("Cserék", 0));
 	}
 
 	@Override
 	public void step() {
-		if (innerIndex < data.size() - outerIndex) {
-			if (outerIndex > 0) {
-				OverviewChartController.setColor(data.get(data.size()-outerIndex-1).getNode(), "default");
+		if (innerIdx < data.size() - outerIdx) {
+			if (outerIdx > 0) {
+				OverviewChartController.setColor(data.get(data.size()-outerIdx-1).getNode(), "default");
 			}
-			OverviewChartController.setColor(data.get(innerIndex-1).getNode(), "swap");
-			OverviewChartController.setColor(data.get(innerIndex).getNode(), "swap");
+			OverviewChartController.setColor(data.get(innerIdx-1).getNode(), "swap");
+			OverviewChartController.setColor(data.get(innerIdx).getNode(), "swap");
 			counterData.get(0).incValue();
-			if (data.get(innerIndex - 1).getYValue() > data.get(innerIndex).getYValue()) {
-				swap(innerIndex - 1, innerIndex);
+			if (data.get(innerIdx - 1).getYValue() > data.get(innerIdx).getYValue()) {
+				swap(innerIdx - 1, innerIdx);
 				counterData.get(1).incValue();
 			}
-			innerIndex++;
-			if (innerIndex == data.size() - outerIndex) {
-				OverviewChartController.setColor(data.get(innerIndex-1).getNode(), "done");
+			innerIdx++;
+			if (innerIdx == data.size() - outerIdx) {
+				OverviewChartController.setColor(data.get(innerIdx-1).getNode(), "done");
 				setRestColor();
-				innerIndex = 1;
-				outerIndex++;
+				innerIdx = 1;
+				outerIdx++;
 			}
 			setRestColor();
 		}
@@ -54,7 +54,7 @@ public class BubbleSort extends SortingAlgorithm {
 	}
 
 	private void setRestColor() {
-		for (int i = 0; i < innerIndex - 2; i++) {
+		for (int i = 0; i < innerIdx - 2; i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), "default");
 		}
 	}
@@ -62,8 +62,8 @@ public class BubbleSort extends SortingAlgorithm {
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy( SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
-	    int swapCounter = 0;//Increment this counter whenever a swap takes place
-	    int comparsionCounter=0;//Increment this counter whenever a comparison takes place
+	    int swapCounter = 0; //Increment this counter whenever a swap takes place
+	    int comparsionCounter=0; //Increment this counter whenever a comparison takes place
 	    for(int i=1;i<numbers.length;i++)
 	    {
 	      for(int j=0;j<numbers.length-i;j++)
