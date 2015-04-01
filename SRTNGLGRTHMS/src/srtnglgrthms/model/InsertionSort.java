@@ -7,6 +7,7 @@ public class InsertionSort extends SortingAlgorithm{
 	private static int outerIndex = 1;
 	private static int innerIndex = outerIndex;
 	private static boolean isSelected = false;
+	private static boolean showSwapped = true;
 	
 	private InsertionSort() {}
 	
@@ -22,6 +23,7 @@ public class InsertionSort extends SortingAlgorithm{
 		outerIndex = 1;
 		innerIndex = outerIndex;
 		isSelected=false;
+		showSwapped = true;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", 0));
 		counterData.add(new CounterData("Mozgatások", 0));
@@ -41,8 +43,14 @@ public class InsertionSort extends SortingAlgorithm{
 			}
     	}
     	else if(innerIndex>0) {
-    		if (data.get(innerIndex-1).getYValue() <= data.get(innerIndex).getYValue()) {			
-    			setRestColor("done");
+    		if (data.get(innerIndex-1).getYValue() <= data.get(innerIndex).getYValue()) {
+    			if(showSwapped) {
+        			OverviewChartController.setColor(data.get(innerIndex).getNode(), "select");
+        			OverviewChartController.setColor(data.get(innerIndex-1).getNode(), "swap");
+    				showSwapped = false;
+    				return;
+    			}
+    			else setRestColor("done");
     			if(outerIndex==data.size()) {
     				counterData.get(0).incValue();
     				setRestColor("done");
@@ -50,6 +58,7 @@ public class InsertionSort extends SortingAlgorithm{
     				return;
     			}
     			isSelected=false;
+    			showSwapped = true;
     		}
     		else if(data.get(innerIndex-1).getYValue() > data.get(innerIndex).getYValue()) {
     			swap(innerIndex-1, innerIndex);

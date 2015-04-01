@@ -6,8 +6,8 @@ import srtnglgrthms.controller.OverviewChartController;
 public class ShellSort extends SortingAlgorithm{
 	private static final int[] gapArray = {1750,701,301,132,57,23,10,4,1};
 	private static int gapIdx = selectGap();
-	private static int outerIndex = gapArray[gapIdx];
-	private static int innerIndex = 0;
+	private static int outerIndex = gapArray[gapIdx] - 1;
+	private static int innerIndex = outerIndex - gapArray[gapIdx];
 	private static boolean isSelected = false;
 	
 	private ShellSort() {}
@@ -22,12 +22,13 @@ public class ShellSort extends SortingAlgorithm{
     
 	public void setDefaults() {
 		gapIdx = selectGap();
-		outerIndex = gapArray[gapIdx];
-		innerIndex = 0;
+		outerIndex = gapArray[gapIdx] - 1;
+		innerIndex = outerIndex - gapArray[gapIdx];
 		isSelected=false;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", 0));
 		counterData.add(new CounterData("Mozgatások", 0));
+		counterData.add(new CounterData("Lépésköz", 0));
 	}
 	
 	private static int selectGap() {
@@ -40,67 +41,73 @@ public class ShellSort extends SortingAlgorithm{
     @Override
 	public void step() {
     	if(!isSelected) {
-    		OverviewChartController.setColor(data.get(outerIndex).getNode(), "select");
+    		setRestColor("default");
+    		if(outerIndex<data.size()-1) {
+				outerIndex++;
+        		OverviewChartController.setColor(data.get(outerIndex).getNode(), "select");
+    			innerIndex = outerIndex - gapArray[gapIdx];
+			}
+			else if(gapIdx<gapArray.length-1) {
+				gapIdx++;
+				outerIndex = gapArray[gapIdx];
+				innerIndex = outerIndex - gapArray[gapIdx];
+			}
+			else {
+				setRestColor("done");
+				OverviewChartController.getAnimation().stop();
+			}
+    		counterData.get(2).setValue(gapArray[gapIdx]);
     		isSelected=true;
     	}
-    	else if(outerIndex<data.size()) {
-			if (data.get(innerIndex+gapArray[gapIdx]).getYValue() >= data.get(innerIndex).getYValue()) {	
+    	else if(outerIndex<data.size()){
+   			setRestColor("default");
+			if (data.get(innerIndex+gapArray[gapIdx]).getYValue() >= data.get(innerIndex).getYValue()) {
     			OverviewChartController.setColor(data.get(innerIndex).getNode(), "swap");
     			OverviewChartController.setColor(data.get(innerIndex+gapArray[gapIdx]).getNode(), "select");
     			isSelected=false;
-    			if(outerIndex<data.size()-1) {
-    				outerIndex++;
-        			innerIndex++;
-        			System.out.println("NÖVELTEM");
-    			}
-    			else if(gapIdx<gapArray.length-1) {
-    					System.out.println("GAPCSERE, MINDEN0");
-    					gapIdx++;
-    					outerIndex = gapArray[gapIdx];
-    					innerIndex = 0;
-    					setRestColor();
-    			}
     		}
     		else if(data.get(innerIndex+gapArray[gapIdx]).getYValue() < data.get(innerIndex).getYValue()) {
-    			System.out.println("SWAP");
     			swap(innerIndex+gapArray[gapIdx], innerIndex);
     			counterData.get(1).incValue();
     			OverviewChartController.setColor(data.get(innerIndex).getNode(), "swap");
     			OverviewChartController.setColor(data.get(innerIndex+gapArray[gapIdx]).getNode(), "select");
-    			if (innerIndex-gapArray[gapIdx]>=0 && data.get(innerIndex-gapArray[gapIdx]).getYValue() > data.get(innerIndex).getYValue())
-    				innerIndex=innerIndex-gapArray[gapIdx];
-    			else innerIndex = outerIndex-gapArray[gapIdx];
+    			if (innerIndex-gapArray[gapIdx]>=0) innerIndex = innerIndex-gapArray[gapIdx];
+    			else isSelected=false;
     		}
     		counterData.get(0).incValue();
     	}
+    	else isSelected = false;
     }
 	
-	private void setRestColor() {
+	private void setRestColor(String color) {
 		for (int i = 0; i < data.size(); i++) {
-			OverviewChartController.setColor(data.get(i).getNode(), "default");
+			OverviewChartController.setColor(data.get(i).getNode(), color);
 		}
 	}
 	
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
+		int i,j, temp;
 		System.arraycopy( SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    int swapCounter = 0; //Increment this counter whenever a swap takes place
 	    int moveCounter=0; //Increment this counter whenever a movement takes place
-	    for (int i=0; i < numbers.length-1; i++)
-	    {
-	       int temp = numbers[i+1];
-	       int j;
-	       for(j=i; j>=0; --j) {
-	    	   moveCounter++;
-	    	   if(temp<numbers[j]) {
-	    		   swapCounter++;
-	    		   numbers[j+1] = numbers[j];
-	    	   }
-	    	   else {
-	    		   break;
-	    	   }
-	       }
-	       numbers[j+1] = temp;
+	    for ( int gap : gapArray ) {
+	        i = gap;
+	        while ( i < numbers.length ) {
+	            temp = numbers[i];
+	            j = i-gap;
+	            while ( j >= 0 ) {
+	            	moveCounter++;
+	            	if( numbers[j] > temp ) {
+	            		swapCounter++;
+	            		numbers[j + gap] = numbers[j];
+	            	}
+	            	else break;
+            		j -= gap;
+	            }
+	            numbers[j + gap] = temp;
+	            i++;
+	        }
 	    }
 	    benchmarkData.add(new BenchmarkData("Shell rendezés", moveCounter, swapCounter));
 	};
