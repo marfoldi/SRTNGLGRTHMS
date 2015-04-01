@@ -10,7 +10,6 @@ public class QuickSort extends SortingAlgorithm {
 	private static int lower;
 	private static int upper;
 	private static int pivot;
-	private static boolean pivotSwapped = false;
 	
 	private QuickSort() {
 		init();
@@ -40,9 +39,9 @@ public class QuickSort extends SortingAlgorithm {
     	lower = begin;
     	upper = end;
 		counterData.clear();
-		counterData.add(new CounterData("ÖH", 0));
-		counterData.add(new CounterData("CS", 0));
-		counterData.add(new CounterData("Vezérelem indexe", begin+(end-begin)/2));
+		counterData.add(new CounterData("Öszzehasonlítások", 0));
+		counterData.add(new CounterData("Cserék", 0));
+		counterData.add(new CounterData("Vezérelem-index", begin+(end-begin)/2));
 	}
 	
 	public void step() {
@@ -56,32 +55,23 @@ public class QuickSort extends SortingAlgorithm {
                 upper--;
             }
             counterData.get(0).incValue();
-            if (lower <= upper ) {
+            if (lower <= upper && lower<begin+(end-begin)/2 && upper>begin+(end-begin)/2) {
             	OverviewChartController.setColor(data.get(lower).getNode(), "swap");
             	OverviewChartController.setColor(data.get(upper).getNode(), "swap");
-                if(lower==begin+(end-begin)/2 && !pivotSwapped) {
-                	OverviewChartController.setColor(data.get(upper).getNode(), "select");
-                	counterData.get(2).setValue(upper);
-                	pivotSwapped=true;
-                }
-                else if(upper==begin+(end-begin)/2 && !pivotSwapped){
-                	OverviewChartController.setColor(data.get(lower).getNode(), "select");
-                	counterData.get(2).setValue(lower);
-                	pivotSwapped=true;
-                }
-                else pivotSwapped=false;
                 counterData.get(1).incValue();
                 swap(lower,upper);
-                lower++;
-                upper--;
             }
-        	}
+            else if(lower!=begin+(end-begin)/2){
+            	swap(lower, begin+(end-begin)/2);
+            	lower=begin+(end-begin)/2;
+            }
+        }
         else {
         	if(begin < upper) {
-        		recursiveCall.add(new RecursiveParameter(begin, upper));
+        		recursiveCall.add(new RecursiveParameter(begin, lower));
         	}
         	if(lower < end)  {
-        		recursiveCall.add(new RecursiveParameter(lower, end));
+        		recursiveCall.add(new RecursiveParameter(lower+1, end));
         	}
             if(!recursiveCall.isEmpty()) {
             	RecursiveParameter nextParameters = recursiveCall.remove();
@@ -102,6 +92,7 @@ public class QuickSort extends SortingAlgorithm {
             }
         }
 	}
+	
 	private void setRestColor() {
 		for (int i = 0; i < data.size(); i++) {
 			if(i!=begin+(end-begin)/2) OverviewChartController.setColor(data.get(i).getNode(), "default");

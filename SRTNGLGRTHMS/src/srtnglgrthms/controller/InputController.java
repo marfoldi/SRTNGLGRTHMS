@@ -59,8 +59,6 @@ public class InputController {
 				Stage stage = (Stage) numbersPane.getScene().getWindow();
 				stage.setScene(scene);
 				stage.show();
-				//Line line = new Line(10, 20, 30, 40);
-				//baseLayout.getChildren().add(line);
 				
 			} catch (IOException e) {
 				e.printStackTrace();
