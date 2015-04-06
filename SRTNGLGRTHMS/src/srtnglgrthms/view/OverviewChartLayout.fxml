@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.chart.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewChartController">
+<AnchorPane prefHeight="443.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewChartController">
 	<children>
-		<BarChart fx:id="barChart" layoutX="-100.0" layoutY="-100.0"
-			legendVisible="false" AnchorPane.bottomAnchor="0.0"
-			AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-			AnchorPane.topAnchor="0.0">
+		<BarChart fx:id="barChart" legendVisible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 			<xAxis>
 				<CategoryAxis side="BOTTOM" tickMarkVisible="false" />
 			</xAxis>
 			<yAxis>
-				<NumberAxis lowerBound="0" side="LEFT" tickUnit="10"
-					upperBound="100" />
+				<NumberAxis lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
 			</yAxis>
 		</BarChart>
 	</children>

@@ -21,8 +21,8 @@ public class BubbleSort extends SortingAlgorithm {
 		outerIdx = 0;
 		innerIdx = 1;
 		counterData.clear();
-		counterData.add(new CounterData("Összehasonlítások", 0));
-		counterData.add(new CounterData("Cserék", 0));
+		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Cserék", "0"));
 	}
 
 	@Override
@@ -49,7 +49,6 @@ public class BubbleSort extends SortingAlgorithm {
 		}
 		else {
 			OverviewChartController.setColor(data.get(0).getNode(), "done");
-			OverviewChartController.getAnimation().stop();
 		}
 	}
 

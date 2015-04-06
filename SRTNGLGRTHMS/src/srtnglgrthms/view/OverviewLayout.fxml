@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewController">
    <children>
-      <BorderPane layoutX="125.0" layoutY="50.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+            <SplitPane fx:id="displayPane" dividerPositions="0.5" orientation="VERTICAL" BorderPane.alignment="CENTER">
               <items>
                   <fx:include source="OverviewChartLayout.fxml" />
                 <AnchorPane maxHeight="35.0" minHeight="35.0" minWidth="0.0" prefHeight="30.0" prefWidth="368.0">

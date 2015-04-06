@@ -25,13 +25,13 @@ public class InsertionSort extends SortingAlgorithm{
 		isSelected=false;
 		showSwapped = true;
 		counterData.clear();
-		counterData.add(new CounterData("Összehasonlítások", 0));
-		counterData.add(new CounterData("Mozgatások", 0));
+		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Mozgatások", "0"));
 	}
 
     @Override
 	public void step() {
-    	if(!isSelected) {
+    	if(!isSelected && outerIndex<data.size()) {
     		OverviewChartController.setColor(data.get(outerIndex).getNode(), "select");
     		isSelected=true;
 			innerIndex=outerIndex;

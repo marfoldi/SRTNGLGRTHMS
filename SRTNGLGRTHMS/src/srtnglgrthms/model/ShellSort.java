@@ -24,15 +24,15 @@ public class ShellSort extends SortingAlgorithm{
 		gapIdx = selectGap();
 		outerIndex = gapArray[gapIdx] - 1;
 		innerIndex = outerIndex - gapArray[gapIdx];
-		isSelected=false;
+		isSelected = false;
 		counterData.clear();
-		counterData.add(new CounterData("Összehasonlítások", 0));
-		counterData.add(new CounterData("Mozgatások", 0));
-		counterData.add(new CounterData("Lépésköz", 0));
+		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Mozgatások", "0"));
+		counterData.add(new CounterData("Lépésköz", "0"));
 	}
 	
 	private static int selectGap() {
-		for(int i=0; i<gapArray.length-1; ++i) {
+		for(int i=0; i<gapArray.length; ++i) {
 			if(data.size()>gapArray[i]) return i;
 		}
 		return 0;
@@ -54,9 +54,8 @@ public class ShellSort extends SortingAlgorithm{
 			}
 			else {
 				setRestColor("done");
-				OverviewChartController.getAnimation().stop();
 			}
-    		counterData.get(2).setValue(gapArray[gapIdx]);
+    		counterData.get(2).setValue(Integer.toString(gapArray[gapIdx]));
     		isSelected=true;
     	}
     	else if(outerIndex<data.size()){

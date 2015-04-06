@@ -12,7 +12,7 @@ public class InfoTableController {
 	@FXML
 	private TableColumn<CounterData, String> nameColumn;
 	@FXML
-	private TableColumn<CounterData, Number> valueColumn;
+	private TableColumn<CounterData, String> valueColumn;
 	
 	@FXML
     private void initialize() {

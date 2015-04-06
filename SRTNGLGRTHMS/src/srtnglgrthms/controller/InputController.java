@@ -2,6 +2,8 @@ package srtnglgrthms.controller;
 
 import java.io.IOException;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,11 @@ public class InputController {
 	int size;
 	
 	@FXML
+	public void initialize() {
+		setSizeLimit();
+	}
+	
+	@FXML
 	public void createFields() {
 		 size = Integer.parseInt(sizeField.getText());
 		 for (int i = 0; i < size; ++i) {
@@ -35,6 +42,17 @@ public class InputController {
 	            tf.setMaxWidth(50.0);
 	            numbersPane.add(tf, i, 0);
 	     }
+	}
+	
+	private void setSizeLimit() {
+		sizeField.textProperty().addListener(new ChangeListener<String>() {
+	        @Override
+	        public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
+	            if (Integer.parseInt(sizeField.getText()) > 100) {
+	            	sizeField.setText("100");
+	            }
+	        }
+	    });
 	}
 	
 	@FXML
@@ -55,7 +73,7 @@ public class InputController {
 				loader.setLocation(MainApplication.class.getResource("view/BaseLayout.fxml"));
 				baseLayout = (BorderPane) loader.load();
 				// Show the scene containing the input layout.
-				Scene scene = new Scene(baseLayout, ScreenSize.getWidth()/2, ScreenSize.getHeight()/2);
+				Scene scene = new Scene(baseLayout);
 				Stage stage = (Stage) numbersPane.getScene().getWindow();
 				stage.setScene(scene);
 				stage.show();

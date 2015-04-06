@@ -14,6 +14,8 @@ public class SortingAlgorithmFactory {
 	    	  return QuickSort.getInstance();
 	      case "Shell rendezés":
 	    	  return ShellSort.getInstance();
+	      case "Kupac rendezés":
+	    	  return HeapSort.getInstance();
 	      }
 	      return null;
 	}

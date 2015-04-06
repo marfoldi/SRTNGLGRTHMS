@@ -1,21 +1,19 @@
 package srtnglgrthms.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class CounterData {
 	private StringProperty name;
-	private IntegerProperty value;
+	private StringProperty value;
 
 	public CounterData() {
-		this(null, 0);
+		this(null, null);
 	}
 
-	public CounterData(String name, int value) {
+	public CounterData(String name, String value) {
 		this.name = new SimpleStringProperty(name);
-		this.value = new SimpleIntegerProperty(value);
+		this.value = new SimpleStringProperty(value);
 	}
 
 	public String getName() {
@@ -30,19 +28,19 @@ public class CounterData {
 		return name;
 	}
 
-	public int getValue() {
+	public String getValue() {
 		return value.get();
 	}
 
-	public void setValue(int value) {
+	public void setValue(String value) {
 		this.value.set(value);
 	}
 	
 	public void incValue() {
-		this.value.set(this.value.get()+1);
+		this.value.set(Integer.toString(Integer.parseInt(this.value.get())+1));
 	}
 
-	public IntegerProperty valueProperty() {
+	public StringProperty valueProperty() {
 		return value;
 	}
 

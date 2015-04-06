@@ -6,12 +6,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
 
 public class OverviewController {
 	@FXML
-	public Button stepBtn;
+	private Button stepBtn;
 	@FXML
-	public Button animBtn;
+	private Button animBtn;
+	@FXML
+	public SplitPane displayPane;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -62,6 +65,7 @@ public class OverviewController {
 		}
 		if(isDone) {
 			stepBtn.setText("Újraindítás");
+			OverviewChartController.getAnimation().stop();
 			animBtn.setVisible(false);
 		}
 	}
@@ -70,6 +74,4 @@ public class OverviewController {
 		stepBtn.setText("Léptetés");
 		animBtn.setVisible(true);
 	}
-	
-	
 }

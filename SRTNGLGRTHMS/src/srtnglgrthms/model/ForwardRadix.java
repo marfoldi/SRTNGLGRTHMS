@@ -23,6 +23,9 @@ public class ForwardRadix extends Radix {
 		lower = begin;
 		upper = end;
 		recursiveCall = new LinkedList<>();
+		counterData.clear();
+		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Cserék", "0"));
 	}
 
 	@Override
@@ -33,29 +36,45 @@ public class ForwardRadix extends Radix {
 						fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())).charAt(actualDigit) == '0') ++lower;
 				while(lower <= upper &&
 						fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
+				counterData.get(0).incValue();
 				if (lower <= upper) {
 					OverviewChartController.setColor(data.get(lower).getNode(), "swap");
 					OverviewChartController.setColor(data.get(upper).getNode(), "swap");
+					counterData.get(1).incValue();
 					swap(lower, upper);
 				}
-				else step();
+				else {
+					step();
+				}
 			}
 			else {
 				setBucketColor(begin ,lower);
 				setBucketColor(lower, end+1);
-				if(begin!=lower-1) {
-				recursiveCall.add(new RecursiveParameter(begin, lower-1, actualDigit+1, null));
+				if(begin!=lower-1 && begin<lower-1) {
+					recursiveCall.add(new RecursiveParameter(begin, lower-1, actualDigit+1, null));
 				}
-				if(lower!=end) {
-				recursiveCall.add(new RecursiveParameter(lower, end, actualDigit+1, null));
+				if(lower!=end && lower<end) {
+					recursiveCall.add(new RecursiveParameter(lower, end, actualDigit+1, null));
 				}
-				RecursiveParameter nextParameters = recursiveCall.remove();
-				begin=nextParameters.getBegin();
-				end=nextParameters.getEnd();
-				actualDigit=nextParameters.getDigit();
-				lower=begin;
-				upper=end;
+				if(!recursiveCall.isEmpty()) {
+					RecursiveParameter nextParameters = recursiveCall.remove();
+					begin=nextParameters.getBegin();
+					end=nextParameters.getEnd();
+					actualDigit=nextParameters.getDigit();
+					lower=begin;
+					upper=end;
+				}
+				else {
+					for (int i = 0; i < data.size(); i++) {
+	            		OverviewChartController.setColor(data.get(i).getNode(), "done");;
+	        		}
+				}
 			}
+		}
+		else {
+			for (int i = 0; i < data.size(); i++) {
+        		OverviewChartController.setColor(data.get(i).getNode(), "done");
+    		}
 		}
 	}
 	
