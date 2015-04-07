@@ -16,6 +16,8 @@ public class SortingAlgorithmFactory {
 	    	  return ShellSort.getInstance();
 	      case "Kupac rendezés":
 	    	  return HeapSort.getInstance();
+	      case "Versenyrendezés":
+	    	  return TournamentSort.getInstance();
 	      }
 	      return null;
 	}

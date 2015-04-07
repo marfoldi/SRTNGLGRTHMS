@@ -44,6 +44,7 @@ public class OverviewListController {
 									((AnchorPane) parentController.displayPane
 											.getItems().get(0)).getChildren()
 											.setAll(loader.load());
+									OverviewGraphController.reloadGraph();
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -61,9 +62,9 @@ public class OverviewListController {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
-							SortingAlgorithmFactory.getAlgorithm(currentValue)
-									.setDefaults();
 						}
+						SortingAlgorithmFactory.getAlgorithm(currentValue)
+						.setDefaults();
 					}
 				});
 	}

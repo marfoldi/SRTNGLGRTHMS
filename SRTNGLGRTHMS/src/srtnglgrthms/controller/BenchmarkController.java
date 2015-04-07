@@ -20,6 +20,6 @@ public class BenchmarkController {
 		new Thread(BubbleSort.sort).start();
 		new Thread(InsertionSort.sort).start();
 		new Thread(ShellSort.sort).start();
-		new Thread(HeapSort.sort).start();
+		//new Thread(HeapSort.sort).start();
 	}
 }

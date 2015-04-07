@@ -2,7 +2,7 @@ package srtnglgrthms.model;
 
 import java.util.Arrays;
 
-public abstract class Radix extends SortingAlgorithm {
+public abstract class RadixAlgorithm extends SortingAlgorithm {
 	protected static int actualDigit;
 	protected static int begin = 0;
 	protected static int end;

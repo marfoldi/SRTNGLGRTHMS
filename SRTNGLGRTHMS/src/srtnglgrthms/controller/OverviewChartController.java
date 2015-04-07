@@ -1,6 +1,6 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.Radix;
+import srtnglgrthms.model.RadixAlgorithm;
 import srtnglgrthms.model.SortingAlgorithm;
 import srtnglgrthms.model.SortingAlgorithmFactory;
 import javafx.animation.Animation;
@@ -106,7 +106,7 @@ public class OverviewChartController implements ChartController {
 				&& (OverviewListController.getSelectedItem().equals(
 						"Radix \"elõre\"") || OverviewListController
 						.getSelectedItem().equals("Radix \"vissza\""))) {
-			barValue = new Text(Radix.fillWithZeros(Integer.toBinaryString(data
+			barValue = new Text(RadixAlgorithm.fillWithZeros(Integer.toBinaryString(data
 					.getYValue())));
 		} else
 			barValue = new Text(data.getYValue().toString());
@@ -129,7 +129,7 @@ public class OverviewChartController implements ChartController {
 						&& (OverviewListController.getSelectedItem().equals(
 								"Radix \"elõre\"") || OverviewListController
 								.getSelectedItem().equals("Radix \"vissza\""))) {
-					barValue.setText(Radix.fillWithZeros(Integer
+					barValue.setText(RadixAlgorithm.fillWithZeros(Integer
 							.toBinaryString(data.getYValue())));
 				} else
 					barValue.setText(data.getYValue().toString());

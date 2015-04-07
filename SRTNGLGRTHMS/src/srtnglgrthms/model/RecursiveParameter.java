@@ -1,35 +1,41 @@
 package srtnglgrthms.model;
 
 public class RecursiveParameter {
-	private int begin;
-	private int end;
-	private int digit;
-	private String dir;
+	private double firstParameter;
+	private double secondParameter;
+	private double thirdParameter;
+	private String stringParameter;
+	
+	public RecursiveParameter(double firstParameter, double secondParameter,
+			double thirdParameter, String stringParameter) {
+		this.firstParameter = firstParameter;
+		this.secondParameter = secondParameter;
+		this.thirdParameter = thirdParameter;
+		this.stringParameter = stringParameter;
+	}
 
-	public RecursiveParameter(int begin, int end, int digit, String dir) {
-		this.begin = begin;
-		this.end = end;
-		this.digit = digit;
-		this.dir = dir;
+	public RecursiveParameter(double firstParameter, double secondParameter) {
+		this(firstParameter, secondParameter, 0, null);
 	}
 	
-	public RecursiveParameter(int begin, int end) {
-		this(begin, end, 0, null);
+	public RecursiveParameter(double firstParameter, double secondParameter,
+			double thirdParameter) {
+		this(firstParameter, secondParameter, thirdParameter, null);
 	}
 
-	public int getBegin() {
-		return begin;
+	public double getFirstParameter() {
+		return firstParameter;
 	}
 
-	public int getEnd() {
-		return end;
+	public double getSecondParameter() {
+		return secondParameter;
 	}
 
-	public int getDigit() {
-		return digit;
+	public double getThirdParameter() {
+		return thirdParameter;
 	}
 
-	public String getDirection() {
-		return dir;
+	public String getStringParameter() {
+		return stringParameter;
 	}
 }

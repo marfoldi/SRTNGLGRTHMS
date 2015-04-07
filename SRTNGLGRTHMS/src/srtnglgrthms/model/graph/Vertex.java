@@ -11,8 +11,7 @@ import javafx.scene.shape.Circle;
 
 public class Vertex extends Group {
 	
-	private final Circle circle;
-	
+	private final Circle circle;	
 	private int number;
 	
 	public Vertex(double centerX, double centerY, double radius, Paint fill, int number) {
@@ -22,6 +21,7 @@ public class Vertex extends Group {
 	
 	public Vertex(double centerX, double centerY, double radius, Paint fill) {
 		circle = new Circle(centerX, centerY, radius, fill);
+		this.number = -1;
 	}
 	
 	public double getCenterX() {
@@ -41,13 +41,15 @@ public class Vertex extends Group {
 	}
 	
 	public Label graphicRepresentaion() {
-		Label label = new Label(String.valueOf(number), circle);
-
+		Label label;
+		if(this.number!=-1) {
+		label = new Label(String.valueOf(number), circle);
+		}
+		else label = new Label("", circle);
 		label.setContentDisplay(ContentDisplay.CENTER);
 		label.layoutXProperty().bind(Bindings.subtract(circle.centerXProperty(), circle.getRadius()));
-		label.layoutYProperty().bind(Bindings.subtract(circle.centerYProperty(), circle.getRadius()));
-		
-		return label ;
+		label.layoutYProperty().bind(Bindings.subtract(circle.centerYProperty(), circle.getRadius()));	
+		return label;
 	}
 
 	public DoubleProperty centerXProperty() {

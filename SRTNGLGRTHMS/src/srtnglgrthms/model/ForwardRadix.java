@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
 
-public class ForwardRadix extends Radix {
+public class ForwardRadix extends RadixAlgorithm {
 	private ForwardRadix() {}
 	
 	private static class SortHolder {
@@ -58,9 +58,9 @@ public class ForwardRadix extends Radix {
 				}
 				if(!recursiveCall.isEmpty()) {
 					RecursiveParameter nextParameters = recursiveCall.remove();
-					begin=nextParameters.getBegin();
-					end=nextParameters.getEnd();
-					actualDigit=nextParameters.getDigit();
+					begin=(int) nextParameters.getFirstParameter();
+					end=(int) nextParameters.getSecondParameter();
+					actualDigit=(int) nextParameters.getThirdParameter();
 					lower=begin;
 					upper=end;
 				}

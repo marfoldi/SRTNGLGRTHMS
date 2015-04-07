@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 
-public class BackwardRadix extends Radix{	
+public class BackwardRadix extends RadixAlgorithm{	
 	private static int i = 0;
 	private static int actualSeries = 0;
 	private static String direction;
@@ -81,10 +81,10 @@ public class BackwardRadix extends Radix{
 				}
 				if(!recursiveCall.isEmpty()) {
 				RecursiveParameter nextParameters = recursiveCall.remove();
-				begin=nextParameters.getBegin();
-				end=nextParameters.getEnd();
-				actualDigit=nextParameters.getDigit();
-				direction=nextParameters.getDirection();
+				begin=(int) nextParameters.getFirstParameter();
+				end=(int) nextParameters.getSecondParameter();
+				actualDigit=(int) nextParameters.getThirdParameter();
+				direction=nextParameters.getStringParameter();
 				if(direction == "forward") i=begin;
 				else i=end;
 				if(direction == "forward") {

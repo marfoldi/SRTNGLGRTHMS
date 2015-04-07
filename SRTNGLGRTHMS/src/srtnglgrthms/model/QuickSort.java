@@ -96,8 +96,8 @@ public class QuickSort extends SortingAlgorithm {
         	}
             if(!recursiveCall.isEmpty()) {
             	RecursiveParameter nextParameters = recursiveCall.remove();
-            	begin=nextParameters.getBegin();
-    			end=nextParameters.getEnd();
+            	begin=(int) nextParameters.getFirstParameter();
+    			end=(int) nextParameters.getSecondParameter();
     			lower=begin;
     			upper=end;
     			pivot = data.get(begin+(end-begin)/2).getYValue();
