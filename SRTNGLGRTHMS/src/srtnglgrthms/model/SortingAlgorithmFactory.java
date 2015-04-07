@@ -10,6 +10,8 @@ public class SortingAlgorithmFactory {
 	    	  return InsertionSort.getInstance();
 	      case "Radix \"elõre\"":
 	    	  return ForwardRadix.getInstance();
+	      case "Radix \"vissza\"":
+	    	  return BackwardRadix.getInstance();
 	      case "Gyorsrendezés":
 	    	  return QuickSort.getInstance();
 	      case "Shell rendezés":

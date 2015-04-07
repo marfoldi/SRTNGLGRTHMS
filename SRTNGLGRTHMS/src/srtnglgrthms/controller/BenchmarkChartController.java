@@ -25,6 +25,7 @@ public class BenchmarkChartController implements ChartController{
 		initChart();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initChart() {
 		barChart.getData().addAll(compareCounter, swapCounter);
@@ -55,7 +56,7 @@ public class BenchmarkChartController implements ChartController{
 	}
 
 	@Override
-	public void displayLegend(Data<String, Integer> data) {
+	public void displayLegend(Data<String, Number> data) {
 		// TODO Auto-generated method stub
 	}
 	

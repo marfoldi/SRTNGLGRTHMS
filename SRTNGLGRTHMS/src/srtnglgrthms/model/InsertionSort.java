@@ -43,7 +43,7 @@ public class InsertionSort extends SortingAlgorithm{
 			}
     	}
     	else if(innerIndex>0) {
-    		if (data.get(innerIndex-1).getYValue() <= data.get(innerIndex).getYValue()) {
+    		if (data.get(innerIndex-1).getYValue().intValue() <= data.get(innerIndex).getYValue().intValue()) {
     			if(showSwapped) {
         			OverviewChartController.setColor(data.get(innerIndex).getNode(), "select");
         			OverviewChartController.setColor(data.get(innerIndex-1).getNode(), "swap");
@@ -60,7 +60,7 @@ public class InsertionSort extends SortingAlgorithm{
     			isSelected=false;
     			showSwapped = true;
     		}
-    		else if(data.get(innerIndex-1).getYValue() > data.get(innerIndex).getYValue()) {
+    		else if(data.get(innerIndex-1).getYValue().intValue() > data.get(innerIndex).getYValue().intValue()) {
     			swap(innerIndex-1, innerIndex);
     			counterData.get(1).incValue();
     			OverviewChartController.setColor(data.get(innerIndex).getNode(), "swap");

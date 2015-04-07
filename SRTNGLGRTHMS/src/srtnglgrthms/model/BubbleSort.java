@@ -34,7 +34,7 @@ public class BubbleSort extends SortingAlgorithm {
 			OverviewChartController.setColor(data.get(innerIdx-1).getNode(), "swap");
 			OverviewChartController.setColor(data.get(innerIdx).getNode(), "swap");
 			counterData.get(0).incValue();
-			if (data.get(innerIdx - 1).getYValue() > data.get(innerIdx).getYValue()) {
+			if (data.get(innerIdx - 1).getYValue().intValue() > data.get(innerIdx).getYValue().intValue()) {
 				swap(innerIdx - 1, innerIdx);
 				counterData.get(1).incValue();
 			}

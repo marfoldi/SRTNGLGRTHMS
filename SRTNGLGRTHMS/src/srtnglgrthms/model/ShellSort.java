@@ -60,12 +60,12 @@ public class ShellSort extends SortingAlgorithm{
     	}
     	else if(outerIndex<data.size()){
    			setRestColor("default");
-			if (data.get(innerIndex+gapArray[gapIdx]).getYValue() >= data.get(innerIndex).getYValue()) {
+			if (data.get(innerIndex+gapArray[gapIdx]).getYValue().intValue() >= data.get(innerIndex).getYValue().intValue()) {
     			OverviewChartController.setColor(data.get(innerIndex).getNode(), "swap");
     			OverviewChartController.setColor(data.get(innerIndex+gapArray[gapIdx]).getNode(), "select");
     			isSelected=false;
     		}
-    		else if(data.get(innerIndex+gapArray[gapIdx]).getYValue() < data.get(innerIndex).getYValue()) {
+    		else if(data.get(innerIndex+gapArray[gapIdx]).getYValue().intValue() < data.get(innerIndex).getYValue().intValue()) {
     			swap(innerIndex+gapArray[gapIdx], innerIndex);
     			counterData.get(1).incValue();
     			OverviewChartController.setColor(data.get(innerIndex).getNode(), "swap");

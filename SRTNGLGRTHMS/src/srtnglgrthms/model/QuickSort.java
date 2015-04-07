@@ -27,7 +27,7 @@ public class QuickSort extends SortingAlgorithm {
     private static void init() {
     	begin = 0;
     	end = SortingAlgorithm.getNumbers().length-1;
-    	pivot = data.get(begin+(end-begin)/2).getYValue();
+    	pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
     	pivotSwapped = false;
     	lower = begin;
     	upper = end;
@@ -37,7 +37,7 @@ public class QuickSort extends SortingAlgorithm {
     public void setDefaults() {
     	begin = 0;
     	end = SortingAlgorithm.getNumbers().length-1;
-    	pivot = data.get(begin+(end-begin)/2).getYValue();
+    	pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
     	pivotSwapped = false;
     	lower = begin;
     	upper = end;
@@ -51,10 +51,10 @@ public class QuickSort extends SortingAlgorithm {
 		OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
 		setRestColor();
         if (lower <= upper && !pivotSwapped) {
-            while (data.get(lower).getYValue() < pivot) {
+            while (data.get(lower).getYValue().intValue() < pivot) {
                 lower++;
             }
-            while (data.get(upper).getYValue() > pivot) {
+            while (data.get(upper).getYValue().intValue() > pivot) {
                 upper--;
             }
             if(lower!=upper) counterData.get(0).incValue();
@@ -100,7 +100,7 @@ public class QuickSort extends SortingAlgorithm {
     			end=(int) nextParameters.getSecondParameter();
     			lower=begin;
     			upper=end;
-    			pivot = data.get(begin+(end-begin)/2).getYValue();
+    			pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
     			pivotSwapped = false;
     			counterData.get(2).setValue("t["+ Integer.toString(begin+(end-begin)/2)+ "]");
     			OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");

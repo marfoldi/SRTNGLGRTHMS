@@ -33,9 +33,9 @@ public class ForwardRadix extends RadixAlgorithm {
 		if(actualDigit < getMaxDigit()) {
 			if(lower<=upper) {
 				while(lower <= upper &&
-						fillWithZeros(Integer.toBinaryString(data.get(lower).getYValue())).charAt(actualDigit) == '0') ++lower;
+						fillWithZeros(Integer.toBinaryString((int) data.get(lower).getYValue())).charAt(actualDigit) == '0') ++lower;
 				while(lower <= upper &&
-						fillWithZeros(Integer.toBinaryString(data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
+						fillWithZeros(Integer.toBinaryString((int) data.get(upper).getYValue())).charAt(actualDigit) == '1') --upper;
 				counterData.get(0).incValue();
 				if (lower <= upper) {
 					OverviewChartController.setColor(data.get(lower).getNode(), "swap");

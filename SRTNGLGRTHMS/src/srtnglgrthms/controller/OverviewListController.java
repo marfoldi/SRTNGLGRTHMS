@@ -50,6 +50,19 @@ public class OverviewListController {
 									e.printStackTrace();
 								}
 							}
+							if(newValue.equals("Radix \"vissza\"")) {
+								FXMLLoader loader = new FXMLLoader();
+								loader.setLocation(MainApplication.class
+										.getResource("view/OverViewDoubleChartLayout.fxml"));
+								try {
+									((AnchorPane) parentController.displayPane
+											.getItems().get(0)).getChildren()
+											.setAll(loader.load());
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}
 						} else {
 							FXMLLoader loader = new FXMLLoader();
 							loader.setLocation(MainApplication.class
@@ -73,7 +86,7 @@ public class OverviewListController {
 		ObservableList<String> algorithms = FXCollections.observableArrayList(
 				"Buborékrendezés", "Beszúrórendezés", "Shell rendezés",
 				"Gyorsrendezés", "Kupac rendezés", "Versenyrendezés",
-				"Radix \"elõre\"");
+				"Radix \"elõre\"", "Radix \"vissza\"");
 		algorithmList.setItems(algorithms);
 	}
 

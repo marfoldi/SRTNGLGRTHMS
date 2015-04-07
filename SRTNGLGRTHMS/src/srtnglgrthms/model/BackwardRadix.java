@@ -2,18 +2,19 @@ package srtnglgrthms.model;
 
 import java.util.LinkedList;
 
+import srtnglgrthms.controller.OverviewDoubleChartController;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
 
 public class BackwardRadix extends RadixAlgorithm{	
 	private static int i = 0;
 	private static int actualSeries = 0;
 	private static String direction;
-	private static ObservableList<XYChart.Data<String,Integer>> data2;
+	private static ObservableList<Data<String, Number>> listOne;
+	private static ObservableList<Data<String, Number>> listTwo;
 	
-	private BackwardRadix() {
-		init();
-	}
+	private BackwardRadix() {}
 	
 	private static class SortHolder {
         private static final BackwardRadix INSTANCE = new BackwardRadix();
@@ -23,7 +24,10 @@ public class BackwardRadix extends RadixAlgorithm{
         return SortHolder.INSTANCE;
     }
     
-    private static void init() {
+    @Override
+    public void setDefaults() {
+    	listOne = OverviewDoubleChartController.getListOne();
+    	listTwo = OverviewDoubleChartController.getListTwo();
 		actualDigit = getMaxDigit()-1;
 		begin = 0;
 		end = SortingAlgorithm.getNumbers().length-1;
@@ -33,41 +37,32 @@ public class BackwardRadix extends RadixAlgorithm{
 		direction = "forward";
     }
 	
-	private static boolean checkEmpty(ObservableList<XYChart.Data<String,Integer>> data){
-		for(int i=0; i<SortingAlgorithm.getNumbers().length; ++i) {
-			if(data.get(i).getYValue()!=0) {
-				return false;
-			}
-		}
-		return true;
-	}
-	
 	@Override
 	public void step() {
 		if(actualDigit >= 0) {
 			//BEGIN END csere van ha visszafelé megy, tehát nem megy bele az if-be...
 			if(lower<=upper && i<=end && i>=begin && begin<=end) {
 				if(actualSeries%2==0) {
-					if(fillWithZeros(Integer.toBinaryString(data.get(i).getYValue())).charAt(actualDigit) == '0') {
-						data2.get(lower).setYValue(data.get(i).getYValue());
+					if(fillWithZeros(Integer.toBinaryString((int) listOne.get(i).getYValue())).charAt(actualDigit) == '0') {
+						listTwo.get(lower).setYValue((Integer) listOne.get(i).getYValue());
 						lower++;
 					}
-					else if (fillWithZeros(Integer.toBinaryString(data.get(i).getYValue())).charAt(actualDigit) == '1') {
-						data2.get(upper).setYValue(data.get(i).getYValue());
+					else if (fillWithZeros(Integer.toBinaryString((int) listOne.get(i).getYValue())).charAt(actualDigit) == '1') {
+						listTwo.get(upper).setYValue((Integer) listOne.get(i).getYValue());
 						upper--;
 					}
-					data.get(i).setYValue(0);
+					listOne.get(i).setYValue(0);
 				}
 				else {
-					if(fillWithZeros(Integer.toBinaryString(data2.get(i).getYValue())).charAt(actualDigit) == '0') {
-						data.get(lower).setYValue(data2.get(i).getYValue());
+					if(fillWithZeros(Integer.toBinaryString((int) listTwo.get(i).getYValue())).charAt(actualDigit) == '0') {
+						listOne.get(lower).setYValue(listTwo.get(i).getYValue());
 						lower++;
 					}
-					if (fillWithZeros(Integer.toBinaryString(data2.get(i).getYValue())).charAt(actualDigit) == '1') {
-						data.get(upper).setYValue(data2.get(i).getYValue());
+					if (fillWithZeros(Integer.toBinaryString((int) listTwo.get(i).getYValue())).charAt(actualDigit) == '1') {
+						listOne.get(upper).setYValue(listTwo.get(i).getYValue());
 						upper--;
 					}
-					data2.get(i).setYValue(0);
+					listTwo.get(i).setYValue(0);
 				}
 				if(direction == "forward") i++;
 				else i--;
@@ -95,33 +90,9 @@ public class BackwardRadix extends RadixAlgorithm{
 					upper = end;
 					if(direction == "forward") i=begin;
 					else i=end;
-					/*for(int i=0; i<data.size(); ++i) {
-						System.out.print(SortingAlgorithm.getNumbers()[i] + " ");
-					}
-					System.out.println();
-					for(int i=0; i<data.size(); ++i) {
-						System.out.print(data.get(i).getYValue() + " ");
-					}
-					System.out.println();
-					for(int i=0; i<data.size(); ++i) {
-						System.out.print(data2.get(i).getYValue() + " ");
-					}
-					System.out.println();*/
 				}
-				//System.out.println(actualDigit);
 			}
 			}
 		}
-	}
-	
-	public static void setData2(ObservableList<XYChart.Data<String,Integer>> data)
-	{
-		BackwardRadix.data2=data;
-	}
-
-	@Override
-	public void setDefaults() {
-		// TODO Auto-generated method stub
-		
 	}
 }

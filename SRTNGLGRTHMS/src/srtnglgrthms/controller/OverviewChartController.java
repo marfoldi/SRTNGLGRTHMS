@@ -16,17 +16,23 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class OverviewChartController implements ChartController {
 	@FXML
-	private BarChart<String, Integer> barChart;
+	private CategoryAxis yAxis = new CategoryAxis();
 	@FXML
+	private NumberAxis xAxis = new NumberAxis();
+	@FXML
+	private BarChart<String, Number> barChart = new BarChart<String,Number>(yAxis,xAxis);
 	private static OverviewController parentController;
-	private static Series<String, Integer> series;
+	private static Series<String, Number> series;
 	private static Timeline animation;
 
 	@FXML
@@ -42,7 +48,7 @@ public class OverviewChartController implements ChartController {
 	public void initChart() {
 		int[] numbers = SortingAlgorithm.getNumbers();
 		for (int i = 0; i < numbers.length; ++i) {
-			final XYChart.Data<String, Integer> data = new XYChart.Data<>("t["
+			final Data<String, Number> data = new XYChart.Data<>("t["
 					+ i + "]", numbers[i]);
 			data.nodeProperty().addListener(new ChangeListener<Node>() {
 				public void changed(ObservableValue<? extends Node> ov,
@@ -99,14 +105,14 @@ public class OverviewChartController implements ChartController {
 	}
 
 	@Override
-	public void displayLegend(XYChart.Data<String, Integer> data) {
+	public void displayLegend(Data<String, Number> data) {
 		final Node node = data.getNode();
 		Text barValue;
 		if (OverviewListController.getSelectedItem() != null
 				&& (OverviewListController.getSelectedItem().equals(
 						"Radix \"elõre\"") || OverviewListController
 						.getSelectedItem().equals("Radix \"vissza\""))) {
-			barValue = new Text(RadixAlgorithm.fillWithZeros(Integer.toBinaryString(data
+			barValue = new Text(RadixAlgorithm.fillWithZeros(Integer.toBinaryString((int) data
 					.getYValue())));
 		} else
 			barValue = new Text(data.getYValue().toString());
@@ -130,7 +136,7 @@ public class OverviewChartController implements ChartController {
 								"Radix \"elõre\"") || OverviewListController
 								.getSelectedItem().equals("Radix \"vissza\""))) {
 					barValue.setText(RadixAlgorithm.fillWithZeros(Integer
-							.toBinaryString(data.getYValue())));
+							.toBinaryString((int) data.getYValue())));
 				} else
 					barValue.setText(data.getYValue().toString());
 			}
@@ -155,11 +161,19 @@ public class OverviewChartController implements ChartController {
 		OverviewChartController.parentController = parentController;
 	}
 
-	public static Series<String, Integer> getSeries() {
+	public static Series<String, Number> getSeries() {
 		return series;
 	}
 
 	public static Timeline getAnimation() {
 		return animation;
+	}
+	
+	public BarChart<String, Number> getBarChart() {
+		return barChart;
+	}
+	
+	public void setBarChart(BarChart<String, Number> barChart) {
+		this.barChart = barChart;
 	}
 }

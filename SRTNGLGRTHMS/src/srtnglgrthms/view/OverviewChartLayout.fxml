@@ -9,10 +9,10 @@
 	<children>
 		<BarChart fx:id="barChart" legendVisible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 			<xAxis>
-				<CategoryAxis side="BOTTOM" tickMarkVisible="false" />
+				<CategoryAxis fx:id="yAxis" side="BOTTOM" tickMarkVisible="false" />
 			</xAxis>
 			<yAxis>
-				<NumberAxis lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
+				<NumberAxis fx:id="xAxis" lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
 			</yAxis>
 		</BarChart>
 	</children>
