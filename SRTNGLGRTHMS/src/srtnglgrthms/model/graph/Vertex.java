@@ -21,7 +21,7 @@ public class Vertex extends Group {
 	
 	public Vertex(double centerX, double centerY, double radius, Paint fill) {
 		circle = new Circle(centerX, centerY, radius, fill);
-		this.number = -1;
+		this.number = -2;
 	}
 	
 	public double getCenterX() {
@@ -42,7 +42,7 @@ public class Vertex extends Group {
 	
 	public Label graphicRepresentaion() {
 		Label label;
-		if(this.number!=-1) {
+		if(this.number!=-2) {
 		label = new Label(String.valueOf(number), circle);
 		}
 		else label = new Label("", circle);

@@ -36,7 +36,7 @@ public class TournamentSort extends SortingAlgorithm implements GraphAlgorithm {
 
 	@Override
 	public void setDefaultGraph() {
-		int[] numbers = SortingAlgorithm.getNumbers();
+		int[] numbers = checkLength(SortingAlgorithm.getNumbers());
 		OverviewGraphController.setVertices(new Vertex[numbers.length*2-1]);
 		Vertex[] vertices = OverviewGraphController.getVertices();
 		vertices[0] = new Vertex(400, 20, 15, Color.valueOf("#f3622d"));
@@ -68,5 +68,20 @@ public class TournamentSort extends SortingAlgorithm implements GraphAlgorithm {
 				graph.bindVertexes(vertices[i], vertices[2*i+2]);
 			}
 		}
+	}
+	
+	@Override
+	public int[] checkLength(int[] numbers) {
+		int length = 1;
+		int power = (int) Math.ceil(Math.log(numbers.length)/Math.log(2));
+		for(int i=0; i<power; ++i) length*=2;
+		if(length>16) length = 16;
+		int[] checkedArray = new int[length];
+		for(int i=numbers.length; i<length; ++i) {
+			checkedArray[i] = -1;
+		}
+		if(length>numbers.length) System.arraycopy(numbers, 0, checkedArray, 0, length-(length-numbers.length));
+		else System.arraycopy(numbers, 0, checkedArray, 0, length);
+		return checkedArray;
 	}
 }
