@@ -1,8 +1,10 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
+import srtnglgrthms.model.CounterData;
+import srtnglgrthms.model.RecursiveParameter;
 
 public class ForwardRadix extends RadixAlgorithm {
 	private ForwardRadix() {}
@@ -19,7 +21,7 @@ public class ForwardRadix extends RadixAlgorithm {
 	public void setDefaults() {
 		actualDigit = 0;
 		begin = 0;
-		end = SortingAlgorithm.getNumbers().length-1;
+		end = numbers.length-1;
 		lower = begin;
 		upper = end;
 		recursiveCall = new LinkedList<>();

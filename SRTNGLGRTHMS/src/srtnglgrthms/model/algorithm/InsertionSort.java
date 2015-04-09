@@ -1,9 +1,11 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import srtnglgrthms.controller.OverviewChartController;
+import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.CounterData;
 
 
-public class InsertionSort extends SortingAlgorithm{
+public class InsertionSort extends ChartAlgorithm{
 	private static int outerIndex = 1;
 	private static int innerIndex = outerIndex;
 	private static boolean isSelected = false;
@@ -83,7 +85,7 @@ public class InsertionSort extends SortingAlgorithm{
 	
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
-		System.arraycopy( SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
+		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    int swapCounter = 0; //Increment this counter whenever a swap takes place
 	    int moveCounter=0; //Increment this counter whenever a movement takes place
 	    for (int i=0; i < numbers.length-1; i++)

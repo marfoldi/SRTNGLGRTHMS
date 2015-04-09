@@ -1,7 +1,7 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.SortingAlgorithm;
 import srtnglgrthms.model.SortingAlgorithmFactory;
+import srtnglgrthms.model.algorithm.ChartAlgorithm;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -57,8 +57,8 @@ public class OverviewController {
 	
 	protected void checkButtons() {
 		boolean isDone = true;
-		for (int i = 0; i < SortingAlgorithm.getData().size(); i++) {
-			if(!(SortingAlgorithm.getData().get(i).getNode().getStyle().contains("-fx-bar-fill: #8C2D46;"))) {
+		for (int i = 0; i < ChartAlgorithm.getData().size(); i++) {
+			if(!(ChartAlgorithm.getData().get(i).getNode().getStyle().contains("-fx-bar-fill: #8C2D46;"))) {
 				isDone = false;
 				break;
 			}

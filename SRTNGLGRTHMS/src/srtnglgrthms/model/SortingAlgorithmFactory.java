@@ -1,5 +1,15 @@
 package srtnglgrthms.model;
 
+import srtnglgrthms.model.algorithm.BackwardRadix;
+import srtnglgrthms.model.algorithm.BubbleSort;
+import srtnglgrthms.model.algorithm.ForwardRadix;
+import srtnglgrthms.model.algorithm.HeapSort;
+import srtnglgrthms.model.algorithm.InsertionSort;
+import srtnglgrthms.model.algorithm.QuickSort;
+import srtnglgrthms.model.algorithm.ShellSort;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
+import srtnglgrthms.model.algorithm.TournamentSort;
+
 
 public class SortingAlgorithmFactory {
 	public static SortingAlgorithm getAlgorithm(String algorithmName){

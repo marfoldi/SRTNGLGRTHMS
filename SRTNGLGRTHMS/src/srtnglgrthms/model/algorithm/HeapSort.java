@@ -1,12 +1,12 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
-import javafx.scene.paint.Color;
 import srtnglgrthms.controller.OverviewGraphController;
+import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
 
-public class HeapSort extends SortingAlgorithm implements GraphAlgorithm {
+public class HeapSort extends GraphAlgorithm {
 	
 	private HeapSort() {}
 	
@@ -26,15 +26,14 @@ public class HeapSort extends SortingAlgorithm implements GraphAlgorithm {
 	
 	@Override
 	public void step() {
-			System.out.println("HI");
 	}
 
 	@Override
 	public void setDefaultGraph() {
-		int[] numbers = checkLength(SortingAlgorithm.getNumbers());
-		OverviewGraphController.setVertices(new Vertex[numbers.length]);
+		checkedArray = checkLength(numbers);
+		OverviewGraphController.setVertices(new Vertex[checkedArray.length]);
 		Vertex[] vertices = OverviewGraphController.getVertices();
-		vertices[0] = new Vertex(400, 20, 15, Color.valueOf("#f3622d"), numbers[0]);
+		vertices[0] = new Vertex(400, 20, 15, checkedArray[0]);
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
 		for(int i=1; i<vertices.length-1; i+=2) {
 			if(!recursiveCall.isEmpty()) {
@@ -42,8 +41,8 @@ public class HeapSort extends SortingAlgorithm implements GraphAlgorithm {
             	double x = nextParameters.getFirstParameter();
     			double y = nextParameters.getSecondParameter();
     			double delta = nextParameters.getThirdParameter();
-				vertices[i] = new Vertex(x-200*delta, y+100, 15, Color.valueOf("#f3622d"), numbers[i]);
-				vertices[i+1] = new Vertex(x+200*delta, y+100, 15, Color.valueOf("#f3622d"), numbers[i+1]);
+				vertices[i] = new Vertex(x-200*delta, y+100, 15, checkedArray[i]);
+				vertices[i+1] = new Vertex(x+200*delta, y+100, 15, checkedArray[i+1]);
 				recursiveCall.add(new RecursiveParameter(x-200*delta, y+100, delta*0.5));
 				recursiveCall.add(new RecursiveParameter(x+200*delta, y+100, delta*0.5));
 			}
@@ -53,25 +52,17 @@ public class HeapSort extends SortingAlgorithm implements GraphAlgorithm {
         	double x = nextParameters.getFirstParameter();
 			double y = nextParameters.getSecondParameter();
 			double delta = nextParameters.getThirdParameter();
-			vertices[vertices.length-1] = new Vertex(x-200*delta, y+100, 15, Color.valueOf("#f3622d"), numbers[vertices.length-1]);
+			vertices[vertices.length-1] = new Vertex(x-200*delta, y+100, 15, checkedArray[vertices.length-1]);
 			graph.bindVertexes(vertices[(vertices.length-1)/2], vertices[vertices.length-1]);
 		}
-		for(Vertex vertex : vertices) {
-			graph.addVertex(vertex);
-		}
-		for(int i=0; i<vertices.length-1; ++i) {
-			if(2*i+1<vertices.length-1) {
-				graph.bindVertexes(vertices[i], vertices[2*i+1]);
-				graph.bindVertexes(vertices[i], vertices[2*i+2]);
-			}
-		}
+		OverviewGraphController.addVertices();
 	}
 
 	@Override
 	public int[] checkLength(int[] numbers) {
 		if(numbers.length>31) {
 			int[] checkedArray = new int[31];
-			System.arraycopy(numbers, 0, checkedArray, 0, 31);
+			System.arraycopy(numbers, 0, checkedArray, 0, 30);
 			return checkedArray;
 		}
 		else return numbers;

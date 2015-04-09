@@ -14,8 +14,19 @@ public class OverviewGraphController {
 	@FXML
 	private void initialize() {
 		reloadGraph();
-		initGraph();
 		pane.getChildren().add(graph);
+	}
+	
+	public static void addVertices() {
+		for(Vertex vertex : vertices) {
+			graph.addVertex(vertex);
+		}
+		for(int i=0; i<vertices.length-1; ++i) {
+			if(2*i+1<vertices.length-1) {
+				graph.bindVertexes(vertices[i], vertices[2*i+1]);
+				graph.bindVertexes(vertices[i], vertices[2*i+2]);
+			}
+		}
 	}
 	
 	public static void reloadGraph() {
@@ -32,8 +43,5 @@ public class OverviewGraphController {
 	
 	public static Vertex[] getVertices() {
 		return vertices;
-	}
-	
-	private void initGraph() {
 	}
 }

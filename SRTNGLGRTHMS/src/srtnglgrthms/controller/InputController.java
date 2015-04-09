@@ -15,7 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import srtnglgrthms.MainApplication;
-import srtnglgrthms.model.SortingAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 public class InputController {
 	@FXML

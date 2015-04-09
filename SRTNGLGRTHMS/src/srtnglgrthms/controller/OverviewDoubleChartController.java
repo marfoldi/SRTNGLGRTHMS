@@ -1,11 +1,10 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.SortingAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart.Data;
-import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.AnchorPane;
 
 public class OverviewDoubleChartController {

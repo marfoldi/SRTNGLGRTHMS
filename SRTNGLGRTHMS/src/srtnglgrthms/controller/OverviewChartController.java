@@ -1,8 +1,9 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.RadixAlgorithm;
-import srtnglgrthms.model.SortingAlgorithm;
 import srtnglgrthms.model.SortingAlgorithmFactory;
+import srtnglgrthms.model.algorithm.ChartAlgorithm;
+import srtnglgrthms.model.algorithm.RadixAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -61,7 +62,7 @@ public class OverviewChartController implements ChartController {
 			});
 			series.getData().add(data);
 		}
-		SortingAlgorithm.setData(series.getData());
+		ChartAlgorithm.setData(series.getData());
 		/*
 		 * Node chartArea = barChart.lookup(".chart-plot-background"); Bounds
 		 * chartAreaBounds =
@@ -97,7 +98,6 @@ public class OverviewChartController implements ChartController {
 			node.setStyle("-fx-bar-fill: " + color.toString() + ";");
 			break;
 		}
-
 	}
 
 	public static String getRandomColor() {

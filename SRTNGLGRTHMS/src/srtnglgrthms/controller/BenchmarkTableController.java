@@ -6,7 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import srtnglgrthms.model.BenchmarkData;
-import srtnglgrthms.model.SortingAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 public class BenchmarkTableController {
 	@FXML

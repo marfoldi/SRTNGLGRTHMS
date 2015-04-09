@@ -1,8 +1,9 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewDoubleChartController;
+import srtnglgrthms.model.RecursiveParameter;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
@@ -30,7 +31,7 @@ public class BackwardRadix extends RadixAlgorithm{
     	listTwo = OverviewDoubleChartController.getListTwo();
 		actualDigit = getMaxDigit()-1;
 		begin = 0;
-		end = SortingAlgorithm.getNumbers().length-1;
+		end = numbers.length-1;
 		lower = begin;
 		upper = end;
 		recursiveCall = new LinkedList<>();
@@ -72,7 +73,7 @@ public class BackwardRadix extends RadixAlgorithm{
 				//az elseben csak akkor kell hozzáadni új hívást, ha már mindkettõ lement...
 				if (recursiveCall.isEmpty() && actualDigit!=0) {
 				recursiveCall.add(new RecursiveParameter(0, lower-1, actualDigit-1, "forward"));
-				recursiveCall.add(new RecursiveParameter(lower, SortingAlgorithm.getNumbers().length - 1, actualDigit-1, "backward"));
+				recursiveCall.add(new RecursiveParameter(lower, numbers.length - 1, actualDigit-1, "backward"));
 				}
 				if(!recursiveCall.isEmpty()) {
 				RecursiveParameter nextParameters = recursiveCall.remove();
@@ -85,7 +86,7 @@ public class BackwardRadix extends RadixAlgorithm{
 				if(direction == "forward") {
 					actualSeries++;
 					begin=0;
-					end = SortingAlgorithm.getNumbers().length - 1;
+					end = numbers.length - 1;
 					lower = begin;
 					upper = end;
 					if(direction == "forward") i=begin;

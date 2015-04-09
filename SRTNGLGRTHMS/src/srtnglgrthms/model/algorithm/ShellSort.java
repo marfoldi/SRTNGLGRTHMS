@@ -1,9 +1,11 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import srtnglgrthms.controller.OverviewChartController;
+import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.CounterData;
 
 
-public class ShellSort extends SortingAlgorithm{
+public class ShellSort extends ChartAlgorithm{
 	private static final int[] gapArray = {1750,701,301,132,57,23,10,4,1};
 	private static int gapIdx = selectGap();
 	private static int outerIndex = gapArray[gapIdx] - 1;
@@ -85,9 +87,9 @@ public class ShellSort extends SortingAlgorithm{
 	}
 	
 	public static Runnable sort = () -> {
-		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
+		int[] numbers = new int[ChartAlgorithm.getNumbers().length];
 		int i,j, temp;
-		System.arraycopy( SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
+		System.arraycopy(ChartAlgorithm.getNumbers(), 0, numbers, 0, ChartAlgorithm.getNumbers().length);
 	    int swapCounter = 0; //Increment this counter whenever a swap takes place
 	    int moveCounter=0; //Increment this counter whenever a movement takes place
 	    for ( int gap : gapArray ) {

@@ -1,8 +1,8 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import java.util.Arrays;
 
-public abstract class RadixAlgorithm extends SortingAlgorithm {
+public abstract class RadixAlgorithm extends ChartAlgorithm {
 	protected static int actualDigit;
 	protected static int begin = 0;
 	protected static int end;
@@ -10,7 +10,7 @@ public abstract class RadixAlgorithm extends SortingAlgorithm {
 	protected static int upper;
 	
 	protected static int getMaxDigit() {
-		return Arrays.stream(SortingAlgorithm.getNumbers())
+		return Arrays.stream(numbers)
 				.map(n -> Integer.toBinaryString(n).length())
 				.max()
 				.getAsInt();

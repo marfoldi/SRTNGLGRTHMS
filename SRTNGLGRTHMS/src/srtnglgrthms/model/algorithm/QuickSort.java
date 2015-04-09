@@ -1,10 +1,12 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
+import srtnglgrthms.model.CounterData;
+import srtnglgrthms.model.RecursiveParameter;
 
-public class QuickSort extends SortingAlgorithm {
+public class QuickSort extends ChartAlgorithm {
 	private static int begin;
 	private static int end;
 	private static int lower;
@@ -12,9 +14,7 @@ public class QuickSort extends SortingAlgorithm {
 	private static int pivot;
 	private static boolean pivotSwapped = false;
 	
-	private QuickSort() {
-		init();
-	}
+	private QuickSort() {}
 	
 	private static class SortHolder {
         private static final QuickSort INSTANCE = new QuickSort();
@@ -24,23 +24,14 @@ public class QuickSort extends SortingAlgorithm {
         return SortHolder.INSTANCE;
     }
     
-    private static void init() {
+    public void setDefaults() {
     	begin = 0;
-    	end = SortingAlgorithm.getNumbers().length-1;
+    	end = numbers.length-1;
     	pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
     	pivotSwapped = false;
     	lower = begin;
     	upper = end;
     	recursiveCall = new LinkedList<>();
-    }
-    
-    public void setDefaults() {
-    	begin = 0;
-    	end = SortingAlgorithm.getNumbers().length-1;
-    	pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
-    	pivotSwapped = false;
-    	lower = begin;
-    	upper = end;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
 		counterData.add(new CounterData("Mozgatások", "0"));

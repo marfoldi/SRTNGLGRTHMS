@@ -1,8 +1,10 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import srtnglgrthms.controller.OverviewChartController;
+import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.CounterData;
 
-public class BubbleSort extends SortingAlgorithm {
+public class BubbleSort extends ChartAlgorithm {
 	private static int outerIdx = 0;
 	private static int innerIdx = 1;
 
@@ -60,7 +62,7 @@ public class BubbleSort extends SortingAlgorithm {
 	
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
-		System.arraycopy( SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
+		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    int swapCounter = 0; //Increment this counter whenever a swap takes place
 	    int comparsionCounter=0; //Increment this counter whenever a comparison takes place
 	    for(int i=1;i<numbers.length;i++)

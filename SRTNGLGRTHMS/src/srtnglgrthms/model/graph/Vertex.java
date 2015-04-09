@@ -5,7 +5,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.scene.Group;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Paint;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 
@@ -14,14 +14,24 @@ public class Vertex extends Group {
 	private final Circle circle;	
 	private int number;
 	
-	public Vertex(double centerX, double centerY, double radius, Paint fill, int number) {
-		circle = new Circle(centerX, centerY, radius, fill);
+	public Vertex(double centerX, double centerY, double radius, String color, int number) {
+		circle = new Circle(centerX, centerY, radius);
+		this.setColor(color);
 		this.number = number;
 	}
 	
-	public Vertex(double centerX, double centerY, double radius, Paint fill) {
-		circle = new Circle(centerX, centerY, radius, fill);
+	public Vertex(double centerX, double centerY, double radius, int number) {
+		this(centerX, centerY, radius, "default", number);
+	}
+	
+	public Vertex(double centerX, double centerY, double radius, String color) {
+		circle = new Circle(centerX, centerY, radius);
+		this.setColor(color);
 		this.number = -2;
+	}
+	
+	public Vertex(double centerX, double centerY, double radius) {
+		this(centerX, centerY, radius, "default");
 	}
 	
 	public double getCenterX() {
@@ -66,6 +76,24 @@ public class Vertex extends Group {
 	
 	public void setNumber(int number) {
 		this.number = number;
+	}
+	
+	public void setColor(String color) {
+		switch (color) {
+		case "default":
+			color= "#f3622d";
+			break;
+		case "swap":
+			color = "#4258c9";;
+			break;
+		case "select":
+			color = "#57b757";
+			break;
+		case "done":
+			color = "#8C2D46";
+			break;
+		}
+		circle.setFill(Color.valueOf(color));
 	}
 	
 }
