@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.MenuController">
+<BorderPane fx:id="menuPane" prefHeight="243.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.MenuController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -25,9 +25,9 @@
    <center>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#manualBtnHandler" text="Manuális" HBox.hgrow="ALWAYS" />
-            <Button layoutX="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#randomBtnHandler" text="Véletlen" HBox.hgrow="ALWAYS" />
-            <Button layoutX="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Fájl" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#manualBtnHandler" prefHeight="218.0" prefWidth="150.5" text="Manuális&#10;(Számok begépelése)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <Button layoutX="100.0" mnemonicParsing="false" onAction="#randomBtnHandler" prefHeight="218.0" prefWidth="150.5" text="Véletlen&#10;(Számok generálása)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <Button layoutX="200.0" mnemonicParsing="false" onAction="#fileBtnHandler" prefHeight="218.0" prefWidth="150" text="Fájl&#10;(Számok beolvasása)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </center>

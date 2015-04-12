@@ -23,10 +23,10 @@ public class MenuController {
 			FXMLLoader loader = new FXMLLoader();
 			// Load input layout from fxml file.
 			loader.setLocation(MainApplication.class
-					.getResource("view/InputLayout.fxml"));
+					.getResource("view/ManualInputLayout.fxml"));
 			inputLayout = (SplitPane) loader.load();
 			// Show the scene containing the input layout.
-			Scene scene = new Scene(inputLayout, ScreenSize.getWidth()/4.5, ScreenSize.getHeight()/7);
+			Scene scene = new Scene(inputLayout);
 			Stage stage = (Stage) menuPane.getScene().getWindow();
 			stage.setScene(scene);
 			stage.show();
@@ -42,15 +42,21 @@ public class MenuController {
 			FXMLLoader loader = new FXMLLoader();
 			// Load input layout from fxml file.
 			loader.setLocation(MainApplication.class
-					.getResource("view/RandomLayout.fxml"));
+					.getResource("view/RandomInputLayout.fxml"));
 			randomLayout = (AnchorPane) loader.load();
 			// Show the scene containing the input layout.
-			Scene scene = new Scene(randomLayout, ScreenSize.getWidth()/4.5, ScreenSize.getHeight()/7);
+			Scene scene = new Scene(randomLayout);
 			Stage stage = (Stage) menuPane.getScene().getWindow();
 			stage.setScene(scene);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@FXML
+	private void fileBtnHandler(ActionEvent event) {
+		FileInputController.setStage((Stage) menuPane.getScene().getWindow());
+		FileInputController.openChooser();
 	}
 }

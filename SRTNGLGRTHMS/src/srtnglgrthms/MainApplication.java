@@ -35,7 +35,7 @@ public class MainApplication extends Application {
             menuLayout = (BorderPane) loader.load();
 
             // Show the scene containing the base layout.
-            Scene scene = new Scene(menuLayout, ScreenSize.getWidth()/3, ScreenSize.getHeight()/4);
+            Scene scene = new Scene(menuLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {

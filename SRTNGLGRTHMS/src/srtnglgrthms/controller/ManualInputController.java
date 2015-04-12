@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
-public class InputController {
+public class ManualInputController {
 	@FXML
 	private TextField sizeField;
 	@FXML
@@ -32,25 +32,46 @@ public class InputController {
 	@FXML
 	public void initialize() {
 		setSizeLimit();
+		okBtn.setDisable(true);
+		randomBtn.setDisable(true);
 	}
 	
 	@FXML
 	public void createFields() {
-		 size = Integer.parseInt(sizeField.getText());
-		 for (int i = 0; i < size; ++i) {
-	            TextField tf = new TextField();
-	            tf.setMaxWidth(50.0);
-	            numbersPane.add(tf, i, 0);
-	     }
+		try {
+			numbersPane.getChildren().clear();
+			size = Integer.parseInt(sizeField.getText());
+			for (int i = 0; i < size; ++i) {
+				TextField tf = new TextField();
+				tf.setMaxWidth(50.0);
+				numbersPane.add(tf, i, 0);
+			}
+			okBtn.setDisable(false);
+			randomBtn.setDisable(false);
+		} catch (NumberFormatException nfe) {
+			okBtn.setDisable(true);
+			randomBtn.setDisable(true);
+		}
 	}
 	
 	private void setSizeLimit() {
 		sizeField.textProperty().addListener(new ChangeListener<String>() {
 	        @Override
 	        public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
-	            if (Integer.parseInt(sizeField.getText()) > 100) {
+	            try {
+	        	if (Integer.parseInt(sizeField.getText()) > 100) {
 	            	sizeField.setText("100");
 	            }
+	        	if(Integer.parseInt(sizeField.getText()) == 0 || numbersPane.getChildren().isEmpty()) {
+	        		okBtn.setDisable(true);
+	    			randomBtn.setDisable(true);
+	    			return;
+	        	}
+	        	else {
+	        		okBtn.setDisable(false);
+	    			randomBtn.setDisable(false);
+	        	}
+	            } catch (NumberFormatException nfe) {}
 	        }
 	    });
 	}

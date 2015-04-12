@@ -85,6 +85,5 @@ public class ForwardRadix extends RadixAlgorithm {
 		for (int i = lower; i < upper; i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), bucketColor);
 		}
-
 	}
 }

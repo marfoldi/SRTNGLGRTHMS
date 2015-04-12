@@ -101,7 +101,7 @@ public class OverviewChartController implements ChartController {
 	}
 
 	public static String getRandomColor() {
-		return "#" + Integer.toHexString((int) (Math.random() * 16777215));
+		return String.format("#%02x%02x%02X", (int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 	}
 
 	@Override

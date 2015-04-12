@@ -9,8 +9,10 @@ import srtnglgrthms.model.graph.Vertex;
 public class TournamentSort extends GraphAlgorithm {
 	private static Vertex[] vertices;
 	private static int j;
-	//private static int r;
+	private static int r;
+	private static int i;
 	private static boolean colored;
+	private static boolean isFound;
 	
 	private TournamentSort() {}
 	
@@ -27,14 +29,15 @@ public class TournamentSort extends GraphAlgorithm {
 		recursiveCall = new LinkedList<>();
 		setDefaultGraph();
 		j = (vertices.length)/2;
-		//r = (vertices.length)/2;
+		r = (vertices.length)/2;
+		i = 0;
 		colored = false;
+		isFound = false;
 	}
 	
 	@Override
 	public void step() {
 		if(j==0) {
-			System.out.println(vertices[0].getNumber());
 			setRestColor();
 			j--;
 		}
@@ -44,29 +47,66 @@ public class TournamentSort extends GraphAlgorithm {
 				vertices[2*j].setColor("swap");
 				vertices[2*j-1].setColor("swap");
 				colored = true;
-				break;
+				return;
 			}
 			vertices[j-1].setNumber(vertices[2*j].getNumber()>vertices[2*j-1].getNumber() ? vertices[2*j].getNumber():vertices[2*j-1].getNumber());
 			colored = false;
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
+			if(j-1==0) vertices[j-1].setColor("select");
+			else vertices[j-1].setColor("done");
 			vertices[2*j].setColor("done");
 			vertices[2*j-1].setColor("done");
-			vertices[j-1].setColor("done");
 			j--;
-			break;
+			return;
 		}
-		/*while(r>=1) {
-			int i = 0;
-			while(i<(vertices.length)/2) {
-				i = vertices[2*i]==vertices[i]? 2*i : 2*i+1;
+		if(r>=0) {
+			if(i<vertices.length/2 && !isFound) {
+				setRestColor();
+				vertices[i].setColor("swap");
+				i = vertices[i].getNumber()==vertices[2*i+1].getNumber()? 2*i+1 : 2*i+2;
+				vertices[i].setColor("swap");
 			}
-			vertices[i].setNumber(-1);
-			i=i/2-1;
-			while(i>=1) {
-				vertices[i].setNumber(vertices[2*i].getNumber()>vertices[2*i+1].getNumber() ? vertices[2*i].getNumber():vertices[2*i+1].getNumber());
+			else if (!isFound) {
+				setRestColor();
+				vertices[i].setColor("done");
+				vertices[i].setNumber(-1);
+				isFound=true;
 			}
-		}*/
+			else {
+				setRestColor();
+				if(!colored) {
+					if(i%2==0) i = i/2-1;
+					else i=i/2;
+					vertices[i].setColor ("done");
+					vertices[2*i+2].setColor("swap");
+					vertices[2*i+1].setColor("swap");
+					colored = true;
+					return;
+				}
+				if(i>=0) {
+					vertices[i].setNumber(vertices[2*i+1].getNumber()>vertices[2*i+2].getNumber() ? vertices[2*i+1].getNumber():vertices[2*i+2].getNumber());
+					if(i==0) vertices[i].setColor ("select");
+					else vertices[i].setColor ("done");
+					vertices[2*i+2].setColor("done");
+					vertices[2*i+1].setColor("done");
+					colored = false;
+					OverviewGraphController.reloadGraph();
+					OverviewGraphController.addVertices();
+				}
+			}
+			OverviewGraphController.reloadGraph();
+			OverviewGraphController.addVertices();
+			if(i==0 && isFound) {
+				r--;
+				isFound = false;
+			}
+		}
+		if(r==-1) {
+			for (Vertex vertex : vertices) {
+				vertex.setColor("done");
+			}
+		}
 	}
 	
 	
