@@ -7,6 +7,11 @@ import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
 
 public class HeapSort extends GraphAlgorithm {
+	private static int starterIndex;
+	private static int downIndex;
+	private static int recursiveCounter;
+	private static boolean colored;
+	private static boolean canSwap;
 	
 	private HeapSort() {}
 	
@@ -22,17 +27,92 @@ public class HeapSort extends GraphAlgorithm {
 	public void setDefaults() {
 		recursiveCall = new LinkedList<>();
 		setDefaultGraph();
+		starterIndex = vertices.length/2-1;
+		downIndex = starterIndex;
+		recursiveCounter = vertices.length-1;
+		colored = false;
+		canSwap = true;
 	}
 	
 	@Override
 	public void step() {
+		if(starterIndex>=0) {
+			downIndex = buildHeap(downIndex, vertices.length-1);
+			if(downIndex != -1) {
+				return;
+			}
+			else {
+				starterIndex--;
+				downIndex = starterIndex;
+			}
+		}
+		else if(recursiveCounter>=0) {
+			if(canSwap) swap(0, recursiveCounter);
+			OverviewGraphController.reloadGraph();
+			OverviewGraphController.addVertices();
+			downIndex = buildHeap(0, recursiveCounter-1);
+			OverviewGraphController.reloadGraph();
+			OverviewGraphController.addVertices();
+			if(downIndex != -1) {
+				canSwap = false;
+				return;
+			}
+			else {
+				canSwap = true;
+				recursiveCounter--;
+			}
+		}
+	}
+	
+	private int buildHeap(int starterIndex, int endIndex) {
+		setRestColor();
+		if(2*starterIndex<=endIndex) {
+			if(!colored) {
+				try {
+					vertices[starterIndex].setColor ("swap");
+					vertices[2*starterIndex+2].setColor("swap");
+					vertices[2*starterIndex+1].setColor("swap");
+					colored = true;
+					return starterIndex;
+				} catch (ArrayIndexOutOfBoundsException aioobe) {
+					setRestColor();
+					OverviewGraphController.reloadGraph();
+					OverviewGraphController.addVertices();
+					colored = false;
+					return -1;
+				}
+			}
+			int ir;
+			if(2*starterIndex+2>endIndex || vertices[2*starterIndex+1].getNumber()>vertices[2*starterIndex+2].getNumber()) {
+				ir = 2*starterIndex+1;
+			}
+			else ir = 2*starterIndex+2;
+			if(vertices[starterIndex].getNumber()>=vertices[ir].getNumber()) {
+				colored = false;
+				return -1;
+			}
+			else {
+				vertices[starterIndex].setColor ("done");
+				vertices[ir].setColor("swap");
+				swap(starterIndex, ir);
+				starterIndex = ir;
+				OverviewGraphController.reloadGraph();
+				OverviewGraphController.addVertices();
+			}
+		}
+		else {
+			colored = false;
+			return -1;
+		}
+		colored = false;
+		return starterIndex;
 	}
 
 	@Override
 	public void setDefaultGraph() {
 		checkedArray = checkLength(numbers);
 		OverviewGraphController.setVertices(new Vertex[checkedArray.length]);
-		Vertex[] vertices = OverviewGraphController.getVertices();
+		vertices = OverviewGraphController.getVertices();
 		vertices[0] = new Vertex(400, 20, 15, checkedArray[0]);
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
 		for(int i=1; i<vertices.length-1; i+=2) {

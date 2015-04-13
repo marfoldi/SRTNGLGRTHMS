@@ -88,7 +88,7 @@ public class InsertionSort extends ChartAlgorithm{
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    int swapCounter = 0; //Increment this counter whenever a swap takes place
 	    int moveCounter=0; //Increment this counter whenever a movement takes place
-	    for (int i=0; i < numbers.length-1; i++)
+	    for (int i=0; i<numbers.length-1; i++)
 	    {
 	       int temp = numbers[i+1];
 	       int j;

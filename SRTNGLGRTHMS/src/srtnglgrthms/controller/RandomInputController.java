@@ -1,8 +1,9 @@
 package srtnglgrthms.controller;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
@@ -47,6 +48,7 @@ public class RandomInputController {
 
 	private void generateNumbers() {
 		int[] numbers = new int[Integer.parseInt(sizeField.getText())];
+		List<Integer> numberList = new ArrayList<>();
 		switch (type) {
 		case "Véletlen generált": {
 			for(int i=0; i<numbers.length; ++i) {
@@ -55,14 +57,30 @@ public class RandomInputController {
 			break;
 		}
 		case "Majdnem rendezett": {
-			/*for(int i=0; i<numbers.length; ++i) {
-				numbers[i] = (int)(Math.random()*100);
+			for(int i=0; i<numbers.length; ++i) {
+				numberList.add((int)(Math.random()*100));
 			}
-			Integer[] numbersList = Arrays.stream(numbers).boxed().toArray(Integer[]::new);
-			Arrays.sort(numbersList, Collections.reverseOrder());*/
+			Collections.sort(numberList);
+			for(int i=0; i<numbers.length*0.1; ++i) {
+				int firstIndex = (int)(Math.random()*numbers.length);
+				int secondIndex = (int)(Math.random()*numbers.length);
+				int temp = numberList.get(firstIndex);
+				numberList.set(firstIndex, numberList.get(secondIndex));
+				numberList.set(secondIndex, temp);
+			}
+			for(int i=0; i<numbers.length; ++i) {
+				numbers[i] = numberList.get(i);
+			}
 			break;
 		}
 		case "Fordított": {
+			for(int i=0; i<numbers.length; ++i) {
+				numberList.add((int)(Math.random()*100));
+			}
+			Collections.sort(numberList, Collections.reverseOrder());
+			for(int i=0; i<numbers.length; ++i) {
+				numbers[i] = numberList.get(i);
+			}
 			break;
 		}
 		case "Néhány egyedi": {
