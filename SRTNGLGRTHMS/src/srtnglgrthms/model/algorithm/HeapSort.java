@@ -92,7 +92,8 @@ public class HeapSort extends GraphAlgorithm {
 				return -1;
 			}
 			else {
-				vertices[starterIndex].setColor ("done");
+				if(starterIndex == 0) vertices[starterIndex].setColor ("done");
+				else vertices[starterIndex].setColor ("select");
 				vertices[ir].setColor("swap");
 				swap(starterIndex, ir);
 				starterIndex = ir;
@@ -113,7 +114,8 @@ public class HeapSort extends GraphAlgorithm {
 		checkedArray = checkLength(numbers);
 		OverviewGraphController.setVertices(new Vertex[checkedArray.length]);
 		vertices = OverviewGraphController.getVertices();
-		vertices[0] = new Vertex(400, 20, 15, checkedArray[0]);
+		int vertexSize = OverviewGraphController.getVertexSize();
+		vertices[0] = new Vertex(400, 20, vertexSize, checkedArray[0]);
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
 		for(int i=1; i<vertices.length-1; i+=2) {
 			if(!recursiveCall.isEmpty()) {
@@ -121,10 +123,10 @@ public class HeapSort extends GraphAlgorithm {
             	double x = nextParameters.getFirstParameter();
     			double y = nextParameters.getSecondParameter();
     			double delta = nextParameters.getThirdParameter();
-				vertices[i] = new Vertex(x-200*delta, y+100, 15, checkedArray[i]);
-				vertices[i+1] = new Vertex(x+200*delta, y+100, 15, checkedArray[i+1]);
-				recursiveCall.add(new RecursiveParameter(x-200*delta, y+100, delta*0.5));
-				recursiveCall.add(new RecursiveParameter(x+200*delta, y+100, delta*0.5));
+				vertices[i] = new Vertex(x-200*delta, y+90, vertexSize, checkedArray[i]);
+				vertices[i+1] = new Vertex(x+200*delta, y+90, vertexSize, checkedArray[i+1]);
+				recursiveCall.add(new RecursiveParameter(x-200*delta, y+90, delta*0.5));
+				recursiveCall.add(new RecursiveParameter(x+200*delta, y+90, delta*0.5));
 			}
 		}
 		if(vertices.length%2==0) {
@@ -132,7 +134,7 @@ public class HeapSort extends GraphAlgorithm {
         	double x = nextParameters.getFirstParameter();
 			double y = nextParameters.getSecondParameter();
 			double delta = nextParameters.getThirdParameter();
-			vertices[vertices.length-1] = new Vertex(x-200*delta, y+100, 15, checkedArray[vertices.length-1]);
+			vertices[vertices.length-1] = new Vertex(x-200*delta, y+90, vertexSize, checkedArray[vertices.length-1]);
 			graph.bindVertexes(vertices[(vertices.length-1)/2], vertices[vertices.length-1]);
 		}
 		OverviewGraphController.addVertices();

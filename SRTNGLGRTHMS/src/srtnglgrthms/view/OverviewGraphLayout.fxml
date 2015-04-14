@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:id="pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="srtnglgrthms.controller.OverviewGraphController">
-</AnchorPane>
+<SplitPane dividerPositions="0.9" prefHeight="443.0" prefWidth="800.0" orientation="VERTICAL" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewGraphController">
+  <items>
+    <AnchorPane fx:id="graphPane" prefHeight="420.0" prefWidth="800.0" maxHeight="420.0" />
+    <ScrollPane fx:id="numbersScroll">
+         <content>
+            <GridPane fx:id="numbersPane">
+              <rowConstraints>
+                <RowConstraints prefHeight="23.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+  </items>
+</SplitPane>

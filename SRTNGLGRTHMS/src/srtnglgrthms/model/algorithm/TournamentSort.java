@@ -38,6 +38,7 @@ public class TournamentSort extends GraphAlgorithm {
 	public void step() {
 		if(fillIndex==0) {
 			setRestColor();
+			setNumberAtIndex(numbers.length-1, vertices[0].getNumber());
 			fillIndex--;
 		}
 		while(fillIndex>=1) {
@@ -52,10 +53,10 @@ public class TournamentSort extends GraphAlgorithm {
 			colored = false;
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
-			if(fillIndex-1==0) vertices[fillIndex-1].setColor("select");
-			else vertices[fillIndex-1].setColor("done");
-			vertices[2*fillIndex].setColor("done");
-			vertices[2*fillIndex-1].setColor("done");
+			if(fillIndex-1==0) vertices[fillIndex-1].setColor("done");
+			else vertices[fillIndex-1].setColor("select");
+			if(vertices[2*fillIndex].getNumber()>vertices[2*fillIndex-1].getNumber()) vertices[2*fillIndex].setColor("swap");
+			else vertices[2*fillIndex-1].setColor("swap");
 			fillIndex--;
 			return;
 		}
@@ -77,7 +78,6 @@ public class TournamentSort extends GraphAlgorithm {
 				if(!colored) {
 					if(maxIndex%2==0) maxIndex = maxIndex/2-1;
 					else maxIndex=maxIndex/2;
-					vertices[maxIndex].setColor ("done");
 					vertices[2*maxIndex+2].setColor("swap");
 					vertices[2*maxIndex+1].setColor("swap");
 					colored = true;
@@ -85,10 +85,13 @@ public class TournamentSort extends GraphAlgorithm {
 				}
 				if(maxIndex>=0) {
 					vertices[maxIndex].setNumber(vertices[2*maxIndex+1].getNumber()>vertices[2*maxIndex+2].getNumber() ? vertices[2*maxIndex+1].getNumber():vertices[2*maxIndex+2].getNumber());
-					if(maxIndex==0) vertices[maxIndex].setColor ("select");
-					else vertices[maxIndex].setColor ("done");
-					vertices[2*maxIndex+2].setColor("done");
-					vertices[2*maxIndex+1].setColor("done");
+					if(maxIndex==0) {
+						vertices[maxIndex].setColor ("done");
+						setNumberAtIndex(recursiveCounter-1, vertices[0].getNumber());
+					}
+					else vertices[maxIndex].setColor ("select");
+					if(vertices[2*maxIndex+1].getNumber()>vertices[2*maxIndex+2].getNumber()) vertices[2*maxIndex+1].setColor("swap");
+					else vertices[2*maxIndex+2].setColor("swap");
 					colored = false;
 					OverviewGraphController.reloadGraph();
 					OverviewGraphController.addVertices();
@@ -118,7 +121,8 @@ public class TournamentSort extends GraphAlgorithm {
 		checkedArray = checkLength(numbers);
 		OverviewGraphController.setVertices(new Vertex[checkedArray.length*2-1]);
 		vertices = OverviewGraphController.getVertices();
-		vertices[0] = new Vertex(400, 20, 15);
+		int vertexSize = OverviewGraphController.getVertexSize();
+		vertices[0] = new Vertex(400, 20, vertexSize);
 		int j = 0;
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
 		for(int i=1; i<vertices.length-1; i+=2) {
@@ -127,10 +131,10 @@ public class TournamentSort extends GraphAlgorithm {
             	double x = nextParameters.getFirstParameter();
     			double y = nextParameters.getSecondParameter();
     			double delta = nextParameters.getThirdParameter();
-				vertices[i] = new Vertex(x-200*delta, y+100, 15);
-				vertices[i+1] = new Vertex(x+200*delta, y+100, 15);
-				recursiveCall.add(new RecursiveParameter(x-200*delta, y+100, delta*0.5));
-				recursiveCall.add(new RecursiveParameter(x+200*delta, y+100, delta*0.5));
+				vertices[i] = new Vertex(x-200*delta, y+90, vertexSize);
+				vertices[i+1] = new Vertex(x+200*delta, y+90, vertexSize);
+				recursiveCall.add(new RecursiveParameter(x-200*delta, y+90, delta*0.5));
+				recursiveCall.add(new RecursiveParameter(x+200*delta, y+90, delta*0.5));
 				if(i>=checkedArray.length-1) {
 					vertices[i].setNumber(checkedArray[j]);
 					vertices[i+1].setNumber(checkedArray[j+1]);
