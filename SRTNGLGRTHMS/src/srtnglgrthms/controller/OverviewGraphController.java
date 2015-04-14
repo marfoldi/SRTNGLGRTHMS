@@ -55,8 +55,11 @@ public class OverviewGraphController {
 	        public void changed(ObservableValue<?> ov, Object oldValue, Object newValue) {
 	         numbersScroll.setHvalue(numbersScroll.getHmax()); 
 	        }
-	    }) ;
-		for (int i = 0; i < SortingAlgorithm.getNumbers().length; ++i) {
+	    });
+	    int length = SortingAlgorithm.getNumbers().length;
+	    if(OverviewListController.getSelectedItem().equals("Versenyrendezés") && SortingAlgorithm.getNumbers().length>16) length=16;
+	    if(OverviewListController.getSelectedItem().equals("Kupac rendezés") && SortingAlgorithm.getNumbers().length>32) length=32;
+		for (int i = 0; i < length; ++i) {
 			TextField tf = new TextField();
 			tf.setMaxWidth(50.0);
 			numbersPane.add(tf, i, 0);

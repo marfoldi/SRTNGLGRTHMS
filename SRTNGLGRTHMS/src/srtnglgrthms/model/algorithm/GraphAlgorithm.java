@@ -35,6 +35,10 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 		GraphAlgorithm.numbersPane = numbersPane;
 	}
 	
+	public static int getCheckedArrayLength() {
+		return checkedArray.length;
+	}
+	
 	protected static void setNumberAtIndex(int i, int number) {
 		ObservableList<Node> nodes = numbersPane.getChildren();
 		((TextField)nodes.get(i)).setText(Integer.toString(number));

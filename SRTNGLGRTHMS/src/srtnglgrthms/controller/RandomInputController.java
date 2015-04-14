@@ -38,7 +38,7 @@ public class RandomInputController {
 				"Fordított", "Néhány egyedi");
 		typeBox.valueProperty().addListener(new ChangeListener<String>() {
 			@Override
-			public void changed(ObservableValue ov, String oldValue,
+			public void changed(ObservableValue<? extends String> ov, String oldValue,
 					String newValue) {
 				type = newValue;
 				okBtn.setDisable(false);
@@ -68,6 +68,11 @@ public class RandomInputController {
 				numberList.set(firstIndex, numberList.get(secondIndex));
 				numberList.set(secondIndex, temp);
 			}
+			List<Integer> isSorted = new ArrayList<Integer>(numberList.size());
+			Collections.sort(isSorted);
+			if(isSorted.equals(numberList)) {
+				generateNumbers();
+			}
 			for(int i=0; i<numbers.length; ++i) {
 				numbers[i] = numberList.get(i);
 			}
@@ -84,6 +89,19 @@ public class RandomInputController {
 			break;
 		}
 		case "Néhány egyedi": {
+			if((int) Math.sqrt(numbers.length)<=1) {
+				for(int i=0; i<numbers.length; ++i) {
+					numbers[i] = (int)(Math.random()*100);
+				}
+				break;
+			}
+			int[] uniqueKeys = new int[(int) Math.sqrt(numbers.length)];
+			for(int i=0; i<uniqueKeys.length; ++i) {
+				uniqueKeys[i] = (int)(Math.random()*100);
+			}
+			for(int i=0; i<numbers.length; ++i) {
+				numbers[i] = uniqueKeys[(int)(Math.random()*uniqueKeys.length)];
+			}
 			break;
 		}
 		}

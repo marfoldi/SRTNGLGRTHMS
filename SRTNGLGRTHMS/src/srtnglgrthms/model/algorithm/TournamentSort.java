@@ -2,6 +2,7 @@ package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
+import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
@@ -10,6 +11,7 @@ public class TournamentSort extends GraphAlgorithm {
 	private static int fillIndex;
 	private static int recursiveCounter;
 	private static int maxIndex;
+	private static int outIndex;
 	private static boolean colored;
 	private static boolean isFound;
 	
@@ -29,6 +31,7 @@ public class TournamentSort extends GraphAlgorithm {
 		setDefaultGraph();
 		fillIndex = vertices.length/2;
 		recursiveCounter = vertices.length/2;
+		outIndex = 1;
 		maxIndex = 0;
 		colored = false;
 		isFound = false;
@@ -38,8 +41,9 @@ public class TournamentSort extends GraphAlgorithm {
 	public void step() {
 		if(fillIndex==0) {
 			setRestColor();
-			setNumberAtIndex(numbers.length-1, vertices[0].getNumber());
+			setNumberAtIndex(checkedArray.length-outIndex, vertices[0].getNumber());
 			fillIndex--;
+			outIndex++;
 		}
 		while(fillIndex>=1) {
 			setRestColor();
@@ -60,7 +64,7 @@ public class TournamentSort extends GraphAlgorithm {
 			fillIndex--;
 			return;
 		}
-		if(recursiveCounter>=0) {
+		if(recursiveCounter>=1) {
 			if(maxIndex<vertices.length/2 && !isFound) {
 				setRestColor();
 				vertices[maxIndex].setColor("swap");
@@ -87,7 +91,8 @@ public class TournamentSort extends GraphAlgorithm {
 					vertices[maxIndex].setNumber(vertices[2*maxIndex+1].getNumber()>vertices[2*maxIndex+2].getNumber() ? vertices[2*maxIndex+1].getNumber():vertices[2*maxIndex+2].getNumber());
 					if(maxIndex==0) {
 						vertices[maxIndex].setColor ("done");
-						setNumberAtIndex(recursiveCounter-1, vertices[0].getNumber());
+						setNumberAtIndex(checkedArray.length-outIndex, vertices[0].getNumber());
+						outIndex++;
 					}
 					else vertices[maxIndex].setColor ("select");
 					if(vertices[2*maxIndex+1].getNumber()>vertices[2*maxIndex+2].getNumber()) vertices[2*maxIndex+1].setColor("swap");
@@ -104,9 +109,12 @@ public class TournamentSort extends GraphAlgorithm {
 				isFound = false;
 			}
 		}
-		if(recursiveCounter==-1) {
+		if(recursiveCounter==0) {
 			for (Vertex vertex : vertices) {
 				vertex.setColor("done");
+			}
+			for(int i=0; i<numbers.length; ++i) {
+				OverviewChartController.setColor(ChartAlgorithm.getData().get(i).getNode(), "done");
 			}
 		}
 	}
