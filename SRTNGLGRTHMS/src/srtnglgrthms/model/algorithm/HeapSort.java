@@ -50,14 +50,14 @@ public class HeapSort extends GraphAlgorithm {
 		}
 		else if(recursiveCounter>=1) {
 			if(!downIndexSetted) {
-				downIndex = recursiveCounter-1;
+				downIndex = 0;
 				colored = false;
 				downIndexSetted = true;
 			}
 			if(canSwap) swap(0, recursiveCounter);
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
-			downIndex = buildHeap(0, downIndex);
+			downIndex = buildHeap(downIndex, recursiveCounter-1);
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
 			if(downIndex != -1) {
@@ -67,7 +67,7 @@ public class HeapSort extends GraphAlgorithm {
 			else {
 				canSwap = true;
 				recursiveCounter--;
-				downIndex = recursiveCounter;
+				downIndex = 0;
 			}
 		}
 	}
