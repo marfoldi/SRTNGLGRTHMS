@@ -16,7 +16,7 @@ public class SortingAlgorithmFactory {
 		switch(algorithmName) {
 	      case "Buborékrendezés":
 	    	  return BubbleSort.getInstance();
-	      case "Beszúrórendezés":
+	      case "Beszúró rendezés":
 	    	  return InsertionSort.getInstance();
 	      case "Radix \"elõre\"":
 	    	  return ForwardRadix.getInstance();
@@ -26,7 +26,7 @@ public class SortingAlgorithmFactory {
 	    	  return QuickSort.getInstance();
 	      case "Shell rendezés":
 	    	  return ShellSort.getInstance();
-	      case "Kupac rendezés":
+	      case "Kupacrendezés":
 	    	  return HeapSort.getInstance();
 	      case "Versenyrendezés":
 	    	  return TournamentSort.getInstance();

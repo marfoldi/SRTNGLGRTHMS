@@ -30,7 +30,7 @@ public class HeapSort extends GraphAlgorithm {
 		setDefaultGraph();
 		starterIndex = vertices.length/2-1;
 		downIndex = starterIndex;
-		recursiveCounter = vertices.length-1;
+		recursiveCounter = vertices.length;
 		colored = false;
 		canSwap = true;
 		downIndexSetted = false;
@@ -39,7 +39,7 @@ public class HeapSort extends GraphAlgorithm {
 	@Override
 	public void step() {
 		if(starterIndex>=0) {
-			downIndex = buildHeap(downIndex, vertices.length-1);
+			downIndex = buildHeap(downIndex, vertices.length-1, true);
 			if(downIndex != -1) {
 				return;
 			}
@@ -52,12 +52,21 @@ public class HeapSort extends GraphAlgorithm {
 			if(!downIndexSetted) {
 				downIndex = 0;
 				colored = false;
+				recursiveCounter--;
 				downIndexSetted = true;
 			}
-			if(canSwap) swap(0, recursiveCounter);
+			if(canSwap) {
+				swap(0, recursiveCounter);
+				vertices[0].setColor("swap");
+				vertices[recursiveCounter].setColor("done");
+				OverviewGraphController.reloadGraph();
+				OverviewGraphController.addVertices();
+				canSwap = false;
+				return;
+			}
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
-			downIndex = buildHeap(downIndex, recursiveCounter-1);
+			downIndex = buildHeap(downIndex, recursiveCounter-1, false);
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
 			if(downIndex != -1) {
@@ -72,18 +81,18 @@ public class HeapSort extends GraphAlgorithm {
 		}
 	}
 	
-	private int buildHeap(int startIndex, int endIndex) {
-		setRestColor();
-		if(2*startIndex<=endIndex) {
+	private int buildHeap(int startIndex, int endIndex, boolean firstRun) {
+		setRestColor(recursiveCounter);
+		if(2*startIndex+1<=endIndex) {
 			if(!colored) {
 				try {
 					vertices[startIndex].setColor ("swap");
-					vertices[2*startIndex+2].setColor("swap");
-					vertices[2*startIndex+1].setColor("swap");
+					if(firstRun || (!firstRun && 2*startIndex+2<endIndex)) vertices[2*startIndex+2].setColor("swap");
+					if(firstRun || (!firstRun && 2*startIndex+1<endIndex)) vertices[2*startIndex+1].setColor("swap");
 					colored = true;
 					return startIndex;
 				} catch (ArrayIndexOutOfBoundsException aioobe) {
-					setRestColor();
+					setRestColor(recursiveCounter);
 					OverviewGraphController.reloadGraph();
 					OverviewGraphController.addVertices();
 					colored = false;
@@ -119,10 +128,8 @@ public class HeapSort extends GraphAlgorithm {
 
 	@Override
 	public void setDefaultGraph() {
-		checkedArray = checkLength(numbers);
 		OverviewGraphController.setVertices(new Vertex[checkedArray.length]);
-		vertices = OverviewGraphController.getVertices();
-		int vertexSize = OverviewGraphController.getVertexSize();
+		vertices = OverviewGraphController.getVertices();;
 		vertices[0] = new Vertex(400, 20, vertexSize, checkedArray[0]);
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
 		for(int i=1; i<vertices.length-1; i+=2) {
@@ -131,10 +138,10 @@ public class HeapSort extends GraphAlgorithm {
             	double x = nextParameters.getFirstParameter();
     			double y = nextParameters.getSecondParameter();
     			double delta = nextParameters.getThirdParameter();
-				vertices[i] = new Vertex(x-200*delta, y+90, vertexSize, checkedArray[i]);
-				vertices[i+1] = new Vertex(x+200*delta, y+90, vertexSize, checkedArray[i+1]);
-				recursiveCall.add(new RecursiveParameter(x-200*delta, y+90, delta*0.5));
-				recursiveCall.add(new RecursiveParameter(x+200*delta, y+90, delta*0.5));
+				vertices[i] = new Vertex(x-xGap*delta, y+yGap, vertexSize, checkedArray[i]);
+				vertices[i+1] = new Vertex(x+xGap*delta, y+yGap, vertexSize, checkedArray[i+1]);
+				recursiveCall.add(new RecursiveParameter(x-xGap*delta, y+yGap, delta*0.5));
+				recursiveCall.add(new RecursiveParameter(x+xGap*delta, y+yGap, delta*0.5));
 			}
 		}
 		if(vertices.length%2==0) {
@@ -142,19 +149,9 @@ public class HeapSort extends GraphAlgorithm {
         	double x = nextParameters.getFirstParameter();
 			double y = nextParameters.getSecondParameter();
 			double delta = nextParameters.getThirdParameter();
-			vertices[vertices.length-1] = new Vertex(x-200*delta, y+90, vertexSize, checkedArray[vertices.length-1]);
+			vertices[vertices.length-1] = new Vertex(x-xGap*delta, y+yGap, vertexSize, checkedArray[vertices.length-1]);
 			graph.bindVertexes(vertices[(vertices.length-1)/2], vertices[vertices.length-1]);
 		}
 		OverviewGraphController.addVertices();
-	}
-
-	@Override
-	public int[] checkLength(int[] numbers) {
-		if(numbers.length>31) {
-			int[] checkedArray = new int[31];
-			System.arraycopy(numbers, 0, checkedArray, 0, 30);
-			return checkedArray;
-		}
-		else return numbers;
 	}
 }

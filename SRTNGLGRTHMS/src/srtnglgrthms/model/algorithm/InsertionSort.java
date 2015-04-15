@@ -104,6 +104,6 @@ public class InsertionSort extends ChartAlgorithm{
 	       }
 	       numbers[j+1] = temp;
 	    }
-	    benchmarkData.add(new BenchmarkData("Beszúrórendezés", moveCounter, swapCounter));
+	    benchmarkData.add(new BenchmarkData("Beszúró rendezés", moveCounter, swapCounter));
 	};
 }

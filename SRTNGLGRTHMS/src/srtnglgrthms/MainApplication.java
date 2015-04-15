@@ -2,7 +2,6 @@ package srtnglgrthms;
 
 import java.io.IOException;
 
-import srtnglgrthms.controller.ScreenSize;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

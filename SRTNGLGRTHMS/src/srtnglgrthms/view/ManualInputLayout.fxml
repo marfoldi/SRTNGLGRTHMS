@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="120.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.ManualInputController">
+<SplitPane dividerPositions="0.4491525423728814" orientation="VERTICAL" prefHeight="120.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.ManualInputController">
   <items>
-      <ScrollPane>
+      <ScrollPane fx:id="scrollPane">
          <content>
             <GridPane fx:id="numbersPane">
               <rowConstraints>
@@ -19,10 +19,10 @@
       </ScrollPane>
     <AnchorPane>
          <children>
-            <Button fx:id="randomBtn" layoutX="120.0" layoutY="11.0" mnemonicParsing="false" onAction="#randomBtnHandler" text="Számok generálása" />
-            <Button fx:id="okBtn" layoutX="384.0" layoutY="11.0" mnemonicParsing="false" onAction="#okBtnHandler" text="Ok" />
-            <TextField fx:id="sizeField" layoutX="50.0" layoutY="11.0" onAction="#createFields" prefHeight="25.0" prefWidth="50.0" />
-            <Label layoutX="6.0" layoutY="15.0" text="Méret:" />
+            <Button fx:id="randomBtn" layoutX="120.0" layoutY="19.0" mnemonicParsing="false" onAction="#randomBtnHandler" text="Számok generálása" />
+            <Button fx:id="okBtn" layoutX="384.0" layoutY="19.0" mnemonicParsing="false" onAction="#okBtnHandler" text="Ok" />
+            <TextField fx:id="sizeField" layoutX="52.0" layoutY="20.0" onAction="#createFields" prefHeight="25.0" prefWidth="50.0" />
+            <Label layoutX="7.0" layoutY="23.0" text="Méret:" />
          </children></AnchorPane>
   </items>
 </SplitPane>

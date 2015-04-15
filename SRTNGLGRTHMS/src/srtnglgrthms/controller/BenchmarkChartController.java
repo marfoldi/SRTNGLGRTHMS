@@ -26,7 +26,6 @@ public class BenchmarkChartController implements ChartController{
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public void initChart() {
 		barChart.getData().addAll(compareCounter, swapCounter);
 	}

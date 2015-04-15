@@ -2,6 +2,7 @@ package srtnglgrthms.controller;
 
 import srtnglgrthms.model.SortingAlgorithmFactory;
 import srtnglgrthms.model.algorithm.ChartAlgorithm;
+import srtnglgrthms.model.algorithm.GraphAlgorithm;
 import srtnglgrthms.model.algorithm.RadixAlgorithm;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.animation.Animation;
@@ -31,31 +32,53 @@ public class OverviewChartController implements ChartController {
 	@FXML
 	private NumberAxis xAxis = new NumberAxis();
 	@FXML
-	private BarChart<String, Number> barChart = new BarChart<String,Number>(yAxis,xAxis);
+	private BarChart<String, Number> barChart = new BarChart<String, Number>(
+			yAxis, xAxis);
 	private static OverviewController parentController;
 	private static Series<String, Number> series;
 	private static Timeline animation;
+	private static int numbers[];
 
 	@FXML
 	private void initialize() {
+		xAxis.setAutoRanging(false);
+		xAxis.setUpperBound(SortingAlgorithm.getMaximum() - SortingAlgorithm.getMaximum()%10 + 30);
 		series = new Series<>();
 		animation = new Timeline();
 		animation.setCycleCount(Animation.INDEFINITE);
-		initChart();
+		setNumbersArray();
+		initChart(numbers);
 		setAnimation();
 	}
+	
+	private void setNumbersArray() {
+		if(OverviewListController.getSelectedItem() != null) {
+			switch(OverviewListController.getSelectedItem()) {
+				case "Kupacrendezés" : {
+					numbers = GraphAlgorithm.checkLength(SortingAlgorithm.getNumbers(), "Kupacrendezés");
+					break;
+				}
+				case "Versenyrendezés" : {
+					numbers = GraphAlgorithm.checkLength(SortingAlgorithm.getNumbers(), "Versenyrendezés");
+					break;
+				}
+				default : {
+					numbers = SortingAlgorithm.getNumbers();
+					break;
+				}
+			}
+		}
+		else numbers = SortingAlgorithm.getNumbers();
+	}
 
-	@Override
-	public void initChart() {
-		int[] numbers = SortingAlgorithm.getNumbers();
+	public void initChart(int[] numbers) {
 		for (int i = 0; i < numbers.length; ++i) {
-			final Data<String, Number> data = new XYChart.Data<>("t["
-					+ i + "]", numbers[i]);
+			final Data<String, Number> data = new XYChart.Data<>(
+					"t[" + i + "]", numbers[i]);
 			data.nodeProperty().addListener(new ChangeListener<Node>() {
 				public void changed(ObservableValue<? extends Node> ov,
 						Node oldNode, final Node node) {
 					if (node != null) {
-						// setNodeStyle(data);
 						displayLegend(data);
 					}
 				}
@@ -63,19 +86,15 @@ public class OverviewChartController implements ChartController {
 			series.getData().add(data);
 		}
 		ChartAlgorithm.setData(series.getData());
-		/*
-		 * Node chartArea = barChart.lookup(".chart-plot-background"); Bounds
-		 * chartAreaBounds =
-		 * chartArea.localToScene(chartArea.getBoundsInLocal());
-		 * System.out.println(chartAreaBounds);
-		 */
 		barChart.getData().add(series);
 	}
 
 	public static void reloadSeries() {
-		int[] numbers = SortingAlgorithm.getNumbers();
 		for (int i = 0; i < numbers.length; ++i) {
-			series.getData().get(i).setYValue(numbers[i]);
+			if(OverviewListController.getSelectedItem().equals("Versenyrendezés")) {
+				series.getData().get(i).setYValue(0);
+			}
+			else series.getData().get(i).setYValue(numbers[i]);
 			setColor(series.getData().get(i).getNode(), "default");
 		}
 	}
@@ -101,7 +120,8 @@ public class OverviewChartController implements ChartController {
 	}
 
 	public static String getRandomColor() {
-		return String.format("#%02x%02x%02X", (int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+		return String.format("#%02x%02x%02X", (int) (Math.random() * 256),
+				(int) (Math.random() * 256), (int) (Math.random() * 256));
 	}
 
 	@Override
@@ -112,8 +132,8 @@ public class OverviewChartController implements ChartController {
 				&& (OverviewListController.getSelectedItem().equals(
 						"Radix \"elõre\"") || OverviewListController
 						.getSelectedItem().equals("Radix \"vissza\""))) {
-			barValue = new Text(RadixAlgorithm.fillWithZeros(Integer.toBinaryString((int) data
-					.getYValue())));
+			barValue = new Text(RadixAlgorithm.fillWithZeros(Integer
+					.toBinaryString((int) data.getYValue())));
 		} else
 			barValue = new Text(data.getYValue().toString());
 		node.parentProperty().addListener(new ChangeListener<Parent>() {
@@ -168,11 +188,11 @@ public class OverviewChartController implements ChartController {
 	public static Timeline getAnimation() {
 		return animation;
 	}
-	
+
 	public BarChart<String, Number> getBarChart() {
 		return barChart;
 	}
-	
+
 	public void setBarChart(BarChart<String, Number> barChart) {
 		this.barChart = barChart;
 	}

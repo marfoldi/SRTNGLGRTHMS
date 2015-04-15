@@ -5,17 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.9" prefHeight="443.0" prefWidth="800.0" orientation="VERTICAL" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewGraphController">
+<SplitPane dividerPositions="0.6530612244897959" orientation="VERTICAL" prefHeight="443.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.OverviewGraphController">
   <items>
-    <AnchorPane fx:id="graphPane" prefHeight="420.0" prefWidth="800.0" maxHeight="420.0" />
-    <ScrollPane fx:id="numbersScroll">
-         <content>
-            <GridPane fx:id="numbersPane">
-              <rowConstraints>
-                <RowConstraints prefHeight="23.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </content>
-      </ScrollPane>
+    <AnchorPane fx:id="graphPane" maxHeight="420.0" prefHeight="420.0" prefWidth="800.0" />
+      <fx:include fx:id="chartPane" source="OverviewChartLayout.fxml" />
   </items>
 </SplitPane>

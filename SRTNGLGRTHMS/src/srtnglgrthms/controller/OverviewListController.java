@@ -30,12 +30,12 @@ public class OverviewListController {
 							String oldValue, String newValue) {
 						OverviewChartController.getAnimation().stop();
 						OverviewListController.currentValue = newValue;
-						OverviewChartController.reloadSeries();
+						//OverviewChartController.reloadSeries();
 						parentController.reloadButtons();
-						if (newValue.equals("Kupac rendezés")
+						if (newValue.equals("Kupacrendezés")
 								|| newValue.equals("Versenyrendezés")
 								|| newValue.equals("Radix \"vissza\"")) {
-							if (newValue.equals("Kupac rendezés")
+							if (newValue.equals("Kupacrendezés")
 									|| newValue.equals("Versenyrendezés")) {
 								FXMLLoader loader = new FXMLLoader();
 								loader.setLocation(MainApplication.class
@@ -84,8 +84,8 @@ public class OverviewListController {
 
 	private void setList() {
 		ObservableList<String> algorithms = FXCollections.observableArrayList(
-				"Buborékrendezés", "Beszúrórendezés", "Shell rendezés",
-				"Gyorsrendezés", "Kupac rendezés", "Versenyrendezés",
+				"Buborékrendezés", "Beszúró rendezés", "Shell rendezés",
+				"Gyorsrendezés", "Kupacrendezés", "Versenyrendezés",
 				"Radix \"elõre\"", "Radix \"vissza\"");
 		algorithmList.setItems(algorithms);
 	}

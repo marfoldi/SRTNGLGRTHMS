@@ -22,6 +22,8 @@ public class OverviewController {
 	 */
 	@FXML
 	private void initialize() {
+		stepBtn.setDisable(true);
+		animBtn.setDisable(true);
 		initBtns();
 		OverviewListController.setParentController(this);
 		OverviewChartController.setParentController(this);
@@ -71,6 +73,8 @@ public class OverviewController {
 	}
 	
 	protected void reloadButtons() {
+		stepBtn.setDisable(false);
+		animBtn.setDisable(false);
 		stepBtn.setText("Léptetés");
 		animBtn.setVisible(true);
 	}

@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -25,12 +26,15 @@ public class ManualInputController {
 	@FXML
 	private Button okBtn;
 	@FXML
+	private ScrollPane scrollPane;
+	@FXML
 	private GridPane numbersPane;
 	
 	int size;
 	
 	@FXML
 	public void initialize() {
+		scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
 		setSizeLimit();
 		okBtn.setDisable(true);
 		randomBtn.setDisable(true);

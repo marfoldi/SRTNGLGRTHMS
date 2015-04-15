@@ -1,37 +1,39 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.algorithm.GraphAlgorithm;
-import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import srtnglgrthms.model.graph.Graph;
 import srtnglgrthms.model.graph.Vertex;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart.Data;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 public class OverviewGraphController {
 	@FXML
 	AnchorPane graphPane;
 	@FXML
-	private GridPane numbersPane;
+	private AnchorPane chartPane;
 	@FXML
-	private ScrollPane numbersScroll;
+	private OverviewChartController chartController;
+	private BarChart<String, Number> barChart;
 	private static Graph graph = new Graph();
 	private static Vertex[] vertices;
-	private static int vertexSize;
+	private static ObservableList<Data<String, Number>> numberList;
 	
+	@SuppressWarnings("unchecked")
 	@FXML
 	private void initialize() {
 		reloadGraph();
-		vertexSize = 18;
 		graphPane.getChildren().add(graph);
-		createFields();
-		GraphAlgorithm.setNumbersPane(numbersPane);
+		chartController = new OverviewChartController();
+		barChart = (BarChart<String, Number>) chartPane.getChildren().get(0);
+		chartController.setBarChart(barChart);
+		numberList = barChart.getData().get(0).dataProperty().getValue();
+		if(OverviewListController.getSelectedItem().equals("Versenyrendezés")) {
+			for(int i=0; i<numberList.size(); ++i) {
+				numberList.get(i).setYValue(0);
+			}
+		}
 	}
 	
 	public static void addVertices() {
@@ -44,26 +46,13 @@ public class OverviewGraphController {
 				graph.bindVertexes(vertices[i], vertices[2*i+2]);
 			}
 		}
+		if(OverviewListController.getSelectedItem().equals("Kupacrendezés") && vertices.length%2==0) {
+			graph.bindVertexes(vertices[(vertices.length-1)/2], vertices[vertices.length-1]);
+		}
 	}
 	
-	private void createFields() {
-		numbersPane.getChildren().clear();
-		DoubleProperty wProperty = new SimpleDoubleProperty();
-	    wProperty.bind(numbersPane.widthProperty());
-	    wProperty.addListener(new ChangeListener<Object>() {
-	        @Override
-	        public void changed(ObservableValue<?> ov, Object oldValue, Object newValue) {
-	         numbersScroll.setHvalue(numbersScroll.getHmax()); 
-	        }
-	    });
-	    int length = SortingAlgorithm.getNumbers().length;
-	    if(OverviewListController.getSelectedItem().equals("Versenyrendezés") && SortingAlgorithm.getNumbers().length>16) length=16;
-	    if(OverviewListController.getSelectedItem().equals("Kupac rendezés") && SortingAlgorithm.getNumbers().length>32) length=32;
-		for (int i = 0; i < length; ++i) {
-			TextField tf = new TextField();
-			tf.setMaxWidth(50.0);
-			numbersPane.add(tf, i, 0);
-		}
+	public static ObservableList<Data<String, Number>> getNumberList() {
+		return numberList;
 	}
 	
 	public static void reloadGraph() {
@@ -80,9 +69,5 @@ public class OverviewGraphController {
 	
 	public static Vertex[] getVertices() {
 		return vertices;
-	}
-	
-	public static int getVertexSize() {
-		return vertexSize;
 	}
 }
