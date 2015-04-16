@@ -6,13 +6,15 @@ import srtnglgrthms.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class BaseController {
 	private BorderPane menuLayout;
 	private static Stage stage;
-	
+
     /**
      * Closes the application.
      */
@@ -32,7 +34,43 @@ public class BaseController {
              e.printStackTrace();
          }
     }
-    
+
+    /**
+     * Opens an about algotihm dialog.
+     */
+    @FXML
+    private void handleAlgorithm() {
+    	if(OverviewListController.getSelectedItem()!=null) {
+	        Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle("Az algoritmusról");
+	        alert.setHeaderText(OverviewListController.getSelectedItem());
+	        alert.setContentText("Leírás\n");
+
+	        alert.showAndWait();
+    	}
+    	else {
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setTitle("Hiba");
+    		alert.setHeaderText("Hiba történt");
+    		alert.setContentText("Nincs kiválasztott algoritmus!");
+
+    		alert.showAndWait();
+    	}
+    }
+
+    /**
+     * Opens an about dialog.
+     */
+    @FXML
+    private void handleAbout() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Névjegy");
+        alert.setHeaderText("Névjegy");
+        alert.setContentText("Készítette: Márföldi Péter Bence\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
+
+        alert.showAndWait();
+    }
+
     /**
      * Closes the application.
      */
@@ -40,9 +78,9 @@ public class BaseController {
     private void handleExit() {
         System.exit(0);
     }
-    
+
     public static void setStage(Stage stage) {
     	BaseController.stage=stage;
     }
-	
+
 }

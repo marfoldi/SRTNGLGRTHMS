@@ -7,7 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -53,13 +55,26 @@ public class MenuController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	private void fileBtnHandler(ActionEvent event) {
 		FileInputController.setStage((Stage) menuPane.getScene().getWindow());
 		FileInputController.openChooser();
 	}
-	
+
+    /**
+     * Opens an about dialog.
+     */
+    @FXML
+    private void handleAbout() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Névjegy");
+        alert.setHeaderText("Névjegy");
+        alert.setContentText("Készítette: Márföldi Péter Bence\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
+
+        alert.showAndWait();
+    }
+
     /**
      * Closes the application.
      */

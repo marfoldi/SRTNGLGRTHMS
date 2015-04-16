@@ -5,12 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -20,7 +23,7 @@ public class FileInputController {
 	private static File file;
 	private static FileChooser fileChooser;
 	private static Scanner scanner;
-	
+
 	public static void openChooser() {
 		fileChooser = new FileChooser();
         // Set extension filter
@@ -37,7 +40,7 @@ public class FileInputController {
 			}
         }
 	}
-	
+
 	private static int getLineNumber() {
 		int lineNumber = 0;
 		try {
@@ -49,14 +52,23 @@ public class FileInputController {
 		} catch (IOException ioe) {}
 		return lineNumber;
 	}
-	
+
 	private static void loadFile() {
+		try {
 		int[] numbers = new int[getLineNumber()];
 		for (int i=0; i<numbers.length; ++i) numbers[i] = scanner.nextInt();
 		SortingAlgorithm.setNumbers(numbers);
 		showBaseLayout();
+		} catch(InputMismatchException ime) {
+			Alert alert = new Alert(AlertType.ERROR);
+    		alert.setTitle("Hiba");
+    		alert.setHeaderText("Hiba történt");
+    		alert.setContentText("A megadott fájl nem megfelelõ!\n(Nem csak egész számokat tartalmaz soronként)");
+
+    		alert.showAndWait();
+		}
 	}
-	
+
 	private static void showBaseLayout() {
 		try {
 			BorderPane baseLayout;
@@ -68,7 +80,7 @@ public class FileInputController {
 			Scene scene = new Scene(baseLayout);
 			stage.setScene(scene);
 			stage.show();
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

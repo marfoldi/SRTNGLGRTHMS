@@ -42,8 +42,9 @@ public class OverviewListController {
 										.getResource("view/OverViewGraphLayout.fxml"));
 								try {
 									((AnchorPane) parentController.displayPane
-											.getItems().get(0)).getChildren()
-											.setAll(loader.load());
+											.getItems().get(0)).getChildren().clear();
+									((AnchorPane) parentController.displayPane
+											.getItems().get(0)).getChildren().add(loader.load());
 									OverviewGraphController.reloadGraph();
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
@@ -56,8 +57,9 @@ public class OverviewListController {
 										.getResource("view/OverViewDoubleChartLayout.fxml"));
 								try {
 									((AnchorPane) parentController.displayPane
-											.getItems().get(0)).getChildren()
-											.setAll(loader.load());
+											.getItems().get(0)).getChildren().clear();
+									((AnchorPane) parentController.displayPane
+											.getItems().get(0)).getChildren().add(loader.load());
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -69,8 +71,9 @@ public class OverviewListController {
 									.getResource("view/OverViewChartLayout.fxml"));
 							try {
 								((AnchorPane) parentController.displayPane
-										.getItems().get(0)).getChildren()
-										.setAll(loader.load());
+										.getItems().get(0)).getChildren().clear();
+								((AnchorPane) parentController.displayPane
+										.getItems().get(0)).getChildren().add(loader.load());
 							} catch (IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();

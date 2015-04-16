@@ -11,13 +11,14 @@
         <menus>
           <Menu mnemonicParsing="false" text="Fájl">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleReturnToMenu" text="Vissza a főmenübe" />
+              <MenuItem mnemonicParsing="false" onAction="#handleReturnToMenu" text="Vissza a főmenübe" />
               <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Bezárás" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Segítség">
             <items>
-              <MenuItem mnemonicParsing="false" text="Névjegy" />
+            	<MenuItem mnemonicParsing="false" onAction="#handleAlgorithm" text="Az algoritmusról" />
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Névjegy" />
             </items>
           </Menu>
         </menus>

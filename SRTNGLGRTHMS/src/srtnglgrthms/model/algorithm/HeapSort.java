@@ -2,6 +2,7 @@ package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
+import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
@@ -13,17 +14,17 @@ public class HeapSort extends GraphAlgorithm {
 	private static boolean colored;
 	private static boolean canSwap;
 	private static boolean downIndexSetted;
-	
+
 	private HeapSort() {}
-	
+
 	private static class SortHolder {
         private static final HeapSort INSTANCE = new HeapSort();
     }
-	
+
     public static HeapSort getInstance() {
         return SortHolder.INSTANCE;
     }
-	
+
 	@Override
 	public void setDefaults() {
 		recursiveCall = new LinkedList<>();
@@ -35,7 +36,7 @@ public class HeapSort extends GraphAlgorithm {
 		canSwap = true;
 		downIndexSetted = false;
 	}
-	
+
 	@Override
 	public void step() {
 		if(starterIndex>=0) {
@@ -58,7 +59,9 @@ public class HeapSort extends GraphAlgorithm {
 			if(canSwap) {
 				swap(0, recursiveCounter);
 				vertices[0].setColor("swap");
+				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(0).getNode(), "swap");
 				vertices[recursiveCounter].setColor("done");
+				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(recursiveCounter).getNode(), "done");
 				OverviewGraphController.reloadGraph();
 				OverviewGraphController.addVertices();
 				canSwap = false;
@@ -79,16 +82,27 @@ public class HeapSort extends GraphAlgorithm {
 				downIndex = 0;
 			}
 		}
+		if(recursiveCounter==0) {
+			vertices[recursiveCounter].setColor("done");
+			OverviewChartController.setColor(OverviewGraphController.getNumberList().get(recursiveCounter).getNode(), "done");
+		}
 	}
-	
+
 	private int buildHeap(int startIndex, int endIndex, boolean firstRun) {
 		setRestColor(recursiveCounter);
 		if(2*startIndex+1<=endIndex) {
 			if(!colored) {
 				try {
 					vertices[startIndex].setColor ("swap");
-					if(firstRun || (!firstRun && 2*startIndex+2<endIndex)) vertices[2*startIndex+2].setColor("swap");
-					if(firstRun || (!firstRun && 2*startIndex+1<endIndex)) vertices[2*startIndex+1].setColor("swap");
+					OverviewChartController.setColor(OverviewGraphController.getNumberList().get(startIndex).getNode(), "swap");
+					if(firstRun || (!firstRun && 2*startIndex+2<endIndex)) {
+						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+2).getNode(), "swap");
+						vertices[2*startIndex+2].setColor("swap");
+					}
+					if(firstRun || (!firstRun && 2*startIndex+1<endIndex)) {
+						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+1).getNode(), "swap");
+						vertices[2*startIndex+1].setColor("swap");
+					}
 					colored = true;
 					return startIndex;
 				} catch (ArrayIndexOutOfBoundsException aioobe) {
@@ -109,8 +123,15 @@ public class HeapSort extends GraphAlgorithm {
 				return -1;
 			}
 			else {
-				if(startIndex == 0) vertices[startIndex].setColor ("done");
-				else vertices[startIndex].setColor ("select");
+				if(startIndex == 0) {
+					vertices[startIndex].setColor ("done");
+					OverviewChartController.setColor(OverviewGraphController.getNumberList().get(startIndex).getNode(), "done");
+				}
+				else {
+					vertices[startIndex].setColor ("select");
+					OverviewChartController.setColor(OverviewGraphController.getNumberList().get(startIndex).getNode(), "select");
+				}
+				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(ir).getNode(), "swap");
 				vertices[ir].setColor("swap");
 				swap(startIndex, ir);
 				startIndex = ir;
