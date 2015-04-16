@@ -5,13 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="srtnglgrthms.controller.BaseController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Fájl">
             <items>
-              <MenuItem mnemonicParsing="false" text="Bezárás" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleReturnToMenu" text="Vissza a főmenübe" />
+              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Bezárás" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Segítség">

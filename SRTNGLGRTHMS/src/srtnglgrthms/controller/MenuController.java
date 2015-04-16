@@ -59,4 +59,12 @@ public class MenuController {
 		FileInputController.setStage((Stage) menuPane.getScene().getWindow());
 		FileInputController.openChooser();
 	}
+	
+    /**
+     * Closes the application.
+     */
+    @FXML
+    private void handleExit() {
+        System.exit(0);
+    }
 }

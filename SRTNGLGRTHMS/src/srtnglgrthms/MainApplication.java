@@ -2,6 +2,7 @@ package srtnglgrthms;
 
 import java.io.IOException;
 
+import srtnglgrthms.controller.BaseController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,7 +23,7 @@ public class MainApplication extends Application {
         
         // Set the application icon.
         this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
-
+    	BaseController.setStage(primaryStage);
         initMenuLayout();
     }
     
