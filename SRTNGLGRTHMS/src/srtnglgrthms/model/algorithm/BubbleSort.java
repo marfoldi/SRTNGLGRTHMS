@@ -38,6 +38,7 @@ public class BubbleSort extends ChartAlgorithm {
 			counterData.get(0).incValue();
 			if (data.get(innerIdx - 1).getYValue().intValue() > data.get(innerIdx).getYValue().intValue()) {
 				swap(innerIdx - 1, innerIdx);
+				OverviewChartController.setColor(data.get(innerIdx).getNode(), "select");
 				counterData.get(1).incValue();
 			}
 			innerIdx++;

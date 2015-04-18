@@ -40,7 +40,7 @@ public class HeapSort extends GraphAlgorithm {
 	@Override
 	public void step() {
 		if(starterIndex>=0) {
-			downIndex = buildHeap(downIndex, vertices.length-1, true);
+			downIndex = buildHeap(downIndex, vertices.length-1);
 			if(downIndex != -1) {
 				return;
 			}
@@ -69,7 +69,7 @@ public class HeapSort extends GraphAlgorithm {
 			}
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
-			downIndex = buildHeap(downIndex, recursiveCounter-1, false);
+			downIndex = buildHeap(downIndex, recursiveCounter-1);
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
 			if(downIndex != -1) {
@@ -88,20 +88,24 @@ public class HeapSort extends GraphAlgorithm {
 		}
 	}
 
-	private int buildHeap(int startIndex, int endIndex, boolean firstRun) {
+	private int buildHeap(int startIndex, int endIndex) {
 		setRestColor(recursiveCounter);
 		if(2*startIndex+1<=endIndex) {
 			if(!colored) {
 				try {
 					vertices[startIndex].setColor ("swap");
 					OverviewChartController.setColor(OverviewGraphController.getNumberList().get(startIndex).getNode(), "swap");
-					if(firstRun || (!firstRun && 2*startIndex+2<endIndex)) {
-						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+2).getNode(), "swap");
-						vertices[2*startIndex+2].setColor("swap");
+					if(startIndex==vertices.length/2-1 && endIndex==vertices.length-1 && vertices.length%2==0) {
+						vertices[endIndex].setColor("swap");
+						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(endIndex).getNode(), "swap");
 					}
-					if(firstRun || (!firstRun && 2*startIndex+1<endIndex)) {
+					if(2*startIndex+1<endIndex) {
 						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+1).getNode(), "swap");
 						vertices[2*startIndex+1].setColor("swap");
+					}
+					if(2*startIndex+2<endIndex) {
+						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+2).getNode(), "swap");
+						vertices[2*startIndex+2].setColor("swap");
 					}
 					colored = true;
 					return startIndex;

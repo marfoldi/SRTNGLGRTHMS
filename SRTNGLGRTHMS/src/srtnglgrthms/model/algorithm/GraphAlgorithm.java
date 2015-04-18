@@ -70,7 +70,10 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 			if(length>numbers.length) System.arraycopy(numbers, 0, checkedArray, 0, length-(length-numbers.length));
 			else System.arraycopy(numbers, 0, checkedArray, 0, length);
 			GraphAlgorithm.checkedArray = checkedArray;
-			return checkedArray;
+			if(numbers.length>16) {
+				return checkedArray;
+			}
+			else return numbers;
 		}
 		}
 		GraphAlgorithm.checkedArray = numbers;

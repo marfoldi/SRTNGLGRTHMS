@@ -24,7 +24,7 @@ public class BenchmarkTableController {
 		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 		compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
 		swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
-		tableView.setItems(SortingAlgorithm.getBenchmarkData());
+		//tableView.setItems(SortingAlgorithm.getBenchmarkData());
 		setMouseAction();
     }
 	

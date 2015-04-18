@@ -2,6 +2,8 @@ package srtnglgrthms.model.algorithm;
 
 import java.util.LinkedList;
 
+//MOZGATÁS MINDIG N, ÖSSZEHASONLÍTÁS NEM KELL, HA -1;
+
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
 import srtnglgrthms.model.RecursiveParameter;
@@ -30,7 +32,7 @@ public class TournamentSort extends GraphAlgorithm {
 		recursiveCall = new LinkedList<>();
 		setDefaultGraph();
 		fillIndex = vertices.length/2;
-		recursiveCounter = vertices.length/2;
+		recursiveCounter = OverviewGraphController.getNumberList().size()-1;
 		maxIndex = 0;
 		outIndex = 1;
 		colored = false;
@@ -57,8 +59,8 @@ public class TournamentSort extends GraphAlgorithm {
 			OverviewGraphController.addVertices();
 			if(fillIndex-1==0) {
 				vertices[fillIndex-1].setColor("done");
-				OverviewGraphController.getNumberList().get(checkedArray.length-outIndex).setYValue(vertices[0].getNumber());
-				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(checkedArray.length-outIndex).getNode(), "done");
+				OverviewGraphController.getNumberList().get(OverviewGraphController.getNumberList().size()-outIndex).setYValue(vertices[0].getNumber());
+				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(OverviewGraphController.getNumberList().size()-outIndex).getNode(), "done");
 				outIndex++;
 			}
 			else vertices[fillIndex-1].setColor("select");
@@ -93,8 +95,8 @@ public class TournamentSort extends GraphAlgorithm {
 				if(maxIndex>=0) {
 					vertices[maxIndex].setNumber(vertices[2*maxIndex+1].getNumber()>vertices[2*maxIndex+2].getNumber() ? vertices[2*maxIndex+1].getNumber():vertices[2*maxIndex+2].getNumber());
 					if(maxIndex==0) {
-						OverviewGraphController.getNumberList().get(checkedArray.length-outIndex).setYValue(vertices[0].getNumber());
-						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(checkedArray.length-outIndex).getNode(), "done");
+						OverviewGraphController.getNumberList().get(OverviewGraphController.getNumberList().size()-outIndex).setYValue(vertices[0].getNumber());
+						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(OverviewGraphController.getNumberList().size()-outIndex).getNode(), "done");
 						outIndex++;
 						vertices[maxIndex].setColor ("done");
 					}
@@ -116,9 +118,6 @@ public class TournamentSort extends GraphAlgorithm {
 		if(recursiveCounter==0) {
 			for (Vertex vertex : vertices) {
 				vertex.setColor("done");
-			}
-			for(int i=0; i<checkedArray.length; ++i) {
-				OverviewChartController.setColor(ChartAlgorithm.getData().get(i).getNode(), "done");
 			}
 		}
 	}
