@@ -43,5 +43,9 @@ public class CounterData {
 	public StringProperty valueProperty() {
 		return value;
 	}
+	
+	public void decValue() {
+		this.value.set(Integer.toString(Integer.parseInt(this.value.get())-1));
+	}
 
 }

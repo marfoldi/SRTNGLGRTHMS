@@ -4,7 +4,7 @@ import javafx.scene.Group;
 
 public class Graph extends Group {
 	public void addVertex(Vertex vertex) {
-		getChildren().add(new Group(vertex.graphicRepresentaion()));
+		getChildren().add(new Group(vertex.getGraphics()));
 	}
 	
 	public void bindVertexes(Vertex vertexA, Vertex vertexB)  {

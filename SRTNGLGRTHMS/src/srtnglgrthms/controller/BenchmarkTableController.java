@@ -21,11 +21,21 @@ public class BenchmarkTableController {
 	@FXML
     private void initialize() {
         // Initialize the info table with the two columns.
-		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-		compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
-		swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
-		//tableView.setItems(SortingAlgorithm.getBenchmarkData());
-		setMouseAction();
+		try {
+			nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+			compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
+			swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
+			tableView.setItems(SortingAlgorithm.getBenchmarkData());
+			setMouseAction();
+		} catch(NullPointerException npe) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			initialize();
+		}
     }
 	
 	private void setMouseAction() {

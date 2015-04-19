@@ -50,7 +50,7 @@ public class Vertex extends Group {
 		circle.setCenterY(centerY);
 	}
 	
-	public Label graphicRepresentaion() {
+	public Label getGraphics() {
 		Label label;
 		if(this.number!=-2) {
 		label = new Label(String.valueOf(number), circle);

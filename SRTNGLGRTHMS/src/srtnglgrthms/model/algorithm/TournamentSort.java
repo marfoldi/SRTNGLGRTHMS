@@ -4,8 +4,10 @@ import java.util.LinkedList;
 
 //MOZGATÁS MINDIG N, ÖSSZEHASONLÍTÁS NEM KELL, HA -1;
 
+
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
+import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
 
@@ -37,6 +39,9 @@ public class TournamentSort extends GraphAlgorithm {
 		outIndex = 1;
 		colored = false;
 		isFound = false;
+		counterData.clear();
+		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Cserék", "0"));
 	}
 	
 	@Override
@@ -53,6 +58,7 @@ public class TournamentSort extends GraphAlgorithm {
 				colored = true;
 				return;
 			}
+			if(vertices[2*fillIndex].getNumber()!=-1 || vertices[2*fillIndex-1].getNumber()!=-1) counterData.get(0).incValue();
 			vertices[fillIndex-1].setNumber(vertices[2*fillIndex].getNumber()>vertices[2*fillIndex-1].getNumber() ? vertices[2*fillIndex].getNumber():vertices[2*fillIndex-1].getNumber());
 			colored = false;
 			OverviewGraphController.reloadGraph();

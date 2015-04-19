@@ -100,6 +100,7 @@ public class OverviewChartController implements ChartController {
 	}
 
 	public static void setColor(Node node, String color) {
+		node.setOpacity(1);
 		switch (color) {
 		case "default":
 			node.setStyle("-fx-bar-fill: #f3622d;");
@@ -112,6 +113,9 @@ public class OverviewChartController implements ChartController {
 			break;
 		case "done":
 			node.setStyle("-fx-bar-fill: #8C2D46;");
+			break;
+		case "fade": 
+			node.setOpacity(0.5);
 			break;
 		default:
 			node.setStyle("-fx-bar-fill: " + color.toString() + ";");

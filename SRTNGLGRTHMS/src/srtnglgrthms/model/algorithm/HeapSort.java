@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
+import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
 
@@ -35,12 +37,15 @@ public class HeapSort extends GraphAlgorithm {
 		colored = false;
 		canSwap = true;
 		downIndexSetted = false;
+		counterData.clear();
+		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Cserék", "0"));
 	}
 
 	@Override
 	public void step() {
 		if(starterIndex>=0) {
-			downIndex = buildHeap(downIndex, vertices.length-1);
+			downIndex = buildHeap(downIndex, vertices.length-1, true);
 			if(downIndex != -1) {
 				return;
 			}
@@ -57,6 +62,7 @@ public class HeapSort extends GraphAlgorithm {
 				downIndexSetted = true;
 			}
 			if(canSwap) {
+				counterData.get(1).incValue();
 				swap(0, recursiveCounter);
 				vertices[0].setColor("swap");
 				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(0).getNode(), "swap");
@@ -69,7 +75,7 @@ public class HeapSort extends GraphAlgorithm {
 			}
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
-			downIndex = buildHeap(downIndex, recursiveCounter-1);
+			downIndex = buildHeap(downIndex, recursiveCounter-1, false);
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
 			if(downIndex != -1) {
@@ -88,24 +94,20 @@ public class HeapSort extends GraphAlgorithm {
 		}
 	}
 
-	private int buildHeap(int startIndex, int endIndex) {
+	private int buildHeap(int startIndex, int endIndex, boolean firstRun) {
 		setRestColor(recursiveCounter);
 		if(2*startIndex+1<=endIndex) {
 			if(!colored) {
 				try {
 					vertices[startIndex].setColor ("swap");
 					OverviewChartController.setColor(OverviewGraphController.getNumberList().get(startIndex).getNode(), "swap");
-					if(startIndex==vertices.length/2-1 && endIndex==vertices.length-1 && vertices.length%2==0) {
-						vertices[endIndex].setColor("swap");
-						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(endIndex).getNode(), "swap");
-					}
-					if(2*startIndex+1<endIndex) {
-						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+1).getNode(), "swap");
-						vertices[2*startIndex+1].setColor("swap");
-					}
-					if(2*startIndex+2<endIndex) {
+					if(2*startIndex+2<endIndex || firstRun && vertices.length%2!=0) {
 						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+2).getNode(), "swap");
 						vertices[2*startIndex+2].setColor("swap");
+					}
+					if(startIndex+1<endIndex) {
+						OverviewChartController.setColor(OverviewGraphController.getNumberList().get(2*startIndex+1).getNode(), "swap");
+						vertices[2*startIndex+1].setColor("swap");
 					}
 					colored = true;
 					return startIndex;
@@ -118,10 +120,12 @@ public class HeapSort extends GraphAlgorithm {
 				}
 			}
 			int ir;
+			if(2*startIndex+2<=endIndex) counterData.get(0).incValue();
 			if(2*startIndex+2>endIndex || vertices[2*startIndex+1].getNumber()>vertices[2*startIndex+2].getNumber()) {
 				ir = 2*startIndex+1;
 			}
 			else ir = 2*startIndex+2;
+			counterData.get(0).incValue();
 			if(vertices[startIndex].getNumber()>=vertices[ir].getNumber()) {
 				colored = false;
 				return -1;
@@ -137,6 +141,7 @@ public class HeapSort extends GraphAlgorithm {
 				}
 				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(ir).getNode(), "swap");
 				vertices[ir].setColor("swap");
+				counterData.get(1).incValue();
 				swap(startIndex, ir);
 				startIndex = ir;
 				OverviewGraphController.reloadGraph();
@@ -178,5 +183,55 @@ public class HeapSort extends GraphAlgorithm {
 			graph.bindVertexes(vertices[(vertices.length-1)/2], vertices[vertices.length-1]);
 		}
 		OverviewGraphController.addVertices();
+	}
+	
+	static int swapCounter = 0; //Increment this counter whenever a swap takes place
+    static int comparsionCounter=0; //Increment this counter whenever a comparison takes place
+	public static Runnable sort = () -> {
+		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
+		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
+	    if(numbers.length>=1) {
+	    	buildStarterHeap(numbers);
+	    	int recursiveCounter = numbers.length-1;
+	    	while(recursiveCounter>=1) {
+	    		swapCounter++;
+		    	int temp=numbers[0];
+		    	numbers[0]=numbers[recursiveCounter];
+		        numbers[recursiveCounter]=temp;
+		        buildHeap(numbers, 0, recursiveCounter-1);
+		        recursiveCounter--;
+	    	}
+	    }
+	    benchmarkData.add(new BenchmarkData("Kupacrendezés", comparsionCounter, swapCounter));
+	};
+	
+	private static void buildStarterHeap(int[] numbers) {
+		int starterIndex = numbers.length/2-1;
+		while(starterIndex>=0) {
+			buildHeap(numbers, starterIndex, numbers.length-1);
+			starterIndex--;
+		}
+	}
+	
+	private static void buildHeap(int[] numbers, int begin, int end) {
+		int index;
+		while(2*begin+1<=end) {
+			if(2*begin+2<=end) comparsionCounter++;
+			if(2*begin+2>end || numbers[2*begin+1]>numbers[2*begin+2]) {
+				index=2*begin+1;
+			}
+			else index=2*begin+2;
+			comparsionCounter++;
+			if(numbers[begin]>=numbers[index]) {
+				return;
+			}
+			else {
+		    	swapCounter++;
+		    	int temp=numbers[begin];
+		        numbers[begin]=numbers[index];
+		        numbers[index]=temp;
+		        begin=index;
+			}
+		}
 	}
 }

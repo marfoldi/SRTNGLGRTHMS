@@ -3,6 +3,7 @@ package srtnglgrthms.model.algorithm;
 import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
+import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 
@@ -37,27 +38,33 @@ public class QuickSort extends ChartAlgorithm {
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
 		counterData.add(new CounterData("Mozgatások", "0"));
-		counterData.add(new CounterData("Vezérelem", "t["+ Integer.toString(begin+(end-begin)/2)+ "]"));
+		counterData.add(new CounterData("Vezérelem", "t["+ Integer.toString(pivotIndex)+ "]"));
 	}
 	
 	public void step() {
 		setRestColor(begin, end);
 		OverviewChartController.setColor(data.get(pivotIndex).getNode(), "select");
+		counterData.get(2).setValue("t["+ Integer.toString(pivotIndex)+ "]");
 		if(!partitioned) {
 			if(partitionHelpIndex<end) {
 				counterData.get(0).incValue();
 				OverviewChartController.setColor(data.get(partitionIndex).getNode(), "swap");
 				OverviewChartController.setColor(data.get(partitionHelpIndex).getNode(), "swap");
 				if(data.get(partitionHelpIndex).getYValue().intValue()<=pivot) {
-					counterData.get(1).incValue();
-					if(partitionHelpIndex != partitionIndex) swap(partitionHelpIndex, partitionIndex);
+					//if(partitionHelpIndex != partitionIndex) {
+						counterData.get(1).incValue();
+						swap(partitionHelpIndex, partitionIndex);
+					//}
 					partitionIndex++;
 				}
 				partitionHelpIndex++;
 				return;
 			}
-			counterData.get(1).incValue();
-			swap(partitionIndex, end);
+			//if(partitionIndex!=end) {
+				counterData.get(1).incValue();
+				swap(partitionIndex, end);
+			//}
+			counterData.get(2).setValue("t["+ Integer.toString(partitionIndex)+ "]");
 			OverviewChartController.setColor(data.get(partitionIndex).getNode(), "select");
 			OverviewChartController.setColor(data.get(end).getNode(), "swap");
 			pivotIndex = partitionIndex;
@@ -75,7 +82,13 @@ public class QuickSort extends ChartAlgorithm {
 			    partitionHelpIndex=begin;
 			    pivotIndex = end;
 			    pivot = data.get(pivotIndex).getYValue().intValue();
-		        }	
+			    setRestColor(0, data.size());
+		   }
+			else {
+				for (int i = 0; i < data.size(); i++) {
+					OverviewChartController.setColor(data.get(i).getNode(), "done");
+				}
+			}
 		}
 	}
 	
@@ -83,11 +96,52 @@ public class QuickSort extends ChartAlgorithm {
 		for (int i = begin; i < end; i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), "default");
 		}
-		for(int i=0; i<begin-1; ++i) {
-			OverviewChartController.setColor(data.get(i).getNode(), "done");
+		for(int i=0; i<begin; ++i) {
+			OverviewChartController.setColor(data.get(i).getNode(), "fade");
 		}
 		for(int i=end+1; i<data.size(); ++i) {
-			OverviewChartController.setColor(data.get(i).getNode(), "done");
+			OverviewChartController.setColor(data.get(i).getNode(), "fade");
+		}
+	}
+	
+    static int swapCounter = 0; //Increment this counter whenever a swap takes place
+    static int comparsionCounter=0; //Increment this counter whenever a comparison takes place
+	public static Runnable sort = () -> {
+		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
+		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
+	    quickSort(numbers, 0, numbers.length-1);
+	    benchmarkData.add(new BenchmarkData("Gyorsrendezés", comparsionCounter, swapCounter));
+	};
+	
+	private static int partition(int[] numbers, int begin, int end) {
+		int pivot = numbers[end];
+		int partitionIndex = begin;
+		for(int i=begin; i<end; ++i) {
+			comparsionCounter++;
+			if(numbers[i]<=pivot) {
+				//if(i != partitionIndex) {
+				swapCounter++;
+				int temp=numbers[i];
+	            numbers[i]=numbers[partitionIndex];
+	            numbers[partitionIndex]=temp;
+				//}
+	            partitionIndex++;
+			}
+		}
+		//if(partitionIndex!=end) {
+			swapCounter++;
+			int temp=numbers[partitionIndex];
+			numbers[partitionIndex]=numbers[end];
+			numbers[end]=temp;
+		//}
+		return partitionIndex;
+	}
+	
+	private static void quickSort(int[] numbers, int begin, int end) {
+		if(begin<end) {
+			int partitionIndex = partition(numbers, begin, end);
+			quickSort(numbers, begin, partitionIndex-1);
+			quickSort(numbers, partitionIndex+1, end);
 		}
 	}
 }
