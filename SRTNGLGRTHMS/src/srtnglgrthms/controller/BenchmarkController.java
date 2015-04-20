@@ -34,23 +34,16 @@ public class BenchmarkController {
 			}
 		}
 		tableController.getTableView().setItems(SortingAlgorithm.getBenchmarkData());
-		
-		
-		/*Thread bubbleThread = new Thread(BubbleSort.sort);
-		Thread insertionThread = new Thread(InsertionSort.sort);
-		Thread shellThread = new Thread(ShellSort.sort);
-		Thread quickThread = new Thread(QuickSort.sort);
-		Thread heapThread = new Thread(HeapSort.sort);
-		Thread tournamentThread = new Thread(TournamentSort.sort);*/
-		
-		/*new Thread(InsertionSort.sort).start();
-		new Thread(ShellSort.sort).start();
-		new Thread(QuickSort.sort).start();
-		new Thread(HeapSort.sort).start();
-		new Thread(TournamentSort.sort).start();*/	
 	}
 	
 	public static void setTableController(BenchmarkTableController tableController) {
 		BenchmarkController.tableController = tableController;
+	}
+	
+	public static boolean isThreadsDone() {
+		for(Thread thread : sortingThreads) {
+			if(thread.isAlive()) return false;
+		}
+		return true;
 	}
 }
