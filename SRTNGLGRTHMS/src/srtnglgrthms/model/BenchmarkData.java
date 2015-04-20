@@ -1,25 +1,25 @@
 package srtnglgrthms.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.LongProperty;
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class BenchmarkData {
 	private StringProperty name;
-	private IntegerProperty compareCounter;
-	private IntegerProperty moveCounter;
-	private IntegerProperty swapCounter;
+	private LongProperty compareCounter;
+	private LongProperty moveCounter;
+	private LongProperty swapCounter;
 
 	public BenchmarkData() {
 		this(null, 0, 0, 0);
 	}
 
-	public BenchmarkData(String name, int compareCounter, int moveCounter, int swapCounter) {
+	public BenchmarkData(String name, long compareCounter, long moveCounter, long swapCounter) {
 		this.name = new SimpleStringProperty(name);
-		this.compareCounter = new SimpleIntegerProperty(compareCounter);
-		this.moveCounter = new SimpleIntegerProperty(moveCounter);
-		this.swapCounter = new SimpleIntegerProperty(swapCounter);
+		this.compareCounter = new SimpleLongProperty(compareCounter);
+		this.moveCounter = new SimpleLongProperty(moveCounter);
+		this.swapCounter = new SimpleLongProperty(swapCounter);
 	}
 
 	public String getName() {
@@ -34,39 +34,39 @@ public class BenchmarkData {
 		return name;
 	}
 
-	public int getCompareCounter() {
+	public long getCompareCounter() {
 		return compareCounter.get();
 	}
 
-	public void setCompareCounter(int compareCounter) {
+	public void setCompareCounter(long compareCounter) {
 		this.compareCounter.set(compareCounter);
 	}
 
-	public IntegerProperty compareCounterProperty() {
+	public LongProperty compareCounterProperty() {
 		return compareCounter;
 	}
 
-	public int getMoveCounter() {
+	public long getMoveCounter() {
 		return moveCounter.get();
 	}
 
-	public void setMoveCounter(int moveCounter) {
+	public void setMoveCounter(long moveCounter) {
 		this.moveCounter.set(moveCounter);
 	}
 
-	public IntegerProperty moveCounterProperty() {
+	public LongProperty moveCounterProperty() {
 		return moveCounter;
 	}
 
-	public int getSwapCounter() {
+	public long getSwapCounter() {
 		return swapCounter.get();
 	}
 
-	public void setSwapCounter(int swapCounter) {
+	public void setSwapCounter(long swapCounter) {
 		this.swapCounter.set(swapCounter);
 	}
 
-	public IntegerProperty swapCounterProperty() {
+	public LongProperty swapCounterProperty() {
 		return swapCounter;
 	}
 }

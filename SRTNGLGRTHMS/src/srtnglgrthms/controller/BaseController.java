@@ -3,23 +3,41 @@ package srtnglgrthms.controller;
 import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class BaseController {
+	@FXML
+	private TabPane tabPane;
+	
 	private BorderPane menuLayout;
 	private static Stage stage;
+	
+	@FXML
+	private void initialize() {
+		if(SortingAlgorithm.getNumbers().length>100) {
+			SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+			selectionModel.select(1);
+			tabPane.getTabs().remove(0);
+		}
+	}
 
     /**
      * Closes the application.
      */
     @FXML
     private void handleReturnToMenu() {
+    	SortingAlgorithm.getBenchmarkData().clear();
+    	SortingAlgorithm.getCounterData().clear();
     	 try {
              // Load base layout from fxml file.
              FXMLLoader loader = new FXMLLoader();

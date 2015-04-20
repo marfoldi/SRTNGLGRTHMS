@@ -79,7 +79,8 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 		GraphAlgorithm.checkedArray = numbers;
 		return numbers;
 	}
-
+	
+	@Override
 	protected void swap(int firstIndex, int secondIndex) {
 		int temp;
 		temp = vertices[firstIndex].getNumber();

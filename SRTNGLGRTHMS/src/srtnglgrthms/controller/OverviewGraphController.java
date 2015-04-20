@@ -1,5 +1,6 @@
 package srtnglgrthms.controller;
 
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import srtnglgrthms.model.graph.Graph;
 import srtnglgrthms.model.graph.Vertex;
 import javafx.collections.ObservableList;
@@ -23,6 +24,7 @@ public class OverviewGraphController {
 	@SuppressWarnings("unchecked")
 	@FXML
 	private void initialize() {
+		if(SortingAlgorithm.getNumbers().length<=100) {
 		reloadGraph();
 		graphPane.getChildren().add(graph);
 		chartController = new OverviewChartController();
@@ -33,6 +35,7 @@ public class OverviewGraphController {
 			for(int i=0; i<numberList.size(); ++i) {
 				numberList.get(i).setYValue(0);
 			}
+		}
 		}
 	}
 	

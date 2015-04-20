@@ -11,9 +11,9 @@ import javafx.scene.chart.XYChart.Series;
 
 public class BenchmarkChartController {
 	@FXML
-	private BarChart<String, Integer> barChart;
-	private static Series<String, Integer> compareCounter;
-	private static Series<String, Integer> moveCounter;
+	private BarChart<String, Long> barChart;
+	private static Series<String, Long> compareCounter;
+	private static Series<String, Long> moveCounter;
 	private static List<String> loadedItems;
 
 	@FXML
@@ -35,8 +35,8 @@ public class BenchmarkChartController {
 	public static void addElement(BenchmarkData data) {
 		if(!alreadyLoaded(data.getName())) {
 			loadedItems.add(data.getName());
-			compareCounter.getData().add(new XYChart.Data<String, Integer>(data.getName(), data.getCompareCounter()));
-			moveCounter.getData().add(new XYChart.Data<String, Integer>(data.getName(), data.getMoveCounter()));
+			compareCounter.getData().add(new XYChart.Data<String, Long>(data.getName(), data.getCompareCounter()));
+			moveCounter.getData().add(new XYChart.Data<String, Long>(data.getName(), data.getMoveCounter()));
 		}
 		else {
 			int idx = 0;

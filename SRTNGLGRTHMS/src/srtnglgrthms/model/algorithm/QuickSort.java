@@ -104,9 +104,11 @@ public class QuickSort extends ChartAlgorithm {
 		}
 	}
 
-    static int swapCounter = 0; //Increment this counter whenever a swap takes place
-    static int comparisonCounter=0; //Increment this counter whenever a comparison takes place
+    static int swapCounter; //Increment this counter whenever a swap takes place
+    static int comparisonCounter; //Increment this counter whenever a comparison takes place
 	public static Runnable sort = () -> {
+		swapCounter = 0;
+		comparisonCounter = 0;
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    quickSort(numbers, 0, numbers.length-1);

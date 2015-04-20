@@ -6,7 +6,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import srtnglgrthms.model.BenchmarkData;
-import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 public class BenchmarkTableController {
 	@FXML
@@ -23,22 +22,13 @@ public class BenchmarkTableController {
 	@FXML
     private void initialize() {
         // Initialize the info table with the two columns.
-		try {
-			nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-			compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
-			moveColumn.setCellValueFactory(cellData -> cellData.getValue().moveCounterProperty());
-			swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
-			tableView.setItems(SortingAlgorithm.getBenchmarkData());
-			setMouseAction();
-		} catch(NullPointerException npe) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			initialize();
-		}
+		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+		compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
+		moveColumn.setCellValueFactory(cellData -> cellData.getValue().moveCounterProperty());
+		swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
+		//tableView.setItems(SortingAlgorithm.getBenchmarkData());
+		BenchmarkController.setTableController(this);
+		setMouseAction();
     }
 
 	private void setMouseAction() {
@@ -50,5 +40,9 @@ public class BenchmarkTableController {
 		        }
 		    }
 		});
+	}
+	
+	public TableView<BenchmarkData> getTableView() {
+		return tableView;
 	}
 }

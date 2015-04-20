@@ -28,7 +28,7 @@
             <SplitPane dividerPositions="0.6879194630872483" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
               <items>
                      	<fx:include source="OverviewListLayout.fxml" />
-                  <fx:include source="InfoTableLayout.fxml" />
+                  <fx:include source="OverviewTableLayout.fxml" />
               </items>
             </SplitPane>
          </left>

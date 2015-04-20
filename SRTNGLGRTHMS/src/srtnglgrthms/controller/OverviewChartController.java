@@ -52,6 +52,7 @@ public class OverviewChartController {
 	}
 
 	private void setNumbersArray() {
+		if(SortingAlgorithm.getNumbers().length<=100) {
 		if(OverviewListController.getSelectedItem() != null) {
 			switch(OverviewListController.getSelectedItem()) {
 				case "Kupacrendezés" : {
@@ -69,6 +70,7 @@ public class OverviewChartController {
 			}
 		}
 		else numbers = SortingAlgorithm.getNumbers();
+		} else numbers = new int[] {0};
 	}
 
 	public void initChart(int[] numbers) {

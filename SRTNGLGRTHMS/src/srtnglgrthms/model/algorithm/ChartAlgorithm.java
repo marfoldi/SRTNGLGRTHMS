@@ -6,6 +6,7 @@ import javafx.scene.chart.XYChart.Data;
 public abstract class ChartAlgorithm extends SortingAlgorithm {
 	protected static ObservableList<Data<String, Number>> data;
 	
+	@Override
 	protected void swap(int firstIndex, int secondIndex) {
 		int temp;
 		temp = (int) data.get(firstIndex).getYValue();
