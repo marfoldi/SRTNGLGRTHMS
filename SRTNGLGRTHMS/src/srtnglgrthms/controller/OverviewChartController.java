@@ -26,7 +26,7 @@ import javafx.scene.chart.XYChart.Series;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-public class OverviewChartController implements ChartController {
+public class OverviewChartController {
 	@FXML
 	private CategoryAxis yAxis = new CategoryAxis();
 	@FXML
@@ -50,7 +50,7 @@ public class OverviewChartController implements ChartController {
 		initChart(numbers);
 		setAnimation();
 	}
-	
+
 	private void setNumbersArray() {
 		if(OverviewListController.getSelectedItem() != null) {
 			switch(OverviewListController.getSelectedItem()) {
@@ -114,7 +114,7 @@ public class OverviewChartController implements ChartController {
 		case "done":
 			node.setStyle("-fx-bar-fill: #8C2D46;");
 			break;
-		case "fade": 
+		case "fade":
 			node.setOpacity(0.5);
 			break;
 		default:
@@ -128,7 +128,6 @@ public class OverviewChartController implements ChartController {
 				(int) (Math.random() * 256), (int) (Math.random() * 256));
 	}
 
-	@Override
 	public void displayLegend(Data<String, Number> data) {
 		final Node node = data.getNode();
 		Text barValue;

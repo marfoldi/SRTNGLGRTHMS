@@ -10,17 +10,17 @@ public class InsertionSort extends ChartAlgorithm{
 	private static int innerIndex = outerIndex;
 	private static boolean isSelected = false;
 	private static boolean showSwapped = true;
-	
+
 	private InsertionSort() {}
-	
+
 	private static class SortHolder {
         private static final InsertionSort INSTANCE = new InsertionSort();
     }
-	
+
     public static InsertionSort getInstance() {
         return SortHolder.INSTANCE;
     }
-    
+
 	public void setDefaults() {
 		outerIndex = 1;
 		innerIndex = outerIndex;
@@ -76,26 +76,26 @@ public class InsertionSort extends ChartAlgorithm{
     		isSelected = false;
     	}
     }
-	
+
 	private void setRestColor(String color) {
 		for (int i = 0; i < outerIndex; i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), color);
 		}
 	}
-	
+
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
-	    int swapCounter = 0; //Increment this counter whenever a swap takes place
-	    int moveCounter=0; //Increment this counter whenever a movement takes place
+	    int moveCounter = 0; //Increment this counter whenever a move takes place
+	    int comparisonCounter=0; //Increment this counter whenever a comparison takes place
 	    for (int i=0; i<numbers.length-1; i++)
 	    {
 	       int temp = numbers[i+1];
 	       int j;
 	       for(j=i; j>=0; --j) {
-	    	   moveCounter++;
+	    	   comparisonCounter++;
 	    	   if(temp<numbers[j]) {
-	    		   swapCounter++;
+	    		   moveCounter++;
 	    		   numbers[j+1] = numbers[j];
 	    	   }
 	    	   else {
@@ -104,6 +104,6 @@ public class InsertionSort extends ChartAlgorithm{
 	       }
 	       numbers[j+1] = temp;
 	    }
-	    benchmarkData.add(new BenchmarkData("Beszúró rendezés", moveCounter, swapCounter));
+	    benchmarkData.add(new BenchmarkData("Beszúró rendezés", comparisonCounter, moveCounter, 0));
 	};
 }

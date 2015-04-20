@@ -11,17 +11,17 @@ public class ShellSort extends ChartAlgorithm{
 	private static int outerIndex = gapArray[gapIdx] - 1;
 	private static int innerIndex = outerIndex - gapArray[gapIdx];
 	private static boolean isSelected = false;
-	
+
 	private ShellSort() {}
-	
+
 	private static class SortHolder {
         private static final ShellSort INSTANCE = new ShellSort();
     }
-	
+
     public static ShellSort getInstance() {
         return SortHolder.INSTANCE;
     }
-    
+
 	public void setDefaults() {
 		gapIdx = selectGap();
 		outerIndex = gapArray[gapIdx] - 1;
@@ -32,7 +32,7 @@ public class ShellSort extends ChartAlgorithm{
 		counterData.add(new CounterData("Mozgatások", "0"));
 		counterData.add(new CounterData("Lépésköz", "0"));
 	}
-	
+
 	private static int selectGap() {
 		for(int i=0; i<gapArray.length; ++i) {
 			if(data.size()>gapArray[i]) return i;
@@ -79,28 +79,28 @@ public class ShellSort extends ChartAlgorithm{
     	}
     	else isSelected = false;
     }
-	
+
 	private void setRestColor(String color) {
 		for (int i = 0; i < data.size(); i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), color);
 		}
 	}
-	
+
 	public static Runnable sort = () -> {
 		int[] numbers = new int[ChartAlgorithm.getNumbers().length];
 		int i,j, temp;
 		System.arraycopy(ChartAlgorithm.getNumbers(), 0, numbers, 0, ChartAlgorithm.getNumbers().length);
-	    int swapCounter = 0; //Increment this counter whenever a swap takes place
-	    int moveCounter=0; //Increment this counter whenever a movement takes place
+	    int moveCounter = 0; //Increment this counter whenever a move takes place
+	    int comparisonCounter=0; //Increment this counter whenever a comparison takes place
 	    for ( int gap : gapArray ) {
 	        i = gap;
 	        while ( i < numbers.length ) {
 	            temp = numbers[i];
 	            j = i-gap;
 	            while ( j >= 0 ) {
-	            	moveCounter++;
+	            	comparisonCounter++;
 	            	if( numbers[j] > temp ) {
-	            		swapCounter++;
+	            		moveCounter++;
 	            		numbers[j + gap] = numbers[j];
 	            	}
 	            	else break;
@@ -110,6 +110,6 @@ public class ShellSort extends ChartAlgorithm{
 	            i++;
 	        }
 	    }
-	    benchmarkData.add(new BenchmarkData("Shell rendezés", moveCounter, swapCounter));
+	    benchmarkData.add(new BenchmarkData("Shell rendezés", comparisonCounter, moveCounter, 0));
 	};
 }

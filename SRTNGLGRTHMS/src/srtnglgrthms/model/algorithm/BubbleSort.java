@@ -18,7 +18,7 @@ public class BubbleSort extends ChartAlgorithm {
 	public static BubbleSort getInstance() {
 		return SortHolder.INSTANCE;
 	}
-	
+
 	public void setDefaults() {
 		outerIdx = 0;
 		innerIdx = 1;
@@ -60,17 +60,17 @@ public class BubbleSort extends ChartAlgorithm {
 			OverviewChartController.setColor(data.get(i).getNode(), "default");
 		}
 	}
-	
+
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    int swapCounter = 0; //Increment this counter whenever a swap takes place
-	    int comparsionCounter=0; //Increment this counter whenever a comparison takes place
+	    int comparisonCounter=0; //Increment this counter whenever a comparison takes place
 	    for(int i=1;i<numbers.length;i++)
 	    {
 	      for(int j=0;j<numbers.length-i;j++)
 	      {
-	    	  comparsionCounter++;
+	    	  comparisonCounter++;
 	          if((numbers[j])>(numbers[j+1]))
 	          {
 	        	  swapCounter++;
@@ -80,6 +80,6 @@ public class BubbleSort extends ChartAlgorithm {
 	            }
 	       }
 	    }
-	    benchmarkData.add(new BenchmarkData("Buborékrendezés", comparsionCounter, swapCounter));
+	    benchmarkData.add(new BenchmarkData("Buborékrendezés", comparisonCounter, 3*swapCounter, swapCounter));
 	};
 }

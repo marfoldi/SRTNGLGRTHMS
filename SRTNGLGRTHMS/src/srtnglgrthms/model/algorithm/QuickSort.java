@@ -15,17 +15,17 @@ public class QuickSort extends ChartAlgorithm {
 	private static int pivot;
 	private static int pivotIndex;
 	private static boolean partitioned;
-	
+
 	private QuickSort() {}
-	
+
 	private static class SortHolder {
         private static final QuickSort INSTANCE = new QuickSort();
     }
-	
+
     public static QuickSort getInstance() {
         return SortHolder.INSTANCE;
     }
-    
+
     public void setDefaults() {
     	begin = 0;
     	end = numbers.length-1;
@@ -37,10 +37,10 @@ public class QuickSort extends ChartAlgorithm {
     	recursiveCall = new LinkedList<>();
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
-		counterData.add(new CounterData("Mozgatások", "0"));
+		counterData.add(new CounterData("Cserék", "0"));
 		counterData.add(new CounterData("Vezérelem", "t["+ Integer.toString(pivotIndex)+ "]"));
 	}
-	
+
 	public void step() {
 		setRestColor(begin, end);
 		OverviewChartController.setColor(data.get(pivotIndex).getNode(), "select");
@@ -91,7 +91,7 @@ public class QuickSort extends ChartAlgorithm {
 			}
 		}
 	}
-	
+
 	private void setRestColor(int begin, int end) {
 		for (int i = begin; i < end; i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), "default");
@@ -103,21 +103,21 @@ public class QuickSort extends ChartAlgorithm {
 			OverviewChartController.setColor(data.get(i).getNode(), "fade");
 		}
 	}
-	
+
     static int swapCounter = 0; //Increment this counter whenever a swap takes place
-    static int comparsionCounter=0; //Increment this counter whenever a comparison takes place
+    static int comparisonCounter=0; //Increment this counter whenever a comparison takes place
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
 	    quickSort(numbers, 0, numbers.length-1);
-	    benchmarkData.add(new BenchmarkData("Gyorsrendezés", comparsionCounter, swapCounter));
+	    benchmarkData.add(new BenchmarkData("Gyorsrendezés", comparisonCounter, 3*swapCounter, swapCounter));
 	};
-	
+
 	private static int partition(int[] numbers, int begin, int end) {
 		int pivot = numbers[end];
 		int partitionIndex = begin;
 		for(int i=begin; i<end; ++i) {
-			comparsionCounter++;
+			comparisonCounter++;
 			if(numbers[i]<=pivot) {
 				//if(i != partitionIndex) {
 				swapCounter++;
@@ -136,7 +136,7 @@ public class QuickSort extends ChartAlgorithm {
 		//}
 		return partitionIndex;
 	}
-	
+
 	private static void quickSort(int[] numbers, int begin, int end) {
 		if(begin<end) {
 			int partitionIndex = partition(numbers, begin, end);

@@ -16,14 +16,17 @@ public class BenchmarkTableController {
 	@FXML
 	private TableColumn<BenchmarkData, Number> compareColumn;
 	@FXML
+	private TableColumn<BenchmarkData, Number> moveColumn;
+	@FXML
 	private TableColumn<BenchmarkData, Number> swapColumn;
-	
+
 	@FXML
     private void initialize() {
         // Initialize the info table with the two columns.
 		try {
 			nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 			compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
+			moveColumn.setCellValueFactory(cellData -> cellData.getValue().moveCounterProperty());
 			swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
 			tableView.setItems(SortingAlgorithm.getBenchmarkData());
 			setMouseAction();
@@ -37,7 +40,7 @@ public class BenchmarkTableController {
 			initialize();
 		}
     }
-	
+
 	private void setMouseAction() {
 		tableView.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override

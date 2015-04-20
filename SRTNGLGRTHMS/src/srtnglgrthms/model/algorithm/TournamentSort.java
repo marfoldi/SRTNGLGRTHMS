@@ -7,6 +7,7 @@ import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
+import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
@@ -18,17 +19,17 @@ public class TournamentSort extends GraphAlgorithm {
 	private static int outIndex;
 	private static boolean colored;
 	private static boolean isFound;
-	
+
 	private TournamentSort() {}
-	
+
 	private static class SortHolder {
         private static final TournamentSort INSTANCE = new TournamentSort();
     }
-	
+
     public static TournamentSort getInstance() {
         return SortHolder.INSTANCE;
     }
-	
+
 	@Override
 	public void setDefaults() {
 		recursiveCall = new LinkedList<>();
@@ -41,9 +42,8 @@ public class TournamentSort extends GraphAlgorithm {
 		isFound = false;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
-		counterData.add(new CounterData("Cserék", "0"));
 	}
-	
+
 	@Override
 	public void step() {
 		if(fillIndex==0) {
@@ -58,7 +58,7 @@ public class TournamentSort extends GraphAlgorithm {
 				colored = true;
 				return;
 			}
-			if(vertices[2*fillIndex].getNumber()!=-1 || vertices[2*fillIndex-1].getNumber()!=-1) counterData.get(0).incValue();
+			if(vertices[2*fillIndex].getNumber()!=-1 && vertices[2*fillIndex-1].getNumber()!=-1) counterData.get(0).incValue();
 			vertices[fillIndex-1].setNumber(vertices[2*fillIndex].getNumber()>vertices[2*fillIndex-1].getNumber() ? vertices[2*fillIndex].getNumber():vertices[2*fillIndex-1].getNumber());
 			colored = false;
 			OverviewGraphController.reloadGraph();
@@ -99,6 +99,7 @@ public class TournamentSort extends GraphAlgorithm {
 					return;
 				}
 				if(maxIndex>=0) {
+					if(vertices[2*maxIndex+1].getNumber()!=-1 && vertices[2*maxIndex+2].getNumber()!=-1) counterData.get(0).incValue();
 					vertices[maxIndex].setNumber(vertices[2*maxIndex+1].getNumber()>vertices[2*maxIndex+2].getNumber() ? vertices[2*maxIndex+1].getNumber():vertices[2*maxIndex+2].getNumber());
 					if(maxIndex==0) {
 						OverviewGraphController.getNumberList().get(OverviewGraphController.getNumberList().size()-outIndex).setYValue(vertices[0].getNumber());
@@ -127,9 +128,50 @@ public class TournamentSort extends GraphAlgorithm {
 			}
 		}
 	}
-	
-	
+
+
 	public static Runnable sort = () -> {
+		int length = 1;
+		int power = (int) Math.ceil(Math.log(numbers.length)/Math.log(2));
+		for(int i=0; i<power; ++i) length*=2;
+		int[] numbers = new int[length];
+		for(int i=SortingAlgorithm.getNumbers().length; i<length; ++i) {
+			numbers[i] = -1;
+		}
+		if(length>SortingAlgorithm.getNumbers().length) System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, length-(length-SortingAlgorithm.getNumbers().length));
+		else System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, length);
+		int[] finalNumbers = new int[length*2-1];
+		for(int i=0; i<length; ++i) {
+			finalNumbers[i] = -2;
+		}
+		int j=0;
+		for(int i=length; i<finalNumbers.length; ++i) {
+			finalNumbers[i] = numbers[j];
+			j++;
+		}
+	    int comparisonCounter=0; //Increment this counter whenever a comparison takes place
+		for(int i=finalNumbers.length/2; i>=1; --i) {
+			if(finalNumbers[2*i]!=-1 && finalNumbers[2*i-1]!=-1) comparisonCounter++;
+			finalNumbers[i-1] = finalNumbers[2*i]>finalNumbers[2*i-1] ? finalNumbers[2*i] : finalNumbers[2*i-1];
+		}
+		int recursiveCounter = SortingAlgorithm.getNumbers().length-1;
+		while (recursiveCounter>=1) {
+			maxIndex = 0;
+			while(maxIndex<SortingAlgorithm.getNumbers().length/2) {
+				maxIndex = finalNumbers[maxIndex]==finalNumbers[2*maxIndex+1] ? 2*maxIndex+1 : 2*maxIndex+2;
+				finalNumbers[maxIndex] = -1;
+			}
+			if(maxIndex%2==0) maxIndex = maxIndex/2-1;
+			else maxIndex=maxIndex/2;
+			while(maxIndex>=0) {
+				if(finalNumbers[2*maxIndex+1]!=-1 && finalNumbers[2*maxIndex+2]!=-1) comparisonCounter++;
+				finalNumbers[maxIndex] = finalNumbers[2*maxIndex+1]>finalNumbers[2*maxIndex+2] ? finalNumbers[2*maxIndex+1] : finalNumbers[2*maxIndex+2];
+				if(maxIndex%2==0) maxIndex = maxIndex/2-1;
+				else maxIndex=maxIndex/2;
+			}
+			recursiveCounter--;
+		}
+		benchmarkData.add(new BenchmarkData("Versenyrendezés", comparisonCounter, 0, 0));
 	};
 
 

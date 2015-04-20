@@ -184,9 +184,9 @@ public class HeapSort extends GraphAlgorithm {
 		}
 		OverviewGraphController.addVertices();
 	}
-	
+
 	static int swapCounter = 0; //Increment this counter whenever a swap takes place
-    static int comparsionCounter=0; //Increment this counter whenever a comparison takes place
+    static int comparisonCounter=0; //Increment this counter whenever a comparison takes place
 	public static Runnable sort = () -> {
 		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0, SortingAlgorithm.getNumbers().length);
@@ -202,9 +202,9 @@ public class HeapSort extends GraphAlgorithm {
 		        recursiveCounter--;
 	    	}
 	    }
-	    benchmarkData.add(new BenchmarkData("Kupacrendezés", comparsionCounter, swapCounter));
+	    benchmarkData.add(new BenchmarkData("Kupacrendezés", comparisonCounter, 3*swapCounter, swapCounter));
 	};
-	
+
 	private static void buildStarterHeap(int[] numbers) {
 		int starterIndex = numbers.length/2-1;
 		while(starterIndex>=0) {
@@ -212,16 +212,16 @@ public class HeapSort extends GraphAlgorithm {
 			starterIndex--;
 		}
 	}
-	
+
 	private static void buildHeap(int[] numbers, int begin, int end) {
 		int index;
 		while(2*begin+1<=end) {
-			if(2*begin+2<=end) comparsionCounter++;
+			if(2*begin+2<=end) comparisonCounter++;
 			if(2*begin+2>end || numbers[2*begin+1]>numbers[2*begin+2]) {
 				index=2*begin+1;
 			}
 			else index=2*begin+2;
-			comparsionCounter++;
+			comparisonCounter++;
 			if(numbers[begin]>=numbers[index]) {
 				return;
 			}
