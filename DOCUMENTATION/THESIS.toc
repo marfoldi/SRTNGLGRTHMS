@@ -1,0 +1,12 @@
+\select@language {hungarian}
+\select@language {hungarian}
+\contentsline {chapter}{\numberline {1.}Bevezet\IeC {\H o}}{1}
+\contentsline {section}{\numberline {1.1.}A feladat \IeC {\'e}s annak \IeC {\'e}rtelmez\IeC {\'e}se}{1}
+\contentsline {section}{\numberline {1.2.}Defin\IeC {\'\i }ci\IeC {\'o}k \IeC {\'e}s jel\IeC {\"o}l\IeC {\'e}sek}{1}
+\contentsline {section}{\numberline {1.3.}Alkalmazott technol\IeC {\'o}gi\IeC {\'a}k}{1}
+\contentsline {subsection}{\numberline {1.3.1.}A Java-r\IeC {\'o}l r\IeC {\"o}viden}{1}
+\contentsline {chapter}{\numberline {2.}Felhaszn\IeC {\'a}l\IeC {\'o}i dokument\IeC {\'a}ci\IeC {\'o}}{2}
+\contentsline {section}{\numberline {2.1.}A vizsg\IeC {\'a}lt algoritmusok}{2}
+\contentsline {subsection}{\numberline {2.1.1.}Bubor\IeC {\'e}krendez\IeC {\'e}s}{2}
+\contentsline {subsection}{\numberline {2.1.2.}Besz\IeC {\'u}r\IeC {\'o}rendez\IeC {\'e}s}{2}
+\contentsline {chapter}{\numberline {3.}Fejleszt\IeC {\H o}i dokument\IeC {\'a}ci\IeC {\'o}}{3}

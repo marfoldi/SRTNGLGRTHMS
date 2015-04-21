@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2015.4.21)  21 APR 2015 18:51
+entering extended mode
+**C:/Users/marfoldi/Desktop/SZAKDOLGOZAT/elteikthesis/elteikthesis.cls
+(C:/Users/marfoldi/Desktop/SZAKDOLGOZAT/elteikthesis/elteikthesis.cls
+! Undefined control sequence.
+l.21 \NeedsTeXFormat
+                    {LaTeX2e}[1999/12/01]
+? 
+! Emergency stop.
+l.21 \NeedsTeXFormat
+                    {LaTeX2e}[1999/12/01]
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
