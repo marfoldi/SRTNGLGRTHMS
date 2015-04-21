@@ -51,19 +51,19 @@ public class QuickSort extends ChartAlgorithm {
 				OverviewChartController.setColor(data.get(partitionIndex).getNode(), "swap");
 				OverviewChartController.setColor(data.get(partitionHelpIndex).getNode(), "swap");
 				if(data.get(partitionHelpIndex).getYValue().intValue()<=pivot) {
-					//if(partitionHelpIndex != partitionIndex) {
+					if(partitionHelpIndex != partitionIndex) {
 						counterData.get(1).incValue();
 						swap(partitionHelpIndex, partitionIndex);
-					//}
+					}
 					partitionIndex++;
 				}
 				partitionHelpIndex++;
 				return;
 			}
-			//if(partitionIndex!=end) {
+			if(partitionIndex!=end) {
 				counterData.get(1).incValue();
 				swap(partitionIndex, end);
-			//}
+			}
 			counterData.get(2).setValue("t["+ Integer.toString(partitionIndex)+ "]");
 			OverviewChartController.setColor(data.get(partitionIndex).getNode(), "select");
 			OverviewChartController.setColor(data.get(end).getNode(), "swap");

@@ -2,6 +2,7 @@ package srtnglgrthms.controller;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
@@ -22,6 +23,12 @@ public class BenchmarkTableController {
 	@FXML
     private void initialize() {
         // Initialize the info table with the two columns.
+		tableView.setPlaceholder(new Label("Nincs megjeleníthetõ adat"));
+		nameColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.328));
+		compareColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.255));
+		moveColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.250));
+		swapColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.158));
+		
 		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 		compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
 		moveColumn.setCellValueFactory(cellData -> cellData.getValue().moveCounterProperty());

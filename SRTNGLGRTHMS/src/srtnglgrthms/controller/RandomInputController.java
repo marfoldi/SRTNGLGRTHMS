@@ -110,7 +110,8 @@ public class RandomInputController {
 
 	@FXML
 	public void okBtnHandler() {
-		if (sizeField.getText().matches("\\d+")) {
+		try {
+		if (sizeField.getText().matches("\\d+") && Integer.parseInt(sizeField.getText())<Integer.MAX_VALUE) {
 			generateNumbers();
 			try {
 				BorderPane baseLayout;
@@ -129,5 +130,6 @@ public class RandomInputController {
 				e.printStackTrace();
 			}
 		}
+		} catch (NumberFormatException nfe) {}
 	}
 }

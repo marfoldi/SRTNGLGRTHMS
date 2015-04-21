@@ -40,8 +40,6 @@ public class BaseController {
     	OverviewController.getAnimation().stop();
     	SortingAlgorithm.getBenchmarkData().clear();
     	SortingAlgorithm.getCounterData().clear();
-    	GraphAlgorithm.setShowedHeapWarning(false);
-    	GraphAlgorithm.setShowedTournamentWarning(false);
     	 try {
              // Load base layout from fxml file.
              FXMLLoader loader = new FXMLLoader();

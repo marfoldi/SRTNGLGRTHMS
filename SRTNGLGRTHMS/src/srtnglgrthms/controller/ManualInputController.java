@@ -42,19 +42,21 @@ public class ManualInputController {
 	
 	@FXML
 	public void createFields() {
-		try {
-			numbersPane.getChildren().clear();
-			size = Integer.parseInt(sizeField.getText());
-			for (int i = 0; i < size; ++i) {
-				TextField tf = new TextField();
-				tf.setMaxWidth(50.0);
-				numbersPane.add(tf, i, 0);
+		if (sizeField.getText().matches("\\d+")) {
+			try {
+				numbersPane.getChildren().clear();
+				size = Integer.parseInt(sizeField.getText());
+				for (int i = 0; i < size; ++i) {
+					TextField tf = new TextField();
+					tf.setMaxWidth(50.0);
+					numbersPane.add(tf, i, 0);
+				}
+				okBtn.setDisable(false);
+				randomBtn.setDisable(false);
+			} catch (NumberFormatException nfe) {
+				okBtn.setDisable(true);
+				randomBtn.setDisable(true);
 			}
-			okBtn.setDisable(false);
-			randomBtn.setDisable(false);
-		} catch (NumberFormatException nfe) {
-			okBtn.setDisable(true);
-			randomBtn.setDisable(true);
 		}
 	}
 	
