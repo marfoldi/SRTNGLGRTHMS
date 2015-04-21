@@ -20,13 +20,13 @@ public class MainApplication extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Rendezési algoritmusok szemléltetése");
-        
+
         // Set the application icon.
         this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
     	BaseController.setStage(primaryStage);
         initMenuLayout();
     }
-    
+
     public void initMenuLayout() {
         try {
             // Load base layout from fxml file.

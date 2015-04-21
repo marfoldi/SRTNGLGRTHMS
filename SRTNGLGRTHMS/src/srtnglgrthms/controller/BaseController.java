@@ -18,10 +18,10 @@ import javafx.stage.Stage;
 public class BaseController {
 	@FXML
 	private TabPane tabPane;
-	
+
 	private BorderPane menuLayout;
 	private static Stage stage;
-	
+
 	@FXML
 	private void initialize() {
 		if(SortingAlgorithm.getNumbers().length>100) {
@@ -36,6 +36,7 @@ public class BaseController {
      */
     @FXML
     private void handleReturnToMenu() {
+    	OverviewChartController.getAnimation().stop();
     	SortingAlgorithm.getBenchmarkData().clear();
     	SortingAlgorithm.getCounterData().clear();
     	 try {
