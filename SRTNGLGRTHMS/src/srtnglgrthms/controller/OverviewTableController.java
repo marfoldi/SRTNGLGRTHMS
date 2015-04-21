@@ -7,6 +7,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class OverviewTableController {
 	@FXML
 	private TableView<CounterData> tableView;

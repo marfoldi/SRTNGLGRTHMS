@@ -9,6 +9,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class Vertex extends Group {
 	
 	private final Circle circle;	

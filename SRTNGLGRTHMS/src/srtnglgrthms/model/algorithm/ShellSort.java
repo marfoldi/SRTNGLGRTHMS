@@ -5,6 +5,10 @@ import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class ShellSort extends ChartAlgorithm{
 	private static final int[] gapArray = {1750,701,301,132,57,23,10,4,1};
 	private static int gapIdx = selectGap();

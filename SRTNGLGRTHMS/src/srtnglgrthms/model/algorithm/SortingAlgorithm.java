@@ -9,6 +9,10 @@ import srtnglgrthms.model.RecursiveParameter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public abstract class SortingAlgorithm {
 	protected static int[] numbers;
 	protected static Queue<RecursiveParameter> recursiveCall;

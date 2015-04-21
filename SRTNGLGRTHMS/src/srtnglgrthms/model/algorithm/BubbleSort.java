@@ -4,6 +4,10 @@ import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class BubbleSort extends ChartAlgorithm {
 	private static int outerIdx = 0;
 	private static int innerIdx = 1;

@@ -11,6 +11,10 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import srtnglgrthms.model.algorithm.TournamentSort;
 
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class SortingAlgorithmFactory {
 	public static SortingAlgorithm getAlgorithm(String algorithmName){
 		switch(algorithmName) {

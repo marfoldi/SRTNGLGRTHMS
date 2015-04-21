@@ -12,6 +12,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
 import javafx.util.Duration;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class OverviewController {
 	@FXML
 	private Button stepBtn;

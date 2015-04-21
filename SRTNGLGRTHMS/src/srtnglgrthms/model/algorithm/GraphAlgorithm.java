@@ -9,6 +9,10 @@ import srtnglgrthms.controller.OverviewListController;
 import srtnglgrthms.model.graph.Graph;
 import srtnglgrthms.model.graph.Vertex;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public abstract class GraphAlgorithm extends SortingAlgorithm {
 	protected static int[] checkedArray;
 	protected static GridPane numbersPane;

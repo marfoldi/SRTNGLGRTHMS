@@ -5,6 +5,10 @@ import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class InsertionSort extends ChartAlgorithm{
 	private static int outerIndex = 1;
 	private static int innerIndex = outerIndex;

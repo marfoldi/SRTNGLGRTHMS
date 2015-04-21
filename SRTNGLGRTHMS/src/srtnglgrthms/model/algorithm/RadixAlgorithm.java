@@ -2,6 +2,10 @@ package srtnglgrthms.model.algorithm;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public abstract class RadixAlgorithm extends ChartAlgorithm {
 	protected static int actualDigit;
 	protected static int begin = 0;

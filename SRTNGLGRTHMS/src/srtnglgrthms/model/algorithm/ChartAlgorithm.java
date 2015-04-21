@@ -3,6 +3,10 @@ package srtnglgrthms.model.algorithm;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart.Data;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public abstract class ChartAlgorithm extends SortingAlgorithm {
 	protected static ObservableList<Data<String, Number>> data;
 	

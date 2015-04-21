@@ -6,6 +6,10 @@ import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class ForwardRadix extends RadixAlgorithm {
 	private static boolean lowerFound;
 	private static boolean upperFound;

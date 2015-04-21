@@ -8,6 +8,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import srtnglgrthms.model.BenchmarkData;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class BenchmarkTableController {
 	@FXML
 	private TableView<BenchmarkData> tableView;

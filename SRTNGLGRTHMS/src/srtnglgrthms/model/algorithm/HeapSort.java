@@ -9,6 +9,10 @@ import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class HeapSort extends GraphAlgorithm {
 	private static int starterIndex;
 	private static int downIndex;

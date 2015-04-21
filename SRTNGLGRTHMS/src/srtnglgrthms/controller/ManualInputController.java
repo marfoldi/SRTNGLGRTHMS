@@ -18,6 +18,10 @@ import javafx.stage.Stage;
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class ManualInputController {
 	@FXML
 	private TextField sizeField;

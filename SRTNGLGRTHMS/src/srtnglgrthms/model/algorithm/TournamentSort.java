@@ -14,6 +14,10 @@ import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class TournamentSort extends GraphAlgorithm {
 	private static int fillIndex;
 	private static int recursiveCounter;

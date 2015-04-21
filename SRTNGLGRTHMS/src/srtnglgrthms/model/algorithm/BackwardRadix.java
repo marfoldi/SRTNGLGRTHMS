@@ -9,6 +9,10 @@ import srtnglgrthms.model.RecursiveParameter;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart.Data;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class BackwardRadix extends RadixAlgorithm{	
 	private static int index;
 	private static int actualSeries;

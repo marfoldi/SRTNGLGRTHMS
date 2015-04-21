@@ -9,6 +9,10 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class OverviewGraphController {
 	@FXML
 	AnchorPane graphPane;

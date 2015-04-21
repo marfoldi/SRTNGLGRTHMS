@@ -19,6 +19,10 @@ import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.text.Text;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class OverviewChartController {
 	@FXML
 	private CategoryAxis yAxis = new CategoryAxis();

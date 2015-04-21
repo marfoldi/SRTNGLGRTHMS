@@ -3,6 +3,10 @@ package srtnglgrthms.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class CounterData {
 	private StringProperty name;
 	private StringProperty value;

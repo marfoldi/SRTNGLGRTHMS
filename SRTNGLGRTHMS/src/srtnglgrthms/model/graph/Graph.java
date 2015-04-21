@@ -2,6 +2,10 @@ package srtnglgrthms.model.graph;
 
 import javafx.scene.Group;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class Graph extends Group {
 	public void addVertex(Vertex vertex) {
 		getChildren().add(new Group(vertex.getGraphics()));

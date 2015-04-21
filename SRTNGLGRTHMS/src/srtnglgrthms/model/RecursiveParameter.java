@@ -1,5 +1,9 @@
 package srtnglgrthms.model;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class RecursiveParameter {
 	private double firstParameter;
 	private double secondParameter;
