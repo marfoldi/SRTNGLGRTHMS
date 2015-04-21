@@ -1,17 +1,11 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.SortingAlgorithmFactory;
 import srtnglgrthms.model.algorithm.ChartAlgorithm;
 import srtnglgrthms.model.algorithm.GraphAlgorithm;
 import srtnglgrthms.model.algorithm.RadixAlgorithm;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.Group;
@@ -24,7 +18,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 public class OverviewChartController {
 	@FXML
@@ -34,9 +27,7 @@ public class OverviewChartController {
 	@FXML
 	private BarChart<String, Number> barChart = new BarChart<String, Number>(
 			yAxis, xAxis);
-	private static OverviewController parentController;
 	private static Series<String, Number> series;
-	private static Timeline animation;
 	private static int numbers[];
 
 	@FXML
@@ -44,11 +35,8 @@ public class OverviewChartController {
 		xAxis.setAutoRanging(false);
 		xAxis.setUpperBound(SortingAlgorithm.getMaximum() - SortingAlgorithm.getMaximum()%10 + 30);
 		series = new Series<>();
-		animation = new Timeline();
-		animation.setCycleCount(Animation.INDEFINITE);
 		setNumbersArray();
 		initChart(numbers);
-		setAnimation();
 	}
 
 	private void setNumbersArray() {
@@ -168,30 +156,8 @@ public class OverviewChartController {
 		});
 	}
 
-	private void setAnimation() {
-		animation.getKeyFrames().add(
-				new KeyFrame(Duration.millis(10),
-						new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent actionEvent) {
-								(SortingAlgorithmFactory
-										.getAlgorithm(OverviewListController
-												.getSelectedItem())).step();
-								parentController.checkButtons();
-							}
-						}));
-	}
-
-	public static void setParentController(OverviewController parentController) {
-		OverviewChartController.parentController = parentController;
-	}
-
 	public static Series<String, Number> getSeries() {
 		return series;
-	}
-
-	public static Timeline getAnimation() {
-		return animation;
 	}
 
 	public BarChart<String, Number> getBarChart() {

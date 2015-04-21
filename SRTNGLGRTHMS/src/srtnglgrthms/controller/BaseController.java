@@ -3,6 +3,7 @@ package srtnglgrthms.controller;
 import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
+import srtnglgrthms.model.algorithm.GraphAlgorithm;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,9 +37,11 @@ public class BaseController {
      */
     @FXML
     private void handleReturnToMenu() {
-    	OverviewChartController.getAnimation().stop();
+    	OverviewController.getAnimation().stop();
     	SortingAlgorithm.getBenchmarkData().clear();
     	SortingAlgorithm.getCounterData().clear();
+    	GraphAlgorithm.setShowedHeapWarning(false);
+    	GraphAlgorithm.setShowedTournamentWarning(false);
     	 try {
              // Load base layout from fxml file.
              FXMLLoader loader = new FXMLLoader();

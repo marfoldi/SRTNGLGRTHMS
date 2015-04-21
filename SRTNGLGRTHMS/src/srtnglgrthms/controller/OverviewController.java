@@ -2,11 +2,15 @@ package srtnglgrthms.controller;
 
 import srtnglgrthms.model.SortingAlgorithmFactory;
 import srtnglgrthms.model.algorithm.ChartAlgorithm;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.util.Duration;
 
 public class OverviewController {
 	@FXML
@@ -15,6 +19,7 @@ public class OverviewController {
 	private Button animBtn;
 	@FXML
 	public SplitPane displayPane;
+	private static Timeline animation;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -24,9 +29,11 @@ public class OverviewController {
 	private void initialize() {
 		stepBtn.setDisable(true);
 		animBtn.setDisable(true);
+		animation = new Timeline();
+		animation.setCycleCount(Animation.INDEFINITE);
+		setAnimation();
 		initBtns();
 		OverviewListController.setParentController(this);
-		OverviewChartController.setParentController(this);
 	}
 
 	private void initBtns() {
@@ -52,11 +59,25 @@ public class OverviewController {
 		animBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				OverviewChartController.getAnimation().play();
+				animation.play();
 			}
 		});
 	}
-	
+
+	private void setAnimation() {
+		animation.getKeyFrames().add(
+				new KeyFrame(Duration.millis(10),
+						new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent actionEvent) {
+								(SortingAlgorithmFactory
+										.getAlgorithm(OverviewListController
+												.getSelectedItem())).step();
+								checkButtons();
+							}
+						}));
+	}
+
 	protected void checkButtons() {
 		boolean isDone = true;
 		for (int i = 0; i < ChartAlgorithm.getData().size(); i++) {
@@ -67,15 +88,19 @@ public class OverviewController {
 		}
 		if(isDone) {
 			stepBtn.setText("Újraindítás");
-			OverviewChartController.getAnimation().stop();
+			animation.stop();
 			animBtn.setVisible(false);
 		}
 	}
-	
+
 	protected void reloadButtons() {
 		stepBtn.setDisable(false);
 		animBtn.setDisable(false);
 		stepBtn.setText("Léptetés");
 		animBtn.setVisible(true);
+	}
+
+	public static Timeline getAnimation() {
+		return animation;
 	}
 }

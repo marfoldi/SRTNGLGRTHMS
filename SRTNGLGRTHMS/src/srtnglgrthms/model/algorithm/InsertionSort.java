@@ -40,7 +40,6 @@ public class InsertionSort extends ChartAlgorithm{
 			if(outerIndex<data.size()) outerIndex++;
 			else {
 				setRestColor("done");
-				OverviewChartController.getAnimation().stop();
 				return;
 			}
     	}
@@ -56,7 +55,6 @@ public class InsertionSort extends ChartAlgorithm{
     			if(outerIndex==data.size()) {
     				counterData.get(0).incValue();
     				setRestColor("done");
-    				OverviewChartController.getAnimation().stop();
     				return;
     			}
     			isSelected=false;

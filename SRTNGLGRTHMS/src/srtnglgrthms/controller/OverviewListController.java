@@ -28,7 +28,7 @@ public class OverviewListController {
 					public void changed(
 							ObservableValue<? extends String> observable,
 							String oldValue, String newValue) {
-						OverviewChartController.getAnimation().stop();
+						OverviewController.getAnimation().stop();
 						OverviewListController.currentValue = newValue;
 						//OverviewChartController.reloadSeries();
 						parentController.reloadButtons();
