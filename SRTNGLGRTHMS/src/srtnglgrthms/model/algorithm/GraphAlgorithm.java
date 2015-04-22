@@ -28,21 +28,21 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 	public abstract void setDefaultGraph();
 
 	public static int[] checkLength(int[] numbers, String algorithm) {
-		switch(algorithm) {
+		switch (algorithm) {
 		case "Kupacrendezés": {
-			if(numbers.length>31) {
+			if (numbers.length > 31) {
 				int[] checkedArray = new int[31];
 				System.arraycopy(numbers, 0, checkedArray, 0, 30);
 				GraphAlgorithm.checkedArray = checkedArray;
-				if(!showedHeapWarning) {
+				if (!showedHeapWarning) {
 					Alert alert = new Alert(AlertType.WARNING);
-			        alert.setTitle("Figyelmeztetés");
-			        alert.setHeaderText("Az algoritmusban használt számok eltérnek a bemenettõl");
-			        alert.setContentText("Mivel legfeljebb 31 elemû gráfot képes a program megjeleníteni,\nezért a"
-			        		+ "számításban csak az elsõ 31 elem vesz részt!");
+					alert.setTitle("Figyelmeztetés");
+					alert.setHeaderText("Az algoritmusban használt számok eltérnek a bemenettõl");
+					alert.setContentText("Mivel legfeljebb 31 elemû gráfot képes a program megjeleníteni,\nezért a"
+							+ "számításban csak az elsõ 31 elem vesz részt!");
 
-			        alert.showAndWait();
-			        showedHeapWarning = true;
+					alert.showAndWait();
+					showedHeapWarning = true;
 				}
 				return checkedArray;
 			}
@@ -51,44 +51,47 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 		}
 		case "Versenyrendezés": {
 			int length = 1;
-			int power = (int) Math.ceil(Math.log(numbers.length)/Math.log(2));
-			for(int i=0; i<power; ++i) length*=2;
-			if(length>16) {
+			int power = (int) Math.ceil(Math.log(numbers.length) / Math.log(2));
+			for (int i = 0; i < power; ++i)
+				length *= 2;
+			if (length > 16) {
 				length = 16;
-				if(!showedTournamentWarning) {
+				if (!showedTournamentWarning) {
 					Alert alert = new Alert(AlertType.WARNING);
-			        alert.setTitle("Figyelmeztetés");
-			        alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
-			        alert.setContentText("Mivel legfeljebb 16 elemû gráfot képes a program megjeleníteni,\nezért a"
-			        		+ "számításban csak az elsõ 16 elem vesz részt!");
+					alert.setTitle("Figyelmeztetés");
+					alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
+					alert.setContentText("Mivel legfeljebb 16 elemû gráfot képes a program megjeleníteni,\nezért a"
+							+ "számításban csak az elsõ 16 elem vesz részt!");
 
-			        alert.showAndWait();
-			        showedTournamentWarning = true;
+					alert.showAndWait();
+					showedTournamentWarning = true;
 				}
-			}
-			else if(length!=SortingAlgorithm.getNumbers().length) {
-				if(!showedTournamentWarning) {
+			} else if (length != SortingAlgorithm.getNumbers().length) {
+				if (!showedTournamentWarning) {
 					Alert alert = new Alert(AlertType.WARNING);
-			        alert.setTitle("Figyelmeztetés");
-			        alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
-			        alert.setContentText("Mivel nem kettõ hatvány a bemenet hossza,\nezért itt a "
-			        		+ "számításban " + length + " szám fog résztvenni!");
+					alert.setTitle("Figyelmeztetés");
+					alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
+					alert.setContentText("Mivel nem kettõ hatvány a bemenet hossza,\nezért itt a "
+							+ "számításban " + length + " szám fog résztvenni!");
 
-			        alert.showAndWait();
-			        showedTournamentWarning = true;
+					alert.showAndWait();
+					showedTournamentWarning = true;
 				}
 			}
 			int[] checkedArray = new int[length];
-			for(int i=numbers.length; i<length; ++i) {
+			for (int i = numbers.length; i < length; ++i) {
 				checkedArray[i] = -1;
 			}
-			if(length>numbers.length) System.arraycopy(numbers, 0, checkedArray, 0, length-(length-numbers.length));
-			else System.arraycopy(numbers, 0, checkedArray, 0, length);
+			if (length > numbers.length)
+				System.arraycopy(numbers, 0, checkedArray, 0, length
+						- (length - numbers.length));
+			else
+				System.arraycopy(numbers, 0, checkedArray, 0, length);
 			GraphAlgorithm.checkedArray = checkedArray;
-			if(numbers.length>16) {
+			if (numbers.length > 16) {
 				return checkedArray;
-			}
-			else return numbers;
+			} else
+				return numbers;
 		}
 		}
 		GraphAlgorithm.checkedArray = numbers;
@@ -101,17 +104,25 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 		temp = vertices[firstIndex].getNumber();
 		vertices[firstIndex].setNumber(vertices[secondIndex].getNumber());
 		vertices[secondIndex].setNumber(temp);
-		if(OverviewListController.getSelectedItem().equals("Kupacrendezés")) {
-			OverviewGraphController.getNumberList().get(firstIndex).setYValue(OverviewGraphController.getNumberList().get(secondIndex).getYValue());
-			OverviewGraphController.getNumberList().get(secondIndex).setYValue(temp);
+		if (OverviewListController.getSelectedItem().equals("Kupacrendezés")) {
+			OverviewGraphController
+					.getNumberList()
+					.get(firstIndex)
+					.setYValue(
+							OverviewGraphController.getNumberList()
+									.get(secondIndex).getYValue());
+			OverviewGraphController.getNumberList().get(secondIndex)
+					.setYValue(temp);
 		}
 	}
 
 	protected void setRestColor(int index) {
-		for (int i=0; i<index; ++i) {
+		for (int i = 0; i < index; ++i) {
 			vertices[i].setColor("default");
-			if(OverviewListController.getSelectedItem().equals("Kupacrendezés")) {
-				OverviewChartController.setColor(OverviewGraphController.getNumberList().get(i).getNode(), "default");
+			if (OverviewListController.getSelectedItem()
+					.equals("Kupacrendezés")) {
+				OverviewChartController.setColor(OverviewGraphController
+						.getNumberList().get(i).getNode(), "default");
 			}
 		}
 	}
@@ -128,7 +139,8 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 		GraphAlgorithm.showedHeapWarning = showedHeapWarning;
 	}
 
-	public static void setShowedTournamentWarning(boolean showedTournamentWarning) {
+	public static void setShowedTournamentWarning(
+			boolean showedTournamentWarning) {
 		GraphAlgorithm.showedTournamentWarning = showedTournamentWarning;
 	}
 }

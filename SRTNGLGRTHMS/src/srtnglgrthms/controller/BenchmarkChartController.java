@@ -37,15 +37,18 @@ public class BenchmarkChartController {
 	}
 
 	public static void addElement(BenchmarkData data) {
-		if(!alreadyLoaded(data.getName())) {
+		if (!alreadyLoaded(data.getName())) {
 			loadedItems.add(data.getName());
-			compareCounter.getData().add(new XYChart.Data<String, Long>(data.getName(), data.getCompareCounter()));
-			moveCounter.getData().add(new XYChart.Data<String, Long>(data.getName(), data.getMoveCounter()));
-		}
-		else {
+			compareCounter.getData().add(
+					new XYChart.Data<String, Long>(data.getName(), data
+							.getCompareCounter()));
+			moveCounter.getData().add(
+					new XYChart.Data<String, Long>(data.getName(), data
+							.getMoveCounter()));
+		} else {
 			int idx = 0;
-			for(int i=0; i<loadedItems.size(); ++i) {
-				if (loadedItems.get(i)==data.getName()) {
+			for (int i = 0; i < loadedItems.size(); ++i) {
+				if (loadedItems.get(i) == data.getName()) {
 					idx = i;
 				}
 			}
@@ -56,7 +59,9 @@ public class BenchmarkChartController {
 	}
 
 	private static boolean alreadyLoaded(String name) {
-		if(loadedItems.contains(name)) return true;
-		else return false;
+		if (loadedItems.contains(name))
+			return true;
+		else
+			return false;
 	}
 }

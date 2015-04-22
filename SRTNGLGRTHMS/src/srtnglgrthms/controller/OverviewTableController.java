@@ -18,16 +18,20 @@ public class OverviewTableController {
 	private TableColumn<CounterData, String> nameColumn;
 	@FXML
 	private TableColumn<CounterData, String> valueColumn;
-	
+
 	@FXML
-    private void initialize() {
-        // Initialize the counter info table with the two columns.
+	private void initialize() {
+		// Initialize the counter info table with the two columns.
 		tableView.setPlaceholder(new Label("Nincs megjeleníthetõ tulajdonság"));
-		nameColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.70));
-		valueColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.285));
-		
-		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-		valueColumn.setCellValueFactory(cellData -> cellData.getValue().valueProperty());
+		nameColumn.prefWidthProperty().bind(
+				tableView.widthProperty().multiply(0.70));
+		valueColumn.prefWidthProperty().bind(
+				tableView.widthProperty().multiply(0.285));
+
+		nameColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.nameProperty());
+		valueColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.valueProperty());
 		tableView.setItems(SortingAlgorithm.getCounterData());
-    }
+	}
 }

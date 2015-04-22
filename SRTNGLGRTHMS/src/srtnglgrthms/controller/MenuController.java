@@ -66,24 +66,24 @@ public class MenuController {
 		FileInputController.openChooser();
 	}
 
-    /**
-     * Opens an about dialog.
-     */
-    @FXML
-    private void handleAbout() {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Névjegy");
-        alert.setHeaderText("Névjegy");
-        alert.setContentText("Készítette: Márföldi Péter Bence\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
+	/**
+	 * Opens an about dialog.
+	 */
+	@FXML
+	private void handleAbout() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Névjegy");
+		alert.setHeaderText("Névjegy");
+		alert.setContentText("Készítette: Márföldi Péter Bence\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
 
-        alert.showAndWait();
-    }
+		alert.showAndWait();
+	}
 
-    /**
-     * Closes the application.
-     */
-    @FXML
-    private void handleExit() {
-        System.exit(0);
-    }
+	/**
+	 * Closes the application.
+	 */
+	@FXML
+	private void handleExit() {
+		System.exit(0);
+	}
 }

@@ -9,7 +9,7 @@ public class RecursiveParameter {
 	private double secondParameter;
 	private double thirdParameter;
 	private String stringParameter;
-	
+
 	public RecursiveParameter(double firstParameter, double secondParameter,
 			double thirdParameter, String stringParameter) {
 		this.firstParameter = firstParameter;
@@ -21,7 +21,7 @@ public class RecursiveParameter {
 	public RecursiveParameter(double firstParameter, double secondParameter) {
 		this(firstParameter, secondParameter, 0, null);
 	}
-	
+
 	public RecursiveParameter(double firstParameter, double secondParameter,
 			double thirdParameter) {
 		this(firstParameter, secondParameter, thirdParameter, null);

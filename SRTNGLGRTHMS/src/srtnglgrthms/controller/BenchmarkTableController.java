@@ -28,44 +28,56 @@ public class BenchmarkTableController {
 	private static String selectedItem;
 
 	@FXML
-    private void initialize() {
-        // Initialize the info table with the two columns.
+	private void initialize() {
+		// Initialize the info table with the two columns.
 		tableView.setPlaceholder(new Label("Nincs megjeleníthetõ adat"));
-		nameColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.328));
-		compareColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.255));
-		moveColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.250));
-		swapColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.158));
-		
-		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-		compareColumn.setCellValueFactory(cellData -> cellData.getValue().compareCounterProperty());
-		moveColumn.setCellValueFactory(cellData -> cellData.getValue().moveCounterProperty());
-		swapColumn.setCellValueFactory(cellData -> cellData.getValue().swapCounterProperty());
-		//tableView.setItems(SortingAlgorithm.getBenchmarkData());
+		nameColumn.prefWidthProperty().bind(
+				tableView.widthProperty().multiply(0.328));
+		compareColumn.prefWidthProperty().bind(
+				tableView.widthProperty().multiply(0.255));
+		moveColumn.prefWidthProperty().bind(
+				tableView.widthProperty().multiply(0.250));
+		swapColumn.prefWidthProperty().bind(
+				tableView.widthProperty().multiply(0.158));
+
+		nameColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.nameProperty());
+		compareColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.compareCounterProperty());
+		moveColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.moveCounterProperty());
+		swapColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.swapCounterProperty());
+		// tableView.setItems(SortingAlgorithm.getBenchmarkData());
 		BenchmarkController.setTableController(this);
 		setMouseAction();
-	    tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Object>() {
-	        @Override
-	        public void changed(ObservableValue<?> observableValue, Object oldValue, Object newValue) {
-	            //Check whether item is selected and set value of selected item to Label
-	            if(tableView.getSelectionModel().getSelectedItem() != null) 
-	            {    
-	               selectedItem = tableView.getSelectionModel().getSelectedItem().getName();
-	             }
-	             }
-	         });
-    }
+		tableView.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<Object>() {
+					@Override
+					public void changed(ObservableValue<?> observableValue,
+							Object oldValue, Object newValue) {
+						// Check whether item is selected and set value of
+						// selected item to Label
+						if (tableView.getSelectionModel().getSelectedItem() != null) {
+							selectedItem = tableView.getSelectionModel()
+									.getSelectedItem().getName();
+						}
+					}
+				});
+	}
 
 	private void setMouseAction() {
 		tableView.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-		    public void handle(MouseEvent event) {
-		        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
-		            BenchmarkChartController.addElement(tableView.getSelectionModel().getSelectedItem());
-		        }
-		    }
+			public void handle(MouseEvent event) {
+				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+					BenchmarkChartController.addElement(tableView
+							.getSelectionModel().getSelectedItem());
+				}
+			}
 		});
 	}
-	
+
 	public TableView<BenchmarkData> getTableView() {
 		return tableView;
 	}

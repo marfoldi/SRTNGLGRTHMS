@@ -33,9 +33,9 @@ public class ManualInputController {
 	private ScrollPane scrollPane;
 	@FXML
 	private GridPane numbersPane;
-	
+
 	int size;
-	
+
 	@FXML
 	public void initialize() {
 		scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
@@ -43,7 +43,7 @@ public class ManualInputController {
 		okBtn.setDisable(true);
 		randomBtn.setDisable(true);
 	}
-	
+
 	@FXML
 	public void createFields() {
 		if (sizeField.getText().matches("\\d+")) {
@@ -63,63 +63,67 @@ public class ManualInputController {
 			}
 		}
 	}
-	
+
 	private void setSizeLimit() {
 		sizeField.textProperty().addListener(new ChangeListener<String>() {
-	        @Override
-	        public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
-	            try {
-	        	if (Integer.parseInt(sizeField.getText()) > 100) {
-	            	sizeField.setText("100");
-	            }
-	        	if(Integer.parseInt(sizeField.getText()) == 0 || numbersPane.getChildren().isEmpty()) {
-	        		okBtn.setDisable(true);
-	    			randomBtn.setDisable(true);
-	    			return;
-	        	}
-	        	else {
-	        		okBtn.setDisable(false);
-	    			randomBtn.setDisable(false);
-	        	}
-	            } catch (NumberFormatException nfe) {}
-	        }
-	    });
+			@Override
+			public void changed(final ObservableValue<? extends String> ov,
+					final String oldValue, final String newValue) {
+				try {
+					if (Integer.parseInt(sizeField.getText()) > 100) {
+						sizeField.setText("100");
+					}
+					if (Integer.parseInt(sizeField.getText()) == 0
+							|| numbersPane.getChildren().isEmpty()) {
+						okBtn.setDisable(true);
+						randomBtn.setDisable(true);
+						return;
+					} else {
+						okBtn.setDisable(false);
+						randomBtn.setDisable(false);
+					}
+				} catch (NumberFormatException nfe) {
+				}
+			}
+		});
 	}
-	
+
 	@FXML
 	public void randomBtnHandler() {
-        ObservableList<Node> nodes = numbersPane.getChildren();
-        for(Node node : nodes) {
-        	((TextField)node).setText(Integer.toString((int)(Math.random()*100)));
-        }
+		ObservableList<Node> nodes = numbersPane.getChildren();
+		for (Node node : nodes) {
+			((TextField) node)
+					.setText(Integer.toString((int) (Math.random() * 100)));
+		}
 	}
-	
+
 	@FXML
 	public void okBtnHandler() {
-			saveNumbers();
-			try {
-				BorderPane baseLayout;
-				FXMLLoader loader = new FXMLLoader();
-				// Load input layout from fxml file.
-				loader.setLocation(MainApplication.class.getResource("view/BaseLayout.fxml"));
-				baseLayout = (BorderPane) loader.load();
-				// Show the scene containing the input layout.
-				Scene scene = new Scene(baseLayout);
-				Stage stage = (Stage) numbersPane.getScene().getWindow();
-				stage.setScene(scene);
-				stage.show();
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		saveNumbers();
+		try {
+			BorderPane baseLayout;
+			FXMLLoader loader = new FXMLLoader();
+			// Load input layout from fxml file.
+			loader.setLocation(MainApplication.class
+					.getResource("view/BaseLayout.fxml"));
+			baseLayout = (BorderPane) loader.load();
+			// Show the scene containing the input layout.
+			Scene scene = new Scene(baseLayout);
+			Stage stage = (Stage) numbersPane.getScene().getWindow();
+			stage.setScene(scene);
+			stage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	public void saveNumbers() {
 		int[] numbers = new int[size];
-        ObservableList<Node> nodes = numbersPane.getChildren();
-        for(int i=0; i<size; ++i) {
-        	numbers[i] = Integer.parseInt(((TextField)nodes.get(i)).getText());
-        }
-        SortingAlgorithm.setNumbers(numbers);
+		ObservableList<Node> nodes = numbersPane.getChildren();
+		for (int i = 0; i < size; ++i) {
+			numbers[i] = Integer.parseInt(((TextField) nodes.get(i)).getText());
+		}
+		SortingAlgorithm.setNumbers(numbers);
 	}
 }

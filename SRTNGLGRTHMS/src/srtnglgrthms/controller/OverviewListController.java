@@ -34,7 +34,7 @@ public class OverviewListController {
 							String oldValue, String newValue) {
 						OverviewController.getAnimation().stop();
 						OverviewListController.currentValue = newValue;
-						//OverviewChartController.reloadSeries();
+						// OverviewChartController.reloadSeries();
 						parentController.reloadButtons();
 						if (newValue.equals("Kupacrendezés")
 								|| newValue.equals("Versenyrendezés")
@@ -46,24 +46,28 @@ public class OverviewListController {
 										.getResource("view/OverViewGraphLayout.fxml"));
 								try {
 									((AnchorPane) parentController.displayPane
-											.getItems().get(0)).getChildren().clear();
+											.getItems().get(0)).getChildren()
+											.clear();
 									((AnchorPane) parentController.displayPane
-											.getItems().get(0)).getChildren().add(loader.load());
+											.getItems().get(0)).getChildren()
+											.add(loader.load());
 									OverviewGraphController.reloadGraph();
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 							}
-							if(newValue.equals("Radix \"vissza\"")) {
+							if (newValue.equals("Radix \"vissza\"")) {
 								FXMLLoader loader = new FXMLLoader();
 								loader.setLocation(MainApplication.class
 										.getResource("view/OverViewDoubleChartLayout.fxml"));
 								try {
 									((AnchorPane) parentController.displayPane
-											.getItems().get(0)).getChildren().clear();
+											.getItems().get(0)).getChildren()
+											.clear();
 									((AnchorPane) parentController.displayPane
-											.getItems().get(0)).getChildren().add(loader.load());
+											.getItems().get(0)).getChildren()
+											.add(loader.load());
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -75,16 +79,18 @@ public class OverviewListController {
 									.getResource("view/OverViewChartLayout.fxml"));
 							try {
 								((AnchorPane) parentController.displayPane
-										.getItems().get(0)).getChildren().clear();
+										.getItems().get(0)).getChildren()
+										.clear();
 								((AnchorPane) parentController.displayPane
-										.getItems().get(0)).getChildren().add(loader.load());
+										.getItems().get(0)).getChildren().add(
+										loader.load());
 							} catch (IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 						}
 						SortingAlgorithmFactory.getAlgorithm(currentValue)
-						.setDefaults();
+								.setDefaults();
 					}
 				});
 	}

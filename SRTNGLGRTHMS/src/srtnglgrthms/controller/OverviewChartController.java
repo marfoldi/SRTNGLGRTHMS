@@ -37,32 +37,36 @@ public class OverviewChartController {
 	@FXML
 	private void initialize() {
 		xAxis.setAutoRanging(false);
-		xAxis.setUpperBound(SortingAlgorithm.getMaximum() - SortingAlgorithm.getMaximum()%10 + 30);
+		xAxis.setUpperBound(SortingAlgorithm.getMaximum()
+				- SortingAlgorithm.getMaximum() % 10 + 30);
 		series = new Series<>();
 		setNumbersArray();
 		initChart(numbers);
 	}
 
 	private void setNumbersArray() {
-		if(SortingAlgorithm.getNumbers().length<=100) {
-		if(OverviewListController.getSelectedItem() != null) {
-			switch(OverviewListController.getSelectedItem()) {
-				case "Kupacrendezés" : {
-					numbers = GraphAlgorithm.checkLength(SortingAlgorithm.getNumbers(), "Kupacrendezés");
+		if (SortingAlgorithm.getNumbers().length <= 100) {
+			if (OverviewListController.getSelectedItem() != null) {
+				switch (OverviewListController.getSelectedItem()) {
+				case "Kupacrendezés": {
+					numbers = GraphAlgorithm.checkLength(
+							SortingAlgorithm.getNumbers(), "Kupacrendezés");
 					break;
 				}
-				case "Versenyrendezés" : {
-					numbers = GraphAlgorithm.checkLength(SortingAlgorithm.getNumbers(), "Versenyrendezés");
+				case "Versenyrendezés": {
+					numbers = GraphAlgorithm.checkLength(
+							SortingAlgorithm.getNumbers(), "Versenyrendezés");
 					break;
 				}
-				default : {
+				default: {
 					numbers = SortingAlgorithm.getNumbers();
 					break;
 				}
-			}
-		}
-		else numbers = SortingAlgorithm.getNumbers();
-		} else numbers = new int[] {0};
+				}
+			} else
+				numbers = SortingAlgorithm.getNumbers();
+		} else
+			numbers = new int[] { 0 };
 	}
 
 	public void initChart(int[] numbers) {
@@ -85,10 +89,11 @@ public class OverviewChartController {
 
 	public static void reloadSeries() {
 		for (int i = 0; i < numbers.length; ++i) {
-			if(OverviewListController.getSelectedItem().equals("Versenyrendezés")) {
+			if (OverviewListController.getSelectedItem().equals(
+					"Versenyrendezés")) {
 				series.getData().get(i).setYValue(0);
-			}
-			else series.getData().get(i).setYValue(numbers[i]);
+			} else
+				series.getData().get(i).setYValue(numbers[i]);
 			setColor(series.getData().get(i).getNode(), "default");
 		}
 	}

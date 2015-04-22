@@ -24,7 +24,7 @@ public class OverviewDoubleChartController {
 	private BarChart<String, Number> barChartTwo;
 	private static ObservableList<Data<String, Number>> listOne;
 	private static ObservableList<Data<String, Number>> listTwo;
-	
+
 	@SuppressWarnings("unchecked")
 	@FXML
 	private void initialize() {

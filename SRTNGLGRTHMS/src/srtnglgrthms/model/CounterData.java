@@ -39,17 +39,19 @@ public class CounterData {
 	public void setValue(String value) {
 		this.value.set(value);
 	}
-	
+
 	public void incValue() {
-		this.value.set(Integer.toString(Integer.parseInt(this.value.get())+1));
+		this.value
+				.set(Integer.toString(Integer.parseInt(this.value.get()) + 1));
 	}
 
 	public StringProperty valueProperty() {
 		return value;
 	}
-	
+
 	public void decValue() {
-		this.value.set(Integer.toString(Integer.parseInt(this.value.get())-1));
+		this.value
+				.set(Integer.toString(Integer.parseInt(this.value.get()) - 1));
 	}
 
 }

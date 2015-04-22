@@ -30,19 +30,21 @@ public class FileInputController {
 
 	public static void openChooser() {
 		fileChooser = new FileChooser();
-        // Set extension filter
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Szöveges fájl (*.txt)", "*.txt"));
-        // Show open file dialog
-        file = fileChooser.showOpenDialog(stage);
-        if(file != null) {
-        	try {
+		// Set extension filter
+		fileChooser.getExtensionFilters().add(
+				new FileChooser.ExtensionFilter("Szöveges fájl (*.txt)",
+						"*.txt"));
+		// Show open file dialog
+		file = fileChooser.showOpenDialog(stage);
+		if (file != null) {
+			try {
 				scanner = new Scanner(file);
-	        	loadFile();
+				loadFile();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-        }
+		}
 	}
 
 	private static int getLineNumber() {
@@ -50,26 +52,30 @@ public class FileInputController {
 		try {
 			LineNumberReader lnr = new LineNumberReader(new FileReader(file));
 			lnr.skip(Long.MAX_VALUE);
-			lineNumber = lnr.getLineNumber()+1; //Add 1 because line index starts at 0
-			// Finally, the LineNumberReader object should be closed to prevent resource leak
+			lineNumber = lnr.getLineNumber() + 1; // Add 1 because line index
+													// starts at 0
+			// Finally, the LineNumberReader object should be closed to prevent
+			// resource leak
 			lnr.close();
-		} catch (IOException ioe) {}
+		} catch (IOException ioe) {
+		}
 		return lineNumber;
 	}
 
 	private static void loadFile() {
 		try {
-		int[] numbers = new int[getLineNumber()];
-		for (int i=0; i<numbers.length; ++i) numbers[i] = scanner.nextInt();
-		SortingAlgorithm.setNumbers(numbers);
-		showBaseLayout();
-		} catch(InputMismatchException ime) {
+			int[] numbers = new int[getLineNumber()];
+			for (int i = 0; i < numbers.length; ++i)
+				numbers[i] = scanner.nextInt();
+			SortingAlgorithm.setNumbers(numbers);
+			showBaseLayout();
+		} catch (InputMismatchException ime) {
 			Alert alert = new Alert(AlertType.ERROR);
-    		alert.setTitle("Hiba");
-    		alert.setHeaderText("Hiba történt");
-    		alert.setContentText("A megadott fájl nem megfelelõ!\n(Nem csak egész számokat tartalmaz soronként)");
+			alert.setTitle("Hiba");
+			alert.setHeaderText("Hiba történt");
+			alert.setContentText("A megadott fájl nem megfelelõ!\n(Nem csak egész számokat tartalmaz soronként)");
 
-    		alert.showAndWait();
+			alert.showAndWait();
 		}
 	}
 
@@ -78,7 +84,8 @@ public class FileInputController {
 			BorderPane baseLayout;
 			FXMLLoader loader = new FXMLLoader();
 			// Load input layout from fxml file.
-			loader.setLocation(MainApplication.class.getResource("view/BaseLayout.fxml"));
+			loader.setLocation(MainApplication.class
+					.getResource("view/BaseLayout.fxml"));
 			baseLayout = (BorderPane) loader.load();
 			// Show the scene containing the input layout.
 			Scene scene = new Scene(baseLayout);

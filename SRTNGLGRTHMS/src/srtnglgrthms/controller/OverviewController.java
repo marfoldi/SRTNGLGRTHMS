@@ -44,18 +44,22 @@ public class OverviewController {
 		stepBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				switch(stepBtn.getText()) {
-					case "Léptetés": {
-						(SortingAlgorithmFactory.getAlgorithm(OverviewListController.getSelectedItem())).step();
-						checkButtons();
-						break;
-					}
-					case "Újraindítás": {
-						OverviewChartController.reloadSeries();
-				        SortingAlgorithmFactory.getAlgorithm(OverviewListController.getSelectedItem()).setDefaults();
-				        reloadButtons();
-				        break;
-					}
+				switch (stepBtn.getText()) {
+				case "Léptetés": {
+					(SortingAlgorithmFactory
+							.getAlgorithm(OverviewListController
+									.getSelectedItem())).step();
+					checkButtons();
+					break;
+				}
+				case "Újraindítás": {
+					OverviewChartController.reloadSeries();
+					SortingAlgorithmFactory.getAlgorithm(
+							OverviewListController.getSelectedItem())
+							.setDefaults();
+					reloadButtons();
+					break;
+				}
 				}
 			}
 		});
@@ -85,12 +89,13 @@ public class OverviewController {
 	protected void checkButtons() {
 		boolean isDone = true;
 		for (int i = 0; i < ChartAlgorithm.getData().size(); i++) {
-			if(!(ChartAlgorithm.getData().get(i).getNode().getStyle().contains("-fx-bar-fill: #8C2D46;"))) {
+			if (!(ChartAlgorithm.getData().get(i).getNode().getStyle()
+					.contains("-fx-bar-fill: #8C2D46;"))) {
 				isDone = false;
 				break;
 			}
 		}
-		if(isDone) {
+		if (isDone) {
 			stepBtn.setText("Újraindítás");
 			animation.stop();
 			animBtn.setVisible(false);

@@ -19,7 +19,8 @@ public class BenchmarkData {
 		this(null, 0, 0, 0);
 	}
 
-	public BenchmarkData(String name, long compareCounter, long moveCounter, long swapCounter) {
+	public BenchmarkData(String name, long compareCounter, long moveCounter,
+			long swapCounter) {
 		this.name = new SimpleStringProperty(name);
 		this.compareCounter = new SimpleLongProperty(compareCounter);
 		this.moveCounter = new SimpleLongProperty(moveCounter);

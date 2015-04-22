@@ -9,7 +9,7 @@ import javafx.scene.chart.XYChart.Data;
  */
 public abstract class ChartAlgorithm extends SortingAlgorithm {
 	protected static ObservableList<Data<String, Number>> data;
-	
+
 	@Override
 	protected void swap(int firstIndex, int secondIndex) {
 		int temp;
@@ -17,12 +17,13 @@ public abstract class ChartAlgorithm extends SortingAlgorithm {
 		data.get(firstIndex).setYValue(data.get(secondIndex).getYValue());
 		data.get(secondIndex).setYValue(temp);
 	}
-	
+
 	public static ObservableList<Data<String, Number>> getData() {
 		return data;
 	}
-	
-	public static void setData(ObservableList<Data<String, Number>> observableList) {
+
+	public static void setData(
+			ObservableList<Data<String, Number>> observableList) {
 		ChartAlgorithm.data = observableList;
 	}
 }
