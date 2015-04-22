@@ -37,9 +37,9 @@ Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmány
 \section{Alkalmazott technológiák}
 A Következőkben röviden összefoglaljuk a Java\cite{Java} és a JavaFX\cite{JavaFX} jellegzetességeit.
 \subsection{A Java-ról röviden}
-A Java egy általános célú, objektumorientált programozási nyelv, melyet 2009-ig a \emph{Sun Microsystems} fejlesztett, ezt követően pedig az \emph{Oracle}. A szakdolgozatban használt 1.8-as verziót már az \emph{Oracle} adta ki 2014-ben. A Java nyelv a szintaxisát a C és C++ nyelvektől örökölte, azonban utóbbitól eltérően egyszerű objektummodellel rendelkezik. 
-\newline \indent A Java platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a Java nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. 
-\newline \indent A Java legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
+A Java egy általános célú, objektumorientált programozási nyelv, melyet 2009-ig a \emph{Sun Microsystems} fejlesztett, ezt követően pedig az \emph{Oracle}. A szakdolgozatban használt 1.8-as verziót már az \emph{Oracle} adta ki 2014-ben. A Java nyelv a szintaxisát a C és C++ nyelvektől örökölte, azonban utóbbitól eltérően egyszerű objektummodellel rendelkezik. \par
+ A Java platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a Java nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. \par
+ A Java legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
 Összefoglalva a Java program három fontos szerepet tölt be:
 \begin{description}[1cm]
 \item[$\bullet$ programozási nyelv]
@@ -47,20 +47,22 @@ A Java egy általános célú, objektumorientált programozási nyelv, melyet 20
 \item[$\bullet$ platform]
 \end{description}
 \subsection{JavaFX}
-Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást lehessen készíteni és futtatni eszközök széles skáláján. Eredetileg a \emph{Swing} könyvtárat váltotta volna fel, azonban jelenleg mindkettő része a \emph{Jave SE}-nek. 
-\newline \indent A 2.0-ás verzióig a fejlesztők egy külön nyelvet használtak, amelyet \emph{JavaFX Script}-nek neveznek. Azonban mivel ez szintén Java bájtkódot generál a későbbiekben megadatott a lehetőség, hogy a programozók Java kódot használjanak helyette. A JavaFX egyik legnagyobb előnye, hogy egy egyszerű \emph{XML} struktúrában leírhatók a program grafikus felületének összetevői, melyhez ezt követően elegendő az egyes interakciókhoz tartozó funkciókat implementálni. 
-\newline \indent Az elterjedtebb operációs rendszerek mindegyikét támogatja. Ahogyan előnye, úgy hátránya is a \emph{Swing}-hez képest az, hogy jelenleg is folyik a fejlesztése, ezért olykor csak hosszas utánajárást követően sikerül megoldást találni egy-egy problémára.
+Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást lehessen készíteni és futtatni eszközök széles skáláján. Eredetileg a \emph{Swing} könyvtárat váltotta volna fel, azonban jelenleg mindkettő része a \emph{Jave SE}-nek. \par
+ A 2.0-ás verzióig a fejlesztők egy külön nyelvet használtak, amelyet \emph{JavaFX Script}-nek neveznek. Azonban mivel ez szintén Java bájtkódot generál a későbbiekben megadatott a lehetőség, hogy a programozók Java kódot használjanak helyette. A JavaFX egyik legnagyobb előnye, hogy egy egyszerű \emph{XML} struktúrában leírhatók a program grafikus felületének összetevői, melyhez ezt követően elegendő az egyes interakciókhoz tartozó funkciókat implementálni.\par Az elterjedtebb operációs rendszerek mindegyikét támogatja. Ahogyan előnye, úgy hátránya is a \emph{Swing}-hez képest az, hogy jelenleg is folyik a fejlesztése, ezért olykor csak hosszas utánajárást követően sikerül megoldást találni egy-egy problémára.
 
 \chapter{Felhasználói dokumentáció}
 
 \section{A vizsgált algoritmusok}
 
 \subsection{Buborékrendezés}
-A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}. 
-\indent A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Egészen addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg mindig a tömb összes elemét, hanem amennyiben egy maximális elem elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
+A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.\par
+ A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Egészen addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg mindig a tömb összes elemét, hanem amennyiben egy maximális elem elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
 
-\subsection{Beszúrórendezés}
+\subsection{Beszúró rendezés}
+A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. A legegyszerűbb megvalósítása két tömböt használ, a "forrás" tömböt és egyet, amelyben az elemek már rendezve vannak. Memóriamegtakarítás céljából a leggyakrabban a helyben rendező változatát valósítják meg. Ennek lényege, hogy a soron következő elemet egy ideiglenes változóba elmentünk, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek. A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest.\cite{Fekete}
 
+\subsection{Shell rendezés}
+Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre.
 
 \chapter{Fejlesztői dokumentáció}
 

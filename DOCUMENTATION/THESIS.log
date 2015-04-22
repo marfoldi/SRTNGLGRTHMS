@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  22 APR 2015 18:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  22 APR 2015 21:57
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -510,11 +510,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 72.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 73.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 1902) in paragraph at lines 84--87
+Underfull \hbox (badness 1902) in paragraph at lines 85--88
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván.: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat
 -szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
@@ -529,7 +529,7 @@ Here is how much of TeX's memory you used:
  7379 multiletter control sequences out of 15000+200000
  14368 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,43p,648b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,43p,810b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\marf
 oldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <
 C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
@@ -543,9 +543,9 @@ ldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C
 rm2488.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
 \ec\dpi600\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb>
-Output written on THESIS.pdf (7 pages, 1042886 bytes).
+Output written on THESIS.pdf (7 pages, 1044267 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
+ 384 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
