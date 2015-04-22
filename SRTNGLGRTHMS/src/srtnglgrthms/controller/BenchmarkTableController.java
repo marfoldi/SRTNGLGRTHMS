@@ -1,5 +1,7 @@
 package srtnglgrthms.controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -23,6 +25,7 @@ public class BenchmarkTableController {
 	private TableColumn<BenchmarkData, Number> moveColumn;
 	@FXML
 	private TableColumn<BenchmarkData, Number> swapColumn;
+	private static String selectedItem;
 
 	@FXML
     private void initialize() {
@@ -40,6 +43,16 @@ public class BenchmarkTableController {
 		//tableView.setItems(SortingAlgorithm.getBenchmarkData());
 		BenchmarkController.setTableController(this);
 		setMouseAction();
+	    tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Object>() {
+	        @Override
+	        public void changed(ObservableValue<?> observableValue, Object oldValue, Object newValue) {
+	            //Check whether item is selected and set value of selected item to Label
+	            if(tableView.getSelectionModel().getSelectedItem() != null) 
+	            {    
+	               selectedItem = tableView.getSelectionModel().getSelectedItem().getName();
+	             }
+	             }
+	         });
     }
 
 	private void setMouseAction() {
@@ -55,5 +68,9 @@ public class BenchmarkTableController {
 	
 	public TableView<BenchmarkData> getTableView() {
 		return tableView;
+	}
+
+	public static String getSelectedItem() {
+		return selectedItem;
 	}
 }

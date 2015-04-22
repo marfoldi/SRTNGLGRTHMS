@@ -3,7 +3,6 @@ package srtnglgrthms.controller;
 import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
-import srtnglgrthms.model.algorithm.GraphAlgorithm;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -64,12 +63,19 @@ public class BaseController {
      */
     @FXML
     private void handleAlgorithm() {
-    	if(OverviewListController.getSelectedItem()!=null) {
-	        Alert alert = new Alert(AlertType.INFORMATION);
+        SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+    	if((tabPane.getTabs().size()==1 || selectionModel.getSelectedIndex()==1) && BenchmarkTableController.getSelectedItem()!=null) {
+    		Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle("Az algoritmusról");
+	        alert.setHeaderText(BenchmarkTableController.getSelectedItem());
+	        alert.setContentText("Leírás\n");
+	        alert.showAndWait();
+    	}
+    	else if(tabPane.getTabs().size()==2 && selectionModel.getSelectedIndex()==0 && OverviewListController.getSelectedItem()!=null) {
+    		Alert alert = new Alert(AlertType.INFORMATION);
 	        alert.setTitle("Az algoritmusról");
 	        alert.setHeaderText(OverviewListController.getSelectedItem());
 	        alert.setContentText("Leírás\n");
-
 	        alert.showAndWait();
     	}
     	else {

@@ -110,6 +110,10 @@
 \ths@city, \ths@thesisyear
 \end{titlepage}
 }
+\renewenvironment{description}[1][0pt]
+{\list{}{\labelwidth=0pt \leftmargin=#1
+ \let\makelabel\descriptionlabel}}
+ {\endlist}
 \endinput
 %%
 %% End of file `elteikthesis.cls'.
