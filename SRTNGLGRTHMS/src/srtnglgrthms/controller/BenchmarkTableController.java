@@ -30,7 +30,7 @@ public class BenchmarkTableController {
 	@FXML
 	private void initialize() {
 		// Initialize the info table with the two columns.
-		tableView.setPlaceholder(new Label("Nincs megjeleníthetõ adat"));
+		tableView.setPlaceholder(new Label("Az adatok betöltése folyamatban van..."));
 		nameColumn.prefWidthProperty().bind(
 				tableView.widthProperty().multiply(0.328));
 		compareColumn.prefWidthProperty().bind(

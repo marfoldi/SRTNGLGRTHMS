@@ -14,11 +14,11 @@ public abstract class SortingThread extends Thread {
 	protected static ObservableList<BenchmarkData> benchmarkData = FXCollections
 			.observableArrayList();
 	protected int[] numbers;
-	protected int comparisonCounter = 0; // Increment this counter whenever a
+	protected long comparisonCounter = 0; // Increment this counter whenever a
 		// comparison takes place
-	protected int swapCounter = 0; // Increment this counter whenever a swap takes
+	protected long swapCounter = 0; // Increment this counter whenever a swap takes
 	// place
-	protected int moveCounter = 0; // Increment this counter whenever a move takes
+	protected long moveCounter = 0; // Increment this counter whenever a move takes
 	// place
 
 	public final void setListener(final SortingThreadListener listener) {
