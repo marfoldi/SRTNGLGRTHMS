@@ -10,7 +10,7 @@ import srtnglgrthms.model.graph.Graph;
 import srtnglgrthms.model.graph.Vertex;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public abstract class GraphAlgorithm extends SortingAlgorithm {
@@ -19,8 +19,6 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 	protected static final int vertexSize = 18;
 	protected static final int xGap = 200;
 	protected static final int yGap = 60;
-	private static boolean showedHeapWarning = false;
-	private static boolean showedTournamentWarning = false;
 
 	public static final Graph graph = OverviewGraphController.getGraph();
 	protected static Vertex[] vertices = OverviewGraphController.getVertices();
@@ -34,16 +32,13 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 				int[] checkedArray = new int[31];
 				System.arraycopy(numbers, 0, checkedArray, 0, 30);
 				GraphAlgorithm.checkedArray = checkedArray;
-				if (!showedHeapWarning) {
-					Alert alert = new Alert(AlertType.WARNING);
-					alert.setTitle("Figyelmeztetés");
-					alert.setHeaderText("Az algoritmusban használt számok eltérnek a bemenettõl");
-					alert.setContentText("Mivel legfeljebb 31 elemû gráfot képes a program megjeleníteni,\nezért a"
-							+ "számításban csak az elsõ 31 elem vesz részt!");
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Figyelmeztetés");
+				alert.setHeaderText("Az algoritmusban használt számok eltérnek a bemenettõl");
+				alert.setContentText("Mivel legfeljebb 31 elemû gráfot képes a program megjeleníteni,\nezért a"
+						+ "számításban csak az elsõ 31 elem vesz részt!");
 
-					alert.showAndWait();
-					showedHeapWarning = true;
-				}
+				alert.showAndWait();
 				return checkedArray;
 			}
 			GraphAlgorithm.checkedArray = numbers;
@@ -56,27 +51,22 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 				length *= 2;
 			if (length > 16) {
 				length = 16;
-				if (!showedTournamentWarning) {
-					Alert alert = new Alert(AlertType.WARNING);
-					alert.setTitle("Figyelmeztetés");
-					alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
-					alert.setContentText("Mivel legfeljebb 16 elemû gráfot képes a program megjeleníteni,\nezért a"
-							+ "számításban csak az elsõ 16 elem vesz részt!");
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Figyelmeztetés");
+				alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
+				alert.setContentText("Mivel legfeljebb 16 elemû gráfot képes a program megjeleníteni,\nezért a"
+						+ "számításban csak az elsõ 16 elem vesz részt!");
 
-					alert.showAndWait();
-					showedTournamentWarning = true;
-				}
-			} else if (length != SortingAlgorithm.getNumbers().length) {
-				if (!showedTournamentWarning) {
-					Alert alert = new Alert(AlertType.WARNING);
-					alert.setTitle("Figyelmeztetés");
-					alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
-					alert.setContentText("Mivel nem kettõ hatvány a bemenet hossza,\nezért itt a "
-							+ "számításban " + length + " szám fog résztvenni!");
+				alert.showAndWait();
+			}
+			else if (length != SortingAlgorithm.getNumbers().length) {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Figyelmeztetés");
+				alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
+				alert.setContentText("Mivel nem kettõ hatvány a bemenet hossza,\nezért itt a "
+						+ "számításban " + length + " szám fog résztvenni!");
 
-					alert.showAndWait();
-					showedTournamentWarning = true;
-				}
+				alert.showAndWait();
 			}
 			int[] checkedArray = new int[length];
 			for (int i = numbers.length; i < length; ++i) {
@@ -133,14 +123,5 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 
 	public static void setCheckedArray(int[] checkedArray) {
 		GraphAlgorithm.checkedArray = checkedArray;
-	}
-
-	public static void setShowedHeapWarning(boolean showedHeapWarning) {
-		GraphAlgorithm.showedHeapWarning = showedHeapWarning;
-	}
-
-	public static void setShowedTournamentWarning(
-			boolean showedTournamentWarning) {
-		GraphAlgorithm.showedTournamentWarning = showedTournamentWarning;
 	}
 }
