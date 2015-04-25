@@ -5,6 +5,10 @@ import javafx.collections.ObservableList;
 import srtnglgrthms.controller.SortingThreadListener;
 import srtnglgrthms.model.BenchmarkData;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public abstract class SortingThread extends Thread {
 	private SortingThreadListener listener;
 	protected static ObservableList<BenchmarkData> benchmarkData = FXCollections
