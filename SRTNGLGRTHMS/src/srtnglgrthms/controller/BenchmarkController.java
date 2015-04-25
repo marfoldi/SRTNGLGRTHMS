@@ -1,24 +1,21 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.algorithm.BubbleSort;
-import srtnglgrthms.model.algorithm.HeapSort;
-import srtnglgrthms.model.algorithm.InsertionSort;
-import srtnglgrthms.model.algorithm.QuickSort;
-import srtnglgrthms.model.algorithm.ShellSort;
-import srtnglgrthms.model.algorithm.SortingAlgorithm;
-import srtnglgrthms.model.algorithm.TournamentSort;
+import srtnglgrthms.model.algorithm.raw.BubbleThread;
+import srtnglgrthms.model.algorithm.raw.HeapThread;
+import srtnglgrthms.model.algorithm.raw.InsertionThread;
+import srtnglgrthms.model.algorithm.raw.QuickThread;
+import srtnglgrthms.model.algorithm.raw.ShellThread;
+import srtnglgrthms.model.algorithm.raw.SortingThread;
+import srtnglgrthms.model.algorithm.raw.TournamentThread;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
 /**
  * 
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class BenchmarkController {
+public class BenchmarkController implements SortingThreadListener {
 	private static BenchmarkTableController tableController;
-	private static Thread[] sortingThreads;
-	private static Alert alert;
+	private SortingThread [] sortingThreads;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -26,33 +23,19 @@ public class BenchmarkController {
 	 */
 	@FXML
 	private void initialize() {
-		sortingThreads = new Thread[] { new Thread(BubbleSort.sort),
-				new Thread(InsertionSort.sort), new Thread(ShellSort.sort),
-				new Thread(QuickSort.sort), new Thread(HeapSort.sort),
-				new Thread(TournamentSort.sort) };
-		setAlertBox();
+		sortingThreads = new SortingThread[] { new BubbleThread(),
+				new InsertionThread(), new ShellThread(),
+				new QuickThread(), new HeapThread(),
+				new TournamentThread() };
 		runSortingThreads();
 	}
 
-	private static void setAlertBox() {
-		alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Betöltés...");
-	}
-
-	private static void runSortingThreads() {
-		alert.show();
-		for (Thread thread : sortingThreads) {
+	private void runSortingThreads() {
+		for (SortingThread thread : sortingThreads) {
+			thread.setListener(this);
 			thread.start();
-			try {
-				thread.join();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
-		alert.hide();
-		tableController.getTableView().setItems(
-				SortingAlgorithm.getBenchmarkData());
+		
 	}
 
 	public static void setTableController(
@@ -60,11 +43,10 @@ public class BenchmarkController {
 		BenchmarkController.tableController = tableController;
 	}
 
-	public static boolean isThreadsDone() {
-		for (Thread thread : sortingThreads) {
-			if (thread.isAlive())
-				return false;
-		}
-		return true;
+	@Override
+	public void notifyOfThreadComplete(Thread thread) {
+		//tableController.getTableView().getItems().clear();
+		tableController.getTableView().setItems(
+				SortingThread.getBenchmarkData());
 	}
 }

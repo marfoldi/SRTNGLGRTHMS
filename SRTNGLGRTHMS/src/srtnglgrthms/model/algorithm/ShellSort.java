@@ -1,7 +1,6 @@
 package srtnglgrthms.model.algorithm;
 
 import srtnglgrthms.controller.OverviewChartController;
-import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 
 /**
@@ -98,35 +97,4 @@ public class ShellSort extends ChartAlgorithm {
 			OverviewChartController.setColor(data.get(i).getNode(), color);
 		}
 	}
-
-	public static Runnable sort = () -> {
-		int[] numbers = new int[ChartAlgorithm.getNumbers().length];
-		int i, j, temp;
-		System.arraycopy(ChartAlgorithm.getNumbers(), 0, numbers, 0,
-				ChartAlgorithm.getNumbers().length);
-		int moveCounter = 0; // Increment this counter whenever a move takes
-								// place
-		int comparisonCounter = 0; // Increment this counter whenever a
-									// comparison takes place
-		for (int gap : gapArray) {
-			i = gap;
-			while (i < numbers.length) {
-				temp = numbers[i];
-				j = i - gap;
-				while (j >= 0) {
-					comparisonCounter++;
-					if (numbers[j] > temp) {
-						moveCounter++;
-						numbers[j + gap] = numbers[j];
-					} else
-						break;
-					j -= gap;
-				}
-				numbers[j + gap] = temp;
-				i++;
-			}
-		}
-		benchmarkData.add(new BenchmarkData("Shell rendezés",
-				comparisonCounter, moveCounter, 0));
-	};
 }

@@ -2,6 +2,7 @@ package srtnglgrthms.controller;
 
 import srtnglgrthms.model.SortingAlgorithmFactory;
 import srtnglgrthms.model.algorithm.ChartAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -74,7 +75,7 @@ public class OverviewController {
 
 	private void setAnimation() {
 		animation.getKeyFrames().add(
-				new KeyFrame(Duration.millis(10),
+				new KeyFrame(Duration.millis(500),
 						new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent actionEvent) {

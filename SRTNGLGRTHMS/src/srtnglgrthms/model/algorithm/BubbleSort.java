@@ -1,7 +1,6 @@
 package srtnglgrthms.model.algorithm;
 
 import srtnglgrthms.controller.OverviewChartController;
-import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 
 /**
@@ -70,27 +69,4 @@ public class BubbleSort extends ChartAlgorithm {
 			OverviewChartController.setColor(data.get(i).getNode(), "default");
 		}
 	}
-
-	public static Runnable sort = () -> {
-		int[] numbers = new int[SortingAlgorithm.getNumbers().length];
-		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
-				SortingAlgorithm.getNumbers().length);
-		int swapCounter = 0; // Increment this counter whenever a swap takes
-								// place
-		int comparisonCounter = 0; // Increment this counter whenever a
-									// comparison takes place
-		for (int i = 1; i < numbers.length; i++) {
-			for (int j = 0; j < numbers.length - i; j++) {
-				comparisonCounter++;
-				if ((numbers[j]) > (numbers[j + 1])) {
-					swapCounter++;
-					int temp = numbers[j];
-					numbers[j] = numbers[j + 1];
-					numbers[j + 1] = temp;
-				}
-			}
-		}
-		benchmarkData.add(new BenchmarkData("Buborékrendezés",
-				comparisonCounter, 3 * swapCounter, swapCounter));
-	};
 }

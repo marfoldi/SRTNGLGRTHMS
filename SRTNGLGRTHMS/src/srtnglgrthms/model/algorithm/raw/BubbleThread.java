@@ -1,0 +1,27 @@
+package srtnglgrthms.model.algorithm.raw;
+
+import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
+
+public class BubbleThread extends SortingThread{
+	@Override
+	public void doRun() {
+		numbers = new int[SortingAlgorithm.getNumbers().length];
+		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
+				SortingAlgorithm.getNumbers().length);
+		for (int i = 1; i < numbers.length; i++) {
+			for (int j = 0; j < numbers.length - i; j++) {
+				comparisonCounter++;
+				if ((numbers[j]) > (numbers[j + 1])) {
+					swapCounter++;
+					int temp = numbers[j];
+					numbers[j] = numbers[j + 1];
+					numbers[j + 1] = temp;
+				}
+			}
+		}
+		benchmarkData.add(new BenchmarkData("Buborékrendezés",
+				comparisonCounter, 3 * swapCounter, swapCounter));
+	}
+
+}

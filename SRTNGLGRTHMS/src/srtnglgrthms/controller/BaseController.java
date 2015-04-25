@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
+import srtnglgrthms.model.algorithm.raw.SortingThread;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -42,7 +43,7 @@ public class BaseController {
 	@FXML
 	private void handleReturnToMenu() {
 		OverviewController.getAnimation().stop();
-		SortingAlgorithm.getBenchmarkData().clear();
+		SortingThread.getBenchmarkData().clear();
 		SortingAlgorithm.getCounterData().clear();
 		try {
 			// Load base layout from fxml file.

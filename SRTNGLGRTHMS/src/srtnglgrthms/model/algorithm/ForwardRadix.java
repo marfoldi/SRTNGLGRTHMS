@@ -71,7 +71,7 @@ public class ForwardRadix extends RadixAlgorithm {
 								OverviewChartController.setColor(data
 										.get(lower).getNode(), "select");
 						}
-						// else counterData.get(0).decValue();
+						 else counterData.get(0).decValue();
 						return;
 					} else {
 						OverviewChartController.setColor(data.get(lower)
@@ -121,14 +121,14 @@ public class ForwardRadix extends RadixAlgorithm {
 			} else {
 				setBucketColor(begin, lower);
 				setBucketColor(lower, end + 1);
-				// if(begin!=lower-1 && begin<lower-1) {
+				 if(begin!=lower-1 && begin<lower-1) {
 				recursiveCall.add(new RecursiveParameter(begin, lower - 1,
 						actualDigit + 1, null));
-				// }
-				// if(lower!=end && lower<end) {
+				 }
+				 if(lower!=end && lower<end) {
 				recursiveCall.add(new RecursiveParameter(lower, end,
 						actualDigit + 1, null));
-				// }
+				 }
 				if (!recursiveCall.isEmpty()) {
 					RecursiveParameter nextParameters = recursiveCall.remove();
 					begin = (int) nextParameters.getFirstParameter();

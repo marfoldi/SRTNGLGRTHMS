@@ -5,7 +5,7 @@ import srtnglgrthms.model.algorithm.BubbleSort;
 import srtnglgrthms.model.algorithm.ForwardRadix;
 import srtnglgrthms.model.algorithm.HeapSort;
 import srtnglgrthms.model.algorithm.InsertionSort;
-import srtnglgrthms.model.algorithm.QuickSort;
+import srtnglgrthms.model.algorithm.QuickShort;
 import srtnglgrthms.model.algorithm.ShellSort;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import srtnglgrthms.model.algorithm.TournamentSort;
@@ -26,7 +26,7 @@ public class SortingAlgorithmFactory {
 		case "Radix \"vissza\"":
 			return BackwardRadix.getInstance();
 		case "Gyorsrendezés":
-			return QuickSort.getInstance();
+			return QuickShort.getInstance();
 		case "Shell rendezés":
 			return ShellSort.getInstance();
 		case "Kupacrendezés":

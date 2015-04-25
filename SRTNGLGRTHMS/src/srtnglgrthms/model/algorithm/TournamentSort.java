@@ -6,7 +6,6 @@ import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
-import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 import srtnglgrthms.model.graph.Vertex;
@@ -46,6 +45,7 @@ public class TournamentSort extends GraphAlgorithm {
 		isFound = false;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
+		counterData.add(new CounterData("Mozgatások", "0"));
 	}
 
 	@Override
@@ -62,9 +62,8 @@ public class TournamentSort extends GraphAlgorithm {
 				colored = true;
 				return;
 			}
-			if (vertices[2 * fillIndex].getNumber() != -1
-					&& vertices[2 * fillIndex - 1].getNumber() != -1)
-				counterData.get(0).incValue();
+			counterData.get(0).incValue();
+			counterData.get(1).incValue();
 			vertices[fillIndex - 1]
 					.setNumber(vertices[2 * fillIndex].getNumber() > vertices[2 * fillIndex - 1]
 							.getNumber() ? vertices[2 * fillIndex].getNumber()
@@ -96,6 +95,7 @@ public class TournamentSort extends GraphAlgorithm {
 		}
 		if (recursiveCounter >= 1) {
 			if (maxIndex < vertices.length / 2 && !isFound) {
+				counterData.get(0).incValue();
 				setRestColor(vertices.length);
 				vertices[maxIndex].setColor("swap");
 				maxIndex = vertices[maxIndex].getNumber() == vertices[2 * maxIndex + 1]
@@ -119,9 +119,8 @@ public class TournamentSort extends GraphAlgorithm {
 					return;
 				}
 				if (maxIndex >= 0) {
-					if (vertices[2 * maxIndex + 1].getNumber() != -1
-							&& vertices[2 * maxIndex + 2].getNumber() != -1)
-						counterData.get(0).incValue();
+					counterData.get(0).incValue();
+					counterData.get(1).incValue();
 					vertices[maxIndex].setNumber(vertices[2 * maxIndex + 1]
 							.getNumber() > vertices[2 * maxIndex + 2]
 							.getNumber() ? vertices[2 * maxIndex + 1]
@@ -166,67 +165,6 @@ public class TournamentSort extends GraphAlgorithm {
 			}
 		}
 	}
-
-	public static Runnable sort = () -> {
-		int length = 1;
-		int power = (int) Math.ceil(Math.log(numbers.length) / Math.log(2));
-		for (int i = 0; i < power; ++i)
-			length *= 2;
-		int[] numbers = new int[length];
-		for (int i = SortingAlgorithm.getNumbers().length; i < length; ++i) {
-			numbers[i] = -1;
-		}
-		if (length > SortingAlgorithm.getNumbers().length)
-			System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
-					length - (length - SortingAlgorithm.getNumbers().length));
-		else
-			System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
-					length);
-		int[] finalNumbers = new int[length * 2 - 1];
-		for (int i = 0; i < length; ++i) {
-			finalNumbers[i] = -2;
-		}
-		int j = 0;
-		for (int i = length; i < finalNumbers.length; ++i) {
-			finalNumbers[i] = numbers[j];
-			j++;
-		}
-		int comparisonCounter = 0; // Increment this counter whenever a
-									// comparison takes place
-		for (int i = finalNumbers.length / 2; i >= 1; --i) {
-			if (finalNumbers[2 * i] != -1 && finalNumbers[2 * i - 1] != -1)
-				comparisonCounter++;
-			finalNumbers[i - 1] = finalNumbers[2 * i] > finalNumbers[2 * i - 1] ? finalNumbers[2 * i]
-					: finalNumbers[2 * i - 1];
-		}
-		int recursiveCounter = SortingAlgorithm.getNumbers().length - 1;
-		while (recursiveCounter >= 1) {
-			maxIndex = 0;
-			while (maxIndex < SortingAlgorithm.getNumbers().length / 2) {
-				maxIndex = finalNumbers[maxIndex] == finalNumbers[2 * maxIndex + 1] ? 2 * maxIndex + 1
-						: 2 * maxIndex + 2;
-				finalNumbers[maxIndex] = -1;
-			}
-			if (maxIndex % 2 == 0)
-				maxIndex = maxIndex / 2 - 1;
-			else
-				maxIndex = maxIndex / 2;
-			while (maxIndex >= 0) {
-				if (finalNumbers[2 * maxIndex + 1] != -1
-						&& finalNumbers[2 * maxIndex + 2] != -1)
-					comparisonCounter++;
-				finalNumbers[maxIndex] = finalNumbers[2 * maxIndex + 1] > finalNumbers[2 * maxIndex + 2] ? finalNumbers[2 * maxIndex + 1]
-						: finalNumbers[2 * maxIndex + 2];
-				if (maxIndex % 2 == 0)
-					maxIndex = maxIndex / 2 - 1;
-				else
-					maxIndex = maxIndex / 2;
-			}
-			recursiveCounter--;
-		}
-		benchmarkData.add(new BenchmarkData("Versenyrendezés",
-				comparisonCounter, 0, 0));
-	};
 
 	@Override
 	public void setDefaultGraph() {

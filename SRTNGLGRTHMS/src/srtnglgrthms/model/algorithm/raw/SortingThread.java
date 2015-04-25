@@ -1,0 +1,42 @@
+package srtnglgrthms.model.algorithm.raw;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import srtnglgrthms.controller.SortingThreadListener;
+import srtnglgrthms.model.BenchmarkData;
+
+public abstract class SortingThread extends Thread {
+	private SortingThreadListener listener;
+	protected static ObservableList<BenchmarkData> benchmarkData = FXCollections
+			.observableArrayList();
+	protected int[] numbers;
+	protected int comparisonCounter = 0; // Increment this counter whenever a
+		// comparison takes place
+	protected int swapCounter = 0; // Increment this counter whenever a swap takes
+	// place
+	protected int moveCounter = 0; // Increment this counter whenever a move takes
+	// place
+
+	public final void setListener(final SortingThreadListener listener) {
+		this.listener = listener;
+	}
+
+	private final void notifyListeners() {
+		listener.notifyOfThreadComplete(this);
+	}
+
+	@Override
+	public final void run() {
+		try {
+			doRun();
+		} finally {
+			notifyListeners();
+		}
+	}
+
+	public static ObservableList<BenchmarkData> getBenchmarkData() {
+		return benchmarkData;
+	}
+
+	public abstract void doRun();
+}
