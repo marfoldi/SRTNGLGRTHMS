@@ -1,7 +1,8 @@
 package srtnglgrthms.model.algorithm.raw;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.ArrayList;
+import java.util.List;
+
 import srtnglgrthms.controller.SortingThreadListener;
 import srtnglgrthms.model.BenchmarkData;
 
@@ -11,14 +12,16 @@ import srtnglgrthms.model.BenchmarkData;
  */
 public abstract class SortingThread extends Thread {
 	private SortingThreadListener listener;
-	protected static ObservableList<BenchmarkData> benchmarkData = FXCollections
-			.observableArrayList();
+	protected static List<BenchmarkData> benchmarkData = new ArrayList<BenchmarkData>();
 	protected int[] numbers;
 	protected long comparisonCounter = 0; // Increment this counter whenever a
-		// comparison takes place
-	protected long swapCounter = 0; // Increment this counter whenever a swap takes
+	// comparison takes place
+	protected long swapCounter = 0; // Increment this counter whenever a swap
+									// takes
 	// place
-	protected long moveCounter = 0; // Increment this counter whenever a move takes
+	protected long moveCounter = 0; // Increment this counter whenever a move
+									// takes
+
 	// place
 
 	public final void setListener(final SortingThreadListener listener) {
@@ -38,7 +41,7 @@ public abstract class SortingThread extends Thread {
 		}
 	}
 
-	public static ObservableList<BenchmarkData> getBenchmarkData() {
+	public static List<BenchmarkData> getBenchmarkData() {
 		return benchmarkData;
 	}
 

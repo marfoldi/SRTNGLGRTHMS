@@ -7,8 +7,8 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  * 
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class HeapThread extends SortingThread{
-	
+public class HeapThread extends SortingThread {
+
 	@Override
 	public void doRun() {
 		numbers = new int[SortingAlgorithm.getNumbers().length];
@@ -29,7 +29,7 @@ public class HeapThread extends SortingThread{
 		benchmarkData.add(new BenchmarkData("Kupacrendezés", comparisonCounter,
 				3 * swapCounter, swapCounter));
 	}
-	
+
 	private void buildStarterHeap(int[] numbers) {
 		int starterIndex = numbers.length / 2 - 1;
 		while (starterIndex >= 0) {

@@ -116,7 +116,8 @@ public class RandomInputController {
 	public void okBtnHandler() {
 		try {
 			if (sizeField.getText().matches("\\d+")
-					&& Integer.parseInt(sizeField.getText()) < Integer.MAX_VALUE) {
+					&& Integer.parseInt(sizeField.getText()) < Integer.MAX_VALUE
+					&& Integer.parseInt(sizeField.getText()) > 0) {
 				generateNumbers();
 				try {
 					BorderPane baseLayout;

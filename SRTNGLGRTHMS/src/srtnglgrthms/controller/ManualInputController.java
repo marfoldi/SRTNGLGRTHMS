@@ -46,7 +46,9 @@ public class ManualInputController {
 
 	@FXML
 	public void createFields() {
-		if (sizeField.getText().matches("\\d+")) {
+		if (sizeField.getText().matches("\\d+")
+				&& Integer.parseInt(sizeField.getText()) < Integer.MAX_VALUE
+				&& Integer.parseInt(sizeField.getText()) > 0) {
 			try {
 				numbersPane.getChildren().clear();
 				size = Integer.parseInt(sizeField.getText());

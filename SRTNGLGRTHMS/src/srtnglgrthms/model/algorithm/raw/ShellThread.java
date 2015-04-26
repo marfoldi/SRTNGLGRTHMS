@@ -7,11 +7,11 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  * 
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class ShellThread extends SortingThread{
+public class ShellThread extends SortingThread {
 	private static final int[] gapArray = { 1750, 701, 301, 132, 57, 23, 10, 4,
-		1 };
+			1 };
 	private int i, j, temp;
-	
+
 	@Override
 	public void doRun() {
 		numbers = new int[SortingAlgorithm.getNumbers().length];

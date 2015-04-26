@@ -58,8 +58,7 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 						+ "számításban csak az elsõ 16 elem vesz részt!");
 
 				alert.showAndWait();
-			}
-			else if (length != SortingAlgorithm.getNumbers().length) {
+			} else if (length != SortingAlgorithm.getNumbers().length) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Figyelmeztetés");
 				alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");

@@ -2,6 +2,7 @@ package srtnglgrthms.controller;
 
 import srtnglgrthms.model.SortingAlgorithmFactory;
 import srtnglgrthms.model.algorithm.ChartAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,6 +25,7 @@ public class OverviewController {
 	@FXML
 	public SplitPane displayPane;
 	private static Timeline animation;
+	private static int animationSpeed;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -35,6 +37,7 @@ public class OverviewController {
 		animBtn.setDisable(true);
 		animation = new Timeline();
 		animation.setCycleCount(Animation.INDEFINITE);
+		animationSpeed = (int) ((1.0/SortingAlgorithm.getNumbers().length)*2000);
 		setAnimation();
 		initBtns();
 		OverviewListController.setParentController(this);
@@ -67,14 +70,25 @@ public class OverviewController {
 		animBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				animation.play();
+				switch (animBtn.getText()) {
+				case "Lejátszás": {
+					animation.play();
+					animBtn.setText("Megállítás");
+					break;
+				}
+				case "Megállítás": {
+					animation.stop();
+					animBtn.setText("Lejátszás");
+					break;
+				}
+				}
 			}
 		});
 	}
 
 	private void setAnimation() {
 		animation.getKeyFrames().add(
-				new KeyFrame(Duration.millis(500),
+				new KeyFrame(Duration.millis(animationSpeed),
 						new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent actionEvent) {
@@ -106,6 +120,7 @@ public class OverviewController {
 		stepBtn.setDisable(false);
 		animBtn.setDisable(false);
 		stepBtn.setText("Léptetés");
+		animBtn.setText("Lejátszás");
 		animBtn.setVisible(true);
 	}
 

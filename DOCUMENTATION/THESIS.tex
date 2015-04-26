@@ -17,6 +17,10 @@
 \thesisyear{2015}
 \department{Algoritmusok és Alkalmazásaik Tanszék}
 
+\fancyhf{}
+\fancyhead[L]{\rightmark}
+
+
 \begin{document}
 
 \frontmatter
@@ -29,8 +33,8 @@
 	\cfoot{\thepage}
 	\pagestyle{fancy} 
 
-\chapter{Bevezető} 
-Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmányaik kezdetén találkoztak a rendezési algoritmusokkal. Nagyszerű terület arra, hogy megismerhessük a bonyolultság kérdését, azt hogy mi számít igazán sok adatnak, vagy éppen, hogy mikor nevezünk egy algoritmust stabilnak.
+\chapter{Bevezetés} 
+Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmányaik kezdetén találkoztak a rendezési algoritmusokkal. Nagyszerű terület arra, hogy megérthessük a műveletigény kérdését, azt hogy mi számít igazán sok adatnak, vagy éppen, hogy mit értünk egy algoritmus stabilitásán.
 
 \section{A feladat és annak értelmezése} 
 \section{Definíciók és jelölések}
@@ -41,10 +45,10 @@ A Java egy általános célú, objektumorientált programozási nyelv, melyet 20
  A Java platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a Java nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. \par
  A Java legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
 Összefoglalva a Java program három fontos szerepet tölt be:
-\begin{description}[1cm]
-\item[$\bullet$ programozási nyelv]
-\item[$\bullet$ köztes réteg (middleware)]
-\item[$\bullet$ platform]
+\begin{description}[0.5cm]
+\item[$\bullet$] programozási nyelv
+\item[$\bullet$] köztes réteg (middleware)
+\item[$\bullet$] platform
 \end{description}
 \subsection{JavaFX}
 Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást lehessen készíteni és futtatni eszközök széles skáláján. Eredetileg a \emph{Swing} könyvtárat váltotta volna fel, azonban jelenleg mindkettő része a \emph{Jave SE}-nek. \par
@@ -56,13 +60,26 @@ Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást leh
 
 \subsection{Buborékrendezés}
 A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.\par
- A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Egészen addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg mindig a tömb összes elemét, hanem amennyiben egy maximális elem elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
+ A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Mindezt addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg minden menetben a tömb összes elemét, hanem amennyiben egy maximális elem elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
 
 \subsection{Beszúró rendezés}
-A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. A legegyszerűbb megvalósítása két tömböt használ, a "forrás" tömböt és egyet, amelyben az elemek már rendezve vannak. Memóriamegtakarítás céljából a leggyakrabban a helyben rendező változatát valósítják meg. Ennek lényege, hogy a soron következő elemet egy ideiglenes változóba elmentünk, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek. A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest.\cite{Fekete}
+A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek. A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest.\cite{Fekete} Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus.
 
 \subsection{Shell rendezés}
-Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre.
+Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. Az algoritmus nevét is adó Donald Shell $\lfloor N/2^k \rfloor$ (k>=1) lépésközt javasol. Azonban így az algoritmus időkomplexitása legrosszabb esetben $\Theta(N^2)$. Az algoritmus sebessége nagyban függ a lépésköz megválasztásától.
+
+\subsection{Gyorsrendezés}
+Helyben rendező, oszd meg és uralkodj\cite{Umesh} elven működő rekurzív algoritmus. A következő négy lépésre bontható fel az algoritmus:
+\begin{description}[0.5cm]
+	\item[$\bullet$] Ha csak egy vagy nulla elemű az elemzett rész, akkor ne tegyünk semmit.
+	\item[$\bullet$] Válasszunk egy vezérelemet (legjobb oldalibb elem).
+	\item[$\bullet$] A rendezendő részt vágjuk ketté, az egyik oldalán a vezérelemtől kisebb, míg a másikon a nagyobb elemek kerüljenek.
+	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket résztömbön.
+\end{description}
+A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.
+
+\subsection{Versenyrendezés}
+A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest". A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel. Az algoritmus által használt adatszerkezet egy teljes bináris fa.
 
 \chapter{Fejlesztői dokumentáció}
 
@@ -83,9 +100,14 @@ Demuth, H.:
 PhD thesis, Stanford University,
 1956, [184]
 \bibitem{Fekete}
-Dr. Fekete István.:
+Dr. Fekete István:
 \emph{Algoritmusok és adatszerkezetek I. jegyzet},
 [ONLINE] [Hivatkozva: 2015.04.20] \url{http://people.inf.elte.hu/fekete/algoritmusok_bsc/alg_1_jegyzet/}
+\bibitem{Umesh}
+Umesh V. Vazirani:
+\emph{Alrogithms}
+[ONLINE] [Hivatkozva: 2015.04.23]
+\url{https://www.cs.berkeley.edu/~vazirani/algorithms/chap2.pdf}
 \end{thebibliography}
 
 \end{document}

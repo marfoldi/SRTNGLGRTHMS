@@ -1,5 +1,7 @@
 package srtnglgrthms.controller;
 
+import java.util.ConcurrentModificationException;
+
 import srtnglgrthms.model.algorithm.raw.BubbleThread;
 import srtnglgrthms.model.algorithm.raw.HeapThread;
 import srtnglgrthms.model.algorithm.raw.InsertionThread;
@@ -7,6 +9,7 @@ import srtnglgrthms.model.algorithm.raw.QuickThread;
 import srtnglgrthms.model.algorithm.raw.ShellThread;
 import srtnglgrthms.model.algorithm.raw.SortingThread;
 import srtnglgrthms.model.algorithm.raw.TournamentThread;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 
 /**
@@ -15,7 +18,7 @@ import javafx.fxml.FXML;
  */
 public class BenchmarkController implements SortingThreadListener {
 	private static BenchmarkTableController tableController;
-	private SortingThread [] sortingThreads;
+	private SortingThread[] sortingThreads;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -23,10 +26,9 @@ public class BenchmarkController implements SortingThreadListener {
 	 */
 	@FXML
 	private void initialize() {
-		sortingThreads = new SortingThread[] { new BubbleThread(),
-				new InsertionThread(), new ShellThread(),
-				new QuickThread(), new HeapThread(),
-				new TournamentThread() };
+		sortingThreads = new SortingThread[] { new QuickThread(),
+				new InsertionThread(), new ShellThread(), new BubbleThread(),
+				new HeapThread(), new TournamentThread() };
 		runSortingThreads();
 	}
 
@@ -35,7 +37,7 @@ public class BenchmarkController implements SortingThreadListener {
 			thread.setListener(this);
 			thread.start();
 		}
-		
+
 	}
 
 	public static void setTableController(
@@ -45,8 +47,8 @@ public class BenchmarkController implements SortingThreadListener {
 
 	@Override
 	public void notifyOfThreadComplete(Thread thread) {
-		//tableController.getTableView().getItems().clear();
-		tableController.getTableView().setItems(
-				SortingThread.getBenchmarkData());
+		try {
+		tableController.getTableView().setItems(FXCollections.observableArrayList(SortingThread.getBenchmarkData()));
+		} catch (ConcurrentModificationException cme) {}
 	}
 }
