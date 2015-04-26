@@ -38,6 +38,15 @@ Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmány
 
 \section{A feladat és annak értelmezése} 
 \section{Definíciók és jelölések}
+\subsection{Oszd meg és uralkodj elv}
+Egy algoritmus tervezési stratégia. Az elv\cite{Cormen} a következőképp old meg egy problémát:
+\begin{description}[0.5cm]
+	\item[$\bullet$] Az eredeti problémát felosztja kisebb az eredetihez hasonló típusú feladatokra.
+	\item[$\bullet$] Rekurzívan megoldja ezeket a kisebb problémákat.
+	\item[$\bullet$] A kisebb részek megoldásait összevonva,  megoldást ad az eredeti feladatra.
+\end{description}
+
+
 \section{Alkalmazott technológiák}
 A Következőkben röviden összefoglaljuk a Java\cite{Java} és a JavaFX\cite{JavaFX} jellegzetességeit.
 \subsection{A Java-ról röviden}
@@ -50,6 +59,7 @@ A Java egy általános célú, objektumorientált programozási nyelv, melyet 20
 \item[$\bullet$] köztes réteg (middleware)
 \item[$\bullet$] platform
 \end{description}
+
 \subsection{JavaFX}
 Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást lehessen készíteni és futtatni eszközök széles skáláján. Eredetileg a \emph{Swing} könyvtárat váltotta volna fel, azonban jelenleg mindkettő része a \emph{Jave SE}-nek. \par
  A 2.0-ás verzióig a fejlesztők egy külön nyelvet használtak, amelyet \emph{JavaFX Script}-nek neveznek. Azonban mivel ez szintén Java bájtkódot generál a későbbiekben megadatott a lehetőség, hogy a programozók Java kódot használjanak helyette. A JavaFX egyik legnagyobb előnye, hogy egy egyszerű \emph{XML} struktúrában leírhatók a program grafikus felületének összetevői, melyhez ezt követően elegendő az egyes interakciókhoz tartozó funkciókat implementálni.\par Az elterjedtebb operációs rendszerek mindegyikét támogatja. Ahogyan előnye, úgy hátránya is a \emph{Swing}-hez képest az, hogy jelenleg is folyik a fejlesztése, ezért olykor csak hosszas utánajárást követően sikerül megoldást találni egy-egy problémára.
@@ -69,20 +79,37 @@ A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket 
 Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. Az algoritmus nevét is adó Donald Shell $\lfloor N/2^k \rfloor$ (k>=1) lépésközt javasol. Azonban így az algoritmus időkomplexitása legrosszabb esetben $\Theta(N^2)$. Az algoritmus sebessége nagyban függ a lépésköz megválasztásától.
 
 \subsection{Gyorsrendezés}
-Helyben rendező, oszd meg és uralkodj\cite{Umesh} elven működő rekurzív algoritmus. A következő négy lépésre bontható fel az algoritmus:
+C.A.R. Hoare\cite{Horae} alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.\par
+Helyben rendező, oszd meg és uralkodj\cite{Cormen} elven működő rekurzív algoritmus. A következő négy lépésre bontható fel az rendezés:
 \begin{description}[0.5cm]
 	\item[$\bullet$] Ha csak egy vagy nulla elemű az elemzett rész, akkor ne tegyünk semmit.
 	\item[$\bullet$] Válasszunk egy vezérelemet (legjobb oldalibb elem).
-	\item[$\bullet$] A rendezendő részt vágjuk ketté, az egyik oldalán a vezérelemtől kisebb, míg a másikon a nagyobb elemek kerüljenek.
-	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket résztömbön.
+	\item[$\bullet$] A rendezendő részt vágjuk ketté, az egyik oldalára a vezérelemtől kisebb, míg a másikra a nagyobb elemek kerüljenek.
+	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket a résztömbökön.
 \end{description}
-A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.
+A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása. A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legjobb választás ha számít a rendezés sebessége. Azonban ha a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem hatékony. Ezekben az esetekben ajánlatos másik algoritmust használni. 
 
 \subsection{Versenyrendezés}
 A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest". A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel. Az algoritmus által használt adatszerkezet egy teljes bináris fa.
 
 \chapter{Fejlesztői dokumentáció}
 
+\section{Tervezés és megvalósítás}
+A fejlesztés során több szempontot is figyelembe kell venni, úgy mint: műveletigény, memóriaigény, jó megjelenés, egyszerű kezelhetőség, és átlátható-, bővíthető kód készítése. Mivel ezen kritériumok közül több is csak egy másik rovására javítható, ezért a tervezés során kompromisszumokat kell kötni. Továbbá fel kell készülni arra, hogy az eredeti terven a fejlesztés során módosításokat kell végezni, mivel egy-egy probléma megoldása más megközelítést kívánhat.
+
+\subsection{Tervezés}
+A dolgozat fő célja egy olyan elsősorban hallgatóknak szánt program létrehozása, amellyel néhány rendezési algoritmus működése egy letisztult és egyszerű felhasználó felületen keresztül tanulmányozható.\par
+A programnak három jól elkülönülő részből kell állnia:\par
+Egy logikai(modell) részből, ami gyakorlatilag a rendszer "motorja", itt kell, hogy történjen mindenféle számítási és adattárolási művelet. Egy megjelenítési rétegből, amely a logikai rész eredményeit jeleníti meg a felhasználó számára. Végül pedig egy kontroller szintből, amely kapcsolatot teremt a logikai- és a megjelenítési réteg között. A gyakorlatban ezt a fajta tagolást nevezik Modell-Nézet-Vezérlő \emph{(MVC)} tervezési mintának.
+
+\subsection{Megvalósítás}
+Az első lépés egy egyszerűbb felhasználói felület létrehozása volt. A cél, hogy néhány "beégetett" elemre a rendezések lejátszhatóak legyenek, és az aktuális állapot legyen szinkronban egy diagrammal. Ezt követően az egyes lépésekben történő összehasonlításokat/vizsgálatokat, mozgatásokat, cseréket különböző színekkel jelölni a diagramon.
+
+\subsection{Használt fejlesztőeszközök}
+A fejlesztés \emph{Eclipse SDK 4.4} fejlesztői környezet keretei között történt. A program grafikus fejlesztői felületet ad alkalmazások készítéséhez.\par
+A program elkészítése során a kódolást segítő funkció volt a kódkiegészítés, továbbá az egyik beépített projektmenedzsment eszköz(\emph{EGit}). Az egész projekt megtalálható, és az egyes verziói visszakövethetők a GitHub-on: \url{https://github.com/marfoldi/SRTNLGRTHMS}\par
+A fejlesztéshez elengedhetetlen a \emph{Java SE 8u40} vagy magasabb verziójú szoftver. Továbbá a fejlesztést nagyban elősegítette a \emph{JavaFX Scene Builder 2.0}, melynek segítségével egyszerűen megtervezhetővé váltak a grafikus felület komponensei.\par
+A program fejlesztése során nem került sor külső függvénykönyvtár használatára.
 \begin{thebibliography}{widest entry}
 \bibitem{Java}
 \emph{Java (programming language)},
@@ -103,11 +130,16 @@ PhD thesis, Stanford University,
 Dr. Fekete István:
 \emph{Algoritmusok és adatszerkezetek I. jegyzet},
 [ONLINE] [Hivatkozva: 2015.04.20] \url{http://people.inf.elte.hu/fekete/algoritmusok_bsc/alg_1_jegyzet/}
-\bibitem{Umesh}
-Umesh V. Vazirani:
-\emph{Alrogithms}
-[ONLINE] [Hivatkozva: 2015.04.23]
-\url{https://www.cs.berkeley.edu/~vazirani/algorithms/chap2.pdf}
+\bibitem{Cormen}
+Thomas H. Cormen, Charles E. Leiserson,Ronald L. Rivest, Clifford Stein:
+\emph{Új algoritmusok},
+Scolar kiadó, 2003,
+[992], 9789639193901
+\bibitem{Horae}
+C.A.R. Hoare:
+\emph{Algorithm 64: Quicksort}
+Communications of the ACM, 4, 7, 1961
+[321]
 \end{thebibliography}
 
 \end{document}
