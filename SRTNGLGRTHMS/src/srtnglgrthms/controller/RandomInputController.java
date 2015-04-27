@@ -56,13 +56,13 @@ public class RandomInputController {
 		switch (type) {
 		case "Véletlen generált": {
 			for (int i = 0; i < numbers.length; ++i) {
-				numbers[i] = (int) (Math.random() * 100);
+				numbers[i] = (int) (Math.random() * Integer.MAX_VALUE);
 			}
 			break;
 		}
 		case "Majdnem rendezett": {
 			for (int i = 0; i < numbers.length; ++i) {
-				numberList.add((int) (Math.random() * 100));
+				numberList.add((int) (Math.random() * Integer.MAX_VALUE));
 			}
 			Collections.sort(numberList);
 			for (int i = 0; i < numbers.length * 0.1; ++i) {
@@ -84,7 +84,7 @@ public class RandomInputController {
 		}
 		case "Fordított": {
 			for (int i = 0; i < numbers.length; ++i) {
-				numberList.add((int) (Math.random() * 100));
+				numberList.add((int) (Math.random() * Integer.MAX_VALUE));
 			}
 			Collections.sort(numberList, Collections.reverseOrder());
 			for (int i = 0; i < numbers.length; ++i) {
@@ -95,13 +95,13 @@ public class RandomInputController {
 		case "Néhány egyedi": {
 			if ((int) Math.sqrt(numbers.length) <= 1) {
 				for (int i = 0; i < numbers.length; ++i) {
-					numbers[i] = (int) (Math.random() * 100);
+					numbers[i] = (int) (Math.random() * Integer.MAX_VALUE);
 				}
 				break;
 			}
 			int[] uniqueKeys = new int[(int) Math.sqrt(numbers.length)];
 			for (int i = 0; i < uniqueKeys.length; ++i) {
-				uniqueKeys[i] = (int) (Math.random() * 100);
+				uniqueKeys[i] = (int) (Math.random() * Integer.MAX_VALUE);
 			}
 			for (int i = 0; i < numbers.length; ++i) {
 				numbers[i] = uniqueKeys[(int) (Math.random() * uniqueKeys.length)];

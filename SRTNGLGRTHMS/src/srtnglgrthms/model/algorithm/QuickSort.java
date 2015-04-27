@@ -6,130 +6,114 @@ import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 
+/**
+ * 
+ * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
+ */
 public class QuickSort extends ChartAlgorithm {
 	private static int begin;
 	private static int end;
-	private static int lower;
-	private static int upper;
+	private static int partitionIndex;
+	private static int partitionHelpIndex;
 	private static int pivot;
-	private static boolean pivotSwapped;
-	private static boolean colored;
-	private static boolean isLowerFound;
-	private static boolean isUpperFound;
+	private static int pivotIndex;
+	private static boolean partitioned;
 
-	private QuickSort() {}
+	private QuickSort() {
+	}
 
 	private static class SortHolder {
-        private static final QuickSort INSTANCE = new QuickSort();
-    }
+		private static final QuickSort INSTANCE = new QuickSort();
+	}
 
-    public static QuickSort getInstance() {
-        return SortHolder.INSTANCE;
-    }
+	public static QuickSort getInstance() {
+		return SortHolder.INSTANCE;
+	}
 
-    public void setDefaults() {
-    	begin = 0;
-    	end = numbers.length-1;
-    	pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
-    	pivotSwapped = false;
-    	lower = begin;
-    	upper = end;
-    	colored = false;
-    	isLowerFound = false;
-    	isUpperFound = false;
-    	recursiveCall = new LinkedList<>();
+	public void setDefaults() {
+		begin = 0;
+		end = numbers.length - 1;
+		partitionIndex = begin;
+		partitionHelpIndex = begin;
+		partitioned = false;
+		pivotIndex = end;
+		pivot = data.get(pivotIndex).getYValue().intValue();
+		recursiveCall = new LinkedList<>();
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
-		counterData.add(new CounterData("Mozgatások", "0"));
-		counterData.add(new CounterData("Vezérelem", "t["+ Integer.toString(begin+(end-begin)/2)+ "]"));
+		counterData.add(new CounterData("Cserék", "0"));
+		counterData.add(new CounterData("Vezérelem", "t["
+				+ Integer.toString(pivotIndex) + "]"));
 	}
 
 	public void step() {
-		OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
-		//setRestColor();
-        if (lower <= upper) {
-        	if (!colored) {
-				OverviewChartController.setColor(data.get(lower).getNode(),
-						"swap");
-				OverviewChartController.setColor(data.get(upper).getNode(),
-						"swap");
-				colored = true;
+		setRestColor(begin, end);
+		OverviewChartController.setColor(data.get(pivotIndex).getNode(),
+				"select");
+		counterData.get(2).setValue("t[" + Integer.toString(pivotIndex) + "]");
+		if (!partitioned) {
+			if (partitionHelpIndex < end) {
+				counterData.get(0).incValue();
+				OverviewChartController.setColor(data.get(partitionIndex)
+						.getNode(), "swap");
+				OverviewChartController.setColor(data.get(partitionHelpIndex)
+						.getNode(), "swap");
+				if (data.get(partitionHelpIndex).getYValue().intValue() <= pivot) {
+					 if(partitionHelpIndex != partitionIndex) {
+					counterData.get(1).incValue();
+					swap(partitionHelpIndex, partitionIndex);
+					 }
+					partitionIndex++;
+				}
+				partitionHelpIndex++;
 				return;
 			}
-            if(!isLowerFound) {
-            	counterData.get(0).incValue();
-	            if (data.get(lower).getYValue().intValue() < pivot) {
-					OverviewChartController.setColor(data.get(lower)
-							.getNode(), "fade");
-	                lower++;
-					OverviewChartController.setColor(data.get(lower)
-							.getNode(), "swap");
-	                return;
-	            }
-	            else {
-	            	isLowerFound = true;
-					OverviewChartController.setColor(data.get(lower)
-							.getNode(), "swap");
-	            	return;
-	            }
-            }
-            if(!isUpperFound) {
-            	counterData.get(0).incValue();
-                if (data.get(upper).getYValue().intValue() > pivot) {
-                	OverviewChartController.setColor(data.get(upper)
-							.getNode(), "fade");
-                    upper--;
-                    OverviewChartController.setColor(data.get(upper)
-							.getNode(), "swap");
-                    return;
-                }
-                else {
-                	isUpperFound = true;
-					OverviewChartController.setColor(data.get(upper)
-							.getNode(), "swap");
-	            	return;
-	            }
-            }
-	           counterData.get(1).incValue();
-	           swap(lower,upper);
-	           lower++;
-	           upper--;
-	           isLowerFound = false;
-	           isUpperFound = false;
-	           colored = false;
-        }
-        else {
-        	if(begin < upper) {
-        		recursiveCall.add(new RecursiveParameter(begin, upper));
-        	}
-        	if(lower < end)  {
-        		recursiveCall.add(new RecursiveParameter(lower, end));
-        	}
-            if(!recursiveCall.isEmpty()) {
-            	RecursiveParameter nextParameters = recursiveCall.remove();
-            	begin=(int) nextParameters.getFirstParameter();
-    			end=(int) nextParameters.getSecondParameter();
-    			lower=begin;
-    			upper=end;
-    			pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
-    			pivotSwapped = false;
-                isLowerFound = false;
-                isUpperFound = false;
-    			counterData.get(2).setValue("t["+ Integer.toString(begin+(end-begin)/2)+ "]");
-    			OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
-    			setRestColor();
-            }
-            else {
-            	for (int i = 0; i < data.size(); i++) {
-            		OverviewChartController.setColor(data.get(i).getNode(), "done");
-        		}
-            }
-        }
-	}
-	private void setRestColor() {
-		for (int i = 0; i < data.size(); i++) {
-			if(i!=begin+(end-begin)/2) OverviewChartController.setColor(data.get(i).getNode(), "default");
+			 if(partitionIndex!=end) {
+			counterData.get(1).incValue();
+			swap(partitionIndex, end);
+			 }
+			counterData.get(2).setValue(
+					"t[" + Integer.toString(partitionIndex) + "]");
+			OverviewChartController.setColor(
+					data.get(partitionIndex).getNode(), "select");
+			OverviewChartController.setColor(data.get(end).getNode(), "swap");
+			pivotIndex = partitionIndex;
+			partitioned = true;
+		} else {
+			if (begin < partitionIndex - 1)
+				recursiveCall.add(new RecursiveParameter(begin,
+						partitionIndex - 1));
+			if (partitionIndex + 1 < end)
+				recursiveCall.add(new RecursiveParameter(partitionIndex + 1,
+						end));
+			if (!recursiveCall.isEmpty()) {
+				RecursiveParameter nextParameters = recursiveCall.remove();
+				begin = (int) nextParameters.getFirstParameter();
+				end = (int) nextParameters.getSecondParameter();
+				partitioned = false;
+				partitionIndex = begin;
+				partitionHelpIndex = begin;
+				pivotIndex = end;
+				pivot = data.get(pivotIndex).getYValue().intValue();
+				setRestColor(0, data.size());
+			} else {
+				for (int i = 0; i < data.size(); i++) {
+					OverviewChartController.setColor(data.get(i).getNode(),
+							"done");
+				}
+			}
 		}
 	}
 
+	private void setRestColor(int begin, int end) {
+		for (int i = begin; i < end; i++) {
+			OverviewChartController.setColor(data.get(i).getNode(), "default");
+		}
+		for (int i = 0; i < begin; ++i) {
+			OverviewChartController.setColor(data.get(i).getNode(), "fade");
+		}
+		for (int i = end + 1; i < data.size(); ++i) {
+			OverviewChartController.setColor(data.get(i).getNode(), "fade");
+		}
+	}
 }
