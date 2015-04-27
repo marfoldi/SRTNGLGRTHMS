@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  26 APR 2015 23:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  27 APR 2015 18:50
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -507,21 +507,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] [4]
 3. fejezet.
-<pics/diagram.png, id=33, 601.4972pt x 335.00156pt>
-File: pics/diagram.png Graphic file (type png)
- <use pics/diagram.png>
-Package pdftex.def Info: pics/diagram.png used on input line 110.
-(pdftex.def)             Requested size: 213.39568pt x 118.84715pt.
-
 [5
 
-]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 123.
+] [6]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 122.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [6 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/diagram.png>] [7]
-Underfull \hbox (badness 2486) in paragraph at lines 143--146
+) [7]
+Underfull \hbox (badness 2486) in paragraph at lines 141--144
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
@@ -530,13 +524,13 @@ szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
 
 ] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
- 4156 strings out of 493921
- 51343 string characters out of 3147273
- 112043 words of memory out of 3000000
- 7384 multiletter control sequences out of 15000+200000
+ 4151 strings out of 493921
+ 51249 string characters out of 3147273
+ 113043 words of memory out of 3000000
+ 7380 multiletter control sequences out of 15000+200000
  13547 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,43p,897b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,43p,892b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\marf
 oldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <
 C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
@@ -552,9 +546,9 @@ b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on THESIS.pdf (10 pages, 1103754 bytes).
+Output written on THESIS.pdf (10 pages, 1092868 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
+ 427 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

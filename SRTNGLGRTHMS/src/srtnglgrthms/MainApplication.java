@@ -28,6 +28,7 @@ public class MainApplication extends Application {
 		// Set the application icon.
 		this.primaryStage.getIcons().add(
 				new Image("file:resources/images/icon.png"));
+		this.primaryStage.setResizable(false);
 		BaseController.setStage(primaryStage);
 		initMenuLayout();
 	}

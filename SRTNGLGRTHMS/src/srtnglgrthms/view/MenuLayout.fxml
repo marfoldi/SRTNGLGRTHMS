@@ -25,9 +25,9 @@
    <center>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#manualBtnHandler" prefHeight="218.0" prefWidth="150.5" text="Manuális&#10;(Számok begépelése)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-            <Button layoutX="100.0" mnemonicParsing="false" onAction="#randomBtnHandler" prefHeight="218.0" prefWidth="150.5" text="Véletlen&#10;(Számok generálása)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-            <Button layoutX="200.0" mnemonicParsing="false" onAction="#fileBtnHandler" prefHeight="218.0" prefWidth="150" text="Fájl&#10;(Számok beolvasása)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#manualBtnHandler" prefHeight="230.0" prefWidth="150.5" text="Manuális&#10;(Számok begépelése)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <Button layoutX="100.0" mnemonicParsing="false" onAction="#randomBtnHandler" prefHeight="230.0" prefWidth="150.5" text="Véletlen&#10;(Számok generálása)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <Button layoutX="200.0" mnemonicParsing="false" onAction="#fileBtnHandler" prefHeight="230.0" prefWidth="150" text="Fájl&#10;(Számok beolvasása)" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </center>
