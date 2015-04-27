@@ -1,5 +1,9 @@
 package srtnglgrthms.model.algorithm;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.model.CounterData;
 
@@ -8,12 +12,11 @@ import srtnglgrthms.model.CounterData;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class ShellSort extends ChartAlgorithm {
-	private static final int[] gapArray = { 1750, 701, 301, 132, 57, 23, 10, 4,
-			1 };
-	private static int gapIdx = selectGap();
-	private static int outerIndex = gapArray[gapIdx] - 1;
-	private static int innerIndex = outerIndex - gapArray[gapIdx];
-	private static boolean isSelected = false;
+	private static Integer[] gapArray;
+	private static int gapIdx;
+	private static int outerIndex;
+	private static int innerIndex;
+	private static boolean isSelected;
 
 	private ShellSort() {
 	}
@@ -27,6 +30,7 @@ public class ShellSort extends ChartAlgorithm {
 	}
 
 	public void setDefaults() {
+		gapArray = generateGapArray();
 		gapIdx = selectGap();
 		outerIndex = gapArray[gapIdx] - 1;
 		innerIndex = outerIndex - gapArray[gapIdx];
@@ -43,6 +47,31 @@ public class ShellSort extends ChartAlgorithm {
 				return i;
 		}
 		return 0;
+	}
+	
+	private static Integer[] generateGapArray() {
+		int i, last2ind = 0, last3ind = 0; 
+		List<Integer> pratt = new ArrayList<>();
+
+		pratt.add(1);
+		for (i=1; i < numbers.length; ++i) { 
+		if (pratt.get(last2ind)*2 < pratt.get(last3ind)*3) { 
+			pratt.add(pratt.get(last2ind)*2); 
+			last2ind++; 
+		} 
+		else if (pratt.get(last2ind)*2 > pratt.get(last3ind)*3) { 
+			pratt.add(pratt.get(last3ind)*3); 
+			last3ind++; 
+		} 
+		else { 
+			pratt.add(pratt.get(last2ind)*2); 
+			last2ind++; 
+			last3ind++; 
+		} 
+		if(pratt.get(i)>=numbers.length) break;
+		}
+		Collections.reverse(pratt);
+		return pratt.toArray(new Integer[0]);
 	}
 
 	@Override
