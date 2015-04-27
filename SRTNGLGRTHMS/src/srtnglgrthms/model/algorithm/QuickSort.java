@@ -12,7 +12,8 @@ public class QuickSort extends ChartAlgorithm {
 	private static int lower;
 	private static int upper;
 	private static int pivot;
-	private static boolean pivotSwapped = false;
+	private static boolean pivotSwapped;
+	private static boolean colored;
 
 	private QuickSort() {}
 
@@ -31,6 +32,7 @@ public class QuickSort extends ChartAlgorithm {
     	pivotSwapped = false;
     	lower = begin;
     	upper = end;
+    	colored = false;
     	recursiveCall = new LinkedList<>();
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
@@ -42,38 +44,46 @@ public class QuickSort extends ChartAlgorithm {
 		OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
 		setRestColor();
         if (lower <= upper && !pivotSwapped) {
+        	if (!colored) {
+				OverviewChartController.setColor(data.get(lower).getNode(),
+						"swap");
+				OverviewChartController.setColor(data.get(upper).getNode(),
+						"swap");
+				colored = true;
+				return;
+			}
             if(lower!=upper) counterData.get(0).incValue();
             if (data.get(lower).getYValue().intValue() < pivot) {
                 lower++;
-                OverviewChartController.setColor(data.get(lower).getNode(), "swap");
+                colored = false;
                 return;
             }
             if (data.get(upper).getYValue().intValue() > pivot) {
                 upper--;
-                OverviewChartController.setColor(data.get(upper).getNode(), "swap");
+                colored = false;
                 return;
             }
             if (lower <= upper ) {
             	if(data.get(lower).getYValue()!=data.get(upper).getYValue()) {
-            	OverviewChartController.setColor(data.get(lower).getNode(), "swap");
-            	OverviewChartController.setColor(data.get(upper).getNode(), "swap");
-                if(lower==begin+(end-begin)/2 && !pivotSwapped) {
-                	OverviewChartController.setColor(data.get(upper).getNode(), "select");
-                	counterData.get(2).setValue("t["+ Integer.toString(upper)+ "]");
-                	pivotSwapped=true;
-                }
-                else if(upper==begin+(end-begin)/2 && !pivotSwapped){
-                	OverviewChartController.setColor(data.get(lower).getNode(), "select");
-                	counterData.get(2).setValue("t["+ Integer.toString(lower)+ "]");
-                	pivotSwapped=true;
-                }
-                else pivotSwapped=false;
-                if(lower!=upper) {
-                	counterData.get(1).incValue();
-                	swap(lower,upper);
-                    lower++;
-                    upper--;
-                }
+	            	OverviewChartController.setColor(data.get(lower).getNode(), "swap");
+	            	OverviewChartController.setColor(data.get(upper).getNode(), "swap");
+	                if(lower==begin+(end-begin)/2 && !pivotSwapped) {
+	                	OverviewChartController.setColor(data.get(upper).getNode(), "select");
+	                	counterData.get(2).setValue("t["+ Integer.toString(upper)+ "]");
+	                	pivotSwapped=true;
+	                }
+	                else if(upper==begin+(end-begin)/2 && !pivotSwapped){
+	                	OverviewChartController.setColor(data.get(lower).getNode(), "select");
+	                	counterData.get(2).setValue("t["+ Integer.toString(lower)+ "]");
+	                	pivotSwapped=true;
+	                }
+	                else pivotSwapped=false;
+	                if(lower!=upper) {
+	                	counterData.get(1).incValue();
+	                	swap(lower,upper);
+	                    lower++;
+	                    upper--;
+	                }
             	}
             	else {
                     lower++;
