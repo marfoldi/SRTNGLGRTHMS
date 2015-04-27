@@ -14,6 +14,8 @@ public class QuickSort extends ChartAlgorithm {
 	private static int pivot;
 	private static boolean pivotSwapped;
 	private static boolean colored;
+	private static boolean isLowerFound;
+	private static boolean isUpperFound;
 
 	private QuickSort() {}
 
@@ -33,6 +35,8 @@ public class QuickSort extends ChartAlgorithm {
     	lower = begin;
     	upper = end;
     	colored = false;
+    	isLowerFound = false;
+    	isUpperFound = false;
     	recursiveCall = new LinkedList<>();
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
@@ -42,8 +46,8 @@ public class QuickSort extends ChartAlgorithm {
 
 	public void step() {
 		OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
-		setRestColor();
-        if (lower <= upper && !pivotSwapped) {
+		//setRestColor();
+        if (lower <= upper) {
         	if (!colored) {
 				OverviewChartController.setColor(data.get(lower).getNode(),
 						"swap");
@@ -52,46 +56,48 @@ public class QuickSort extends ChartAlgorithm {
 				colored = true;
 				return;
 			}
-            if(lower!=upper) counterData.get(0).incValue();
-            if (data.get(lower).getYValue().intValue() < pivot) {
-                lower++;
-                colored = false;
-                return;
+            if(!isLowerFound) {
+            	counterData.get(0).incValue();
+	            if (data.get(lower).getYValue().intValue() < pivot) {
+					OverviewChartController.setColor(data.get(lower)
+							.getNode(), "fade");
+	                lower++;
+					OverviewChartController.setColor(data.get(lower)
+							.getNode(), "swap");
+	                return;
+	            }
+	            else {
+	            	isLowerFound = true;
+					OverviewChartController.setColor(data.get(lower)
+							.getNode(), "swap");
+	            	return;
+	            }
             }
-            if (data.get(upper).getYValue().intValue() > pivot) {
-                upper--;
-                colored = false;
-                return;
-            }
-            if (lower <= upper ) {
-            	if(data.get(lower).getYValue()!=data.get(upper).getYValue()) {
-	            	OverviewChartController.setColor(data.get(lower).getNode(), "swap");
-	            	OverviewChartController.setColor(data.get(upper).getNode(), "swap");
-	                if(lower==begin+(end-begin)/2 && !pivotSwapped) {
-	                	OverviewChartController.setColor(data.get(upper).getNode(), "select");
-	                	counterData.get(2).setValue("t["+ Integer.toString(upper)+ "]");
-	                	pivotSwapped=true;
-	                }
-	                else if(upper==begin+(end-begin)/2 && !pivotSwapped){
-	                	OverviewChartController.setColor(data.get(lower).getNode(), "select");
-	                	counterData.get(2).setValue("t["+ Integer.toString(lower)+ "]");
-	                	pivotSwapped=true;
-	                }
-	                else pivotSwapped=false;
-	                if(lower!=upper) {
-	                	counterData.get(1).incValue();
-	                	swap(lower,upper);
-	                    lower++;
-	                    upper--;
-	                }
-            	}
-            	else {
-                    lower++;
+            if(!isUpperFound) {
+            	counterData.get(0).incValue();
+                if (data.get(upper).getYValue().intValue() > pivot) {
+                	OverviewChartController.setColor(data.get(upper)
+							.getNode(), "fade");
                     upper--;
-            		step();
-            	}
+                    OverviewChartController.setColor(data.get(upper)
+							.getNode(), "swap");
+                    return;
+                }
+                else {
+                	isUpperFound = true;
+					OverviewChartController.setColor(data.get(upper)
+							.getNode(), "swap");
+	            	return;
+	            }
             }
-        	}
+	           counterData.get(1).incValue();
+	           swap(lower,upper);
+	           lower++;
+	           upper--;
+	           isLowerFound = false;
+	           isUpperFound = false;
+	           colored = false;
+        }
         else {
         	if(begin < upper) {
         		recursiveCall.add(new RecursiveParameter(begin, upper));
@@ -107,6 +113,8 @@ public class QuickSort extends ChartAlgorithm {
     			upper=end;
     			pivot = data.get(begin+(end-begin)/2).getYValue().intValue();
     			pivotSwapped = false;
+                isLowerFound = false;
+                isUpperFound = false;
     			counterData.get(2).setValue("t["+ Integer.toString(begin+(end-begin)/2)+ "]");
     			OverviewChartController.setColor(data.get(begin+(end-begin)/2).getNode(), "select");
     			setRestColor();

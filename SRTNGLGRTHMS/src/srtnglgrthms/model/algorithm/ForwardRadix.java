@@ -7,12 +7,12 @@ import srtnglgrthms.model.CounterData;
 import srtnglgrthms.model.RecursiveParameter;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class ForwardRadix extends RadixAlgorithm {
-	private static boolean lowerFound;
-	private static boolean upperFound;
+	private static boolean isLowerFound;
+	private static boolean isUpperFound;
 	private static boolean colored;
 
 	private ForwardRadix() {
@@ -33,8 +33,8 @@ public class ForwardRadix extends RadixAlgorithm {
 		end = numbers.length - 1;
 		lower = begin;
 		upper = end;
-		lowerFound = false;
-		upperFound = false;
+		isLowerFound = false;
+		isUpperFound = false;
 		colored = false;
 		recursiveCall = new LinkedList<>();
 		counterData.clear();
@@ -56,7 +56,7 @@ public class ForwardRadix extends RadixAlgorithm {
 					colored = true;
 					return;
 				}
-				if (!lowerFound) {
+				if (!isLowerFound) {
 					counterData.get(0).incValue();
 					if (lower <= upper
 							&& fillWithZeros(
@@ -76,11 +76,11 @@ public class ForwardRadix extends RadixAlgorithm {
 					} else {
 						OverviewChartController.setColor(data.get(lower)
 								.getNode(), "swap");
-						lowerFound = true;
+						isLowerFound = true;
 						return;
 					}
 				}
-				if (!upperFound) {
+				if (!isUpperFound) {
 					counterData.get(0).incValue();
 					if (lower <= upper
 							&& fillWithZeros(
@@ -100,7 +100,7 @@ public class ForwardRadix extends RadixAlgorithm {
 					} else {
 						OverviewChartController.setColor(data.get(upper)
 								.getNode(), "swap");
-						upperFound = true;
+						isUpperFound = true;
 						return;
 					}
 				}
@@ -111,8 +111,8 @@ public class ForwardRadix extends RadixAlgorithm {
 							"fade");
 					OverviewChartController.setColor(data.get(upper).getNode(),
 							"fade");
-					lowerFound = false;
-					upperFound = false;
+					isLowerFound = false;
+					isUpperFound = false;
 					colored = false;
 					lower++;
 					upper--;
@@ -136,8 +136,8 @@ public class ForwardRadix extends RadixAlgorithm {
 					actualDigit = (int) nextParameters.getThirdParameter();
 					lower = begin;
 					upper = end;
-					lowerFound = false;
-					upperFound = false;
+					isLowerFound = false;
+					isUpperFound = false;
 					colored = false;
 					if (actualDigit < getMaxDigit())
 						counterData.get(2).setValue(

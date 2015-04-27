@@ -37,10 +37,12 @@ public class QuickThread extends SortingThread {
             while (numbers[i] < pivot) {
                 i++;
             }
+
             comparisonCounter++;
             while (numbers[j] > pivot) {
                 j--;
             }
+
             if (i <= j) {
             	swapCounter++;
                 int temp = numbers[i];
