@@ -18,7 +18,7 @@ import javafx.fxml.FXML;
  */
 public class BenchmarkController implements SortingThreadListener {
 	private static BenchmarkTableController tableController;
-	private SortingThread[] sortingThreads;
+	private static SortingThread[] sortingThreads;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -50,5 +50,9 @@ public class BenchmarkController implements SortingThreadListener {
 		try {
 		tableController.getTableView().setItems(FXCollections.observableArrayList(SortingThread.getBenchmarkData()));
 		} catch (ConcurrentModificationException cme) {}
+	}
+
+	public static SortingThread[] getSortingThreads() {
+		return sortingThreads;
 	}
 }

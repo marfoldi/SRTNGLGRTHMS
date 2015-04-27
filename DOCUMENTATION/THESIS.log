@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  27 APR 2015 19:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  27 APR 2015 23:04
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -114,21 +114,29 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip52
+\enit@outerparindent=\dimen113
+\enit@toks=\toks16
+\enit@inbox=\box26
+\enitdp@description=\count92
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count92
-\uc@combtoks=\toks16
-\uc@combtoksb=\toks17
-\uc@temptokena=\toks18
+\uc@secondtry=\count93
+\uc@combtoks=\toks17
+\uc@combtoksb=\toks18
+\uc@temptokena=\toks19
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks19
-\inpenc@posthook=\toks20
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -363,8 +371,8 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count93
-\U@D=\dimen113
+\babel@savecnt=\count94
+\U@D=\dimen114
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -375,32 +383,32 @@ Language: magyar 2005/03/30 v1.4j Magyar support from the babel system
 Package babel Info: Making ` an active character on input line 597.
 ))
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count94
-\scratchdimen=\dimen114
-\scratchbox=\box26
-\nofMPsegments=\count95
-\nofMParguments=\count96
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count97
-\MPscratchDim=\dimen115
-\MPnumerator=\count98
-\makeMPintoPDFobject=\count99
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count95
+\scratchdimen=\dimen115
+\scratchbox=\box27
+\nofMPsegments=\count96
+\nofMParguments=\count97
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count98
+\MPscratchDim=\dimen116
+\MPnumerator=\count99
+\makeMPintoPDFobject=\count100
+\everyMPtoPDFconversion=\toks23
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -455,23 +463,23 @@ Package ucs Warning: ***************************
 (ucs)                ***************************
 (ucs)                Activating compatibility mode.
 (ucs)                ***************************
-(ucs)                 on input line 24.
+(ucs)                 on input line 25.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 28.
+(Font)              <12> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 28.
+(Font)              <8> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 28.
+(Font)              <6> on input line 29.
 
 <pics/eltecimerszines.jpg, id=1, 1333.98375pt x 1333.98375pt>
 File: pics/eltecimerszines.jpg Graphic file (type jpg)
 
 <use pics/eltecimerszines.jpg>
-Package pdftex.def Info: pics/eltecimerszines.jpg used on input line 28.
+Package pdftex.def Info: pics/eltecimerszines.jpg used on input line 29.
 (pdftex.def)             Requested size: 113.81102pt x 113.80438pt.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
@@ -505,32 +513,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 2. fejezet.
 [3
 
-] [4]
-3. fejezet.
-[5
+]
+Overfull \hbox (1.47304pt too wide) in paragraph at lines 76--84
+ [][] 
+ []
 
-] [6]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 123.
+[4] [5]
+3. fejezet.
+[6
+
+] [7]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 147.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [7]
-Underfull \hbox (badness 2486) in paragraph at lines 142--145
+) [8]
+Underfull \hbox (badness 2486) in paragraph at lines 167--170
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
 
-[8
+[9
 
 ] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
- 4151 strings out of 493921
- 51249 string characters out of 3147273
- 113043 words of memory out of 3000000
- 7380 multiletter control sequences out of 15000+200000
+ 4428 strings out of 493921
+ 55930 string characters out of 3147273
+ 120177 words of memory out of 3000000
+ 7653 multiletter control sequences out of 15000+200000
  13547 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,43p,892b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,43p,895b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\marf
 oldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <
 C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
@@ -541,14 +554,19 @@ jfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2
 ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\marfo
 ldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk> <C
 :\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-rm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on THESIS.pdf (10 pages, 1093009 bytes).
+rm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+
+Output written on THESIS.pdf (11 pages, 1140980 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
+ 460 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

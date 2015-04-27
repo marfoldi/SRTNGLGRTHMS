@@ -3,6 +3,7 @@
 \usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
+\usepackage{enumitem}
 \usepackage{ucs}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -31,21 +32,13 @@
 \mainmatter
 
 	\cfoot{\thepage}
-	\pagestyle{fancy} 
+	\pagestyle{fancy}
+	\setlist[description]{leftmargin=\parindent,labelindent=\parindent,itemsep=1.5pt}
 
 \chapter{Bevezetés} 
 Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmányaik kezdetén találkoztak a rendezési algoritmusokkal. Nagyszerű terület arra, hogy megérthessük a műveletigény kérdését, azt hogy mi számít igazán sok adatnak, vagy éppen, hogy mit értünk egy algoritmus stabilitásán.
 
 \section{A feladat és annak értelmezése} 
-\section{Definíciók és jelölések}
-\subsection{Oszd meg és uralkodj elv}
-Egy algoritmus tervezési stratégia. Az elv\cite{Cormen} a következőképp old meg egy problémát:
-\begin{description}[0.5cm]
-	\item[$\bullet$] Az eredeti problémát felosztja kisebb az eredetihez hasonló típusú feladatokra.
-	\item[$\bullet$] Rekurzívan megoldja ezeket a kisebb problémákat.
-	\item[$\bullet$] A kisebb részek megoldásait összevonva,  megoldást ad az eredeti feladatra.
-\end{description}
-
 
 \section{Alkalmazott technológiák}
 A Következőkben röviden összefoglaljuk a Java\cite{Java} és a JavaFX\cite{JavaFX} jellegzetességeit.
@@ -54,7 +47,7 @@ A Java egy általános célú, objektumorientált programozási nyelv, melyet 20
  A Java platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a Java nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. \par
  A Java legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
 Összefoglalva a Java program három fontos szerepet tölt be:
-\begin{description}[0.5cm]
+\begin{description}
 \item[$\bullet$] programozási nyelv
 \item[$\bullet$] köztes réteg (middleware)
 \item[$\bullet$] platform
@@ -76,21 +69,51 @@ A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöb
 A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek. A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest\cite{Fekete}. Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus.
 
 \subsection{Shell rendezés}
-Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. Az algoritmus nevét is adó Donald Shell $\lfloor N/2^k \rfloor$ (k>=1) lépésközt javasol. Azonban így az algoritmus időkomplexitása legrosszabb esetben $\Theta(N^2)$. Az algoritmus sebessége nagyban függ a lépésköz megválasztásától.
+Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. A teljesség igénye nélkül néhány ajánlás\cite{ShellWiki} erre vonatkozóan:\par
+\begin{table}[h]
+	\def\arraystretch{2}
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Szabály (k=1...)} & \textbf{Konkrét értékek}  & \textbf{Legrosszabb eset} & \textbf{Szerző}         \\ \hline
+		$\lfloor n / 2^k \rfloor$&      $\left\lfloor\frac{n}{2}\right\rfloor,
+		\left\lfloor\frac{n}{4}\right\rfloor, \ldots$, 1            &              $\Theta(n^2)$                      & Shell, 1959     \\ \hline
+		$2^p 3^q$ egymást követően & 1, 2, 3, 4, $\ldots$  &               $\Theta(n \log^2 n)$                     & Pratt, 1971     \\ \hline
+		$\left\lceil \frac{9^k-4^k}{5\cdot4^{k-1}} \right\rceil$& 1, 4, 9, 20, $\ldots$ &             Nem ismert                       & Tokuda, 1992	\\ \hline
+	\end{tabular}
+\end{table}
+ Az eredeti algoritmus időkomplexitása a legrosszabb esetben $\Theta(n^2)$. A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program Vaughan Ronald Pratt által javasolt értékeket\cite{Pratt} használja, így legrosszabb esetben is $\Theta(n \log^2 n)$ a műveletek száma.
 
 \subsection{Gyorsrendezés}
 C.A.R. Hoare\cite{Horae} alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.\par
 Helyben rendező, oszd meg és uralkodj\cite{Cormen} elven működő rekurzív algoritmus. A következő négy lépésre bontható fel az rendezés:
-\begin{description}[0.5cm]
+\begin{description}
 	\item[$\bullet$] Ha csak egy vagy nulla elemű az elemzett rész, akkor ne tegyünk semmit.
 	\item[$\bullet$] Válasszunk egy vezérelemet (legjobb oldalibb elem).
 	\item[$\bullet$] A rendezendő részt vágjuk ketté, az egyik oldalára a vezérelemtől kisebb, míg a másikra a nagyobb elemek kerüljenek.
 	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket a résztömbökön.
 \end{description}
-A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása. A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legjobb választás ha számít a rendezés sebessége. Azonban ha a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem hatékony. Ezekben az esetekben ajánlatos másik algoritmust használni. 
+A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása. Az egyszerűbb megérthetőséget szem előtt tartva a program mindig a legjobboldalibb elemet szelektálja.\par
+ A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legmegfelelőbb választás ha számít a rendezés sebessége. Azonban ha a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem hatékony\cite{Cormen}. Ezekben az esetekben ajánlatos másik algoritmust használni.
+
+\subsection{Kupacrendezés}
+Az $\mathcal{O}(n\log n)$ algoritmusok közül az egyik leglassabb, előnye a gyorsrendezéssel szemben, hogy nem erőteljesen rekurzív. Ennél fogva jól alkalmazható milliós nagyságrendű bemenetre. Ahogyan a neve is sugallja, a rendezéshez egy kupac adatszerkezetet használ. Az algoritmus ismertetése előtt definiáljuk a kupac fogalmát\cite{Fekete}:
+Olyan bináris fa, amelyre a következők teljesülnek:
+\begin{description}
+	\item[$\bullet$] Kizárólag a levelek szintjén hiányozhat csúcs, azaz "majdnem teljes".
+	\item[$\bullet$] A levélszint csúcsai balra tömörítettek.
+	\item[$\bullet$] Minden belső csúcs értéke nagyobb vagy egyenlő, mint a gyerekeinek értékei.
+\end{description}
+A második pont értelmében egyetlen olyan csúcs lehet, amelynek csak egy gyereke van, és az közvetlenül a levélszint felett kell, hogy elhelyezkedjen.\par
+A rendezés első lépésben felépíti a kupacot, majd a gyökérelemet kiemelve megkapjuk a legnagyobb elemet.
 
 \subsection{Versenyrendezés}
-A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest". A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel. Az algoritmus által használt adatszerkezet egy teljes bináris fa.
+A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest"\cite{Fekete}. A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel\cite{Fekete}. \par
+Az algoritmus által használt adatszerkezet egy teljes bináris fa. A bináris fa leveleiben szerepelnek a rendezendő elemek. Az első speciális menetben a fa belső pontjait kitöltjük, úgy, hogy a pontba a gyerekei közüli nagyobb érték kerül.\par 
+Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére. Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére. Ezzel ellentétben a gyakorlatban ez az érték $-\infty$. Majd ezen az "ágon" újrajátsszuk a mérkőzéseket.
+\par
+A rendezés egyetlen hátránya a tárigénye, $n$ szám esetén további $n-1$ mezőre szükség van a versenyfa elkészítéséhez. Éppen emiatt a gyakorlatban nem sűrűn használt eljárás.
+ 
 
 \chapter{Fejlesztői dokumentáció}
 
@@ -106,13 +129,14 @@ Az elsődleges szempont az, hogy a felhasználó könnyedén tudja kezelni a pro
 \subsection{Megvalósítás}
 Az első lépés a rendezési algoritmusok implementálása.
 Ezt követhette egyszerűbb felhasználói felület létrehozása. Kezdetben elegendő, ha csak egy grafikon jelenik meg, amely reprezentálja a tömbben található számokat.\par
-Két algoritmushoz szükséges a gráfos reprezentáició, így a következő lépés egy gráf implementálása.
+Két algoritmushoz szükséges a gráfos megjelenítés, így a következő lépés egy gráf implementálása.
 Ezt követően a cél, hogy néhány "beégetett" elemre a rendezések lejátszhatóak legyenek, és az aktuális állapota a tömbnek szinkronban legyen a diagrammal valamint a gráffal. Később az egyes lépésekben történő összehasonlításokat/vizsgálatokat, mozgatásokat, cseréket kell különböző színekkel jelölni az állapotjelző felületeken és számon tartani ezen műveletek összegeit.\par
-Ezen a ponton az módosítás történt a projekt tervein. Eredetileg egy-egy külön szálon futottak volna az algoritmusok, és a felhasználói interakció hatására ezek állapota változott volna. Azonban a \emph{JavaFX} szálkezelése jelentősen eltér az szokványos szálkezelésétől, ezért járhatóbb útnak bizonyult az, hogy kétszer kerüljenek implementálásra az algoritmusok. Az egyik implementációban számon tartjuk az éppen aktuális állapotot, és ez jelenik meg a felhasználói felületen. A másik megvalósításban pedig az algoritmusok azonnal lejátszódnak, így képet kaphatunk arról, hogy mennyi műveletre volt szükség a rendezés során. Ezen utóbbi implementációk mindegyike külön szálon fut, és ahogy valamelyik befejeződik figyelmezteti a főprogramot, hogy jelenítse meg a műveletek számát.\par
-Miután a program alapjai elkészültek kezdetét veheti a a felhasználói felület részletes kialakítása. Elsőként a diagram elhelyezése egy panelen, amely tartalmaz továbbá egy listát a választható algoritmusokról.\par
+Ezen a ponton az módosítás történt a projekt tervein. Eredetileg egy-egy külön szálon futottak volna az algoritmusok, és a felhasználói interakció hatására ezek állapota változott volna. Azonban a \emph{JavaFX} szálkezelése jelentősen eltér az szokványos szálkezelésétől, ezért járhatóbb útnak bizonyult az, hogy kétszer kerüljenek implementálásra az algoritmusok. Az egyik implementációban elmentjük az interakciót követő állapotot, és ez jelenik meg a felhasználói felületen. A másik megvalósításban pedig a rendezések azonnal lezajlanak, így képet kaphatunk arról, hogy mennyi műveletre volt szükség az egyes eljárások során. Ezen utóbbi implementációk mindegyike külön szálon fut, és ahogy valamelyik befejeződik figyelmezteti a főprogramot, hogy jelenítse meg a műveletek számát.\par
+Miután a program alapjai elkészültek kezdetét veheti a a felhasználói felület részletes kialakítása. Elsőként a diagram elhelyezése egy panelen, amely tartalmaz továbbá egy listát a választható algoritmusokról. Illetve egy táblázatot, melyben szerepelnek az aktuális állapot egyes tulajdonságai.\par
 A programnak egy fontos szolgáltatása az, hogy a felhasználó különböző adatbeviteli mód közül választhat. A logikai réteget ki kell bővíteni ezekkel az esetekkel, továbbá a felhasználói felületen lehetőséget adni ezen módok kiválasztására.\par
 Ezután az eszköztár kerül a helyére, mellyel párhuzamosan megtörténik az egyes műveletekhez tartozó eljárások implementálása.\par
-Végül a rendezések összehasonlítására lehetőséget adó panel létrehozása, egy táblázattal, benne az algoritmusok műveletigényével. Továbbá egy diagrammal, amin megjelenik a táblázatból kiválasztott sor összehasonlításainak és mozgatásainak a száma.
+Az utolsó teendő a felhasználói felületen egy rendezések összehasonlítására lehetőséget adó panel létrehozása, táblázattal, benne az algoritmusok műveletigényével. Továbbá egy diagrammal, amin megjelenik a táblázatból kiválasztott sor összehasonlításainak és mozgatásainak a száma.\par
+Végül, hogy a program egyszerűen használható legyen \emph{Windows} környezetben egy telepítő fájl készítése, amellyel az előbb említett operációs rendszert használóknak nem szükséges külön \emph{Java}-t telepíteniük.
 
 
 \subsection{Használt fejlesztőeszközök}
@@ -120,8 +144,9 @@ A fejlesztés \emph{Eclipse SDK 4.4} fejlesztői környezet keretei között tö
 A program elkészítése során a kódolást segítő funkció volt a kódkiegészítés, továbbá az egyik beépített projektmenedzsment eszköz(\emph{EGit}).\par
 A fejlesztéshez elengedhetetlen a \emph{Java SE 8u40} vagy magasabb verziójú szoftver. Továbbá a fejlesztést nagyban elősegítette a \emph{JavaFX Scene Builder 2.0}, melynek segítségével egyszerűen megtervezhetővé váltak a grafikus felület komponensei.\par
 Végül a telepítési környezet létrehozásához \emph{Ant} és \emph{InnoSetup} eszközök kerültek felhasználásra.
-Az egész projekt megtalálható, és az egyes verziói visszakövethetők a GitHub-on: \url{https://github.com/marfoldi/SRTNLGRTHMS}\par
+Az egész projekt, beleértve e dokumentumot is megtalálható, és az egyes verziók visszakövethetők a GitHub-on: \url{https://github.com/marfoldi/SRTNGLGRTHMS}\par
 A program fejlesztése során nem került sor külső függvénykönyvtár használatára.
+
 \begin{thebibliography}{widest entry}
 \bibitem{Java}
 \emph{Java (programming language)},
@@ -151,7 +176,15 @@ Scolar kiadó, 2003,
 C.A.R. Hoare:
 \emph{Algorithm 64: Quicksort}
 Communications of the ACM, 4, 7, 1961
-[321]
+\bibitem{ShellWiki}
+\emph{Shellsort},
+Wikipedia the free encyclopedia.
+[ONLINE] [Hivatkozva: 2015.04.25]
+\url{http://en.wikipedia.org/wiki/Shellsort/}
+\bibitem{Pratt}
+Vaughan Ronald Pratt:
+\emph{Shellsort and Sorting Networks (Outstanding Dissertations in the Computer Sciences)}
+Garland, 1980, [62], 0824044061 
 \end{thebibliography}
 
 \end{document}

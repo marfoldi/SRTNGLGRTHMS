@@ -40,11 +40,17 @@ public class BaseController {
 	/**
 	 * Closes the application.
 	 */
+	@SuppressWarnings("deprecation")
 	@FXML
 	private void handleReturnToMenu() {
 		OverviewController.getAnimation().stop();
 		SortingThread.getBenchmarkData().clear();
 		SortingAlgorithm.getCounterData().clear();
+		if(BenchmarkController.getSortingThreads() != null) {
+			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
+				sortingThread.stop();
+			}
+		}
 		try {
 			// Load base layout from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -108,8 +114,14 @@ public class BaseController {
 	/**
 	 * Closes the application.
 	 */
+	@SuppressWarnings("deprecation")
 	@FXML
 	private void handleExit() {
+		if(BenchmarkController.getSortingThreads() != null) {
+			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
+				sortingThread.stop();
+			}
+		}
 		System.exit(0);
 	}
 
