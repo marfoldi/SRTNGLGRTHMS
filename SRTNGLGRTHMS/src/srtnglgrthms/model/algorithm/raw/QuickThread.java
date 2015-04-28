@@ -1,10 +1,11 @@
 package srtnglgrthms.model.algorithm.raw;
 
+import srtnglgrthms.controller.BenchmarkController;
 import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class QuickThread extends SortingThread {
@@ -14,7 +15,7 @@ public class QuickThread extends SortingThread {
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
 				SortingAlgorithm.getNumbers().length);
 		quickSort(numbers, 0, numbers.length - 1);
-		benchmarkData.add(new BenchmarkData("Gyorsrendezés", comparisonCounter,
+		BenchmarkController.addBenchmarkData(new BenchmarkData("Gyorsrendezés", comparisonCounter,
 				3 * swapCounter, swapCounter));
 	}
 

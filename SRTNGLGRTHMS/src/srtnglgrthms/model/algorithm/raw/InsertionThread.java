@@ -1,10 +1,11 @@
 package srtnglgrthms.model.algorithm.raw;
 
+import srtnglgrthms.controller.BenchmarkController;
 import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class InsertionThread extends SortingThread {
@@ -27,7 +28,7 @@ public class InsertionThread extends SortingThread {
 			}
 			numbers[j + 1] = temp;
 		}
-		benchmarkData.add(new BenchmarkData("Beszúró rendezés",
+		BenchmarkController.addBenchmarkData(new BenchmarkData("Beszúró rendezés",
 				comparisonCounter, moveCounter, 0));
 	}
 

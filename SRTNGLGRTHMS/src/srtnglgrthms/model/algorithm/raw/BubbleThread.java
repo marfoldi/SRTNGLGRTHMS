@@ -1,10 +1,11 @@
 package srtnglgrthms.model.algorithm.raw;
 
+import srtnglgrthms.controller.BenchmarkController;
 import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class BubbleThread extends SortingThread {
@@ -24,7 +25,7 @@ public class BubbleThread extends SortingThread {
 				}
 			}
 		}
-		benchmarkData.add(new BenchmarkData("Buborékrendezés",
+		BenchmarkController.addBenchmarkData(new BenchmarkData("Buborékrendezés",
 				comparisonCounter, 3 * swapCounter, swapCounter));
 	}
 

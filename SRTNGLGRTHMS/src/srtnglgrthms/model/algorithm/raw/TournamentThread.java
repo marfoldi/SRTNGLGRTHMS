@@ -1,10 +1,11 @@
 package srtnglgrthms.model.algorithm.raw;
 
+import srtnglgrthms.controller.BenchmarkController;
 import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class TournamentThread extends SortingThread {
@@ -68,7 +69,7 @@ public class TournamentThread extends SortingThread {
 			}
 			recursiveCounter--;
 		}
-		benchmarkData.add(new BenchmarkData("Versenyrendezés",
+		BenchmarkController.addBenchmarkData(new BenchmarkData("Versenyrendezés",
 				comparisonCounter, moveCounter, 0));
 	}
 

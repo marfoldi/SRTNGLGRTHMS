@@ -17,7 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class BaseController {
@@ -44,7 +44,7 @@ public class BaseController {
 	@FXML
 	private void handleReturnToMenu() {
 		OverviewController.getAnimation().stop();
-		SortingThread.getBenchmarkData().clear();
+		BenchmarkController.getBenchmarkDataList().clear();
 		SortingAlgorithm.getCounterData().clear();
 		if(BenchmarkController.getSortingThreads() != null) {
 			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
