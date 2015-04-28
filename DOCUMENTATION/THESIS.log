@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  27 APR 2015 23:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  28 APR 2015 22:30
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -519,21 +519,33 @@ Overfull \hbox (1.47304pt too wide) in paragraph at lines 76--84
  []
 
 [4] [5]
-3. fejezet.
-[6
+Overfull \hbox (0.15163pt too wide) in paragraph at lines 124--125
+[]\T1/cmr/m/n/12 Az el®z® al-go-rit-mus-tól el-té-r®en már nem hely-ben ren-dez
+, az el-já-rás-nak két tömbre
+ []
 
-] [7]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 147.
+[6]
+3. fejezet.
+[7
+
+] [8]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 155.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [8]
-Underfull \hbox (badness 2486) in paragraph at lines 167--170
+)
+Overfull \hbox (0.37791pt too wide) in paragraph at lines 156--157
+[]\T1/cmr/m/n/12 A prog-ram fej-lesz-tése so-rán egye-düli küls® függ-vény-köny
+v-tár a \T1/cmr/m/it/12 JU-nit \T1/cmr/m/n/12 volt, mellyel
+ []
+
+[9]
+Underfull \hbox (badness 2486) in paragraph at lines 175--178
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
 
-[9
+[10
 
 ] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
@@ -543,7 +555,7 @@ Here is how much of TeX's memory you used:
  7653 multiletter control sequences out of 15000+200000
  13547 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,43p,895b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,43p,979b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\marf
 oldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <
 C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
@@ -564,9 +576,9 @@ blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 msy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 
-Output written on THESIS.pdf (11 pages, 1140980 bytes).
+Output written on THESIS.pdf (12 pages, 1147261 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
+ 469 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
