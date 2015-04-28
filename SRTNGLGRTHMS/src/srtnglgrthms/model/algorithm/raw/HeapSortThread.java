@@ -8,7 +8,7 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class HeapThread extends SortingThread {
+public class HeapSortThread extends SortingSortThread {
 
 	@Override
 	public void doRun() {

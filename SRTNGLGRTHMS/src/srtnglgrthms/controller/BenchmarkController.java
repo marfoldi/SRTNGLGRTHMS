@@ -5,13 +5,13 @@ import java.util.ConcurrentModificationException;
 import java.util.List;
 
 import srtnglgrthms.model.BenchmarkData;
-import srtnglgrthms.model.algorithm.raw.BubbleThread;
-import srtnglgrthms.model.algorithm.raw.HeapThread;
-import srtnglgrthms.model.algorithm.raw.InsertionThread;
-import srtnglgrthms.model.algorithm.raw.QuickThread;
-import srtnglgrthms.model.algorithm.raw.ShellThread;
-import srtnglgrthms.model.algorithm.raw.SortingThread;
-import srtnglgrthms.model.algorithm.raw.TournamentThread;
+import srtnglgrthms.model.algorithm.raw.BubbleSortThread;
+import srtnglgrthms.model.algorithm.raw.HeapSortThread;
+import srtnglgrthms.model.algorithm.raw.InsertionSortThread;
+import srtnglgrthms.model.algorithm.raw.QuickSortThread;
+import srtnglgrthms.model.algorithm.raw.ShellSortThread;
+import srtnglgrthms.model.algorithm.raw.SortingSortThread;
+import srtnglgrthms.model.algorithm.raw.TournamentSortThread;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 
@@ -21,7 +21,7 @@ import javafx.fxml.FXML;
  */
 public class BenchmarkController implements SortingThreadListener {
 	private static BenchmarkTableController tableController;
-	private static SortingThread[] sortingThreads;
+	private static SortingSortThread[] sortingThreads;
 	protected static List<BenchmarkData> benchmarkDataList = new ArrayList<BenchmarkData>();
 
 	/**
@@ -30,14 +30,14 @@ public class BenchmarkController implements SortingThreadListener {
 	 */
 	@FXML
 	private void initialize() {
-		sortingThreads = new SortingThread[] { new QuickThread(),
-				new InsertionThread(), new ShellThread(), new BubbleThread(),
-				new HeapThread(), new TournamentThread() };
+		sortingThreads = new SortingSortThread[] { new QuickSortThread(),
+				new InsertionSortThread(), new ShellSortThread(), new BubbleSortThread(),
+				new HeapSortThread(), new TournamentSortThread() };
 		runSortingThreads();
 	}
 
 	private void runSortingThreads() {
-		for (SortingThread thread : sortingThreads) {
+		for (SortingSortThread thread : sortingThreads) {
 			thread.setListener(this);
 			thread.start();
 		}
@@ -60,7 +60,7 @@ public class BenchmarkController implements SortingThreadListener {
 		} catch (ConcurrentModificationException cme) {}
 	}
 
-	public static SortingThread[] getSortingThreads() {
+	public static SortingSortThread[] getSortingThreads() {
 		return sortingThreads;
 	}
 

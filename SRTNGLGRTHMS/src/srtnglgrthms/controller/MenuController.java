@@ -3,7 +3,7 @@ package srtnglgrthms.controller;
 import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
-import srtnglgrthms.model.algorithm.raw.SortingThread;
+import srtnglgrthms.model.algorithm.raw.SortingSortThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -87,7 +87,7 @@ public class MenuController {
 	@FXML
 	private void handleExit() {
 		if(BenchmarkController.getSortingThreads() != null) {
-			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
+			for(SortingSortThread sortingThread : BenchmarkController.getSortingThreads()) {
 				sortingThread.stop();
 			}
 		}

@@ -12,7 +12,7 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class ShellThread extends SortingThread {
+public class ShellSortThread extends SortingSortThread {
 	private static Integer[] gapArray = generateGapArray();
 	private int i, j, temp;
 

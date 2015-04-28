@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
-import srtnglgrthms.model.algorithm.raw.SortingThread;
+import srtnglgrthms.model.algorithm.raw.SortingSortThread;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -47,7 +47,7 @@ public class BaseController {
 		BenchmarkController.getBenchmarkDataList().clear();
 		SortingAlgorithm.getCounterData().clear();
 		if(BenchmarkController.getSortingThreads() != null) {
-			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
+			for(SortingSortThread sortingThread : BenchmarkController.getSortingThreads()) {
 				sortingThread.stop();
 			}
 		}
@@ -118,7 +118,7 @@ public class BaseController {
 	@FXML
 	private void handleExit() {
 		if(BenchmarkController.getSortingThreads() != null) {
-			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
+			for(SortingSortThread sortingThread : BenchmarkController.getSortingThreads()) {
 				sortingThread.stop();
 			}
 		}

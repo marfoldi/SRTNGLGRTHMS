@@ -8,7 +8,7 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class QuickThread extends SortingThread {
+public class QuickSortThread extends SortingSortThread {
 	@Override
 	public void doRun() {
 		numbers = new int[SortingAlgorithm.getNumbers().length];
