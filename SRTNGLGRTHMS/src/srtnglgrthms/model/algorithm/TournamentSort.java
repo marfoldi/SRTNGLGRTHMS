@@ -4,6 +4,10 @@ import java.util.LinkedList;
 
 //MOZGATÁS MINDIG N, ÖSSZEHASONLÍTÁS NEM KELL, HA -1;
 
+
+
+
+
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
 import srtnglgrthms.model.CounterData;

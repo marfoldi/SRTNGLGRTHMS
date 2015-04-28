@@ -1,5 +1,6 @@
 package srtnglgrthms.controller;
 
+import srtnglgrthms.model.BenchmarkData;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
@@ -8,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
-import srtnglgrthms.model.BenchmarkData;
 
 /**
  * 

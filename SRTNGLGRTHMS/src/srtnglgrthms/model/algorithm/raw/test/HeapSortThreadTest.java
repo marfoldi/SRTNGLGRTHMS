@@ -1,12 +1,12 @@
 package srtnglgrthms.model.algorithm.raw.test;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
 
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import srtnglgrthms.model.algorithm.raw.HeapSortThread;
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
 
 public class HeapSortThreadTest {
 

@@ -2,6 +2,8 @@ package srtnglgrthms.controller;
 
 import java.io.IOException;
 
+import srtnglgrthms.MainApplication;
+import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -15,8 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import srtnglgrthms.MainApplication;
-import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**
  * 

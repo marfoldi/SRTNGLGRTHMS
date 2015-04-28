@@ -1,13 +1,13 @@
 package srtnglgrthms.model.algorithm;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.GridPane;
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
 import srtnglgrthms.controller.OverviewListController;
 import srtnglgrthms.model.graph.Graph;
 import srtnglgrthms.model.graph.Vertex;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.GridPane;
 
 /**
  *
