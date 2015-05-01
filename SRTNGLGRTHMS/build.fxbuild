@@ -2,7 +2,7 @@
 <anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
   <deploy packagingFormat="exe">
     <application name="SRTNGLGRTHMS" mainclass="srtnglgrthms.MainApplication" version="1.0" toolkit="fx"/>
-    <info title="SRTNGLGRTHMS" vendor="M&#xe1;rf&#xf6;ldi P&#xe9;ter Bence"/>
+    <info title="Rendez&#xe9;si algoritmusok szeml&#xe9;ltet&#xe9;se" vendor="M&#xe1;rf&#xf6;ldi P&#xe9;ter Bence"/>
   </deploy>
   <signjar/>
 </anttasks:AntTask>
