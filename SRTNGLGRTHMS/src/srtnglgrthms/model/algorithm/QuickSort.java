@@ -3,8 +3,6 @@ package srtnglgrthms.model.algorithm;
 import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
-import srtnglgrthms.model.CounterData;
-import srtnglgrthms.model.RecursiveParameter;
 
 /**
  * 

@@ -3,8 +3,6 @@ package srtnglgrthms.model.algorithm;
 import java.util.Arrays;
 import java.util.Queue;
 
-import srtnglgrthms.model.CounterData;
-import srtnglgrthms.model.RecursiveParameter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

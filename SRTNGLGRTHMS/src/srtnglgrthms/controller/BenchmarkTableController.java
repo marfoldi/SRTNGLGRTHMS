@@ -1,6 +1,6 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.algorithm.raw.BenchmarkData;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;

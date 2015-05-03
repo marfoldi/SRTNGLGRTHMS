@@ -4,8 +4,6 @@ import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewDoubleChartController;
-import srtnglgrthms.model.CounterData;
-import srtnglgrthms.model.RecursiveParameter;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart.Data;
 

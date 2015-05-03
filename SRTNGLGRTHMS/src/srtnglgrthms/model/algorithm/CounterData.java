@@ -1,4 +1,4 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

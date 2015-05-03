@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 import srtnglgrthms.controller.OverviewChartController;
-import srtnglgrthms.model.CounterData;
 
 /**
  * 

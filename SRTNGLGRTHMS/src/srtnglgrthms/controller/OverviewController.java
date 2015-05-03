@@ -1,8 +1,8 @@
 package srtnglgrthms.controller;
 
-import srtnglgrthms.model.SortingAlgorithmFactory;
 import srtnglgrthms.model.algorithm.ChartAlgorithm;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
+import srtnglgrthms.model.algorithm.SortingAlgorithmFactory;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

@@ -41,12 +41,12 @@ Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmány
 \section{A feladat és annak értelmezése} 
 
 \section{Alkalmazott technológiák}
-A Következőkben röviden összefoglaljuk a Java\cite{Java} és a JavaFX\cite{JavaFX} jellegzetességeit.
+A Következőkben röviden összefoglaljuk a \emph{Java}\cite{Java}, \emph{JavaFX}\cite{JavaFX} és \emph{JUnit}\cite{JUnit} jellegzetességeit.
 \subsection{A Java-ról röviden}
-A Java egy általános célú, objektumorientált programozási nyelv, melyet 2009-ig a \emph{Sun Microsystems} fejlesztett, ezt követően pedig az \emph{Oracle}. A szakdolgozatban használt 1.8-as verziót már az \emph{Oracle} adta ki 2014-ben. A Java nyelv a szintaxisát a C és C++ nyelvektől örökölte, azonban utóbbitól eltérően egyszerű objektummodellel rendelkezik. \par
- A Java platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a Java nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. \par
- A Java legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
-Összefoglalva a Java program három fontos szerepet tölt be:
+A \emph{Java} egy általános célú, objektumorientált programozási nyelv, melyet 2009-ig a \emph{Sun Microsystems} fejlesztett, ezt követően pedig az \emph{Oracle}. A szakdolgozatban használt 1.8-as verziót már az \emph{Oracle} adta ki 2014-ben. A \emph{Java} nyelv a szintaxisát a \emph{C} és \emph{C++} nyelvektől örökölte, azonban utóbbitól eltérően egyszerű objektummodellel rendelkezik. \par
+ A \emph{Java} platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a \emph{Java} nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. \par
+ A \emph{Java} legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
+Összefoglalva a \emph{Java} program három fontos szerepet tölt be:
 \begin{description}
 \item[$\bullet$] programozási nyelv
 \item[$\bullet$] köztes réteg (middleware)
@@ -55,12 +55,137 @@ A Java egy általános célú, objektumorientált programozási nyelv, melyet 20
 
 \subsection{JavaFX}
 Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást lehessen készíteni és futtatni eszközök széles skáláján. Eredetileg a \emph{Swing} könyvtárat váltotta volna fel, azonban jelenleg mindkettő része a \emph{Jave SE}-nek. \par
- A 2.0-ás verzióig a fejlesztők egy külön nyelvet használtak, amelyet \emph{JavaFX Script}-nek neveznek. Azonban mivel ez szintén Java bájtkódot generál a későbbiekben megadatott a lehetőség, hogy a programozók Java kódot használjanak helyette. A JavaFX egyik legnagyobb előnye, hogy egy egyszerű \emph{XML} struktúrában leírhatók a program grafikus felületének összetevői, melyhez ezt követően elegendő az egyes interakciókhoz tartozó funkciókat implementálni.\par Az elterjedtebb operációs rendszerek mindegyikét támogatja. Ahogyan előnye, úgy hátránya is a \emph{Swing}-hez képest az, hogy jelenleg is folyik a fejlesztése, ezért olykor csak hosszas utánajárást követően sikerül megoldást találni egy-egy problémára.
+ A 2.0-ás verzióig a fejlesztők egy külön nyelvet használtak, amelyet \emph{JavaFX Script}-nek neveznek. Azonban mivel ez szintén \emph{Java} bájtkódot generál a későbbiekben megadatott a lehetőség, hogy a programozók Java kódot használjanak helyette. A \emph{JavaFX} egyik legnagyobb előnye, hogy egy egyszerű \emph{XML} struktúrában leírhatók a program grafikus felületének összetevői, melyhez ezt követően elegendő az egyes interakciókhoz tartozó funkciókat implementálni.\par Az elterjedtebb operációs rendszerek mindegyikét támogatja. Ahogyan előnye, úgy hátránya is a \emph{Swing}-hez képest az, hogy jelenleg is folyik a fejlesztése, ezért olykor csak hosszas utánajárást követően sikerül megoldást találni egy-egy problémára.
+ 
+\subsection{JUnit}
+Egy egységteszt keretrendszer a \emph{Java} programozási nyelvhez. Az egységtesztek karbantartására, és futtatására kínál szolgáltatást. Gyakran a verzió kiadási folyamat részeként szokták beépíteni, azaz egy kiadás akkor hibátlan, ha ezen tesztek mindegyike hibátlanul lefut. Egy 2013-as felmérésben\cite{Survey} tízezer Java technológiát használó \emph{GitHub} projektet vizsgáltak. A projektek csaknem harmadánál használták a \emph{JUnit}-ot, ezzel az egyik leggyakrabban használt függvénykönyvtár volt a felmérés során.
 
 \chapter{Felhasználói dokumentáció}
+\section{Rendszerkövetelmények}
+Az elkövetkezőkben ismertetésre kerülnek a minimális és az ajánlott rendszerkövetelmények.
+\subsection{Minimális rendszerkövetelmények}
+Mivel a program \emph{Java} nyelven íródott, ezért elengedhetetlen, hogy a felhasználó számítógépén lehetőség legyen \emph{Java} alkalmazások futtatására. Az alábbi operációs rendszereken érhető el a \emph{Java Runtime Enviroment 8u45}-ös verziója:\par
+\begin{description}
+	\item[$\bullet$] \emph{Windows} 8
+	\item[$\bullet$] \emph{Windows} 7
+	\item[$\bullet$] \emph{Windows} Vista SP2
+	\item[$\bullet$] \emph{Windows Server} 2008 R2 SP1 (64-bit)
+	\item[$\bullet$] \emph{Windows Server} 2012 (64-bit)
+	\item[$\bullet$] \emph{Mac OS X} 10.8.3 vagy újabb
+	\item[$\bullet$] \emph{Suse Linux Enterprise Server} 10 SP2+, 11.x
+	\item[$\bullet$] \emph{Ubuntu Linux} 12.04 vagy újabb
+	\item[$\bullet$] \emph{Red Hat Enterprise Linux} 5.5+, 6.x
+	\item[$\bullet$] \emph{Oracle Linux} 5.5+; 6.x; 7.x
+\end{description}
+Hardverkövetelmények tekintetében a \emph{Java JRE 8} futtatásához szükséges
+minimum követelményei az irányadóak. Azonban a program bizonyos esetekben több erőforrást is igényelhet, ezért ajánlott nagyobb memóriával és erősebb processzor rendelkező rendszer használata. A követelmények a következő táblázatban találhatóak:\par
+\begin{table}[h]
+		\def\arraystretch{2}
+		\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Memória}             & 128 MB            \\ \hline
+		\textbf{Szabad lemezterület} & 124 (+2) MB       \\ \hline
+		\textbf{Processzor}          & \emph{Pentium} 2 266 MHz \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Ajánlott rendszerkövetelmények}
+A szoftver tökéletes működéséhez a legelterjedtebb operációs rendszer, a \emph{Windows} ajánlott. Továbbá követelmény 16:9-es képaránnyal rendelkező monitor, és legalább 1366$\times$768 képernyőfelbontás használata.\par
+A rendszer fejlesztése a következő ajánlott konfiguráción történt:
+\begin{table}[h]
+	\def\arraystretch{2}
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Operációs rendszer} & \emph{Windows} 7                     \\ \hline
+		\textbf{Memória}            & 4 GB                          \\ \hline
+		\textbf{Processzor}         & \emph{Intel} Core i5-2467M, 2000 MHz \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Telepítés}
+Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gondoskodnia a felhasználónak, ezen felül más program telepítésére nincs szükség. Azonban, mivel elsősorban \emph{Windows} operációs rendszeren történő futtatásra lett felkészítve a program, ezt az operációs rendszert használók választhatják a kényelmesebb, natív telepítéses megoldást. Elsőként a programhoz készült telepítővel történő konfigurálást vesszük végig, majd ezt követően a \emph{Java} programokra inkább jellemzőbb, ám körülményesebb telepítési mód kerül bemutatásra.\par Bármely módszert is szándékozik követni a felhasználó, először győződjön meg róla, hogy az előzőekben ismertetett rendszerkövetelményeknek megfelel a számítógépe.
+
+\subsubsection{Telepítés natív telepítővel}
+Ez a telepítési mód csak a \emph{Windows}-t használók számára érhető el.\par
+Az első lépés a telepítési varázsló elindítása. A megjelenő párbeszédpanelon kattintsunk a \textbf{Telepítés} gombra. Ezt követően elindul a telepítés, ami körülbelül fél percet vesz igénybe. A telepítési panel bezárása után máris megjelenik a program főmenüje, így megkezdheti a felhasználó a használatát. A későbbiekben történő futtatáshoz a következő könyvtárba szükséges navigálni: \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash SRTNGLGRTHMS.exe} \par
+A fenti útvonal akkor érvényes, ha \textbf{C:\textbackslash} meghajtón található az operációs rendszer, néhány rendszeren más lehet ennek a meghajtónak a betűjele. Továbbá egyes számítógépeken az \textbf{AppData} mappa rejtett lehet, így érdemes valamilyen fájlböngészőt, például \emph{Total Commander}-t használni.
+
+\subsubsection{Hagyományos telepítés}
+A most ismertetésre kerülő telepítési mód minden operációs rendszeren elérhető.\par
+Az első feladat a \emph{Java} virtuális gép telepítése, amely letölthető a következő webcímről: \url{http://java.com/inc/BrowserRedirect1.jsp}\par
+Fogadjuk el a licencszerződést, töltsük le a \emph{JRE} telepítőfájlt. Ha frissíteni szeretnénk a jelenlegi \emph{Java} verziót a rendszerünkön, akkor előbb célszerűbb eltávolítani a régi verziót. Miután feltelepítettük a futtatási környezetet,  készen áll a szoftver futtatására a rendszerünk. A program könyvtárában található \textbf{SRTNGLGRTHMS.jar} fájl elindításával kezdhetjük meg a szoftver használatát.
+
+\section{Felhasználói felület bemutatása}
+\subsection{Főmenü}
+A program indítását követően megjelenik a főmenü, mely két komponensből áll.  Az ablak felső részén található piros színnel jelölt rész az eszköztárat foglalja magában. A kék szín jelöli a központi panelt, mely három gombból tevődik össze, ezekre történő kattintás után lehetőség nyílik a rendezendő számok megadására.
+
+\subsubsection{Eszköztár}
+Az eszköztárat két menüpont alkotja, \textbf{Fájl} és \textbf{Segítség} címszóval ellátva. Az előzőben a program bezárásának lehetősége kapott helyet, míg utóbbiban a szoftver névjegye tekinthető meg.
+
+\subsubsection{Központi panel}
+A három gombból áll:
+\begin{description}
+	\item[$\bullet$] Manuális (számok begépelése)
+	\item[$\bullet$] Generálás (számok generálása) 
+	\item[$\bullet$] Fájl (számok beolvasása)
+\end{description}
+Ezek közül bármelyre kattintva átnavigálhatunk a bement megadását lehetővé tévő felületekre.
+
+\subsection{Bemenet megadása panel}
+Az előzőekben említett három lehetőség közül választhat a felhasználó.
+
+\subsubsection{Manuális}
+A megjelenő panelen két gomb található, melyek kezdetben inaktívak. A "Méret:" címke után található beviteli mezőbe történő pozitív egész szám beírását követően és az \textbf{ENTER} billentyűt leütve megjelennek a számok bevitelére lehetőséget adó mezők. Ezt követően a panelen található két gomb már kattintható, a \textbf{Számok generálása} gombra kattintva 0 és 100 közötti véletlen számokkal tölti fel a beviteli mezőket a program. Az \textbf{Ok} gombra történő kattintás után megjelenik a program \textbf{Főpanel}je.\par
+Meg kell jegyezni, hogy ebben a módban legfeljebb száz érték adható meg, ennél nagyobb méretű bemenet manuális feltöltése túl körülményes lenne. Amennyiben több számot szándékozik megadni a felhasználó, válasszon a számok generálása vagy a fájlból történő beolvasás közül.
+
+\subsubsection{Generálás}
+A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legördülő menüből kiválasztva a generálás módját az \textbf{OK} gomb kattinthatóvá válik. A legördülő menüből a következő négy típus közül lehet választani, azaz a generált tömb legyen:
+\begin{description}
+	\item[$\bullet$] Véletlen generált - véletlenszerűen választott számokból álljon
+	\item[$\bullet$] Majdnem rendezett - a tömb 80\%-a már rendezve van
+	\item[$\bullet$] Fordított - a tömb csökkenőleg rendezett
+	\item[$\bullet$] Néhány egyedi - a tömb elemei között sok azonos érték szerepeljen
+\end{description}
+Itt megjegyzendő, hogy amennyiben az input mérete az [1,100] intervallumban van, akkor a rendezendő számok 0 és 100 közötti értékek közül kerülnek kiválasztásra. Ennek oka, hogy a túl nagy differencia az egyes értékek között sokat rontana az oszlopdiagramok megjelenésén. Ellenkező esetben a \emph{Java} nyelv által definiált egész típus(\emph{Integer}) maximális értékéig terjedhet a generált számok nagysága.
+ 
+\subsubsection{Fájl - fájlból beolvasás}
+A gombra történő kattintás után megjelenik egy fájltallózó. A tallózóban csak szöveges(\emph{txt} kiterjesztésű) fájl választására van lehetőség. A fájl tartalmára történő megszorítások szigorúak. Minden sora legfeljebb egy pozitív egész számot tartalmazhat, ellenkező esetben a program hibaüzenet kíséretében visszatér a főmenübe. Fontos, hogy az előzőek értelmében az üres sorok sem megengedettek.
+
+\subsection{Főpanel}
+A rendezendő számok sikeres megadása után megjelenik a program főpanelje, mely három logikai részből áll. A főpanel magában foglalja a \textbf{Megfigyelés} és \textbf{Összehasonlítás} paneleket, melyek külön alfejezetekben kerülnek részletezésre.
+\subsubsection{Eszköztár}
+A \textbf{Főmenü}höz hasonlóan itt is jelen van a piros színnel jelzett eszköztár sáv. Itt fontos kiemelni, hogy a \textbf{Fájl} és \textbf{Segítség} pontokon belül további alpontok is elérhetőek:\par
+A \textbf{Fájl} menüpont bővül a \textbf{Vissza a főmenübe} lehetőséggel, melynek segítségével a program újraindítása nélkül lehetőség van újabb rendezendő számsorozat megadására.\par
+A \textbf{Segítség}re kattintva pedig megjelenik az \textbf{Algoritmusról} pont. A \textbf{Megfigyelés} panel listájából kiválasztott elemnek elolvashatóvá válik a rövid szöveges ismertetője. Amennyiben pedig az \textbf{Összehasonlítás} panel aktív, akkor e panel táblázatából kiválasztott algoritmus leírása tekinthető meg. Az aktuális panelen ha nem került kiválasztásra sor, akkor a menüpontra történő kattintás után felugró ablak figyelmezteti a felhasználót arról, hogy e menüpont használatához előbb ki kell választani egy algoritmust.
+\subsubsection{Panelválasztó}
+Amennyiben a bemenet megadásánál már ismertetett [1,100] intervallum magában foglalja a bemenet hosszát, akkor két elem látható a sárgával jelölt részen. Így lehetősége van a felhasználónak navigálni a \textbf{Megfigyelés} és az \textbf{Összehasonlítás} panel között. Ellenkező esetben csak az előbb említett panel jelenik meg. Az aktuálisan megjelenített felület neve a listában kék kerettel jelenik meg, valamint a másik elemhez képest világosabb szürke színnel.
+\subsubsection{Panel}
+A harmadik logikai egységet alkotják a panelek - kék színnel jelölve -, melyek közötti váltást a \textbf{Panelválasztó} teszi lehetővé. Amennyiben a bemenet száz, vagy annál kevesebb elemet tartalmaz az aktuális futáshoz megjelenik a \textbf{Megfigyelés} panel, melyen lehetőség van az algoritmus lépésenkénti lejátszására. Ellenkező esetben csak a műveletigények összehasonlítására adott a lehetőség. Mivel részletesebb leírást kíván a panelek ismertetése, ezért egy-egy külön alfejezetben kerülnek bemutatásra.
+
+\subsection{Megfigyelés panel}
+A főpanel középső területén foglal helyet, négy komponensből tevődik össze. A felhasználónak itt nyílik lehetősége az egyes algoritmusok megfigyelésére, tanulmányozására.
+\subsubsection{Algoritmus lista}
+Az ábrán piros színnel jelölt rész, melynek elemeire kattintva kiválasztható, hogy mely algoritmust szeretné a felhasználó vizsgálni. A kiválasztott elem kék háttérszínt kap, alapértelmezett esetben nincs kijelölt elem.
+\subsubsection{Állapotjelző táblázat}
+A kiválasztott algoritmus aktuális állapotához tartozó információk jelennek meg a táblázatban. Az ábrán zöld kerettel jelölt komponens. Amennyiben nincs kiválasztott elem a \textbf{Nincs megjeleníthető adat} szöveg jelenik meg.\par
+Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéket jelöli. Alapvetően az összehasonlításon alapuló algoritmusoknál megjelenő adatok az összehasonlítások és cserék vagy mozgatások száma. Az edényrendezéseknél pedig az aktuálisan vizsgált bit indexe és a vizsgálatok száma jelenik meg. Egyes algoritmusokhoz a jobb megérhetőség miatt további állapotjelző értékek is tartoznak, melyek a következők:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Algoritmus} & \textbf{Tulajdonság} \\ \hline
+		Shell rendezés      & Lépésköz             \\ \hline
+		Gyorsrendezés       & Vezérelem            \\ \hline
+		Radix "előre"       & Cserék száma         \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{Gombok}
+Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak.
+\subsubsection{Állapotjelző felület}
+Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} megjelenítésekor egy további gráfos megjelenítés is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy további oszlopdiagram is megjelenik.
 
 \section{A vizsgált algoritmusok}
-
 \subsection{Buborékrendezés}
 A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.\par
  A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Mindezt addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg minden menetben a tömb összes elemét, hanem amennyiben egy maximális elem elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
@@ -121,7 +246,7 @@ Az általános edényrendezés egy speciális változata a radix előre rendezé
 Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A vizsgálat két mutatóval történik, melyek a tömb két végéről indulnak. A tömb elején addig halad a mutató, amíg a vizsgált elem első jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek első jegye 0. Amennyiben talált ilyen elemeket megcseréli őket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik. Ekkor kialakul két edény, az elsőben a 0-ás kezdőbittel rendelkező számok, míg a másodikban az 1-essel kezdődő elemek foglalnak helyet. Ezt követően a második bit kerül vizsgálatra az "aledényekben", az előzővel azonos módon. A rendezés befejeződött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
 
 \subsection{Radix "vissza"}
-Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat. Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot.
+Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat.\par Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot. Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált számjegye 1-es. Ezt követően a 0-ás edényt az elejéről olvasva feltöltjük újra az eredeti tömböt az előbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtől előrefelé haladva töltjük át az értékeket.
 
 \chapter{Fejlesztői dokumentáció}
 
@@ -130,7 +255,7 @@ A fejlesztés során több szempontot is figyelembe kell venni, úgy mint: műve
 
 \subsection{Tervezés}
 A dolgozat fő célja egy olyan elsősorban hallgatóknak szánt program létrehozása, amellyel néhány rendezési algoritmus működése egy letisztult és egyszerű felhasználó felületen keresztül tanulmányozható.\par
-A programnak három jól elkülönülő részből kell állnia:
+A programnak három jól elkülönülő komponensből kell állnia:
 Egy logikai(modell) részből, ami gyakorlatilag a rendszer "motorja", itt kell, hogy történjen mindenféle számítási és adattárolási művelet. Egy megjelenítési rétegből, amely a logikai rész eredményeit jeleníti meg a felhasználó számára. Végül pedig egy kontroller szintből, amely kapcsolatot teremt a logikai- és a megjelenítési réteg között. A gyakorlatban ezt a fajta tagolást nevezik Modell-Nézet-Vezérlő \emph{(MVC)} tervezési mintának.\par
 Az elsődleges szempont az, hogy a felhasználó könnyedén tudja kezelni a programot, és segítségével megértse az algoritmusok működését. Így a felhasználói felület áttekinthetőségére és letisztultságára nagy hangsúlyt kell fektetni. Továbbá fontos az is, hogy a jövőben több rendezési eljárást is könnyedén meg lehessen jeleníteni a jelenlegiek mellett, így fontos szempont a kód egyszerű bővíthetősége.
 
@@ -155,6 +280,38 @@ Végül a telepítési környezet létrehozásához \emph{Ant} és \emph{InnoSet
 Az egész projekt, beleértve e dokumentumot is megtalálható, és az egyes verziók visszakövethetők a GitHub-on: \url{https://github.com/marfoldi/SRTNGLGRTHMS}\par
 A program fejlesztése során egyedüli külső függvénykönyvtár a \emph{JUnit} volt, melynek segítségével egységtesztek készültek.
 
+\section{Használati esetek}
+A következőkben a főbb használati esetek kerülnek bemutatásra. A felhasználónak tudnia kell:\par
+\begin{description}
+	\item[$\bullet$] rendezendő számok sorozatát megadni;
+	\item[$\bullet$] algoritmust lejátszani;
+	\item[$\bullet$] műveletszámokat összehasonlítani;
+	\item[$\bullet$] rendezés leírását elolvasni;
+	\item[$\bullet$] program névjegyét megtekinteni;
+	\item[$\bullet$] programot bezárni;
+	\item[$\bullet$] esetleges hibákról értesülni;
+\end{description}
+
+\section{Osztályok leírása}
+A program tervezésekor az egyik alapelv volt, hogy a grafikus megjelenítés, működés szintjén minél inkább különüljön el a rendszerlogikától. A grafikus felület már csak a modell programész által számított, a vezérlő programrésznek átadott adatokat jelenítse meg. Továbbá lehetőséget biztosítson a felhasználó számára, hogy vezérelje a program rendszerlogikáját a kontroller rétegen keresztül. Ez által, hogy a rendszerlogika lényegében független a grafikus interfésztől. Így a szoftver magasabb fokú bővíthetőséget, a kód pedig jobb átláthatóságot nyer.\par
+Ez az elv jól megfigyelhető a programkód struktúrájában is, alapvetően a program három fő csomagra lett bontva: A \textbf{modell} csomag, melyben a logikai osztályok találhatóak, a \textbf{view}, melyben a grafikai interfészt leíró \emph{fxml} fájlok foglalnak helyet, és végül a \textbf{controller} csomag, melyben található osztályok kapcsolatot teremtenek a logikai és a megjelenítési réteg között.
+
+\subsection{Modell osztályok}
+A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rendszerezést szem előtt tartva további alcsomagok kerültek létrehozásra, így jobban áttekinthető az osztályhierarchia. Összességében ebben a csomagban foglalnak helyet azon osztályok, amelyek a rendszer adattároló, rendszerező és számítási feladatait ellátják. Az alábbi táblázat ad áttekintést az előzőleg említett alcsomagokról:\par
+\begin{table}[h]
+		\def\arraystretch{2}
+		\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Név}  & \textbf{Leírás}                                                                          \\ \hline
+		algorithm     & A lejátszható algoritmusok implementációját tartalmazza                       \\ \hline
+		algorithm.raw & Az "egyszerű" rendezést megvalósító osztályok csomagja\\ \hline
+		graph         & A gráf adatszerkezet implementációja                           \\ \hline
+	\end{tabular}
+\end{table}
+Elsőként a \textbf{algorithm} csomagot részletezzük, röviden az alábbi táblázat foglalja össze a benne található osztályok feladatait:
+
+
 \begin{thebibliography}{widest entry}
 \bibitem{Java}
 \emph{Java (programming language)},
@@ -166,6 +323,11 @@ Wikipedia the free encyclopedia.
 Wikipedia the free encyclopedia.
 [ONLINE] [Hivatkozva: 2015.04.21]
 \url{http://en.wikipedia.org/wiki/JavaFX/}
+\bibitem{JUnit}
+\emph{JUnit},
+Wikipedia the free encyclopedia.
+[ONLINE] [Hivatkozva: 2015.05.01]
+\url{http://en.wikipedia.org/wiki/JUnit}
 \bibitem{Demuth}
 Demuth, H.:
 \emph{Electronic Data Sorting},
@@ -193,6 +355,11 @@ Wikipedia the free encyclopedia.
 Vaughan Ronald Pratt:
 \emph{Shellsort and Sorting Networks (Outstanding Dissertations in the Computer Sciences)}
 Garland, 1980, [62], 0824044061 
+\bibitem{Survey}
+The Takipi Blog:
+\emph{We Analyzed 30,000 GitHub Projects – Here Are The Top 100 Libraries in Java, JS and Ruby},
+[ONLINE] [Hivatkozva: 2015.04.30] \url{http://blog.takipi.com/we-analyzed-30000-github-projects-here-are-the-top-100}
+\url{-libraries-in-java-js-and-ruby/}
 \end{thebibliography}
 
 \end{document}

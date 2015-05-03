@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  28 APR 2015 22:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  3 MAY 2015 22:37
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -493,11 +493,11 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/marfoldi/git/SRT
 NLGRTHMS/DOCUMENTATION/pics/eltecimerszines.jpg>]
-(C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.toc)
-\tf@toc=\write3
- [1
+(C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.toc [1
 
-]
+])
+\tf@toc=\write3
+ [2]
 1. fejezet.
 [1
 
@@ -511,74 +511,106 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 2. fejezet.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [3
 
 ]
-Overfull \hbox (1.47304pt too wide) in paragraph at lines 76--84
+
+Package Fancyhdr Warning: \headheight is too small (14.61858pt): 
+ Make it at least 15.04742pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 116.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [5] [6] [7]
+[8]
+Overfull \hbox (1.47304pt too wide) in paragraph at lines 201--209
  [][] 
  []
 
-[4] [5]
-Overfull \hbox (0.15163pt too wide) in paragraph at lines 124--125
+[9] [10] [11]
+Overfull \hbox (0.15163pt too wide) in paragraph at lines 249--249
 []\T1/cmr/m/n/12 Az el®z® al-go-rit-mus-tól el-té-r®en már nem hely-ben ren-dez
 , az el-já-rás-nak két tömbre
  []
 
-[6]
+[12]
 3. fejezet.
-[7
 
-] [8]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 155.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (0.37791pt too wide) in paragraph at lines 156--157
-[]\T1/cmr/m/n/12 A prog-ram fej-lesz-tése so-rán egye-düli küls® függ-vény-köny
-v-tár a \T1/cmr/m/it/12 JU-nit \T1/cmr/m/n/12 volt, mellyel
+Overfull \hbox (0.89848pt too wide) in paragraph at lines 258--259
+[]\T1/cmr/m/n/12 A prog-ram-nak há-rom jól el-kü-lö-nül® kom-po-nens-b®l kell á
+ll-nia: Egy lo-gi-kai(modell)
  []
 
-[9]
-Underfull \hbox (badness 2486) in paragraph at lines 175--178
+[13
+
+] [14] [15] [16]
+Underfull \hbox (badness 2486) in paragraph at lines 337--340
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
 
-[10
+("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Underfull \hbox (badness 4726) in paragraph at lines 359--363
+\T1/cmr/m/it/12 Are The Top 100 Lib-ra-ries in Java, JS and Ruby\T1/cmr/m/n/12 
+, [ON-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--363
+\T1/cmr/m/n/12 LINE] [Hi-vat-kozva: 2015.04.30] $\T1/cmtt/m/n/12 http : / / blo
+g . takipi . com /$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--363
+$\T1/cmtt/m/n/12 we-[]analyzed-[]30000-[]github-[]projects-[]here-[]are-[]the-[
+]top-[]100$
+ []
+
+[17
 
 ] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
- 4428 strings out of 493921
- 55930 string characters out of 3147273
- 120177 words of memory out of 3000000
- 7653 multiletter control sequences out of 15000+200000
- 13547 words of font info for 33 fonts, out of 3000000 for 9000
+ 4685 strings out of 493921
+ 58811 string characters out of 3147273
+ 120186 words of memory out of 3000000
+ 7906 multiletter control sequences out of 15000+200000
+ 14368 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  34i,12n,43p,979b,678s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\marf
 oldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <
 C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-cti1200.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\ecbx1440.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\l
+cbx1440.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+n\ec\dpi600\ecti1200.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\l
 jfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\marfoldi\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\marfo
-ldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk> <C
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\marfoldi\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\marfo
+ldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C
 :\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-rm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-
-Output written on THESIS.pdf (12 pages, 1147261 bytes).
+rm2488.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb>
+Output written on THESIS.pdf (20 pages, 1195812 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
+ 575 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

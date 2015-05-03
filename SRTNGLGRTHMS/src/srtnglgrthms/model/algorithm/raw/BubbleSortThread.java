@@ -1,7 +1,6 @@
 package srtnglgrthms.model.algorithm.raw;
 
 import srtnglgrthms.controller.BenchmarkController;
-import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**

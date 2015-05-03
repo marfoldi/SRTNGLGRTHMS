@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
-import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.algorithm.raw.BenchmarkData;
 import srtnglgrthms.model.algorithm.raw.BubbleSortThread;
 import srtnglgrthms.model.algorithm.raw.HeapSortThread;
 import srtnglgrthms.model.algorithm.raw.InsertionSortThread;

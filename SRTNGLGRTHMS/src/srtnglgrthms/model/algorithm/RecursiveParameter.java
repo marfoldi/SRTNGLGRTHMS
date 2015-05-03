@@ -1,4 +1,4 @@
-package srtnglgrthms.model;
+package srtnglgrthms.model.algorithm;
 
 /**
  * 

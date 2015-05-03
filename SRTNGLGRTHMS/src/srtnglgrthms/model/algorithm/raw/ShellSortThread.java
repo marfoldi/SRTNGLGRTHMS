@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 import srtnglgrthms.controller.BenchmarkController;
-import srtnglgrthms.model.BenchmarkData;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 
 /**

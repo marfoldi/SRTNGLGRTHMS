@@ -3,7 +3,7 @@ package srtnglgrthms.controller;
 import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
-import srtnglgrthms.model.SortingAlgorithmFactory;
+import srtnglgrthms.model.algorithm.SortingAlgorithmFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;

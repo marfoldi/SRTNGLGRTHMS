@@ -3,7 +3,7 @@ package srtnglgrthms.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import srtnglgrthms.model.BenchmarkData;
+import srtnglgrthms.model.algorithm.raw.BenchmarkData;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;

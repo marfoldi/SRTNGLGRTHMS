@@ -1,7 +1,6 @@
 package srtnglgrthms.model.algorithm;
 
 import srtnglgrthms.controller.OverviewChartController;
-import srtnglgrthms.model.CounterData;
 
 /**
  * 
