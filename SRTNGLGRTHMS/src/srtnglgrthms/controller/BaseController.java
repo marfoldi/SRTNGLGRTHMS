@@ -5,6 +5,7 @@ import java.io.IOException;
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
 import srtnglgrthms.model.algorithm.raw.SortingSortThread;
+import srtnglgrthms.model.info.InfoFlyWeightFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -78,7 +79,12 @@ public class BaseController {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Az algoritmusról");
 			alert.setHeaderText(BenchmarkTableController.getSelectedItem());
-			alert.setContentText("Leírás\n");
+			try {
+				alert.setContentText(InfoFlyWeightFactory.getInfo(BenchmarkTableController.getSelectedItem()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			alert.showAndWait();
 		} else if (tabPane.getTabs().size() == 2
 				&& selectionModel.getSelectedIndex() == 0
@@ -86,7 +92,12 @@ public class BaseController {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Az algoritmusról");
 			alert.setHeaderText(OverviewListController.getSelectedItem());
-			alert.setContentText("Leírás\n");
+			try {
+				alert.setContentText(InfoFlyWeightFactory.getInfo(OverviewListController.getSelectedItem()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			alert.showAndWait();
 		} else {
 			Alert alert = new Alert(AlertType.ERROR);
