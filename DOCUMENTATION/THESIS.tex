@@ -5,6 +5,7 @@
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \usepackage{ucs}
+\usepackage{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english,hungarian]{babel}
@@ -20,18 +21,20 @@
 
 \fancyhf{}
 \fancyhead[L]{\rightmark}
-
+\fancyfoot[C]{\thepage}
+\definecolor{default}{HTML}{F3622D}
+\definecolor{swap}{HTML}{4258C9}
+\definecolor{select}{HTML}{57B757}
+\definecolor{done}{HTML}{8C2D46}
 
 \begin{document}
 
 \frontmatter
 
 	\maketitle
-	\tableofcontents
+	\tableofcontents\thispagestyle{fancy}
 	
 \mainmatter
-
-	\cfoot{\thepage}
 	\pagestyle{fancy}
 	\setlist[description]{leftmargin=\parindent,labelindent=\parindent,itemsep=1.5pt}
 
@@ -84,7 +87,7 @@ minimum követelményei az irányadóak. Azonban a program bizonyos esetekben t�
 		\centering
 	\begin{tabular}{|l|l|}
 		\hline
-		\textbf{Memória}             & 128 MB            \\ \hline
+		\textbf{Memória}           & 128 MB            \\ \hline
 		\textbf{Szabad lemezterület} & 124 (+2) MB       \\ \hline
 		\textbf{Processzor}          & \emph{Pentium} 2 266 MHz \\ \hline
 	\end{tabular}
@@ -103,7 +106,7 @@ A rendszer fejlesztése a következő ajánlott konfiguráción történt:
 	\end{tabular}
 \end{table}
 
-\subsection{Telepítés}
+\subsection{Telepítés és eltávolítás}
 Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gondoskodnia a felhasználónak, ezen felül más program telepítésére nincs szükség. Azonban, mivel elsősorban \emph{Windows} operációs rendszeren történő futtatásra lett felkészítve a program, ezt az operációs rendszert használók választhatják a kényelmesebb, natív telepítéses megoldást. Elsőként a programhoz készült telepítővel történő konfigurálást vesszük végig, majd ezt követően a \emph{Java} programokra inkább jellemzőbb, ám körülményesebb telepítési mód kerül bemutatásra.\par Bármely módszert is szándékozik követni a felhasználó, először győződjön meg róla, hogy az előzőekben ismertetett rendszerkövetelményeknek megfelel a számítógépe.
 
 \subsubsection{Telepítés natív telepítővel}
@@ -115,6 +118,10 @@ A fenti útvonal akkor érvényes, ha \textbf{C:\textbackslash} meghajtón talá
 A most ismertetésre kerülő telepítési mód minden operációs rendszeren elérhető.\par
 Az első feladat a \emph{Java} virtuális gép telepítése, amely letölthető a következő webcímről: \url{http://java.com/inc/BrowserRedirect1.jsp}\par
 Fogadjuk el a licencszerződést, töltsük le a \emph{JRE} telepítőfájlt. Ha frissíteni szeretnénk a jelenlegi \emph{Java} verziót a rendszerünkön, akkor előbb célszerűbb eltávolítani a régi verziót. Miután feltelepítettük a futtatási környezetet,  készen áll a szoftver futtatására a rendszerünk. A program könyvtárában található \textbf{SRTNGLGRTHMS.jar} fájl elindításával kezdhetjük meg a szoftver használatát.
+
+\subsubsection{Eltávolítás}
+A program törlése az utóbb ismertetett telepítési mód esetében mindössze annyiból áll, hogy a \textbf{SRTNGLGRTHMS.jar} fájlt eltávolítjuk, valamint amennyiben a jövőben nincs igény a \emph{Java} futtatási környezet használatára, úgy a felhasználó eltávolíthatja azt.
+\emph{Windows}-on történő natív telepítés után a \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash uninstall.exe} \par futtatása után a program törlődik a számítógépről.
 
 \section{Felhasználói felület bemutatása}
 \subsection{Főmenü}
@@ -183,18 +190,53 @@ Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéke
 \subsubsection{Gombok}
 Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak.
 \subsubsection{Állapotjelző felület}
-Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} megjelenítésekor egy további gráfos megjelenítés is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy további oszlopdiagram is megjelenik.
+Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} kiválasztásakor egy gráf is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy plusz oszlopdiagram is megjelenik. Az egyes műveleteket különböző színek is jelölik. Alapértelmezetten a rendezendő elemek színe a következőket jelentik:\par
+\begin{description}
+	\item[\textcolor{default}{\Huge$\bullet$}] Az alapértelmezett szín, nincs kijelölve az elem.
+	\item[\textcolor{swap}{\Huge$\bullet$}] Az elem cserére vagy mozgatásra van kijelölve.
+	\item[\textcolor{select}{\Huge$\bullet$}] Az elemnek kitüntetett szerepe van.
+	\item[\textcolor{done}{\Huge$\bullet$}] Az elem már a végleges helyére került.
+\end{description}
+A \textcolor{select}{\Huge$\bullet$} jelölés némi magyarázatra szorul. A kitüntetett szerepű elemnek számít például a gyorsrendezés vezéreleme, vagy a versenyrendezés fájának felépítésekor egy belső csúcsba kerülő elem.\par
+Némely algoritmusnál a fentiektől eltérő lehet az egyes színek jelentése. A következő fejezetben, az algoritmusok ismertetésénél jelölve van minden ilyesfajta különbség.
+\subsection{Összehasonlítás panel}
+A \textbf{Megfigyelés panel}lel megegyezően a főpanel középső részén található, két logikai egységből épül fel. Lehetőséged ad az összehasonlításon alapuló rendezések műveletigényeinek a vizsgálására.
+\subsubsection{Elemzés táblázat}
+Piros kerettel jelölt rész az ábrán, mely táblázatnak négy oszlopa van:
+\begin{description}
+	\item[$\bullet$] Név - az algoritmus neve
+	\item[$\bullet$] Hasonlítások - a rendezés során végzett összehasonlítások szummája
+	\item[$\bullet$] Mozgatások - az elemmozgatások számának összege
+	\item[$\bullet$] Cserék - a végzett cserék szummája
+\end{description}
+Itt megjegyzendő, hogy a \textbf{Mozgatások} oszlop minden esetben kitöltésre kerül, még ha az algoritmus nem is mozgatásokat használ. Ekkor a mozgatások oszlopban a cserék számának háromszorosa jelenik meg. Ennél fogva egyszerűbb az algoritmusok vizsgálata.
+\subsubsection{Elemzés diagram}
+A táblázathoz képest balra helyezkedik el a zöld kerettel jelölt oszlopdiagram. Kezdetben teljesen üres, csak a jelölések jelentése látható. A táblázat egy elemén történő dupla kattintás következtében megjelenik az algoritmus összehasonlításainak és mozgatásainak a száma. Előbbi narancs- utóbbi citromsárga színnel. Amennyiben olyan sorra kattint a felhasználó, mely már látható a diagramon, azon algoritmus adatai eltűnnek a felületről.
 
 \section{A vizsgált algoritmusok}
 \subsection{Buborékrendezés}
-A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.\par
- A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Mindezt addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg minden menetben a tömb összes elemét, hanem amennyiben egy maximális elem elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
+\subsubsection{Leírás}
+A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.
+\subsubsection{Működés}
+ A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Mindezt addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg minden menetben a tömb összes elemét, hanem amennyiben egy menet maximális eleme elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
+ \subsubsection{Műveletigény}
+Párosával haladunk végig az elemeken, és így vizsgáljuk őket. Mivel minden menet végén visszavezetjük a problémát az eggyel rövidebb feladatra, ezért az összehasonlítások száma $n$ hosszú bemenetre:\par
+$$\ddot{O}(n)=(n-1)+(n-2)+\ldots+1=\frac{n(n-1)}{2}=\frac{n^2}{2}-\frac{n}{2}=\Theta(n^2)$$
+A cserék száma már nem állandó, a bemenő adatok inverziószámával egyezik meg. Belátható, hogy minden egyes cserével egy inverzió szüntethető meg két elem között. A legtöbb cserét akkor szükséges eszközölni, ha a rendezendő elemek mindegyike inverzióban áll a rákövetkező elemmel, azaz a tömb nagyság szerint csökkenő sorrendben rendezett. Ekkor a cserék száma:\par
+$$MCs(n)=\frac{n(n-1)}{2}=\Theta(n^2)$$
+Amennyiben a tömb elemei már rendezettek, akkor egyetlen cserét sem szükséges végrehajtani.
 
 \subsection{Beszúró rendezés}
-A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek. A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest\cite{Fekete}. Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus.
+\subsubsection{Leírás}
+ A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest\cite{Fekete}. Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus.
+\subsubsection{Működés}
+A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek.
 
 \subsection{Shell rendezés}
-Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. A teljesség igénye nélkül néhány ajánlás\cite{ShellWiki} erre vonatkozóan:\par
+\subsubsection{Leírás}
+Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Az eredeti algoritmus időkomplexitása a legrosszabb esetben $\Theta(n^2)$.
+\subsubsection{Működés}
+Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. A teljesség igénye nélkül néhány ajánlás\cite{ShellWiki} erre vonatkozóan:\par
 \begin{table}[h]
 	\def\arraystretch{2}
 	\centering
@@ -207,10 +249,13 @@ Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes ide
 		$\left\lceil \frac{9^k-4^k}{5\cdot4^{k-1}} \right\rceil$& 1, 4, 9, 20, $\ldots$ &             Nem ismert                       & Tokuda, 1992	\\ \hline
 	\end{tabular}
 \end{table}
- Az eredeti algoritmus időkomplexitása a legrosszabb esetben $\Theta(n^2)$. A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program Vaughan Ronald Pratt által javasolt értékeket\cite{Pratt} használja, így legrosszabb esetben is $\Theta(n \log^2 n)$ a műveletek száma.
+\subsubsection{Műveletigény}
+ A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program Vaughan Ronald Pratt által javasolt értékeket\cite{Pratt} használja, így legrosszabb esetben is $\Theta(n \log^2 n)$ a műveletek száma.
 
 \subsection{Gyorsrendezés}
-C.A.R. Hoare\cite{Horae} alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.\par
+\subsubsection{Leírás}
+C.A.R. Hoare\cite{Horae} alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.
+\subsubsection{Működés}
 Helyben rendező, oszd meg és uralkodj\cite{Cormen} elven működő rekurzív algoritmus. A következő négy lépésre bontható fel az rendezés:
 \begin{description}
 	\item[$\bullet$] Ha csak egy vagy nulla elemű az elemzett rész, akkor ne tegyünk semmit.
@@ -218,10 +263,12 @@ Helyben rendező, oszd meg és uralkodj\cite{Cormen} elven működő rekurzív a
 	\item[$\bullet$] A rendezendő részt vágjuk ketté, az egyik oldalára a vezérelemtől kisebb, míg a másikra a nagyobb elemek kerüljenek.
 	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket a résztömbökön.
 \end{description}
+\subsubsection{Műveletigény}
 A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása. Az egyszerűbb megérthetőséget szem előtt tartva a program mindig a legjobboldalibb elemet szelektálja.\par
  A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legmegfelelőbb választás ha számít a rendezés sebessége. Azonban ha a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem hatékony\cite{Cormen}. Ezekben az esetekben ajánlatos másik algoritmust használni.
 
 \subsection{Kupacrendezés}
+\subsubsection{Leírás}
 Az $\mathcal{O}(n\log n)$ algoritmusok közül az egyik leglassabb, előnye a gyorsrendezéssel szemben, hogy nem erőteljesen rekurzív. Ennél fogva jól alkalmazható milliós nagyságrendű bemenetre. Ahogyan a neve is sugallja, a rendezéshez egy kupac adatszerkezetet használ. Az algoritmus ismertetése előtt definiáljuk a kupac fogalmát\cite{Fekete}:
 Olyan bináris fa, amelyre a következők teljesülnek:
 \begin{description}
@@ -230,10 +277,12 @@ Olyan bináris fa, amelyre a következők teljesülnek:
 	\item[$\bullet$] Minden belső csúcs értéke nagyobb vagy egyenlő, mint a gyerekeinek értékei.
 \end{description}
 A második pont értelmében egyetlen olyan csúcs lehet, amelynek csak egy gyereke van, és az közvetlenül a levélszint felett kell, hogy elhelyezkedjen.\par
+\subsubsection{Működés}
 A rendezés az előbbi tulajdonságokra támaszkodik. 
 Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét áthelyezi a kupac "végére". Ezt követően ellenőrzi a kupac tulajdonságokat, ahol szükséges cseréket hajt végre, hogy helyreálljon a kupac adatszerkezet, ekkor már az utolsó legjobboldalibb levélelem nem vesz részt a kupacépítésben. A gyökérben található elemet a legjobboldalibb levélelem elé helyezi, és újraépíti a kupacot. Ezen lépések addig ismétlődnek, amíg már a maximális elem áthelyezése nem lehetséges, a kupac "végére" helyezési művelet elérte a gyökeret.\par
 
 \subsection{Versenyrendezés}
+\subsubsection{Leírás}
 A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest"\cite{Fekete}. A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel\cite{Fekete}. \par
 Az algoritmus által használt adatszerkezet egy teljes bináris fa. A bináris fa leveleiben szerepelnek a rendezendő elemek. Az első speciális menetben a fa belső pontjait kitöltjük, úgy, hogy a pontba a gyerekei közüli nagyobb érték kerül.\par 
 Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére. Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére. Ezzel ellentétben a gyakorlatban ez az érték $-\infty$. Majd ezen az "ágon" újrajátsszuk a mérkőzéseket.
@@ -241,12 +290,18 @@ Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben találha
 A rendezés egyetlen hátránya a tárigénye, $n$ szám esetén további $n-1$ mezőre szükség van a versenyfa elkészítéséhez. Éppen emiatt a gyakorlatban nem sűrűn használt eljárás.
 
 \subsection{Radix "előre"}
-Az előzőekben ismertetett algoritmusok mindegyike összehasonlításon alapuló rendezés. A radix rendezés viszont az edényrendezések közé tartozik. Ezen rendezések nem hasonlítják össze az elemeket, hanem az elemek az értéküknek megfelelő edényekbe kerülnek. Az edényrendezések eredményeként rendezett adatsorozatot kapunk lineáris időben. A radix rendezés egy rekurzív algoritmus, melynek minden szintjén létrejönnek az edények.\par
+\subsubsection{Leírás}
+Az előzőekben ismertetett algoritmusok mindegyike összehasonlításon alapuló rendezés. A radix rendezés viszont az edényrendezések közé tartozik. Ezen rendezések nem hasonlítják össze az elemeket, hanem az elemek az értéküknek megfelelő edényekbe kerülnek. Az edényrendezések eredményeként rendezett adatsorozatot kapunk lineáris időben. 
+A radix rendezés egy rekurzív algoritmus, melynek minden szintjén létrejönnek az edények.\par
 Az általános edényrendezés egy speciális változata a radix előre rendezés, bináris, $d$ hosszú számokra.\par
+\subsubsection{Működés}
 Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A vizsgálat két mutatóval történik, melyek a tömb két végéről indulnak. A tömb elején addig halad a mutató, amíg a vizsgált elem első jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek első jegye 0. Amennyiben talált ilyen elemeket megcseréli őket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik. Ekkor kialakul két edény, az elsőben a 0-ás kezdőbittel rendelkező számok, míg a másodikban az 1-essel kezdődő elemek foglalnak helyet. Ezt követően a második bit kerül vizsgálatra az "aledényekben", az előzővel azonos módon. A rendezés befejeződött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
 
 \subsection{Radix "vissza"}
-Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat.\par Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot. Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált számjegye 1-es. Ezt követően a 0-ás edényt az elejéről olvasva feltöltjük újra az eredeti tömböt az előbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtől előrefelé haladva töltjük át az értékeket.
+\subsubsection{Leírás}
+Az algoritmus rövid ismertetője megegyezik a \textbf{Radix "előre"} rendezés leírásával.
+\subsubsection{Működés}
+Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat.\par Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot. Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált számjegye 1-es. Ezt követően a 0-ás edényt az elejéről olvasva feltöltjük újra az eredeti tömböt az előbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtől visszafelé haladva töltjük át az értékeket.
 
 \chapter{Fejlesztői dokumentáció}
 
@@ -277,7 +332,7 @@ A fejlesztés \emph{Eclipse SDK 4.4} fejlesztői környezet keretei között tö
 A program elkészítése során a kódolást segítő funkció volt a kódkiegészítés, továbbá az egyik beépített projektmenedzsment eszköz(\emph{EGit}).\par
 A fejlesztéshez elengedhetetlen a \emph{Java SE 8u40} vagy magasabb verziójú szoftver. Továbbá a fejlesztést nagyban elősegítette a \emph{JavaFX Scene Builder 2.0}, melynek segítségével egyszerűen megtervezhetővé váltak a grafikus felület komponensei.\par
 Végül a telepítési környezet létrehozásához \emph{Ant} és \emph{InnoSetup} eszközök kerültek felhasználásra.
-Az egész projekt, beleértve e dokumentumot is megtalálható, és az egyes verziók visszakövethetők a GitHub-on: \url{https://github.com/marfoldi/SRTNGLGRTHMS}\par
+Az egész projekt, beleértve e dokumentumot is megtalálható, és az egyes verziók visszakövethetők a \emph{GitHub}-on: \url{https://github.com/marfoldi/SRTNGLGRTHMS}\par
 A program fejlesztése során egyedüli külső függvénykönyvtár a \emph{JUnit} volt, melynek segítségével egységtesztek készültek.
 
 \section{Használati esetek}

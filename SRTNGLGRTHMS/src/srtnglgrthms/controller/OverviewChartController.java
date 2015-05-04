@@ -20,7 +20,7 @@ import javafx.scene.chart.XYChart.Series;
 import javafx.scene.text.Text;
 
 /**
- * 
+ *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class OverviewChartController {
@@ -102,13 +102,13 @@ public class OverviewChartController {
 		node.setOpacity(1);
 		switch (color) {
 		case "default":
-			node.setStyle("-fx-bar-fill: #f3622d;");
+			node.setStyle("-fx-bar-fill: #F3622D;");
 			break;
 		case "swap":
-			node.setStyle("-fx-bar-fill: #4258c9;");
+			node.setStyle("-fx-bar-fill: #4258C9;");
 			break;
 		case "select":
-			node.setStyle("-fx-bar-fill: #57b757;");
+			node.setStyle("-fx-bar-fill: #57B757;");
 			break;
 		case "done":
 			node.setStyle("-fx-bar-fill: #8C2D46;");
