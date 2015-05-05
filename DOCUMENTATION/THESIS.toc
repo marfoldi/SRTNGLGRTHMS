@@ -3,7 +3,7 @@
 \contentsline {chapter}{\numberline {1.}Bevezet\IeC {\'e}s}{1}
 \contentsline {section}{\numberline {1.1.}A feladat \IeC {\'e}s annak \IeC {\'e}rtelmez\IeC {\'e}se}{1}
 \contentsline {section}{\numberline {1.2.}Alkalmazott technol\IeC {\'o}gi\IeC {\'a}k}{1}
-\contentsline {subsection}{\numberline {1.2.1.}A Java-r\IeC {\'o}l r\IeC {\"o}viden}{1}
+\contentsline {subsection}{\numberline {1.2.1.}Java}{1}
 \contentsline {subsection}{\numberline {1.2.2.}JavaFX}{2}
 \contentsline {subsection}{\numberline {1.2.3.}JUnit}{2}
 \contentsline {chapter}{\numberline {2.}Felhaszn\IeC {\'a}l\IeC {\'o}i dokument\IeC {\'a}ci\IeC {\'o}}{3}
@@ -39,27 +39,28 @@
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{10}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{10}
 \contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{10}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek a diagramon}{11}
 \contentsline {subsection}{\numberline {2.3.2.}Besz\IeC {\'u}r\IeC {\'o} rendez\IeC {\'e}s}{11}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{11}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{11}
-\contentsline {subsection}{\numberline {2.3.3.}Shell rendez\IeC {\'e}s}{11}
-\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{11}
-\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{11}
-\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{11}
-\contentsline {subsection}{\numberline {2.3.4.}Gyorsrendez\IeC {\'e}s}{12}
+\contentsline {subsection}{\numberline {2.3.3.}Shell rendez\IeC {\'e}s}{12}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{12}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{12}
 \contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{12}
+\contentsline {subsection}{\numberline {2.3.4.}Gyorsrendez\IeC {\'e}s}{12}
+\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{12}
+\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{12}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{13}
 \contentsline {subsection}{\numberline {2.3.5.}Kupacrendez\IeC {\'e}s}{13}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{13}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{13}
-\contentsline {subsection}{\numberline {2.3.6.}Versenyrendez\IeC {\'e}s}{13}
-\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{13}
+\contentsline {subsection}{\numberline {2.3.6.}Versenyrendez\IeC {\'e}s}{14}
+\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{14}
 \contentsline {subsection}{\numberline {2.3.7.}Radix "el\IeC {\H o}re"}{14}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{14}
-\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{14}
-\contentsline {subsection}{\numberline {2.3.8.}Radix "vissza"}{14}
-\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{14}
+\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{15}
+\contentsline {subsection}{\numberline {2.3.8.}Radix "vissza"}{15}
+\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{15}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{15}
 \contentsline {chapter}{\numberline {3.}Fejleszt\IeC {\H o}i dokument\IeC {\'a}ci\IeC {\'o}}{16}
 \contentsline {section}{\numberline {3.1.}Tervez\IeC {\'e}s \IeC {\'e}s megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{16}
@@ -69,3 +70,4 @@
 \contentsline {section}{\numberline {3.2.}Haszn\IeC {\'a}lati esetek}{18}
 \contentsline {section}{\numberline {3.3.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{18}
 \contentsline {subsection}{\numberline {3.3.1.}Modell oszt\IeC {\'a}lyok}{19}
+\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{20}

@@ -22,7 +22,7 @@ public class OverviewTableController {
 	@FXML
 	private void initialize() {
 		// Initialize the counter info table with the two columns.
-		tableView.setPlaceholder(new Label("Nincs megjeleníthetõ tulajdonság"));
+		tableView.setPlaceholder(new Label("Nincs megjeleníthetõ adat"));
 		nameColumn.prefWidthProperty().bind(
 				tableView.widthProperty().multiply(0.70));
 		valueColumn.prefWidthProperty().bind(

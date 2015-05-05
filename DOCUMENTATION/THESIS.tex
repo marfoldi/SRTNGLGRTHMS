@@ -7,6 +7,7 @@
 \usepackage{ucs}
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
+\usepackage[nottoc,numbib]{tocbibind}
 \usepackage[T1]{fontenc}
 \usepackage[english,hungarian]{babel}
 \selectlanguage{hungarian}
@@ -32,6 +33,7 @@
 \frontmatter
 
 	\maketitle
+	\renewcommand{\thepage}{\Roman{page}}
 	\tableofcontents\thispagestyle{fancy}
 	
 \mainmatter
@@ -45,7 +47,7 @@ Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmány
 
 \section{Alkalmazott technológiák}
 A Következőkben röviden összefoglaljuk a \emph{Java}\cite{Java}, \emph{JavaFX}\cite{JavaFX} és \emph{JUnit}\cite{JUnit} jellegzetességeit.
-\subsection{A Java-ról röviden}
+\subsection{Java}
 A \emph{Java} egy általános célú, objektumorientált programozási nyelv, melyet 2009-ig a \emph{Sun Microsystems} fejlesztett, ezt követően pedig az \emph{Oracle}. A szakdolgozatban használt 1.8-as verziót már az \emph{Oracle} adta ki 2014-ben. A \emph{Java} nyelv a szintaxisát a \emph{C} és \emph{C++} nyelvektől örökölte, azonban utóbbitól eltérően egyszerű objektummodellel rendelkezik. \par
  A \emph{Java} platformra készült programok túlnyomó többsége asztali alkalmazás. Manapság egyre több helyen találkozhatunk a \emph{Java} nyelven írt programokkal, például mobil eszközökön, banki rendszereknél vagy akár egy szórakoztató elektronikai eszközön. Nagy előnye, hogy sok nyelvvel ellentétben platformfüggetlen, azaz egy adott platformról egy program minimális változtatással átültethető egy másik platformra. \par
  A \emph{Java} legfontosabb része a \emph{Java virtuális gép (JVM)}. A \emph{JVM}-et sokféle berendezés és szoftvercsomag tartalmazza, így a nyelv egyaránt platformként és középszintként is működik.
@@ -107,7 +109,8 @@ A rendszer fejlesztése a következő ajánlott konfiguráción történt:
 \end{table}
 
 \subsection{Telepítés és eltávolítás}
-Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gondoskodnia a felhasználónak, ezen felül más program telepítésére nincs szükség. Azonban, mivel elsősorban \emph{Windows} operációs rendszeren történő futtatásra lett felkészítve a program, ezt az operációs rendszert használók választhatják a kényelmesebb, natív telepítéses megoldást. Elsőként a programhoz készült telepítővel történő konfigurálást vesszük végig, majd ezt követően a \emph{Java} programokra inkább jellemzőbb, ám körülményesebb telepítési mód kerül bemutatásra.\par Bármely módszert is szándékozik követni a felhasználó, először győződjön meg róla, hogy az előzőekben ismertetett rendszerkövetelményeknek megfelel a számítógépe.
+Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gondoskodnia a felhasználónak, ezen felül más program telepítésére nincs szükség. Azonban, mivel elsősorban \emph{Windows} operációs rendszeren történő futtatásra lett felkészítve a program, ezt az operációs rendszert használók választhatják a kényelmesebb, natív telepítéses megoldást. Elsőként a programhoz készült telepítővel történő konfigurálást vesszük végig, majd ezt követően a \emph{Java} programokra inkább jellemzőbb, ám kissé körülményesebb telepítési mód kerül bemutatásra. Végül röviden összefoglaljuk a program eltávolításához szükséges lépéseket.
+\par Bármely módszert is szándékozik követni a felhasználó, először győződjön meg róla, hogy az előzőekben ismertetett rendszerkövetelményeknek megfelel a számítógépe
 
 \subsubsection{Telepítés natív telepítővel}
 Ez a telepítési mód csak a \emph{Windows}-t használók számára érhető el.\par
@@ -121,7 +124,7 @@ Fogadjuk el a licencszerződést, töltsük le a \emph{JRE} telepítőfájlt. Ha
 
 \subsubsection{Eltávolítás}
 A program törlése az utóbb ismertetett telepítési mód esetében mindössze annyiból áll, hogy a \textbf{SRTNGLGRTHMS.jar} fájlt eltávolítjuk, valamint amennyiben a jövőben nincs igény a \emph{Java} futtatási környezet használatára, úgy a felhasználó eltávolíthatja azt.
-\emph{Windows}-on történő natív telepítés után a \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash uninstall.exe} \par futtatása után a program törlődik a számítógépről.
+\emph{Windows}-on történő natív telepítést követően a program telepítési könyvtárában található \textbf{unins000.exe} fájlt futtatva, majd az \textbf{Igen} gombra kattintva a program törlődik a számítógépről.
 
 \section{Felhasználói felület bemutatása}
 \subsection{Főmenü}
@@ -143,39 +146,39 @@ Ezek közül bármelyre kattintva átnavigálhatunk a bement megadását lehető
 Az előzőekben említett három lehetőség közül választhat a felhasználó.
 
 \subsubsection{Manuális}
-A megjelenő panelen két gomb található, melyek kezdetben inaktívak. A "Méret:" címke után található beviteli mezőbe történő pozitív egész szám beírását követően és az \textbf{ENTER} billentyűt leütve megjelennek a számok bevitelére lehetőséget adó mezők. Ezt követően a panelen található két gomb már kattintható, a \textbf{Számok generálása} gombra kattintva 0 és 100 közötti véletlen számokkal tölti fel a beviteli mezőket a program. Az \textbf{Ok} gombra történő kattintás után megjelenik a program \textbf{Főpanel}je.\par
-Meg kell jegyezni, hogy ebben a módban legfeljebb száz érték adható meg, ennél nagyobb méretű bemenet manuális feltöltése túl körülményes lenne. Amennyiben több számot szándékozik megadni a felhasználó, válasszon a számok generálása vagy a fájlból történő beolvasás közül.
+A megjelenő panelen két gomb található, melyek kezdetben inaktívak. A "Méret:" címke után található beviteli mezőbe egy pozitív egész szám megadásával és az \textbf{ENTER} billentyű leütésével megjelennek a számok bevitelére lehetőséget adó mezők. Ezt követően a panelen található két gomb már kattintható, a \textbf{Számok generálása} gombra kattintva 0 és 100 közötti véletlen számokkal töltődnek fel a mezők. Az \textbf{Ok}ra történő kattintás után megjelenik a program \textbf{Főpanel}je.\par
+Meg kell jegyezni, hogy ebben a módban legfeljebb száz érték adható meg, ennél nagyobb méretű bemenet manuális feltöltése túl körülményes lenne. Amennyiben több számot szándékozik megadni a felhasználó, válasszon a számok generálása vagy a fájlból történő beolvasás lehetőségek közül.
 
 \subsubsection{Generálás}
 A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legördülő menüből kiválasztva a generálás módját az \textbf{OK} gomb kattinthatóvá válik. A legördülő menüből a következő négy típus közül lehet választani, azaz a generált tömb legyen:
 \begin{description}
 	\item[$\bullet$] Véletlen generált - véletlenszerűen választott számokból álljon
-	\item[$\bullet$] Majdnem rendezett - a tömb 80\%-a már rendezve van
-	\item[$\bullet$] Fordított - a tömb csökkenőleg rendezett
+	\item[$\bullet$] Majdnem rendezett - a tömb 80\%-a már rendezve legyen
+	\item[$\bullet$] Fordított - a tömb legyen csökkenőleg rendezett
 	\item[$\bullet$] Néhány egyedi - a tömb elemei között sok azonos érték szerepeljen
 \end{description}
-Itt megjegyzendő, hogy amennyiben az input mérete az [1,100] intervallumban van, akkor a rendezendő számok 0 és 100 közötti értékek közül kerülnek kiválasztásra. Ennek oka, hogy a túl nagy differencia az egyes értékek között sokat rontana az oszlopdiagramok megjelenésén. Ellenkező esetben a \emph{Java} nyelv által definiált egész típus(\emph{Integer}) maximális értékéig terjedhet a generált számok nagysága.
+Itt megjegyzendő, hogy amennyiben az input mérete az [1,100] intervallumban van, akkor a rendezendő számok a 0 és 100 közötti értékek közül kerülnek kiválasztásra. Ennek oka, hogy a túl nagy differencia az egyes értékek között sokat rontana az oszlopdiagramok megjelenésén. Ellenkező esetben a \emph{Java} nyelv által definiált egész típus(\emph{Integer}) maximális értékéig terjedhet a generált számok nagysága.
  
 \subsubsection{Fájl - fájlból beolvasás}
 A gombra történő kattintás után megjelenik egy fájltallózó. A tallózóban csak szöveges(\emph{txt} kiterjesztésű) fájl választására van lehetőség. A fájl tartalmára történő megszorítások szigorúak. Minden sora legfeljebb egy pozitív egész számot tartalmazhat, ellenkező esetben a program hibaüzenet kíséretében visszatér a főmenübe. Fontos, hogy az előzőek értelmében az üres sorok sem megengedettek.
 
 \subsection{Főpanel}
-A rendezendő számok sikeres megadása után megjelenik a program főpanelje, mely három logikai részből áll. A főpanel magában foglalja a \textbf{Megfigyelés} és \textbf{Összehasonlítás} paneleket, melyek külön alfejezetekben kerülnek részletezésre.
+A rendezendő számok sikeres megadása után megjelenik a program főpanelje, mely három logikai részből áll. A főpanel magában foglalja a \textbf{Megfigyelés} és \textbf{Összehasonlítás} paneleket, melyek összetettségükből fakadóan külön alfejezetekben kerülnek részletezésre.
 \subsubsection{Eszköztár}
 A \textbf{Főmenü}höz hasonlóan itt is jelen van a piros színnel jelzett eszköztár sáv. Itt fontos kiemelni, hogy a \textbf{Fájl} és \textbf{Segítség} pontokon belül további alpontok is elérhetőek:\par
 A \textbf{Fájl} menüpont bővül a \textbf{Vissza a főmenübe} lehetőséggel, melynek segítségével a program újraindítása nélkül lehetőség van újabb rendezendő számsorozat megadására.\par
-A \textbf{Segítség}re kattintva pedig megjelenik az \textbf{Algoritmusról} pont. A \textbf{Megfigyelés} panel listájából kiválasztott elemnek elolvashatóvá válik a rövid szöveges ismertetője. Amennyiben pedig az \textbf{Összehasonlítás} panel aktív, akkor e panel táblázatából kiválasztott algoritmus leírása tekinthető meg. Az aktuális panelen ha nem került kiválasztásra sor, akkor a menüpontra történő kattintás után felugró ablak figyelmezteti a felhasználót arról, hogy e menüpont használatához előbb ki kell választani egy algoritmust.
+A \textbf{Segítség}re kattintva további lehetőségként választható az \textbf{Algoritmusról} pont. Itt elolvasható a rövid szöveges ismertetője a \textbf{Megfigyelés} panel listájából kiválasztott elemnek. Amennyiben pedig az \textbf{Összehasonlítás} panel aktív, akkor e panel táblázatából kiválasztott algoritmus leírása tekinthető meg. Az aktuális panelen ha nem került kiválasztásra sor, akkor a menüpontra történő kattintás után felugró ablak figyelmezteti a felhasználót arról, hogy e menüpont használatához előbb ki kell választani egy algoritmust.
 \subsubsection{Panelválasztó}
-Amennyiben a bemenet megadásánál már ismertetett [1,100] intervallum magában foglalja a bemenet hosszát, akkor két elem látható a sárgával jelölt részen. Így lehetősége van a felhasználónak navigálni a \textbf{Megfigyelés} és az \textbf{Összehasonlítás} panel között. Ellenkező esetben csak az előbb említett panel jelenik meg. Az aktuálisan megjelenített felület neve a listában kék kerettel jelenik meg, valamint a másik elemhez képest világosabb szürke színnel.
+Amennyiben a bemenet megadásánál már ismertetett [1,100] intervallum magában foglalja a bemenet hosszát, akkor két elem látható a sárgával jelölt részen. Így lehetősége van a felhasználónak navigálni a \textbf{Megfigyelés} és az \textbf{Összehasonlítás} panel között. Ellenkező esetben csak az utóbbi panel jelenik meg. Az aktuálisan megjelenített felület neve a listában kék kerettel jelenik meg, valamint a másik elemhez képest világosabb szürke színnel.
 \subsubsection{Panel}
-A harmadik logikai egységet alkotják a panelek - kék színnel jelölve -, melyek közötti váltást a \textbf{Panelválasztó} teszi lehetővé. Amennyiben a bemenet száz, vagy annál kevesebb elemet tartalmaz az aktuális futáshoz megjelenik a \textbf{Megfigyelés} panel, melyen lehetőség van az algoritmus lépésenkénti lejátszására. Ellenkező esetben csak a műveletigények összehasonlítására adott a lehetőség. Mivel részletesebb leírást kíván a panelek ismertetése, ezért egy-egy külön alfejezetben kerülnek bemutatásra.
+A harmadik logikai egységet alkotják a panelek - kék színnel jelölve -, melyek közötti váltást a \textbf{Panelválasztó} teszi lehetővé. Mivel részletesebb leírást kíván a panelek ismertetése, ezért egy-egy külön alfejezetben kerülnek bemutatásra.
 
 \subsection{Megfigyelés panel}
 A főpanel középső területén foglal helyet, négy komponensből tevődik össze. A felhasználónak itt nyílik lehetősége az egyes algoritmusok megfigyelésére, tanulmányozására.
 \subsubsection{Algoritmus lista}
 Az ábrán piros színnel jelölt rész, melynek elemeire kattintva kiválasztható, hogy mely algoritmust szeretné a felhasználó vizsgálni. A kiválasztott elem kék háttérszínt kap, alapértelmezett esetben nincs kijelölt elem.
 \subsubsection{Állapotjelző táblázat}
-A kiválasztott algoritmus aktuális állapotához tartozó információk jelennek meg a táblázatban. Az ábrán zöld kerettel jelölt komponens. Amennyiben nincs kiválasztott elem a \textbf{Nincs megjeleníthető adat} szöveg jelenik meg.\par
+A kiválasztott algoritmus aktuális állapotához tartozó információk jelennek meg a táblázatban. Az ábrán zöld kerettel van jelölve a komponens. Amennyiben nincs kiválasztott elem a \textbf{Nincs megjeleníthető adat} szöveg jelenik meg.\par
 Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéket jelöli. Alapvetően az összehasonlításon alapuló algoritmusoknál megjelenő adatok az összehasonlítások és cserék vagy mozgatások száma. Az edényrendezéseknél pedig az aktuálisan vizsgált bit indexe és a vizsgálatok száma jelenik meg. Egyes algoritmusokhoz a jobb megérhetőség miatt további állapotjelző értékek is tartoznak, melyek a következők:
 \begin{table}[h]
 	\centering
@@ -188,7 +191,8 @@ Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéke
 	\end{tabular}
 \end{table}
 \subsubsection{Gombok}
-Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak.
+Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak. A léptetéssel egy következő állapotot tekinthet meg a felhasználó. A \textbf{Lejátszás} gombra kattintva a program bemutatja az algoritmus működését. A felhasználó bármikor megállíthatja az animációt a \textbf{Lejátszás} gomb helyén található \textbf{Megállítás} gombra kattintva, majd ha kívánja innen folytathatja a vizsgálatot. Amennyiben a rendezés lezajlott, megjelenik az \textbf{Újraindítás} gomb, melynek megnyomásával az értékek visszakerülnek az eredeti helyükre.
+
 \subsubsection{Állapotjelző felület}
 Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} kiválasztásakor egy gráf is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy plusz oszlopdiagram is megjelenik. Az egyes műveleteket különböző színek is jelölik. Alapértelmezetten a rendezendő elemek színe a következőket jelentik:\par
 \begin{description}
@@ -198,7 +202,7 @@ Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal h
 	\item[\textcolor{done}{\Huge$\bullet$}] Az elem már a végleges helyére került.
 \end{description}
 A \textcolor{select}{\Huge$\bullet$} jelölés némi magyarázatra szorul. A kitüntetett szerepű elemnek számít például a gyorsrendezés vezéreleme, vagy a versenyrendezés fájának felépítésekor egy belső csúcsba kerülő elem.\par
-Némely algoritmusnál a fentiektől eltérő lehet az egyes színek jelentése. A következő fejezetben, az algoritmusok ismertetésénél jelölve van minden ilyesfajta különbség.
+Némely algoritmusnál a fentiektől eltérő lehet az egyes színek jelentése. A következő fejezetben(2.3), az algoritmusok ismertetésénél jelölve van minden ilyesfajta különbség.
 \subsection{Összehasonlítás panel}
 A \textbf{Megfigyelés panel}lel megegyezően a főpanel középső részén található, két logikai egységből épül fel. Lehetőséged ad az összehasonlításon alapuló rendezések műveletigényeinek a vizsgálására.
 \subsubsection{Elemzés táblázat}
@@ -211,7 +215,7 @@ Piros kerettel jelölt rész az ábrán, mely táblázatnak négy oszlopa van:
 \end{description}
 Itt megjegyzendő, hogy a \textbf{Mozgatások} oszlop minden esetben kitöltésre kerül, még ha az algoritmus nem is mozgatásokat használ. Ekkor a mozgatások oszlopban a cserék számának háromszorosa jelenik meg. Ennél fogva egyszerűbb az algoritmusok vizsgálata.
 \subsubsection{Elemzés diagram}
-A táblázathoz képest balra helyezkedik el a zöld kerettel jelölt oszlopdiagram. Kezdetben teljesen üres, csak a jelölések jelentése látható. A táblázat egy elemén történő dupla kattintás következtében megjelenik az algoritmus összehasonlításainak és mozgatásainak a száma. Előbbi narancs- utóbbi citromsárga színnel. Amennyiben olyan sorra kattint a felhasználó, mely már látható a diagramon, azon algoritmus adatai eltűnnek a felületről.
+A táblázathoz képest balra helyezkedik el a zöld kerettel jelölt oszlopdiagram. Kezdetben teljesen üres, csak a jelölések jelentése látható. Az \textbf{Elemzés táblázat} egy során történő dupla kattintás következtében megjelenik az algoritmus összehasonlításainak és mozgatásainak a száma. Előbbi narancs- utóbbi citromsárga színnel. Amennyiben olyan sorra kattint a felhasználó, mely már látható a diagramon, azon algoritmus adatai eltűnnek a felületről.
 
 \section{A vizsgált algoritmusok}
 \subsection{Buborékrendezés}
@@ -222,15 +226,18 @@ A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöb
  \subsubsection{Műveletigény}
 Párosával haladunk végig az elemeken, és így vizsgáljuk őket. Mivel minden menet végén visszavezetjük a problémát az eggyel rövidebb feladatra, ezért az összehasonlítások száma $n$ hosszú bemenetre:\par
 $$\ddot{O}(n)=(n-1)+(n-2)+\ldots+1=\frac{n(n-1)}{2}=\frac{n^2}{2}-\frac{n}{2}=\Theta(n^2)$$
-A cserék száma már nem állandó, a bemenő adatok inverziószámával egyezik meg. Belátható, hogy minden egyes cserével egy inverzió szüntethető meg két elem között. A legtöbb cserét akkor szükséges eszközölni, ha a rendezendő elemek mindegyike inverzióban áll a rákövetkező elemmel, azaz a tömb nagyság szerint csökkenő sorrendben rendezett. Ekkor a cserék száma:\par
+\par A cserék száma már nem állandó, a bemenő adatok inverziószámával egyezik meg. Belátható, hogy minden egyes cserével egy inverzió szüntethető meg két elem között. A legtöbb cserét akkor szükséges eszközölni, ha a rendezendő elemek mindegyike inverzióban áll a rákövetkező elemmel, azaz a tömb nagyság szerint csökkenő sorrendben rendezett. Ekkor a cserék száma:\par
 $$MCs(n)=\frac{n(n-1)}{2}=\Theta(n^2)$$
 Amennyiben a tömb elemei már rendezettek, akkor egyetlen cserét sem szükséges végrehajtani.
+\subsubsection{Jelölések a diagramon}
+Kitüntetettnek (\textcolor{select}{\Huge$\bullet$} színnel) jelöljük azt az elemet, amely egy csere következtében feljebb került.
 
 \subsection{Beszúró rendezés}
 \subsubsection{Leírás}
- A legtöbb esetben akár kétszer hatékonyabb a Buborékrendezéshez képest\cite{Fekete}. Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus.
+ A legtöbb esetben akár kétszer hatékonyabb a buborékrendezéshez képest\cite{Fekete}. Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus. Az elve egyszerűen megérthető egy hétköznapi példán keresztül: A kezünkben tartunk kártyalapokat, majd egy pakliból húzva az új lapot beszúrjuk a kezünkben lévő, már rendezett lapok közé.
 \subsubsection{Működés}
-A nevéből egyszerűen kikövetkeztethető az eljárás: beszúrja az elemeket a megfelelő helyükre a végleges tömbbe. Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömb elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek.
+Az előzőekben említett hétköznapi példa arra enged következtetni, hogy két tömbre van szükségünk a rendezés megvalósításához, ezzel ellentétben az algoritmusnak van helyben rendező változata. Két részre bontjuk a tömböt, az egyik részén - a tömb bal széle - a már rendezett, míg a másikon a még nem vizsgált elemek szerepelnek.\par
+Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömbrész elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek.
 
 \subsection{Shell rendezés}
 \subsubsection{Leírás}
@@ -365,7 +372,6 @@ A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rend
 	\end{tabular}
 \end{table}
 Elsőként a \textbf{algorithm} csomagot részletezzük, röviden az alábbi táblázat foglalja össze a benne található osztályok feladatait:
-
 
 \begin{thebibliography}{widest entry}
 \bibitem{Java}

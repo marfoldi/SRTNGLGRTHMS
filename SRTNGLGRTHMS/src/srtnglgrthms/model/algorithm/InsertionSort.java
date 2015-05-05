@@ -71,6 +71,8 @@ public class InsertionSort extends ChartAlgorithm {
 				counterData.get(1).incValue();
 				OverviewChartController.setColor(
 						data.get(innerIndex).getNode(), "swap");
+				OverviewChartController.setColor(
+						data.get(innerIndex).getNode(), "fade");
 				OverviewChartController.setColor(data.get(innerIndex - 1)
 						.getNode(), "select");
 				if (innerIndex > 0)
