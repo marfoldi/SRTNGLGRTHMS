@@ -194,7 +194,8 @@ Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéke
 Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak. A léptetéssel egy következő állapotot tekinthet meg a felhasználó. A \textbf{Lejátszás} gombra kattintva a program bemutatja az algoritmus működését. A felhasználó bármikor megállíthatja az animációt a \textbf{Lejátszás} gomb helyén található \textbf{Megállítás} gombra kattintva, majd ha kívánja innen folytathatja a vizsgálatot. Amennyiben a rendezés lezajlott, megjelenik az \textbf{Újraindítás} gomb, melynek megnyomásával az értékek visszakerülnek az eredeti helyükre.
 
 \subsubsection{Állapotjelző felület}
-Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} kiválasztásakor egy gráf is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy plusz oszlopdiagram is megjelenik. Az egyes műveleteket különböző színek is jelölik. Alapértelmezetten a rendezendő elemek színe a következőket jelentik:\par
+Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} kiválasztásakor egy gráf is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy plusz oszlopdiagram is megjelenik. Itt megjegyzendő, hogy a szemléltetéshez használt bináris fa legfeljebb 31 csúcsot tartalmazhat. Hosszabb bemenet megadásakor csak az első 31 elem vesz részt a megjelenítésben.
+\par Az egyes műveleteket különböző színek is jelölik. Alapértelmezetten a rendezendő elemek színe a következőket jelentik:\par
 \begin{description}
 	\item[\textcolor{default}{\Huge$\bullet$}] Az alapértelmezett szín, nincs kijelölve az elem.
 	\item[\textcolor{swap}{\Huge$\bullet$}] Az elem cserére vagy mozgatásra van kijelölve.
@@ -222,26 +223,38 @@ A táblázathoz képest balra helyezkedik el a zöld kerettel jelölt oszlopdiag
 \subsubsection{Leírás}
 A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.
 \subsubsection{Működés}
- A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Mindezt addig, amíg nincs egy olyan menet, amelyben egyetlen elem sem cserél helyet. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Az algoritmus javítható azzal, hogy nem vizsgáljuk meg minden menetben a tömb összes elemét, hanem amennyiben egy menet maximális eleme elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}.
+ A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Amennyiben egy menetben a maximális eleme elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}. Az algoritmus javítható azzal, ha figyeljük, hogy az egyes menetekben történt-e csere. Amennyiben egy olyan menet végére értünk, amelyben egy elem sem cserélt helyet, akkor a tömb már rendezve van. A program az eredeti, nem javított verziót mutatja be.
  \subsubsection{Műveletigény}
 Párosával haladunk végig az elemeken, és így vizsgáljuk őket. Mivel minden menet végén visszavezetjük a problémát az eggyel rövidebb feladatra, ezért az összehasonlítások száma $n$ hosszú bemenetre:\par
-$$\ddot{O}(n)=(n-1)+(n-2)+\ldots+1=\frac{n(n-1)}{2}=\frac{n^2}{2}-\frac{n}{2}=\Theta(n^2)$$
+$$\ddot{O}(n)=(n-1)+(n-2)+\ldots+1=\frac{n\cdot(n-1)}{2}=\frac{n^2}{2}-\frac{n}{2}=\Theta(n^2)$$
 \par A cserék száma már nem állandó, a bemenő adatok inverziószámával egyezik meg. Belátható, hogy minden egyes cserével egy inverzió szüntethető meg két elem között. A legtöbb cserét akkor szükséges eszközölni, ha a rendezendő elemek mindegyike inverzióban áll a rákövetkező elemmel, azaz a tömb nagyság szerint csökkenő sorrendben rendezett. Ekkor a cserék száma:\par
-$$MCs(n)=\frac{n(n-1)}{2}=\Theta(n^2)$$
+$$MCs(n)=\frac{n\cdot(n-1)}{2}=\Theta(n^2)$$
 Amennyiben a tömb elemei már rendezettek, akkor egyetlen cserét sem szükséges végrehajtani.
-\subsubsection{Jelölések a diagramon}
+Az átlagos csereszám a maximális cserék számának fele\cite{Fekete}, ám nagyságrendileg még ez is $\Theta(n^2)$
+\subsubsection{Jelölések az állapotjelző felületen}
 Kitüntetettnek (\textcolor{select}{\Huge$\bullet$} színnel) jelöljük azt az elemet, amely egy csere következtében feljebb került.
 
 \subsection{Beszúró rendezés}
 \subsubsection{Leírás}
- A legtöbb esetben akár kétszer hatékonyabb a buborékrendezéshez képest\cite{Fekete}. Továbbá kis (néhány száz) elemszámú bemenetre az egyik leghatékonyabb algoritmus. Az elve egyszerűen megérthető egy hétköznapi példán keresztül: A kezünkben tartunk kártyalapokat, majd egy pakliból húzva az új lapot beszúrjuk a kezünkben lévő, már rendezett lapok közé.
+ A legtöbb esetben akár kétszer hatékonyabb a buborékrendezéshez képest\cite{Fekete}. Az elve egyszerűen megérthető egy hétköznapi példán keresztül: A kezünkben tartunk kártyalapokat, majd egy pakliból húzva az új lapot beszúrjuk a kezünkben lévő, már rendezett lapok közé. Ennélfogva szokás kártyás rendezésnek is nevezni.
 \subsubsection{Működés}
-Az előzőekben említett hétköznapi példa arra enged következtetni, hogy két tömbre van szükségünk a rendezés megvalósításához, ezzel ellentétben az algoritmusnak van helyben rendező változata. Két részre bontjuk a tömböt, az egyik részén - a tömb bal széle - a már rendezett, míg a másikon a még nem vizsgált elemek szerepelnek.\par
-Lényege, hogy a soron következő elemet egy ideiglenes változóba mentjük, és a rendezett tömbrész elemeit jobbra csúsztatjuk, mindaddig amíg a kiválasztott érték nem kerül a helyére. Kezdetben a tömb első elemét tekintjük rendezettnek.
+Két részre bontjuk a tömböt, az egyik részén - a tömb bal széle - a már rendezett, míg a másikon a még nem vizsgált elemek szerepelnek. Kezdetben a tömb első elemét tekintjük a rendezett résznek.\par
+Lényege, hogy a soron következő elemet - a második elemtől kezdve - egy ideiglenes változóba mentjük, és a rendezett tömbrész elemeit jobbra csúsztatjuk mindaddig, amíg a kiválasztott érték nem kerül a helyére. Ezt n-1 alkalommal ismételve megkapjuk a rendezett tömböt.
+\subsubsection{Műveletigény}
+Legjobb esetben elegendő a második elemtől mindegyik elemet az előtte található értékkel összehasonlítani, vagyis a tömb már eleve rendezett. Ez pontosan n-1 összehasonlítást jelent, azaz:
+$$m\ddot{O}(n)=(n-1)=\Theta(n)$$
+Ebben az esetben pedig egyetlen elemet sem kell mozgatni.\par
+A legrosszabb eset akkor áll fenn, ha a beszúrandó elem minden alkalommal kisebb a már beszúrt elemeknél, azaz a tömb elemei csökkenőleg rendezettek. Ekkor az összehasonlítások száma:
+$$M\ddot{O}(n)=\sum\limits_{i=1}^n i = \frac{(1+(n-1))\cdot(n-1)}{2}=\frac{n\cdot(n-1)}{2}=\Theta(n^2)$$
+Továbbá ekkor a mozgatások száma:
+$$MM(n)=\Theta(n^2)$$
+\subsubsection{Jelölések az állapotjelző felületen}
+A már rendezett tömbrészt \textcolor{done}{\Huge$\bullet$} szín jelöli. Az aktuálisan beszúrandó elem pedig a \textcolor{select}{\Huge$\bullet$} jelölést kapja. A kiválasztott elemmel összehasonlított értékek \textcolor{swap}{\Huge$\bullet$} színt kapnak.\par
+Megjegyzendő, hogy a kitüntetett szerepű avagy beszúrandó elem nem szerepel tömbelemként az összehasonlításkor, csupán a felületen van jelölve a jobb megérthetőség okán.
 
 \subsection{Shell rendezés}
 \subsubsection{Leírás}
-Donald Shell nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Az eredeti algoritmus időkomplexitása a legrosszabb esetben $\Theta(n^2)$.
+\textbf{Donald Shell} nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Az elve az, hogy célszerű lehet előbb a "távolabb" lévő elemeket hasonlítani és mozgatni, mivel így az elemek hamarabb közel kerülhetnek a végleges helyükhöz.
 \subsubsection{Működés}
 Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. A teljesség igénye nélkül néhány ajánlás\cite{ShellWiki} erre vonatkozóan:\par
 \begin{table}[h]
@@ -249,34 +262,42 @@ Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró r
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		\textbf{Szabály (k=1...)} & \textbf{Konkrét értékek}  & \textbf{Legrosszabb eset} & \textbf{Szerző}         \\ \hline
+		\textbf{Szabály (k=1...)} & \textbf{Konkrét értékek}  & \textbf{Műveletigény} & \textbf{Szerző}         \\ \hline
 		$\lfloor n / 2^k \rfloor$&      $\left\lfloor\frac{n}{2}\right\rfloor,
 		\left\lfloor\frac{n}{4}\right\rfloor, \ldots$, 1            &              $\Theta(n^2)$                      & Shell, 1959     \\ \hline
-		$2^p 3^q$ egymást követően & 1, 2, 3, 4, $\ldots$  &               $\Theta(n \log^2 n)$                     & Pratt, 1971     \\ \hline
-		$\left\lceil \frac{9^k-4^k}{5\cdot4^{k-1}} \right\rceil$& 1, 4, 9, 20, $\ldots$ &             Nem ismert                       & Tokuda, 1992	\\ \hline
+		$2^k-1$&      1, 3, 7, 11, $\ldots$           &              $\Theta(n^\frac{3}{2})$                      & Hibbard, 1963    \\ \hline
+		$2^p 3^q$ váltakozva & 1, 2, 3, 4, $\ldots$  &               $\Theta(n \log^2 n)$                     & Pratt, 1971     \\ \hline
 	\end{tabular}
 \end{table}
 \subsubsection{Műveletigény}
- A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program Vaughan Ronald Pratt által javasolt értékeket\cite{Pratt} használja, így legrosszabb esetben is $\Theta(n \log^2 n)$ a műveletek száma.
+ A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program a legrégebbi, \textbf{Donald Shell} által javasolt értékeket\cite{Shell} használja, így legrosszabb esetben $\Theta(n^2)$ a műveletek száma.
+ A legjobb eset akkor áll fenn, ha a tömb elemei már rendezettek, ekkor nincs szükség mozgatásra, az összehasonlítások száma pedig $\Theta(n)$
+\subsubsection{Jelölések az állapotjelző felületen}
+ A felület bemutatásában szereplőkhöz képest nincs eltérés.
 
 \subsection{Gyorsrendezés}
 \subsubsection{Leírás}
-C.A.R. Hoare\cite{Horae} alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.
+\textbf{C.A.R. Hoare}\cite{Horae} alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.
 \subsubsection{Működés}
 Helyben rendező, oszd meg és uralkodj\cite{Cormen} elven működő rekurzív algoritmus. A következő négy lépésre bontható fel az rendezés:
 \begin{description}
 	\item[$\bullet$] Ha csak egy vagy nulla elemű az elemzett rész, akkor ne tegyünk semmit.
 	\item[$\bullet$] Válasszunk egy vezérelemet (legjobb oldalibb elem).
-	\item[$\bullet$] A rendezendő részt vágjuk ketté, az egyik oldalára a vezérelemtől kisebb, míg a másikra a nagyobb elemek kerüljenek.
+	\item[$\bullet$] Osszuk két részre a rendezendő részt, az egyik oldalára a vezérelemtől kisebb, míg a másikra a nagyobb elemek kerüljenek.
 	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket a résztömbökön.
 \end{description}
+Gyakorlatilag szétválasztást eszközölünk, melynek eredményeképp a kiválasztott elemtől kisebb értékek tőle balra, a nagyobbak pedig jobbra helyezkednek el. Az egyszerűbb megérthetőséget szem előtt tartva a program mindig a legjobboldalibb elemet szelektálja.
 \subsubsection{Műveletigény}
-A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\mathcal{O}(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása. Az egyszerűbb megérthetőséget szem előtt tartva a program mindig a legjobboldalibb elemet szelektálja.\par
- A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legmegfelelőbb választás ha számít a rendezés sebessége. Azonban ha a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem hatékony\cite{Cormen}. Ezekben az esetekben ajánlatos másik algoritmust használni.
+A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\Theta(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.\par
+Ha feltételezzük azt, hogy minden rekurzív lépés felezi a tömböt, akkor egy $n\log(n)$ magasságú fával lehet ábrázolni a rekurziót. Továbbá, mivel minden szinten az elemek száma $n$, és ezek particionálásához használt lépésszám $\Theta(n)$ így a legjobb esetben a futási idő $\Theta(n\cdot\log(n))$.\par
+ A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legmegfelelőbb választás ha számít a rendezés sebessége, mivel az átlagos futási ideje - $\mathcal{O}(n\cdot\log(n))$ - közel áll a legjobb futási időhöz\cite{Cormen}.\par
+ Amennyiben a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem túl hatékony az eljárás.
+\subsubsection{Jelölések az állapotjelző felületen}
+A vezérelemet \textcolor{select}{\Huge$\bullet$} szín jelöli. Ahhoz, hogy jobban átlátható legyen, hogy éppen melyik résztömbön folyik a vizsgálat az éppen nem vizsgált rész haloványabb sárga színnel van jelölve.
 
 \subsection{Kupacrendezés}
 \subsubsection{Leírás}
-Az $\mathcal{O}(n\log n)$ algoritmusok közül az egyik leglassabb, előnye a gyorsrendezéssel szemben, hogy nem erőteljesen rekurzív. Ennél fogva jól alkalmazható milliós nagyságrendű bemenetre. Ahogyan a neve is sugallja, a rendezéshez egy kupac adatszerkezetet használ. Az algoritmus ismertetése előtt definiáljuk a kupac fogalmát\cite{Fekete}:
+Az $\mathcal{O}(n\log (n))$ algoritmusok közül az egyik leglassabb, azonban előnye a gyorsrendezéssel szemben, hogy nem erőteljesen rekurzív. Ennél fogva jól alkalmazható milliós nagyságrendű bemenetre. Ahogyan a neve is sugallja, a rendezéshez egy kupac adatszerkezetet használ. Az algoritmus ismertetése előtt definiáljuk a kupac fogalmát\cite{Fekete}:
 Olyan bináris fa, amelyre a következők teljesülnek:
 \begin{description}
 	\item[$\bullet$] Kizárólag a levelek szintjén hiányozhat csúcs, azaz "majdnem teljes".
@@ -286,15 +307,25 @@ Olyan bináris fa, amelyre a következők teljesülnek:
 A második pont értelmében egyetlen olyan csúcs lehet, amelynek csak egy gyereke van, és az közvetlenül a levélszint felett kell, hogy elhelyezkedjen.\par
 \subsubsection{Működés}
 A rendezés az előbbi tulajdonságokra támaszkodik. 
-Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét áthelyezi a kupac "végére". Ezt követően ellenőrzi a kupac tulajdonságokat, ahol szükséges cseréket hajt végre, hogy helyreálljon a kupac adatszerkezet, ekkor már az utolsó legjobboldalibb levélelem nem vesz részt a kupacépítésben. A gyökérben található elemet a legjobboldalibb levélelem elé helyezi, és újraépíti a kupacot. Ezen lépések addig ismétlődnek, amíg már a maximális elem áthelyezése nem lehetséges, a kupac "végére" helyezési művelet elérte a gyökeret.\par
+Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét áthelyezi a kupac "végére". Ezt követően ellenőrzi a kupac tulajdonságokat, ahol szükséges cseréket hajt végre, hogy helyreálljon a kupac adatszerkezet, ekkor már az utolsó, legjobboldalibb levélelem nem vesz részt a kupacépítésben. A gyökérben található elemet a legjobboldalibb levélelem elé helyezi, és újraépíti a kupacot. Ezen lépések addig ismétlődnek, amíg már a maximális elem áthelyezése nem lehetséges, a kupac "végére" helyezési művelet elérte a gyökeret.\par
+\subsubsection{Műveletigény}
+A kupacrendezés egyik további, hogy míg a gyorsrendezésnek legrosszabb esetben a futási ideje $\mathcal{O}(n^2)$, addig itt a futási idő továbbra is $\mathcal{O}(n\cdot\log (n))$. Ennél fogva azon rendszereknél, ahol a négyzetes futási idő elfogadhatatlan inkább kupacrendezést alkalmaznak.
+\subsubsection{Jelölések az állapotjelző felületen}
+Az éppen összehasonlított értékeket \textcolor{swap}{\Huge$\bullet$} jelöli. Amennyiben csere történt a belső csúcsba kerülő érték háttérszíne \textcolor{select}{\Huge$\bullet$} lesz. Ez alól kivétel, ha a gyökérbe került új érték, mivel ekkor már tudjuk az új legnagyobb értéket, ennek a színe \textcolor{done}{\Huge$\bullet$} lesz. Továbbá akkor is ezt a színt használjuk, ha már a tényleges, végleges helyére került egy elem.
 
 \subsection{Versenyrendezés}
 \subsubsection{Leírás}
 A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest"\cite{Fekete}. A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel\cite{Fekete}. \par
+\subsubsection{Működés}
 Az algoritmus által használt adatszerkezet egy teljes bináris fa. A bináris fa leveleiben szerepelnek a rendezendő elemek. Az első speciális menetben a fa belső pontjait kitöltjük, úgy, hogy a pontba a gyerekei közüli nagyobb érték kerül.\par 
-Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére. Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére. Ezzel ellentétben a gyakorlatban ez az érték $-\infty$. Majd ezen az "ágon" újrajátsszuk a mérkőzéseket.
-\par
-A rendezés egyetlen hátránya a tárigénye, $n$ szám esetén további $n-1$ mezőre szükség van a versenyfa elkészítéséhez. Éppen emiatt a gyakorlatban nem sűrűn használt eljárás.
+Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére. Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére. Ezzel ellentétben a gyakorlatban ez az érték $-\infty$. Majd ezen az "ágon" újrajátsszuk a mérkőzéseket.\par
+Amennyiben a bemenet hossza nem kettő hatvány a program -1 értékekkel tölti fel a bináris fa további leveleit, amíg a bemenet hossza nem lesz megfelelő.
+\subsubsection{Műveletigény}
+A rendezés egyetlen hátránya a tárigénye, $n$ szám esetén további $n-1$ mezőre szükség van a versenyfa elkészítéséhez. Éppen emiatt a gyakorlatban nem sűrűn használt eljárás. Az első, speciális menet, a versenyfa kitöltése $n-1$ összehasonlítást és mozgatást használ ($n-1$ a belső csúcsok száma). Minden további menetben a fán kétszer kell végigmenni, melynek magassága $\log_2(n)$. Egyszer a maximális levél megtalálásához, majd az újrajátszáshoz, így a ezen menetek $2\log_2(n)$ összehasonlítást végeznek. Mozgatás csak a második, újrajátszási művelethez tartozik. Így a műveletigények:
+$$\ddot{O}(n)=n-1+(n-1)\cdot2\cdot\log_2(n)=\Theta(n\cdot(\log(n))$$
+$$M(n)=n-1+(n-1)\cdot\log_2(n)=\Theta(n\cdot(\log(n))$$
+\subsubsection{Jelölések az állapotjelző felületen}
+Az összehasonlításokat, valamint a maximális levélelem megkereséséhez bejárt utat \textcolor{swap}{\Huge$\bullet$} szín jelöli. A meccsek lejátszásakor a belső csúcsba kerülő érték \textcolor{select}{\Huge$\bullet$} jelölést kap. Ez alól kivétel, amikor a gyökérbe kerül egy meccs győztese, ekkor \textcolor{done}{\Huge$\bullet$} lesz az elem színe, továbbá akkor is ez a jelölés, amikor megtaláltuk a maximális levélcsúcsot.
 
 \subsection{Radix "előre"}
 \subsubsection{Leírás}
@@ -303,12 +334,22 @@ A radix rendezés egy rekurzív algoritmus, melynek minden szintjén létrejönn
 Az általános edényrendezés egy speciális változata a radix előre rendezés, bináris, $d$ hosszú számokra.\par
 \subsubsection{Működés}
 Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A vizsgálat két mutatóval történik, melyek a tömb két végéről indulnak. A tömb elején addig halad a mutató, amíg a vizsgált elem első jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek első jegye 0. Amennyiben talált ilyen elemeket megcseréli őket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik. Ekkor kialakul két edény, az elsőben a 0-ás kezdőbittel rendelkező számok, míg a másodikban az 1-essel kezdődő elemek foglalnak helyet. Ezt követően a második bit kerül vizsgálatra az "aledényekben", az előzővel azonos módon. A rendezés befejeződött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
+\subsubsection{Műveletigény}
+A rendezés lineáris időben történik, a számjegyek számát jelölje $d$, ekkor belátható, hogy a legrosszabb esetben is, azaz ha az összes szám minden bitjét meg kell vizsgálnunk az algoritmus futási ideje:
+$$T(n)=\Theta(d \cdot n) = \Theta(n)$$
+\subsubsection{Jelölések az állapotjelző felületen}
+Az éppen vizsgált elem \textcolor{select}{\Huge$\bullet$} színnel van jelölve. Amennyiben két elemet fel kell cserélni \textcolor{swap}{\Huge$\bullet$} háttérszínt kapnak. Továbbá a már vizsgált elemek háttérszíne fakóbb lesz. Amennyiben egy új edény keletkezik annak a színe véletlenszerűen választódik ki.
 
 \subsection{Radix "vissza"}
 \subsubsection{Leírás}
 Az algoritmus rövid ismertetője megegyezik a \textbf{Radix "előre"} rendezés leírásával.
 \subsubsection{Működés}
 Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat.\par Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot. Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált számjegye 1-es. Ezt követően a 0-ás edényt az elejéről olvasva feltöltjük újra az eredeti tömböt az előbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtől visszafelé haladva töltjük át az értékeket.
+\subsubsection{Műveletigény}
+Lineáris idejű a rendezés, amennyiben $d$ jegyűek a rendezendő számok az algoritmus futási ideje:
+$$T(n)=\Theta(d \cdot n) = \Theta(n)$$
+\subsubsection{Jelölések az állapotjelző felületen}
+Az aktuálisan vizsgált bit értékének megfelelően, amely bináris szám a 0-ás edénybe kerül \textcolor{swap}{\Huge$\bullet$}, míg amely az 1-es edénybe kerül az \textcolor{select}{\Huge$\bullet$} háttérszínt kap.
 
 \chapter{Fejlesztői dokumentáció}
 
@@ -403,19 +444,19 @@ Thomas H. Cormen, Charles E. Leiserson,Ronald L. Rivest, Clifford Stein:
 \emph{Új algoritmusok},
 Scolar kiadó, 2003,
 [992], 9789639193901
-\bibitem{Horae}
-C.A.R. Hoare:
-\emph{Algorithm 64: Quicksort}
-Communications of the ACM, 4, 7, 1961
 \bibitem{ShellWiki}
 \emph{Shellsort},
 Wikipedia the free encyclopedia.
 [ONLINE] [Hivatkozva: 2015.04.25]
 \url{http://en.wikipedia.org/wiki/Shellsort/}
-\bibitem{Pratt}
-Vaughan Ronald Pratt:
-\emph{Shellsort and Sorting Networks (Outstanding Dissertations in the Computer Sciences)}
-Garland, 1980, [62], 0824044061 
+\bibitem{Shell}
+Donald Shell:
+\emph{A high-speed sorting procedure}
+Communications of the ACM, 2, 7, 1959
+\bibitem{Horae}
+C.A.R. Hoare:
+\emph{Algorithm 64: Quicksort}
+Communications of the ACM, 4, 7, 1961
 \bibitem{Survey}
 The Takipi Blog:
 \emph{We Analyzed 30,000 GitHub Projects – Here Are The Top 100 Libraries in Java, JS and Ruby},

@@ -57,7 +57,8 @@ public class BenchmarkController implements SortingThreadListener {
 	public void notifyOfThreadComplete(Thread thread) {
 		try {
 		tableController.getTableView().setItems(FXCollections.observableArrayList(benchmarkDataList));
-		} catch (ConcurrentModificationException cme) {}
+		Thread.sleep(10);
+		} catch (ConcurrentModificationException | InterruptedException cmie) {}
 	}
 
 	public static SortingSortThread[] getSortingThreads() {

@@ -32,42 +32,55 @@
 \contentsline {subsubsection}{Gombok}{9}
 \contentsline {subsubsection}{\IeC {\'A}llapotjelz\IeC {\H o} fel\IeC {\"u}let}{9}
 \contentsline {subsection}{\numberline {2.2.5.}\IeC {\"O}sszehasonl\IeC {\'\i }t\IeC {\'a}s panel}{9}
-\contentsline {subsubsection}{Elemz\IeC {\'e}s t\IeC {\'a}bl\IeC {\'a}zat}{9}
+\contentsline {subsubsection}{Elemz\IeC {\'e}s t\IeC {\'a}bl\IeC {\'a}zat}{10}
 \contentsline {subsubsection}{Elemz\IeC {\'e}s diagram}{10}
 \contentsline {section}{\numberline {2.3.}A vizsg\IeC {\'a}lt algoritmusok}{10}
 \contentsline {subsection}{\numberline {2.3.1.}Bubor\IeC {\'e}krendez\IeC {\'e}s}{10}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{10}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{10}
-\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{10}
-\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek a diagramon}{11}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{11}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{11}
 \contentsline {subsection}{\numberline {2.3.2.}Besz\IeC {\'u}r\IeC {\'o} rendez\IeC {\'e}s}{11}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{11}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{11}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{12}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{12}
 \contentsline {subsection}{\numberline {2.3.3.}Shell rendez\IeC {\'e}s}{12}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{12}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{12}
-\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{12}
-\contentsline {subsection}{\numberline {2.3.4.}Gyorsrendez\IeC {\'e}s}{12}
-\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{12}
-\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{12}
 \contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{13}
-\contentsline {subsection}{\numberline {2.3.5.}Kupacrendez\IeC {\'e}s}{13}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{13}
+\contentsline {subsection}{\numberline {2.3.4.}Gyorsrendez\IeC {\'e}s}{13}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{13}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{13}
-\contentsline {subsection}{\numberline {2.3.6.}Versenyrendez\IeC {\'e}s}{14}
-\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{14}
-\contentsline {subsection}{\numberline {2.3.7.}Radix "el\IeC {\H o}re"}{14}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{14}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{14}
+\contentsline {subsection}{\numberline {2.3.5.}Kupacrendez\IeC {\'e}s}{14}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{14}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{15}
-\contentsline {subsection}{\numberline {2.3.8.}Radix "vissza"}{15}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{15}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{15}
+\contentsline {subsection}{\numberline {2.3.6.}Versenyrendez\IeC {\'e}s}{15}
 \contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{15}
 \contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{15}
-\contentsline {chapter}{\numberline {3.}Fejleszt\IeC {\H o}i dokument\IeC {\'a}ci\IeC {\'o}}{16}
-\contentsline {section}{\numberline {3.1.}Tervez\IeC {\'e}s \IeC {\'e}s megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{16}
-\contentsline {subsection}{\numberline {3.1.1.}Tervez\IeC {\'e}s}{16}
-\contentsline {subsection}{\numberline {3.1.2.}Megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{17}
-\contentsline {subsection}{\numberline {3.1.3.}Haszn\IeC {\'a}lt fejleszt\IeC {\H o}eszk\IeC {\"o}z\IeC {\"o}k}{18}
-\contentsline {section}{\numberline {3.2.}Haszn\IeC {\'a}lati esetek}{18}
-\contentsline {section}{\numberline {3.3.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{18}
-\contentsline {subsection}{\numberline {3.3.1.}Modell oszt\IeC {\'a}lyok}{19}
-\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{20}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{16}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{16}
+\contentsline {subsection}{\numberline {2.3.7.}Radix "el\IeC {\H o}re"}{16}
+\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{16}
+\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{17}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{17}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{17}
+\contentsline {subsection}{\numberline {2.3.8.}Radix "vissza"}{17}
+\contentsline {subsubsection}{Le\IeC {\'\i }r\IeC {\'a}s}{17}
+\contentsline {subsubsection}{M\IeC {\H u}k\IeC {\"o}d\IeC {\'e}s}{17}
+\contentsline {subsubsection}{M\IeC {\H u}veletig\IeC {\'e}ny}{18}
+\contentsline {subsubsection}{Jel\IeC {\"o}l\IeC {\'e}sek az \IeC {\'a}llapotjelz\IeC {\H o} fel\IeC {\"u}leten}{18}
+\contentsline {chapter}{\numberline {3.}Fejleszt\IeC {\H o}i dokument\IeC {\'a}ci\IeC {\'o}}{19}
+\contentsline {section}{\numberline {3.1.}Tervez\IeC {\'e}s \IeC {\'e}s megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{19}
+\contentsline {subsection}{\numberline {3.1.1.}Tervez\IeC {\'e}s}{19}
+\contentsline {subsection}{\numberline {3.1.2.}Megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{20}
+\contentsline {subsection}{\numberline {3.1.3.}Haszn\IeC {\'a}lt fejleszt\IeC {\H o}eszk\IeC {\"o}z\IeC {\"o}k}{21}
+\contentsline {section}{\numberline {3.2.}Haszn\IeC {\'a}lati esetek}{21}
+\contentsline {section}{\numberline {3.3.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{21}
+\contentsline {subsection}{\numberline {3.3.1.}Modell oszt\IeC {\'a}lyok}{22}
+\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{23}

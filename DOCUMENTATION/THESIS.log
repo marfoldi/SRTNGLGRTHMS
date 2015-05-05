@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  4 MAY 2015 22:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  5 MAY 2015 22:34
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -548,42 +548,37 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [5] [6]
 [7] [8]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 199.
+(Font)              <24.88> on input line 200.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 199.
+(Font)              <20.74> on input line 200.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 199.
- [9] [10] [11]
-Overfull \hbox (1.47304pt too wide) in paragraph at lines 250--258
- [][] 
+(Font)              <17.28> on input line 200.
+ [9] [10] [11] [12]
+Overfull \hbox (7.2802pt too wide) in paragraph at lines 289--290
+\T1/cmr/m/n/12 Gyakorlatilag szét-vá-lasz-tást esz-kö-zö-lünk, mely-nek ered-mé
+-nye-képp a ki-vá-lasz-tott elem-
  []
 
-
-Overfull \hbox (1.24713pt too wide) in paragraph at lines 260--261
-\T1/cmr/m/n/12 pés-köz meg-vá-lasz-tá-sá-tól. A prog-ram Vaughan Ro-nald Pratt 
-ál-tal ja-va-solt értékeket[[]]
- []
-
-[12] [13] [14]
-Overfull \hbox (0.15163pt too wide) in paragraph at lines 311--311
+[13] [14] [15] [16]
+Overfull \hbox (0.15163pt too wide) in paragraph at lines 347--347
 []\T1/cmr/m/n/12 Az el®z® al-go-rit-mus-tól el-té-r®en már nem hely-ben ren-dez
 , az el-já-rás-nak két tömbre
  []
 
-[15]
+[17] [18]
 3. fejezet.
 
-Overfull \hbox (0.89848pt too wide) in paragraph at lines 320--321
+Overfull \hbox (0.89848pt too wide) in paragraph at lines 361--362
 []\T1/cmr/m/n/12 A prog-ram-nak há-rom jól el-kü-lö-nül® kom-po-nens-b®l kell á
 ll-nia: Egy lo-gi-kai(modell)
  []
 
-[16
+[19
 
-] [17] [18] [19]
+] [20] [21] [22]
 4. fejezet.
 
-Underfull \hbox (badness 2486) in paragraph at lines 398--401
+Underfull \hbox (badness 2486) in paragraph at lines 439--442
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
@@ -591,26 +586,26 @@ szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 4726) in paragraph at lines 420--424
+Underfull \hbox (badness 4726) in paragraph at lines 461--465
 \T1/cmr/m/it/12 Are The Top 100 Lib-ra-ries in Java, JS and Ruby\T1/cmr/m/n/12 
 , [ON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--424
+Underfull \hbox (badness 10000) in paragraph at lines 461--465
 \T1/cmr/m/n/12 LINE] [Hi-vat-kozva: 2015.04.30] $\T1/cmtt/m/n/12 http : / / blo
 g . takipi . com /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--424
+Underfull \hbox (badness 10000) in paragraph at lines 461--465
 $\T1/cmtt/m/n/12 we-[]analyzed-[]30000-[]github-[]projects-[]here-[]are-[]the-[
 ]top-[]100$
  []
 
-[20
+[23
 
-] [21] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
+] [24] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
  5248 strings out of 493921
  65473 string characters out of 3147273
@@ -631,17 +626,14 @@ marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.p
 k> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
 00\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb>
-Output written on THESIS.pdf (24 pages, 1202210 bytes).
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb>
+Output written on THESIS.pdf (27 pages, 1188822 bytes).
 PDF statistics:
- 578 PDF objects out of 1000 (max. 8388607)
+ 575 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
