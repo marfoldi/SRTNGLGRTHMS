@@ -7,10 +7,10 @@ import srtnglgrthms.controller.OverviewChartController;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class InsertionSort extends ChartAlgorithm {
-	private static int outerIndex = 1;
-	private static int innerIndex = outerIndex;
-	private static boolean isSelected = false;
-	private static boolean showSwapped = true;
+	private static int outerIndex;
+	private static int innerIndex;
+	private static boolean isSelected;
+	private static boolean showSwapped;
 
 	private InsertionSort() {
 	}
