@@ -15,7 +15,7 @@ public class QuickSort extends ChartAlgorithm {
 	private static int partitionHelpIndex;
 	private static int pivot;
 	private static int pivotIndex;
-	private static boolean partitioned;
+	private static boolean isPartitioned;
 
 	private QuickSort() {
 	}
@@ -33,7 +33,7 @@ public class QuickSort extends ChartAlgorithm {
 		end = numbers.length - 1;
 		partitionIndex = begin;
 		partitionHelpIndex = begin;
-		partitioned = false;
+		isPartitioned = false;
 		pivotIndex = end;
 		pivot = data.get(pivotIndex).getYValue().intValue();
 		recursiveCall = new LinkedList<>();
@@ -49,7 +49,7 @@ public class QuickSort extends ChartAlgorithm {
 		OverviewChartController.setColor(data.get(pivotIndex).getNode(),
 				"select");
 		counterData.get(2).setValue("t[" + Integer.toString(pivotIndex) + "]");
-		if (!partitioned) {
+		if (!isPartitioned) {
 			if (partitionHelpIndex < end) {
 				counterData.get(0).incValue();
 				OverviewChartController.setColor(data.get(partitionIndex)
@@ -76,7 +76,7 @@ public class QuickSort extends ChartAlgorithm {
 					data.get(partitionIndex).getNode(), "select");
 			OverviewChartController.setColor(data.get(end).getNode(), "swap");
 			pivotIndex = partitionIndex;
-			partitioned = true;
+			isPartitioned = true;
 		} else {
 			if (begin < partitionIndex - 1)
 				recursiveCall.add(new RecursiveParameter(begin,
@@ -88,7 +88,7 @@ public class QuickSort extends ChartAlgorithm {
 				RecursiveParameter nextParameters = recursiveCall.remove();
 				begin = (int) nextParameters.getFirstParameter();
 				end = (int) nextParameters.getSecondParameter();
-				partitioned = false;
+				isPartitioned = false;
 				partitionIndex = begin;
 				partitionHelpIndex = begin;
 				pivotIndex = end;

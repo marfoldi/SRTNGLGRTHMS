@@ -11,7 +11,7 @@ import srtnglgrthms.controller.OverviewChartController;
 public class ForwardRadix extends RadixAlgorithm {
 	private static boolean isLowerFound;
 	private static boolean isUpperFound;
-	private static boolean colored;
+	private static boolean isColored;
 
 	private ForwardRadix() {
 	}
@@ -33,7 +33,7 @@ public class ForwardRadix extends RadixAlgorithm {
 		upper = end;
 		isLowerFound = false;
 		isUpperFound = false;
-		colored = false;
+		isColored = false;
 		recursiveCall = new LinkedList<>();
 		counterData.clear();
 		counterData.add(new CounterData("Vizsgálatok", "0"));
@@ -46,12 +46,12 @@ public class ForwardRadix extends RadixAlgorithm {
 	public void step() {
 		if (actualDigit < getMaxDigit()) {
 			if (lower <= upper) {
-				if (!colored) {
+				if (!isColored) {
 					OverviewChartController.setColor(data.get(lower).getNode(),
 							"select");
 					OverviewChartController.setColor(data.get(upper).getNode(),
 							"select");
-					colored = true;
+					isColored = true;
 					return;
 				}
 				if (!isLowerFound) {
@@ -111,7 +111,7 @@ public class ForwardRadix extends RadixAlgorithm {
 							"fade");
 					isLowerFound = false;
 					isUpperFound = false;
-					colored = false;
+					isColored = false;
 					lower++;
 					upper--;
 				} else
@@ -136,7 +136,7 @@ public class ForwardRadix extends RadixAlgorithm {
 					upper = end;
 					isLowerFound = false;
 					isUpperFound = false;
-					colored = false;
+					isColored = false;
 					if (actualDigit < getMaxDigit())
 						counterData.get(2).setValue(
 								Integer.toString(actualDigit + 1));

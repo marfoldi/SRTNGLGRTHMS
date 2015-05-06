@@ -14,7 +14,7 @@ public class HeapSort extends GraphAlgorithm {
 	private static int starterIndex;
 	private static int downIndex;
 	private static int recursiveCounter;
-	private static boolean colored;
+	private static boolean isColored;
 	private static boolean canSwap;
 	private static boolean downIndexSetted;
 
@@ -36,7 +36,7 @@ public class HeapSort extends GraphAlgorithm {
 		starterIndex = vertices.length / 2 - 1;
 		downIndex = starterIndex;
 		recursiveCounter = vertices.length;
-		colored = false;
+		isColored = false;
 		canSwap = true;
 		downIndexSetted = false;
 		counterData.clear();
@@ -57,7 +57,7 @@ public class HeapSort extends GraphAlgorithm {
 		} else if (recursiveCounter >= 1) {
 			if (!downIndexSetted) {
 				downIndex = 0;
-				colored = false;
+				isColored = false;
 				recursiveCounter--;
 				downIndexSetted = true;
 			}
@@ -100,7 +100,7 @@ public class HeapSort extends GraphAlgorithm {
 	private int buildHeap(int startIndex, int endIndex, boolean firstRun) {
 		setRestColor(recursiveCounter);
 		if (2 * startIndex + 1 <= endIndex) {
-			if (!colored) {
+			if (!isColored) {
 				try {
 					vertices[startIndex].setColor("swap");
 					OverviewChartController.setColor(OverviewGraphController
@@ -120,13 +120,13 @@ public class HeapSort extends GraphAlgorithm {
 								"swap");
 						vertices[2 * startIndex + 1].setColor("swap");
 					}
-					colored = true;
+					isColored = true;
 					return startIndex;
 				} catch (ArrayIndexOutOfBoundsException aioobe) {
 					setRestColor(recursiveCounter);
 					OverviewGraphController.reloadGraph();
 					OverviewGraphController.addVertices();
-					colored = false;
+					isColored = false;
 					return -1;
 				}
 			}
@@ -141,7 +141,7 @@ public class HeapSort extends GraphAlgorithm {
 				ir = 2 * startIndex + 2;
 			counterData.get(0).incValue();
 			if (vertices[startIndex].getNumber() >= vertices[ir].getNumber()) {
-				colored = false;
+				isColored = false;
 				return -1;
 			} else {
 				if (startIndex == 0) {
@@ -164,10 +164,10 @@ public class HeapSort extends GraphAlgorithm {
 				OverviewGraphController.addVertices();
 			}
 		} else {
-			colored = false;
+			isColored = false;
 			return -1;
 		}
-		colored = false;
+		isColored = false;
 		return startIndex;
 	}
 

@@ -23,7 +23,7 @@ public class TournamentSort extends GraphAlgorithm {
 	private static int recursiveCounter;
 	private static int maxIndex;
 	private static int outIndex;
-	private static boolean colored;
+	private static boolean isColored;
 	private static boolean isFound;
 
 	private TournamentSort() {
@@ -45,7 +45,7 @@ public class TournamentSort extends GraphAlgorithm {
 		recursiveCounter = OverviewGraphController.getNumberList().size() - 1;
 		maxIndex = 0;
 		outIndex = 1;
-		colored = false;
+		isColored = false;
 		isFound = false;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
@@ -60,10 +60,10 @@ public class TournamentSort extends GraphAlgorithm {
 		}
 		while (fillIndex >= 1) {
 			setRestColor(vertices.length);
-			if (!colored) {
+			if (!isColored) {
 				vertices[2 * fillIndex].setColor("swap");
 				vertices[2 * fillIndex - 1].setColor("swap");
-				colored = true;
+				isColored = true;
 				return;
 			}
 			counterData.get(0).incValue();
@@ -72,7 +72,7 @@ public class TournamentSort extends GraphAlgorithm {
 					.setNumber(vertices[2 * fillIndex].getNumber() > vertices[2 * fillIndex - 1]
 							.getNumber() ? vertices[2 * fillIndex].getNumber()
 							: vertices[2 * fillIndex - 1].getNumber());
-			colored = false;
+			isColored = false;
 			OverviewGraphController.reloadGraph();
 			OverviewGraphController.addVertices();
 			if (fillIndex - 1 == 0) {
@@ -112,14 +112,14 @@ public class TournamentSort extends GraphAlgorithm {
 				isFound = true;
 			} else {
 				setRestColor(vertices.length);
-				if (!colored) {
+				if (!isColored) {
 					if (maxIndex % 2 == 0)
 						maxIndex = maxIndex / 2 - 1;
 					else
 						maxIndex = maxIndex / 2;
 					vertices[2 * maxIndex + 2].setColor("swap");
 					vertices[2 * maxIndex + 1].setColor("swap");
-					colored = true;
+					isColored = true;
 					return;
 				}
 				if (maxIndex >= 0) {
@@ -151,7 +151,7 @@ public class TournamentSort extends GraphAlgorithm {
 						vertices[2 * maxIndex + 1].setColor("swap");
 					else
 						vertices[2 * maxIndex + 2].setColor("swap");
-					colored = false;
+					isColored = false;
 					OverviewGraphController.reloadGraph();
 					OverviewGraphController.addVertices();
 				}
