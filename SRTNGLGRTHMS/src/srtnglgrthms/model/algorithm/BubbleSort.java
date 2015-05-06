@@ -7,8 +7,8 @@ import srtnglgrthms.controller.OverviewChartController;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class BubbleSort extends ChartAlgorithm {
-	private static int outerIdx;
-	private static int innerIdx;
+	private static int outerIndex;
+	private static int innerIndex;
 
 	private BubbleSort() {
 	}
@@ -22,8 +22,8 @@ public class BubbleSort extends ChartAlgorithm {
 	}
 
 	public void setDefaults() {
-		outerIdx = 0;
-		innerIdx = 1;
+		outerIndex = 0;
+		innerIndex = 1;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
 		counterData.add(new CounterData("Cserék", "0"));
@@ -31,31 +31,31 @@ public class BubbleSort extends ChartAlgorithm {
 
 	@Override
 	public void step() {
-		if (innerIdx < data.size() - outerIdx) {
-			if (outerIdx > 0) {
+		if (innerIndex < data.size() - outerIndex) {
+			if (outerIndex > 0) {
 				OverviewChartController.setColor(
-						data.get(data.size() - outerIdx - 1).getNode(),
+						data.get(data.size() - outerIndex - 1).getNode(),
 						"default");
 			}
-			OverviewChartController.setColor(data.get(innerIdx - 1).getNode(),
+			OverviewChartController.setColor(data.get(innerIndex - 1).getNode(),
 					"swap");
-			OverviewChartController.setColor(data.get(innerIdx).getNode(),
+			OverviewChartController.setColor(data.get(innerIndex).getNode(),
 					"swap");
 			counterData.get(0).incValue();
-			if (data.get(innerIdx - 1).getYValue().intValue() > data
-					.get(innerIdx).getYValue().intValue()) {
-				swap(innerIdx - 1, innerIdx);
-				OverviewChartController.setColor(data.get(innerIdx).getNode(),
+			if (data.get(innerIndex - 1).getYValue().intValue() > data
+					.get(innerIndex).getYValue().intValue()) {
+				swap(innerIndex - 1, innerIndex);
+				OverviewChartController.setColor(data.get(innerIndex).getNode(),
 						"select");
 				counterData.get(1).incValue();
 			}
-			innerIdx++;
-			if (innerIdx == data.size() - outerIdx) {
-				OverviewChartController.setColor(data.get(innerIdx - 1)
+			innerIndex++;
+			if (innerIndex == data.size() - outerIndex) {
+				OverviewChartController.setColor(data.get(innerIndex - 1)
 						.getNode(), "done");
 				setRestColor();
-				innerIdx = 1;
-				outerIdx++;
+				innerIndex = 1;
+				outerIndex++;
 			}
 			setRestColor();
 		} else {
@@ -64,7 +64,7 @@ public class BubbleSort extends ChartAlgorithm {
 	}
 
 	private void setRestColor() {
-		for (int i = 0; i < innerIdx - 2; i++) {
+		for (int i = 0; i < innerIndex - 2; i++) {
 			OverviewChartController.setColor(data.get(i).getNode(), "default");
 		}
 	}
