@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  6 MAY 2015 23:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  7 MAY 2015 00:43
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -551,16 +551,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ] <pics/setup.png, id=29, 384.6872pt x 297.36093pt>
 File: pics/setup.png Graphic file (type png)
  <use pics/setup.png>
-Package pdftex.def Info: pics/setup.png used on input line 121.
+Package pdftex.def Info: pics/setup.png used on input line 122.
 (pdftex.def)             Requested size: 256.07741pt x 197.96033pt.
 
 [4]
-Overfull \hbox (311.51271pt too wide) in paragraph at lines 124--124
+Overfull \hbox (311.51271pt too wide) in paragraph at lines 125--125
 \T1/cmr/m/n/12 könyv-tárba szük-sé-ges na-vi-gálni: \T1/cmr/bx/n/12 C:\Felhaszn
 álók\{Felhasználói név}\AppData\Local\SRTNGLGRTHMS\SRTNGLGRTHMS.exe 
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 129.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 130.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -568,14 +568,14 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 <pics/mainmenu.png, id=34, 344.03531pt x 216.81pt>
 File: pics/mainmenu.png Graphic file (type png)
  <use pics/mainmenu.png>
-Package pdftex.def Info: pics/mainmenu.png used on input line 141.
+Package pdftex.def Info: pics/mainmenu.png used on input line 142.
 (pdftex.def)             Requested size: 298.75264pt x 188.27249pt.
 
 [5 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/setup.png>]
 <pics/about.png, id=39, 280.79906pt x 213.04594pt>
 File: pics/about.png Graphic file (type png)
  <use pics/about.png>
-Package pdftex.def Info: pics/about.png used on input line 150.
+Package pdftex.def Info: pics/about.png used on input line 151.
 (pdftex.def)             Requested size: 213.39568pt x 161.90683pt.
 
 [6 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainmenu.png> <C:/User
@@ -584,28 +584,28 @@ s/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/about.png>]
 File: pics/manualinput.png Graphic file (type png)
 
 <use pics/manualinput.png>
-Package pdftex.def Info: pics/manualinput.png used on input line 170.
+Package pdftex.def Info: pics/manualinput.png used on input line 171.
 (pdftex.def)             Requested size: 256.07741pt x 89.77045pt.
 
 <pics/randominput.png, id=44, 338.01282pt x 155.07938pt>
 File: pics/randominput.png Graphic file (type png)
 
 <use pics/randominput.png>
-Package pdftex.def Info: pics/randominput.png used on input line 179.
+Package pdftex.def Info: pics/randominput.png used on input line 180.
 (pdftex.def)             Requested size: 256.07741pt x 117.49002pt.
  [7 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/manualinput.png>] <pi
 cs/fileinput.png, id=48, 470.50781pt x 325.96782pt>
 File: pics/fileinput.png Graphic file (type png)
 
 <use pics/fileinput.png>
-Package pdftex.def Info: pics/fileinput.png used on input line 195.
+Package pdftex.def Info: pics/fileinput.png used on input line 196.
 (pdftex.def)             Requested size: 256.07741pt x 177.41267pt.
 
 <pics/fileinput_error.png, id=49, 345.54094pt x 219.06844pt>
 File: pics/fileinput_error.png Graphic file (type png)
 
 <use pics/fileinput_error.png>
-Package pdftex.def Info: pics/fileinput_error.png used on input line 201.
+Package pdftex.def Info: pics/fileinput_error.png used on input line 202.
 (pdftex.def)             Requested size: 256.07741pt x 162.35211pt.
  [8 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/randominput.png> <C:/
 Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput.png>] <pics/mainpan
@@ -613,7 +613,7 @@ el.png, id=53, 733.23938pt x 434.37282pt>
 File: pics/mainpanel.png Graphic file (type png)
 
 <use pics/mainpanel.png>
-Package pdftex.def Info: pics/mainpanel.png used on input line 209.
+Package pdftex.def Info: pics/mainpanel.png used on input line 210.
 (pdftex.def)             Requested size: 341.43437pt x 202.26627pt.
  [9 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput_error.png> 
 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainpanel.png>] <pics/wat
@@ -621,29 +621,29 @@ chpanel.png, id=59, 733.99219pt x 435.12563pt>
 File: pics/watchpanel.png Graphic file (type png)
 
 <use pics/watchpanel.png>
-Package pdftex.def Info: pics/watchpanel.png used on input line 225.
+Package pdftex.def Info: pics/watchpanel.png used on input line 226.
 (pdftex.def)             Requested size: 341.43437pt x 202.411pt.
  [10] [11 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/watchpanel.png>
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 251.
+(Font)              <24.88> on input line 252.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 251.
+(Font)              <20.74> on input line 252.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 251.
+(Font)              <17.28> on input line 252.
 
 <pics/benchmarkpanel.png, id=67, 733.23938pt x 435.12563pt>
 File: pics/benchmarkpanel.png Graphic file (type png)
 
 <use pics/benchmarkpanel.png>
-Package pdftex.def Info: pics/benchmarkpanel.png used on input line 263.
+Package pdftex.def Info: pics/benchmarkpanel.png used on input line 264.
 (pdftex.def)             Requested size: 341.43437pt x 202.61682pt.
  [12] [13 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/benchmarkpanel.
 png>]
 <pics/bubble.jpg, id=74, 3283.26625pt x 938.50626pt>
 File: pics/bubble.jpg Graphic file (type jpg)
  <use pics/bubble.jpg>
-Package pdftex.def Info: pics/bubble.jpg used on input line 289.
+Package pdftex.def Info: pics/bubble.jpg used on input line 290.
 (pdftex.def)             Requested size: 426.79135pt x 121.99577pt.
 
 [14 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/bubble.jpg>] [15]
@@ -651,17 +651,17 @@ Package pdftex.def Info: pics/bubble.jpg used on input line 289.
 File: pics/insertion.jpg Graphic file (type jpg)
 
 <use pics/insertion.jpg>
-Package pdftex.def Info: pics/insertion.jpg used on input line 313.
+Package pdftex.def Info: pics/insertion.jpg used on input line 314.
 (pdftex.def)             Requested size: 426.79135pt x 122.22917pt.
  [16 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/insertion.jpg>] [17]
  <pics/shell.jpg, id=95, 3287.28125pt x 939.51pt>
 File: pics/shell.jpg Graphic file (type jpg)
 
 <use pics/shell.jpg>
-Package pdftex.def Info: pics/shell.jpg used on input line 350.
+Package pdftex.def Info: pics/shell.jpg used on input line 351.
 (pdftex.def)             Requested size: 426.79135pt x 121.96855pt.
  [18 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/shell.jpg>]
-Overfull \hbox (7.2802pt too wide) in paragraph at lines 370--371
+Overfull \hbox (7.2802pt too wide) in paragraph at lines 371--372
 \T1/cmr/m/n/12 Gyakorlatilag szét-vá-lasz-tást esz-kö-zö-lünk, mely-nek ered-mé
 -nye-képp a ki-vá-lasz-tott elem-
  []
@@ -669,14 +669,14 @@ Overfull \hbox (7.2802pt too wide) in paragraph at lines 370--371
 <pics/quick.jpg, id=99, 3283.26625pt x 936.49875pt>
 File: pics/quick.jpg Graphic file (type jpg)
  <use pics/quick.jpg>
-Package pdftex.def Info: pics/quick.jpg used on input line 376.
+Package pdftex.def Info: pics/quick.jpg used on input line 377.
 (pdftex.def)             Requested size: 426.79135pt x 121.73482pt.
 
 [19 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/quick.jpg>] [20]
 <pics/heap.jpg, id=106, 3283.26625pt x 932.48375pt>
 File: pics/heap.jpg Graphic file (type jpg)
  <use pics/heap.jpg>
-Package pdftex.def Info: pics/heap.jpg used on input line 405.
+Package pdftex.def Info: pics/heap.jpg used on input line 406.
 (pdftex.def)             Requested size: 426.79135pt x 121.2129pt.
 
 [21 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/heap.jpg>]
@@ -684,7 +684,7 @@ Package pdftex.def Info: pics/heap.jpg used on input line 405.
 File: pics/tournament.jpg Graphic file (type jpg)
 
 <use pics/tournament.jpg>
-Package pdftex.def Info: pics/tournament.jpg used on input line 425.
+Package pdftex.def Info: pics/tournament.jpg used on input line 426.
 (pdftex.def)             Requested size: 426.79135pt x 121.23592pt.
  [22 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/tournament.jpg>] [23
 ]
@@ -692,10 +692,10 @@ Package pdftex.def Info: pics/tournament.jpg used on input line 425.
 File: pics/radixforward.jpg Graphic file (type jpg)
 
 <use pics/radixforward.jpg>
-Package pdftex.def Info: pics/radixforward.jpg used on input line 447.
+Package pdftex.def Info: pics/radixforward.jpg used on input line 448.
 (pdftex.def)             Requested size: 426.79135pt x 121.49748pt.
 
-Overfull \hbox (0.15163pt too wide) in paragraph at lines 460--460
+Overfull \hbox (0.15163pt too wide) in paragraph at lines 461--461
 []\T1/cmr/m/n/12 Az el®z® al-go-rit-mus-tól el-té-r®en már nem hely-ben ren-dez
 , az el-já-rás-nak két tömbre
  []
@@ -705,13 +705,13 @@ Overfull \hbox (0.15163pt too wide) in paragraph at lines 460--460
 File: pics/radixbackward.jpg Graphic file (type jpg)
 
 <use pics/radixbackward.jpg>
-Package pdftex.def Info: pics/radixbackward.jpg used on input line 466.
+Package pdftex.def Info: pics/radixbackward.jpg used on input line 467.
 (pdftex.def)             Requested size: 426.79135pt x 161.96344pt.
  [25 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixbackward.jpg>] 
 [26]
 3. fejezet.
 
-Overfull \hbox (0.89848pt too wide) in paragraph at lines 482--483
+Overfull \hbox (0.89848pt too wide) in paragraph at lines 483--484
 []\T1/cmr/m/n/12 A prog-ram-nak há-rom jól el-kü-lö-nül® kom-po-nens-b®l kell á
 ll-nia: Egy lo-gi-kai(modell)
  []
@@ -721,7 +721,7 @@ ll-nia: Egy lo-gi-kai(modell)
 ] [28] [29] [30]
 4. fejezet.
 
-Underfull \hbox (badness 2486) in paragraph at lines 560--563
+Underfull \hbox (badness 2486) in paragraph at lines 562--565
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
@@ -729,19 +729,19 @@ szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 4726) in paragraph at lines 582--586
+Underfull \hbox (badness 4726) in paragraph at lines 584--588
 \T1/cmr/m/it/12 Are The Top 100 Lib-ra-ries in Java, JS and Ruby\T1/cmr/m/n/12 
 , [ON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 582--586
+Underfull \hbox (badness 10000) in paragraph at lines 584--588
 \T1/cmr/m/n/12 LINE] [Hi-vat-kozva: 2015.04.30] $\T1/cmtt/m/n/12 http : / / blo
 g . takipi . com /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 582--586
+Underfull \hbox (badness 10000) in paragraph at lines 584--588
 $\T1/cmtt/m/n/12 we-[]analyzed-[]30000-[]github-[]projects-[]here-[]are-[]the-[
 ]top-[]100$
  []
@@ -774,7 +774,7 @@ m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb>
-Output written on THESIS.pdf (35 pages, 3707464 bytes).
+Output written on THESIS.pdf (35 pages, 3707948 bytes).
 PDF statistics:
  620 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -42,7 +42,8 @@
 	\setlist[description]{leftmargin=\parindent,labelindent=\parindent,itemsep=1.5pt}
 
 \chapter{Bevezetés} 
-Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmányaik kezdetén találkoztak a rendezési algoritmusokkal. Nagyszerű terület arra, hogy megérthessük a műveletigény kérdését, azt hogy mi számít igazán sok adatnak, vagy éppen, hogy mit értünk egy algoritmus stabilitásán.
+ Az eddigi egyetemen töltött éveim során az \textbf{Algoritmusok és adatszerkezetek} kurzus foglalkozott mélyrehatóan a rendezési algoritmusokkal. Számomra a tananyagból talán ez a témakör volt a legnehezebben elsajátítható. Ez sarkallt arra, hogy a szakdolgozatom témáját adják a rendezési algoritmusok, szerettem volna biztos tudással rendelkezni ezen a területen.\par
+ Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmányaik kezdetén találkoztak a rendezési algoritmusokkal. Nagyszerű terület arra, hogy megérthessük mi egy algoritmus műveletigénye, hogy mi számít igazán sok adatnak, vagy, hogy mit értünk egy algoritmus stabilitásán.\par
 
 \section{A feladat és annak értelmezése} 
 
@@ -283,7 +284,7 @@ A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöb
  A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Amennyiben egy menetben a maximális eleme elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}. Az algoritmus javítható azzal, ha figyeljük, hogy az egyes menetekben történt-e csere. Amennyiben egy olyan menet végére értünk, amelyben egy elem sem cserélt helyet, akkor a tömb már rendezve van. A program az eredeti, nem javított verziót mutatja be.
  \subsubsection{Példa}
  A rendezendő számok: $42, 22, 10, 57$.\par
- Az első ábrán szerepel a kezdeti állapot, a másodikon az első két értéket cseréje látható. A 42 ismét fentebb kerül egy pozícióval a harmadik ábrán. A negyedik ábrán csupán egy összehasonlítás történik, mivel az 57 nagyobb mint az őt megelőző érték. Az ötödik ábrán az előző állapot első két értékének(22 és 10) a cseréje látható. Az ezt követő összehasonlítás eredményeképp tudható, hogy a 42 érték a helyére került. Ezt követően már csak egy összehasonlítást történik, mely után az adatsor rendezve lesz.\par
+ Az első ábrán szerepel a kezdeti állapot, a másodikon az első két értéket cseréje látható. A 42 ismét fentebb kerül egy pozícióval a harmadik ábrán. A negyedik ábrán csupán egy összehasonlítás történik, mivel az 57 nagyobb mint az őt megelőző érték. Az ötödik ábrán az előző állapot első két értékének(22 és 10) a cseréje látható. Az ezt követő összehasonlítás eredménye, hogy a második legnagyobb érték(42) a helyére került. Ezt követően már csak egy összehasonlítást történik, mely után az adatsor rendezve lesz.\par
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=1\textwidth]{pics/bubble.jpg}
@@ -307,7 +308,7 @@ Két részre bontjuk a tömböt, az egyik részén - a tömb bal széle - a már
 Lényege, hogy a soron következő elemet - a második elemtől kezdve - egy ideiglenes változóba mentjük, és a rendezett tömbrész elemeit jobbra csúsztatjuk mindaddig, amíg a kiválasztott érték nem kerül a helyére. Ezt n-1 alkalommal ismételve megkapjuk a rendezett tömböt.
  \subsubsection{Példa}
  A rendezendő számok megegyeznek a buborékrendezés bemutatásánál használtakkal, azaz: $42, 22, 10, 57$.\par
- Az első ábrán szerepel a kezdeti állapot. A következő képen jelöljük azt, hogy a második elemet fogjuk beszúrni ezért elmentésre kerül. A harmadik ábrán felcsúsztatjuk a 42 értéket, majd a negyedik képen már látható, hogy a tömb első két eleme alkotja rendezett tömbrészt. Ezt követően a harmadik elem kerül kiválasztásra, a teljes rendezett tömbrészt jobbra tolódik, így az 7. képen már a tömb első három eleme rendezett. Végül a tömb utolsó eleme kerül összehasonlításra az őt megelőzővel, mivel nagyobb tőle, így kész a rendezési feladat.\par
+ Az első ábrán szerepel a kezdeti állapot. A következő képen jelöljük azt, hogy a második elemet fogjuk beszúrni. A harmadik ábrán felcsúsztatjuk a 42 értéket, majd a negyedik képen már látható, hogy a tömb első két eleme alkotja rendezett tömbrészt. Ezt követően a harmadik elem kerül kiválasztásra. Az összehasonlítások eredményeképp a teljes rendezett tömbrészt jobbra tolódik, így az 7. képen már a tömb első három eleme megfelelő sorrendben van. Végül a tömb utolsó eleme kerül összehasonlításra az őt megelőzővel, mivel nagyobb tőle, így kész a rendezési feladat.\par
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=1\textwidth]{pics/insertion.jpg}
@@ -344,7 +345,7 @@ Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró r
 \end{table}
  \subsubsection{Példa}
  Az előző példákban használt számokat kívánjuk rendezni ismét, azaz a bemenet: $42, 22, 10, 57$.\par
- Az első képen látható a kezdeti állapot. A következő ábrán jelöljük azt, hogy a harmadik elemet fogjuk mozgatni ezért elmentésre kerül, ekkor a lépésköz kettő. A harmadik ábrán látható az első elem átmozgatása. A negyedik képen vesszük a következő elemet, továbbra is 2 lépésközzel megvizsgáljuk a második indexen lévő elemet az ötödik ábrán. Itt nem történik mozgatás. Végül a hatodik megjelenített lépéstől kezdve beszúró rendezést alkalmazunk.\par
+ Az első képen látható a kezdeti állapot. A következő ábrán jelöljük azt, hogy a harmadik elemet fogjuk mozgatni, ekkor a lépésköz kettő. A harmadik képen látható az első elem átmozgatása, a kiválasztott elemet beszúrjuk a helyére. A negyedik képen vesszük a következő elemet, továbbra is 2 lépésközzel megvizsgáljuk a második indexen lévő elemet az ötödik ábrán. Itt nem történik mozgatás. Végül a hatodik megjelenített lépéstől kezdve beszúró rendezést alkalmazunk.\par
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=1\textwidth]{pics/shell.jpg}
@@ -377,10 +378,10 @@ Gyakorlatilag szétválasztást eszközölünk, melynek eredményeképp a kivál
  	\caption{Példa a gyorsrendezésre}
  \end{figure}\par
 \subsubsection{Műveletigény}
-A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\Theta(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.\par
+A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legrosszabb futási időt ($\Theta(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.\par
 Ha feltételezzük azt, hogy minden rekurzív lépés felezi a tömböt, akkor egy $n\log(n)$ magasságú fával lehet ábrázolni a rekurziót. Továbbá, mivel minden szinten az elemek száma $n$, és ezek particionálásához használt lépésszám $\Theta(n)$ így a legjobb esetben a futási idő $\Theta(n\cdot\log(n))$.\par
  A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legmegfelelőbb választás ha számít a rendezés sebessége, mivel az átlagos futási ideje - $\mathcal{O}(n\cdot\log(n))$ - közel áll a legjobb futási időhöz\cite{Cormen}.\par
- Amennyiben a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem túl hatékony az eljárás.
+ Amennyiben a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek nem hatékony az eljárás.
 \subsubsection{Jelölések az állapotjelző felületen}
 A vezérelemet \textcolor{select}{\Huge$\bullet$} szín jelöli. Annak érdekében, hogy jobban átlátható legyen, hogy éppen melyik résztömbön folyik a vizsgálat az éppen nem vizsgált rész haloványabb sárga színnel van jelölve. A többi jelölés a felület bemutatásában leírtaknak megfelelően történik.
 
@@ -419,7 +420,7 @@ Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben találha
 Amennyiben a bemenet hossza nem kettő hatvány a program -1 értékekkel tölti fel a bináris fa további leveleit, amíg a bemenet hossza nem lesz megfelelő.
  \subsubsection{Példa}
  Az eddigi példákkal megegyezően a bemenet: $42, 22, 10, 57$.\par
- Az első ábra a kezdőállapotot mutatja. A második kép a versenyfa kitöltését követő állapot, melynek eredményeképp megjelenik az abszolút maximum érték a diagramon. Ezt követően a harmadik képen látható a maximum értékhez tartozó levélelem megtalálásának állapota. A negyedik ábra szemlélteti az újrajátszás eredményét. Az előzőekhez hasonlóan szemléltetik a további képek a maximum érték megjelenítését, a levélelem megkeresését majd az újrajátszás eredményét.\par
+ Az első ábra a kezdőállapotot mutatja. A második kép a versenyfa kitöltését követő állapot, melynek eredményeképp megjelenik az abszolút maximum érték a diagramon. Ezt követően a harmadik képen látható a maximális értékhez tartozó levélelem megtalálásának állapota. A negyedik ábra szemlélteti az újrajátszás eredményét. Az előzőekhez hasonlóan szemléltetik a további képek a maximum érték megjelenítését, a levélelem megkeresését majd az újrajátszás eredményét.\par
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=1\textwidth]{pics/tournament.jpg}
@@ -481,7 +482,7 @@ A fejlesztés során több szempontot is figyelembe kell venni, úgy mint: műve
 A dolgozat fő célja egy olyan elsősorban hallgatóknak szánt program létrehozása, amellyel néhány rendezési algoritmus működése egy letisztult és egyszerű felhasználó felületen keresztül tanulmányozható.\par
 A programnak három jól elkülönülő komponensből kell állnia:
 Egy logikai(modell) részből, ami gyakorlatilag a rendszer "motorja", itt kell, hogy történjen mindenféle számítási és adattárolási művelet. Egy megjelenítési rétegből, amely a logikai rész eredményeit jeleníti meg a felhasználó számára. Végül pedig egy kontroller szintből, amely kapcsolatot teremt a logikai- és a megjelenítési réteg között. A gyakorlatban ezt a fajta tagolást nevezik Modell-Nézet-Vezérlő \emph{(MVC)} tervezési mintának.\par
-Az elsődleges szempont az, hogy a felhasználó könnyedén tudja kezelni a programot, és segítségével megértse az algoritmusok működését. Így a felhasználói felület áttekinthetőségére és letisztultságára nagy hangsúlyt kell fektetni. Továbbá fontos az is, hogy a jövőben több rendezési eljárást is könnyedén meg lehessen jeleníteni a jelenlegiek mellett, így fontos szempont a kód egyszerű bővíthetősége.
+Az elsődleges szempont az, hogy a felhasználó könnyedén tudja kezelni a programot, és segítségével megértse az algoritmusok működését. Így a felhasználói felület áttekinthetőségére és letisztultságára nagy hangsúlyt kell fektetni. Továbbá fontos az is, hogy a jövőben további rendezési eljárásokat is könnyedén meg lehessen jeleníteni a jelenlegiek mellett, így fontos szempont a kód egyszerű bővíthetősége.
 
 \subsection{Megvalósítás}
 Az első lépés a rendezési algoritmusok implementálása.
@@ -531,6 +532,7 @@ A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rend
 		algorithm     & A lejátszható algoritmusok implementációját tartalmazza                       \\ \hline
 		algorithm.raw & Az "egyszerű" rendezést megvalósító osztályok csomagja\\ \hline
 		graph         & A gráf adatszerkezet implementációja                           \\ \hline
+		info         & "Az algoritmusról" felugróablakhoz tartozó adatbetöltő                         \\ \hline
 	\end{tabular}
 \end{table}
 Elsőként a \textbf{algorithm} csomagot részletezzük, röviden az alábbi táblázat foglalja össze a benne található osztályok feladatait:
