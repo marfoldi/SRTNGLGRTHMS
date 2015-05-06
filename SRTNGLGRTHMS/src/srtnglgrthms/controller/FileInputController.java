@@ -72,8 +72,8 @@ public class FileInputController {
 		} catch (InputMismatchException ime) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Hiba");
-			alert.setHeaderText("Hiba történt");
-			alert.setContentText("A megadott fájl nem megfelelõ!\n(Nem csak egész számokat tartalmaz soronként)");
+			alert.setHeaderText("A megadott fájl nem megfelelõ!");
+			alert.setContentText("A fájl minden egyes sorában pontosan egy pozitív egész szám kell, hogy szerepeljen.");
 
 			alert.showAndWait();
 		}

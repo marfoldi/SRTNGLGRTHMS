@@ -75,7 +75,7 @@ public class MenuController {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Névjegy");
 		alert.setHeaderText("Névjegy");
-		alert.setContentText("Készítette: Márföldi Péter Bence\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
+		alert.setContentText("Készítette: Márföldi Péter Bence\n\nEötvös Loránd Tudományegyetem\nInformatikai Kar\n2015\n\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
 
 		alert.showAndWait();
 	}
@@ -86,8 +86,9 @@ public class MenuController {
 	@SuppressWarnings("deprecation")
 	@FXML
 	private void handleExit() {
-		if(BenchmarkController.getSortingThreads() != null) {
-			for(SortingSortThread sortingThread : BenchmarkController.getSortingThreads()) {
+		if (BenchmarkController.getSortingThreads() != null) {
+			for (SortingSortThread sortingThread : BenchmarkController
+					.getSortingThreads()) {
 				sortingThread.stop();
 			}
 		}

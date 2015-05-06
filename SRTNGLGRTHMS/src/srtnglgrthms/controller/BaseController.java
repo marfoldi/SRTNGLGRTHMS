@@ -117,7 +117,7 @@ public class BaseController {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Névjegy");
 		alert.setHeaderText("Névjegy");
-		alert.setContentText("Készítette: Márföldi Péter Bence\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
+		alert.setContentText("Készítette: Márföldi Péter Bence\n\nEötvös Loránd Tudományegyetem\nInformatikai Kar\n2015\n\nGitHub: https://github.com/marfoldi/SRTNLGRTHMS");
 
 		alert.showAndWait();
 	}

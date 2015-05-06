@@ -27,7 +27,7 @@
    <center>
       <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Általános">
+          <Tab text="Megfigyelés">
             <content>
               <fx:include fx:id="fooTabPage" source="OverviewLayout.fxml" />
             </content>

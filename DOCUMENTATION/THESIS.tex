@@ -6,6 +6,7 @@
 \usepackage{enumitem}
 \usepackage{ucs}
 \usepackage{xcolor}
+\usepackage{float}
 \usepackage[utf8]{inputenc}
 \usepackage[nottoc,numbib]{tocbibind}
 \usepackage[T1]{fontenc}
@@ -114,7 +115,13 @@ Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gond
 
 \subsubsection{Telepítés natív telepítővel}
 Ez a telepítési mód csak a \emph{Windows}-t használók számára érhető el.\par
-Az első lépés a telepítési varázsló elindítása. A megjelenő párbeszédpanelon kattintsunk a \textbf{Telepítés} gombra. Ezt követően elindul a telepítés, ami körülbelül fél percet vesz igénybe. A telepítési panel bezárása után máris megjelenik a program főmenüje, így megkezdheti a felhasználó a használatát. A későbbiekben történő futtatáshoz a következő könyvtárba szükséges navigálni: \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash SRTNGLGRTHMS.exe} \par
+Az első lépés a telepítési varázsló elindítása. A megjelenő párbeszédpanelon kattintsunk a \textbf{Telepítés} gombra. Ezt követően elindul a telepítés, ami körülbelül fél percet vesz igénybe.\par
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{pics/setup.png}
+	\caption{A telepítési párbeszédpanel}
+\end{figure}\par
+A telepítési panel bezárása után máris megjelenik a program főmenüje, így megkezdheti a felhasználó a használatát. A későbbiekben történő futtatáshoz a következő könyvtárba szükséges navigálni: \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash SRTNGLGRTHMS.exe} \par
 A fenti útvonal akkor érvényes, ha \textbf{C:\textbackslash} meghajtón található az operációs rendszer, néhány rendszeren más lehet ennek a meghajtónak a betűjele. Továbbá egyes számítógépeken az \textbf{AppData} mappa rejtett lehet, így érdemes valamilyen fájlböngészőt, például \emph{Total Commander}-t használni.
 
 \subsubsection{Hagyományos telepítés}
@@ -128,10 +135,21 @@ A program törlése az utóbb ismertetett telepítési mód esetében mindössze
 
 \section{Felhasználói felület bemutatása}
 \subsection{Főmenü}
-A program indítását követően megjelenik a főmenü, mely két komponensből áll.  Az ablak felső részén található piros színnel jelölt rész az eszköztárat foglalja magában. A kék szín jelöli a központi panelt, mely három gombból tevődik össze, ezekre történő kattintás után lehetőség nyílik a rendezendő számok megadására.
+A program indítását követően megjelenik a főmenü, mely két komponensből áll.\par
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{pics/mainmenu.png}
+	\caption{A program főmenüje}
+\end{figure}\par
+  Az ablak felső részén található piros színnel jelölt rész az eszköztárat foglalja magában. A kék szín jelöli a főmenü központi paneljét, mely három gombból tevődik össze. Ezen gombokra történő kattintás után lehetőség nyílik a rendezendő számok megadására.
 
 \subsubsection{Eszköztár}
-Az eszköztárat két menüpont alkotja, \textbf{Fájl} és \textbf{Segítség} címszóval ellátva. Az előzőben a program bezárásának lehetősége kapott helyet, míg utóbbiban a szoftver névjegye tekinthető meg.
+Az eszköztárat két menüpont alkotja, \textbf{Fájl} és \textbf{Segítség} címszóval ellátva. Az előzőben a program bezárásának lehetősége kapott helyet, míg utóbbiban a szoftver névjegye tekinthető meg. Az \textbf{Ok} gomb lenyomásával bezárható a névjegy.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{pics/about.png}
+	\caption{A program névjegye}
+\end{figure}\par
 
 \subsubsection{Központi panel}
 A három gombból áll:
@@ -147,10 +165,21 @@ Az előzőekben említett három lehetőség közül választhat a felhasználó
 
 \subsubsection{Manuális}
 A megjelenő panelen két gomb található, melyek kezdetben inaktívak. A "Méret:" címke után található beviteli mezőbe egy pozitív egész szám megadásával és az \textbf{ENTER} billentyű leütésével megjelennek a számok bevitelére lehetőséget adó mezők. Ezt követően a panelen található két gomb már kattintható, a \textbf{Számok generálása} gombra kattintva 0 és 100 közötti véletlen számokkal töltődnek fel a mezők. Az \textbf{Ok}ra történő kattintás után megjelenik a program \textbf{Főpanel}je.\par
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{pics/manualinput.png}
+	\caption{8 elemű manuálisan megadott bemenet}
+\end{figure}
 Meg kell jegyezni, hogy ebben a módban legfeljebb száz érték adható meg, ennél nagyobb méretű bemenet manuális feltöltése túl körülményes lenne. Amennyiben több számot szándékozik megadni a felhasználó, válasszon a számok generálása vagy a fájlból történő beolvasás lehetőségek közül.
 
 \subsubsection{Generálás}
-A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legördülő menüből kiválasztva a generálás módját az \textbf{OK} gomb kattinthatóvá válik. A legördülő menüből a következő négy típus közül lehet választani, azaz a generált tömb legyen:
+A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legördülő menüből kiválasztva a generálás módját az \textbf{OK} gomb kattinthatóvá válik.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{pics/randominput.png}
+	\caption{Egymillió véletlen generált érték megadása}
+\end{figure}
+ A legördülő menüből a következő négy típus közül lehet választani, azaz a generált tömb legyen:
 \begin{description}
 	\item[$\bullet$] Véletlen generált - véletlenszerűen választott számokból álljon
 	\item[$\bullet$] Majdnem rendezett - a tömb 80\%-a már rendezve legyen
@@ -160,21 +189,42 @@ A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legö
 Itt megjegyzendő, hogy amennyiben az input mérete az [1,100] intervallumban van, akkor a rendezendő számok a 0 és 100 közötti értékek közül kerülnek kiválasztásra. Ennek oka, hogy a túl nagy differencia az egyes értékek között sokat rontana az oszlopdiagramok megjelenésén. Ellenkező esetben a \emph{Java} nyelv által definiált egész típus(\emph{Integer}) maximális értékéig terjedhet a generált számok nagysága.
  
 \subsubsection{Fájl - fájlból beolvasás}
-A gombra történő kattintás után megjelenik egy fájltallózó. A tallózóban csak szöveges(\emph{txt} kiterjesztésű) fájl választására van lehetőség. A fájl tartalmára történő megszorítások szigorúak. Minden sora legfeljebb egy pozitív egész számot tartalmazhat, ellenkező esetben a program hibaüzenet kíséretében visszatér a főmenübe. Fontos, hogy az előzőek értelmében az üres sorok sem megengedettek.
+A gombra történő kattintás után megjelenik egy fájltallózó. A tallózóban csak szöveges(\emph{txt} kiterjesztésű) fájl választására van lehetőség.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{pics/fileinput.png}
+	\caption{Fájltallózó}
+\end{figure}
+ A fájl tartalmára történő megszorítások szigorúak. Minden sora legfeljebb egy pozitív egész számot tartalmazhat, ellenkező esetben a program hibaüzenet kíséretében visszatér a főmenübe. Fontos, hogy az előzőek értelmében az üres sorok sem megengedettek.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.6\textwidth]{pics/fileinput_error.png}
+ 	\caption{Nem megfelelő fájl esetén a hibaüzenet}
+ \end{figure}
 
 \subsection{Főpanel}
 A rendezendő számok sikeres megadása után megjelenik a program főpanelje, mely három logikai részből áll. A főpanel magában foglalja a \textbf{Megfigyelés} és \textbf{Összehasonlítás} paneleket, melyek összetettségükből fakadóan külön alfejezetekben kerülnek részletezésre.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{pics/mainpanel.png}
+ 	\caption{A program főpanelja}
+ \end{figure}
 \subsubsection{Eszköztár}
 A \textbf{Főmenü}höz hasonlóan itt is jelen van a piros színnel jelzett eszköztár sáv. Itt fontos kiemelni, hogy a \textbf{Fájl} és \textbf{Segítség} pontokon belül további alpontok is elérhetőek:\par
 A \textbf{Fájl} menüpont bővül a \textbf{Vissza a főmenübe} lehetőséggel, melynek segítségével a program újraindítása nélkül lehetőség van újabb rendezendő számsorozat megadására.\par
 A \textbf{Segítség}re kattintva további lehetőségként választható az \textbf{Algoritmusról} pont. Itt elolvasható a rövid szöveges ismertetője a \textbf{Megfigyelés} panel listájából kiválasztott elemnek. Amennyiben pedig az \textbf{Összehasonlítás} panel aktív, akkor e panel táblázatából kiválasztott algoritmus leírása tekinthető meg. Az aktuális panelen ha nem került kiválasztásra sor, akkor a menüpontra történő kattintás után felugró ablak figyelmezteti a felhasználót arról, hogy e menüpont használatához előbb ki kell választani egy algoritmust.
 \subsubsection{Panelválasztó}
-Amennyiben a bemenet megadásánál már ismertetett [1,100] intervallum magában foglalja a bemenet hosszát, akkor két elem látható a sárgával jelölt részen. Így lehetősége van a felhasználónak navigálni a \textbf{Megfigyelés} és az \textbf{Összehasonlítás} panel között. Ellenkező esetben csak az utóbbi panel jelenik meg. Az aktuálisan megjelenített felület neve a listában kék kerettel jelenik meg, valamint a másik elemhez képest világosabb szürke színnel.
+Amennyiben a bemenet megadásánál már ismertetett [1,100] intervallum magában foglalja a bemenet hosszát, akkor két elem látható a zöld jelölt részen. Így lehetősége van a felhasználónak navigálni a \textbf{Megfigyelés} és az \textbf{Összehasonlítás} panel között. Ellenkező esetben csak az utóbbi panel jelenik meg. Az aktuálisan megjelenített felület neve a listában kék kerettel jelenik meg, valamint a másik elemhez képest világosabb szürke színnel.
 \subsubsection{Panel}
 A harmadik logikai egységet alkotják a panelek - kék színnel jelölve -, melyek közötti váltást a \textbf{Panelválasztó} teszi lehetővé. Mivel részletesebb leírást kíván a panelek ismertetése, ezért egy-egy külön alfejezetben kerülnek bemutatásra.
 
 \subsection{Megfigyelés panel}
 A főpanel középső területén foglal helyet, négy komponensből tevődik össze. A felhasználónak itt nyílik lehetősége az egyes algoritmusok megfigyelésére, tanulmányozására.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{pics/watchpanel.png}
+ 	\caption{Megfigyelés panel}
+ \end{figure}
 \subsubsection{Algoritmus lista}
 Az ábrán piros színnel jelölt rész, melynek elemeire kattintva kiválasztható, hogy mely algoritmust szeretné a felhasználó vizsgálni. A kiválasztott elem kék háttérszínt kap, alapértelmezett esetben nincs kijelölt elem.
 \subsubsection{Állapotjelző táblázat}
@@ -191,9 +241,10 @@ Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéke
 	\end{tabular}
 \end{table}
 \subsubsection{Gombok}
-Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak. A léptetéssel egy következő állapotot tekinthet meg a felhasználó. A \textbf{Lejátszás} gombra kattintva a program bemutatja az algoritmus működését. A felhasználó bármikor megállíthatja az animációt a \textbf{Lejátszás} gomb helyén található \textbf{Megállítás} gombra kattintva, majd ha kívánja innen folytathatja a vizsgálatot. Amennyiben a rendezés lezajlott, megjelenik az \textbf{Újraindítás} gomb, melynek megnyomásával az értékek visszakerülnek az eredeti helyükre.
+Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. A képen fekete keretet jelzi a helyüket. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá vállnak. A léptetéssel egy következő állapotot tekinthet meg a felhasználó. A \textbf{Lejátszás} gombra kattintva a program bemutatja az algoritmus működését. A felhasználó bármikor megállíthatja az animációt a \textbf{Lejátszás} gomb helyén található \textbf{Megállítás} gombra kattintva, majd ha kívánja innen folytathatja a vizsgálatot. Amennyiben a rendezés lezajlott, megjelenik az \textbf{Újraindítás} gomb, melynek megnyomásával az értékek visszakerülnek az eredeti helyükre.
 
 \subsubsection{Állapotjelző felület}
+A fenti ábrán kék szín jelöli ezt a területet.
 Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal helyet. Ettől eltérően a \textbf{Kupac}- és \textbf{Versenyrendezés} kiválasztásakor egy gráf is helyet kap. Továbbá a \textbf{Radix "vissza"} rendezés második tömbjének reprezentálásához egy plusz oszlopdiagram is megjelenik. Itt megjegyzendő, hogy a szemléltetéshez használt bináris fa legfeljebb 31 csúcsot tartalmazhat. Hosszabb bemenet megadásakor csak az első 31 elem vesz részt a megjelenítésben.
 \par Az egyes műveleteket különböző színek is jelölik. Alapértelmezetten a rendezendő elemek színe a következőket jelentik:\par
 \begin{description}
@@ -204,8 +255,14 @@ Az állapotjelző felületen minden esetben legalább egy oszlopdiagram foglal h
 \end{description}
 A \textcolor{select}{\Huge$\bullet$} jelölés némi magyarázatra szorul. A kitüntetett szerepű elemnek számít például a gyorsrendezés vezéreleme, vagy a versenyrendezés fájának felépítésekor egy belső csúcsba kerülő elem.\par
 Némely algoritmusnál a fentiektől eltérő lehet az egyes színek jelentése. A következő fejezetben(2.3), az algoritmusok ismertetésénél jelölve van minden ilyesfajta különbség.
+
 \subsection{Összehasonlítás panel}
 A \textbf{Megfigyelés panel}lel megegyezően a főpanel középső részén található, két logikai egységből épül fel. Lehetőséged ad az összehasonlításon alapuló rendezések műveletigényeinek a vizsgálására.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{pics/benchmarkpanel.png}
+ 	\caption{Összehasonlítás panel}
+ \end{figure}
 \subsubsection{Elemzés táblázat}
 Piros kerettel jelölt rész az ábrán, mely táblázatnak négy oszlopa van:
 \begin{description}
@@ -214,7 +271,7 @@ Piros kerettel jelölt rész az ábrán, mely táblázatnak négy oszlopa van:
 	\item[$\bullet$] Mozgatások - az elemmozgatások számának összege
 	\item[$\bullet$] Cserék - a végzett cserék szummája
 \end{description}
-Itt megjegyzendő, hogy a \textbf{Mozgatások} oszlop minden esetben kitöltésre kerül, még ha az algoritmus nem is mozgatásokat használ. Ekkor a mozgatások oszlopban a cserék számának háromszorosa jelenik meg. Ennél fogva egyszerűbb az algoritmusok vizsgálata.
+A \textbf{Mozgatások} oszlop minden esetben kitöltésre kerül, még ha az algoritmus nem is mozgatásokat használ. Ekkor a mozgatások oszlopban a cserék számának háromszorosa jelenik meg. Ennél fogva egyszerűbb az algoritmusok vizsgálata.
 \subsubsection{Elemzés diagram}
 A táblázathoz képest balra helyezkedik el a zöld kerettel jelölt oszlopdiagram. Kezdetben teljesen üres, csak a jelölések jelentése látható. Az \textbf{Elemzés táblázat} egy során történő dupla kattintás következtében megjelenik az algoritmus összehasonlításainak és mozgatásainak a száma. Előbbi narancs- utóbbi citromsárga színnel. Amennyiben olyan sorra kattint a felhasználó, mely már látható a diagramon, azon algoritmus adatai eltűnnek a felületről.
 
@@ -224,6 +281,14 @@ A táblázathoz képest balra helyezkedik el a zöld kerettel jelölt oszlopdiag
 A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöbb esetben a leglassabb is. Már az 1965-ös évben megjelent egy teljes körű elemzése\cite{Demuth}.
 \subsubsection{Működés}
  A rendezés minden egyes elemet összehasonlít a rákövetkező elemmel, és ha szükséges megcseréli őket. Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerűen a lista végére kerül, ezzel egyidejűleg a kisebb elemek "lesüllyednek" a tömb elejére. Amennyiben egy menetben a maximális eleme elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra\cite{Fekete}. Az algoritmus javítható azzal, ha figyeljük, hogy az egyes menetekben történt-e csere. Amennyiben egy olyan menet végére értünk, amelyben egy elem sem cserélt helyet, akkor a tömb már rendezve van. A program az eredeti, nem javított verziót mutatja be.
+ \subsubsection{Példa}
+ A rendezendő számok: $42, 22, 10, 57$.\par
+ Az első ábrán szerepel a kezdeti állapot, a másodikon az első két értéket cseréje látható. A 42 ismét fentebb kerül egy pozícióval a harmadik ábrán. A negyedik ábrán csupán egy összehasonlítás történik, mivel az 57 nagyobb mint az őt megelőző érték. Az ötödik ábrán az előző állapot első két értékének(22 és 10) a cseréje látható. Az ezt követő összehasonlítás eredményeképp tudható, hogy a 42 érték a helyére került. Ezt követően már csak egy összehasonlítást történik, mely után az adatsor rendezve lesz.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/bubble.jpg}
+ 	\caption{Példa a buborékrendezésre}
+ \end{figure}\par
  \subsubsection{Műveletigény}
 Párosával haladunk végig az elemeken, és így vizsgáljuk őket. Mivel minden menet végén visszavezetjük a problémát az eggyel rövidebb feladatra, ezért az összehasonlítások száma $n$ hosszú bemenetre:\par
 $$\ddot{O}(n)=(n-1)+(n-2)+\ldots+1=\frac{n\cdot(n-1)}{2}=\frac{n^2}{2}-\frac{n}{2}=\Theta(n^2)$$
@@ -232,7 +297,7 @@ $$MCs(n)=\frac{n\cdot(n-1)}{2}=\Theta(n^2)$$
 Amennyiben a tömb elemei már rendezettek, akkor egyetlen cserét sem szükséges végrehajtani.
 Az átlagos csereszám a maximális cserék számának fele\cite{Fekete}, ám nagyságrendileg még ez is $\Theta(n^2)$
 \subsubsection{Jelölések az állapotjelző felületen}
-Kitüntetettnek (\textcolor{select}{\Huge$\bullet$} színnel) jelöljük azt az elemet, amely egy csere következtében feljebb került.
+Kitüntetettnek (\textcolor{select}{\Huge$\bullet$} színnel) jelöljük azt az elemet, amely egy csere következtében feljebb került. Nincs egyéb eltérés az eredeti jelölésekhez képest.
 
 \subsection{Beszúró rendezés}
 \subsubsection{Leírás}
@@ -240,6 +305,14 @@ Kitüntetettnek (\textcolor{select}{\Huge$\bullet$} színnel) jelöljük azt az 
 \subsubsection{Működés}
 Két részre bontjuk a tömböt, az egyik részén - a tömb bal széle - a már rendezett, míg a másikon a még nem vizsgált elemek szerepelnek. Kezdetben a tömb első elemét tekintjük a rendezett résznek.\par
 Lényege, hogy a soron következő elemet - a második elemtől kezdve - egy ideiglenes változóba mentjük, és a rendezett tömbrész elemeit jobbra csúsztatjuk mindaddig, amíg a kiválasztott érték nem kerül a helyére. Ezt n-1 alkalommal ismételve megkapjuk a rendezett tömböt.
+ \subsubsection{Példa}
+ A rendezendő számok megegyeznek a buborékrendezés bemutatásánál használtakkal, azaz: $42, 22, 10, 57$.\par
+ Az első ábrán szerepel a kezdeti állapot. A következő képen jelöljük azt, hogy a második elemet fogjuk beszúrni ezért elmentésre kerül. A harmadik ábrán felcsúsztatjuk a 42 értéket, majd a negyedik képen már látható, hogy a tömb első két eleme alkotja rendezett tömbrészt. Ezt követően a harmadik elem kerül kiválasztásra, a teljes rendezett tömbrészt jobbra tolódik, így az 7. képen már a tömb első három eleme rendezett. Végül a tömb utolsó eleme kerül összehasonlításra az őt megelőzővel, mivel nagyobb tőle, így kész a rendezési feladat.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/insertion.jpg}
+ 	\caption{Példa a beszúró rendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
 Legjobb esetben elegendő a második elemtől mindegyik elemet az előtte található értékkel összehasonlítani, vagyis a tömb már eleve rendezett. Ez pontosan n-1 összehasonlítást jelent, azaz:
 $$m\ddot{O}(n)=(n-1)=\Theta(n)$$
@@ -269,9 +342,17 @@ Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró r
 		$2^p 3^q$ váltakozva & 1, 2, 3, 4, $\ldots$  &               $\Theta(n \log^2 n)$                     & Pratt, 1971     \\ \hline
 	\end{tabular}
 \end{table}
+ \subsubsection{Példa}
+ Az előző példákban használt számokat kívánjuk rendezni ismét, azaz a bemenet: $42, 22, 10, 57$.\par
+ Az első képen látható a kezdeti állapot. A következő ábrán jelöljük azt, hogy a harmadik elemet fogjuk mozgatni ezért elmentésre kerül, ekkor a lépésköz kettő. A harmadik ábrán látható az első elem átmozgatása. A negyedik képen vesszük a következő elemet, továbbra is 2 lépésközzel megvizsgáljuk a második indexen lévő elemet az ötödik ábrán. Itt nem történik mozgatás. Végül a hatodik megjelenített lépéstől kezdve beszúró rendezést alkalmazunk.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/shell.jpg}
+ 	\caption{Példa a Shell rendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
- A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program a legrégebbi, \textbf{Donald Shell} által javasolt értékeket\cite{Shell} használja, így legrosszabb esetben $\Theta(n^2)$ a műveletek száma.
- A legjobb eset akkor áll fenn, ha a tömb elemei már rendezettek, ekkor nincs szükség mozgatásra, az összehasonlítások száma pedig $\Theta(n)$
+ A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program a legrégebbi, \textbf{Donald Shell} által javasolt értékeket\cite{Shell} használja, így legrosszabb esetben $\Theta(n^2)$ a műveletek száma.\par
+ A legjobb eset akkor áll fenn, ha a tömb elemei már rendezettek, ekkor nincs szükség mozgatásra, az algoritmus futási ideje $\Theta(n)$ nagyságrendű.
 \subsubsection{Jelölések az állapotjelző felületen}
  A felület bemutatásában szereplőkhöz képest nincs eltérés.
 
@@ -287,13 +368,21 @@ Helyben rendező, oszd meg és uralkodj\cite{Cormen} elven működő rekurzív a
 	\item[$\bullet$] Rekurzívan ismételjük meg az előbbi lépéseket a résztömbökön.
 \end{description}
 Gyakorlatilag szétválasztást eszközölünk, melynek eredményeképp a kiválasztott elemtől kisebb értékek tőle balra, a nagyobbak pedig jobbra helyezkednek el. Az egyszerűbb megérthetőséget szem előtt tartva a program mindig a legjobboldalibb elemet szelektálja.
+ \subsubsection{Példa}
+ Az eddigi példákkal megegyezően a bemenet: $42, 22, 10, 57$.\par
+ Az első képen látható a már kiválasztott vezérelem. A negyedik ábráig csak összehasonlítások történnek, mivel minden elem kisebb, mint a kiválasztott érték. A negyedik képen a három elemű résztömbön végezzük el a rendezést, a vezérelem ismét a legjobboldalibb érték. Az ötödik képen az első érték nagyobb mint a vezérelem, így ezt az elemet a hatodik képen megcseréljük a vezérelemmel. Ezt követően a középső két elem kerül összehasonlításra, mivel nincs szükség cserére így a rendezés befejeződött.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/quick.jpg}
+ 	\caption{Példa a gyorsrendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
 A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legnagyobb műveletigényt ($\Theta(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.\par
 Ha feltételezzük azt, hogy minden rekurzív lépés felezi a tömböt, akkor egy $n\log(n)$ magasságú fával lehet ábrázolni a rekurziót. Továbbá, mivel minden szinten az elemek száma $n$, és ezek particionálásához használt lépésszám $\Theta(n)$ így a legjobb esetben a futási idő $\Theta(n\cdot\log(n))$.\par
  A gyorsrendezés a legtöbb esetben(közepes és nagy méretű bemenetre) a legmegfelelőbb választás ha számít a rendezés sebessége, mivel az átlagos futási ideje - $\mathcal{O}(n\cdot\log(n))$ - közel áll a legjobb futási időhöz\cite{Cormen}.\par
  Amennyiben a tömb elemei már eleve rendezettek vagy esetleg fordított sorrendben szerepelnek sajnos nem túl hatékony az eljárás.
 \subsubsection{Jelölések az állapotjelző felületen}
-A vezérelemet \textcolor{select}{\Huge$\bullet$} szín jelöli. Ahhoz, hogy jobban átlátható legyen, hogy éppen melyik résztömbön folyik a vizsgálat az éppen nem vizsgált rész haloványabb sárga színnel van jelölve.
+A vezérelemet \textcolor{select}{\Huge$\bullet$} szín jelöli. Annak érdekében, hogy jobban átlátható legyen, hogy éppen melyik résztömbön folyik a vizsgálat az éppen nem vizsgált rész haloványabb sárga színnel van jelölve. A többi jelölés a felület bemutatásában leírtaknak megfelelően történik.
 
 \subsection{Kupacrendezés}
 \subsubsection{Leírás}
@@ -308,6 +397,14 @@ A második pont értelmében egyetlen olyan csúcs lehet, amelynek csak egy gyer
 \subsubsection{Működés}
 A rendezés az előbbi tulajdonságokra támaszkodik. 
 Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét áthelyezi a kupac "végére". Ezt követően ellenőrzi a kupac tulajdonságokat, ahol szükséges cseréket hajt végre, hogy helyreálljon a kupac adatszerkezet, ekkor már az utolsó, legjobboldalibb levélelem nem vesz részt a kupacépítésben. A gyökérben található elemet a legjobboldalibb levélelem elé helyezi, és újraépíti a kupacot. Ezen lépések addig ismétlődnek, amíg már a maximális elem áthelyezése nem lehetséges, a kupac "végére" helyezési művelet elérte a gyökeret.\par
+ \subsubsection{Példa}
+ Az eddigi példákkal azonosan a rendezendő számsorozat: $42, 22, 10, 57$.\par
+ Az első kép a kezdeti állapotot mutatja. Ezt követően a bemeneti adatokból kupacot építünk, melynek eredménye a második ábra. A gyökérelemet a levélszint utolsó elemével megcseréljük a harmadik képen. Ellenőrizzük, hogy teljesülnek-e a kupac tulajdonságok, amennyiben nem cseréket hajtunk végre, ennek eredménye látható a 4. képen. Ismét a gyökérelemet lesüllyesztjük, majd ellenőrizzük a kupac tulajdonságot. Az előző két lépést megismételve rendezett tömböt kapunk.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/heap.jpg}
+ 	\caption{Példa a kupacrendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
 A kupacrendezés egyik további, hogy míg a gyorsrendezésnek legrosszabb esetben a futási ideje $\mathcal{O}(n^2)$, addig itt a futási idő továbbra is $\mathcal{O}(n\cdot\log (n))$. Ennél fogva azon rendszereknél, ahol a négyzetes futási idő elfogadhatatlan inkább kupacrendezést alkalmaznak.
 \subsubsection{Jelölések az állapotjelző felületen}
@@ -320,6 +417,14 @@ A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kivál
 Az algoritmus által használt adatszerkezet egy teljes bináris fa. A bináris fa leveleiben szerepelnek a rendezendő elemek. Az első speciális menetben a fa belső pontjait kitöltjük, úgy, hogy a pontba a gyerekei közüli nagyobb érték kerül.\par 
 Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére. Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére. Ezzel ellentétben a gyakorlatban ez az érték $-\infty$. Majd ezen az "ágon" újrajátsszuk a mérkőzéseket.\par
 Amennyiben a bemenet hossza nem kettő hatvány a program -1 értékekkel tölti fel a bináris fa további leveleit, amíg a bemenet hossza nem lesz megfelelő.
+ \subsubsection{Példa}
+ Az eddigi példákkal megegyezően a bemenet: $42, 22, 10, 57$.\par
+ Az első ábra a kezdőállapotot mutatja. A második kép a versenyfa kitöltését követő állapot, melynek eredményeképp megjelenik az abszolút maximum érték a diagramon. Ezt követően a harmadik képen látható a maximum értékhez tartozó levélelem megtalálásának állapota. A negyedik ábra szemlélteti az újrajátszás eredményét. Az előzőekhez hasonlóan szemléltetik a további képek a maximum érték megjelenítését, a levélelem megkeresését majd az újrajátszás eredményét.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/tournament.jpg}
+ 	\caption{Példa a versenyrendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
 A rendezés egyetlen hátránya a tárigénye, $n$ szám esetén további $n-1$ mezőre szükség van a versenyfa elkészítéséhez. Éppen emiatt a gyakorlatban nem sűrűn használt eljárás. Az első, speciális menet, a versenyfa kitöltése $n-1$ összehasonlítást és mozgatást használ ($n-1$ a belső csúcsok száma). Minden további menetben a fán kétszer kell végigmenni, melynek magassága $\log_2(n)$. Egyszer a maximális levél megtalálásához, majd az újrajátszáshoz, így a ezen menetek $2\log_2(n)$ összehasonlítást végeznek. Mozgatás csak a második, újrajátszási művelethez tartozik. Így a műveletigények:
 $$\ddot{O}(n)=n-1+(n-1)\cdot2\cdot\log_2(n)=\Theta(n\cdot(\log(n))$$
@@ -334,6 +439,14 @@ A radix rendezés egy rekurzív algoritmus, melynek minden szintjén létrejönn
 Az általános edényrendezés egy speciális változata a radix előre rendezés, bináris, $d$ hosszú számokra.\par
 \subsubsection{Működés}
 Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A vizsgálat két mutatóval történik, melyek a tömb két végéről indulnak. A tömb elején addig halad a mutató, amíg a vizsgált elem első jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek első jegye 0. Amennyiben talált ilyen elemeket megcseréli őket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik. Ekkor kialakul két edény, az elsőben a 0-ás kezdőbittel rendelkező számok, míg a másodikban az 1-essel kezdődő elemek foglalnak helyet. Ezt követően a második bit kerül vizsgálatra az "aledényekben", az előzővel azonos módon. A rendezés befejeződött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
+ \subsubsection{Példa}
+ Az rendezendő számok: $2, 3, 1, 3$, azaz binárisan $10, 11, 01, 11$.\par
+ Az első ábra a kezdőállapotot mutatja. Mivel az első érték valószínűleg nem megfelelő helyen van, ezért a tömb végéről kezdve keresünk egy olyan értéket, amely 0-ás jeggyel kezdődik. A harmadik elem pont ilyen, a második képen ez a két érték cserére van kijelölve, majd a negyedik ábrán megtörténik a két elem cseréje. Az ötödik képen látható a menet során kialakult két edény. Mivel az első edény egy elemű, így nem szükséges a vizsgálata. A második edényben az 10 értéket szeretnénk cserélni, így az edény végétől haladunk előrefelé, amíg nem találunk olyan elemet, melynek második bitje egy. A 11 érték éppen ilyen, ezért megcseréljük őket. Az utolsó ábrán látható a rendezett sorozat.\par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/radixforward.jpg}
+ 	\caption{Példa a radix "előre" rendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
 A rendezés lineáris időben történik, a számjegyek számát jelölje $d$, ekkor belátható, hogy a legrosszabb esetben is, azaz ha az összes szám minden bitjét meg kell vizsgálnunk az algoritmus futási ideje:
 $$T(n)=\Theta(d \cdot n) = \Theta(n)$$
@@ -345,6 +458,14 @@ Az éppen vizsgált elem \textcolor{select}{\Huge$\bullet$} színnel van jelölv
 Az algoritmus rövid ismertetője megegyezik a \textbf{Radix "előre"} rendezés leírásával.
 \subsubsection{Működés}
 Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat.\par Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot. Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált számjegye 1-es. Ezt követően a 0-ás edényt az elejéről olvasva feltöltjük újra az eredeti tömböt az előbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtől visszafelé haladva töltjük át az értékeket.
+ \subsubsection{Példa}
+ A bemenet megegyezik a radix "előre" példájában használt számokkal, azaz: $2, 3, 1, 3$, amelyek binárisan a $10, 11, 01, 11$ értékek.\par
+ Az első ábra a kezdeti állapotot mutatja. A második képen a tömb első két eleme már áttöltésre került, a 10 az alsó tömb elejére, míg a 11 a végére. A harmadik ábrán látható a teljen áttöltött állapot. A következő ábrán visszatöltésre került az első érték, melynek első bitje 1, így az eredeti tömb végére került. Ekkor a második edény értékeit hátulról előrefelé vizsgáljuk, így a 10 érték kerül először az eredeti tömb elejére, majd a 11 a 10 előtti helyre. Végül az utolsó 11-es érték is bekerül az eredeti tömbbe. Ezt követően az 5. ábrán már csak átmásolásra kerülnek az értékek a megfelelő sorrendben, azaz az egyes edény tartalma előröl olvasva, míg a második edény értékei hátulról előrefelé haladva. \par
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=1\textwidth]{pics/radixbackward.jpg}
+ 	\caption{Példa a radix "vissza" rendezésre}
+ \end{figure}\par
 \subsubsection{Műveletigény}
 Lineáris idejű a rendezés, amennyiben $d$ jegyűek a rendezendő számok az algoritmus futási ideje:
 $$T(n)=\Theta(d \cdot n) = \Theta(n)$$

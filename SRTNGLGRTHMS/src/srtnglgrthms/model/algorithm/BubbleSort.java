@@ -7,8 +7,8 @@ import srtnglgrthms.controller.OverviewChartController;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class BubbleSort extends ChartAlgorithm {
-	private static int outerIdx = 0;
-	private static int innerIdx = 1;
+	private static int outerIdx;
+	private static int innerIdx;
 
 	private BubbleSort() {
 	}
