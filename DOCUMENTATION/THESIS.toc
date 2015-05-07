@@ -91,4 +91,5 @@
 \contentsline {section}{\numberline {3.2.}Haszn\IeC {\'a}lati esetek}{29}
 \contentsline {section}{\numberline {3.3.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{29}
 \contentsline {subsection}{\numberline {3.3.1.}Modell oszt\IeC {\'a}lyok}{30}
+\contentsline {subsubsection}{algorithm csomag}{30}
 \contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{31}

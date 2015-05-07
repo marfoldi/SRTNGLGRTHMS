@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  7 MAY 2015 00:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.4)  7 MAY 2015 15:11
 entering extended mode
 **THESIS.tex
-(C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
+(C:\Users\MPeter\git2\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,11 +13,11 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\elteikthesis.cls
+(C:\Users\MPeter\git2\SRTNLGRTHMS\DOCUMENTATION\elteikthesis.cls
 Document Class: elteikthesis 2010/09/18 v1.2 class for ELTE/IK thesis
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk12.clo"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\bk12.clo"
 File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -33,31 +33,31 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
@@ -65,18 +65,18 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count89
@@ -92,15 +92,15 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen112
 \Gm@dimlist=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip43
 \f@ncyO@elh=\skip44
 \f@ncyO@erh=\skip45
@@ -111,10 +111,10 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip52
 \enit@outerparindent=\dimen113
@@ -122,10 +122,10 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box26
 \enitdp@description=\count92
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count93
@@ -133,10 +133,10 @@ File: uni-global.def 2013/05/13 UCS: Unicode global data
 \uc@combtoksb=\toks18
 \uc@temptokena=\toks19
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -150,7 +150,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count94
 \float@exts=\toks20
@@ -158,19 +158,19 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks21
 \@floatcapt=\box28
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -320,7 +320,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -351,7 +351,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -375,33 +375,33 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\english.ldf"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
 Language: english 2005/03/30 v3.3o English support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count95
 \U@D=\dimen114
@@ -410,11 +410,11 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\magyar.ldf"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\magyar.ldf"
 Language: magyar 2005/03/30 v1.4j Magyar support from the babel system
 Package babel Info: Making ` an active character on input line 597.
 ))
-(C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux)
+(C:\Users\MPeter\git2\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
@@ -428,7 +428,7 @@ LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count96
 \scratchdimen=\dimen115
@@ -476,7 +476,7 @@ LaTeX Font Info:    ... okay on input line 32.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 
@@ -497,7 +497,7 @@ Package ucs Warning: ***************************
 (ucs)                ***************************
 (ucs)                 on input line 32.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -514,18 +514,18 @@ File: pics/eltecimerszines.jpg Graphic file (type jpg)
 Package pdftex.def Info: pics/eltecimerszines.jpg used on input line 36.
 (pdftex.def)             Requested size: 113.81102pt x 113.80438pt.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 ) [1
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/marfoldi/git/SRT
-NLGRTHMS/DOCUMENTATION/pics/eltecimerszines.jpg>]
-(C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.toc [1
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/MPeter/git2/SRTN
+LGRTHMS/DOCUMENTATION/pics/eltecimerszines.jpg>]
+(C:\Users\MPeter\git2\SRTNLGRTHMS\DOCUMENTATION\THESIS.toc [1
 
 ])
 \tf@toc=\write3
@@ -562,7 +562,7 @@ Overfull \hbox (311.51271pt too wide) in paragraph at lines 125--125
 
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 130.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 <pics/mainmenu.png, id=34, 344.03531pt x 216.81pt>
@@ -571,15 +571,15 @@ File: pics/mainmenu.png Graphic file (type png)
 Package pdftex.def Info: pics/mainmenu.png used on input line 142.
 (pdftex.def)             Requested size: 298.75264pt x 188.27249pt.
 
-[5 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/setup.png>]
+[5 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/setup.png>]
 <pics/about.png, id=39, 280.79906pt x 213.04594pt>
 File: pics/about.png Graphic file (type png)
  <use pics/about.png>
 Package pdftex.def Info: pics/about.png used on input line 151.
 (pdftex.def)             Requested size: 213.39568pt x 161.90683pt.
 
-[6 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainmenu.png> <C:/User
-s/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/about.png>]
+[6 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/mainmenu.png> <C:/Users
+/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/about.png>]
 <pics/manualinput.png, id=43, 335.00156pt x 117.43875pt>
 File: pics/manualinput.png Graphic file (type png)
 
@@ -593,8 +593,8 @@ File: pics/randominput.png Graphic file (type png)
 <use pics/randominput.png>
 Package pdftex.def Info: pics/randominput.png used on input line 180.
 (pdftex.def)             Requested size: 256.07741pt x 117.49002pt.
- [7 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/manualinput.png>] <pi
-cs/fileinput.png, id=48, 470.50781pt x 325.96782pt>
+ [7 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/manualinput.png>] <pic
+s/fileinput.png, id=48, 470.50781pt x 325.96782pt>
 File: pics/fileinput.png Graphic file (type png)
 
 <use pics/fileinput.png>
@@ -607,24 +607,23 @@ File: pics/fileinput_error.png Graphic file (type png)
 <use pics/fileinput_error.png>
 Package pdftex.def Info: pics/fileinput_error.png used on input line 202.
 (pdftex.def)             Requested size: 256.07741pt x 162.35211pt.
- [8 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/randominput.png> <C:/
-Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput.png>] <pics/mainpan
-el.png, id=53, 733.23938pt x 434.37282pt>
+ [8 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/randominput.png> <C:/U
+sers/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput.png>] <pics/mainpanel
+.png, id=53, 733.23938pt x 434.37282pt>
 File: pics/mainpanel.png Graphic file (type png)
 
 <use pics/mainpanel.png>
 Package pdftex.def Info: pics/mainpanel.png used on input line 210.
 (pdftex.def)             Requested size: 341.43437pt x 202.26627pt.
- [9 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput_error.png> 
-<C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainpanel.png>] <pics/wat
-chpanel.png, id=59, 733.99219pt x 435.12563pt>
+ [9 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput_error.png> <
+C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/mainpanel.png>] <pics/watch
+panel.png, id=59, 733.99219pt x 435.12563pt>
 File: pics/watchpanel.png Graphic file (type png)
 
 <use pics/watchpanel.png>
 Package pdftex.def Info: pics/watchpanel.png used on input line 226.
 (pdftex.def)             Requested size: 341.43437pt x 202.411pt.
- [10] [11 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/watchpanel.png>
-]
+ [10] [11 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/watchpanel.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <24.88> on input line 252.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -638,29 +637,29 @@ File: pics/benchmarkpanel.png Graphic file (type png)
 <use pics/benchmarkpanel.png>
 Package pdftex.def Info: pics/benchmarkpanel.png used on input line 264.
 (pdftex.def)             Requested size: 341.43437pt x 202.61682pt.
- [12] [13 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/benchmarkpanel.
-png>]
+ [12] [13 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/benchmarkpanel.p
+ng>]
 <pics/bubble.jpg, id=74, 3283.26625pt x 938.50626pt>
 File: pics/bubble.jpg Graphic file (type jpg)
  <use pics/bubble.jpg>
 Package pdftex.def Info: pics/bubble.jpg used on input line 290.
 (pdftex.def)             Requested size: 426.79135pt x 121.99577pt.
 
-[14 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/bubble.jpg>] [15]
+[14 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/bubble.jpg>] [15]
 <pics/insertion.jpg, id=84, 3287.28125pt x 941.5175pt>
 File: pics/insertion.jpg Graphic file (type jpg)
 
 <use pics/insertion.jpg>
 Package pdftex.def Info: pics/insertion.jpg used on input line 314.
 (pdftex.def)             Requested size: 426.79135pt x 122.22917pt.
- [16 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/insertion.jpg>] [17]
- <pics/shell.jpg, id=95, 3287.28125pt x 939.51pt>
+ [16 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/insertion.jpg>] [17] 
+<pics/shell.jpg, id=95, 3287.28125pt x 939.51pt>
 File: pics/shell.jpg Graphic file (type jpg)
 
 <use pics/shell.jpg>
 Package pdftex.def Info: pics/shell.jpg used on input line 351.
 (pdftex.def)             Requested size: 426.79135pt x 121.96855pt.
- [18 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/shell.jpg>]
+ [18 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/shell.jpg>]
 Overfull \hbox (7.2802pt too wide) in paragraph at lines 371--372
 \T1/cmr/m/n/12 Gyakorlatilag szét-vá-lasz-tást esz-kö-zö-lünk, mely-nek ered-mé
 -nye-képp a ki-vá-lasz-tott elem-
@@ -672,22 +671,22 @@ File: pics/quick.jpg Graphic file (type jpg)
 Package pdftex.def Info: pics/quick.jpg used on input line 377.
 (pdftex.def)             Requested size: 426.79135pt x 121.73482pt.
 
-[19 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/quick.jpg>] [20]
+[19 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/quick.jpg>] [20]
 <pics/heap.jpg, id=106, 3283.26625pt x 932.48375pt>
 File: pics/heap.jpg Graphic file (type jpg)
  <use pics/heap.jpg>
 Package pdftex.def Info: pics/heap.jpg used on input line 406.
 (pdftex.def)             Requested size: 426.79135pt x 121.2129pt.
 
-[21 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/heap.jpg>]
+[21 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/heap.jpg>]
 <pics/tournament.jpg, id=110, 3275.23625pt x 930.47626pt>
 File: pics/tournament.jpg Graphic file (type jpg)
 
 <use pics/tournament.jpg>
 Package pdftex.def Info: pics/tournament.jpg used on input line 426.
 (pdftex.def)             Requested size: 426.79135pt x 121.23592pt.
- [22 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/tournament.jpg>] [23
-]
+ [22 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/tournament.jpg>] [23]
+
 <pics/radixforward.jpg, id=118, 3275.23625pt x 932.48375pt>
 File: pics/radixforward.jpg Graphic file (type jpg)
 
@@ -700,15 +699,15 @@ Overfull \hbox (0.15163pt too wide) in paragraph at lines 461--461
 , az el-já-rás-nak két tömbre
  []
 
-[24 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixforward.jpg>]
+[24 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/radixforward.jpg>]
 <pics/radixbackward.jpg, id=122, 2457.18pt x 932.48375pt>
 File: pics/radixbackward.jpg Graphic file (type jpg)
 
 <use pics/radixbackward.jpg>
 Package pdftex.def Info: pics/radixbackward.jpg used on input line 467.
 (pdftex.def)             Requested size: 426.79135pt x 161.96344pt.
- [25 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixbackward.jpg>] 
-[26]
+ [25 <C:/Users/MPeter/git2/SRTNLGRTHMS/DOCUMENTATION/pics/radixbackward.jpg>] [
+26]
 3. fejezet.
 
 Overfull \hbox (0.89848pt too wide) in paragraph at lines 483--484
@@ -721,60 +720,60 @@ ll-nia: Egy lo-gi-kai(modell)
 ] [28] [29] [30]
 4. fejezet.
 
-Underfull \hbox (badness 2486) in paragraph at lines 562--565
+Underfull \hbox (badness 2486) in paragraph at lines 565--568
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 4726) in paragraph at lines 584--588
+Underfull \hbox (badness 4726) in paragraph at lines 587--591
 \T1/cmr/m/it/12 Are The Top 100 Lib-ra-ries in Java, JS and Ruby\T1/cmr/m/n/12 
 , [ON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--588
+Underfull \hbox (badness 10000) in paragraph at lines 587--591
 \T1/cmr/m/n/12 LINE] [Hi-vat-kozva: 2015.04.30] $\T1/cmtt/m/n/12 http : / / blo
 g . takipi . com /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--588
+Underfull \hbox (badness 10000) in paragraph at lines 587--591
 $\T1/cmtt/m/n/12 we-[]analyzed-[]30000-[]github-[]projects-[]here-[]are-[]the-[
 ]top-[]100$
  []
 
 [31
 
-] [32] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
+] [32] (C:\Users\MPeter\git2\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
  5396 strings out of 493921
- 68098 string characters out of 3147273
+ 68717 string characters out of 3144874
  132988 words of memory out of 3000000
  8585 multiletter control sequences out of 15000+200000
  16289 words of font info for 42 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,43p,979b,680s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users
-\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.
-pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecbx1440.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecti1200.pk> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\marfoldi\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\marfoldi\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\
-marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.p
-k> <C:\Users\marfoldi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
-00\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb>
-Output written on THESIS.pdf (35 pages, 3707948 bytes).
+ 34i,12n,43p,995b,680s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\
+MPeter\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk>
+ <C:\Users\MPeter\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+cbx1440.pk> <C:\Users\MPeter\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecti1200.pk> <C:\Users\MPeter\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\MPeter\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\MPeter\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\MPeter\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk> <C:\Users\MP
+eter\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on THESIS.pdf (35 pages, 3708324 bytes).
 PDF statistics:
  620 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
