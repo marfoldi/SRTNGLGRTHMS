@@ -7,7 +7,7 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public class TournamentSortThread extends SortingSortThread {
+public class TournamentSortThread extends SortingThread {
 	int maxIndex = 0;
 
 	@Override

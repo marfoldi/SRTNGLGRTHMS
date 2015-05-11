@@ -10,7 +10,7 @@ import srtnglgrthms.model.algorithm.raw.HeapSortThread;
 import srtnglgrthms.model.algorithm.raw.InsertionSortThread;
 import srtnglgrthms.model.algorithm.raw.QuickSortThread;
 import srtnglgrthms.model.algorithm.raw.ShellSortThread;
-import srtnglgrthms.model.algorithm.raw.SortingSortThread;
+import srtnglgrthms.model.algorithm.raw.SortingThread;
 import srtnglgrthms.model.algorithm.raw.TournamentSortThread;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -21,8 +21,8 @@ import javafx.fxml.FXML;
  */
 public class BenchmarkController implements SortingThreadListener {
 	private static BenchmarkTableController tableController;
-	private static SortingSortThread[] sortingThreads;
-	protected static List<BenchmarkData> benchmarkDataList = new ArrayList<BenchmarkData>();
+	private static SortingThread[] sortingThreads;
+	protected static List<BenchmarkData> benchmarkDataList;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -30,14 +30,15 @@ public class BenchmarkController implements SortingThreadListener {
 	 */
 	@FXML
 	private void initialize() {
-		sortingThreads = new SortingSortThread[] { new QuickSortThread(),
+		benchmarkDataList = new ArrayList<BenchmarkData>();
+		sortingThreads = new SortingThread[] { new QuickSortThread(),
 				new InsertionSortThread(), new ShellSortThread(), new BubbleSortThread(),
 				new HeapSortThread(), new TournamentSortThread() };
 		runSortingThreads();
 	}
 
 	private void runSortingThreads() {
-		for (SortingSortThread thread : sortingThreads) {
+		for (SortingThread thread : sortingThreads) {
 			thread.setListener(this);
 			thread.start();
 		}
@@ -56,12 +57,12 @@ public class BenchmarkController implements SortingThreadListener {
 	@Override
 	public void notifyOfThreadComplete(Thread thread) {
 		try {
+		Thread.sleep(500);
 		tableController.getTableView().setItems(FXCollections.observableArrayList(benchmarkDataList));
-		Thread.sleep(10);
-		} catch (ConcurrentModificationException | InterruptedException cmie) {}
+		} catch (ConcurrentModificationException | InterruptedException | IllegalStateException cmiie) {}
 	}
 
-	public static SortingSortThread[] getSortingThreads() {
+	public static SortingThread[] getSortingThreads() {
 		return sortingThreads;
 	}
 

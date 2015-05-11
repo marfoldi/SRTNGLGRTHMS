@@ -43,7 +43,7 @@ public class OverviewListController {
 									|| newValue.equals("Versenyrendezés")) {
 								FXMLLoader loader = new FXMLLoader();
 								loader.setLocation(MainApplication.class
-										.getResource("view/OverViewGraphLayout.fxml"));
+										.getResource("view/OverviewGraphLayout.fxml"));
 								try {
 									((AnchorPane) parentController.displayPane
 											.getItems().get(0)).getChildren()
@@ -60,7 +60,7 @@ public class OverviewListController {
 							if (newValue.equals("Radix \"vissza\"")) {
 								FXMLLoader loader = new FXMLLoader();
 								loader.setLocation(MainApplication.class
-										.getResource("view/OverViewDoubleChartLayout.fxml"));
+										.getResource("view/OverviewDoubleChartLayout.fxml"));
 								try {
 									((AnchorPane) parentController.displayPane
 											.getItems().get(0)).getChildren()

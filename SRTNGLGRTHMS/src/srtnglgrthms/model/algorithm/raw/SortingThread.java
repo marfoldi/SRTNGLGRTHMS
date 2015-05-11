@@ -6,7 +6,7 @@ import srtnglgrthms.controller.SortingThreadListener;
  *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
-public abstract class SortingSortThread extends Thread {
+public abstract class SortingThread extends Thread {
 	private SortingThreadListener listener;
 	protected int[] numbers;
 	protected long comparisonCounter = 0; // Increment this counter whenever a

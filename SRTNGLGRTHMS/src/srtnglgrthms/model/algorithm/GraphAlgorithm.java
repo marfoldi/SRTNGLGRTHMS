@@ -3,8 +3,8 @@ package srtnglgrthms.model.algorithm;
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
 import srtnglgrthms.controller.OverviewListController;
-import srtnglgrthms.model.graph.Graph;
-import srtnglgrthms.model.graph.Vertex;
+import srtnglgrthms.view.graph.Graph;
+import srtnglgrthms.view.graph.Vertex;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
@@ -26,16 +26,16 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 	public abstract void setDefaultGraph();
 
 	public static int[] checkLength(int[] numbers, String algorithm) {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Figyelmeztetés");
+		alert.setHeaderText("Az algoritmus megfigegyelésekor a számok eltérnek az eredeti bemenettõl!");
 		switch (algorithm) {
 		case "Kupacrendezés": {
 			if (numbers.length > 31) {
 				int[] checkedArray = new int[31];
 				System.arraycopy(numbers, 0, checkedArray, 0, 30);
 				GraphAlgorithm.checkedArray = checkedArray;
-				Alert alert = new Alert(AlertType.WARNING);
-				alert.setTitle("Figyelmeztetés");
-				alert.setHeaderText("Az algoritmusban használt számok eltérnek a bemenettõl");
-				alert.setContentText("Mivel legfeljebb 31 elemû gráfot képes a program megjeleníteni,\nezért a"
+				alert.setContentText("Mivel legfeljebb 31 csúcsszámú gráfot képes a program megjeleníteni, ezért a "
 						+ "számításban csak az elsõ 31 elem vesz részt!");
 
 				alert.showAndWait();
@@ -51,19 +51,13 @@ public abstract class GraphAlgorithm extends SortingAlgorithm {
 				length *= 2;
 			if (length > 16) {
 				length = 16;
-				Alert alert = new Alert(AlertType.WARNING);
-				alert.setTitle("Figyelmeztetés");
-				alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
-				alert.setContentText("Mivel legfeljebb 16 elemû gráfot képes a program megjeleníteni,\nezért a"
+				alert.setContentText("Mivel legfeljebb 31 csúcsszámú gráfot képes a program megjeleníteni, ezért a "
 						+ "számításban csak az elsõ 16 elem vesz részt!");
 
 				alert.showAndWait();
 			} else if (length != SortingAlgorithm.getNumbers().length) {
-				Alert alert = new Alert(AlertType.WARNING);
-				alert.setTitle("Figyelmeztetés");
-				alert.setHeaderText("Az algoritmus megjelenítésekor a számok eltérnek az eredeti bemenettõl");
-				alert.setContentText("Mivel nem kettõ hatvány a bemenet hossza,\nezért itt a "
-						+ "számításban " + length + " szám fog résztvenni!");
+				alert.setContentText("Mivel nem kettõ hatvány a bemenet hossza, ezért a "
+						+ "számításban " + length + " elem fog résztvenni!");
 
 				alert.showAndWait();
 			}

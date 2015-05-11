@@ -1,4 +1,4 @@
-package srtnglgrthms.model.graph;
+package srtnglgrthms.view.graph;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;

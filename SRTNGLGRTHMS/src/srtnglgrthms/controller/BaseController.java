@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import srtnglgrthms.MainApplication;
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
-import srtnglgrthms.model.algorithm.raw.SortingSortThread;
+import srtnglgrthms.model.algorithm.raw.SortingThread;
 import srtnglgrthms.model.info.InfoFlyWeightFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,7 +48,7 @@ public class BaseController {
 		BenchmarkController.getBenchmarkDataList().clear();
 		SortingAlgorithm.getCounterData().clear();
 		if(BenchmarkController.getSortingThreads() != null) {
-			for(SortingSortThread sortingThread : BenchmarkController.getSortingThreads()) {
+			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
 				sortingThread.stop();
 			}
 		}
@@ -129,7 +129,7 @@ public class BaseController {
 	@FXML
 	private void handleExit() {
 		if(BenchmarkController.getSortingThreads() != null) {
-			for(SortingSortThread sortingThread : BenchmarkController.getSortingThreads()) {
+			for(SortingThread sortingThread : BenchmarkController.getSortingThreads()) {
 				sortingThread.stop();
 			}
 		}

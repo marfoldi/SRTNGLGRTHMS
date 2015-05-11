@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import srtnglgrthms.controller.OverviewChartController;
 import srtnglgrthms.controller.OverviewGraphController;
-import srtnglgrthms.model.graph.Vertex;
+import srtnglgrthms.view.graph.Vertex;
 
 /**
  * 

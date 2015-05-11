@@ -1,8 +1,8 @@
 package srtnglgrthms.controller;
 
 import srtnglgrthms.model.algorithm.SortingAlgorithm;
-import srtnglgrthms.model.graph.Graph;
-import srtnglgrthms.model.graph.Vertex;
+import srtnglgrthms.view.graph.Graph;
+import srtnglgrthms.view.graph.Vertex;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;

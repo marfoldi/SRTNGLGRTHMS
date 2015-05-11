@@ -1,4 +1,4 @@
-package srtnglgrthms.model.graph;
+package srtnglgrthms.view.graph;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
