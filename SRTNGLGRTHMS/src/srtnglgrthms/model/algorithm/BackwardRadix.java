@@ -33,6 +33,7 @@ public class BackwardRadix extends RadixAlgorithm {
 	public void setDefaults() {
 		listOne = OverviewDoubleChartController.getListOne();
 		listTwo = OverviewDoubleChartController.getListTwo();
+		OverviewDoubleChartController.reloadLists();
 		actualSeries = 0;
 		actualDigit = getMaxDigit() - 1;
 		begin = 0;

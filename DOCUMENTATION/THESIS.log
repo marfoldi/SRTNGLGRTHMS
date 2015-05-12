@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  11 MAY 2015 16:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  12 MAY 2015 20:04
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -772,10 +772,16 @@ Overfull \hbox (1.37347pt too wide) in paragraph at lines 594--595
 sége azon al-go-rit-mus-imp-le-men-tá-ci-ó-kat tar-
  []
 
-[34] [35] [36]
+[34]
+Overfull \hbox (2.68997pt too wide) in paragraph at lines 618--618
+ \T1/cmr/bx/n/12 Ma-nu-a-lIn-put-Cont-rol-ler.[] \T1/cmr/m/n/12 A me-nü-ben a \
+T1/cmr/bx/n/12 Ma-nu-á-lis \T1/cmr/m/n/12 gombra tör-tén® kat-tin-tás után
+ []
+
+[35] [36] [37]
 4. fejezet.
 
-Underfull \hbox (badness 2486) in paragraph at lines 630--633
+Underfull \hbox (badness 2486) in paragraph at lines 642--645
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
@@ -783,26 +789,26 @@ szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 4726) in paragraph at lines 677--681
+Underfull \hbox (badness 4726) in paragraph at lines 689--693
 \T1/cmr/m/it/12 Are The Top 100 Lib-ra-ries in Java, JS and Ruby\T1/cmr/m/n/12 
 , [ON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 689--693
 \T1/cmr/m/n/12 LINE] [Hi-vat-kozva: 2015.04.30] $\T1/cmtt/m/n/12 http : / / blo
 g . takipi . com /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 689--693
 $\T1/cmtt/m/n/12 we-[]analyzed-[]30000-[]github-[]projects-[]here-[]are-[]the-[
 ]top-[]100$
  []
 
-[37
+[38
 
-] [38] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
+] [39] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
  5436 strings out of 493921
  68984 string characters out of 3147273
@@ -829,9 +835,9 @@ fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on THESIS.pdf (42 pages, 3886679 bytes).
+Output written on THESIS.pdf (43 pages, 3890185 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
+ 675 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

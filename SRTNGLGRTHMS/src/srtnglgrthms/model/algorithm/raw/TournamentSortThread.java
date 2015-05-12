@@ -8,7 +8,6 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class TournamentSortThread extends SortingThread {
-	int maxIndex = 0;
 
 	@Override
 	public void doRun() {
@@ -16,6 +15,7 @@ public class TournamentSortThread extends SortingThread {
 			numbers = new int[0];
 			return;
 		}
+		int maxIndex = 0;
 		int length = 1;
 		int power = (int) Math
 				.ceil(Math.log(SortingAlgorithm.getNumbers().length)

@@ -17,9 +17,9 @@ public class OverviewDoubleChartController {
 	@FXML
 	private AnchorPane paneTwo;
 	@FXML
-	private OverviewChartController controllerOne;
+	private static OverviewChartController controllerOne;
 	@FXML
-	private OverviewChartController controllerTwo;
+	private static OverviewChartController controllerTwo;
 	private BarChart<String, Number> barChartOne;
 	private BarChart<String, Number> barChartTwo;
 	private static ObservableList<Data<String, Number>> listOne;
@@ -36,8 +36,17 @@ public class OverviewDoubleChartController {
 		controllerTwo.setBarChart(barChartTwo);
 		listOne = barChartOne.getData().get(0).dataProperty().getValue();
 		listTwo = barChartTwo.getData().get(0).dataProperty().getValue();
-		int[] numbers = SortingAlgorithm.getNumbers();
-		for (int i = 0; i < numbers.length; ++i) {
+		for (int i = 0; i < SortingAlgorithm.getNumbers().length; ++i) {
+			listTwo.get(i).setYValue(0);
+		}
+	}
+	
+	public static void reloadLists() {
+		for(int i=0; i < SortingAlgorithm.getNumbers().length; ++i) {
+			listOne.get(i).setYValue(SortingAlgorithm.getNumbers()[i]);
+			controllerOne.setColor(listOne.get(i).getNode(), "default");
+		}
+		for (int i = 0; i < SortingAlgorithm.getNumbers().length; ++i) {
 			listTwo.get(i).setYValue(0);
 		}
 	}

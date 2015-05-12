@@ -11,14 +11,14 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class ShellSortThread extends SortingThread {
-	private static Integer[] gapArray = generateGapArray();
-	private int i, j, temp;
 
 	@Override
 	public void doRun() {
 		numbers = new int[SortingAlgorithm.getNumbers().length];
 		System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
 				SortingAlgorithm.getNumbers().length);
+		Integer[] gapArray = generateGapArray();
+		int i, j, temp;
 		for (int gap : gapArray) {
 			i = gap;
 			while (i < numbers.length) {

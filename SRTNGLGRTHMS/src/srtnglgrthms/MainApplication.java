@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 public class MainApplication extends Application {
 
 	private Stage primaryStage;
-	private BorderPane baseLayout;
 	private BorderPane menuLayout;
 
 	@Override
@@ -43,26 +42,6 @@ public class MainApplication extends Application {
 
 			// Show the scene containing the base layout.
 			Scene scene = new Scene(menuLayout);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Initializes the base layout.
-	 */
-	public void initBaseLayout() {
-		try {
-			// Load base layout from fxml file.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApplication.class
-					.getResource("view/BaseLayout.fxml"));
-			baseLayout = (BorderPane) loader.load();
-
-			// Show the scene containing the base layout.
-			Scene scene = new Scene(baseLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (IOException e) {

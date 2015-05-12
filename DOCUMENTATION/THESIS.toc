@@ -68,7 +68,11 @@
 \contentsline {subsubsection}{Megjelen\IeC {\'\i }t\IeC {\H o} csomag}{34}
 \contentsline {subsubsection}{Vez\IeC {\'e}rl\IeC {\H o} csomag}{35}
 \contentsline {subsection}{\numberline {3.3.2.}Oszt\IeC {\'a}lyszerkezet}{35}
-\contentsline {subsubsection}{alapcsomag oszt\IeC {\'a}lya}{35}
+\contentsline {subsubsection}{alapcsomag}{35}
 \contentsline {paragraph}{MainApplication}{35}
-\contentsline {subsection}{\numberline {3.3.3.}Megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{35}
-\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{37}
+\contentsline {subsection}{\numberline {3.3.3.}controller csomag}{35}
+\contentsline {paragraph}{MenuController}{35}
+\contentsline {paragraph}{ManualInputController}{35}
+\contentsline {subsubsection}{algorithm csomag}{36}
+\contentsline {subsection}{\numberline {3.3.4.}Megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{36}
+\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{38}

@@ -591,7 +591,7 @@ A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rend
 	\end{tabular}
 \end{table}
 \paragraph{algorithm}
-A csomag osztályainak többsége azon algoritmusimplementációkat tartalmazza, melyek a \textbf{Megfigyelés} panelen megjelennek, azaz számon tartják az algoritmus aktuális állapotát. A csomag további osztályainak a főbb funkciója, hogy azon műveleteket, amelyeket több algoritmus is használ legyenek kiemelve, ezáltal megakadályozhatóvá válik a kódismétlés.
+A csomag osztályainak többsége azon algoritmusimplementációkat tartalmazza, melyek a \textbf{Megfigyelés} panelen megjelennek, azaz számon tartják az algoritmus aktuális állapotát. A csomag további osztályainak a fő funkciója, hogy azon műveleteket, amelyeket több algoritmus is használ legyenek kiemelve, ezáltal megakadályozhatóvá válik a kódismétlés.
 \paragraph{algorithm.raw}
 Azon algoritmusok megvalósítását tartalmazza, amelyekben nem kerül elmentésre a rendezés aktuális állapota. Az általuk szolgáltatott információ mindössze a rendezési feladat megoldása során végzett műveletek száma. Továbbá egy olyan osztályt tartalmaz a csomag, amely ezen adatokat rendezett formában át tudja adni a kontroller rétegnek, melynek segítségével megjelennek az egyes értékek a felhasználói felületen.
 \paragraph{algorithm.raw.test}
@@ -607,10 +607,22 @@ Továbbá ebben a csomagban foglal helyet a \textbf{graph} alcsomagban a gráf g
 Osztályai főleg a megjelenítő csomag komponenseihez tartoznak. Ezt az osztályok neve is jelölik, mivel csak a végződésükben(\textbf{Controller}) térnek el az \emph{fxml} fájlok nevétől. Felhasználói interakcióra a modell osztály különböző metódusait hívja meg. Így kapcsolatot teremt az előbb definiált két csomag között. Továbbá tartalmaz egy interfészt, melynek felhasználásával az \textbf{alrogithm.raw} osztály algoritmusai miután befejezték a futásukat figyelmeztetik az interfészt megvalósító osztályt, ami jelen esetben a \textbf{Összegzés} panel táblázatának vezérlő osztálya.
 
 \subsection{Osztályszerkezet}
-A következőkben néhány fontosabb osztály kerül rövid jellemzésre.
-\subsubsection{alapcsomag osztálya}
+A következőkben bemutatásra kerülnek a csomagok főbb osztályai, és ezek fontosabb eljárásai. A bemutatásban szereplő osztályok sorrendje többé kevésbé megegyezik a példányosulásuk sorrendjével. Így átláthatóvá válik, hogy egy objektum mely metódushívás következtében szolgáltat vagy kér adatot egy másik objektumtól.
+\subsubsection{alapcsomag}
 \paragraph{MainApplication}
-A \textbf{strnglgrthms} csomag egyetlen osztályt osztálya, melyben a program \textbf{main} függvénye található. 
+A \textbf{strnglgrthms} csomag egyetlen osztályt osztálya, melyben a program \textbf{main} függvénye található. Létrehozza az ablakot, betölti a menü elrendezését tartalmazó \emph{fxml} fájlt.
+\subsection{controller csomag}
+\paragraph{MenuController}
+Az osztályban található metódusok létrehozzák a menü eszköztárát (\textbf{handleAbout()} és \textbf{handleExit()} függvények). Továbbá a gombokon történő kattintás következtében betöltik a bemenet megadására lehetőséget adó panelekhez tartozó \emph{fxml} fájlokat.
+\paragraph{ManualInputController}
+A menüben a \textbf{Manuális} gombra történő kattintás után példányosul az osztály. A konstruktora letiltja az \textbf{Ok} és \textbf{Feltöltés} gombokon történő kattintást.\par
+A \textbf{setSizeLimit()} hozzárendel a \textbf{"Méret:"} címke mellett található beviteli mezőhöz egy "figyelőt"(\emph{ActionListener}). Ez figyeli, hogy a mezőben található szám 1 és 100 közötti, továbbá, hogy egész szám került-e beírásra, ellenkező esetben letiltja az előbbi két gombon történő kattintást. Amennyiben megfelelő a megadott méret a \textbf{createFields()} metódus létrehozza a beviteli mezőket.\par A \textbf{randomButtonHandler()} eljárás feltölti a mezőket 0 és 100 közötti véletlen generált számokkal a \textbf{Feltöltés} gombra történő kattintást követően. 
+\par Végül az \textbf{okButtonHandler} függvény, amely az \textbf{Ok} gomb lenyomását követően fut le átadja a számokat a modell réteg \textbf{SortingAlgorithm} osztályának, ahol ez az adat egy statikus tömbben kerül eltárolásra. Ezt követően betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
+
+\subsubsection{algorithm csomag}
+Főként a lejátszható algoritmusokat tartalmazza. Ezen osztályok felépítésüket tekintve kevéssé térnek el egymástól. Ennél fogva példaként vegyük a \textbf{Versenyrendezés} megvalósítását.
+
+\par Alapértelmezetten mindegyik osztály tartalmaz egy \textbf{step()} metódust, amely egy következő állapotba lépteti a rendezést. Minden osztályhoz a rendezést megvalósító változókon felül tartoznak olyan logikai változók, amelyekben az aktuális állapot elmentésre kerül. Ilyen változóban tárolódik például az, hogy a \textbf{Versenyrendezés} bináris fájában megtaláltuk-e a maximális elemhez tartozó levélelemet.
 
 \subsection{Megvalósítás}
 Az első lépés volt a rendezési algoritmusok implementálása.

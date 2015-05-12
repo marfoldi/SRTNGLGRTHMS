@@ -55,6 +55,15 @@ public class TournamentSort extends GraphAlgorithm {
 
 	@Override
 	public void step() {
+		if(vertices.length==1) {
+			OverviewGraphController
+			.getNumberList()
+			.get(0).setYValue(vertices[0].getNumber());
+			OverviewChartController.setColor(
+					OverviewGraphController
+							.getNumberList()
+							.get(0).getNode(), "done");
+		}
 		if (fillIndex == 0) {
 			setRestColor(vertices.length);
 			fillIndex--;
@@ -179,6 +188,9 @@ public class TournamentSort extends GraphAlgorithm {
 		vertices[0] = new Vertex(400, 20, vertexSize);
 		int j = 0;
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
+		if(vertices.length==1) {
+			vertices[0].setNumber(checkedArray[0]);
+		}
 		for (int i = 1; i < vertices.length - 1; i += 2) {
 			if (!recursiveCall.isEmpty()) {
 				RecursiveParameter nextParameters = recursiveCall.remove();
