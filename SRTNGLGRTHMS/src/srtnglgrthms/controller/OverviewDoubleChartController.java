@@ -44,7 +44,7 @@ public class OverviewDoubleChartController {
 	public static void reloadLists() {
 		for(int i=0; i < SortingAlgorithm.getNumbers().length; ++i) {
 			listOne.get(i).setYValue(SortingAlgorithm.getNumbers()[i]);
-			controllerOne.setColor(listOne.get(i).getNode(), "default");
+			OverviewChartController.setColor(listOne.get(i).getNode(), "default");
 		}
 		for (int i = 0; i < SortingAlgorithm.getNumbers().length; ++i) {
 			listTwo.get(i).setYValue(0);

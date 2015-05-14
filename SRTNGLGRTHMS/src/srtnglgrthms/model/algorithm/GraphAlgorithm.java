@@ -7,15 +7,12 @@ import srtnglgrthms.view.graph.Graph;
 import srtnglgrthms.view.graph.Vertex;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.GridPane;
-
 /**
  *
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public abstract class GraphAlgorithm extends SortingAlgorithm {
 	protected static int[] checkedArray;
-	protected static GridPane numbersPane;
 	protected static final int vertexSize = 18;
 	protected static final int xGap = 200;
 	protected static final int yGap = 60;

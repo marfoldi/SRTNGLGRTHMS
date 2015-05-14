@@ -1,6 +1,7 @@
 package srtnglgrthms.model.algorithm;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import srtnglgrthms.controller.OverviewChartController;
@@ -48,14 +49,28 @@ public class ShellSort extends ChartAlgorithm {
 	}
 	
 	private static Integer[] generateGapArray() {
-		int nextGap = numbers.length/2;
-		List<Integer> gapList = new ArrayList<>();
-		while(nextGap/2>=1) {
-			gapList.add(nextGap);
-			nextGap/=2;
+		int i, last2ind = 0, last3ind = 0; 
+		List<Integer> pratt = new ArrayList<>();
+
+		pratt.add(1);
+		for (i=1; i < numbers.length; ++i) { 
+		if (pratt.get(last2ind)*2 < pratt.get(last3ind)*3) { 
+			pratt.add(pratt.get(last2ind)*2); 
+			last2ind++; 
+		} 
+		else if (pratt.get(last2ind)*2 > pratt.get(last3ind)*3) { 
+			pratt.add(pratt.get(last3ind)*3); 
+			last3ind++; 
+		} 
+		else { 
+			pratt.add(pratt.get(last2ind)*2); 
+			last2ind++; 
+			last3ind++; 
+		} 
+		if(pratt.get(i)>=numbers.length) break;
 		}
-		gapList.add(1);
-		return gapList.toArray(new Integer[0]);
+		Collections.reverse(pratt);
+		return pratt.toArray(new Integer[0]);
 	}
 
 	@Override
