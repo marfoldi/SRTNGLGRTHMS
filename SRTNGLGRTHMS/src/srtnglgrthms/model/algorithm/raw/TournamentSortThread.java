@@ -8,6 +8,7 @@ import srtnglgrthms.model.algorithm.SortingAlgorithm;
  * @author <a href="mailto:marfoldi@caesar.elte.hu">Márföldi Péter Bence</a>
  */
 public class TournamentSortThread extends SortingThread {
+	private int[] finalNumbers;
 
 	@Override
 	public void doRun() {
@@ -32,7 +33,7 @@ public class TournamentSortThread extends SortingThread {
 		else
 			System.arraycopy(SortingAlgorithm.getNumbers(), 0, numbers, 0,
 					length);
-		int[] finalNumbers = new int[length * 2 - 1];
+		finalNumbers = new int[length * 2 - 1];
 		for (int i = 0; i < length; ++i) {
 			finalNumbers[i] = -2;
 		}
@@ -76,4 +77,7 @@ public class TournamentSortThread extends SortingThread {
 				comparisonCounter, moveCounter, 0));
 	}
 
+	public int[] getFinalNumbers() {
+		return finalNumbers;
+	}
 }

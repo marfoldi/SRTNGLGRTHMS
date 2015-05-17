@@ -69,4 +69,8 @@ public class BenchmarkController implements SortingThreadListener {
 	public static List<BenchmarkData> getBenchmarkDataList() {
 		return benchmarkDataList;
 	}
+
+	public static void setBenchmarkDataList(List<BenchmarkData> benchmarkDataList) {
+		BenchmarkController.benchmarkDataList = benchmarkDataList;
+	}
 }

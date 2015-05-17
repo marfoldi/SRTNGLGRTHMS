@@ -37,7 +37,7 @@ public class BenchmarkChartController {
 	}
 
 	public static void addElement(BenchmarkData data) {
-		if (!alreadyLoaded(data.getName())) {
+		if (!loadedItems.contains(data.getName())) {
 			loadedItems.add(data.getName());
 			compareCounter.getData().add(
 					new XYChart.Data<String, Long>(data.getName(), data
@@ -56,12 +56,5 @@ public class BenchmarkChartController {
 			compareCounter.getData().remove(idx);
 			moveCounter.getData().remove(idx);
 		}
-	}
-
-	private static boolean alreadyLoaded(String name) {
-		if (loadedItems.contains(name))
-			return true;
-		else
-			return false;
 	}
 }

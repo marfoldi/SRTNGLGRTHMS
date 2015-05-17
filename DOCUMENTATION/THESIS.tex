@@ -4,6 +4,7 @@
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
 \usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage{ucs}
 \usepackage{xcolor}
 \usepackage{float}
@@ -52,7 +53,7 @@
 	\setlist[description]{leftmargin=\parindent,labelindent=\parindent,itemsep=1.5pt}
 
 \chapter{Bevezetés} 
- Az eddigi egyetemen töltött éveim során az \textbf{Algoritmusok és adatszerkezetek} kurzus foglalkozott mélyrehatóan a rendezési algoritmusokkal. Számomra a tananyagból talán ez a témakör volt a legnehezebben elsajátítható. Ez sarkallt arra, hogy a szakdolgozatom témáját adják a rendezési algoritmusok, szerettem volna biztos tudással rendelkezni ezen a területen.\par
+ Az eddigi egyetemen töltött éveim során az \textbf{Algoritmusok és adatszerkezetek} kurzus foglalkozott mélyrehatóan a rendezési algoritmusokkal. Számomra a tananyagból talán ez a témakör volt a legnehezebben elsajátítható. Ez sarkallt arra, hogy a szakdolgozatom témáját adják ezek az eljárások, szerettem volna biztos tudással rendelkezni ezen a területen.\par
  Az bizonyos, hogy minden informatikus - beleértve a leendőeket is - tanulmányaik kezdetén találkoztak ezen eljárásokkal. Nagyszerű terület arra, hogy megérthessük mi a műveletigény, hogy mi számít igazán sok adatnak, vagy, hogy mit értünk egy algoritmus stabilitásán.\par
 
 \section{A feladat és annak értelmezése}
@@ -61,7 +62,8 @@ A feladat egy oktatóprogram létrehozása, melynek segítségével az érdeklő
 	\item[$\bullet$] begépeléssel
 	\item[$\bullet$] generálással
 	\item[$\bullet$] fájlból betöltéssel
-\end{description}
+\end{description}\par
+A bemutatott algoritmusok lépéseit, valamint a rendezendő értékeket minél szemléletesebben kell megjeleníteni. Így nem elegendő csak a számok egymás utáni kiíratása az egyes lépésekben.
 
 \section{Alkalmazott technológiák}
 A Következőkben röviden összefoglaljuk a \emph{Java}\cite{Java}, \emph{JavaFX}\cite{JavaFX} és \emph{JUnit}\cite{JUnit} jellegzetességeit.
@@ -81,7 +83,7 @@ Olyan szoftverplatform, amelynek célja, hogy gazdag internetes alkalmazást leh
  A 2.0-ás verzióig a fejlesztők egy külön nyelvet használtak, amelyet \emph{JavaFX Script}-nek neveznek. Azonban mivel ez szintén \emph{Java} bájtkódot generál a későbbiekben megadatott a lehetőség, hogy a programozók Java kódot használjanak helyette. A \emph{JavaFX} egyik legnagyobb előnye, hogy egy egyszerű \emph{XML} struktúrában leírhatók a program grafikus felületének összetevői, melyhez ezt követően elegendő az egyes interakciókhoz tartozó funkciókat implementálni.\par Az elterjedtebb operációs rendszerek mindegyikét támogatja. Ahogyan előnye, úgy hátránya is a \emph{Swing}-hez képest az, hogy jelenleg is folyik a fejlesztése, ezért olykor csak hosszas utánajárást követően sikerül megoldást találni egy-egy problémára.
  
 \subsection{JUnit}
-Egy egységteszt keretrendszer a \emph{Java} programozási nyelvhez. Az egységtesztek karbantartására, és futtatására kínál szolgáltatást. Gyakran a verzió kiadási folyamat részeként szokták beépíteni, azaz egy kiadás akkor hibátlan, ha ezen tesztek mindegyike hibátlanul lefut. Egy 2013-as felmérésben\cite{Survey} tízezer Java technológiát használó \emph{GitHub} projektet vizsgáltak. A projektek csaknem harmadánál használták a \emph{JUnit}-ot, ezzel az egyik leggyakrabban használt függvénykönyvtár volt a felmérés során.
+Egy egységteszt keretrendszer a \emph{Java} programozási nyelvhez. Az egységtesztek karbantartására, és futtatására kínál szolgáltatást. Gyakran a verzió kiadási folyamat részeként szokták beépíteni, azaz egy kiadás akkor hibátlan, ha ezen tesztek mindegyike hibátlanul lefut. Egy 2013-as felmérésben\cite{Survey} tízezer Java technológiát használó \emph{GitHub} projektet vizsgáltak. A projektek csaknem harmadánál használták a \emph{JUnit}-ot, ezzel az egyik leggyakrabban használt függvénykönyvtár volt a felmérésben résztvevő projektekben.
 
 \chapter{Felhasználói dokumentáció}
 \section{Rendszerkövetelmények}
@@ -100,7 +102,7 @@ Mivel a program \emph{Java} nyelven íródott, ezért elengedhetetlen, hogy a fe
 	\item[$\bullet$] \emph{Red Hat Enterprise Linux} 5.5+, 6.x
 	\item[$\bullet$] \emph{Oracle Linux} 5.5+; 6.x; 7.x
 \end{description}
-Hardverkövetelmények tekintetében a \emph{Java JRE 8} futtatásához szükséges
+\par Hardverkövetelmények tekintetében a \emph{Java JRE 8} futtatásához szükséges
 minimum követelményei az irányadóak. Azonban a program bizonyos esetekben több erőforrást is igényelhet, ezért ajánlott nagyobb memóriával és erősebb processzor rendelkező rendszer használata. A követelmények a következő táblázatban találhatóak:\par
 \begin{table}[h]
 		\def\arraystretch{2}
@@ -127,8 +129,9 @@ A rendszer fejlesztése a következő ajánlott konfiguráción történt:
 \end{table}
 
 \subsection{Telepítés és eltávolítás}
-Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gondoskodnia a felhasználónak, ezen felül más program telepítésére nincs szükség. Azonban, mivel elsősorban \emph{Windows} operációs rendszeren történő futtatásra lett felkészítve a program, ezt az operációs rendszert használók választhatják a kényelmesebb, natív telepítéses megoldást. Elsőként a programhoz készült telepítővel történő konfigurálást vesszük végig, majd ezt követően a \emph{Java} programokra inkább jellemzőbb, ám kissé körülményesebb telepítési mód kerül bemutatásra. Végül röviden összefoglaljuk a program eltávolításához szükséges lépéseket.
-\par Bármely módszert is szándékozik követni a felhasználó, először győződjön meg róla, hogy az előzőekben ismertetett rendszerkövetelményeknek megfelel a számítógépe
+Alapvetően elegendő a \emph{Java} futtatási környezet telepítéséről gondoskodnia a felhasználónak, ezen felül más program telepítésére nincs szükség. Azonban, mivel elsősorban \emph{Windows} operációs rendszeren történő futtatásra lett felkészítve a program, ezt az operációs rendszert használók választhatják a kényelmesebb, natív telepítéses megoldást.\par
+Elsőként a programhoz készült telepítővel történő konfigurálást vesszük végig, majd ezt követően a \emph{Java} programokra inkább jellemzőbb, ám kissé körülményesebb telepítési mód kerül bemutatásra. Végül röviden összefoglaljuk a program eltávolításához szükséges lépéseket.
+\par Bármely módszert is szándékozik követni a felhasználó, először győződjön meg róla, hogy az előzőekben ismertetett rendszerkövetelményeknek megfelel a számítógépe.
 
 \subsubsection{Telepítés natív telepítővel}
 Ez a telepítési mód csak a \emph{Windows}-t használók számára érhető el.\par
@@ -137,8 +140,8 @@ Az első lépés a telepítési varázsló elindítása. A megjelenő párbeszé
 	\centering
 	\includegraphics[width=0.6\textwidth]{pics/setup.png}
 	\caption{A telepítési párbeszédpanel}
-\end{figure}\par
-A telepítési panel bezárása után máris megjelenik a program főmenüje, így megkezdheti a felhasználó a használatát. A későbbiekben történő futtatáshoz a következő könyvtárba szükséges navigálni: \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash SRTNGLGRTHMS.exe} \par
+\end{figure}
+A telepítési panel bezárása után máris megjelenik a program főmenüje, így megkezdheti a felhasználó a használatát. A későbbiekben történő futtatáshoz a következő könyvtárba szükséges navigálni: \textbf{C:\textbackslash Felhasználók\textbackslash \{Felhasználói név\}\textbackslash AppData\\ \textbackslash Local\textbackslash SRTNGLGRTHMS\textbackslash SRTNGLGRTHMS.exe} \par
 A fenti útvonal akkor érvényes, ha \textbf{C:\textbackslash} meghajtón található az operációs rendszer, néhány rendszeren más lehet ennek a meghajtónak a betűjele. Továbbá egyes számítógépeken az \textbf{AppData} mappa rejtett lehet, így érdemes valamilyen fájlböngészőt, például \emph{Total Commander}-t használni.
 
 \subsubsection{Hagyományos telepítés}
@@ -147,7 +150,7 @@ Az első feladat a \emph{Java} virtuális gép telepítése, amely letölthető 
 Fogadjuk el a licencszerződést, töltsük le a \emph{JRE} telepítőfájlt. Ha frissíteni szeretnénk a jelenlegi \emph{Java} verziót a rendszerünkön, akkor előbb célszerűbb eltávolítani a régi verziót. Miután feltelepítettük a futtatási környezetet,  készen áll a szoftver futtatására a rendszerünk. A program könyvtárában található \textbf{SRTNGLGRTHMS.jar} fájl elindításával kezdhetjük meg a szoftver használatát.
 
 \subsubsection{Eltávolítás}
-A program törlése az utóbb ismertetett telepítési mód esetében mindössze annyiból áll, hogy a \textbf{SRTNGLGRTHMS.jar} fájlt eltávolítjuk, valamint amennyiben a jövőben nincs igény a \emph{Java} futtatási környezet használatára, úgy a felhasználó eltávolíthatja azt.
+A program törlése az utóbb ismertetett telepítési mód esetében mindössze annyiból áll, hogy a \textbf{SRTNGLGRTHMS.jar} fájlt eltávolítjuk, valamint amennyiben a jövőben nincs igény a \emph{Java} futtatási környezet használatára, úgy a felhasználó eltávolíthatja azt.\par
 \emph{Windows}-on történő natív telepítést követően a program telepítési könyvtárában található \textbf{unins000.exe} fájlt futtatva, majd az \textbf{Igen} gombra kattintva a program törlődik a számítógépről.
 
 \section{Felhasználói felület bemutatása}
@@ -157,7 +160,7 @@ A program indítását követően megjelenik a főmenü, mely két komponensből
 	\centering
 	\includegraphics[width=0.7\textwidth]{pics/mainmenu.png}
 	\caption{A program főmenüje}
-\end{figure}\par
+\end{figure}
   Az ablak felső részén található piros színnel jelölt rész az eszköztárat foglalja magában. A kék szín jelöli a főmenü központi paneljét, mely három gombból tevődik össze. Ezen gombokra történő kattintás után lehetőség nyílik a rendezendő számok megadására.
 
 \subsubsection{Eszköztár}
@@ -166,7 +169,7 @@ Az eszköztárat két menüpont alkotja, \textbf{Fájl} és \textbf{Segítség} 
 	\centering
 	\includegraphics[width=0.5\textwidth]{pics/about.png}
 	\caption{A program névjegye}
-\end{figure}\par
+\end{figure}
 
 \subsubsection{Központi panel}
 A három gombból áll:
@@ -203,7 +206,7 @@ A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legö
 	\item[$\bullet$] Fordított - a tömb legyen csökkenőleg rendezett
 	\item[$\bullet$] Néhány egyedi - a tömb elemei között sok azonos érték szerepeljen
 \end{description}
-Itt megjegyzendő, hogy amennyiben az input mérete az [1,100] intervallumban van, akkor a rendezendő számok a 0 és 100 közötti értékek közül kerülnek kiválasztásra. Ennek oka, hogy a túl nagy differencia az egyes értékek között sokat rontana az oszlopdiagramok megjelenésén. Ellenkező esetben a \emph{Java} nyelv által definiált egész típus(\emph{Integer}) maximális értékéig terjedhet a generált számok nagysága.
+\par Itt megjegyzendő, hogy amennyiben az input mérete az [1,100] intervallumban van, akkor a rendezendő számok a 0 és 100 közötti értékek közül kerülnek kiválasztásra és megjelenik a \textbf{Megfigyelés} panel. Ennek oka, hogy a túl nagy differencia az egyes értékek között sokat rontana az oszlopdiagramok megjelenésén. Ellenkező esetben a \emph{Java} nyelv által definiált egész típus(\emph{Integer}) maximális értékéig terjedhet a generált számok nagysága és csak a \textbf{Összehasonlítás} panel érhető el.
  
 \subsubsection{Fájlból beolvasás}
 A gombra történő kattintás után megjelenik egy fájltallózó. A tallózóban csak szöveges(\emph{txt} kiterjesztésű) fájl választására van lehetőség.
@@ -229,7 +232,12 @@ A rendezendő számok sikeres megadása után megjelenik a program főpanelje, m
 \subsubsection{Eszköztár}
 A \textbf{Főmenü}höz hasonlóan itt is jelen van a piros színnel jelzett eszköztár sáv. Itt fontos kiemelni, hogy a \textbf{Fájl} és \textbf{Segítség} pontokon belül további alpontok is elérhetőek:\par
 A \textbf{Fájl} menüpont bővül a \textbf{Vissza a főmenübe} lehetőséggel, melynek segítségével a program újraindítása nélkül lehetőség van újabb rendezendő számsorozat megadására.\par
-A \textbf{Segítség}re kattintva további lehetőségként választható az \textbf{Algoritmusról} pont. Itt elolvasható a rövid szöveges ismertetője a \textbf{Megfigyelés} panel listájából kiválasztott elemnek. Amennyiben pedig az \textbf{Összehasonlítás} panel aktív, akkor e panel táblázatából kiválasztott algoritmus leírása tekinthető meg. Az aktuális panelen ha nem került kiválasztásra sor, akkor a menüpontra történő kattintás után felugró ablak figyelmezteti a felhasználót arról, hogy e menüpont használatához előbb ki kell választani egy algoritmust.
+A \textbf{Segítség}re kattintva további lehetőségként választható \textbf{Az algoritmusról} pont. Itt elolvasható a rövid szöveges ismertetője a \textbf{Megfigyelés} panel listájából kiválasztott elemnek. Amennyiben pedig az \textbf{Összehasonlítás} panel aktív, akkor e panel táblázatából kiválasztott algoritmus leírása tekinthető meg. Az aktuális panelen ha nem került kiválasztásra sor, akkor a menüpontra történő kattintás után felugró ablak figyelmezteti a felhasználót arról, hogy e menüpont használatához előbb ki kell választani egy algoritmust.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.5\textwidth]{pics/algorithm_error.png}
+ 	\caption{Nincs kiválasztott algoritmus hibaüzenet}
+ \end{figure}
 \subsubsection{Panelválasztó}
 Amennyiben a bemenet megadásánál már ismertetett [1,100] intervallum magában foglalja a bemenet hosszát, akkor két elem látható a zöld jelölt részen. Így lehetősége van a felhasználónak navigálni a \textbf{Megfigyelés} és az \textbf{Összehasonlítás} panel között. Ellenkező esetben csak az utóbbi panel jelenik meg. Az aktuálisan megjelenített felület neve a listában kék kerettel jelenik meg, valamint a másik elemhez képest világosabb szürke színnel.
 \subsubsection{Panel}
@@ -311,7 +319,7 @@ A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöb
  	\centering
  	\includegraphics[width=1\textwidth]{pics/bubble.jpg}
  	\caption{Példa a buborékrendezésre}
- \end{figure}\par
+ \end{figure}
  \hiddensubsubsection{Műveletigény}
 Párosával haladunk végig az elemeken, és így vizsgáljuk őket. Mivel minden menet végén visszavezetjük a problémát az eggyel rövidebb feladatra, ezért az összehasonlítások száma $n$ hosszú bemenetre:\par
 $$\ddot{O}(n)=(n-1)+(n-2)+\ldots+1=\frac{n\cdot(n-1)}{2}=\frac{n^2}{2}-\frac{n}{2}=\Theta(n^2)$$
@@ -335,7 +343,7 @@ Lényege, hogy a soron következő elemet - a második elemtől kezdve - egy ide
  	\centering
  	\includegraphics[width=1\textwidth]{pics/insertion.jpg}
  	\caption{Példa a beszúró rendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
 Legjobb esetben elegendő a második elemtől mindegyik elemet az előtte található értékkel összehasonlítani, vagyis a tömb már eleve rendezett\cite{Ronyai}. Ez pontosan n-1 összehasonlítást jelent, azaz:
 $$m\ddot{O}(n)=(n-1)=\Theta(n)$$
@@ -372,7 +380,7 @@ Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró r
  	\centering
  	\includegraphics[width=1\textwidth]{pics/shell.jpg}
  	\caption{Példa a Shell rendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
  A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program a \textbf{Vaughan Pratt} által javasolt értékeket\cite{Pratt} használja, így legrosszabb esetben $\Theta(n \log^2 n)$ a műveletek száma.\par
  A legjobb eset akkor áll fenn, ha a tömb elemei már rendezettek, ekkor nincs szükség mozgatásra, az algoritmus futási ideje $\Theta(n)$ nagyságrendű.
@@ -398,7 +406,7 @@ Gyakorlatilag szétválasztást eszközölünk, melynek eredményeképp a kivál
  	\centering
  	\includegraphics[width=1\textwidth]{pics/quick.jpg}
  	\caption{Példa a gyorsrendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
 A rendezés műveletigényét befolyásolja, hogy hogyan választjuk meg a vezérelemet. Például a legrosszabb futási időt ($\Theta(n^2)$) eredményezi, ha mindig a legjobboldalibb elemet választjuk vezérelemnek, és a tömb elemei csökkenő sorrendben vannak\cite{Cormen}. Éppen ezért a gyakorlatban javasolt ezen elem véletlenszerű megválasztása.\par
 Ha feltételezzük azt, hogy minden rekurzív lépés felezi a tömböt, akkor egy $n\log(n)$ magasságú fával lehet ábrázolni a rekurziót. Továbbá, mivel minden szinten az elemek száma $n$, és ezek particionálásához használt lépésszám $\Theta(n)$ így a legjobb esetben a futási idő $\Theta(n\cdot\log(n))$.\par
@@ -428,7 +436,7 @@ Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét �
  	\centering
  	\includegraphics[width=1\textwidth]{pics/heap.jpg}
  	\caption{Példa a kupacrendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
 A kupacrendezés egyik további, hogy míg a gyorsrendezésnek legrosszabb esetben a futási ideje $\mathcal{O}(n^2)$, addig itt a futási idő továbbra is $\mathcal{O}(n\cdot\log (n))$. Ennél fogva azon rendszereknél, ahol a négyzetes futási idő elfogadhatatlan inkább kupacrendezést alkalmaznak.
 \hiddensubsubsection{Jelölések az állapotjelző felületen}
@@ -448,7 +456,7 @@ Amennyiben a bemenet hossza nem kettő hatvány a program -1 értékekkel tölti
  	\centering
  	\includegraphics[width=1\textwidth]{pics/tournament.jpg}
  	\caption{Példa a versenyrendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
 A rendezés egyetlen hátránya a tárigénye, $n$ szám esetén további $n-1$ mezőre szükség van a versenyfa elkészítéséhez. Éppen emiatt a gyakorlatban nem sűrűn használt eljárás. Az első, speciális menet, a versenyfa kitöltése $n-1$ összehasonlítást és mozgatást használ ($n-1$ a belső csúcsok száma). Minden további menetben a fán kétszer kell végigmenni, melynek magassága $\log_2(n)$. Egyszer a maximális levél megtalálásához, majd az újrajátszáshoz, így a ezen menetek $2\log_2(n)$ összehasonlítást végeznek. Mozgatás csak a második, újrajátszási művelethez tartozik. Így a műveletigények:
 $$\ddot{O}(n)=n-1+(n-1)\cdot2\cdot\log_2(n)=\Theta(n\cdot(\log(n))$$
@@ -470,7 +478,7 @@ Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A
  	\centering
  	\includegraphics[width=1\textwidth]{pics/radixforward.jpg}
  	\caption{Példa a radix "előre" rendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
 A rendezés lineáris időben történik, a számjegyek számát jelölje $d$, ekkor belátható, hogy a legrosszabb esetben is, azaz ha az összes szám minden bitjét meg kell vizsgálnunk az algoritmus futási ideje:
 $$T(n)=\Theta(d \cdot n) = \Theta(n)$$
@@ -489,7 +497,7 @@ Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak k�
  	\centering
  	\includegraphics[width=1\textwidth]{pics/radixbackward.jpg}
  	\caption{Példa a radix "vissza" rendezésre}
- \end{figure}\par
+ \end{figure}
 \hiddensubsubsection{Műveletigény}
 Lineáris idejű a rendezés, amennyiben $d$ jegyűek a rendezendő számok az algoritmus futási ideje:
 $$T(n)=\Theta(d \cdot n) = \Theta(n)$$
@@ -523,7 +531,7 @@ A program főmenüjében három gomb foglal helyet, melyekre kattintva megadhat�
 	\centering
 	\includegraphics[width=0.4\textwidth]{pics/plan_mainmenu.png}
 	\caption{Főmenü látványterv}
-\end{figure}\par
+\end{figure}
 \paragraph{Manuális bemenet}
 Az ablakon a \textbf{Méret:} címke mellett található mezővel definiálható a bemenet hossza. A megadását követően megjelennek a hossznak megfelelően beviteli mezők jelennek meg a \textbf{Számok} címkével jelölt részen. A \textbf{Feltöltés} gomb segítségével véletlen számokkal töltődnek fel az előbb említett beviteli mezők. Az \textbf{Ok} gombra történő kattintás után megjelennek a \textbf{Megfigyelés} és \textbf{Összehasonlítás} panelek.
 \paragraph{Bemenet generálása}
@@ -534,14 +542,14 @@ A fájlból történő beolvasáshoz nem készült látványterv, mivel egy egys
 	\centering
 	\includegraphics[width=0.7\textwidth]{pics/plan_input.png}
 	\caption{Bemenet megadása látványtervek}
-\end{figure}\par
+\end{figure}
 \paragraph{Főpanelek}
 A főpanelek eszköztárában megtalálhatóak a \textbf{Főmenü} pontjai, továbbá lehetőség van az előbb említett felületre történő visszatérésre. A \textbf{Segítség} menüpontban pedig lehetőség van az algoritmusok rövid leírásának megtekintésére. Valamint két gomb segítségével lehet navigálni a \textbf{Megfigyelés-} és \textbf{Összehasonlítás} panelek között.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{pics/plan_panels.png}
 	\caption{Főpanelek képernyőterve}
-\end{figure}\par
+\end{figure}
 \paragraph{Megfigyelés panel}
 A bal szélen egy algoritmus lista található, melyből kiválasztható a megfigyelni kívánt eljárás. A \textbf{Léptetés} és \textbf{Lejátszás} gombokkal a sárgás színnel jelzett diagramon az algoritmus egy újabb állapota figyelhető meg.
 \paragraph{Összehasonlítás panel}
@@ -553,7 +561,7 @@ A felületek közti navigálási irányokat a következő diagram szemlélteti:
 	\centering
 	\includegraphics[width=0.9\textwidth]{pics/plan_directions.png}
 	\caption{Navigálási lehetőségek}
-\end{figure}\par
+\end{figure}
 A főmenüből valamely gombra kattintva elérhetővé válik a kiválasztott típusú bemenet megadása panel. A számok megadásával megjelennek a \textbf{Megfigyelés} és \textbf{Összehasonlítás} panelek. A két panel közötti átjárás egy fülön történő kattintással tehető meg. Ezen paneleken pedig az eszköztár segítségével lehetőség van a \textbf{Főmenü}be való visszatérésre.
 
 \subsection{Használati esetek}
@@ -571,7 +579,7 @@ A következőkben a főbb használati esetek kerülnek bemutatásra. A felhaszn�
 	\centering
 	\includegraphics[width=\textwidth]{pics/usecase.png}
 	\caption{Használati esetek}
-\end{figure}\par
+\end{figure}
 
 \subsection{Csomagszerkezet}
 Az egyik alapelv, hogy a grafikus megjelenítés működés szintjén minél inkább különüljön el a rendszerlogikától. A grafikus felület már csak a modell programész által számított, a vezérlő programrésznek átadott adatokat jelenítse meg. Továbbá lehetőséget biztosítson a felhasználó számára, hogy vezérelje a program rendszerlogikáját a kontroller rétegen keresztül. Ez által, hogy a rendszerlogika lényegében független a grafikus interfésztől. Így a szoftver magasabb fokú bővíthetőséget, a kód pedig jobb átláthatóságot nyer.\par
@@ -579,7 +587,7 @@ Az egyik alapelv, hogy a grafikus megjelenítés működés szintjén minél ink
  	\centering
  	\includegraphics[width=\textwidth]{pics/packagediagram.png}
  	\caption{A program csomagszerkezete}
- \end{figure}\par
+ \end{figure}
 Ennek tekintetében a programot három fő csomagra kell bontani: A \textbf{modell} csomag, melyben a logikai osztályok találhatóak, a \textbf{view}, melyben a grafikai interfészt leíró \emph{FXML} fájlok és osztályok foglalnak helyet, végül a \textbf{controller} csomag, melynek osztályai kapcsolatot teremtenek a logikai és a megjelenítési réteg között.
 \subsubsection{Modell csomag}
 A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rendszerezést szem előtt tartva további alcsomagok kerülnek létrehozásra, így jobban áttekinthető az osztályhierarchia. Összességében ebben a csomagban foglalnak helyet azon osztályok, amelyek a rendszer adattároló, rendszerező és számítási feladatait ellátják. Az alábbi táblázat ad áttekintést az előzőleg említett alcsomagokról:\par
@@ -600,7 +608,7 @@ A csomag osztályainak többsége azon algoritmusimplementációkat tartalmazza,
 \paragraph{algorithm.raw alcsomag}
 Azon algoritmusok megvalósítását tartalmazza, amelyekben nem kerül elmentésre a rendezés aktuális állapota. Az általuk szolgáltatott információ mindössze a rendezési feladat megoldása során végzett műveletek száma. Továbbá egy olyan osztályt tartalmaz a csomag, amely ezen adatokat rendezett formában át tudja adni a kontroller rétegnek, melynek segítségével megjelennek az egyes értékek a felhasználói felületen.
 \paragraph{algorithm.raw.test alcsomag}
-Az előbbi csomag osztályaihoz tartozó egységtesztek osztályait tartalmazza. Néhány egyszerűbb eset kerül tesztelésre, például: üres- és egy elemű tömb, száz véletlen generált szám rendezésének eredménye.
+Az előbbi csomag osztályaihoz tartozó egységtesztek osztályait tartalmazza. Néhány egyszerűbb eset kerül tesztelésre, például: üres- és egy elemű tömb, száz; illetve egymillió véletlen generált szám rendezésének eredménye.
 \paragraph{info alcsomag}
 A felületen egy algoritmust kiválasztva megtekinthető az eljárás rövid leírása. A leírások betöltése fájlból történik. A már lekérdezett szövegeket eltároljuk, így ha a felhasználó ismét lekérdezi az algoritmus leírását már nem szükséges újból beolvasni a fájlt. A csomag e funkciót megvalósító osztályokat tartalmazza.
 
@@ -619,7 +627,7 @@ A következőkben bemutatásra kerülnek a csomagok főbb osztályai, és ezek f
 	\centering
 	\includegraphics[width=\textwidth]{pics/plan_class.png}
 	\caption{A főbb osztályok kapcsolata és kommunikációjuk}
-\end{figure}\par
+\end{figure}
 A megjelenítési réteg fájljai nem kerülnek bemutatásra, mivel ezek szerkezetüket tekintve azonosak, csak a grafikus interfész elemeit definiálják. Amennyiben egy fájl meghívásra kerül a kontroller réteg egyik osztályában az ismertetve lesz.
 \subsubsection{alapcsomag osztálya}
 \hiddenparagraph{MainApplication}
@@ -630,7 +638,7 @@ A felhasználói interakciók hatását ez a réteg érvényesíti, figyeli a fe
 Az osztályban található metódusok kezelik a menü eszköztárán való kattintást (\textbf{handleAbout()} és \textbf{handleExit()} függvények). Továbbá a gombokon történő kattintás következtében betöltik a bemenet megadására lehetőséget adó panelekhez tartozó \emph{FXML} fájlokat.
 \hiddenparagraph{ManualInputController}
 A menüben a \textbf{Manuális} gombra történő kattintás után példányosul az osztály. 
-A sikeres bemenet megadását követően a \textbf{saveNumbers()} metódus átadja a számokat a \textbf{SortingAlgorithm} osztályának, ahol egy statikus tömbben kerülnek eltárolásra. Ezt követően betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
+A sikeres bemenet megadását követően átadja a rendezendő elemeket a \textbf{SortingAlgorithm} osztályának. Végül betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
 \hiddenparagraph{RandomInputController}
 A \textbf{Véletlen} gombra kattintás következtében példányosul. A kontroller osztály végzi el a számok generálását, mely ezt követően az előbbivel azonosan átadásra kerül a \textbf{SortingAlgorithm} osztálynak. Szintén betölti a főpaneleket tartalmazó \emph{FXML} fájlt.
 \hiddenparagraph{FileInputController}
@@ -642,7 +650,7 @@ A \textbf{Megfigyelés} panel gombjait figyeli és módosítja, például ha bef
 \hiddenparagraph{OverviewListController}
 A vizsgálható algoritmusok listáját tartalmazza, amennyiben a felületen módosítás történik a kiválasztott értéken újratölti a megfigyelés panelen látható diagramot, és meghívja a kiválasztott elem \textbf{setDefaults()} függvényét, amellyel az aktuális algoritmus állapotát tároló változók felveszik az alapértéküket.
 \hiddenparagraph{OverviewChartController}
-A \textbf{Megfigyelés} panelen található diagram kontroller osztálya. A \textbf{SortingAlgorithm} osztály által eltárolt számokat betölti egy listába, majd ezeket megjeleníti az oszlopdiagramon. Az oszlopok színének megváltoztatását is ez az osztály végzi el. A \textbf{OverviewDoubleChartController} 
+A \textbf{Megfigyelés} panelen található diagram kontroller osztálya. A \textbf{SortingAlgorithm} osztály által eltárolt számokat betölti egy listába, majd ezeket megjeleníti az oszlopdiagramon. Az oszlopok színének megváltoztatását is ez az osztály végzi el.
 \hiddenparagraph{OverviewDoubleChartController}
 Az előbb említett osztálynak két példányát tartalmazza, a \textbf{Radix "vissza"} rendezésnél tölti fel az első példány listáját a rendezendő számokkal, míg a másodikét nullákkal.
 \hiddenparagraph{OverviewGraphController}
@@ -657,7 +665,7 @@ Az \textbf{OverviewChartController} osztályhoz hasonlóan egy diagram kontrolle
 Főként a lejátszható algoritmusokat tartalmazza. Ezen osztályok mindegyike egyke, azaz a futás során csak egyetlen példány keletkezik belőlük.
 \hiddenparagraph{TournamentSort}
 Mivel mindegyik rendezést megvalósító osztály kevéssé tér el egymástól, ezért csak egy kerül rövid ismertetésre.
-\par Alapértelmezetten mindegyik osztály tartalmaz egy \textbf{step()} metódust, amely egy következő állapotba lépteti a rendezést. Minden osztályhoz a rendezést megvalósító változókon felül tartoznak olyan logikai változók, amelyekben az aktuális állapot elmentésre kerül. Ilyen változóban tárolódik például az, hogy a \textbf{Versenyrendezés} bináris fájában megtaláltuk-e a maximális elemhez tartozó levélelemet.
+\par Alapértelmezetten mindegyik osztály tartalmaz egy \textbf{step()} metódust, amely egy következő állapotba lépteti a rendezést. Minden osztályhoz a rendezést megvalósító változókon felül tartoznak olyan logikai változók, amelyekben az aktuális állapot egy-egy tulajdonsága elmentésre kerül. Ilyen változóban tárolódik például az, hogy a \textbf{Versenyrendezés} bináris fájában megtaláltuk-e a maximális elemhez tartozó levélelemet.
 \hiddenparagraph{SortingAlgorithm}
 A rendezést megvalósító osztályok őse a \textbf{SortingAlgorithm} absztrakt osztály. Néhány olyan metódust valósíst meg, amelyek minden rendezésnél azonosak.
 \hiddenparagraph{ChartAlgorithm}
@@ -735,7 +743,7 @@ Szintén több komponenst foglal magában, a \textbf{Megfigyelés} panelt gombja
 Az \textbf{Összehasonlítás} panel részeinek elhelyezkedését írja le. A következő \emph{FXML} fájlokat hívja meg betöltésekor: \textbf{BenchmarkTableLayout}, \textbf{BenchmarkChartLayout}.
 
 \subsection{Nem forrásfájl állományok}
-A program által használt nem forrás- vagy \emph{FXML} fájlok a \textbf{resources} mappában találhatóak. Ezen belül az \textbf{images} könyvtárban található meg a szoftver ikonja. A \textbf{text} mappán belül találhatóak azon fájlok, amelyeket az \textbf{InfoFlyWeight} osztály betölt. Azaz ezekben az állományokban található meg az egyes algoritmusok rövid ismertetése.
+A program által használt nem forrás- vagy \emph{FXML} fájlok a \textbf{resources} mappában találhatóak. Ezen belül az \textbf{images} könyvtárban található meg a szoftver ikonja. A \textbf{text} mappán belül találhatóak azon fájlok, amelyeket az \textbf{InfoFlyWeight} osztály betölt. Azaz ezekben az állományokban található meg az egyes algoritmusok rövid ismertetése. A harmadik \textbf{input} mappában a fájlból történő bemenet megadásához található néhány példaadat.
 
 \subsection{Osztályok leírása}
 Az előző fejezetben(3.1) ismertetésre kerültek a főbb osztályok és azok fontosabb eljárásai, a következőkben nagyobb részletességgel kerülnek jellemzésre a szoftver osztályai.
@@ -912,8 +920,13 @@ A \textbf{QuickSortThread}-hez hasonlóan két metódus került kiemelésre a \t
 	\caption{A HeapSortThread osztálydiagramja}
 \end{figure}
 \paragraph{TournamentSortThread osztály}
-Felépítése teljes mértékben megegyezik az \textbf{BubbleSortThead}-nél leírtakkal, ennél fogva az osztálydiagramja is.\par
-Az \textbf{info} alcsomag osztályai kerülnek bemutatásra.
+Felépítését tekintve a \textbf{BubbleSortThread}-nál leírtakon felül egy egész számokat tartalmazó tömb adattagja van. Ez a tesztelés miatt került kiemelésre, mivel az algoritmus amennyiben nem kettő hatvány a bemenet hossza további (-1) értékekkel tölti fel a tömböt, amíg nem lesz megfelelő a mérete.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/TournamentSortThread.png}
+	\caption{A TournamentSortThread osztálydiagramja}
+\end{figure}
+Az \textbf{info} alcsomag osztályai kerülnek bemutatásra
 \paragraph{InfoFlyWeight osztály}
 Egyetlen adattagja egy szöveges mező. Ebben a változóban tárolódik egy algoritmushoz tartozó leírás.
 \begin{figure}[H]
@@ -938,14 +951,14 @@ Az imént említett eljárás betölti a főmenü elrendezését tartalmazó \em
 	\centering
 	\includegraphics{pics/class/MainApplication.png}
 	\caption{A MainApplication osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \paragraph{MenuController osztály}
 A \textbf{MenuLayout.fxml} fájl betöltésével egyidejűleg példányosul. A felület eszköztárán a \textbf{Segítség -> Névjegy} pontjára kattintva fut le a \textbf{handleAbout()} metódus. Megjelenít egy \textbf{alertBoxot}, benne a program névjegyének szövegével. Továbbá a \textbf{Fájl -> Bezárás} eszköztár elemet kiválasztva meghívódik a szoftver leállását eredményező \textbf{handleExit()} eljárás. A további függvényei a \textbf{MenuLayout.fxml} fájlban definiált gombokon történő kattintást kezelik, és betöltik a kiválasztott bemenettípushoz tartozó \emph{FXML} fájlt.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/MenuController.png}
 	\caption{A MenuController osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \paragraph{ManualInputController osztály}
 A \textbf{ManualInputLayout.fxml} fájl betöltésével példányosul, ekkor lefut az \textbf{initialize()} metódus, mely letiltja a kattintást a felület két gombján.
 \par A \textbf{setSizeLimit()} metódus figyeli a méret mező tartalmát, amennyiben nem pozitív egész szám a gombok továbbra is tiltva maradnak. Továbbá, ha a megadott hossz nagyobb száznál, akkor automatikusan átírja az értéket 100-ra. Amennyiben a méret megadása sikeres meghívódik a \textbf{createFields()} eljárás, mely létrehozza a számok beírására lehetőséged adó mezőket.\par
@@ -954,7 +967,7 @@ A \textbf{randomBtnHandler()} metódus a \textbf{Feltöltés} gombon történő 
 	\centering
 	\includegraphics{pics/class/ManualInputController.png}
 	\caption{A ManualInputController osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \paragraph{RandomInputController osztály}
 A \textbf{RandomInputLayout.fxml} fájl betöltésekor jön létre belőle egy példány. Ekkor az \textbf{initialize()} metódus eljárás letiltja az \textbf{Ok} gombon való kattintást, továbbá meghívja az \textbf{initBox()} függvényt.\par
 Az imént említett eljárás feltölti a generálás módjára lehetőséget adó legördülő listát az opciókkal. Az \textbf{okBtnHandler()} kezeli az \textbf{Ok}-on történő kattintást. Itt történik meg a bemenet méretét tartalmazó mező ellenőrzése.\par Amennyiben megfelelő a hossz formátuma, azaz egy pozitív egész szám meghívódik a \textbf{generateNumbers()} eljárás. A \textbf{typeBox} változóban tárolt legördülőlista kiválasztott elemétől függően kerülnek a számok generálásra. A kigenerált tömböt átadja \textbf{SortingAlgorithm} osztályának, majd betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
@@ -962,14 +975,90 @@ Az imént említett eljárás feltölti a generálás módjára lehetőséget ad
 	\centering
 	\includegraphics{pics/class/RandomInputController.png}
 	\caption{A RandomInputController osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \paragraph{FileInputController osztály}
 A \textbf{FileInputLayout.fxml} betöltésekor példányosul. Az \textbf{openChooser()} eljárás beállítja a formátumszűrőt(*.txt), valamint megjeleníti a fájltallózó párbeszédpanelt.\par A fájl kiválasztását követően meghívja a \textbf{loadFile()} függvényt.Kezdetben lekéri a fájl sorainak a számát a \textbf{getLineNumber()} eljárás segítségével, majd létrehoz egy ennek megfelelő nagyságú tömböt. Soronként végigolvassa a fájlt, amennyiben egy nem megfelelő sort talál(azaz egy sor üres vagy nem egy pozitív egész számot tartalmaz) befejezi a beolvasást, és hibaüzenetet jelenít meg.\par Amennyiben a beolvasás sikeres volt átadja a tömböt a \textbf{SortingAlgorithm} osztálynak, és megnyitja a főpaneleket tartalmazó \emph{FXML} fájlt.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/FileInputController.png}
 	\caption{A FileInputController osztálydiagramja}
-\end{figure}\par
+\end{figure}
+\paragraph{BaseController osztály}
+A \textbf{BaseLayout.fxml}-hez tartozó kontroller osztály. Az \textbf{initalize()} metódusa ellenőrzi a bemenet hosszát, amennyiben 100 elemnél több került megadásra a \textbf{tabPane} panelválasztóról leveszi a \textbf{Megfigyelés} lehetőséget.\par
+ A további metódusai kezelik az eszköztár elemein való kattintást. A \textbf{handleExit()} eljárás a \textbf{Fájl -> Bezárás} kiválasztását követően fut le. A \textbf{MenuController}-hez hasonlóan a \textbf{handleAbout()} megjeleníti a program névjegyét.\par
+ A \textbf{handleAlgorithm()} metódus lekéri a megjelenített panel listájából vagy táblázatából a kiválasztott algoritmust. Ezt az információt felhasználva a \textbf{InfoFlyWeightFactory} osztálytól elkéri a  rendezés leírását, majd létrehoz egy ablakot, amelyben megjeleníti az algoritmus jellemzését.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BaseController.png}
+	\caption{A BaseController osztálydiagramja}
+\end{figure}
+\paragraph{OverviewController osztály}
+Az \textbf{OverviewLayout.fxml} betöltésével példányosul. Az \textbf{initalize()} letiltja a \textbf{Léptetés} és \textbf{Lejátszás} gombokon való kattintást.\par
+Az \textbf{animation} adattagja egy \textbf{TimeLine} típusú objektum, melynek segítségével definiálható egy a felületen végrehajtandó műveletsorozat. Jelen esetben az aktuális algoritmus \textbf{step()} műveletét ismétli amíg nem kerül megnyomásra a \textbf{Leállítás} gomb vagy nem fejeződött be a rendezés. \par
+Az osztály további metódusai kezelik a panel gombjain történő kattintást, az \textbf{initBtns()} eljárás hozzárendel egy-egy eseménykezelőt a gombokhoz. A \textbf{checkButtons()} figyeli, hogy befejeződött-e már a rendezési feladat, amennyiben igen, akkor az \textbf{Újraindítás} gombot jeleníti meg.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/OverviewController.png}
+	\caption{A OverviewController osztálydiagramja}
+\end{figure}
+\paragraph{OverviewListController osztály}
+A \textbf{OverviewListLayout.fxml} fájl betöltésekor jön létre belőle egy példány. A \textbf{setList()} eljárás feltölti az \textbf{Összegzés} panelen látható listát a választható algoritmusok nevével. Az \textbf{initialize()} függvényben hozzárendelődik egy "figyelő" a listához. Amennyiben új érték kerül kiválasztásra a listában lefut a kiválasztott algoritmushoz tartozó \textbf{setDefaults()} metódus, továbbá betöltődik az \textbf{Állapotjelző} felület megfelelő elrendezése.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/OverviewListController.png}
+	\caption{A OverviewListController osztálydiagramja}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/OverviewListController.png}
+	\caption{A OverviewListController osztálydiagramja}
+\end{figure}
+\paragraph{OverviewChartController osztály}
+A \textbf{OverviewChartLayout.fxml} kontroller osztálya. Feltölti az \textbf{Megfigyelés} panel diagramját a \textbf{SortingAlgorithm} által tárolt tömb értékeivel. Az osztályon keresztül módosíthatók az oszlopok színei, ehhez a \textbf{setColor(Node node, String color)} metódusát szükséges meghívni. A \textbf{getRandomColor()} eljárást a \textbf{Radix "előre"} algoritmus használja az edények kijelöléséhez. \par
+A tervezéskor már kiderült, hogy a \emph{JavaFX} alapértelmezetten nem jeleníti meg az egyes oszlopok konkrét értékét. Így szükséges volt a \textbf{displayLegend(Data<String, Number> data)} eljárás létrehozása, amely egy oszlop felett elhelyez egy szövegdobozt, benne a pontos értékkel.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/OverviewChartController.png}
+	\caption{A OverviewChartController osztálydiagramja}
+\end{figure}
+\paragraph{OverviewDoubleChartController osztály}
+Az előbb ismertetett osztálynak két példányát tartalmazza. A \textbf{Radix "vissza"} algoritmus kiválasztásakor kerül betöltésre a hozzátartozó \emph{FXML} fájl, ekkor készül belőle egy objektum.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/OverviewDoubleChartController.png}
+	\caption{A OverviewDoubleChartController osztálydiagramja}
+\end{figure}
+\paragraph{OverviewGraphController osztály}
+Az algoritmus listából bináris fát használó eljárás kiválasztását követően példányosul. "Karbantartja" a \textbf{Állapotjelző felület} gráfját. Az \textbf{addVertices()} függvény hívását követően hozzáadja a panelhez a fát. Az oszlopdiagramját egy \textbf{OverviewChartController}-en keresztül lehet vezérelni.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/OverviewGraphController.png}
+	\caption{A OverviewGraphController osztálydiagramja}
+\end{figure}
+\paragraph{SortingThreadListener interfész}
+Az interfészt megvalósító osztály értesíthető egy programszál befejeződését követően a \textbf{notifyOfThreadComplete(final Thread thread)} eljáráson keresztül. A \textbf{BenchmarkController} valósítja meg. Ezáltal értesül róla, ha egy rendezési feladat befejeződött.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/SortingThreadListener.png}
+	\caption{A SortingThreadListener interfészdiagramja}
+\end{figure}
+\paragraph{BenchmarkController osztály}
+Az előbb bemutatott interfészt valósítja meg. A \textbf{sortingThreads} tömbben tárolja a futtatandó programszálak egy példányát. Valamint a \textbf{benchmarkDataList} által tárolt \textbf{BenchmarkData} objektumokban találhatóak meg az algoritmusok által végzett műveletek száma.\par
+A \textbf{runSortingThreads()} eljárás a \textbf{sortingThreads} tömb minden elemére meghívja a \textbf{start()} függvényt, ezáltal elindulnak a programszálak.
+Amennyiben egy rendezési eljárás befejeződött hozzáadja az \textbf{benchmarkDataList} listához a végzett műveletek számát, és értesíti az osztályt, hogy olvasson egy elemet a listából. A \textbf{notifyOfThreadComplete()} eljárás hozzáadja az új elemet a \textbf{BenchmarkTableController}-en keresztül a felület táblázatához.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BenchmarkController.png}
+	\caption{A BenchmarkController osztálydiagramja}
+\end{figure}
+\paragraph{BenchmarkChartController osztály}
+Egy listában tárolja azon elemeket, amelyekre már a felület táblázatán történt kattintás. Amennyiben olyan elem kerül kiválasztásra, amely még nem eleme a diagramnak hozzáadja a \textbf{addElement(BenchmarkData data)} metódus hívásával. Ebben a metódusban kerül ellenőrzésre, hogy már eleme-e a diagramnak az adott algoritmus. Amennyiben igen eltávolításra kerül.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BenchmarkChartController.png}
+	\caption{A BenchmarkChartController osztálydiagramja}
+\end{figure}
+A \textbf{OverviewTableController} és \textbf{BenchmarkTableController} osztályok nem kerültek bemutatásra, mivel egyetlen funkciójuk, hogy rajtuk keresztül érhetőek el a grafikus interfész táblázatai.
 \subsubsection{Megjelenítési réteg osztályai}
 A megjelenítésért felelős komponensek főként \emph{FXML} fájlokban kerülnek tárolásra. A gráf implementációja azonban ilyen módon nem készíthető el. Ezért került kialakításra a \textbf{view.graph} csomag. Röviden most e csomag osztályai kerülnek jellemzésre.
 \paragraph{Vertex osztály}
@@ -979,24 +1068,130 @@ A \textbf{getGraphics()} metódus visszaadja a csúcs grafikus reprezentációj�
 	\centering
 	\includegraphics{pics/class/Vertex.png}
 	\caption{A Vertex osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \paragraph{Edge osztály}
 Konstruktora a paraméterül kapott koordináták felhasználásával létrehoz egy vonal(\textbf{Line}) objektumot.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/Edge.png}
 	\caption{Az Edge osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \paragraph{Graph osztály}
 Őse a \textbf{Group} osztály, ezáltal hozzáadható a felhasználó felülethez. Az \textbf{addVertex(Vertex vertex)} metódusával új csúcs adható hozzá a gráfhoz. A \textbf{bindVertexes(Vertex vertexA, Vertex vertexB)} eljárás a két paraméterül kapott csúcsot köti össze a \textbf{createEdge(Vertex vertexA, Vertex vertexB)} metódus segítségével.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/Graph.png}
 	\caption{A Graph osztálydiagramja}
-\end{figure}\par
+\end{figure}
 \subsection{Tesztelés}
-
-
+\subsubsection{Felhasználó felület tesztelése}
+A felhasználó felület tesztelése manuálisan történik. A használati eseteket alapul véve a következő komponenseket szükséges tesztelni:
+\paragraph{Főmenü eszköztára}
+\textbf{Fájl -> Bezárás}ra kattintva a program futása leáll, az operációs rendszer \textbf{Feladatkezelő}jében sem fut tovább a \emph{JRE}.\par
+\textbf{Segítség -> Névjegy}re kattintva megjelenik a szoftver leírása. Az \textbf{Ok} gombra kattintást követően bezárul az ablak, és a főmenü kerül előtérbe.
+\paragraph{Főmenü gombjai}
+Az egyes gombokra kattintva megjelennek a bemenet megadására alkalmas panelek.
+\paragraph{Számok manuális megadása panel}
+Csúszka ellenőrzése, amikor nem férnek ki a beviteli mezők.\par
+Kezdetben nem kattintható egyik gomb sem. A \textbf{"Méret:"} mezőt kitöltve például az \textbf{almafa} szöveggel vagy 0 értékkel, majd leütve az \textbf{ENTER} billentyűt továbbra sem kattinthatóak a gombok.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/test/manual_almafa0.jpg}
+	\caption{Nem pozitív egész szám megadása}
+\end{figure}
+Megfelelő elemhossz megadása után, majd átírva nem megfelelőre ismét inaktívvá válnak a gombok.\par
+A sikeres hossz és rendezendő értékek megadását követően megjelenik a program főpanelje.
+\paragraph{Számok generálása panel}
+Legördülő lista elemeinek az ellenőrzése.\par
+Amennyiben csak a méret került megadásra, és még nincs kiválasztott generálási mód az \textbf{Ok} gomb nem kattintható. Amennyiben a módszer kiválasztásra került, de a méret nem megfelelő vagy nincs kitöltve az \textbf{Ok}-ra történő kattintásnak nincs hatása, továbbra is a panel látszik.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/test/generate_notselectedalmafa.jpg}
+	\caption{Nem pozitív egész szám és módszer megadása}
+\end{figure}
+A sikeres méret és generálási módszer megadását követően megjelenik a program főpanelje.
+\paragraph{Fájl betöltése párbeszédablak}
+Fájlkiterjesztés szűrő ellenőrzése, csak a "\textbf{Szöveges fájl (*.txt)}" opciót tartalmazhatja, ennek megfelelően a tallózóban csak az ilyen kiterjesztésű fájlok láthatók.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/test/fileextension.png}
+	\caption{Fájlkiterjesztés legördülő lista}
+\end{figure}
+Nem megfelelő fájl megadását követően hibaüzenetet jelenít meg a program. Ilyen "hibás" fájlokat találunk a \textbf{resources\textbackslash input} könyvtárban:
+\begin{description}
+	\item[$\bullet$] üres fájl (input\textunderscore empty.txt)
+	\item[$\bullet$] a fájl egy karaktersorozatot tartalmaz (input\textunderscore almafa.txt)
+	\item[$\bullet$] pozitív egész számok az elemei, de van üres sora (input\textunderscore oneemptyline.txt)
+\end{description}\par
+Megfelelő fájl tallózásakor (például: input\textunderscore ok) megjelenik a főpanel.
+\paragraph{Főpanel eszköztára}
+Szintén elvégezendők a \textbf{Főmenü eszköztár}nál leírt tesztek, annyi különbséggel, hogy a \textbf{Névjegy} bezárást követően a főpanelt kell látnunk.\par
+Továbbá tesztelendő funkció a \textbf{Segítség -> Az algoritmusról} menüpont. A \textbf{Megfigyelés} panel az aktív, és a listában nincs kiválasztott elem, akkor hibaüzenet jelenik meg. Ugyanez érvényes arra az esetre, ha a \textbf{Összehasonlítás} panel táblázatában nincs kiválasztott sor. Egy elem (például: "Kupacrendezés") kiválasztását követően megjelenik az algoritmus leírása, majd az \textbf{Ok} gombra kattintva bezárul az ablak, és a főpanel látható.\par
+További funkció a \textbf{Fájl -> Vissza a főmenübe} lehetőség, ezt kiválasztva a főmenü jelenik meg.
+\paragraph{Megfigyelés panel}
+A \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak amíg nincs kiválasztott algoritmus. Például a "Gyorsrendezés"t kiválasztva már aktívak. A \textbf{Lejátszás}ra kattintva a gomb szövege \textbf{Megállításra} változik. A rendezés befejeződését követően az \textbf{Újraindítás} gomb látható. 
+\par A \textbf{Léptetés} gombra kattintva egy következő állapot látható az \textbf{Állapotjelző} felületen. Ha egy elemű a bemenet, és például a buborékrendezés van kiválasztva, akkor a gombon történő kattintást követően az \textbf{Újraindítás} gomb jelenik meg.
+\par Több elem nem jelölhető ki egyszerre az algoritmus listában.
+\paragraph{Összehasonlítás panel}
+A "Buborékrendezés" sorára kattintva hozzáadódik a diagramhoz az összehasonlítások és mozgatások összege. Ismételt dupla kattintást követően pedig eltűnik ez az információ.\par
+Az oszlopok szélessége állítható, így szükséges tesztelni a táblázat alján lévő csúszkát.
+\subsubsection{Egységtesztelés}
+Az algoritmusok és műveletszámuk helyességének ellenőrzéséhez egységtesztek készültek. Ezáltal nem feltétlenül szükséges fehérdoboz megközelítéssel ellenőrizni a rendezési eljárásokat.\par
+ Mivel az \textbf{algorithm} csomagban található eljárások nagy része megegyezik a \textbf{algorithm.raw} csomag algoritmusaival, ezért célszerűbb az utóbbi osztályaihoz teszteket készíteni, egyszerűbb felépítésük és kisebb mértékű függőségük miatt. \par
+ Az \textbf{algortihm.raw.test} tartalmazza az egységtesztosztályokat. Felépítésüket tekintve azonosak, mindegyikben öt eset kerül ellenőrzésre. A tesztelést végző metódusok, azaz a tesztesetek a következők:
+ \paragraph{zeroElement()}
+Üres tömböt ad át rendezésre. Ekkor a rendezés után ellenőrzi, hogy szintén egy üres tömböt kapott-e vissza valamint, hogy a műveletek száma nulla-e.
+\paragraph{oneElement()}
+A 42 értékkel hívja meg a rendezési eljárásokat. Ezt követően ellenőrzi, hogy ugyanezt az egy elemet tartalmazó tömböt kapta-e vissza a rendezést követően, valamint, hogy a műveletjelző értékek nullák-e.
+\paragraph{fiveConcretElement()}
+A  $[42, 20, 7, 18, 100]$ tömbön indítja el a rendezéseket. A rendezés befejeztével meghívja a \emph{Java} beépített rendező algoritmusát(\textbf{Arrays.sort}), és ellenőrzi, hogy a rendezés befejeztekor tárolt tömb azonos-e az előbb említett függvényhívás eredményével. Továbbá ellenőrzi az algoritmus által végzett műveletek összegét.
+\paragraph{thousandRandomElement()}
+Száz véletlen választott értéken hívja meg a rendezéseket. A műveletek száma nem kerül ellenőrzésre, csak az előbb említett módon a tömb tartalma.
+\paragraph{millionRandomElement}
+Az előző eljárással azonos, mindössze a tömb mérete különbözik. Ez feleltethető meg a "nagy" bemenetre történő ellenőrzésnek, mivel csak ezek a rendezések hívódnak meg száz elemnél hosszabb bemenet megadásakor.
+\subsubsection{Strukturális tesztelés}
+Fehérdoboz tesztnek vetjük alá a programot, mely során vizsgáljuk, hogy a lehetséges futási út során a megfelelő eredményeket produkálja-e a szoftver.\par
+Miután elindult a program válasszuk a \textbf{Fájl}ból betöltés lehetőséget. Adjuk meg a megjelenő fájltallózóban a \textbf{resources\textbackslash input} könyvtárban található \textbf{input\textunderscore ok.txt} fájlt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/test/file_content.png}
+	\caption{A strukturális teszthez használt fájl tartalma}
+\end{figure}
+A betöltést követően megjelenik a program főpanelje. Látható, hogy a \textbf{Megfigyelés} panel az alapértelmezett, mivel a bemenet kevesebb, mint száz elemet tartalmaz. A legtöbb algoritmus lejátszására már nincs szükség, mivel működésük a \textbf{Egységtesztelés} során már ellenőrzésre került. Azonban a radix rendezések mivel nem jelennek meg a \textbf{Összegzés} panelen így ellenőrizendők.\par
+Válasszuk ki az algoritmus listából a \textbf{Radix "előre"} rendezést. Ekkor az oszlopok felett az értékek binárisan vannak ábrázolva. A \textbf{Lejátszás} gombra kattintást követően várjuk ki, amíg befejeződik a rendezés. Ekkor látható, hogy az összes oszlop színe \textcolor{done}{\Huge$\bullet$} és megjelent a \textbf{Újraindítás} gomb. Az \textbf{Állapotjelző táblázat}ban pedig a következő értékek szerepelnek:
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/test/radixforwardcounters.png}
+	\caption{Radix "előre" rendezést követően az állapotjelzők}
+\end{figure}
+Amint látható a rendezésnek nem volt szüksége az összes bitet megvizsgálni, mivel 14 elemvizsgálatot követően már minden edény hossza egy volt. 
+\par
+Most ellenőrizzük a \textbf{Radix "vissza"} algoritmus helyességét. A listából kiválasztva megjelenik két oszlopdiagram egymás felett. A felső diagram tartalmazza a rendezendő értékeket. A \textbf{Lejátszás}ra kattintva megfigyelhetjük, hogy hogyan történik az értékek átmásolása egyik "tömbből" a másikba. A rendezés befejeztével a felső diagramon szerepelnek az értékek növekvő sorrendben, ekkor minden oszlop \textcolor{done}{\Huge$\bullet$} színű és látható a \textbf{Újraindítás} gomb. Az \textbf{Állapotjelző táblázat} értékei a következők:
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/test/radixbackwardcounters.png}
+	\caption{Radix "vissza" rendezést követően az állapotjelzők}
+\end{figure}
+A vizsgálatok száma azonos a bitek számának és a tömb méretének szorzatával, azaz $7\cdot 5 = 35$. Az aktuális bitet jelző szám a rendezés befejeztével nyilván 1.\par
+Kérjük le a \textbf{Radix "vissza"} rendezés leírását az eszköztár \textbf{Segítség -> Az algoritmusról} pontján való kattintással, majd zárjuk be. Ekkor továbbra is a \textbf{Megfigyelés} panelt kell látnunk a befejeződött rendezési feladattal.\par
+Navigáljunk át a \textbf{Összehasonlítás} panelre. Láthatjuk a kitöltött \textbf{Összegzés táblázat}ot, valamint az üres diagramot. Adjuk hozzá a \textbf{Gyorsrendezés}t és \textbf{Buborékrendezés}t a diagramhoz, azaz kattintsunk kétszer ezeken a sorokon. Ekkor a következőt látjuk:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/test/benchmark.png}
+	\caption{\textbf{Összegzés} panel}
+\end{figure}
+Ismételten kattintva a \textbf{Gyorsrendezés}en eltűnik a hozzá tartozó oszlop, már csak a \textbf{Buborékrendezés} műveletszáma látható a diagramon.\par
+Válasszuk ki az eszköztár \textbf{Segítség} menüjének \textbf{Névjegy} menüpontját, aminek a hatására azonnal látható lesz a program névjegye. Zárjuk be a névjegyet, majd a \textbf{Fájl} menü \textbf{Bezárás} menüpontjával állítsuk le a szoftver futását.
+\chapter{Összegzés}
+Remélem, hogy a dolgozat segítséget nyújt azoknak, akiket érdekelnek a rendezési algoritmusok. Próbáltam az eljárásokat a lehető legszemléletesebben bemutatni, úgy, hogy az befogadható legyen a hallgatók számára és elősegítse tanulmányaikat.\par
+Az alkalmazás fejlesztése során sokat tanultam. Mélyrehatóbban megismertem a program által bemutatott algoritmusokat, sikeresen használtam néhány programtervezési mintát. Továbbá többet megtudtam a \emph{Java} nyelv eszközeiről, valamint technológiai szempontból talán a legjelentősebb, hogy megismertem a \emph{JavaFX} platformot és felépítését.\par
+\hiddensubsubsection{A szoftver továbbfejlesztése}
+A program a rendezési algoritmusok közül csak néhányat szemléltet, így ésszerű cél további eljárások implementálása. Mivel nagyjából minden rendezési algoritmus által használt adatstruktúra már adott, így egyetlen feladat ezen eljárások létrehozása és "bedrótozása".\par
+Továbbá elegánsabb megoldás lenne, ha minden algoritmushoz csak egy implementáció tartozna, ez azonban ahogy a tervezés során kiderült nem igazán megvalósítható a \textbf{JavaFX} szálkezeléséből adódóan. Ez a fejlesztés még inkább csökkentené a kód redundanciáját.
+\\
+\\
+\par
+Végszóként szeretném megköszönni Veszprémi Anna tanárnőnek, hogy elvállalta a projekt témavezetői szerepét és támogatott a dolgozat elkészítése során.
 
 \begin{thebibliography}{widest entry}
 \bibitem{Fekete}

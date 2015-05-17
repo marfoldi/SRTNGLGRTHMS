@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  17 MAY 2015 02:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.21)  17 MAY 2015 22:59
 entering extended mode
 **THESIS.tex
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.tex
@@ -421,18 +421,18 @@ Language: magyar 2005/03/30 v1.4j Magyar support from the babel system
 Package babel Info: Making ` an active character on input line 597.
 ))
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -501,23 +501,23 @@ Package ucs Warning: ***************************
 (ucs)                ***************************
 (ucs)                Activating compatibility mode.
 (ucs)                ***************************
-(ucs)                 on input line 42.
+(ucs)                 on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 46.
+(Font)              <12> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 46.
+(Font)              <8> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 46.
+(Font)              <6> on input line 47.
 
 <pics/eltecimerszines.jpg, id=1, 1333.98375pt x 1333.98375pt>
 File: pics/eltecimerszines.jpg Graphic file (type jpg)
 
 <use pics/eltecimerszines.jpg>
-Package pdftex.def Info: pics/eltecimerszines.jpg used on input line 46.
+Package pdftex.def Info: pics/eltecimerszines.jpg used on input line 47.
 (pdftex.def)             Requested size: 113.81102pt x 113.80438pt.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
@@ -533,10 +533,10 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 NLGRTHMS/DOCUMENTATION/pics/eltecimerszines.jpg>]
 (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.toc [1
 
-] [2] [3])
+] [2] [3]
+[4])
 \tf@toc=\write3
-
-[4]
+ [5]
 1. fejezet.
 [1
 
@@ -555,10 +555,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4
 
-] <pics/setup.png, id=40, 384.6872pt x 297.36093pt>
+] <pics/setup.png, id=43, 384.6872pt x 297.36093pt>
 File: pics/setup.png Graphic file (type png)
  <use pics/setup.png>
-Package pdftex.def Info: pics/setup.png used on input line 138.
+Package pdftex.def Info: pics/setup.png used on input line 141.
 (pdftex.def)             Requested size: 256.07741pt x 197.96033pt.
 
 
@@ -568,565 +568,763 @@ Package Fancyhdr Warning: \headheight is too small (14.61858pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
-Overfull \hbox (311.51271pt too wide) in paragraph at lines 141--141
+Overfull \hbox (6.76093pt too wide) in paragraph at lines 144--144
 \T1/cmr/m/n/12 könyv-tárba szük-sé-ges na-vi-gálni: \T1/cmr/bx/n/12 C:\Felhaszn
-álók\{Felhasználói név}\AppData\Local\SRTNGLGRTHMS\SRTNGLGRTHMS.exe 
+álók\{Felhasználói név}\AppData 
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 146.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 149.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-<pics/mainmenu.png, id=44, 344.03531pt x 216.81pt>
+) [6 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/setup.png>]
+<pics/mainmenu.png, id=51, 344.03531pt x 216.81pt>
 File: pics/mainmenu.png Graphic file (type png)
  <use pics/mainmenu.png>
-Package pdftex.def Info: pics/mainmenu.png used on input line 158.
+Package pdftex.def Info: pics/mainmenu.png used on input line 161.
 (pdftex.def)             Requested size: 298.75264pt x 188.27249pt.
 
-[6 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/setup.png>]
-<pics/about.png, id=49, 280.79906pt x 213.04594pt>
+<pics/about.png, id=52, 280.79906pt x 213.04594pt>
 File: pics/about.png Graphic file (type png)
  <use pics/about.png>
-Package pdftex.def Info: pics/about.png used on input line 167.
+Package pdftex.def Info: pics/about.png used on input line 170.
 (pdftex.def)             Requested size: 213.39568pt x 161.90683pt.
 
-[7 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainmenu.png> <C:/User
-s/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/about.png>]
-<pics/manualinput.png, id=53, 335.00156pt x 117.43875pt>
+[7 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainmenu.png>]
+<pics/manualinput.png, id=57, 335.00156pt x 117.43875pt>
 File: pics/manualinput.png Graphic file (type png)
 
 <use pics/manualinput.png>
-Package pdftex.def Info: pics/manualinput.png used on input line 187.
+Package pdftex.def Info: pics/manualinput.png used on input line 190.
 (pdftex.def)             Requested size: 256.07741pt x 89.77045pt.
-
-<pics/randominput.png, id=54, 338.01282pt x 155.07938pt>
+ [8 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/about.png>] <pics/ran
+dominput.png, id=61, 338.01282pt x 155.07938pt>
 File: pics/randominput.png Graphic file (type png)
 
 <use pics/randominput.png>
-Package pdftex.def Info: pics/randominput.png used on input line 196.
+Package pdftex.def Info: pics/randominput.png used on input line 199.
 (pdftex.def)             Requested size: 256.07741pt x 117.49002pt.
- [8 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/manualinput.png>] <pi
-cs/fileinput.png, id=59, 470.50781pt x 325.96782pt>
+
+<pics/fileinput.png, id=62, 470.50781pt x 325.96782pt>
 File: pics/fileinput.png Graphic file (type png)
 
 <use pics/fileinput.png>
-Package pdftex.def Info: pics/fileinput.png used on input line 212.
+Package pdftex.def Info: pics/fileinput.png used on input line 215.
 (pdftex.def)             Requested size: 256.07741pt x 177.41267pt.
-
-<pics/fileinput_error.png, id=60, 345.54094pt x 219.06844pt>
+ [9 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/manualinput.png> <C:/
+Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/randominput.png>] <pics/filei
+nput_error.png, id=66, 345.54094pt x 219.06844pt>
 File: pics/fileinput_error.png Graphic file (type png)
 
 <use pics/fileinput_error.png>
-Package pdftex.def Info: pics/fileinput_error.png used on input line 218.
+Package pdftex.def Info: pics/fileinput_error.png used on input line 221.
 (pdftex.def)             Requested size: 256.07741pt x 162.35211pt.
- [9 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/randominput.png> <C:/
-Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput.png>] <pics/mainpan
-el.png, id=64, 733.23938pt x 434.37282pt>
+
+<pics/mainpanel.png, id=67, 733.23938pt x 434.37282pt>
 File: pics/mainpanel.png Graphic file (type png)
 
 <use pics/mainpanel.png>
-Package pdftex.def Info: pics/mainpanel.png used on input line 226.
+Package pdftex.def Info: pics/mainpanel.png used on input line 229.
 (pdftex.def)             Requested size: 341.43437pt x 202.26627pt.
- [10 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput_error.png>
- <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainpanel.png>] <pics/wa
-tchpanel.png, id=70, 733.99219pt x 435.12563pt>
+ [10 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput.png> <C:/U
+sers/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/fileinput_error.png>] <pics/al
+gorithm_error.png, id=72, 283.0575pt x 138.5175pt>
+File: pics/algorithm_error.png Graphic file (type png)
+
+<use pics/algorithm_error.png>
+Package pdftex.def Info: pics/algorithm_error.png used on input line 238.
+(pdftex.def)             Requested size: 213.39568pt x 104.43105pt.
+ [11 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/mainpanel.png> <C:/U
+sers/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/algorithm_error.png>] <pics/wa
+tchpanel.png, id=78, 733.99219pt x 435.12563pt>
 File: pics/watchpanel.png Graphic file (type png)
 
 <use pics/watchpanel.png>
-Package pdftex.def Info: pics/watchpanel.png used on input line 242.
+Package pdftex.def Info: pics/watchpanel.png used on input line 250.
 (pdftex.def)             Requested size: 341.43437pt x 202.411pt.
- [11] [12 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/watchpanel.png>
-]
-<pics/splittedinput.jpg, id=77, 1138.2525pt x 213.79875pt>
+ [12 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/watchpanel.png>]
+<pics/splittedinput.jpg, id=82, 1138.2525pt x 213.79875pt>
 File: pics/splittedinput.jpg Graphic file (type jpg)
 
 <use pics/splittedinput.jpg>
-Package pdftex.def Info: pics/splittedinput.jpg used on input line 268.
+Package pdftex.def Info: pics/splittedinput.jpg used on input line 276.
 (pdftex.def)             Requested size: 341.43437pt x 64.13359pt.
+ [13]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 274.
+(Font)              <24.88> on input line 282.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 274.
+(Font)              <20.74> on input line 282.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 274.
+(Font)              <17.28> on input line 282.
 
-<pics/benchmarkpanel.png, id=78, 733.23938pt x 435.12563pt>
+<pics/benchmarkpanel.png, id=87, 733.23938pt x 435.12563pt>
 File: pics/benchmarkpanel.png Graphic file (type png)
 
 <use pics/benchmarkpanel.png>
-Package pdftex.def Info: pics/benchmarkpanel.png used on input line 286.
+Package pdftex.def Info: pics/benchmarkpanel.png used on input line 294.
 (pdftex.def)             Requested size: 341.43437pt x 202.61682pt.
- [13 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/splittedinput.jpg>] 
-[14 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/benchmarkpanel.png>]
-<pics/bubble.jpg, id=86, 3283.26625pt x 938.50626pt>
+ [14 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/splittedinput.jpg> <
+C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/benchmarkpanel.png>] [15]
+<pics/bubble.jpg, id=94, 3283.26625pt x 938.50626pt>
 File: pics/bubble.jpg Graphic file (type jpg)
  <use pics/bubble.jpg>
-Package pdftex.def Info: pics/bubble.jpg used on input line 312.
+Package pdftex.def Info: pics/bubble.jpg used on input line 320.
 (pdftex.def)             Requested size: 426.79135pt x 121.99577pt.
 
-[15 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/bubble.jpg>] [16]
-<pics/insertion.jpg, id=96, 3287.28125pt x 941.5175pt>
+[16 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/bubble.jpg>]
+<pics/insertion.jpg, id=101, 3287.28125pt x 941.5175pt>
 File: pics/insertion.jpg Graphic file (type jpg)
 
 <use pics/insertion.jpg>
-Package pdftex.def Info: pics/insertion.jpg used on input line 336.
+Package pdftex.def Info: pics/insertion.jpg used on input line 344.
 (pdftex.def)             Requested size: 426.79135pt x 122.22917pt.
- [17 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/insertion.jpg>] [18]
- <pics/shell.jpg, id=106, 3267.20625pt x 934.49126pt>
+ [17] [18 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/insertion.jpg>]
+ <pics/shell.jpg, id=110, 3267.20625pt x 934.49126pt>
 File: pics/shell.jpg Graphic file (type jpg)
 
 <use pics/shell.jpg>
-Package pdftex.def Info: pics/shell.jpg used on input line 373.
+Package pdftex.def Info: pics/shell.jpg used on input line 381.
 (pdftex.def)             Requested size: 426.79135pt x 122.05849pt.
- [19 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/shell.jpg>]
-Overfull \hbox (7.2802pt too wide) in paragraph at lines 393--394
+ [19]
+Overfull \hbox (7.2802pt too wide) in paragraph at lines 401--402
 \T1/cmr/m/n/12 Gyakorlatilag szét-vá-lasz-tást esz-kö-zö-lünk, mely-nek ered-mé
 -nye-képp a ki-vá-lasz-tott elem-
  []
 
-<pics/quick.jpg, id=110, 3283.26625pt x 936.49875pt>
+[20 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/shell.jpg>]
+<pics/quick.jpg, id=119, 3283.26625pt x 936.49875pt>
 File: pics/quick.jpg Graphic file (type jpg)
  <use pics/quick.jpg>
-Package pdftex.def Info: pics/quick.jpg used on input line 399.
+Package pdftex.def Info: pics/quick.jpg used on input line 407.
 (pdftex.def)             Requested size: 426.79135pt x 121.73482pt.
 
-[20 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/quick.jpg>] [21]
-<pics/heap.jpg, id=118, 3283.26625pt x 932.48375pt>
+[21 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/quick.jpg>] [22]
+<pics/heap.jpg, id=126, 3283.26625pt x 932.48375pt>
 File: pics/heap.jpg Graphic file (type jpg)
  <use pics/heap.jpg>
-Package pdftex.def Info: pics/heap.jpg used on input line 429.
+Package pdftex.def Info: pics/heap.jpg used on input line 437.
 (pdftex.def)             Requested size: 426.79135pt x 121.2129pt.
 
-[22 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/heap.jpg>]
-<pics/tournament.jpg, id=122, 3275.23625pt x 930.47626pt>
+[23 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/heap.jpg>]
+<pics/tournament.jpg, id=130, 3275.23625pt x 930.47626pt>
 File: pics/tournament.jpg Graphic file (type jpg)
 
 <use pics/tournament.jpg>
-Package pdftex.def Info: pics/tournament.jpg used on input line 449.
+Package pdftex.def Info: pics/tournament.jpg used on input line 457.
 (pdftex.def)             Requested size: 426.79135pt x 121.23592pt.
- [23 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/tournament.jpg>] [24
+ [24 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/tournament.jpg>] [25
 ]
-<pics/radixforward.jpg, id=129, 3275.23625pt x 932.48375pt>
+<pics/radixforward.jpg, id=138, 3275.23625pt x 932.48375pt>
 File: pics/radixforward.jpg Graphic file (type jpg)
 
 <use pics/radixforward.jpg>
-Package pdftex.def Info: pics/radixforward.jpg used on input line 471.
+Package pdftex.def Info: pics/radixforward.jpg used on input line 479.
 (pdftex.def)             Requested size: 426.79135pt x 121.49748pt.
- [25 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixforward.jpg>]
-Overfull \hbox (0.15163pt too wide) in paragraph at lines 484--484
+ [26 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixforward.jpg>]
+Overfull \hbox (0.15163pt too wide) in paragraph at lines 492--492
 []\T1/cmr/m/n/12 Az el®z® al-go-rit-mus-tól el-té-r®en már nem hely-ben ren-dez
 , az el-já-rás-nak két tömbre
  []
 
-<pics/radixbackward.jpg, id=133, 2457.18pt x 932.48375pt>
+<pics/radixbackward.jpg, id=142, 2457.18pt x 932.48375pt>
 File: pics/radixbackward.jpg Graphic file (type jpg)
 
 <use pics/radixbackward.jpg>
-Package pdftex.def Info: pics/radixbackward.jpg used on input line 490.
+Package pdftex.def Info: pics/radixbackward.jpg used on input line 498.
 (pdftex.def)             Requested size: 426.79135pt x 161.96344pt.
- [26] [27 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixbackward.j
+ [27] [28 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/radixbackward.j
 pg>]
 3. fejezet.
 
-Overfull \hbox (0.89848pt too wide) in paragraph at lines 506--507
+Overfull \hbox (0.89848pt too wide) in paragraph at lines 514--515
 []\T1/cmr/m/n/12 A prog-ram-nak há-rom jól el-kü-lö-nül® kom-po-nens-b®l kell á
 ll-nia: Egy lo-gi-kai(modell)
  []
 
-[28
+[29
 
-] <pics/plan_mainmenu.png, id=144, 148.30406pt x 80.55093pt>
+] <pics/plan_mainmenu.png, id=152, 148.30406pt x 80.55093pt>
 File: pics/plan_mainmenu.png Graphic file (type png)
 
 <use pics/plan_mainmenu.png>
-Package pdftex.def Info: pics/plan_mainmenu.png used on input line 524.
+Package pdftex.def Info: pics/plan_mainmenu.png used on input line 532.
 (pdftex.def)             Requested size: 170.71393pt x 92.72626pt.
- [29 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_mainmenu.png>]
-<pics/plan_input.png, id=148, 299.61937pt x 71.51718pt>
+ [30 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_mainmenu.png>]
+<pics/plan_input.png, id=156, 299.61937pt x 71.51718pt>
 File: pics/plan_input.png Graphic file (type png)
 
 <use pics/plan_input.png>
-Package pdftex.def Info: pics/plan_input.png used on input line 535.
+Package pdftex.def Info: pics/plan_input.png used on input line 543.
 (pdftex.def)             Requested size: 298.75264pt x 71.3162pt.
 
-<pics/plan_panels.png, id=149, 398.99063pt x 123.46124pt>
+<pics/plan_panels.png, id=157, 398.99063pt x 123.46124pt>
 File: pics/plan_panels.png Graphic file (type png)
 
 <use pics/plan_panels.png>
-Package pdftex.def Info: pics/plan_panels.png used on input line 542.
+Package pdftex.def Info: pics/plan_panels.png used on input line 550.
 (pdftex.def)             Requested size: 298.75264pt x 92.44875pt.
 
-<pics/plan_directions.png, id=150, 504.38437pt x 411.78844pt>
+<pics/plan_directions.png, id=158, 504.38437pt x 411.78844pt>
 File: pics/plan_directions.png Graphic file (type png)
 
 <use pics/plan_directions.png>
-Package pdftex.def Info: pics/plan_directions.png used on input line 554.
+Package pdftex.def Info: pics/plan_directions.png used on input line 562.
 (pdftex.def)             Requested size: 384.1096pt x 313.59708pt.
- [30 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_input.png> <C:/
+ [31 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_input.png> <C:/
 Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_panels.png>] <pics/useca
-se.png, id=154, 624.83438pt x 300.3722pt>
+se.png, id=163, 624.83438pt x 300.3722pt>
 File: pics/usecase.png Graphic file (type png)
 
 <use pics/usecase.png>
-Package pdftex.def Info: pics/usecase.png used on input line 572.
+Package pdftex.def Info: pics/usecase.png used on input line 580.
 (pdftex.def)             Requested size: 426.79135pt x 205.17162pt.
- [31 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_directions.png>
+ [32 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_directions.png>
 ]
-<pics/packagediagram.png, id=158, 583.42969pt x 530.73282pt>
+<pics/packagediagram.png, id=167, 583.42969pt x 530.73282pt>
 File: pics/packagediagram.png Graphic file (type png)
 
 <use pics/packagediagram.png>
-Package pdftex.def Info: pics/packagediagram.png used on input line 580.
+Package pdftex.def Info: pics/packagediagram.png used on input line 588.
 (pdftex.def)             Requested size: 426.79135pt x 388.24966pt.
- [32 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/usecase.png>] [33 <C
-:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/packagediagram.png>] [34]
-<pics/plan_class.png, id=169, 1253.43282pt x 902.6222pt>
+ [33 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/usecase.png>] [34 <C
+:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/packagediagram.png>] [35]
+<pics/plan_class.png, id=177, 1253.43282pt x 902.6222pt>
 File: pics/plan_class.png Graphic file (type png)
 
 <use pics/plan_class.png>
-Package pdftex.def Info: pics/plan_class.png used on input line 620.
+Package pdftex.def Info: pics/plan_class.png used on input line 628.
 (pdftex.def)             Requested size: 426.79135pt x 307.342pt.
- [35 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_class.png>]
-Overfull \hbox (2.68997pt too wide) in paragraph at lines 632--634
+ [36]
+Overfull \hbox (2.68997pt too wide) in paragraph at lines 640--642
  \T1/cmr/bx/n/12 Ma-nu-a-lIn-put-Cont-rol-ler. \T1/cmr/m/n/12 A me-nü-ben a \T1
 /cmr/bx/n/12 Ma-nu-á-lis \T1/cmr/m/n/12 gombra tör-tén® kat-tin-tás után
  []
 
-
-Overfull \hbox (2.51764pt too wide) in paragraph at lines 639--640
+[37 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/plan_class.png>]
+Overfull \hbox (2.51764pt too wide) in paragraph at lines 647--648
  \T1/cmr/bx/n/12 Ba-se-Cont-rol-ler. \T1/cmr/m/n/12 A f®-pa-ne-lek-hez tar-tozó
  kont-rol-ler osz-tály. Fi-gyeli, hogy 100 elem-
  []
 
-[36]
-Overfull \hbox (19.00375pt too wide) in paragraph at lines 643--644
+
+Overfull \hbox (19.00375pt too wide) in paragraph at lines 651--652
  \T1/cmr/bx/n/12 Over-view-List-Cont-rol-ler. \T1/cmr/m/n/12 A vizs-gál-ható al
 -go-rit-mu-sok lis-tá-ját tar-tal-mazza, amennyi-
  []
 
-
-Overfull \hbox (5.82782pt too wide) in paragraph at lines 651--653
+[38]
+Overfull \hbox (5.82782pt too wide) in paragraph at lines 659--661
  \T1/cmr/bx/n/12 Benc-h-mark-Cont-rol-ler. \T1/cmr/m/n/12 Pél-dá-nyo-su-lá-sát 
 kö-ve-t®en el-in-dítja a \T1/cmr/bx/n/12 al-go-rithm.raw \T1/cmr/m/n/12 cso-
  []
 
-[37]
-Overfull \hbox (2.47166pt too wide) in paragraph at lines 672--673
+[39]
+Overfull \hbox (2.47166pt too wide) in paragraph at lines 680--681
  \T1/cmr/bx/n/12 Re-cur-si-ve-Pa-ra-me-ter. \T1/cmr/m/n/12 Né-hány adat el-tá-r
 o-lá-sára hasz-nált osz-tály. Pél-dául a gyors-
  []
 
 
-Overfull \hbox (0.5501pt too wide) in paragraph at lines 675--676
+Overfull \hbox (0.5501pt too wide) in paragraph at lines 683--684
 \T1/cmr/m/n/12 szá-lak be-fe-je-z®-dé-sü-ket kö-ve-t®en fi-gyel-mez-te-tik a má
 r is-mer-te-tett \T1/cmr/bx/n/12 Benc-h-mark-Cont-
  []
 
-[38] [39] [40] [41] [42]
-<pics/class/SortingAlgorithm.png, id=195, 177.66376pt x 115.93312pt>
+[40] [41] [42] [43]
+<pics/class/SortingAlgorithm.png, id=204, 177.66376pt x 115.93312pt>
 File: pics/class/SortingAlgorithm.png Graphic file (type png)
 
 <use pics/class/SortingAlgorithm.png>
-Package pdftex.def Info: pics/class/SortingAlgorithm.png used on input line 749
+Package pdftex.def Info: pics/class/SortingAlgorithm.png used on input line 757
 .
 (pdftex.def)             Requested size: 177.66331pt x 115.93283pt.
 
-<pics/class/ChartAlgorithm.png, id=196, 268.75406pt x 74.52844pt>
+<pics/class/ChartAlgorithm.png, id=205, 268.75406pt x 74.52844pt>
 File: pics/class/ChartAlgorithm.png Graphic file (type png)
 
 <use pics/class/ChartAlgorithm.png>
-Package pdftex.def Info: pics/class/ChartAlgorithm.png used on input line 756.
+Package pdftex.def Info: pics/class/ChartAlgorithm.png used on input line 764.
 (pdftex.def)             Requested size: 268.7534pt x 74.52824pt.
-
-<pics/class/GraphAlgorithm.png, id=197, 201.75375pt x 162.6075pt>
+ [44 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/SortingAlgorit
+hm.png>]
+<pics/class/GraphAlgorithm.png, id=209, 201.75375pt x 162.6075pt>
 File: pics/class/GraphAlgorithm.png Graphic file (type png)
 
 <use pics/class/GraphAlgorithm.png>
-Package pdftex.def Info: pics/class/GraphAlgorithm.png used on input line 764.
+Package pdftex.def Info: pics/class/GraphAlgorithm.png used on input line 772.
 (pdftex.def)             Requested size: 201.75325pt x 162.6071pt.
- [43 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/SortingAlgorit
-hm.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ChartAlgori
-thm.png>]
-<pics/class/RadixAlgorithm.png, id=201, 174.6525pt x 106.14656pt>
+
+<pics/class/RadixAlgorithm.png, id=210, 174.6525pt x 106.14656pt>
 File: pics/class/RadixAlgorithm.png Graphic file (type png)
 
 <use pics/class/RadixAlgorithm.png>
-Package pdftex.def Info: pics/class/RadixAlgorithm.png used on input line 772.
+Package pdftex.def Info: pics/class/RadixAlgorithm.png used on input line 780.
 (pdftex.def)             Requested size: 174.65207pt x 106.1463pt.
-
-<pics/class/SortingAlgorithmFactory.png, id=202, 219.06844pt x 39.89906pt>
+ [45 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ChartAlgorithm
+.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/GraphAlgorith
+m.png>]
+<pics/class/SortingAlgorithmFactory.png, id=214, 219.06844pt x 39.89906pt>
 File: pics/class/SortingAlgorithmFactory.png Graphic file (type png)
 
 <use pics/class/SortingAlgorithmFactory.png>
 Package pdftex.def Info: pics/class/SortingAlgorithmFactory.png used on input l
-ine 780.
+ine 788.
 (pdftex.def)             Requested size: 219.06789pt x 39.89894pt.
- [44 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/GraphAlgorithm
-.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/RadixAlgorith
-m.png>]
-<pics/class/CounterData.png, id=207, 169.38281pt x 153.57375pt>
+
+<pics/class/CounterData.png, id=215, 169.38281pt x 153.57375pt>
 File: pics/class/CounterData.png Graphic file (type png)
 
 <use pics/class/CounterData.png>
-Package pdftex.def Info: pics/class/CounterData.png used on input line 788.
+Package pdftex.def Info: pics/class/CounterData.png used on input line 796.
 (pdftex.def)             Requested size: 169.38239pt x 153.57336pt.
-
-<pics/class/RecursiveParameter.png, id=208, 444.15938pt x 100.87688pt>
+ [46 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/RadixAlgorithm
+.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/SortingAlgori
+thmFactory.png>]
+<pics/class/RecursiveParameter.png, id=219, 444.15938pt x 100.87688pt>
 File: pics/class/RecursiveParameter.png Graphic file (type png)
 
 <use pics/class/RecursiveParameter.png>
-Package pdftex.def Info: pics/class/RecursiveParameter.png used on input line 7
-95.
+Package pdftex.def Info: pics/class/RecursiveParameter.png used on input line 8
+03.
 (pdftex.def)             Requested size: 426.79135pt x 96.9315pt.
- [45 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/SortingAlgorit
-hmFactory.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Coun
-terData.png>]
-<pics/class/BubbleSort.png, id=212, 111.41624pt x 103.13531pt>
+
+<pics/class/BubbleSort.png, id=220, 111.41624pt x 103.13531pt>
 File: pics/class/BubbleSort.png Graphic file (type png)
 
 <use pics/class/BubbleSort.png>
-Package pdftex.def Info: pics/class/BubbleSort.png used on input line 805.
+Package pdftex.def Info: pics/class/BubbleSort.png used on input line 813.
 (pdftex.def)             Requested size: 111.41597pt x 103.13504pt.
-
-<pics/class/InsertionSort.png, id=213, 133.24782pt x 124.21407pt>
+ [47 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/CounterData.pn
+g> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/RecursiveParamet
+er.png>]
+<pics/class/InsertionSort.png, id=224, 133.24782pt x 124.21407pt>
 File: pics/class/InsertionSort.png Graphic file (type png)
 
 <use pics/class/InsertionSort.png>
-Package pdftex.def Info: pics/class/InsertionSort.png used on input line 812.
+Package pdftex.def Info: pics/class/InsertionSort.png used on input line 820.
 (pdftex.def)             Requested size: 133.24748pt x 124.21375pt.
- [46 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/RecursiveParam
-eter.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BubbleSor
-t.png>]
-<pics/class/ShellSort.png, id=217, 134.00063pt x 140.02313pt>
+
+<pics/class/ShellSort.png, id=225, 134.00063pt x 140.02313pt>
 File: pics/class/ShellSort.png Graphic file (type png)
 
 <use pics/class/ShellSort.png>
-Package pdftex.def Info: pics/class/ShellSort.png used on input line 820.
+Package pdftex.def Info: pics/class/ShellSort.png used on input line 828.
 (pdftex.def)             Requested size: 134.00027pt x 140.02278pt.
- [47 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/InsertionSort.
-png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ShellSort.png>
-]
-<pics/class/QuickSort.png, id=221, 155.83218pt x 152.82094pt>
+ [48 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BubbleSort.png
+> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/InsertionSort.png
+>]
+<pics/class/QuickSort.png, id=229, 155.83218pt x 152.82094pt>
 File: pics/class/QuickSort.png Graphic file (type png)
 
 <use pics/class/QuickSort.png>
-Package pdftex.def Info: pics/class/QuickSort.png used on input line 828.
+Package pdftex.def Info: pics/class/QuickSort.png used on input line 836.
 (pdftex.def)             Requested size: 155.8318pt x 152.82054pt.
 
-Overfull \hbox (3.51602pt too wide) in paragraph at lines 833--833
+Overfull \hbox (3.51602pt too wide) in paragraph at lines 841--841
 []\T1/cmr/m/n/12 A \T1/cmr/bx/n/12 star-ter-In-dex \T1/cmr/m/n/12 vál-tozó tá-r
 olja azon ele-mét in-de-xét, mely-nek vizs-gál-juk a testvér-
  []
 
-<pics/class/HeapSort.png, id=222, 241.65282pt x 152.82094pt>
+[49 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ShellSort.png> 
+<C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/QuickSort.png>]
+<pics/class/HeapSort.png, id=234, 241.65282pt x 152.82094pt>
 File: pics/class/HeapSort.png Graphic file (type png)
 
 <use pics/class/HeapSort.png>
-Package pdftex.def Info: pics/class/HeapSort.png used on input line 837.
+Package pdftex.def Info: pics/class/HeapSort.png used on input line 845.
 (pdftex.def)             Requested size: 241.65222pt x 152.82054pt.
- [48 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/QuickSort.png>
-]
-<pics/class/TournamentSort.png, id=226, 129.48375pt x 144.54pt>
+
+<pics/class/TournamentSort.png, id=235, 129.48375pt x 144.54pt>
 File: pics/class/TournamentSort.png Graphic file (type png)
 
 <use pics/class/TournamentSort.png>
-Package pdftex.def Info: pics/class/TournamentSort.png used on input line 846.
+Package pdftex.def Info: pics/class/TournamentSort.png used on input line 854.
 (pdftex.def)             Requested size: 129.48341pt x 144.53963pt.
+ [50 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/HeapSort.png>]
 
-<pics/class/ForwardRadix.png, id=227, 168.63pt x 112.92188pt>
+<pics/class/ForwardRadix.png, id=239, 168.63pt x 112.92188pt>
 File: pics/class/ForwardRadix.png Graphic file (type png)
 
 <use pics/class/ForwardRadix.png>
-Package pdftex.def Info: pics/class/ForwardRadix.png used on input line 855.
+Package pdftex.def Info: pics/class/ForwardRadix.png used on input line 863.
 (pdftex.def)             Requested size: 168.62958pt x 112.92159pt.
- [49 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/HeapSort.png> 
-<C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/TournamentSort.png>
-]
-<pics/class/BackwardRadix.png, id=231, 191.21437pt x 121.95563pt>
+
+<pics/class/BackwardRadix.png, id=240, 191.21437pt x 121.95563pt>
 File: pics/class/BackwardRadix.png Graphic file (type png)
 
 <use pics/class/BackwardRadix.png>
-Package pdftex.def Info: pics/class/BackwardRadix.png used on input line 864.
+Package pdftex.def Info: pics/class/BackwardRadix.png used on input line 872.
 (pdftex.def)             Requested size: 191.2139pt x 121.9553pt.
-
-<pics/class/BenchmarkData.png, id=232, 354.57469pt x 211.54031pt>
+ [51 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/TournamentSort
+.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ForwardRadix.
+png>]
+<pics/class/BenchmarkData.png, id=244, 354.57469pt x 211.54031pt>
 File: pics/class/BenchmarkData.png Graphic file (type png)
 
 <use pics/class/BenchmarkData.png>
-Package pdftex.def Info: pics/class/BenchmarkData.png used on input line 872.
+Package pdftex.def Info: pics/class/BenchmarkData.png used on input line 880.
 (pdftex.def)             Requested size: 354.57382pt x 211.53978pt.
- [50 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ForwardRadix.p
-ng> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BackwardRadix.p
-ng>]
-<pics/class/SortingThread.png, id=237, 194.22563pt x 130.98938pt>
+
+<pics/class/SortingThread.png, id=245, 194.22563pt x 130.98938pt>
 File: pics/class/SortingThread.png Graphic file (type png)
 
 <use pics/class/SortingThread.png>
-Package pdftex.def Info: pics/class/SortingThread.png used on input line 880.
+Package pdftex.def Info: pics/class/SortingThread.png used on input line 888.
 (pdftex.def)             Requested size: 194.22514pt x 130.98904pt.
-
-<pics/class/BubbleSortThread.png, id=238, 69.25874pt x 53.44969pt>
+ [52 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BackwardRadix.
+png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BenchmarkData.
+png>]
+<pics/class/BubbleSortThread.png, id=249, 69.25874pt x 53.44969pt>
 File: pics/class/BubbleSortThread.png Graphic file (type png)
 
 <use pics/class/BubbleSortThread.png>
-Package pdftex.def Info: pics/class/BubbleSortThread.png used on input line 888
+Package pdftex.def Info: pics/class/BubbleSortThread.png used on input line 896
 .
 (pdftex.def)             Requested size: 69.25856pt x 53.44954pt.
- [51 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BenchmarkData.
-png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/SortingThread.
-png>]
-<pics/class/ShellSortThread.png, id=242, 126.4725pt x 49.68562pt>
+
+<pics/class/ShellSortThread.png, id=250, 126.4725pt x 49.68562pt>
 File: pics/class/ShellSortThread.png Graphic file (type png)
 
 <use pics/class/ShellSortThread.png>
-Package pdftex.def Info: pics/class/ShellSortThread.png used on input line 897.
+Package pdftex.def Info: pics/class/ShellSortThread.png used on input line 905.
 
 (pdftex.def)             Requested size: 126.47218pt x 49.6855pt.
 
-<pics/class/QuickSortThread.png, id=243, 196.48407pt x 54.2025pt>
+<pics/class/QuickSortThread.png, id=251, 196.48407pt x 54.2025pt>
 File: pics/class/QuickSortThread.png Graphic file (type png)
 
 <use pics/class/QuickSortThread.png>
-Package pdftex.def Info: pics/class/QuickSortThread.png used on input line 904.
+Package pdftex.def Info: pics/class/QuickSortThread.png used on input line 912.
 
 (pdftex.def)             Requested size: 196.48358pt x 54.20236pt.
 
-Overfull \hbox (0.16673pt too wide) in paragraph at lines 901--906
+Overfull \hbox (0.16673pt too wide) in paragraph at lines 909--914
  \T1/cmr/bx/n/12 Qu-ick-SortT-head osz-tály.[] \T1/cmr/m/n/12 Két to-vábbi me-t
 ó-dus-sal ren-del-ke-zik, ezek-t®l el-te-kintve
  []
 
-<pics/class/HeapSortThread.png, id=244, 201.75375pt x 54.2025pt>
+[53 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/SortingThread.p
+ng> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BubbleSortThrea
+d.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ShellSortThr
+ead.png>] <pics/class/HeapSortThread.png, id=255, 201.75375pt x 54.2025pt>
 File: pics/class/HeapSortThread.png Graphic file (type png)
 
 <use pics/class/HeapSortThread.png>
-Package pdftex.def Info: pics/class/HeapSortThread.png used on input line 911.
+Package pdftex.def Info: pics/class/HeapSortThread.png used on input line 919.
 (pdftex.def)             Requested size: 201.75325pt x 54.20236pt.
- [52 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BubbleSortThre
-ad.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ShellSortTh
-read.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/QuickSort
-Thread.png>]
-<pics/class/InfoFlyWeight.png, id=248, 131.74219pt x 65.49469pt>
+
+<pics/class/TournamentSortThread.png, id=256, 91.84312pt x 64.74188pt>
+File: pics/class/TournamentSortThread.png Graphic file (type png)
+
+<use pics/class/TournamentSortThread.png>
+Package pdftex.def Info: pics/class/TournamentSortThread.png used on input line
+ 926.
+(pdftex.def)             Requested size: 91.84288pt x 64.74171pt.
+
+<pics/class/InfoFlyWeight.png, id=257, 131.74219pt x 65.49469pt>
 File: pics/class/InfoFlyWeight.png Graphic file (type png)
 
 <use pics/class/InfoFlyWeight.png>
-Package pdftex.def Info: pics/class/InfoFlyWeight.png used on input line 921.
+Package pdftex.def Info: pics/class/InfoFlyWeight.png used on input line 934.
 (pdftex.def)             Requested size: 131.74185pt x 65.4945pt.
-
-<pics/class/InfoFlyWeightFactory.png, id=249, 235.63031pt x 55.70813pt>
+ [54 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/QuickSortThrea
+d.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/HeapSortThre
+ad.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/TournamentS
+ortThread.png>]
+<pics/class/InfoFlyWeightFactory.png, id=261, 235.63031pt x 55.70813pt>
 File: pics/class/InfoFlyWeightFactory.png Graphic file (type png)
 
 <use pics/class/InfoFlyWeightFactory.png>
 Package pdftex.def Info: pics/class/InfoFlyWeightFactory.png used on input line
- 929.
+ 942.
 (pdftex.def)             Requested size: 235.62973pt x 55.70798pt.
- [53 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/HeapSortThread
-.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/InfoFlyWeight
-.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/InfoFlyWeight
-Factory.png>]
-<pics/class/MainApplication.png, id=253, 137.01187pt x 93.34875pt>
+
+<pics/class/MainApplication.png, id=262, 137.01187pt x 93.34875pt>
 File: pics/class/MainApplication.png Graphic file (type png)
 
 <use pics/class/MainApplication.png>
-Package pdftex.def Info: pics/class/MainApplication.png used on input line 939.
+Package pdftex.def Info: pics/class/MainApplication.png used on input line 952.
 
 (pdftex.def)             Requested size: 137.01154pt x 93.34851pt.
-
-<pics/class/MenuController.png, id=254, 179.92218pt x 93.34875pt>
+ [55 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/InfoFlyWeight.
+png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/InfoFlyWeightF
+actory.png>]
+<pics/class/MenuController.png, id=267, 179.92218pt x 93.34875pt>
 File: pics/class/MenuController.png Graphic file (type png)
 
 <use pics/class/MenuController.png>
-Package pdftex.def Info: pics/class/MenuController.png used on input line 946.
+Package pdftex.def Info: pics/class/MenuController.png used on input line 959.
 (pdftex.def)             Requested size: 179.92174pt x 93.34851pt.
- [54 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/MainApplicatio
-n.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/MenuControll
-er.png>]
-<pics/class/ManualInputController.png, id=258, 109.91063pt x 161.85469pt>
+
+<pics/class/ManualInputController.png, id=268, 109.91063pt x 161.85469pt>
 File: pics/class/ManualInputController.png Graphic file (type png)
 
 <use pics/class/ManualInputController.png>
 Package pdftex.def Info: pics/class/ManualInputController.png used on input lin
-e 955.
+e 968.
 (pdftex.def)             Requested size: 109.91034pt x 161.85428pt.
-
-<pics/class/RandomInputController.png, id=259, 124.96687pt x 122.70844pt>
+ [56 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/MainApplicatio
+n.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/MenuControll
+er.png>]
+<pics/class/RandomInputController.png, id=272, 124.96687pt x 122.70844pt>
 File: pics/class/RandomInputController.png Graphic file (type png)
 
 <use pics/class/RandomInputController.png>
 Package pdftex.def Info: pics/class/RandomInputController.png used on input lin
-e 963.
+e 976.
 (pdftex.def)             Requested size: 124.96657pt x 122.70813pt.
- [55 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ManualInputCon
-troller.png>]
-<pics/class/FileInputController.png, id=263, 121.20282pt x 124.21407pt>
+ [57 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/ManualInputCon
+troller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Random
+InputController.png>]
+<pics/class/FileInputController.png, id=276, 121.20282pt x 124.21407pt>
 File: pics/class/FileInputController.png Graphic file (type png)
 
 <use pics/class/FileInputController.png>
 Package pdftex.def Info: pics/class/FileInputController.png used on input line 
-970.
+983.
 (pdftex.def)             Requested size: 121.20251pt x 124.21375pt.
 
-<pics/class/Vertex.png, id=264, 313.9228pt x 120.45pt>
+<pics/class/BaseController.png, id=277, 124.21407pt x 109.91063pt>
+File: pics/class/BaseController.png Graphic file (type png)
+
+<use pics/class/BaseController.png>
+Package pdftex.def Info: pics/class/BaseController.png used on input line 992.
+(pdftex.def)             Requested size: 124.21375pt x 109.91034pt.
+ [58 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/FileInputContr
+oller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BaseCont
+roller.png>]
+<pics/class/OverviewController.png, id=281, 112.16907pt x 143.03438pt>
+File: pics/class/OverviewController.png Graphic file (type png)
+
+<use pics/class/OverviewController.png>
+Package pdftex.def Info: pics/class/OverviewController.png used on input line 1
+001.
+(pdftex.def)             Requested size: 112.16878pt x 143.03401pt.
+
+<pics/class/OverviewListController.png, id=282, 240.9pt x 91.84312pt>
+File: pics/class/OverviewListController.png Graphic file (type png)
+
+<use pics/class/OverviewListController.png>
+Package pdftex.def Info: pics/class/OverviewListController.png used on input li
+ne 1008.
+(pdftex.def)             Requested size: 240.8994pt x 91.84288pt.
+File: pics/class/OverviewListController.png Graphic file (type png)
+
+<use pics/class/OverviewListController.png>
+Package pdftex.def Info: pics/class/OverviewListController.png used on input li
+ne 1013.
+(pdftex.def)             Requested size: 240.8994pt x 91.84288pt.
+ [59 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/OverviewContro
+ller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/OverviewL
+istController.png>]
+<pics/class/OverviewChartController.png, id=286, 225.84375pt x 149.05687pt>
+File: pics/class/OverviewChartController.png Graphic file (type png)
+
+<use pics/class/OverviewChartController.png>
+Package pdftex.def Info: pics/class/OverviewChartController.png used on input l
+ine 1021.
+(pdftex.def)             Requested size: 225.84319pt x 149.0565pt.
+
+Overfull \hbox (13.43575pt too wide) in paragraph at lines 1018--1023
+\T1/cmr/m/n/12 az egyes osz-lo-pok konk-rét ér-té-két. Így szük-sé-ges volt a \
+T1/cmr/bx/n/12 disp-lay-Le-gend(Data<String,
+ []
+
+
+<pics/class/OverviewDoubleChartController.png, id=287, 209.28188pt x 129.48375p
+t>
+File: pics/class/OverviewDoubleChartController.png Graphic file (type png)
+ <use pics/class/OverviewDoubleChartController.png>
+Package pdftex.def Info: pics/class/OverviewDoubleChartController.png used on i
+nput line 1028.
+(pdftex.def)             Requested size: 209.28134pt x 129.48341pt.
+
+Overfull \hbox (1.49278pt too wide) in paragraph at lines 1025--1030
+ \T1/cmr/bx/n/12 Over-view-Do-ub-le-C-hart-Cont-rol-ler osz-tály.[] \T1/cmr/m/n
+/12 Az el®bb is-mer-te-tett osz-tály-nak két
+ []
+
+<pics/class/OverviewGraphController.png, id=288, 222.07968pt x 143.03438pt>
+File: pics/class/OverviewGraphController.png Graphic file (type png)
+
+<use pics/class/OverviewGraphController.png>
+Package pdftex.def Info: pics/class/OverviewGraphController.png used on input l
+ine 1035.
+(pdftex.def)             Requested size: 222.07913pt x 143.03401pt.
+ [60 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/OverviewChartC
+ontroller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Over
+viewDoubleChartController.png>]
+<pics/class/SortingThreadListener.png, id=292, 187.45032pt x 45.16875pt>
+File: pics/class/SortingThreadListener.png Graphic file (type png)
+
+<use pics/class/SortingThreadListener.png>
+Package pdftex.def Info: pics/class/SortingThreadListener.png used on input lin
+e 1042.
+(pdftex.def)             Requested size: 187.44984pt x 45.16862pt.
+
+<pics/class/BenchmarkController.png, id=293, 262.73157pt x 109.91063pt>
+File: pics/class/BenchmarkController.png Graphic file (type png)
+
+<use pics/class/BenchmarkController.png>
+Package pdftex.def Info: pics/class/BenchmarkController.png used on input line 
+1051.
+(pdftex.def)             Requested size: 262.73091pt x 109.91034pt.
+
+<pics/class/BenchmarkChartController.png, id=294, 165.61874pt x 103.13531pt>
+File: pics/class/BenchmarkChartController.png Graphic file (type png)
+
+<use pics/class/BenchmarkChartController.png>
+Package pdftex.def Info: pics/class/BenchmarkChartController.png used on input 
+line 1058.
+(pdftex.def)             Requested size: 165.61833pt x 103.13504pt.
+
+Overfull \hbox (39.53084pt too wide) in paragraph at lines 1055--1060
+\T1/cmr/m/n/12 lasz-tásra, amely még nem eleme a di-ag-ram-nak hoz-zá-adja a \T
+1/cmr/bx/n/12 addE-le-ment(BenchmarkData
+ []
+
+[61 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/OverviewGraphCo
+ntroller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Sorti
+ngThreadListener.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/cla
+ss/BenchmarkController.png>]
+<pics/class/Vertex.png, id=299, 313.9228pt x 120.45pt>
 File: pics/class/Vertex.png Graphic file (type png)
 
 <use pics/class/Vertex.png>
-Package pdftex.def Info: pics/class/Vertex.png used on input line 980.
+Package pdftex.def Info: pics/class/Vertex.png used on input line 1069.
 (pdftex.def)             Requested size: 313.92203pt x 120.44969pt.
- [56 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/RandomInputCon
-troller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/FileIn
-putController.png>]
-<pics/class/Edge.png, id=269, 252.945pt x 46.67438pt>
+
+<pics/class/Edge.png, id=300, 252.945pt x 46.67438pt>
 File: pics/class/Edge.png Graphic file (type png)
 
 <use pics/class/Edge.png>
-Package pdftex.def Info: pics/class/Edge.png used on input line 987.
+Package pdftex.def Info: pics/class/Edge.png used on input line 1076.
 (pdftex.def)             Requested size: 252.94438pt x 46.67424pt.
-
-<pics/class/Graph.png, id=270, 204.01219pt x 65.49469pt>
+ [62 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/BenchmarkChart
+Controller.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Ver
+tex.png>]
+<pics/class/Graph.png, id=304, 204.01219pt x 65.49469pt>
 File: pics/class/Graph.png Graphic file (type png)
 
 <use pics/class/Graph.png>
-Package pdftex.def Info: pics/class/Graph.png used on input line 994.
+Package pdftex.def Info: pics/class/Graph.png used on input line 1083.
 (pdftex.def)             Requested size: 204.01169pt x 65.4945pt.
- [57 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Vertex.png> <C
-:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Edge.png> <C:/Users/m
-arfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Graph.png>]
+
+<pics/test/manual_almafa0.jpg, id=305, 933.4875pt x 186.6975pt>
+File: pics/test/manual_almafa0.jpg Graphic file (type jpg)
+
+<use pics/test/manual_almafa0.jpg>
+Package pdftex.def Info: pics/test/manual_almafa0.jpg used on input line 1099.
+(pdftex.def)             Requested size: 426.79135pt x 85.35771pt.
+ [63 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Edge.png> <C:/
+Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/class/Graph.png>]
+<pics/test/generate_notselectedalmafa.jpg, id=309, 938.50626pt x 186.6975pt>
+File: pics/test/generate_notselectedalmafa.jpg Graphic file (type jpg)
+
+<use pics/test/generate_notselectedalmafa.jpg>
+Package pdftex.def Info: pics/test/generate_notselectedalmafa.jpg used on input
+ line 1109.
+(pdftex.def)             Requested size: 426.79135pt x 84.9019pt.
+
+<pics/test/fileextension.png, id=310, 161.10187pt x 57.21375pt>
+File: pics/test/fileextension.png Graphic file (type png)
+
+<use pics/test/fileextension.png>
+Package pdftex.def Info: pics/test/fileextension.png used on input line 1117.
+(pdftex.def)             Requested size: 161.10147pt x 57.2136pt.
+
+Overfull \hbox (21.11713pt too wide) in paragraph at lines 1114--1119
+ \T1/cmr/bx/n/12 Fájl be-töl-tése pár-be-széd-ab-lak.[] \T1/cmr/m/n/12 Fájl-ki-
+ter-jesz-tés sz¶r® el-len-®r-zése, csak a "\T1/cmr/bx/n/12 Szöveges
+ []
+
+[64 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/manual_almafa0.j
+pg> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/generate_notsele
+ctedalmafa.jpg> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/file
+extension.png>] [65]
+<pics/test/file_content.png, id=317, 74.52844pt x 88.07906pt>
+File: pics/test/file_content.png Graphic file (type png)
+
+<use pics/test/file_content.png>
+Package pdftex.def Info: pics/test/file_content.png used on input line 1157.
+(pdftex.def)             Requested size: 74.52824pt x 88.07883pt.
+ [66 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/file_content.pn
+g>]
+<pics/test/radixforwardcounters.png, id=321, 118.19156pt x 109.91063pt>
+File: pics/test/radixforwardcounters.png Graphic file (type png)
+
+<use pics/test/radixforwardcounters.png>
+Package pdftex.def Info: pics/test/radixforwardcounters.png used on input line 
+1164.
+(pdftex.def)             Requested size: 118.19127pt x 109.91034pt.
+
+<pics/test/radixbackwardcounters.png, id=322, 118.94438pt x 112.16907pt>
+File: pics/test/radixbackwardcounters.png Graphic file (type png)
+
+<use pics/test/radixbackwardcounters.png>
+Package pdftex.def Info: pics/test/radixbackwardcounters.png used on input line
+ 1172.
+(pdftex.def)             Requested size: 118.94408pt x 112.16878pt.
+ [67 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/radixforwardcou
+nters.png> <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/radixback
+wardcounters.png>]
+<pics/test/benchmark.png, id=329, 733.99219pt x 434.37282pt>
+File: pics/test/benchmark.png Graphic file (type png)
+
+<use pics/test/benchmark.png>
+Package pdftex.def Info: pics/test/benchmark.png used on input line 1180.
+(pdftex.def)             Requested size: 426.79135pt x 252.57932pt.
+ [68 <C:/Users/marfoldi/git/SRTNLGRTHMS/DOCUMENTATION/pics/test/benchmark.png>]
+
 4. fejezet.
 
-Underfull \hbox (badness 2486) in paragraph at lines 1003--1006
+Underfull \hbox (badness 10000) in paragraph at lines 1190--1193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1190--1193
+
+ []
+
+[69
+
+]
+5. fejezet.
+
+Underfull \hbox (badness 2486) in paragraph at lines 1198--1201
 []\T1/cmr/m/n/12 Dr. Fe-kete Ist-ván: \T1/cmr/m/it/12 Al-go-rit-mu-sok és adat-
 szer-ke-ze-tek I. jegy-zet\T1/cmr/m/n/12 ,
  []
 
-[58
+[70
 
 ] ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 4726) in paragraph at lines 1056--1060
+Underfull \hbox (badness 4726) in paragraph at lines 1251--1255
 \T1/cmr/m/it/12 Are The Top 100 Lib-ra-ries in Java, JS and Ruby\T1/cmr/m/n/12 
 , [ON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1060
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1255
 \T1/cmr/m/n/12 LINE] [Hi-vat-kozva: 2015.04.30] $\T1/cmtt/m/n/12 http : / / blo
 g . takipi . com /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1060
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1255
 $\T1/cmtt/m/n/12 we-[]analyzed-[]30000-[]github-[]projects-[]here-[]are-[]the-[
 ]top-[]100$
  []
 
-[59] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
+[71] (C:\Users\marfoldi\git\SRTNLGRTHMS\DOCUMENTATION\THESIS.aux) ) 
 Here is how much of TeX's memory you used:
- 5620 strings out of 493921
- 74132 string characters out of 3147273
- 134795 words of memory out of 3000000
- 8765 multiletter control sequences out of 15000+200000
+ 5711 strings out of 493921
+ 77299 string characters out of 3147273
+ 135800 words of memory out of 3000000
+ 8837 multiletter control sequences out of 15000+200000
  17110 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  34i,12n,43p,1064b,680s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1148,9 +1346,9 @@ mmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on THESIS.pdf (64 pages, 4267451 bytes).
+Output written on THESIS.pdf (77 pages, 4519952 bytes).
 PDF statistics:
- 790 PDF objects out of 1000 (max. 8388607)
+ 862 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 291 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

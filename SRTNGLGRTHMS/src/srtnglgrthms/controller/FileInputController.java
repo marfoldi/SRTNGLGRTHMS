@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import srtnglgrthms.MainApplication;
@@ -69,7 +68,7 @@ public class FileInputController {
 				numbers[i] = scanner.nextInt();
 			SortingAlgorithm.setNumbers(numbers);
 			showBaseLayout();
-		} catch (InputMismatchException ime) {
+		} catch (RuntimeException re) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Hiba");
 			alert.setHeaderText("A megadott fájl nem megfelelõ!");
