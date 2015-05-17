@@ -79,13 +79,47 @@
 \contentsline {subsubsection}{A JavaFX kib\IeC {\H o}v\IeC {\'\i }t\IeC {\'e}se}{40}
 \contentsline {subsection}{\numberline {3.2.2.}A megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s menete}{40}
 \contentsline {subsection}{\numberline {3.2.3.}FXML \IeC {\'a}llom\IeC {\'a}nyok}{41}
+\contentsline {subsubsection}{N\IeC {\'e}h\IeC {\'a}ny fontosabb FXML \IeC {\'a}llom\IeC {\'a}ny}{42}
+\contentsline {paragraph}{BaseController}{42}
+\contentsline {paragraph}{OverviewLayout}{42}
+\contentsline {paragraph}{BenchmarkLayout}{42}
 \contentsline {subsection}{\numberline {3.2.4.}Nem forr\IeC {\'a}sf\IeC {\'a}jl \IeC {\'a}llom\IeC {\'a}nyok}{42}
 \contentsline {subsection}{\numberline {3.2.5.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{42}
-\contentsline {subsubsection}{Modell r\IeC {\'e}teg oszt\IeC {\'a}lyai}{42}
-\contentsline {paragraph}{SortingAlgorithm oszt\IeC {\'a}ly}{42}
-\contentsline {paragraph}{ChartAlgorithm oszt\IeC {\'a}ly}{42}
-\contentsline {paragraph}{GraphAlgorithm oszt\IeC {\'a}ly}{43}
-\contentsline {subsubsection}{Kontroller r\IeC {\'e}teg oszt\IeC {\'a}lyai}{43}
-\contentsline {paragraph}{MainApplication oszt\IeC {\'a}ly}{43}
-\contentsline {subsection}{\numberline {3.2.6.}Tesztel\IeC {\'e}s}{44}
-\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{45}
+\contentsline {subsubsection}{Modell r\IeC {\'e}teg oszt\IeC {\'a}lyai}{43}
+\contentsline {paragraph}{SortingAlgorithm absztrakt oszt\IeC {\'a}ly}{43}
+\contentsline {paragraph}{ChartAlgorithm absztrakt oszt\IeC {\'a}ly}{43}
+\contentsline {paragraph}{GraphAlgorithm absztrakt oszt\IeC {\'a}ly}{43}
+\contentsline {paragraph}{RadixAlgorithm absztrakt oszt\IeC {\'a}ly}{44}
+\contentsline {paragraph}{SortingAlgorithmFactory oszt\IeC {\'a}ly}{44}
+\contentsline {paragraph}{CounterData oszt\IeC {\'a}ly}{45}
+\contentsline {paragraph}{RecursiveParameter oszt\IeC {\'a}ly}{45}
+\contentsline {paragraph}{BubbleSort oszt\IeC {\'a}ly}{46}
+\contentsline {paragraph}{InsertionSort oszt\IeC {\'a}ly}{46}
+\contentsline {paragraph}{ShellSort oszt\IeC {\'a}ly}{47}
+\contentsline {paragraph}{QuickSort oszt\IeC {\'a}ly}{47}
+\contentsline {paragraph}{HeapSort oszt\IeC {\'a}ly}{48}
+\contentsline {paragraph}{TournamentSort oszt\IeC {\'a}ly}{49}
+\contentsline {paragraph}{ForwardRadix oszt\IeC {\'a}ly}{49}
+\contentsline {paragraph}{BackwardRadix oszt\IeC {\'a}ly}{50}
+\contentsline {paragraph}{BenchmarkData oszt\IeC {\'a}ly}{50}
+\contentsline {paragraph}{SortingThread absztrakt oszt\IeC {\'a}ly}{51}
+\contentsline {paragraph}{BubbleSortThread oszt\IeC {\'a}ly}{51}
+\contentsline {paragraph}{InsertionSortThread oszt\IeC {\'a}ly}{52}
+\contentsline {paragraph}{ShellSortThread oszt\IeC {\'a}ly}{52}
+\contentsline {paragraph}{QuickSortThead oszt\IeC {\'a}ly}{52}
+\contentsline {paragraph}{HeapSortThread oszt\IeC {\'a}ly}{52}
+\contentsline {paragraph}{TournamentSortThread oszt\IeC {\'a}ly}{53}
+\contentsline {paragraph}{InfoFlyWeight oszt\IeC {\'a}ly}{53}
+\contentsline {paragraph}{InfoFlyWeightFactory oszt\IeC {\'a}ly}{53}
+\contentsline {subsubsection}{Kontroller r\IeC {\'e}teg oszt\IeC {\'a}lyai}{54}
+\contentsline {paragraph}{MainApplication oszt\IeC {\'a}ly}{54}
+\contentsline {paragraph}{MenuController oszt\IeC {\'a}ly}{54}
+\contentsline {paragraph}{ManualInputController oszt\IeC {\'a}ly}{54}
+\contentsline {paragraph}{RandomInputController oszt\IeC {\'a}ly}{55}
+\contentsline {paragraph}{FileInputController oszt\IeC {\'a}ly}{56}
+\contentsline {subsubsection}{Megjelen\IeC {\'\i }t\IeC {\'e}si r\IeC {\'e}teg oszt\IeC {\'a}lyai}{56}
+\contentsline {paragraph}{Vertex oszt\IeC {\'a}ly}{56}
+\contentsline {paragraph}{Edge oszt\IeC {\'a}ly}{57}
+\contentsline {paragraph}{Graph oszt\IeC {\'a}ly}{57}
+\contentsline {subsection}{\numberline {3.2.6.}Tesztel\IeC {\'e}s}{57}
+\contentsline {chapter}{\numberline {4.}Irodalomjegyz\'ek}{58}

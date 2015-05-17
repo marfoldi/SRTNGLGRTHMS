@@ -43,11 +43,12 @@ public class ShellSortThread extends SortingThread {
 	}
 
 	private static Integer[] generateGapArray() {
-		int i, last2ind = 0, last3ind = 0; 
+		int last2ind = 0;
+		int last3ind = 0;
 		List<Integer> pratt = new ArrayList<>();
 
 		pratt.add(1);
-		for (i=1; i < SortingAlgorithm.getNumbers().length; ++i) { 
+		for (int i=1; i < SortingAlgorithm.getNumbers().length; ++i) { 
 		if (pratt.get(last2ind)*2 < pratt.get(last3ind)*3) { 
 			pratt.add(pratt.get(last2ind)*2); 
 			last2ind++; 
@@ -64,6 +65,7 @@ public class ShellSortThread extends SortingThread {
 		if(pratt.get(i)>=SortingAlgorithm.getNumbers().length) break;
 		}
 		Collections.reverse(pratt);
+		pratt.remove(0);
 		return pratt.toArray(new Integer[0]);
 	}
 

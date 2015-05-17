@@ -175,7 +175,6 @@ public class HeapSort extends GraphAlgorithm {
 	public void setDefaultGraph() {
 		OverviewGraphController.setVertices(new Vertex[checkedArray.length]);
 		vertices = OverviewGraphController.getVertices();
-		;
 		vertices[0] = new Vertex(400, 20, vertexSize, checkedArray[0]);
 		recursiveCall.add(new RecursiveParameter(400, 20, 1.0));
 		for (int i = 1; i < vertices.length - 1; i += 2) {

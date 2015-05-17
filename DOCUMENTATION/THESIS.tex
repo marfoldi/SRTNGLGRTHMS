@@ -44,8 +44,8 @@
 \frontmatter
 
 	\maketitle
-	\renewcommand{\thepage}{\Roman{page}}
-	\tableofcontents\thispagestyle{fancy}
+	\renewcommand{\thepage}{}
+	\tableofcontents
 	
 \mainmatter
 	\pagestyle{fancy}
@@ -510,7 +510,7 @@ Az elsődleges szempont az, hogy a felhasználó könnyedén tudja kezelni a pro
 \subsection{Használt fejlesztőeszközök}
 A fejlesztés \emph{Eclipse SDK 4.4} fejlesztői környezet keretei között történik. A program grafikus fejlesztői felületet ad alkalmazások készítéséhez.\par
 A kódolást segítő funkció volt a kódkiegészítés, továbbá az egyik beépített projektmenedzsment eszköz(\emph{EGit}).\par
-A fejlesztéshez elengedhetetlen a \emph{Java SE 8u40} vagy magasabb verziójú szoftver. Továbbá a fejlesztést nagyban elősegíti a \emph{JavaFX Scene Builder 2.0}, melynek segítségével egyszerűen megtervezhetővé váltak a grafikus felület komponensei.\par
+A fejlesztéshez elengedhetetlen a \emph{Java SE 8u40} vagy magasabb verziójú szoftver. Továbbá a fejlesztést nagyban elősegíti a \emph{JavaFX Scene Builder 2.0}, melynek segítségével egyszerűen megtervezhetővé válnak a grafikus felület komponensei.\par
 Végül a telepítési környezet létrehozásához \emph{Ant} és \emph{InnoSetup} eszközök kerülnek felhasználásra.
 Az egész projekt, beleértve e dokumentumot is megtalálható, és az egyes verziók visszakövethetők a \emph{GitHub}-on: \url{https://github.com/marfoldi/SRTNGLGRTHMS}\par
 A program fejlesztése során egyedüli külső függvénykönyvtár a \emph{JUnit}, melynek segítségével egységtesztek készülnek.
@@ -525,7 +525,7 @@ A program főmenüjében három gomb foglal helyet, melyekre kattintva megadhat�
 	\caption{Főmenü látványterv}
 \end{figure}\par
 \paragraph{Manuális bemenet}
-Az ablakon a \textbf{Méret:} címke mellett található mezővel definiálható a bemenet hossza. A megadását követően megjelennek a hossznak megfelelően beviteli mezők jelennek meg a \textbf{Számok} címkével jelölt részen. A \textbf{Feltöltés} gomb segítségével véletlen számokkal töltődnek fel az előbb említett beviteli mezők. Az \textbf{Ok} gombra történő kattintás után megjelennek a \textbf{Megfigyelés} és \textbf{Összegzés} panelek.
+Az ablakon a \textbf{Méret:} címke mellett található mezővel definiálható a bemenet hossza. A megadását követően megjelennek a hossznak megfelelően beviteli mezők jelennek meg a \textbf{Számok} címkével jelölt részen. A \textbf{Feltöltés} gomb segítségével véletlen számokkal töltődnek fel az előbb említett beviteli mezők. Az \textbf{Ok} gombra történő kattintás után megjelennek a \textbf{Megfigyelés} és \textbf{Összehasonlítás} panelek.
 \paragraph{Bemenet generálása}
 A \textbf{Méret} címke után megadható a kívánt bemenet hossza. A Típus legördülő listából különböző generálási beállítások választhatóak ki. Az \textbf{Ok} gomb megnyomásával megjelennek a program főpaneljei.
 \paragraph{Fájl beolvasása}
@@ -554,7 +554,7 @@ A felületek közti navigálási irányokat a következő diagram szemlélteti:
 	\includegraphics[width=0.9\textwidth]{pics/plan_directions.png}
 	\caption{Navigálási lehetőségek}
 \end{figure}\par
-A főmenüből valamely gombra kattintva elérhetővé válik a kiválasztott típusú bemenet megadása panel. A számok megadásával megjelennek a \textbf{Megfigyelés} és \textbf{Összegzés} panelek. A két panel közötti átjárás egy fülön történő kattintással tehető meg. Ezen paneleken pedig az eszköztár segítségével lehetőség van a \textbf{Főmenü}be való visszatérésre.
+A főmenüből valamely gombra kattintva elérhetővé válik a kiválasztott típusú bemenet megadása panel. A számok megadásával megjelennek a \textbf{Megfigyelés} és \textbf{Összehasonlítás} panelek. A két panel közötti átjárás egy fülön történő kattintással tehető meg. Ezen paneleken pedig az eszköztár segítségével lehetőség van a \textbf{Főmenü}be való visszatérésre.
 
 \subsection{Használati esetek}
 A következőkben a főbb használati esetek kerülnek bemutatásra. A felhasználónak tudnia kell:\par
@@ -582,7 +582,7 @@ Az egyik alapelv, hogy a grafikus megjelenítés működés szintjén minél ink
  \end{figure}\par
 Ennek tekintetében a programot három fő csomagra kell bontani: A \textbf{modell} csomag, melyben a logikai osztályok találhatóak, a \textbf{view}, melyben a grafikai interfészt leíró \emph{FXML} fájlok és osztályok foglalnak helyet, végül a \textbf{controller} csomag, melynek osztályai kapcsolatot teremtenek a logikai és a megjelenítési réteg között.
 \subsubsection{Modell csomag}
-A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rendszerezést szem előtt tartva további alcsomagok kerültek létrehozásra, így jobban áttekinthető az osztályhierarchia. Összességében ebben a csomagban foglalnak helyet azon osztályok, amelyek a rendszer adattároló, rendszerező és számítási feladatait ellátják. Az alábbi táblázat ad áttekintést az előzőleg említett alcsomagokról:\par
+A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rendszerezést szem előtt tartva további alcsomagok kerülnek létrehozásra, így jobban áttekinthető az osztályhierarchia. Összességében ebben a csomagban foglalnak helyet azon osztályok, amelyek a rendszer adattároló, rendszerező és számítási feladatait ellátják. Az alábbi táblázat ad áttekintést az előzőleg említett alcsomagokról:\par
 \begin{table}[H]
 	\def\arraystretch{2}
 	\centering
@@ -610,7 +610,7 @@ A grafikai interfészt leíró \emph{FXML} fájlokat tartalmazza. Ezen fájlokba
 A gráf grafikus implementációját tartalmazó csomag.
 
 \subsubsection{Vezérlő csomag}
-Osztályai főleg a megjelenítő csomag komponenseihez tartoznak. Ezt az osztályok neve is jelölik, mivel csak a végződésükben(\textbf{Controller}) térnek el az \emph{FXML} fájlok nevétől. Felhasználói interakcióra a modell osztály különböző metódusait hívja meg. Így kapcsolatot teremt az előbb definiált két csomag között. Továbbá tartalmaz egy interfészt, melynek felhasználásával az \textbf{alrogithm.raw} osztály algoritmusai miután befejezték a futásukat figyelmeztetik az interfészt megvalósító osztályt, ami jelen esetben a \textbf{Összegzés} panel táblázatának vezérlő osztálya.
+Osztályai főleg a megjelenítő csomag komponenseihez tartoznak. Ezt az osztályok neve is jelölik, mivel csak a végződésükben(\textbf{Controller}) térnek el az \emph{FXML} fájlok nevétől. Felhasználói interakcióra a modell osztály különböző metódusait hívja meg. Így kapcsolatot teremt az előbb definiált két csomag között. Továbbá tartalmaz egy interfészt, melynek felhasználásával az \textbf{alrogithm.raw} osztály algoritmusai miután befejezték a futásukat figyelmeztetik az interfészt megvalósító osztályt, ami jelen esetben a \textbf{Összehasonlítás} panel táblázatának vezérlő osztálya.
 
 \subsection{Osztályszerkezet}
 A következőkben bemutatásra kerülnek a csomagok főbb osztályai, és ezek fontosabb eljárásai. A bemutatásban szereplő osztályok sorrendje többé-kevésbé megegyezik a példányosulásuk sorrendjével. Az ábrán kék színnel vannak jelölve az absztrakt osztályok, míg zöld hátteret kapott az egyik fontosabb interfész.\par
@@ -623,14 +623,14 @@ A következőkben bemutatásra kerülnek a csomagok főbb osztályai, és ezek f
 A megjelenítési réteg fájljai nem kerülnek bemutatásra, mivel ezek szerkezetüket tekintve azonosak, csak a grafikus interfész elemeit definiálják. Amennyiben egy fájl meghívásra kerül a kontroller réteg egyik osztályában az ismertetve lesz.
 \subsubsection{alapcsomag osztálya}
 \hiddenparagraph{MainApplication}
-A \textbf{strnglgrthms} csomag egyetlen osztálya, melyben a program \textbf{main} függvénye található. Létrehozza az ablakot, betölti a menü elrendezését tartalmazó \emph{FXML} fájlt(\textbf{MenuLayout.FXML}).
+A \textbf{strnglgrthms} csomag egyetlen osztálya, melyben a program \textbf{main} függvénye található. Létrehozza az ablakot, betölti a menü elrendezését tartalmazó \emph{FXML} fájlt(\textbf{MenuLayout.fxml}).
 \subsubsection{controller csomag osztályai}
 A felhasználói interakciók hatását ez a réteg érvényesíti, figyeli a felület változásait és adatokat jelenít meg a megjelenítési rétegen.
 \hiddenparagraph{MenuController}
 Az osztályban található metódusok kezelik a menü eszköztárán való kattintást (\textbf{handleAbout()} és \textbf{handleExit()} függvények). Továbbá a gombokon történő kattintás következtében betöltik a bemenet megadására lehetőséget adó panelekhez tartozó \emph{FXML} fájlokat.
 \hiddenparagraph{ManualInputController}
 A menüben a \textbf{Manuális} gombra történő kattintás után példányosul az osztály. 
-A sikeres bemenet megadását követően a \textbf{saveNumbers()} metódus átadja a számokat a \textbf{SortingAlgorithm} osztályának, ahol egy statikus tömbben kerülnek eltárolásra. Ezt követően betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.FXML} fájlt.
+A sikeres bemenet megadását követően a \textbf{saveNumbers()} metódus átadja a számokat a \textbf{SortingAlgorithm} osztályának, ahol egy statikus tömbben kerülnek eltárolásra. Ezt követően betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
 \hiddenparagraph{RandomInputController}
 A \textbf{Véletlen} gombra kattintás következtében példányosul. A kontroller osztály végzi el a számok generálását, mely ezt követően az előbbivel azonosan átadásra kerül a \textbf{SortingAlgorithm} osztálynak. Szintén betölti a főpaneleket tartalmazó \emph{FXML} fájlt.
 \hiddenparagraph{FileInputController}
@@ -649,9 +649,9 @@ Az előbb említett osztálynak két példányát tartalmazza, a \textbf{Radix "
 Az előző két osztállyal megegyező a funkciója. Továbbá "karbantartja" a megjelenített gráfot.
 \hiddenparagraph{BenchmarkController}
 Példányosulását követően elindítja a \textbf{algorithm.raw} csomag algoritmusait.
-Megvalósítja a \textbf{SortingThreadListener} interfészt, ezáltal figyelmeztetést tudnak küldeni neki a \textbf{SortingThread} osztályok ha befejezték futásukat. Feladata az \textbf{Összegzés} felületen a táblázat frissítése, ha egy rendezési feladat megoldódott.
+Megvalósítja a \textbf{SortingThreadListener} interfészt, ezáltal figyelmeztetést tudnak küldeni neki a \textbf{SortingThread} osztályok ha befejezték futásukat. Feladata az \textbf{Összehasonlítás} felületen a táblázat frissítése, ha egy rendezési feladat megoldódott.
 \hiddenparagraph{BenchmarkChartController}
-Az \textbf{OverviewChartController} osztályhoz hasonlóan egy diagram kontroller osztálya. A \textbf{Összegzés} panel táblázatának egy elemén történő kattintást kezeli, amennyiben a kiválasztott elem még nem jelenik meg a grafikonon hozzáadja, ellenkező esetben eltávolítja a grafikonról.
+Az \textbf{OverviewChartController} osztályhoz hasonlóan egy diagram kontroller osztálya. A \textbf{Összehasonlítás} panel táblázatának egy elemén történő kattintást kezeli, amennyiben a kiválasztott elem még nem jelenik meg a grafikonon hozzáadja, ellenkező esetben eltávolítja a grafikonról.
 
 \subsubsection{algorithm csomag osztályai}
 Főként a lejátszható algoritmusokat tartalmazza. Ezen osztályok mindegyike egyke, azaz a futás során csak egyetlen példány keletkezik belőlük.
@@ -722,9 +722,17 @@ Az \emph{FXML} az \emph{Oracle} által fejlesztett dekleratív XML alapú nyelv\
 		\item[$\diamond$] \emph{GridPane} - táblázatszerűen jelennek meg az elemei
 		\item[$\diamond$] \emph{AnchorPane} - egy "szimpla" felület, nincs megkötés	
 		\end{description}
-	Továbbá ebben a sorban kell megadni az \emph{FXML} állományhoz tartozó kontroller osztály elérési útvonalát
+	Továbbá ebben a sorban kell megadni az \emph{FXML} állományhoz tartozó kontroller osztály elérési útvonalát. Az vezérlőosztály tud hivatkozni az egyes összetevőkre az azonosítójukon keresztül.
 	\item[$\bullet$] Végül a komponensek definiálása: méretük, azonosítójuk megadásával.
 \end{description}
+\subsubsection{Néhány fontosabb FXML állomány}
+A következőkben bemutatásra kerülnek a projekt főbb \emph{FXML} fájljai.
+\paragraph{BaseController}
+Az egyik "összefogó" \emph{FXML} fájl. A rendezendő számok megadása után minden esetben ez az állomány töltődik be. Alapvetően a fejlécet és egy \textbf{TabPane} komponenst tartalmaz, ami a két panel közötti navigálást teszi lehetővé. Ezeken felül importálva van két további állomány is: az \textbf{OverviewLayout} és a \textbf{BenchmarkLayout}. Ennek következtében, amikor a \textbf{BaseController} betöltődik vele együtt az előbb említett két fájl is beolvasásra kerül minden további komponensükkel.
+\paragraph{OverviewLayout}
+Szintén több komponenst foglal magában, a \textbf{Megfigyelés} panelt gombjait és a más fájlokból betöltött komponensek elhelyezkedését definiálja. Az általa importált további állományok: \textbf{OverviewListLayout}, \textbf{OverviewTableLayout}, továbbá az aktuálisan kiválasztott algoritmus típusától függően a \textbf{OverviewChartLayout}, \textbf{OverviewDoubleChartLayout} vagy \textbf{OverviewGraphLayout} valamelyike.
+\paragraph{BenchmarkLayout}
+Az \textbf{Összehasonlítás} panel részeinek elhelyezkedését írja le. A következő \emph{FXML} fájlokat hívja meg betöltésekor: \textbf{BenchmarkTableLayout}, \textbf{BenchmarkChartLayout}.
 
 \subsection{Nem forrásfájl állományok}
 A program által használt nem forrás- vagy \emph{FXML} fájlok a \textbf{resources} mappában találhatóak. Ezen belül az \textbf{images} könyvtárban található meg a szoftver ikonja. A \textbf{text} mappán belül találhatóak azon fájlok, amelyeket az \textbf{InfoFlyWeight} osztály betölt. Azaz ezekben az állományokban található meg az egyes algoritmusok rövid ismertetése.
@@ -732,30 +740,195 @@ A program által használt nem forrás- vagy \emph{FXML} fájlok a \textbf{resou
 \subsection{Osztályok leírása}
 Az előző fejezetben(3.1) ismertetésre kerültek a főbb osztályok és azok fontosabb eljárásai, a következőkben nagyobb részletességgel kerülnek jellemzésre a szoftver osztályai.
 \subsubsection{Modell réteg osztályai}
-Elsőként a \textbf{algorithm} csomag osztályai kerülnek ismertetésre.
-\paragraph{SortingAlgorithm osztály}
+Elsőként a \textbf{algorithm} csomag főbb osztályai kerülnek ismertetésre.
+\paragraph{SortingAlgorithm absztrakt osztály}
 A \textbf{Megfigyelés} panelen megjelenő algoritmusok osztályainak őse. Az osztály \textbf{numbers} statikus adattagjában kerül eltárolásra a bemenetkor megadott számsorozat. További két adattagja egy rekurzív hívások mentésére szolgáló- és egy \textbf{CounterData} objektumokat tartalmazó lista.\par
 A \textbf{getMaximum()} eljárás visszaadja a \textbf{numbers} tömb maximális elemét. A függvénynek a megjelenítéshez használt oszlopdiagram lépésközének definiálásánál van szerepe. Továbbá tartalmaz három absztrakt eljárást, amelyeket a leszármazott osztályai valósítanak meg.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/SortingAlgorithm.png}
 	\caption{A SortingAlgorithm osztálydiagramja}
-\end{figure}\par
-\paragraph{ChartAlgorithm osztály}
+\end{figure}
+\paragraph{ChartAlgorithm absztrakt osztály}
 Az előző osztály leszármazottja, megvalósítja a \textbf{swap(int firstIndex, int secondIndex)} metódusát. A diagram kontroller osztálya a rendezendő számokat egy \textbf{ObservableList} adatszerkezetben tárolja, így ennek megfelelően került az eljárás implementálásra. A kontroller réteg előbb említett listáját statikus változóként elmenti, így a leszármazott osztályai egyszerűbben tudnak hivatkozni az egyes értékekre.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/ChartAlgorithm.png}
 	\caption{A ChartAlgorithm osztálydiagramja}
-\end{figure}\par
-\paragraph{GraphAlgorithm osztály}
+\end{figure}
+\paragraph{GraphAlgorithm absztrakt osztály}
 Szintén a \textbf{SortingAlgorithm} leszármazott absztrakt osztálya. A \textbf{GraphController} osztály gráfját és csúcsait tárolja, így a leszármazott osztályai egyszerűbb elérik ezeket az adattagokat.\par
 Továbbá ellenőrzi a bemenet hosszát, és ha szükséges "csonkolja" vagy megnöveli az eredeti tömb hosszát a \textbf{checkLength(int[] numbers, String algorithm)} metódusa. Megvalósítja az előző osztályhoz hasonlóan a \textbf{swap(int firstIndex, int secondIndex)} metódust. Valamint a \textbf{setRestColor(int index)} metódusa a paraméterül kapott indexig visszaállítja az eredeti színűre a \textbf{Megfigyelés} panelen megjelenített gráfcsúcsokat, valamint a oszlopokat.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/GraphAlgorithm.png}
 	\caption{A GraphAlgorithm osztálydiagramja}
-\end{figure}\par
+\end{figure}
+\paragraph{RadixAlgorithm absztrakt osztály}
+A \textbf{ChartAlgorithm} leszármazott absztrakt osztálya. Továbbá a radix eljárásokat megvalósító osztályok őse. A két származtatottjának adattagjai már itt definiálásra kerülnek, azaz négy "pointer", valamint az aktuálisan vizsgált számjegy indexe(\textbf{actualDigit}).\par
+A \textbf{getMaxDigit()} metódusa visszaadja a leghosszabb bináris számot, amelyet a másik \textbf{fillWithZeros(String binaryNumber)} metódus fel is használ, mivel ennek megfelelően a rövidebb számokat nullákkal konkatenálja.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/RadixAlgorithm.png}
+	\caption{A GraphAlgorithm osztálydiagramja}
+\end{figure}
+\paragraph{SortingAlgorithmFactory osztály}
+Létrehozásakor a gyártó metódus programtervezési minta lett alapul véve. Ezen az osztályon keresztül kérhetőek el az algoritmusok példányai, függetlenül attól, hogy az aktuális algoritmus őse a \textbf{ChartAlgorithm} vagy a \textbf{GraphAlgorithm} osztály.\par
+Egyetlen metódusának paramétere egy algoritmus szöveges reprezentációja, például: "Gyorsrendezés". Az eljárás visszaadja a rendezést megvalósító osztály példányát. Elsősorban a kontroller réteg \textbf{AlgorithmList} osztálya használja.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/SortingAlgorithmFactory.png}
+	\caption{A SortingAlgorithmFactory osztálydiagramja}
+\end{figure}
+\paragraph{CounterData osztály}
+Az osztály segítségével adatok tárolhatóak kulcs-érték párban. Az implementációval kapcsolatban felmerülhet a kérdés, hogy miért nem a \emph{Java} nyelv egy beépített adatszerkezete került felhasználásra. Ennek oka, hogy a felhasználói felületen lévő táblázatok csak olyan adatszerkezetet tudnak megjeleníteni, amelynek adattagjainak a típusa \textbf{Property} végződésű, és implementálva vannak ezekhez a mezőkhöz a \textbf{getter} metódusok.\par
+ Az algoritmusokat megvalósító osztályok ilyen adatokból álló listában tárolják az egyes "tulajdonságaikat", és adják át a vezérlőrétegnek. A vezérlőréteg pedig a \textbf{Megfigyelés} panel táblázatában jeleníti meg az értékeket.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/CounterData.png}
+	\caption{A CounterData osztálydiagramja}
+\end{figure}
+\paragraph{RecursiveParameter osztály}
+Funkciója hasonló az előbb ismertetett osztályéhoz, azaz adatok tárolására lett létrehozva. Legfeljebb négy érték elmentésére alkalmas. Azon algoritmusok, amelyek rekurziót használnak ezen objektumokból álló listába mentik el a rekurzív hívások paramétereit. A konstruktora túlterhelt, azaz legalább kettő, maximum négy paraméterrel hívható.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/class/RecursiveParameter.png}
+	\caption{A RecursiveParameter osztálydiagramja}
+\end{figure}
+A következőkben az algoritmusok lejátszását megvalósító konkrét osztályokat jellemezzük, melyek szintén az \textbf{algorithm} csomagban találhatóak. Az osztályok mindegyike egyke, azaz a program futása során egyetlen példány keletkezik belőlük.
+\paragraph{BubbleSort osztály}
+A buborékrendezést megvalósító egyke osztály. Ősosztálya a \textbf{ChartAlgorithm} Két változója megfelel az algoritmus két ciklusváltozójának. Konstruktora privát, a \textbf{getInstance()} metódusán keresztül kérhető le a példánya. Amennyiben nincs még létrehozva példány elkészíti, ellenkező esetben visszaadja a már létrehozott objektumot.\par
+Az egyke tulajdonságból következően azokat a változókat melyekben tárolódik a rendezés aktuális állapota minden futtatás után vissza kell állítani az eredeti értékre, ezt a \textbf{setDefaults()} függvény teszi meg. Továbbá ez a metódus hozza létre a tulajdonságokat tartalmazó \textbf{CounterData} objektumokat.\par
+A \textbf{step()} örökölt eljárás egy rendezési lépést hajt végre. A \textbf{setDefaults()} metódus pedig visszaállítja a \textbf{Megfigyelés} panelen látható diagramok színét az alapértékre.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BubbleSort.png}
+	\caption{A BubbleSort osztálydiagramja}
+\end{figure}
+\paragraph{InsertionSort osztály}
+A beszúró rendezést megvalósító osztály. Alapvetően felépítését és függvényeit tekintve megegyezik a \textbf{BubbleSort} osztálynál leírtakkal. Különbség, hogy két további logikai változóval rendelkezik. Az \textbf{isSelected} mezőben tárolódik az az információ, hogy már kiválasztásra került-e egy elem, mivel a \textbf{step()} metódus ennek megfelelően hajtja végre a következő lépést. Továbbá a \textbf{showSwapped} változó értéke adja meg, hogy a felületen megjelenítésre került-e egy mozgatás.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/InsertionSort.png}
+	\caption{Az InsertionSort osztálydiagramja}
+\end{figure}
+\paragraph{ShellSort osztály}
+A Shell rendezést megvalósító osztály. Őse, akárcsak az eddigi osztályoknak a \textbf{ChartAlgorithm}. A \textbf{BubbleSort}-nál leírtakkal lehet jellemezni, viszont tartalmaz néhány további változót és eljárást. A \textbf{gapArray} tömbben tárolódnak a lépésközök, az aktuális lépésköz a \textbf{gapIndex} változó segítségével kérhető le a tömbből. Az \textbf{InsertionSort}-nál leírtakkal megegyező szerepet tölt be a \textbf{isSelected} változó.\par
+A \textbf{generateGapArray()} eljárás feltölti a lépésközöket tároló tömböt a bemenet méretétől függően a \textbf{Vaughan Pratt} által javasolt értékekkel\cite{Pratt}. Az implementációban a legutóbbi tömbhöz adott számot kettővel és hárommal szorozzuk, és számon tartjuk, hogy egy lépésben melyik szorzást végeztük el. Amikor elértük azt az értéket, amely nagyobb vagy egyenlő a tömb hosszával, akkor befejezzük a számok generálását, az utolsó érték nem lesz eleme a tömbnek.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/ShellSort.png}
+	\caption{A ShellSort osztálydiagramja}
+\end{figure}
+\paragraph{QuickSort osztály}
+A gyorsrendezés implementációja. Őse szintén a \textbf{ChartAlgorithm} osztály. A \textbf{begin} és \textbf{end} változói jelölik az aktuálisan rendezendő tömbrész első és utolsó elemét. A \textbf{partitionIndex} és \textbf{partitionHelpIndex} mezőknek a tömb felosztásánál van szerepük. A \textbf{pivot} változóban tárolódik a vezérelem értéke, melynek indexét a \textbf{pivotIndex} tartalmazza. A \textbf{isPartitioned} logikai változó értéke mutatja, hogy megtörtént-e a tömb felosztása. Az osztály használja a \textbf{SortingAlgorithm} ősének a \textbf{recursiveCall} listáját, ide menti el a rekurzív hívásokhoz szükséges adatokat.\par
+A \textbf{setDefaults()} metódus működése megegyezik az eddigiekkel. A \textbf{setRestColor()} eljárás viszont két egész számot vár paraméterként, és a két szám által meghatározott intervallumon kívül eső részen az oszlopdiagramok színét fakóra állítja át a vezérlő rétegen keresztül.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/QuickSort.png}
+	\caption{A QuickSort osztálydiagramja}
+\end{figure}
+\paragraph{HeapSort osztály}
+Őse a \textbf{GraphAlgorithm} osztály, a kupacrendezést valósítja meg.\par
+A \textbf{starterIndex} változó tárolja azon elemét indexét, melynek vizsgáljuk a testvér-szülő "viszonyát". A \textbf{downIndex} segédváltozóban tárolódik a kupac tulajdonság ellenőrzésekor azon elem indexe, amelyet következőleg vizsgálni kell. A \textbf{recursiveCounter} megfeleltethető a kupacrendezés eljárás ciklusváltozójának. Továbbá három logikai mezővel rendelkezik az osztály, melyek közül a \textbf{isColored} jelöli, hogy már a diagramon megváltozott-e a vizsgált elemek színe. A \textbf{canSwap} változó értékétől függően hajtja végre az algoritmus a cseréket, mivel ez csak azt követően eszközölhető, ha már kijelölődtek a cserélendő elemek a \textbf{Megfigyelés} panelen. A \textbf{downIndexSetted} segédváltozó amennyiben igaz, akkor már megtörtént a kupac felépítése az első menetben, innentől kezdve a gyökérelemtől kell vizsgálni a kupactulajdonságot, így ennek megfelelően átállítódik a \textbf{downIndex} értéke 0-ra.\par
+Az átláthatóságot szem előtt tartva a \textbf{step()} metódusból kiemelésre került a kupac(újra)építés eljárása, melyet a \textbf{buildHeap(int startIndex, int endIndex, boolean firstRun)} metódus valósít meg. A harmadik paramétere határozza meg, hogy alapkupac építése-e a feladat vagy a kupactulajdonság ellenőrzése. Az eljárás visszatérési értéke a következő vizsgálandó elem. A \textbf{setDefaultGraph()} függvény építi fel a bináris fát a rendezendő számokból, majd adja át a vezérlőrétegnek megjelenítésre.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/HeapSort.png}
+	\caption{A HeapSort osztálydiagramja}
+\end{figure}
+\paragraph{TournamentSort osztály}
+A versenyrendezést megvalósító egyke osztály, melynek őse az előző osztályhoz hasonlóan a \textbf{GraphAlgorithm}.\par
+A \textbf{fillIndex} a versenyfa felépítésekor tárolja azon elem indexét, amelynek gyerekeit "versenyeztetjük". Akárcsak az előbb jellemzett osztálynál, itt is megfeleltethető a \textbf{recursiveCounter} változó az algoritmus ciklusváltozójának. A \textbf{maxIndex} mező tárolja a maximális levélelem keresésekor az egyik megtalált belső csúcsot. Az \textbf{outIndex} segítségével pedig elérjük egy maximális elem megtalálásakor a \textbf{Megfigyelés} panel oszlopdiagramjának egy adott oszlopát.\par
+A \textbf{setDefaultGraph()} és \textbf{step()} eljárás funkciója megegyezik a \textbf{HeapSort}-nál leírtakkal.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/TournamentSort.png}
+	\caption{A TournamentSort osztálydiagramja}
+\end{figure}
+\paragraph{ForwardRadix osztály}
+Őse a \textbf{RadixAlgorithm} osztály, a radix "előre" rendezést valósítja meg.
+Az \textbf{isLowerFound} és \textbf{isUpperFound} változók tárolják, hogy egy adott lépésben talált-e az algoritmus olyan értéket, amely nem a megfelelő helyen van. Továbbá az \textbf{isColored} logikai mező értéke megadja, hogy egy cserélendő elem színe megváltozott-e már a felületen.\par
+A \textbf{setBucketColor(int lower, int upper)} eljárás a két paraméterül kapott intervallumon beállíttatja a kontroller rétegben az oszlopok színét egységesre, így kijelöl egy edényt. A \textbf{step()} metódus használja az örökölt \textbf{recursiveCall} listát.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/ForwardRadix.png}
+	\caption{A ForwardRadix osztálydiagramja}
+\end{figure}
+\paragraph{BackwardRadix osztály}
+A radix "vissza" rendezést valósítja meg, ősosztálya a \textbf{RadixAlgorithm}.
+Az \textbf{index} változó tárolja az aktuálisan vizsgált elem indexét. Az \textbf{actualSeries} azt a tömböt, amelyben vizsgálni kell az elemeket. A \textbf{direction} változó megadja, hogy az aktuális résztömbön mely irányból kell végezni a vizsgálatot. A \textbf{listOne} és \textbf{listTwo} változók megfeleltethetőek az algoritmus által használt két tömbnek.\par
+A \textbf{step()} metódus használja az örökölt \textbf{recursiveCall} listát.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BackwardRadix.png}
+	\caption{A BackwardRadix osztálydiagramja}
+\end{figure}
+Most az \textbf{algorithm.raw} csomag főbb osztályai kerülnek jellemzésre.
+\paragraph{BenchmarkData osztály}
+A \textbf{CounterData} osztályhoz hasonló a funkciója és felépítése. Az algoritmus nevét és a rendezés során végzett műveletek összegét tárolja. A kontroller réteg használja fel a \textbf{Összehasonlítás} panel táblázatának a kitöltéséhez. Minden rendezést végző programszál létrehoz belőle egy objektumot, majd hozzáadja egy listához, amit a kontroller réteg lekér egy szál befejeződésekor.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BenchmarkData.png}
+	\caption{A BenchmarkData osztálydiagramja}
+\end{figure}
+\paragraph{SortingThread absztrakt osztály}
+A csomagban található rendezést megvalósító osztályok szülője. Őse a \textbf{Thread} osztály. A \textbf{SortingThreadListener} mezője tárolja azt az objektumot(\textbf{BenchmarkController}), amelyet a szál befejeződése után figyelmeztet. Továbbá adattagjai tárolják a rendezés során végzett műveletek számát.
+A leszármazott osztályai a \textbf{doRun()} metódusát valósítják meg, amely a programszál elindításakor hívódik meg. 
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/SortingThread.png}
+	\caption{A SortingThread osztálydiagramja}
+\end{figure}
+A következőkben az \textbf{Összehasonlítás} panelen megjelenő információkhoz adatokat szolgáltató konkrét osztályok kerülnek jellemzésre.
+\paragraph{BubbleSortThread osztály}
+Megvalósítja az előbb említett \textbf{doRun()} metódust. Elvégzi a rendezést, majd a feladat befejeztével a kontroller réteg \textbf{BenchmarkController} osztályában található \textbf{BenchmarkDataList} listához hozzáfűz egy új \textbf{BenchmarkData} objektumot.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/BubbleSortThread.png}
+	\caption{A BubbleSortThread osztálydiagramja}
+\end{figure}
+\paragraph{InsertionSortThread osztály}
+Őse a \textbf{SortingThread} osztály. Felépítése teljesen azonos a \textbf{BubbleSortThread} jellemzésénél leírtakkal. Ennélfogva az osztálydiagramban sincs eltérés.
+\paragraph{ShellSortThread osztály}
+Az egyetlen különbség az előző osztályokhoz képest, hogy rendelkezik egy további metódussal. A \textbf{generateGapArray()} metódus megegyezik a \textbf{ShellSort} osztály jellemzésében szereplő azonos nevű függvénnyel.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/ShellSortThread.png}
+	\caption{A ShellSortThread osztálydiagramja}
+\end{figure}
+\paragraph{QuickSortThead osztály}
+Két további metódussal rendelkezik, ezektől eltekintve megegyezik az \textbf{BubbleSortThead} felépítésével. A \textbf{doRun()} metódusból kiemelésre került a tömb felosztását végző függvény(\textbf{partition(int[] numbers, int begin, int end)}), valamint a rekurzív hívásokat végző \textbf{quickSort(int[] numbers, int begin, int end)} eljárás.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/QuickSortThread.png}
+	\caption{A QuickSortThread osztálydiagramja}
+\end{figure}
+\paragraph{HeapSortThread osztály}
+A \textbf{QuickSortThread}-hez hasonlóan két metódus került kiemelésre a \textbf{doRun()} metódusból. Az egyik a \textbf{buildStarterHeap(int[] numbers)} eljárás, amely felépíti a kezdőkupacot. Továbbá a \textbf{buildHeap(int[] numbers, int begin, int end)} függvény, amely ellenőrzi a kupactulajdonságot.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/HeapSortThread.png}
+	\caption{A HeapSortThread osztálydiagramja}
+\end{figure}
+\paragraph{TournamentSortThread osztály}
+Felépítése teljes mértékben megegyezik az \textbf{BubbleSortThead}-nél leírtakkal, ennél fogva az osztálydiagramja is.\par
+Az \textbf{info} alcsomag osztályai kerülnek bemutatásra.
+\paragraph{InfoFlyWeight osztály}
+Egyetlen adattagja egy szöveges mező. Ebben a változóban tárolódik egy algoritmushoz tartozó leírás.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/InfoFlyWeight.png}
+	\caption{Az InfoFlyWeight osztálydiagramja}
+\end{figure}
+\paragraph{InfoFlyWeightFactory osztály}
+Az előző osztály közreműködésével megvalósítja a pehelysúlyú programtervezési mintát. Mivel a felhasználó többször is lekérheti egy algoritmus leírását, ezért célszerű egy objektumban tárolni ezt az adatot, így nem szükséges minden lekérésnél újra betölteni a leírást tartalmazó fájlt. Egy \textbf{HashMap} adatszerkezetben kulcs-érték párokként tárolódnak a már betöltött algoritmusleírások.\par
+A \textbf{String getInfo(String algorithmName)} metódusa ellenőrzi, hogy a paraméterként kapott algoritmus név (például: Gyorsrendezés) kulcs szerepel-e a \textbf{HashMap}-ben. Amennyiben igen, visszaadja a kulcshoz tartozó \textbf{InfoFlyWeight} objektumot. Ellenkező esetben betölti az algoritmus leírását, példányosít egy új \textbf{InfoFlyWeight}-et, majd hozzáfűzi a \textbf{HashMap}-hez.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/InfoFlyWeightFactory.png}
+	\caption{Az InfoFlyWeightFactory osztálydiagramja}
+\end{figure}
 \subsubsection{Kontroller réteg osztályai}
 \paragraph{MainApplication osztály}
 Ugyan az alapcsomag része, funkcionalitását tekintve mégis a kontroller osztályok közé sorolható. Az osztály tartalmazza a program \textbf{main()} metódusát. A szoftver indításakor ez a metódus hívódik meg.\par
@@ -766,9 +939,61 @@ Az imént említett eljárás betölti a főmenü elrendezését tartalmazó \em
 	\includegraphics{pics/class/MainApplication.png}
 	\caption{A MainApplication osztálydiagramja}
 \end{figure}\par
-
-
-
+\paragraph{MenuController osztály}
+A \textbf{MenuLayout.fxml} fájl betöltésével egyidejűleg példányosul. A felület eszköztárán a \textbf{Segítség -> Névjegy} pontjára kattintva fut le a \textbf{handleAbout()} metódus. Megjelenít egy \textbf{alertBoxot}, benne a program névjegyének szövegével. Továbbá a \textbf{Fájl -> Bezárás} eszköztár elemet kiválasztva meghívódik a szoftver leállását eredményező \textbf{handleExit()} eljárás. A további függvényei a \textbf{MenuLayout.fxml} fájlban definiált gombokon történő kattintást kezelik, és betöltik a kiválasztott bemenettípushoz tartozó \emph{FXML} fájlt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/MenuController.png}
+	\caption{A MenuController osztálydiagramja}
+\end{figure}\par
+\paragraph{ManualInputController osztály}
+A \textbf{ManualInputLayout.fxml} fájl betöltésével példányosul, ekkor lefut az \textbf{initialize()} metódus, mely letiltja a kattintást a felület két gombján.
+\par A \textbf{setSizeLimit()} metódus figyeli a méret mező tartalmát, amennyiben nem pozitív egész szám a gombok továbbra is tiltva maradnak. Továbbá, ha a megadott hossz nagyobb száznál, akkor automatikusan átírja az értéket 100-ra. Amennyiben a méret megadása sikeres meghívódik a \textbf{createFields()} eljárás, mely létrehozza a számok beírására lehetőséged adó mezőket.\par
+A \textbf{randomBtnHandler()} metódus a \textbf{Feltöltés} gombon történő kattintást követően fut le. Ekkor feltölti a létrehozott mezőket 0 és 100 közötti véletlen számokkal. A \textbf{saveNumbers()} metódus átadja a rendezendő számokat a \textbf{SortingAlgorithm} osztályának. Ezt követően betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/ManualInputController.png}
+	\caption{A ManualInputController osztálydiagramja}
+\end{figure}\par
+\paragraph{RandomInputController osztály}
+A \textbf{RandomInputLayout.fxml} fájl betöltésekor jön létre belőle egy példány. Ekkor az \textbf{initialize()} metódus eljárás letiltja az \textbf{Ok} gombon való kattintást, továbbá meghívja az \textbf{initBox()} függvényt.\par
+Az imént említett eljárás feltölti a generálás módjára lehetőséget adó legördülő listát az opciókkal. Az \textbf{okBtnHandler()} kezeli az \textbf{Ok}-on történő kattintást. Itt történik meg a bemenet méretét tartalmazó mező ellenőrzése.\par Amennyiben megfelelő a hossz formátuma, azaz egy pozitív egész szám meghívódik a \textbf{generateNumbers()} eljárás. A \textbf{typeBox} változóban tárolt legördülőlista kiválasztott elemétől függően kerülnek a számok generálásra. A kigenerált tömböt átadja \textbf{SortingAlgorithm} osztályának, majd betölti a program főpaneljeit tartalmazó \textbf{BaseLayout.fxml} fájlt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/RandomInputController.png}
+	\caption{A RandomInputController osztálydiagramja}
+\end{figure}\par
+\paragraph{FileInputController osztály}
+A \textbf{FileInputLayout.fxml} betöltésekor példányosul. Az \textbf{openChooser()} eljárás beállítja a formátumszűrőt(*.txt), valamint megjeleníti a fájltallózó párbeszédpanelt.\par A fájl kiválasztását követően meghívja a \textbf{loadFile()} függvényt.Kezdetben lekéri a fájl sorainak a számát a \textbf{getLineNumber()} eljárás segítségével, majd létrehoz egy ennek megfelelő nagyságú tömböt. Soronként végigolvassa a fájlt, amennyiben egy nem megfelelő sort talál(azaz egy sor üres vagy nem egy pozitív egész számot tartalmaz) befejezi a beolvasást, és hibaüzenetet jelenít meg.\par Amennyiben a beolvasás sikeres volt átadja a tömböt a \textbf{SortingAlgorithm} osztálynak, és megnyitja a főpaneleket tartalmazó \emph{FXML} fájlt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/FileInputController.png}
+	\caption{A FileInputController osztálydiagramja}
+\end{figure}\par
+\subsubsection{Megjelenítési réteg osztályai}
+A megjelenítésért felelős komponensek főként \emph{FXML} fájlokban kerülnek tárolásra. A gráf implementációja azonban ilyen módon nem készíthető el. Ezért került kialakításra a \textbf{view.graph} csomag. Röviden most e csomag osztályai kerülnek jellemzésre.
+\paragraph{Vertex osztály}
+A gráf egy csúcsát megvalósító osztály. Adattagja két \emph{JavaFX} komponens, egy címke(\textbf{Label}) és egy kör(\textbf{Circle}). Konstruktora megkapja a kör \textbf{X} és \textbf{Y} pozícióját az ablakon, továbbá opcionálisan a címke vagy szín értékét.\par
+A \textbf{getGraphics()} metódus visszaadja a csúcs grafikus reprezentációját. A \textbf{setColor(String color)} metódus segítségével megváltoztatható a kör adattag színe.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/Vertex.png}
+	\caption{A Vertex osztálydiagramja}
+\end{figure}\par
+\paragraph{Edge osztály}
+Konstruktora a paraméterül kapott koordináták felhasználásával létrehoz egy vonal(\textbf{Line}) objektumot.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/Edge.png}
+	\caption{Az Edge osztálydiagramja}
+\end{figure}\par
+\paragraph{Graph osztály}
+Őse a \textbf{Group} osztály, ezáltal hozzáadható a felhasználó felülethez. Az \textbf{addVertex(Vertex vertex)} metódusával új csúcs adható hozzá a gráfhoz. A \textbf{bindVertexes(Vertex vertexA, Vertex vertexB)} eljárás a két paraméterül kapott csúcsot köti össze a \textbf{createEdge(Vertex vertexA, Vertex vertexB)} metódus segítségével.
+\begin{figure}[H]
+	\centering
+	\includegraphics{pics/class/Graph.png}
+	\caption{A Graph osztálydiagramja}
+\end{figure}\par
 \subsection{Tesztelés}
 
 

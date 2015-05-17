@@ -12,7 +12,7 @@ import srtnglgrthms.controller.OverviewChartController;
  */
 public class ShellSort extends ChartAlgorithm {
 	private static Integer[] gapArray;
-	private static int gapIdx;
+	private static int gapIndex;
 	private static int outerIndex;
 	private static int innerIndex;
 	private static boolean isSelected;
@@ -30,30 +30,23 @@ public class ShellSort extends ChartAlgorithm {
 
 	public void setDefaults() {
 		gapArray = generateGapArray();
-		gapIdx = selectGap();
-		outerIndex = gapArray[gapIdx] - 1;
-		innerIndex = outerIndex - gapArray[gapIdx];
+		gapIndex = 0;
+		outerIndex = gapArray[gapIndex] - 1;
+		innerIndex = outerIndex - gapArray[gapIndex];
 		isSelected = false;
 		counterData.clear();
 		counterData.add(new CounterData("Összehasonlítások", "0"));
 		counterData.add(new CounterData("Mozgatások", "0"));
 		counterData.add(new CounterData("Lépésköz", "0"));
 	}
-
-	private static int selectGap() {
-		for (int i = 0; i < gapArray.length; ++i) {
-			if (data.size() > gapArray[i])
-				return i;
-		}
-		return 0;
-	}
 	
 	private static Integer[] generateGapArray() {
-		int i, last2ind = 0, last3ind = 0; 
+		int last2ind = 0;
+		int last3ind = 0; 
 		List<Integer> pratt = new ArrayList<>();
 
 		pratt.add(1);
-		for (i=1; i < numbers.length; ++i) { 
+		for (int i=1; i < numbers.length; ++i) { 
 		if (pratt.get(last2ind)*2 < pratt.get(last3ind)*3) { 
 			pratt.add(pratt.get(last2ind)*2); 
 			last2ind++; 
@@ -70,6 +63,7 @@ public class ShellSort extends ChartAlgorithm {
 		if(pratt.get(i)>=numbers.length) break;
 		}
 		Collections.reverse(pratt);
+		pratt.remove(0);
 		return pratt.toArray(new Integer[0]);
 	}
 
@@ -81,37 +75,37 @@ public class ShellSort extends ChartAlgorithm {
 				outerIndex++;
 				OverviewChartController.setColor(
 						data.get(outerIndex).getNode(), "select");
-				innerIndex = outerIndex - gapArray[gapIdx];
-			} else if (gapIdx < gapArray.length - 1) {
-				gapIdx++;
-				outerIndex = gapArray[gapIdx];
-				innerIndex = outerIndex - gapArray[gapIdx];
+				innerIndex = outerIndex - gapArray[gapIndex];
+			} else if (gapIndex < gapArray.length - 1) {
+				gapIndex++;
+				outerIndex = gapArray[gapIndex];
+				innerIndex = outerIndex - gapArray[gapIndex];
 			} else {
 				setRestColor("done");
 			}
-			counterData.get(2).setValue(Integer.toString(gapArray[gapIdx]));
+			counterData.get(2).setValue(Integer.toString(gapArray[gapIndex]));
 			isSelected = true;
 		} else if (outerIndex < data.size()) {
 			setRestColor("default");
-			if (data.get(innerIndex + gapArray[gapIdx]).getYValue().intValue() >= data
+			if (data.get(innerIndex + gapArray[gapIndex]).getYValue().intValue() >= data
 					.get(innerIndex).getYValue().intValue()) {
 				OverviewChartController.setColor(
 						data.get(innerIndex).getNode(), "swap");
 				OverviewChartController.setColor(
-						data.get(innerIndex + gapArray[gapIdx]).getNode(),
+						data.get(innerIndex + gapArray[gapIndex]).getNode(),
 						"select");
 				isSelected = false;
-			} else if (data.get(innerIndex + gapArray[gapIdx]).getYValue()
+			} else if (data.get(innerIndex + gapArray[gapIndex]).getYValue()
 					.intValue() < data.get(innerIndex).getYValue().intValue()) {
-				swap(innerIndex + gapArray[gapIdx], innerIndex);
+				swap(innerIndex + gapArray[gapIndex], innerIndex);
 				counterData.get(1).incValue();
 				OverviewChartController.setColor(
 						data.get(innerIndex).getNode(), "select");
 				OverviewChartController.setColor(
-						data.get(innerIndex + gapArray[gapIdx]).getNode(),
+						data.get(innerIndex + gapArray[gapIndex]).getNode(),
 						"swap");
-				if (innerIndex - gapArray[gapIdx] >= 0)
-					innerIndex = innerIndex - gapArray[gapIdx];
+				if (innerIndex - gapArray[gapIndex] >= 0)
+					innerIndex = innerIndex - gapArray[gapIndex];
 				else
 					isSelected = false;
 			}
