@@ -39,7 +39,7 @@ public class RandomInputController {
 
 	private void initBox() {
 		typeBox.getItems().addAll("Véletlen generált", "Majdnem rendezett",
-				"Fordított", "Néhány egyedi");
+				"Fordított", "Rendezett", "Néhány egyedi");
 		typeBox.valueProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> ov,
@@ -88,6 +88,16 @@ public class RandomInputController {
 				numberList.add((int) (Math.random() * delta));
 			}
 			Collections.sort(numberList, Collections.reverseOrder());
+			for (int i = 0; i < numbers.length; ++i) {
+				numbers[i] = numberList.get(i);
+			}
+			break;
+		}
+		case "Rendezett": {
+			for (int i = 0; i < numbers.length; ++i) {
+				numberList.add((int) (Math.random() * delta));
+			}
+			Collections.sort(numberList);
 			for (int i = 0; i < numbers.length; ++i) {
 				numbers[i] = numberList.get(i);
 			}

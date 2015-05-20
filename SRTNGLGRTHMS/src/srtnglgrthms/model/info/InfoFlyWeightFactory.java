@@ -14,28 +14,28 @@ public class InfoFlyWeightFactory {
 		if (infoFlyWeight == null) {
 			switch (algorithmName) {
 			case "Buborékrendezés":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/BubbleSortInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/BubbleSortInfo.txt"))));
 				break;
 			case "Beszúró rendezés":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/InsertionSortInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/InsertionSortInfo.txt"))));
 				break;
 			case "Radix \"elõre\"":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/ForwardRadixInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/ForwardRadixInfo.txt"))));
 				break;
 			case "Radix \"vissza\"":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/BackwardRadixInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/BackwardRadixInfo.txt"))));
 				break;
 			case "Gyorsrendezés":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/QuickSortInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/QuickSortInfo.txt"))));
 				break;
 			case "Shell rendezés":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/ShellSortInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/ShellSortInfo.txt"))));
 				break;
 			case "Kupacrendezés":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/HeapSortInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/HeapSortInfo.txt"))));
 				break;
 			case "Versenyrendezés":
-				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/txt/TournamentSortInfo.txt"))));
+				infoFlyWeight = new InfoFlyWeight(new String(Files.readAllBytes(Paths.get("resources/text/TournamentSortInfo.txt"))));
 				break;
 			}
 			infoFlyWeights.put(algorithmName, infoFlyWeight);
