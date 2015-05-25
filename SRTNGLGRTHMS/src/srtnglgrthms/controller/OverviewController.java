@@ -37,7 +37,7 @@ public class OverviewController {
 		animBtn.setDisable(true);
 		animation = new Timeline();
 		animation.setCycleCount(Animation.INDEFINITE);
-		animationSpeed = (int) ((1.0/SortingAlgorithm.getNumbers().length)*1000);
+		animationSpeed = (int) ((1.0/SortingAlgorithm.getNumbers().length)*10000);
 		setAnimation();
 		initBtns();
 		OverviewListController.setParentController(this);

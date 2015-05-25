@@ -76,7 +76,7 @@ public class OverviewListController {
 						} else {
 							FXMLLoader loader = new FXMLLoader();
 							loader.setLocation(MainApplication.class
-									.getResource("view/OverViewChartLayout.fxml"));
+									.getResource("view/OverviewChartLayout.fxml"));
 							try {
 								((AnchorPane) parentController.displayPane
 										.getItems().get(0)).getChildren()
