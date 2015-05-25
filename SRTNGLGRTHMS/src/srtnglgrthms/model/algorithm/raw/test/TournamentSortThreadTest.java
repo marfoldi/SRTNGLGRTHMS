@@ -63,6 +63,82 @@ public class TournamentSortThreadTest {
 	}
 	
 	@Test
+	public void sixteenConcretElement() {
+		BenchmarkController.setBenchmarkDataList(new ArrayList<BenchmarkData>());
+		SortingAlgorithm.setNumbers(new int[] {307, 42, 200, 307, 65, 2, 89, 120, 189, 420, 55, 12, 7, 99, 510, 120});
+		TournamentSortThread tournamentSortTest = new TournamentSortThread();
+		tournamentSortTest.doRun();
+
+		List<Integer> numberList = new ArrayList<Integer>();
+	    for (int i = 0; i < 16; ++i)
+	    {
+	    	numberList.add(tournamentSortTest.getFinalNumbers()[i]);
+	    }
+		Set<Integer> numberSet = new HashSet<>(numberList);
+		assertEquals(numberSet.size(), 2);
+		assertEquals(tournamentSortTest.getComparisonCounter(), 135);
+		assertEquals(tournamentSortTest.getMoveCounter(), 75);
+		assertEquals(tournamentSortTest.getSwapCounter(), 0);
+	}
+	
+	@Test
+	public void tenSortedElement() {
+		BenchmarkController.setBenchmarkDataList(new ArrayList<BenchmarkData>());
+		SortingAlgorithm.setNumbers(new int[] {2, 42, 65, 89, 120, 189, 200, 291, 307, 420});
+		TournamentSortThread tournamentSortTest = new TournamentSortThread();
+		tournamentSortTest.doRun();
+
+		List<Integer> numberList = new ArrayList<Integer>();
+	    for (int i = 0; i < 10; ++i)
+	    {
+	    	numberList.add(tournamentSortTest.getFinalNumbers()[i]);
+	    }
+		Set<Integer> numberSet = new HashSet<>(numberList);
+		assertEquals(numberSet.size(), 2);
+		assertEquals(tournamentSortTest.getComparisonCounter(), 87);
+		assertEquals(tournamentSortTest.getMoveCounter(), 51);
+		assertEquals(tournamentSortTest.getSwapCounter(), 0);
+	}
+	
+	@Test
+	public void tenReverseSortedElement() {
+		BenchmarkController.setBenchmarkDataList(new ArrayList<BenchmarkData>());
+		SortingAlgorithm.setNumbers(new int[] {420, 307, 291, 200, 189, 120, 89, 65, 42, 2});
+		TournamentSortThread tournamentSortTest = new TournamentSortThread();
+		tournamentSortTest.doRun();
+
+		List<Integer> numberList = new ArrayList<Integer>();
+	    for (int i = 0; i < 10; ++i)
+	    {
+	    	numberList.add(tournamentSortTest.getFinalNumbers()[i]);
+	    }
+		Set<Integer> numberSet = new HashSet<>(numberList);
+		assertEquals(numberSet.size(), 2);
+		assertEquals(tournamentSortTest.getComparisonCounter(), 87);
+		assertEquals(tournamentSortTest.getMoveCounter(), 51);
+		assertEquals(tournamentSortTest.getSwapCounter(), 0);
+	}
+	
+	@Test
+	public void tenAlmostSortedElement() {
+		BenchmarkController.setBenchmarkDataList(new ArrayList<BenchmarkData>());
+		SortingAlgorithm.setNumbers(new int[] {1, 20, 56, 76, 55, 127, 160, 132, 191, 243});
+		TournamentSortThread tournamentSortTest = new TournamentSortThread();
+		tournamentSortTest.doRun();
+
+		List<Integer> numberList = new ArrayList<Integer>();
+	    for (int i = 0; i < 10; ++i)
+	    {
+	    	numberList.add(tournamentSortTest.getFinalNumbers()[i]);
+	    }
+		Set<Integer> numberSet = new HashSet<>(numberList);
+		assertEquals(numberSet.size(), 2);
+		assertEquals(tournamentSortTest.getComparisonCounter(), 87);
+		assertEquals(tournamentSortTest.getMoveCounter(), 51);
+		assertEquals(tournamentSortTest.getSwapCounter(), 0);
+	}
+	
+	@Test
 	public void thousandRandomElement() {
 		BenchmarkController.setBenchmarkDataList(new ArrayList<BenchmarkData>());
 		SortingAlgorithm.setNumbers(new int[100]);
@@ -79,6 +155,9 @@ public class TournamentSortThreadTest {
 	    }
 		Set<Integer> numberSet = new HashSet<>(numberList);
 		assertEquals(numberSet.size(), 2);
+		assertEquals(tournamentSortTest.getComparisonCounter(), 1513);
+		assertEquals(tournamentSortTest.getMoveCounter(), 820);
+		assertEquals(tournamentSortTest.getSwapCounter(), 0);
 	}
 	
 	@Test
@@ -98,5 +177,8 @@ public class TournamentSortThreadTest {
 	    }
 		Set<Integer> numberSet = new HashSet<>(numberList);
 		assertEquals(numberSet.size(), 2);
+		assertEquals(tournamentSortTest.getComparisonCounter(), 41048535);
+		assertEquals(tournamentSortTest.getMoveCounter(), 21048555);
+		assertEquals(tournamentSortTest.getSwapCounter(), 0);
 	}
 }

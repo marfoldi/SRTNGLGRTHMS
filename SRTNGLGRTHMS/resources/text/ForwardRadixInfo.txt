@@ -1,1 +1,15 @@
-Leírás
+Az edényrendezések közé tartozik. Az edényrendezések eredményeként rendezett adatsorozatot kapunk lineáris idõbenõben.
+Az edény rendezéseknél tipikus, hogy a rendezendõ kulcsok több kulcs-részbõl állnak, melyek hierarchikus szerkezetûek, például: év, hónap nap.
+Az "elõre" stratégia esetén az elsõ menet a legmagasabb hierarchiájú kulcs-rész szerint rakja szét edényekbe a kulcsokat, majd az így kapott edényeken ugyanezt végrehajtja a második kulcs-rész szerint, és így tovább.
+Hátránya a módszernek, hogy a szükséges edények száma gyorsan növekszik, és a rekurzió is megterhelheti a memóriát.
+Az általános edényrendezés egy speciális változata a radix "elõre" rendezés, bináris, d hosszú számokra.
+ 
+Az elsõ menetben a rendezendõ elemek elsõ bitjét vizsgálja az algoritmus.
+A vizsgálat két mutatóval történik, melyek a tömb két végérõl indulnak.
+A tömb elején addig halad a mutató, amíg a vizsgált elem elsõ jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek elsõ jegye 0.
+Amennyiben talált ilyen elemeket, megcseréli õket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik.
+Ekkor kialakul két edény, az elsõben a 0-ás kezdõbittel rendelkezõ számok, míg a másodikban az 1-essel kezdõdõ elemek foglalnak helyet.
+Ezt követõen a második bit kerül vizsgálatra az "aledényekben", az elõzõvel azonos módon.
+A rendezés befejezõdött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
+ 
+Legrosszabb esetben is lineáris a futási ideje.

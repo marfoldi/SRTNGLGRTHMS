@@ -80,11 +80,14 @@ public class ShellSort extends ChartAlgorithm {
 				gapIndex++;
 				outerIndex = gapArray[gapIndex];
 				innerIndex = outerIndex - gapArray[gapIndex];
+				OverviewChartController.setColor(
+						data.get(outerIndex).getNode(), "select");
 			} else {
 				setRestColor("done");
 			}
 			counterData.get(2).setValue(Integer.toString(gapArray[gapIndex]));
 			isSelected = true;
+			return;
 		} else if (outerIndex < data.size()) {
 			setRestColor("default");
 			if (data.get(innerIndex + gapArray[gapIndex]).getYValue().intValue() >= data

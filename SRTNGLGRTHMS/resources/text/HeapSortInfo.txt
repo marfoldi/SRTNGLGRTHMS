@@ -1,1 +1,13 @@
-Leírás
+Helybenrendezõ algoritmus. Általában nagyobb futás idejû, mint nevezetes társai: a gyorsrendezés és az összefésülû rendezés, de elõnye az utóbbival szemben, hogy helyben rendez, az elõbbivel szemben pedig az, hogy nem erõteljesen rekurzív, ezért jól alkalmazható milliós nagyságrendû bemenetre is.
+ 
+A rendezés a kupac adatszerkezet tulajdonságaira támaszkodik.
+Az algoritmus a bemeneti elemekbõl kupacot épít, majd a legfelsõbb elemét felcseréli a kupac legjobb oldalibb levelével.
+Így a legnagyobb elem a helyére került, az többé már nem tartozik a kupachoz, a kupac mérete eggyel csökken.
+Ezt követõen ellenõrzi a kupac tulajdonságokat.
+A gyökérelem sértheti a "szülõ nagyobb mindkét gyerekénél" szabályt, így azt cserékkel addig süllyeszti, míg helyre nem áll a kupac tulajdonság. Eközben a kupac tetejére kerül a következõ legnagyobb elem.
+Ezt az elemet ismét felcseréli a kupachoz tartozó legjobb oldalibb levéllel, az így helyére került elemet kizárja a kupacból, és ismét helyreállítja a kupac tulajdonságot.
+Ezen lépéseket addig ismétli, amíg a kupac egy elemûvé nem válik.
+A rendezés implementálásánál a kupacot minden esetben egy tömb ábrázolja, mely a kupacot ábrázoló bináris fa szintfolytonos ábrázolásának tekinthetõ.
+A tömbön belül egyre zsugorodik a kupac, míg a tömb végén kezd kialakulni a rendezett sorozat.
+ 
+Átlagos, legjobb és legrosszabb futási ideje egyaránt O(n log(n)).

@@ -38,7 +38,7 @@ public class RandomInputController {
 	}
 
 	private void initBox() {
-		typeBox.getItems().addAll("Véletlen generált", "Majdnem rendezett",
+		typeBox.getItems().addAll("Véletlen sorrendû", "Majdnem rendezett",
 				"Fordított", "Rendezett", "Néhány egyedi");
 		typeBox.valueProperty().addListener(new ChangeListener<String>() {
 			@Override
@@ -55,7 +55,7 @@ public class RandomInputController {
 		List<Integer> numberList = new ArrayList<>();
 		int delta = Integer.parseInt(sizeField.getText())<=100 ? 100 : Integer.MAX_VALUE; 
 		switch (type) {
-		case "Véletlen generált": {
+		case "Véletlen sorrendû": {
 			for (int i = 0; i < numbers.length; ++i) {
 				numbers[i] = (int) (Math.random() * delta);
 			}

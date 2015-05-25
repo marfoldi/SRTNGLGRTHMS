@@ -1,1 +1,7 @@
-Leírás
+A legrégebbi és a legegyszerûbb rendezési algoritmus.
+ 
+A rendezés minden egyes elemet összehasonlít a rákövetkezõ elemmel, és ha szükséges megcseréli õket. 
+Ez azt eredményezi, hogy lépésenként a maximális elem "buborék" szerûen a lista végére kerül, ezzel egyidejûleg a kisebb elemek "lesüllyednek" a tömb elejére.
+Amennyiben egy menetben a maximális eleme elérte a helyét visszavezetjük a problémát az eggyel "rövidebb" rendezési feladatra.
+ 
+Négyzetes idejû, ezáltal a leglassabb eljárások közé tartozik.

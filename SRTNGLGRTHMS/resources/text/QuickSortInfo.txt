@@ -1,1 +1,8 @@
-Leírás
+C.A.R. Hoare alkotta meg 1965-ben. Az egyik leggyorsabb rendezési eljárás, ezért rendkívül gyakran alkalmazzák.
+ 
+Helyben rendezõ, oszd meg és uralkodj elven mûködõ rekurzív algoritmus.
+Szétválasztást eszközölünk, melynek eredményeképp a kiválasztott elemtõl kisebb vagy egyenlõ értékek tõle balra, a nagyobbak pedig jobbra helyezkednek el.
+Az egyszerûbb megérthetõséget szem elõtt tartva a program mindig a legjobb oldalibb elemet választja vezérelemnek.
+ 
+Átlagos és legjobb futási ideje O(n log(n)).
+Legrosszabb esetben négyzetes idejû.

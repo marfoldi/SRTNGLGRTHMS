@@ -1,1 +1,12 @@
-Leírás
+A maximum-kiválasztó rendezések közé tartozik.
+Egy speciális adatszerkezetet, az úgynevezett versenyfát használva, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja azt a rendezett sorozatba, majd eltávolítja a rendezendõ értékek közül.
+A módszert n=2^k inputhossz esetén érdemes alkalmazni, mivel ettõl értérõ bemenetre sokkal kedvezõbb eredményt lehet elérni a kupacrendezéssel.
+ 
+Az algoritmus által használt adatszerkezet egy teljes bináris fa, melynek leveleiben szerepelnek a rendezendõ elemek.
+Az elsõ speciális menetben a fa belsõ pontjait kitöltjük, úgy, hogy a pontba a gyerekei közüli nagyobb érték kerül.
+Ezt követõen kerül sor az (n-1) egyszerûbb menetre:
+A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére.
+Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére.
+Majd ezen az "ágon" újrajátsszuk a mérkõzéseket. Amennyiben a bemenet hossza nem kettõ hatvány a program -1 értékekkel tölti fel a bináris fa további leveleit, amíg a bemenet hossza nem lesz megfelelõ.
+ 
+Átlagos, legjobb és legrosszabb futási ideje egyaránt O(n log(n)).

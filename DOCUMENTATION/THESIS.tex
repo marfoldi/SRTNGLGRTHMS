@@ -113,6 +113,7 @@ minimum követelményei az irányadóak. Azonban a program bizonyos esetekben t�
 		\textbf{Szabad lemezterület} & 124 (+2) MB       \\ \hline
 		\textbf{Processzor}          & \emph{Pentium} 2 266 MHz \\ \hline
 	\end{tabular}
+	\caption{Java JRE 8 minimum rendszerkövetelmények}
 \end{table}
 A minimális szabad lemezterület natív telepítéskor ettől eltérő, mivel a szükséges programkönyvtárak telepítésre kerülnek. Ekkor legalább \textbf{170 MB} szabad tárhelyre van szükség.
 \subsection{Ajánlott rendszerkövetelmények}
@@ -127,6 +128,7 @@ A rendszer fejlesztése a következő ajánlott konfiguráción történt:
 		\textbf{Memória}            & 4 GB                          \\ \hline
 		\textbf{Processzor}         & \emph{Intel} Core i5-2467M, 2000 MHz \\ \hline
 	\end{tabular}
+	\caption{Ajánlott rendszerkövetelmények}
 \end{table}
 
 \subsection{Telepítés és eltávolítás}
@@ -198,7 +200,7 @@ A "Méret:" címke mellett megadva a bemeneti számok mennyiségét, és a legö
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{pics/randominput.png}
-	\caption{Egymillió véletlen generált érték megadása}
+	\caption{Egymillió véletlen sorrendű generált érték megadása}
 \end{figure}
  A legördülő menüből a következő négy típus közül lehet választani, azaz a generált tömb legyen:
 \begin{description}
@@ -257,7 +259,7 @@ Az ábrán piros színnel jelölt rész, melynek elemeire kattintva kiválasztha
 \subsubsection{Állapotjelző táblázat}
 A kiválasztott algoritmus aktuális állapotához tartozó információk jelennek meg a táblázatban. Az ábrán zöld kerettel van jelölve a komponens. Amennyiben nincs kiválasztott elem a \textbf{Nincs megjeleníthető adat} szöveg jelenik meg.\par
 Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéket jelöli. Alapvetően az összehasonlításon alapuló algoritmusoknál megjelenő adatok az összehasonlítások és cserék vagy mozgatások száma. Az edényrendezéseknél pedig az aktuálisan vizsgált bit indexe és a vizsgálatok száma jelenik meg. Egyes algoritmusokhoz a jobb megérhetőség miatt további állapotjelző értékek is tartoznak, melyek a következők:
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|}
 		\hline
@@ -266,6 +268,7 @@ Két oszlopa a \textbf{Tulajdonság} és a \textbf{\#}, mely utóbbi az értéke
 		Gyorsrendezés       & Vezérelem            \\ \hline
 		Radix "előre"       & Cserék száma         \\ \hline
 	\end{tabular}
+	\caption{Állapotjelző táblázat további információi}
 \end{table}
 \subsubsection{Gombok}
 Alaphelyzetben a \textbf{Léptetés} és \textbf{Lejátszás} gombok inaktívak. A képen fekete keretet jelzi a helyüket. Amennyiben a felhasználó kiválaszt egy elemet az algoritmus listáról kattinthatóvá válnak. A léptetéssel egy következő állapotot tekinthet meg a felhasználó. A \textbf{Lejátszás} gombra kattintva a program bemutatja az algoritmus működését. A felhasználó bármikor megállíthatja az animációt a \textbf{Lejátszás} gomb helyén található \textbf{Megállítás} gombra kattintva, majd ha kívánja innen folytathatja a vizsgálatot. Amennyiben a rendezés lezajlott, megjelenik az \textbf{Újraindítás} gomb, melynek megnyomásával az értékek visszakerülnek az eredeti helyükre.
@@ -319,7 +322,7 @@ A legrégebbi és a legegyszerűbb rendezési algoritmus. Mindemellett a legtöb
  Az első ábrán szerepel a kezdeti állapot, a másodikon az első két értéket cseréje látható. A 42 ismét fentebb kerül egy pozícióval a harmadik ábrán. A negyedik ábrán csupán egy összehasonlítás történik, mivel az 57 nagyobb mint az őt megelőző érték. Az ötödik ábrán az előző állapot első két értékének (22 és 10) a cseréje látható. Az ezt követő összehasonlítás eredménye, hogy a második legnagyobb érték (42) a helyére került. Ezt követően már csak egy összehasonlítást történik, mely után az adatsor rendezve lesz.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/bubble.jpg}
+ 	\includegraphics[width=\textwidth]{pics/bubble.jpg}
  	\caption{Példa a buborékrendezésre}
  \end{figure}
  \hiddensubsubsection{Műveletigény}
@@ -343,7 +346,7 @@ Lényege, hogy a soron következő elemet - a második elemtől kezdve - egy ide
  Az első ábrán szerepel a kezdeti állapot. A következő képen jelöljük azt, hogy a második elemet fogjuk beszúrni. A harmadik ábrán felcsúsztatjuk a 42 értéket, majd a negyedik képen már látható, hogy a tömb első két eleme alkotja rendezett tömbrészt. Ezt követően a harmadik elem kerül kiválasztásra. Az összehasonlítások eredményeképp a teljes rendezett tömbrészt jobbra tolódik, így az 7. képen már a tömb első három eleme megfelelő sorrendben van. Végül a tömb utolsó eleme kerül összehasonlításra az őt megelőzővel, mivel nagyobb tőle, így kész a rendezési feladat.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/insertion.jpg}
+ 	\includegraphics[width=\textwidth]{pics/insertion.jpg}
  	\caption{Példa a beszúró rendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
@@ -363,7 +366,7 @@ Megjegyzendő, hogy a kitüntetett szerepű avagy beszúrandó elem nem szerepel
 \textbf{Donald Shell} nevéhez fűződik, a legtöbb esetben a leggyorsabb négyzetes idejű algoritmus. Az elve az, hogy célszerű lehet előbb a "távolabb" lévő elemeket hasonlítani és mozgatni, mivel így az elemek hamarabb közel kerülhetnek a végleges helyükhöz.
 \hiddensubsubsection{Működés}
 Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre. Arra, hogy mekkora méretű résztömböt vizsgáljon az egyes lépésekben az algoritmus több javaslat is található. A teljesség igénye nélkül néhány ajánlás \cite{ShellWiki} erre vonatkozóan:\par
-\begin{table}[h]
+\begin{table}[H]
 	\def\arraystretch{2}
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -372,19 +375,20 @@ Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró r
 		$\lfloor n / 2^k \rfloor$&      $\left\lfloor\frac{n}{2}\right\rfloor,
 		\left\lfloor\frac{n}{4}\right\rfloor, \ldots$, 1            &              $\Theta(n^2)$                      & Shell, 1959     \\ \hline
 		$2^k-1$&      1, 3, 7, 11, $\ldots$           &              $\Theta(n^\frac{3}{2})$                      & Hibbard, 1963    \\ \hline
-		$2^p \cdot 3^q$ váltakozva & 1, 2, 3, 4, $\ldots$  &               $\Theta(n \log^2 n)$                     & Pratt, 1971     \\ \hline
+		$2^p3^q$ alakú számok & 1, 2, 3, 4, 6 $\ldots$  &               $\Theta(n \log^2 n)$                     & Pratt, 1971     \\ \hline
 	\end{tabular}
+	\caption{Lépésköz megválasztásának módszerei}
 \end{table}
  \hiddensubsubsection{Példa}
  Az előző példákban használt számokat kívánjuk rendezni ismét, azaz a bemenet: $42, 22, 10, 57$.\par
  Az első képen látható a kezdeti állapot. A következő ábrán jelöljük azt, hogy a negyedik elemet fogjuk mozgatni, ekkor a lépésköz három. A harmadik képen már kettő a vizsgált elemek távolsága. A harmadik, kiválasztott elemet beszúrjuk az első elem helyére. A negyedik képen vesszük a következő elemet, továbbra is 2 lépésközzel, ekkor nem szükséges mozgatni. Végül az ötödik megjelenített lépéstől kezdve beszúró rendezést alkalmazunk.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/shell.jpg}
+ 	\includegraphics[width=\textwidth]{pics/shell.jpg}
  	\caption{Példa a Shell rendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
- A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program a \textbf{Vaughan Pratt} által javasolt értékeket \cite{Pratt} használja, így legrosszabb esetben $\Theta(n \log^2 n)$ a műveletek száma.\par
+ A fentebbi táblázatból látható, hogy az algoritmus sebessége nagyban függ a lépésköz megválasztásától. A program a \textbf{Vaughan Pratt} által javasolt értékeket \cite{Pratt} használja, így legrosszabb esetben $\Theta(n \log^2(n))$ a műveletek száma.\par
  A legjobb eset akkor áll fenn, ha a tömb elemei már rendezettek, ekkor nincs szükség mozgatásra, az algoritmus futási ideje $\Theta(n)$ nagyságrendű.
 \hiddensubsubsection{Jelölések az állapotjelző felületen}
  A felület bemutatásában szereplőkhöz képest nincs eltérés.
@@ -406,7 +410,7 @@ Gyakorlatilag szétválasztást eszközölünk, melynek eredményeképp a kivál
  Az első képen látható a már kiválasztott vezérelem. A negyedik ábráig csak összehasonlítások történnek, mivel minden elem kisebb, mint a kiválasztott érték. A negyedik képen a három elemű résztömbön végezzük el a rendezést, a vezérelem ismét a legjobb oldalibb érték. Az ötödik képen az első érték nagyobb mint a vezérelem, így ezt az elemet a hatodik képen megcseréljük a vezérelemmel. Ezt követően a középső két elem kerül összehasonlításra, mivel nincs szükség cserére így a rendezés befejeződött.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/quick.jpg}
+ 	\includegraphics[width=\textwidth]{pics/quick.jpg}
  	\caption{Példa a gyorsrendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
@@ -420,7 +424,8 @@ A vezérelemet \textcolor{select}{\Huge$\bullet$} szín jelöli. Annak érdekéb
 \subsection{Kupacrendezés}
 \hiddensubsubsection{Leírás}
 A módszert \textbf{J. W. J. Williams} és \textbf{R. W. Floyd} javasolták 1964-ben \cite{Ronyai}.
-Az $\mathcal{O}(n\log (n))$ algoritmusok közül az egyik leglassabb, azonban előnye a gyorsrendezéssel szemben, hogy nem erőteljesen rekurzív. Ennél fogva jól alkalmazható milliós nagyságrendű bemenetre. Ahogyan a neve is sugallja, a rendezéshez egy kupac adatszerkezetet használ. Az algoritmus ismertetése előtt definiáljuk a kupac fogalmát \cite{Fekete}:
+Helyben rendező, $\mathcal{O}(n\log (n))$ műveletigényű algoritmus. Általában nagyobb futás idejű, mint nevezetes társai: a gyorsrendezés és az összefésülő rendezés, de előnye az utóbbival szemben, hogy helyben rendez, az előbbivel szemben pedig az, hogy nem erőteljesen rekurzív, ezért jól alkalmazható milliós nagyságrendű bemenetre is.
+Ahogyan a neve is sugallja, a rendezéshez egy kupac adatszerkezetet használ. Az algoritmus ismertetése előtt definiáljuk a kupac fogalmát \cite{Fekete}:
 Olyan bináris fa, amelyre a következők teljesülnek:
 \begin{description}
 	\item[$\bullet$] Kizárólag a levelek szintjén hiányozhat csúcs, azaz "majdnem teljes".
@@ -430,23 +435,23 @@ Olyan bináris fa, amelyre a következők teljesülnek:
 A második pont értelmében egyetlen olyan csúcs lehet, amelynek csak egy gyereke van, és az közvetlenül a levélszint felett kell, hogy elhelyezkedjen.\par
 \hiddensubsubsection{Működés}
 A rendezés az előbbi tulajdonságokra támaszkodik. 
-Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét áthelyezi a kupac "végére". Ezt követően ellenőrzi a kupac tulajdonságokat, ahol szükséges cseréket hajt végre, hogy helyreálljon a kupac adatszerkezet, ekkor már az utolsó, legjobb oldalibb levélelem nem vesz részt a kupacépítésben. A gyökérben található elemet a legjobb oldalibb levélelem elé helyezi, és újraépíti a kupacot. Ezen lépések addig ismétlődnek, amíg már a maximális elem áthelyezése nem lehetséges, a kupac "végére" helyezési művelet elérte a gyökeret.\par
+Az algoritmus a bemeneti elemekből kupacot épít, majd a legfelsőbb elemét felcseréli a kupac legjobb oldalibb levelével. Így a legnagyobb elem a helyére került, az többé már nem tartozik a kupachoz, a kupac mérete eggyel csökken. Ezt követően ellenőrzi a kupac tulajdonságokat. A gyökérelem sértheti a "szülő nagyobb mindkét gyerekénél" szabályt, így azt cserékkel addig süllyeszti, míg helyre nem áll a kupac tulajdonság. Eközben a kupac tetejére kerül a következő legnagyobb elem. Ezt az elemet ismét felcseréli a kupachoz tartozó legjobb oldalibb levéllel, az így helyére került elemet kizárja a kupacból, és ismét helyreállítja a kupac tulajdonságot. Ezen lépéseket addig ismétli, amíg a kupac egy eleművé nem válik. A rendezés implementálásánál a kupacot minden esetben egy tömb ábrázolja, mely a kupacot ábrázoló bináris fa szintfolytonos ábrázolásának tekinthető. A tömbön belül egyre zsugorodik a kupac, míg a tömb végén kezd kialakulni a rendezett sorozat.\par
  \hiddensubsubsection{Példa}
  Az eddigi példákkal azonosan a rendezendő számsorozat: $42, 22, 10, 57$.\par
  Az első kép a kezdeti állapotot mutatja. Ezt követően a bemeneti adatokból kupacot építünk, melynek eredménye a második ábra. A gyökérelemet a levélszint utolsó elemével megcseréljük a harmadik képen. Ellenőrizzük, hogy teljesülnek-e a kupac tulajdonságok, amennyiben nem cseréket hajtunk végre, ennek eredménye látható a 4. képen. Ismét a gyökérelemet lesüllyesztjük, majd ellenőrizzük a kupac tulajdonságot. Az előző két lépést megismételve rendezett tömböt kapunk.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/heap.jpg}
+ 	\includegraphics[width=\textwidth]{pics/heap.jpg}
  	\caption{Példa a kupacrendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
-A kupacrendezés egyik további, hogy míg a gyorsrendezésnek legrosszabb esetben a futási ideje $\mathcal{O}(n^2)$, addig itt a futási idő továbbra is $\mathcal{O}(n\cdot\log (n))$. Ennél fogva azon rendszereknél, ahol a négyzetes futási idő elfogadhatatlan inkább kupacrendezést alkalmaznak.
+A kupacrendezés egyik további előnye, hogy míg a gyorsrendezésnek legrosszabb esetben a futási ideje $\mathcal{O}(n^2)$, addig itt a futási idő továbbra is $\mathcal{O}(n\cdot\log (n))$. Ennél fogva azon rendszereknél, ahol a négyzetes futási idő elfogadhatatlan inkább kupacrendezést alkalmaznak.
 \hiddensubsubsection{Jelölések az állapotjelző felületen}
 Az éppen összehasonlított értékeket \textcolor{swap}{\Huge$\bullet$} jelöli. Amennyiben csere történt a belső csúcsba kerülő érték háttérszíne \textcolor{select}{\Huge$\bullet$} lesz. Ez alól kivétel, ha a gyökérbe került új érték, mivel ekkor már tudjuk az új legnagyobb értéket, ennek a színe \textcolor{done}{\Huge$\bullet$} lesz. Továbbá akkor is ezt a színt használjuk, ha már a tényleges, végleges helyére került egy elem.
 
 \subsection{Versenyrendezés}
 \hiddensubsubsection{Leírás}
-A maximum-kiválasztó rendezések közé tartozik, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja és végül eltávolítja. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest" \cite{Fekete}. A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel \cite{Fekete}. \par
+A maximum-kiválasztó rendezések közé tartozik. Egy speciális adatszerkezetet, az úgynevezett versenyfát használva, minden egyes menetben kiválasztja a legnagyobb elemet, kiírja azt a rendezett sorozatba, majd eltávolítja a rendezendő értékek közül. A maximum kiválasztásnak a gyakorlati hátterét a sportesemények lebonyolítási rendje adja, azaz meghatározza az elemek között a "nyertest" \cite{Fekete}. A módszert n=2$^k$ inputhossz esetén érdemes alkalmazni, mivel ettől értérő bemenetre sokkal kedvezőbb eredményt lehet elérni a kupacrendezéssel \cite{Fekete}. \par
 \hiddensubsubsection{Működés}
 Az algoritmus által használt adatszerkezet egy teljes bináris fa. A bináris fa leveleiben szerepelnek a rendezendő elemek. Az első speciális menetben a fa belső pontjait kitöltjük, úgy, hogy a pontba a gyerekei közüli nagyobb érték kerül.\par 
 Ezt követően kerül sor az $(n-1)$ egyszerűbb menetre: A gyökérben található elemet keresve "lefelé" haladunk a bináris fában, majd megtalálva azt a levelet amelyben a gyökér értéke szerepel egy abszolút vesztest állítunk a helyére. Ez az érték a programban -1, mivel csak pozitív egészeket használunk a rendezések szemléltetésére. Ezzel ellentétben a gyakorlatban ez az érték $-\infty$. Majd ezen az "ágon" újrajátsszuk a mérkőzéseket.\par
@@ -456,7 +461,7 @@ Amennyiben a bemenet hossza nem kettő hatvány a program -1 értékekkel tölti
  Az első ábra a kezdőállapotot mutatja. A második kép a versenyfa kitöltését követő állapot, melynek eredményeképp megjelenik az abszolút maximum érték a diagramon. Ezt követően a harmadik képen látható a maximális értékhez tartozó levélelem megtalálásának állapota. A negyedik ábra szemlélteti az újrajátszás eredményét. Az előzőekhez hasonlóan szemléltetik a további képek a maximum érték megjelenítését, a levélelem megkeresését majd az újrajátszás eredményét.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/tournament.jpg}
+ 	\includegraphics[width=\textwidth]{pics/tournament.jpg}
  	\caption{Példa a versenyrendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
@@ -469,16 +474,17 @@ Az összehasonlításokat, valamint a maximális levélelem megkereséséhez bej
 \subsection{Radix "előre"}
 \hiddensubsubsection{Leírás}
 Az előzőekben ismertetett algoritmusok mindegyike összehasonlításon alapuló rendezés. A radix rendezés viszont az edényrendezések közé tartozik. Ezen rendezések nem hasonlítják össze az elemeket, hanem az elemek a rendezés során az értéküknek megfelelő edényekbe kerülnek. Az edényrendezések eredményeként rendezett adatsorozatot kapunk lineáris időben \cite{Ronyai}. 
-A radix rendezés egy rekurzív algoritmus, melynek minden szintjén létrejönnek az edények.\par
-Az általános edényrendezés egy speciális változata a radix előre rendezés, bináris, $d$ hosszú számokra.\par
+Az edény rendezéseknél tipikus, hogy a rendezendő kulcsok több kulcs-részből állnak, melyek hierarchikus szerkezetűek, például: év, hónap nap. Az "előre" stratégia esetén az első menet a legmagasabb hierarchiájú kulcs-rész szerint rakja szét edényekbe a kulcsokat, majd az így kapott edényeken ugyanezt végrehajtja a második kulcs-rész szerint, és így tovább.\par
+Hátránya a módszernek, hogy a szükséges edények száma gyorsan növekszik, és a rekurzió is megterhelheti a memóriát.
+Az általános edényrendezés egy speciális változata a radix "előre" rendezés, bináris, $d$ hosszú számokra.\par
 \hiddensubsubsection{Működés}
-Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A vizsgálat két mutatóval történik, melyek a tömb két végéről indulnak. A tömb elején addig halad a mutató, amíg a vizsgált elem első jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek első jegye 0. Amennyiben talált ilyen elemeket megcseréli őket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik. Ekkor kialakul két edény, az elsőben a 0-ás kezdőbittel rendelkező számok, míg a másodikban az 1-essel kezdődő elemek foglalnak helyet. Ezt követően a második bit kerül vizsgálatra az "aledényekben", az előzővel azonos módon. A rendezés befejeződött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
+Az első menetben a rendezendő elemek első bitjét vizsgálja az algoritmus. A vizsgálat két mutatóval történik, melyek a tömb két végéről indulnak. A tömb elején addig halad a mutató, amíg a vizsgált elem első jegye nem 1, ezzel párhuzamosan a tömb végén olyan elemet keres a másik, melynek első jegye 0. Amennyiben talált ilyen elemeket, megcseréli őket. Ezt mindaddig folytatódik, amíg a két mutató nem találkozik. Ekkor kialakul két edény, az elsőben a 0-ás kezdőbittel rendelkező számok, míg a másodikban az 1-essel kezdődő elemek foglalnak helyet. Ezt követően a második bit kerül vizsgálatra az "aledényekben", az előzővel azonos módon. A rendezés befejeződött, ha minden számjegy szerinti vizsgálat megtörtént, vagy ha mindegyik, a futás alatt kialakult edény már csak egy elemet tartalmaz.
  \hiddensubsubsection{Példa}
  Az rendezendő számok: $2, 3, 1, 3$, azaz binárisan $10, 11, 01, 11$.\par
  Az első ábra a kezdőállapotot mutatja. Mivel az első érték valószínűleg nem megfelelő helyen van, ezért a tömb végéről kezdve keresünk egy olyan értéket, amely 0-ás jeggyel kezdődik. A harmadik elem pont ilyen, a második képen ez a két érték cserére van kijelölve, majd a negyedik ábrán megtörténik a két elem cseréje. Az ötödik képen látható a menet során kialakult két edény. Mivel az első edény egy elemű, így nem szükséges a vizsgálata. A második edényben az 10 értéket szeretnénk cserélni, így az edény végétől haladunk előrefelé, amíg nem találunk olyan elemet, melynek második bitje egy. A 11 érték éppen ilyen, ezért megcseréljük őket. Az utolsó ábrán látható a rendezett sorozat.\par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/radixforward.jpg}
+ 	\includegraphics[width=\textwidth]{pics/radixforward.jpg}
  	\caption{Példa a radix "előre" rendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
@@ -489,7 +495,7 @@ Az éppen vizsgált elem \textcolor{select}{\Huge$\bullet$} színnel van jelölv
 
 \subsection{Radix "vissza"}
 \hiddensubsubsection{Leírás}
-Az algoritmus rövid ismertetője megegyezik a \textbf{Radix "előre"} rendezés leírásával.
+Az algoritmus rövid ismertetője alapvetően megegyezik a \textbf{Radix "előre"} rendezés leírásával. Az edény "vissza" stratégia esetén a kulcs hierarchiában alulról felfelé haladunk. Az edénybe történő szétrakás után az edények tartalmát újra egyesítjük, majd a következő szempont szerint ismétlődik az edénybe szétrakás, és egyesítés lépése. Fontos azonban, hogy szétrakás közben meg kell tartani az előző menetekben kialakított "előrendezettséget". Vagyis, ha egy menet eredményében $x$ kulcs megelőzi $y$ kulcsot, és a következő menetben azonos edénybe kerülnek, akkor ezt a sorrendet meg kell őrizni, tehát az edényen belül $x$ előbb kell legyen, mint $y$.
 \hiddensubsubsection{Működés}
 Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak két tömbre van szüksége. További különbség, hogy a kisebb helyiértéktől a nagyobb felé halad a vizsgálat.\par Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkező esetben a tömb végére töltjük át az aktuális bináris számot. Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált jegye 1-es. Ezt követően a 0-ás edényt az elejéről olvasva feltöltjük újra az eredeti tömböt az előbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtől visszafelé haladva töltjük át az értékeket. Amennyiben a rendezendő bináris számok $d$ hosszúak, úgy $d+1$ áttöltést követően rendezett tömböt kapunk.
  \hiddensubsubsection{Példa}
@@ -497,7 +503,7 @@ Az előző algoritmustól eltérően már nem helyben rendez, az eljárásnak k�
  Az első ábra a kezdeti állapotot mutatja. A második képen a tömb első két eleme már áttöltésre került, a 10 az alsó tömb elejére, míg a 11 a végére. A harmadik ábrán látható a teljen áttöltött állapot. A következő ábrán visszatöltésre került az első érték, melynek első bitje 1, így az eredeti tömb végére került. Ekkor a második edény értékeit hátulról előrefelé vizsgáljuk, így a 10 érték kerül először az eredeti tömb elejére, majd a 11 a 10 előtti helyre. Végül az utolsó 11-es érték is bekerül az eredeti tömbbe. Ezt követően az 5. ábrán már csak átmásolásra kerülnek az értékek a megfelelő sorrendben, azaz az egyes edény tartalma előröl olvasva, míg a második edény értékei hátulról előrefelé haladva. \par
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{pics/radixbackward.jpg}
+ 	\includegraphics[width=\textwidth]{pics/radixbackward.jpg}
  	\caption{Példa a radix "vissza" rendezésre}
  \end{figure}
 \hiddensubsubsection{Műveletigény}
@@ -509,7 +515,7 @@ Az aktuálisan vizsgált bit értékének megfelelően, amely bináris szám a 0
 \chapter{Fejlesztői dokumentáció}
 
 \section{Tervezés}
-A dolgozat fő célja egy olyan elsősorban hallgatóknak szánt program létrehozása, amellyel néhány rendezési algoritmus működése egy letisztult és egyszerű felhasználó felületen keresztül tanulmányozható.\par
+A dolgozat fő célja egy olyan, elsősorban hallgatóknak szánt program létrehozása, amellyel néhány rendezési algoritmus működése egy letisztult és egyszerű felhasználó felületen keresztül tanulmányozható.\par
 A fejlesztés során több szempontot is figyelembe kell venni, úgy mint: műveletigény, memóriaigény, jó megjelenés, egyszerű kezelhetőség, és átlátható-, bővíthető kód készítése. Mivel ezen kritériumok közül több is csak egy másik rovására javítható, ezért a tervezés során kompromisszumokat kell kötni. Továbbá fel kell készülni arra, hogy az eredeti terven a fejlesztés során módosításokat kell végezni, mivel egy-egy probléma megoldása más megközelítést kívánhat.
 
 \subsection{Alapelvek}
@@ -592,7 +598,7 @@ Az egyik alapelv, hogy a grafikus megjelenítés működés szintjén minél ink
  \end{figure}
 Ennek tekintetében a programot három fő csomagra kell bontani: A \textbf{modell} csomag, melyben a logikai osztályok találhatóak, a \textbf{view}, melyben a grafikai interfészt leíró \emph{FXML} fájlok és osztályok foglalnak helyet, végül a \textbf{controller} csomag, melynek osztályai kapcsolatot teremtenek a logikai és a megjelenítési réteg között.
 \subsubsection{Modell csomag}
-A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rendszerezést szem előtt tartva további alcsomagok kerülnek létrehozásra, így jobban áttekinthető az osztályhierarchia. Összességében ebben a csomagban foglalnak helyet azon osztályok, amelyek a rendszer adattároló, rendszerező és számítási feladatait ellátják. Az alábbi táblázat ad áttekintést az előzőleg említett alcsomagokról:\par
+A rendszerlogikát megvalósító osztályokat a \textbf{modell} nevű csomag foglalja magában. A pontosabb rendszerezést szem előtt tartva további alcsomagok kerülnek létrehozásra, így jobban áttekinthető az osztályhierarchia. Összességében ebben a csomagban foglalnak helyet azon osztályok, amelyek a rendszer adattároló, rendszerező és számítási feladatait ellátják. Az alábbi táblázat ad áttekintést az előzőleg említett alcsomagokról:\par
 \begin{table}[H]
 	\def\arraystretch{2}
 	\centering
@@ -604,6 +610,7 @@ A modell osztályok a \textbf{modell} csomag foglalja magában. A pontosabb rend
 		algorithm.raw.test & A raw csomag osztályaihoz tartozó egységtesztek\\ \hline
 		info         & "Az algoritmusról" felugróablakhoz tartozó adatbetöltő                         \\ \hline
 	\end{tabular}
+	\caption{Logikai réteg csomaghierarchiája}
 \end{table}
 \paragraph{algorithm alcsomag}
 A csomag osztályainak többsége azon algoritmusimplementációkat tartalmazza, melyek a \textbf{Megfigyelés} panelen megjelennek, azaz számon tartják az algoritmus aktuális állapotát. A csomag további osztályainak a fő funkciója, hogy azon műveleteket, amelyeket több algoritmus is használ legyenek kiemelve, ezáltal megakadályozhatóvá válik a kódismétlés.
@@ -624,10 +631,8 @@ Osztályai főleg a megjelenítő csomag komponenseihez tartoznak. Ezt az osztá
 
 \subsection{Osztályszerkezet}
 A következőkben bemutatásra kerülnek a csomagok főbb osztályai, és ezek fontosabb eljárásai. A bemutatásban szereplő osztályok sorrendje többé-kevésbé megegyezik a példányosulásuk sorrendjével. Az ábrán kék színnel vannak jelölve az absztrakt osztályok, míg zöld hátteret kapott az egyik fontosabb interfész.\par
-%\afterpage{\null\newpage}
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{pics/plan_class.png}
+	\includegraphics[width=\textwidth, height=0.8\paperheight]{pics/plan_class.png}
 	\caption{A főbb osztályok kapcsolata és kommunikációjuk}
 \end{figure}
 A megjelenítési réteg fájljai nem kerülnek bemutatásra, mivel ezek szerkezetüket tekintve azonosak, csak a grafikus interfész elemeit definiálják. Amennyiben egy fájl meghívásra kerül a kontroller réteg egyik osztályában az ismertetve lesz.
@@ -703,7 +708,7 @@ A \textbf{BaseController} osztály \textbf{handleAbout()} függvénye az algorit
 \subsection{Az eredeti terv módosítása}
 A megvalósítás során néhány ponton módosítást kellett eszközölni az eredeti terveken.
 \subsubsection{Szálkezelés}
-Eredetileg egy-egy külön szálon futottak volna az algoritmusok, és a felhasználói interakció hatására ezek állapota változott volna. Azonban a \emph{JavaFX} szálkezelése jelentősen eltér az szokványos szálkezelésétől, ezért járhatóbb útnak bizonyult az ha kétszer kerüljenek implementálásra az algoritmusok. Így került kialakításra a \textbf{algorithm.raw} csomag.\par
+Eredetileg egy-egy külön szálon futottak volna az algoritmusok, és a felhasználói interakció hatására ezek állapota változott volna. Azonban a \emph{JavaFX} szálkezelése jelentősen eltér az szokványos szálkezelésétől, ezért járhatóbb útnak bizonyult az ha kétszer kerüljenek implementálásra az algoritmusok. Továbbá e döntés mellett szólt az is, hogy azon implementációk, amelyek nem tartalmaznak "felesleges" változókat, és nem kis lépésekre bontanak egy-egy algoritmust hatékonyabbak. Így került kialakításra a \textbf{algorithm.raw} csomag.\par
  Az egyik implementációban elmentjük az interakciót követő állapotot, és ez jelenik meg a felhasználói felületen. A másik megvalósításban pedig a rendezések azonnal lezajlanak, így képet kaphatunk arról, hogy mennyi műveletre volt szükség az egyes eljárások során. Ezen utóbbi implementációk mindegyike külön szálon fut, és ahogy valamelyik befejeződik figyelmezteti a főprogramot, hogy jelenítse meg a műveletek számát.
 \subsubsection{A JavaFX kibővítése}
 A szoftver erősen épít a \emph{JavaFX} adta felületi komponensekre. Azonban akad olyan összetevő, amelyet ki kell bővíteni, vagy létre kell hozni az áttekinthetőség érdekében.\par
@@ -728,9 +733,9 @@ Az \emph{FXML} az \emph{Oracle} által fejlesztett dekleratív XML alapú nyelv 
 	\item[$\bullet$] A következő sorokban található azon könyvtárak importálása, amelyekben megtalálhatók a felhasznált komponensek
 	\item[$\bullet$] Ezt követi az ablak elrendezési módjának a megadása, ekkor több beépített megvalósítás közül lehet választani, többek között:
 		\begin{description}
-		\item[$\diamond$] \emph{BorderPane} - 5 pozícióba helyezhetőek elemek
-		\item[$\diamond$] \emph{GridPane} - táblázatszerűen jelennek meg az elemei
-		\item[$\diamond$] \emph{AnchorPane} - egy "szimpla" felület, nincs megkötés	
+		\item[$\diamond$] \emph{BorderPane} - 5 pozícióba helyezhetőek elemek,
+		\item[$\diamond$] \emph{GridPane} - táblázatszerűen jelennek meg az elemei,
+		\item[$\diamond$] \emph{AnchorPane} - egy "szimpla" felület, nincs megkötés.
 		\end{description}
 	Továbbá ebben a sorban kell megadni az \emph{FXML} állományhoz tartozó kontroller osztály elérési útvonalát. Az vezérlőosztály tud hivatkozni az egyes összetevőkre az azonosítójukon keresztül.
 	\item[$\bullet$] Végül a komponensek definiálása: méretük, azonosítójuk megadásával.
@@ -738,17 +743,17 @@ Az \emph{FXML} az \emph{Oracle} által fejlesztett dekleratív XML alapú nyelv 
 \subsubsection{Néhány fontosabb FXML állomány}
 A következőkben bemutatásra kerülnek a projekt főbb \emph{FXML} fájljai.
 \paragraph{BaseController}
-Az egyik "összefogó" \emph{FXML} fájl. A rendezendő számok megadása után minden esetben ez az állomány töltődik be. Alapvetően a fejlécet és egy \textbf{TabPane} komponenst tartalmaz, ami a két panel közötti navigálást teszi lehetővé. Ezeken felül importálva van két további állomány is: az \textbf{OverviewLayout} és a \textbf{BenchmarkLayout}. Ennek következtében, amikor a \textbf{BaseController} betöltődik vele együtt az előbb említett két fájl is beolvasásra kerül minden további komponensükkel.
+Az egyik "összefogó" \emph{FXML} fájl. A rendezendő számok megadása után minden esetben ez az állomány töltődik be. Alapvetően a fejlécet és egy \textbf{TabPane} komponenst tartalmaz, ami a két panel közötti navigálást teszi lehetővé. Ezeken felül importálva van két további állomány is: az \textbf{OverviewLayout} és a \textbf{BenchmarkLayout}. Ennek következtében, amikor a \textbf{BaseController} példányosul vele együtt az előbb említett két fájl is beolvasásra kerül minden további komponensükkel.
 \paragraph{OverviewLayout}
 Szintén több komponenst foglal magában, a \textbf{Megfigyelés} panelt gombjait és a más fájlokból betöltött komponensek elhelyezkedését definiálja. Az általa importált további állományok: \textbf{OverviewListLayout}, \textbf{OverviewTableLayout}, továbbá az aktuálisan kiválasztott algoritmus típusától függően a \textbf{OverviewChartLayout}, \textbf{OverviewDoubleChartLayout} vagy \textbf{OverviewGraphLayout} valamelyike.
 \paragraph{BenchmarkLayout}
 Az \textbf{Összehasonlítás} panel részeinek elhelyezkedését írja le. A következő \emph{FXML} fájlokat hívja meg betöltésekor: \textbf{BenchmarkTableLayout}, \textbf{BenchmarkChartLayout}.
 
 \subsection{Nem forrásfájl állományok}
-A program által használt nem forrás- vagy \emph{FXML} fájlok a \textbf{resources} mappában találhatóak. Ezen belül az \textbf{images} könyvtárban található meg a szoftver ikonja. A \textbf{text} mappán belül találhatóak azon fájlok, amelyeket az \textbf{InfoFlyWeight} osztály betölt. Azaz ezekben az állományokban található meg az egyes algoritmusok rövid ismertetése. A harmadik \textbf{input} mappában a fájlból történő bemenet megadásához található néhány példaadat.
+A program által használt nem forrás- vagy \emph{FXML} fájlok a \textbf{resources} mappában találhatóak. Ezen belül az \textbf{images} könyvtárban található meg a szoftver ikonja. A \textbf{text} mappán belül találhatóak azon fájlok, amelyeket az \textbf{InfoFlyWeight} osztály betölt. Azaz ezekben az állományokban található meg az egyes algoritmusok rövid ismertetése. A harmadik \textbf{input} mappában a fájlból történő beolvasáshoz található néhány példa adat.
 
 \subsection{Osztályok leírása}
-Az előző fejezetben (3.1) ismertetésre kerültek a főbb osztályok és azok fontosabb eljárásai, a következőkben nagyobb részletességgel kerülnek jellemzésre a szoftver osztályai.
+Az előző fejezetben (3.1) ismertetésre kerültek a főbb osztályok és azok fontosabb eljárásai, a következőkben nagyobb részletességgel kerülnek jellemzésre a szoftver ezen komponensei.
 \subsubsection{Modell réteg osztályai}
 Elsőként a \textbf{algorithm} csomag főbb osztályai kerülnek ismertetésre.
 \paragraph{SortingAlgorithm absztrakt osztály}
@@ -760,7 +765,7 @@ A \textbf{getMaximum()} eljárás visszaadja a \textbf{numbers} tömb maximális
 	\caption{A SortingAlgorithm osztálydiagramja}
 \end{figure}
 \paragraph{ChartAlgorithm absztrakt osztály}
-Az előző osztály leszármazottja, megvalósítja a \textbf{swap(int firstIndex, int secondIndex)} metódusát. A diagram kontroller osztálya a rendezendő számokat egy \textbf{ObservableList} adatszerkezetben tárolja, így ennek megfelelően került az eljárás implementálásra. A kontroller réteg előbb említett listáját statikus változóként elmenti, így a leszármazott osztályai egyszerűbben tudnak hivatkozni az egyes értékekre.
+Az előző osztály leszármazottja, megvalósítja a \textbf{swap(int firstIndex, int secondIndex)} metódusát. A diagram kontroller osztálya a rendezendő számokat egy \textbf{ObservableList} adatszerkezetben tárolja, így ennek megfelelően került az eljárás implementálásra. A kontroller réteg előbb említett listáját statikus változóként elmenti, így a leszármazott osztályai egyszerűbben tudnak hivatkozni az értékeire.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/ChartAlgorithm.png}
@@ -768,15 +773,15 @@ Az előző osztály leszármazottja, megvalósítja a \textbf{swap(int firstInde
 \end{figure}
 \paragraph{GraphAlgorithm absztrakt osztály}
 Szintén a \textbf{SortingAlgorithm} leszármazott absztrakt osztálya. A \textbf{GraphController} osztály gráfját és csúcsait tárolja, így a leszármazott osztályai egyszerűbb elérik ezeket az adattagokat.\par
-Továbbá ellenőrzi a bemenet hosszát, és ha szükséges "csonkolja" vagy megnöveli az eredeti tömb hosszát a \textbf{checkLength(int[] numbers, String algorithm)} metódusa. Megvalósítja az előző osztályhoz hasonlóan a \textbf{swap(int firstIndex, int secondIndex)} metódust. Valamint a \textbf{setRestColor(int index)} metódusa a paraméterül kapott indexig visszaállítja az eredeti színűre a \textbf{Megfigyelés} panelen megjelenített gráfcsúcsokat, valamint a oszlopokat.
+Továbbá ellenőrzi a bemenet hosszát, és ha szükséges "csonkolja" vagy megnöveli az eredeti tömb hosszát a \textbf{checkLength(int[] numbers, String algorithm)} metódusa. Megvalósítja az előző osztályhoz hasonlóan a \textbf{swap(int firstIndex, int secondIndex)} metódust. Valamint a \textbf{setRestColor(int index)} metódusa a paraméterül kapott indexig visszaállítja az eredeti színűre a \textbf{Megfigyelés} panelen megjelenített gráfcsúcsokat és oszlopokat.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/GraphAlgorithm.png}
 	\caption{A GraphAlgorithm osztálydiagramja}
 \end{figure}
 \paragraph{RadixAlgorithm absztrakt osztály}
-A \textbf{ChartAlgorithm} leszármazott absztrakt osztálya. Továbbá a radix eljárásokat megvalósító osztályok őse. A két származtatottjának adattagjai már itt definiálásra kerülnek, azaz négy "pointer", valamint az aktuálisan vizsgált számjegy indexe (\textbf{actualDigit}).\par
-A \textbf{getMaxDigit()} metódusa visszaadja a leghosszabb bináris számot, amelyet a másik \textbf{fillWithZeros(String binaryNumber)} metódus fel is használ, mivel ennek megfelelően a rövidebb számokat nullákkal konkatenálja.
+A \textbf{ChartAlgorithm} leszármazott absztrakt osztálya és a radix eljárásokat megvalósító osztályok őse. A két származtatottjának adattagjai már itt definiálásra kerülnek, azaz négy "pointer", valamint az aktuálisan vizsgált számjegy indexe (\textbf{actualDigit}).\par
+A \textbf{getMaxDigit()} metódusa visszaadja a leghosszabb bináris számot, melyet a másik \textbf{fillWithZeros(String binaryNumber)} metódus fel is használ, mivel ennek megfelelően a rövidebb számokat nullákkal konkatenálja.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/RadixAlgorithm.png}
@@ -791,7 +796,7 @@ Egyetlen metódusának paramétere egy algoritmus szöveges reprezentációja, p
 	\caption{A SortingAlgorithmFactory osztálydiagramja}
 \end{figure}
 \paragraph{CounterData osztály}
-Az osztály segítségével adatok tárolhatóak kulcs-érték párban. Az implementációval kapcsolatban felmerülhet a kérdés, hogy miért nem a \emph{Java} nyelv egy beépített adatszerkezete került felhasználásra. Ennek oka, hogy a felhasználói felületen lévő táblázatok csak olyan adatszerkezetet tudnak megjeleníteni, amelynek adattagjainak a típusa \textbf{Property} végződésű, és implementálva vannak ezekhez a mezőkhöz a \textbf{getter} metódusok.\par
+Az osztály segítségével adatok tárolhatóak kulcs-érték párban. Az implementációval kapcsolatban felmerülhet a kérdés, hogy miért nem a \emph{Java} nyelv egy beépített adatszerkezete került felhasználásra. Ennek oka, hogy a felhasználói felületen lévő táblázatok csak olyan adatszerkezetet tudnak megjeleníteni, amelynek adattagjainak a típusa \textbf{Property} végződésű, és a \textbf{getter} metódusok implementálva vannak ezekhez a mezőkhöz.\par
  Az algoritmusokat megvalósító osztályok ilyen adatokból álló listában tárolják az egyes "tulajdonságaikat", és adják át a vezérlőrétegnek. A vezérlőréteg pedig a \textbf{Megfigyelés} panel táblázatában jeleníti meg az értékeket.
 \begin{figure}[H]
 	\centering
@@ -807,9 +812,9 @@ Funkciója hasonló az előbb ismertetett osztályéhoz, azaz adatok tárolásá
 \end{figure}
 A következőkben az algoritmusok lejátszását megvalósító konkrét osztályokat jellemezzük, melyek szintén az \textbf{algorithm} csomagban találhatóak. Az osztályok mindegyike egyke, azaz a program futása során egyetlen példány keletkezik belőlük.
 \paragraph{BubbleSort osztály}
-A buborékrendezést megvalósító egyke osztály. Ősosztálya a \textbf{ChartAlgorithm} Két változója megfelel az algoritmus két ciklusváltozójának. Konstruktora privát, a \textbf{getInstance()} metódusán keresztül kérhető le a példánya. Amennyiben nincs még létrehozva példány elkészíti, ellenkező esetben visszaadja a már létrehozott objektumot.\par
+A buborékrendezést megvalósító egyke osztály, őse a \textbf{ChartAlgorithm}. Két változója megfelel az algoritmus két ciklusváltozójának. Konstruktora privát, a \textbf{getInstance()} metódusán keresztül kérhető le a példánya. Amennyiben nincs még létrehozva példány elkészíti, ellenkező esetben visszaadja a már létrehozott objektumot.\par
 Az egyke tulajdonságból következően azokat a változókat melyekben tárolódik a rendezés aktuális állapota minden futtatás után vissza kell állítani az eredeti értékre, ezt a \textbf{setDefaults()} függvény teszi meg. Továbbá ez a metódus hozza létre a tulajdonságokat tartalmazó \textbf{CounterData} objektumokat.\par
-A \textbf{step()} örökölt eljárás egy rendezési lépést hajt végre. A \textbf{setDefaults()} metódus pedig visszaállítja a \textbf{Megfigyelés} panelen látható diagramok színét az alapértékre.
+A \textbf{step()} örökölt eljárás egy rendezési lépést hajt végre. A \textbf{setDefaults()} metódus pedig visszaállítja a \textbf{Megfigyelés} panelen látható oszlopok színét az alapértékre.
 \begin{figure}[H]
 	\centering
 	\includegraphics{pics/class/BubbleSort.png}
@@ -1146,11 +1151,123 @@ Az algoritmusok és műveletszámuk helyességének ellenőrzéséhez egységtes
 \paragraph{oneElement()}
 A 42 értékkel hívja meg a rendezési eljárásokat. Ezt követően ellenőrzi, hogy ugyanezt az egy elemet tartalmazó tömböt kapta-e vissza a rendezést követően, valamint, hogy a műveletjelző értékek nullák-e.
 \paragraph{fiveConcretElement()}
-A  $[42, 20, 7, 18, 100]$ tömbön indítja el a rendezéseket. A rendezés befejeztével meghívja a \emph{Java} beépített rendező algoritmusát (\textbf{Arrays.sort}), és ellenőrzi, hogy a rendezés befejeztekor tárolt tömb azonos-e az előbb említett függvényhívás eredményével. Továbbá ellenőrzi az algoritmus által végzett műveletek összegét.
+A  $[42, 20, 7, 18, 100]$ tömbön indítja el a rendezéseket. A rendezés befejeztével meghívja a \emph{Java} beépített rendező algoritmusát (\textbf{Arrays.sort}), és ellenőrzi, hogy a rendezés befejeztekor tárolt tömb azonos-e az előbb említett függvényhívás eredményével. Továbbá ellenőrzi az algoritmus által végzett műveletek összegét.\par
+Ekkora bemenetre egyszerűen ellenőrizhető a műveletszámok helyessége. Az alábbi táblázatban megtekinthető az egyes algoritmusok futása során elvárt, és a program által számított értékek:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|l|l|}
+		\hline
+		\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{Elvárt értékek}}                             & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által\\ számított értékek\end{tabular}}} \\ \hline
+		Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}10 összehasonlítás\\ 5 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}10 összehasonlítás\\ 5 csere\end{tabular}                                    \\ \hline
+		Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}7 összehasonlítás\\ 5 mozgatás\end{tabular}   & \begin{tabular}[c]{@{}l@{}}7 összehasonlítás\\ 5 mozgatás\end{tabular}                                  \\ \hline
+		Shell rendezés      & \begin{tabular}[c]{@{}l@{}}11 összehasonlítás\\ 3 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}11 összehasonlítás\\ 3 mozgatás\end{tabular}                                 \\ \hline
+		Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}8 összehasonlítás\\ 3 csere\end{tabular}      & \begin{tabular}[c]{@{}l@{}}8 összehasonlítás\\ 3 csere\end{tabular}                                     \\ \hline
+		Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}12 összehasonlítás\\ 9 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}12 összehasonlítás\\ 9 csere\end{tabular}                                    \\ \hline
+		Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}31 összehasonlítás\\ 19 mozgatás\end{tabular} & \begin{tabular}[c]{@{}l@{}}31 összehasonlítás\\ 19 mozgatás\end{tabular}                                \\ \hline
+	\end{tabular}
+	\caption{Öt elem rendezésekor a műveletszámok}
+\end{table}
+\paragraph{sixteenConcretElement()}
+A $[307, 42, 200, 307, 65, 2, 89, 120, 189, 420, 55, 12, 7,\newline 99, 510, 120]$
+ tizenhat elemű tömbön futtatja le a rendezéseket. Az előző példával megegyezően ellenőrzésre kerül a rendezés eredményének helyessége és a műveletszámok összege.
+ \begin{table}[H]
+ 	\centering
+ 	\begin{tabular}{|c|l|l|}
+ 		\hline
+ 		\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{Elvárt értékek}}                              & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által\\ számított értékek\end{tabular}}} \\ \hline
+ 		Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}120 összehasonlítás\\ 60 csere\end{tabular}    & \begin{tabular}[c]{@{}l@{}}120 összehasonlítás\\ 60 csere\end{tabular}                                  \\ \hline
+ 		Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}73 összehasonlítás\\ 60 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}73 összehasonlítás\\ 60 mozgatás\end{tabular}                                \\ \hline
+ 		Shell rendezés      & \begin{tabular}[c]{@{}l@{}}93 összehasonlítás\\ 17 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}93 összehasonlítás\\ 17 mozgatás\end{tabular}                                \\ \hline
+ 		Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}47 összehasonlítás\\ 24 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}47 összehasonlítás\\ 24 csere\end{tabular}                                   \\ \hline
+ 		Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}81 összehasonlítás\\ 51 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}81 összehasonlítás\\ 51 csere\end{tabular}                                   \\ \hline
+ 		Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}135 összehasonlítás\\ 75 mozgatás\end{tabular} & \begin{tabular}[c]{@{}l@{}}135 összehasonlítás\\ 75 mozgatás\end{tabular}                               \\ \hline
+ 	\end{tabular}
+ 	\caption{Tizenhat elemű bemenetre a műveletszámok}
+ \end{table}
+ \paragraph{tenSortedElement()}
+ Tíz elemű, már eleve rendezett tömbön futtatja az eljárásokat. A bemeneti tömb: $[2, 42, 65, 89, 120, 189, 200, 291, 307, 420]$. Ellenőrzi a tömb tartalmát és a műveletszámokat. A lenti táblázat összefoglalja az program által számított- és az elvárt értékeket:
+ \begin{table}[H]
+ 	\centering
+ 	\begin{tabular}{|c|l|l|}
+ 		\hline
+ 		\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{Elvárt értékek}}                             & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által\\ számított értékek\end{tabular}}} \\ \hline
+ 		Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 0 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 0 csere\end{tabular}                                    \\ \hline
+ 		Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}9 összehasonlítás\\ 0 mozgatás\end{tabular}   & \begin{tabular}[c]{@{}l@{}}9 összehasonlítás\\ 0 mozgatás\end{tabular}                                  \\ \hline
+ 		Shell rendezés      & \begin{tabular}[c]{@{}l@{}}37 összehasonlítás\\ 0 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}37 összehasonlítás\\ 0 mozgatás\end{tabular}                                 \\ \hline
+ 		Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 0 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 0 csere\end{tabular}                                    \\ \hline
+ 		Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}41 összehasonlítás\\ 30 csere\end{tabular}    & \begin{tabular}[c]{@{}l@{}}41 összehasonlítás\\ 30 csere\end{tabular}                                   \\ \hline
+ 		Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}87 összehasonlítás\\ 51 mozgatás\end{tabular} & \begin{tabular}[c]{@{}l@{}}135 összehasonlítás\\ 75 mozgatás\end{tabular}                               \\ \hline
+ 	\end{tabular}
+ 	\caption{Tíz elemű, már eleve rendezett tömbön a műveletszámok}
+ \end{table}
+\paragraph{tenReverseSortedElement()}
+Tíz csökkenő sorrendbe rendezett értéken indítja el az algoritmusokat. A bemeneti tömb: $[420, 307, 291, 200, 189, 120, 89, 65, 42, 2]$. Ellenőrzésre kerül a rendezett tömb tartalma, továbbá a műveletek számának összege. A következő táblázat összefoglalja az program által számított- és az elvárt értékeket:
+ \begin{table}[H]
+ 	\centering
+ 	\begin{tabular}{|c|l|l|}
+ 		\hline
+ 		\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{Elvárt értékek}}                             & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által\\ számított értékek\end{tabular}}} \\ \hline
+ 		Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 45 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 45 csere\end{tabular}                                    \\ \hline
+ 		Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 45 mozgatás\end{tabular} & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 45 mozgatás\end{tabular}                                \\ \hline
+ 		Shell rendezés      & \begin{tabular}[c]{@{}l@{}}41 összehasonlítás\\ 7 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}41 összehasonlítás\\ 7 mozgatás\end{tabular}                                 \\ \hline
+ 		Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 5 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 5 csere\end{tabular}                                    \\ \hline
+ 		Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}35 összehasonlítás\\ 12 csere\end{tabular}    & \begin{tabular}[c]{@{}l@{}}35 összehasonlítás\\ 21 csere\end{tabular}                                   \\ \hline
+ 		Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}87 összehasonlítás\\ 51 mozgatás\end{tabular} & \begin{tabular}[c]{@{}l@{}}31 összehasonlítás\\ 19 mozgatás\end{tabular}                                \\ \hline
+ 	\end{tabular}
+ 	\caption{Tíz csökkenőleg rendezett elemre a műveletszámok}
+ \end{table}
+\paragraph{tenAlmostSortedElement()}
+A bemeneti tömb: $[1, 20, 56, 76, 55, 127, 160, 132,\newline 191, 243]$. Amint látható, már majdnem rendezett a sorozat, két érték nincs még a helyén ($55$ és $132$). Ellenőrzésre kerül a rendezések befejeztével a tömb tartalma, továbbá a műveletek számának összege. A következő táblázat összefoglalja az program futása során kapott- és az elvárt értékeket:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|l|l|}
+		\hline
+		\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{Elvárt értékek}}                             & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által\\ számított értékek\end{tabular}}} \\ \hline
+		Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 3 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}45 összehasonlítás\\ 3 csere\end{tabular}                                    \\ \hline
+		Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}12 összehasonlítás\\ 3 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}12 összehasonlítás\\ 3 mozgatás\end{tabular}                                 \\ \hline
+		Shell rendezés      & \begin{tabular}[c]{@{}l@{}}40 összehasonlítás\\ 3 mozgatás\end{tabular}  & \begin{tabular}[c]{@{}l@{}}40 összehasonlítás\\ 3 mozgatás\end{tabular}                                 \\ \hline
+		Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}35 összehasonlítás\\ 3 csere\end{tabular}     & \begin{tabular}[c]{@{}l@{}}35 összehasonlítás\\ 3 csere\end{tabular}                                    \\ \hline
+		Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}40 összehasonlítás\\ 29 csere\end{tabular}    & \begin{tabular}[c]{@{}l@{}}40 összehasonlítás\\ 29 csere\end{tabular}                                   \\ \hline
+		Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}87 összehasonlítás\\ 51 mozgatás\end{tabular} & \begin{tabular}[c]{@{}l@{}}87 összehasonlítás\\ 51 mozgatás\end{tabular}                                \\ \hline
+	\end{tabular}
+	\caption{Tíz elemű, majdnem rendezett bemenetre a műveletszámok}
+\end{table}
 \paragraph{thousandRandomElement()}
-Száz véletlen választott értéken hívja meg a rendezéseket. A műveletek száma nem kerül ellenőrzésre, csak az előbb említett módon a tömb tartalma.
+Száz véletlen választott értéken hívja meg a rendezéseket. A műveletek száma nem kerül ellenőrzésre, csak az előbb említett módon a tömb tartalma. A következő táblázat egy teszt futtatásakor a műveletszámok eredményét összegzi:
+\begin{table}[H]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|l|}
+			\hline
+			\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által\\ számított értékek\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Eredmény}}                                                                                                                                                                                          \\ \hline
+			Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}4950 összehasonlítás\\ 2285 csere\end{tabular}                               & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n^2) \approx 10^4 = 10000$\\ műveletszám alatt vannak az értékek.\end{tabular}                                                                                                                  \\ \hline
+			Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}2546 összehasonlítás\\ 2452 mozgatás\end{tabular}                            & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n^2) \approx 10^4 = 10000$\\ műveletszám alatt vannak az értékek.\end{tabular}                                                                                                                  \\ \hline
+			Shell rendezés      & \begin{tabular}[c]{@{}l@{}}1540 összehasonlítás\\ 226 mozgatás\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n \log^2 (n)) \approx  2121$\\ műveletszám alatt vannak az értékek.\end{tabular}                                                                                                                 \\ \hline
+			Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}672 összehasonlítás\\ 311 csere\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n\cdot\log(n)) \approx 664$ feletti, de a maximálisan\\ megengedett $\Theta(n^2) \approx 10^4 = 10000$ alatti az összehasonlítások száma.\end{tabular}                                                                               \\ \hline
+			Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}1018 összehasonlítás\\ 580 csere\end{tabular}                                & \begin{tabular}[c]{@{}l@{}}Az átlagosan- és maximálisan elvárt $\Theta(n\cdot\log(n)) \approx 664$ feletti\\ az összehasonlítások száma, ám ez betudható a konstans szorzónak.\end{tabular}                                                                         \\ \hline
+			Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}1513 összehasonlítás\\ 820 mozgatás\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Mivel a bemenet hossza nem négyzetszám, így 128 elemre\\ van meghívva a rendezés. A maximális $\Theta(n\cdot\log(n)) \approx 896$ feletti\\ az összehasonlítások száma, ami a konstans szorzó miatt elfogadható.\end{tabular} \\ \hline
+		\end{tabular}
+	}
+	\caption{Száz generált bemenetre egy futtatás eredménye}
+\end{table}
 \paragraph{millionRandomElement}
-Az előző eljárással azonos, mindössze a tömb mérete különbözik. Ez feleltethető meg a "nagy" bemenetre történő ellenőrzésnek, mivel csak ezek a rendezések hívódnak meg száz elemnél hosszabb bemenet megadásakor.
+Az előző eljárással azonos, mindössze a tömb mérete különbözik. Ez feleltethető meg a "nagy" bemenetre történő ellenőrzésnek, mivel csak ezek a rendezések hívódnak meg száz elemnél hosszabb bemenet megadásakor. A teszt egy futtatásának az eredményét részletei az alábbi táblázat:
+\begin{table}[H]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|l|}
+			\hline
+			\textbf{Algoritmus} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Program által \\ számított értékek\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Eredmény}}                                                                                                                                                                                                      \\ \hline
+			Buborékrendezés     & \begin{tabular}[c]{@{}l@{}}499999500000 összehasonlítás\\ 250001268024 csere\end{tabular}                           & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n^2) \approx 10^{12} = 1000000000000$\\ műveletszám alatt vannak az értékek.\end{tabular}                                                                                                              \\ \hline
+			Beszúró rendezés    & \begin{tabular}[c]{@{}l@{}}250002268014 összehasonlítás\\ 250001268024 mozgatás\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n^2) \approx 10^{12} = 1000000000000$\\ műveletszám alatt vannak az értékek.\end{tabular}                                                                                                              \\ \hline
+			Shell rendezés      & \begin{tabular}[c]{@{}l@{}}134479666 összehasonlítás\\ 11716324 mozgatás\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n \log^2 (n)) \approx  4,8*10^{11} = 480453013918$\\ műveletszám alatt vannak az értékek.\end{tabular}                                                                                                                            \\ \hline
+			Gyorsrendezés       & \begin{tabular}[c]{@{}l@{}}25543945 összehasonlítás\\ 12530736 csere\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt $\Theta(n\cdot\log(n)) \approx 19931568$ feletti\\ az összehasonlítások száma, de a maximális $\Theta(n^2) \approx 10^{12} = 1000000000000$ alatti.\end{tabular}                                            \\ \hline
+			Kupacrendezés       & \begin{tabular}[c]{@{}l@{}}36794678 összehasonlítás\\ 19048525 csere\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}Az átlagosan elvárt, és a maximálisan megengedett $\Theta(n\cdot\log(n)) \approx 19931568$\\ feletti az összehasonlítások száma, ám ez betudható a konstans szorzónak.\end{tabular}                                                       \\ \hline
+			Versenyrendezés     & \begin{tabular}[c]{@{}l@{}}41048535 összehasonlítás\\ 21048555 mozgatás\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}Mivel a bemenet nem kettő hatvány, így $2^{20} = 1048576$ elemű a bemenet.\\ A maximális $\Theta(n\cdot\log(n)) \approx 1.99 * 10^7 = 20971520$ feletti\\ az összehasonlítások száma, ami a konstans szorzó miatt elfogadható.\end{tabular} \\ \hline
+		\end{tabular}
+	}
+	\caption{Egymillió generált bemenetre a teszt futásának eredménye}
+\end{table}
 \subsubsection{Strukturális tesztelés}
 Fehérdoboz tesztnek vetjük alá a programot, mely során vizsgáljuk, hogy a lehetséges futási út során a megfelelő eredményeket produkálja-e a szoftver.\par
 Miután elindult a program válasszuk a \textbf{Fájl}ból betöltés lehetőséget. Adjuk meg a megjelenő fájl tallózóban a \textbf{resources\textbackslash input} könyvtárban található \textbf{input\textunderscore ok.txt} fájlt.

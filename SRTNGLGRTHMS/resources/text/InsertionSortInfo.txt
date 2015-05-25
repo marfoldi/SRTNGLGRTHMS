@@ -1,1 +1,9 @@
-Leírás
+Az elve egyszerûen megérthetõ egy hétköznapi példán keresztül: 
+A kezünkben tartunk kártyalapokat, majd egy pakliból húzva az új lapot beszúrjuk a kezünkben lévõ, már rendezett lapok közé.
+ 
+Két részre bontjuk a tömböt, az egyik részén - a tömb bal széle - a már rendezett, míg a másikon a még nem vizsgált elemek szerepelnek. 
+Kezdetben a tömb elsõ elemét tekintjük a rendezett résznek.
+Lényege, hogy a soron következõ elemet - a második elemtõl kezdve - egy ideiglenes változóba mentjük, és a rendezett tömbrész elemeit jobbra csúsztatjuk mindaddig, amíg a kiválasztott érték a helyére nem kerül. 
+Ezt n-1 alkalommal ismételve megkapjuk a rendezett tömböt.
+ 
+Négyzetes idejû, ezáltal a leglassabb eljárások közé tartozik.

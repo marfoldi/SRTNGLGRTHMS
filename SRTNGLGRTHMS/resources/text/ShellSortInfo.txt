@@ -1,1 +1,8 @@
-Leírás
+A legtöbb esetben a leggyorsabb négyzetes idejû algoritmus. 
+Az elve az, hogy célszerû lehet elõbb a "távolabb" lévõ elemeket hasonlítani és mozgatni, mivel így az elemek hamarabb közel kerülhetnek a végleges helyükhöz.
+ 
+Többször vizsgálja a tömböt, és minden alkalommal egy részén beszúró rendezést hajt végre.
+ 
+A futási idõ nagyban függ a tömbrészek megválasztásától.
+Alapvetõen négyzetes idejû, azonban a program a Vaughan Pratt által javasolt értékek szerint "darabolja" a tömböt.
+Így a legrosszabb esetben is O(n log^2(n)) futási idejû.

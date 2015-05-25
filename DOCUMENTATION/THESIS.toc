@@ -40,112 +40,116 @@
 \contentsline {subsection}{\numberline {2.3.3.}Shell rendez\IeC {\'e}s}{19}
 \contentsline {subsection}{\numberline {2.3.4.}Gyorsrendez\IeC {\'e}s}{20}
 \contentsline {subsection}{\numberline {2.3.5.}Kupacrendez\IeC {\'e}s}{22}
-\contentsline {subsection}{\numberline {2.3.6.}Versenyrendez\IeC {\'e}s}{23}
+\contentsline {subsection}{\numberline {2.3.6.}Versenyrendez\IeC {\'e}s}{24}
 \contentsline {subsection}{\numberline {2.3.7.}Radix "el\IeC {\H o}re"}{25}
 \contentsline {subsection}{\numberline {2.3.8.}Radix "vissza"}{27}
-\contentsline {chapter}{\numberline {3.}Fejleszt\IeC {\H o}i dokument\IeC {\'a}ci\IeC {\'o}}{29}
-\contentsline {section}{\numberline {3.1.}Tervez\IeC {\'e}s}{29}
-\contentsline {subsection}{\numberline {3.1.1.}Alapelvek}{29}
-\contentsline {subsection}{\numberline {3.1.2.}Haszn\IeC {\'a}lt fejleszt\IeC {\H o}eszk\IeC {\"o}z\IeC {\"o}k}{30}
-\contentsline {subsection}{\numberline {3.1.3.}Felhaszn\IeC {\'a}l\IeC {\'o}i fel\IeC {\"u}let}{30}
-\contentsline {subsubsection}{K\IeC {\'e}perny\IeC {\H o}tervek}{30}
-\contentsline {paragraph}{F\IeC {\H o}men\IeC {\"u}}{30}
-\contentsline {paragraph}{Manu\IeC {\'a}lis bemenet}{30}
-\contentsline {paragraph}{Bemenet gener\IeC {\'a}l\IeC {\'a}sa}{31}
-\contentsline {paragraph}{F\IeC {\'a}jl beolvas\IeC {\'a}sa}{31}
-\contentsline {paragraph}{F\IeC {\H o}panelek}{31}
-\contentsline {paragraph}{Megfigyel\IeC {\'e}s panel}{31}
-\contentsline {paragraph}{\IeC {\"O}sszehasonl\IeC {\'\i }t\IeC {\'a}s panel}{31}
-\contentsline {subsubsection}{Fel\IeC {\"u}letek k\IeC {\"o}z\IeC {\"o}tti navig\IeC {\'a}l\IeC {\'a}si lehet\IeC {\H o}s\IeC {\'e}gek}{31}
-\contentsline {subsection}{\numberline {3.1.4.}Haszn\IeC {\'a}lati esetek}{32}
-\contentsline {subsection}{\numberline {3.1.5.}Csomagszerkezet}{33}
-\contentsline {subsubsection}{Modell csomag}{34}
-\contentsline {paragraph}{algorithm alcsomag}{35}
-\contentsline {paragraph}{algorithm.raw alcsomag}{35}
-\contentsline {paragraph}{algorithm.raw.test alcsomag}{35}
-\contentsline {paragraph}{info alcsomag}{35}
-\contentsline {subsubsection}{Megjelen\IeC {\'\i }t\IeC {\H o} csomag}{35}
-\contentsline {paragraph}{graph alcsomag}{36}
-\contentsline {subsubsection}{Vez\IeC {\'e}rl\IeC {\H o} csomag}{36}
-\contentsline {subsection}{\numberline {3.1.6.}Oszt\IeC {\'a}lyszerkezet}{36}
-\contentsline {subsubsection}{alapcsomag oszt\IeC {\'a}lya}{37}
-\contentsline {subsubsection}{controller csomag oszt\IeC {\'a}lyai}{37}
-\contentsline {subsubsection}{algorithm csomag oszt\IeC {\'a}lyai}{39}
-\contentsline {subsubsection}{alogirtmh.raw csomag oszt\IeC {\'a}lyai}{40}
-\contentsline {subsubsection}{info csomag oszt\IeC {\'a}lyai}{40}
-\contentsline {section}{\numberline {3.2.}Megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{41}
-\contentsline {subsection}{\numberline {3.2.1.}Az eredeti terv m\IeC {\'o}dos\IeC {\'\i }t\IeC {\'a}sa}{41}
-\contentsline {subsubsection}{Sz\IeC {\'a}lkezel\IeC {\'e}s}{41}
-\contentsline {subsubsection}{A JavaFX kib\IeC {\H o}v\IeC {\'\i }t\IeC {\'e}se}{41}
-\contentsline {subsection}{\numberline {3.2.2.}A megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s menete}{42}
-\contentsline {subsection}{\numberline {3.2.3.}FXML \IeC {\'a}llom\IeC {\'a}nyok}{43}
-\contentsline {subsubsection}{N\IeC {\'e}h\IeC {\'a}ny fontosabb FXML \IeC {\'a}llom\IeC {\'a}ny}{43}
-\contentsline {paragraph}{BaseController}{43}
-\contentsline {paragraph}{OverviewLayout}{43}
-\contentsline {paragraph}{BenchmarkLayout}{44}
-\contentsline {subsection}{\numberline {3.2.4.}Nem forr\IeC {\'a}sf\IeC {\'a}jl \IeC {\'a}llom\IeC {\'a}nyok}{44}
-\contentsline {subsection}{\numberline {3.2.5.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{44}
-\contentsline {subsubsection}{Modell r\IeC {\'e}teg oszt\IeC {\'a}lyai}{44}
-\contentsline {paragraph}{SortingAlgorithm absztrakt oszt\IeC {\'a}ly}{44}
-\contentsline {paragraph}{ChartAlgorithm absztrakt oszt\IeC {\'a}ly}{45}
-\contentsline {paragraph}{GraphAlgorithm absztrakt oszt\IeC {\'a}ly}{45}
-\contentsline {paragraph}{RadixAlgorithm absztrakt oszt\IeC {\'a}ly}{45}
-\contentsline {paragraph}{SortingAlgorithmFactory oszt\IeC {\'a}ly}{46}
-\contentsline {paragraph}{CounterData oszt\IeC {\'a}ly}{46}
-\contentsline {paragraph}{RecursiveParameter oszt\IeC {\'a}ly}{47}
-\contentsline {paragraph}{BubbleSort oszt\IeC {\'a}ly}{47}
-\contentsline {paragraph}{InsertionSort oszt\IeC {\'a}ly}{48}
-\contentsline {paragraph}{ShellSort oszt\IeC {\'a}ly}{48}
-\contentsline {paragraph}{QuickSort oszt\IeC {\'a}ly}{49}
-\contentsline {paragraph}{HeapSort oszt\IeC {\'a}ly}{49}
-\contentsline {paragraph}{TournamentSort oszt\IeC {\'a}ly}{50}
-\contentsline {paragraph}{ForwardRadix oszt\IeC {\'a}ly}{51}
-\contentsline {paragraph}{BackwardRadix oszt\IeC {\'a}ly}{51}
-\contentsline {paragraph}{BenchmarkData oszt\IeC {\'a}ly}{52}
-\contentsline {paragraph}{SortingThread absztrakt oszt\IeC {\'a}ly}{52}
-\contentsline {paragraph}{BubbleSortThread oszt\IeC {\'a}ly}{53}
-\contentsline {paragraph}{InsertionSortThread oszt\IeC {\'a}ly}{53}
-\contentsline {paragraph}{ShellSortThread oszt\IeC {\'a}ly}{53}
-\contentsline {paragraph}{QuickSortThead oszt\IeC {\'a}ly}{53}
-\contentsline {paragraph}{HeapSortThread oszt\IeC {\'a}ly}{54}
-\contentsline {paragraph}{TournamentSortThread oszt\IeC {\'a}ly}{54}
-\contentsline {paragraph}{InfoFlyWeight oszt\IeC {\'a}ly}{54}
-\contentsline {paragraph}{InfoFlyWeightFactory oszt\IeC {\'a}ly}{55}
-\contentsline {subsubsection}{Kontroller r\IeC {\'e}teg oszt\IeC {\'a}lyai}{55}
-\contentsline {paragraph}{MainApplication oszt\IeC {\'a}ly}{55}
-\contentsline {paragraph}{MenuController oszt\IeC {\'a}ly}{56}
-\contentsline {paragraph}{ManualInputController oszt\IeC {\'a}ly}{56}
-\contentsline {paragraph}{RandomInputController oszt\IeC {\'a}ly}{57}
-\contentsline {paragraph}{FileInputController oszt\IeC {\'a}ly}{57}
-\contentsline {paragraph}{BaseController oszt\IeC {\'a}ly}{58}
-\contentsline {paragraph}{OverviewController oszt\IeC {\'a}ly}{58}
-\contentsline {paragraph}{OverviewListController oszt\IeC {\'a}ly}{59}
-\contentsline {paragraph}{OverviewChartController oszt\IeC {\'a}ly}{60}
-\contentsline {paragraph}{OverviewDoubleChartController oszt\IeC {\'a}ly}{60}
-\contentsline {paragraph}{OverviewGraphController oszt\IeC {\'a}ly}{60}
-\contentsline {paragraph}{SortingThreadListener interf\IeC {\'e}sz}{61}
-\contentsline {paragraph}{BenchmarkController oszt\IeC {\'a}ly}{61}
-\contentsline {paragraph}{BenchmarkChartController oszt\IeC {\'a}ly}{62}
-\contentsline {subsubsection}{Megjelen\IeC {\'\i }t\IeC {\'e}si r\IeC {\'e}teg oszt\IeC {\'a}lyai}{62}
-\contentsline {paragraph}{Vertex oszt\IeC {\'a}ly}{62}
-\contentsline {paragraph}{Edge oszt\IeC {\'a}ly}{63}
-\contentsline {paragraph}{Graph oszt\IeC {\'a}ly}{63}
-\contentsline {subsection}{\numberline {3.2.6.}Tesztel\IeC {\'e}s}{63}
-\contentsline {subsubsection}{Felhaszn\IeC {\'a}l\IeC {\'o} fel\IeC {\"u}let tesztel\IeC {\'e}se}{63}
-\contentsline {paragraph}{F\IeC {\H o}men\IeC {\"u} men\IeC {\"u}sora}{63}
-\contentsline {paragraph}{F\IeC {\H o}men\IeC {\"u} gombjai}{63}
-\contentsline {paragraph}{Sz\IeC {\'a}mok manu\IeC {\'a}lis megad\IeC {\'a}sa panel}{63}
-\contentsline {paragraph}{Sz\IeC {\'a}mok gener\IeC {\'a}l\IeC {\'a}sa panel}{64}
-\contentsline {paragraph}{F\IeC {\'a}jl bet\IeC {\"o}lt\IeC {\'e}se p\IeC {\'a}rbesz\IeC {\'e}dablak}{64}
-\contentsline {paragraph}{F\IeC {\H o}panel men\IeC {\"u}sora}{65}
-\contentsline {paragraph}{Megfigyel\IeC {\'e}s panel}{65}
-\contentsline {paragraph}{\IeC {\"O}sszehasonl\IeC {\'\i }t\IeC {\'a}s panel}{65}
-\contentsline {subsubsection}{Egys\IeC {\'e}gtesztel\IeC {\'e}s}{65}
-\contentsline {paragraph}{zeroElement()}{66}
-\contentsline {paragraph}{oneElement()}{66}
-\contentsline {paragraph}{fiveConcretElement()}{66}
-\contentsline {paragraph}{thousandRandomElement()}{66}
-\contentsline {paragraph}{millionRandomElement}{66}
-\contentsline {subsubsection}{Struktur\IeC {\'a}lis tesztel\IeC {\'e}s}{66}
-\contentsline {chapter}{\numberline {4.}\IeC {\"O}sszegz\IeC {\'e}s}{69}
-\contentsline {chapter}{\numberline {5.}Irodalomjegyz\'ek}{70}
+\contentsline {chapter}{\numberline {3.}Fejleszt\IeC {\H o}i dokument\IeC {\'a}ci\IeC {\'o}}{30}
+\contentsline {section}{\numberline {3.1.}Tervez\IeC {\'e}s}{30}
+\contentsline {subsection}{\numberline {3.1.1.}Alapelvek}{30}
+\contentsline {subsection}{\numberline {3.1.2.}Haszn\IeC {\'a}lt fejleszt\IeC {\H o}eszk\IeC {\"o}z\IeC {\"o}k}{31}
+\contentsline {subsection}{\numberline {3.1.3.}Felhaszn\IeC {\'a}l\IeC {\'o}i fel\IeC {\"u}let}{31}
+\contentsline {subsubsection}{K\IeC {\'e}perny\IeC {\H o}tervek}{31}
+\contentsline {paragraph}{F\IeC {\H o}men\IeC {\"u}}{31}
+\contentsline {paragraph}{Manu\IeC {\'a}lis bemenet}{31}
+\contentsline {paragraph}{Bemenet gener\IeC {\'a}l\IeC {\'a}sa}{32}
+\contentsline {paragraph}{F\IeC {\'a}jl beolvas\IeC {\'a}sa}{32}
+\contentsline {paragraph}{F\IeC {\H o}panelek}{32}
+\contentsline {paragraph}{Megfigyel\IeC {\'e}s panel}{32}
+\contentsline {paragraph}{\IeC {\"O}sszehasonl\IeC {\'\i }t\IeC {\'a}s panel}{32}
+\contentsline {subsubsection}{Fel\IeC {\"u}letek k\IeC {\"o}z\IeC {\"o}tti navig\IeC {\'a}l\IeC {\'a}si lehet\IeC {\H o}s\IeC {\'e}gek}{32}
+\contentsline {subsection}{\numberline {3.1.4.}Haszn\IeC {\'a}lati esetek}{33}
+\contentsline {subsection}{\numberline {3.1.5.}Csomagszerkezet}{34}
+\contentsline {subsubsection}{Modell csomag}{35}
+\contentsline {paragraph}{algorithm alcsomag}{36}
+\contentsline {paragraph}{algorithm.raw alcsomag}{36}
+\contentsline {paragraph}{algorithm.raw.test alcsomag}{36}
+\contentsline {paragraph}{info alcsomag}{36}
+\contentsline {subsubsection}{Megjelen\IeC {\'\i }t\IeC {\H o} csomag}{36}
+\contentsline {paragraph}{graph alcsomag}{37}
+\contentsline {subsubsection}{Vez\IeC {\'e}rl\IeC {\H o} csomag}{37}
+\contentsline {subsection}{\numberline {3.1.6.}Oszt\IeC {\'a}lyszerkezet}{37}
+\contentsline {subsubsection}{alapcsomag oszt\IeC {\'a}lya}{39}
+\contentsline {subsubsection}{controller csomag oszt\IeC {\'a}lyai}{39}
+\contentsline {subsubsection}{algorithm csomag oszt\IeC {\'a}lyai}{40}
+\contentsline {subsubsection}{alogirtmh.raw csomag oszt\IeC {\'a}lyai}{41}
+\contentsline {subsubsection}{info csomag oszt\IeC {\'a}lyai}{42}
+\contentsline {section}{\numberline {3.2.}Megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s}{42}
+\contentsline {subsection}{\numberline {3.2.1.}Az eredeti terv m\IeC {\'o}dos\IeC {\'\i }t\IeC {\'a}sa}{42}
+\contentsline {subsubsection}{Sz\IeC {\'a}lkezel\IeC {\'e}s}{43}
+\contentsline {subsubsection}{A JavaFX kib\IeC {\H o}v\IeC {\'\i }t\IeC {\'e}se}{43}
+\contentsline {subsection}{\numberline {3.2.2.}A megval\IeC {\'o}s\IeC {\'\i }t\IeC {\'a}s menete}{43}
+\contentsline {subsection}{\numberline {3.2.3.}FXML \IeC {\'a}llom\IeC {\'a}nyok}{44}
+\contentsline {subsubsection}{N\IeC {\'e}h\IeC {\'a}ny fontosabb FXML \IeC {\'a}llom\IeC {\'a}ny}{45}
+\contentsline {paragraph}{BaseController}{45}
+\contentsline {paragraph}{OverviewLayout}{45}
+\contentsline {paragraph}{BenchmarkLayout}{45}
+\contentsline {subsection}{\numberline {3.2.4.}Nem forr\IeC {\'a}sf\IeC {\'a}jl \IeC {\'a}llom\IeC {\'a}nyok}{45}
+\contentsline {subsection}{\numberline {3.2.5.}Oszt\IeC {\'a}lyok le\IeC {\'\i }r\IeC {\'a}sa}{45}
+\contentsline {subsubsection}{Modell r\IeC {\'e}teg oszt\IeC {\'a}lyai}{46}
+\contentsline {paragraph}{SortingAlgorithm absztrakt oszt\IeC {\'a}ly}{46}
+\contentsline {paragraph}{ChartAlgorithm absztrakt oszt\IeC {\'a}ly}{46}
+\contentsline {paragraph}{GraphAlgorithm absztrakt oszt\IeC {\'a}ly}{46}
+\contentsline {paragraph}{RadixAlgorithm absztrakt oszt\IeC {\'a}ly}{47}
+\contentsline {paragraph}{SortingAlgorithmFactory oszt\IeC {\'a}ly}{47}
+\contentsline {paragraph}{CounterData oszt\IeC {\'a}ly}{48}
+\contentsline {paragraph}{RecursiveParameter oszt\IeC {\'a}ly}{48}
+\contentsline {paragraph}{BubbleSort oszt\IeC {\'a}ly}{49}
+\contentsline {paragraph}{InsertionSort oszt\IeC {\'a}ly}{49}
+\contentsline {paragraph}{ShellSort oszt\IeC {\'a}ly}{50}
+\contentsline {paragraph}{QuickSort oszt\IeC {\'a}ly}{50}
+\contentsline {paragraph}{HeapSort oszt\IeC {\'a}ly}{51}
+\contentsline {paragraph}{TournamentSort oszt\IeC {\'a}ly}{52}
+\contentsline {paragraph}{ForwardRadix oszt\IeC {\'a}ly}{52}
+\contentsline {paragraph}{BackwardRadix oszt\IeC {\'a}ly}{53}
+\contentsline {paragraph}{BenchmarkData oszt\IeC {\'a}ly}{53}
+\contentsline {paragraph}{SortingThread absztrakt oszt\IeC {\'a}ly}{54}
+\contentsline {paragraph}{BubbleSortThread oszt\IeC {\'a}ly}{54}
+\contentsline {paragraph}{InsertionSortThread oszt\IeC {\'a}ly}{55}
+\contentsline {paragraph}{ShellSortThread oszt\IeC {\'a}ly}{55}
+\contentsline {paragraph}{QuickSortThead oszt\IeC {\'a}ly}{55}
+\contentsline {paragraph}{HeapSortThread oszt\IeC {\'a}ly}{55}
+\contentsline {paragraph}{TournamentSortThread oszt\IeC {\'a}ly}{56}
+\contentsline {paragraph}{InfoFlyWeight oszt\IeC {\'a}ly}{56}
+\contentsline {paragraph}{InfoFlyWeightFactory oszt\IeC {\'a}ly}{56}
+\contentsline {subsubsection}{Kontroller r\IeC {\'e}teg oszt\IeC {\'a}lyai}{57}
+\contentsline {paragraph}{MainApplication oszt\IeC {\'a}ly}{57}
+\contentsline {paragraph}{MenuController oszt\IeC {\'a}ly}{57}
+\contentsline {paragraph}{ManualInputController oszt\IeC {\'a}ly}{58}
+\contentsline {paragraph}{RandomInputController oszt\IeC {\'a}ly}{58}
+\contentsline {paragraph}{FileInputController oszt\IeC {\'a}ly}{59}
+\contentsline {paragraph}{BaseController oszt\IeC {\'a}ly}{59}
+\contentsline {paragraph}{OverviewController oszt\IeC {\'a}ly}{60}
+\contentsline {paragraph}{OverviewListController oszt\IeC {\'a}ly}{60}
+\contentsline {paragraph}{OverviewChartController oszt\IeC {\'a}ly}{61}
+\contentsline {paragraph}{OverviewDoubleChartController oszt\IeC {\'a}ly}{62}
+\contentsline {paragraph}{OverviewGraphController oszt\IeC {\'a}ly}{62}
+\contentsline {paragraph}{SortingThreadListener interf\IeC {\'e}sz}{62}
+\contentsline {paragraph}{BenchmarkController oszt\IeC {\'a}ly}{63}
+\contentsline {paragraph}{BenchmarkChartController oszt\IeC {\'a}ly}{63}
+\contentsline {subsubsection}{Megjelen\IeC {\'\i }t\IeC {\'e}si r\IeC {\'e}teg oszt\IeC {\'a}lyai}{64}
+\contentsline {paragraph}{Vertex oszt\IeC {\'a}ly}{64}
+\contentsline {paragraph}{Edge oszt\IeC {\'a}ly}{64}
+\contentsline {paragraph}{Graph oszt\IeC {\'a}ly}{64}
+\contentsline {subsection}{\numberline {3.2.6.}Tesztel\IeC {\'e}s}{65}
+\contentsline {subsubsection}{Felhaszn\IeC {\'a}l\IeC {\'o} fel\IeC {\"u}let tesztel\IeC {\'e}se}{65}
+\contentsline {paragraph}{F\IeC {\H o}men\IeC {\"u} men\IeC {\"u}sora}{65}
+\contentsline {paragraph}{F\IeC {\H o}men\IeC {\"u} gombjai}{65}
+\contentsline {paragraph}{Sz\IeC {\'a}mok manu\IeC {\'a}lis megad\IeC {\'a}sa panel}{65}
+\contentsline {paragraph}{Sz\IeC {\'a}mok gener\IeC {\'a}l\IeC {\'a}sa panel}{66}
+\contentsline {paragraph}{F\IeC {\'a}jl bet\IeC {\"o}lt\IeC {\'e}se p\IeC {\'a}rbesz\IeC {\'e}dablak}{66}
+\contentsline {paragraph}{F\IeC {\H o}panel men\IeC {\"u}sora}{66}
+\contentsline {paragraph}{Megfigyel\IeC {\'e}s panel}{67}
+\contentsline {paragraph}{\IeC {\"O}sszehasonl\IeC {\'\i }t\IeC {\'a}s panel}{67}
+\contentsline {subsubsection}{Egys\IeC {\'e}gtesztel\IeC {\'e}s}{67}
+\contentsline {paragraph}{zeroElement()}{67}
+\contentsline {paragraph}{oneElement()}{67}
+\contentsline {paragraph}{fiveConcretElement()}{68}
+\contentsline {paragraph}{sixteenConcretElement()}{68}
+\contentsline {paragraph}{tenSortedElement()}{69}
+\contentsline {paragraph}{tenReverseSortedElement()}{69}
+\contentsline {paragraph}{tenAlmostSortedElement()}{70}
+\contentsline {paragraph}{thousandRandomElement()}{71}
+\contentsline {paragraph}{millionRandomElement}{71}
+\contentsline {subsubsection}{Struktur\IeC {\'a}lis tesztel\IeC {\'e}s}{72}
+\contentsline {chapter}{\numberline {4.}\IeC {\"O}sszegz\IeC {\'e}s}{75}
+\contentsline {chapter}{\numberline {5.}Irodalomjegyz\'ek}{76}

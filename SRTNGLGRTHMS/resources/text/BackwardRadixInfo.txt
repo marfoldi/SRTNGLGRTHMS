@@ -1,1 +1,14 @@
-Leírás
+Az edényrendezések közé tartozik. Az edényrendezések eredményeként rendezett adatsorozatot kapunk lineáris idõbenõben.
+Az edény rendezéseknél tipikus, hogy a rendezendõ kulcsok több kulcs-részbõl állnak, melyek hierarchikus szerkezetûek, például: év, hónap nap.
+Az edény "vissza" stratégia esetén a kulcs hierarchiában alulról felfelé haladunk.
+Az edénybe történõ szétrakás után az edények tartalmát újra egyesítjük, majd a következõ szempont szerint ismétlõdik az edénybe szétrakás, és egyesítés lépése.
+Fontos azonban, hogy szétrakás közben meg kell tartani az elõzõ menetekben kialakított "elõrendezettséget".
+Vagyis, ha egy menet eredményében "x" kulcs megelõzi "y" kulcsot, és a következõ menetben azonos edénybe kerülnek, akkor ezt a sorrendet meg kell õrizni, tehát az edényen belül "x" elõbb kell legyen, mint "y".
+ 
+Nem helyben rendez, az eljárásnak két tömbre van szüksége, a kisebb helyiértéktõl a nagyobb felé halad a vizsgálat.
+Amennyiben az aktuálisan vizsgált bit értéke 0, akkor a "második" tömb elejére, ellenkezõ esetben a tömb végére töltjük át az aktuális bináris számot.
+Ezáltal minden egyes menetben két edény keletkezik: egy, melyben található számok aktuális bitje 0, s egy másik, melyek vizsgált jegye 1-es.
+Ezt követõen a 0-ás edényt az elejérõl olvasva feltöltjük újra az eredeti tömböt az elõbb ismertetett módon, majd a 1-es edényt elemeit az utolsó elemtõl visszafelé haladva töltjük át az értékeket.
+Amennyiben a rendezendõ bináris számok "d" hosszúak, úgy "d+1" áttöltést követõen rendezett tömböt kapunk.
+ 
+Legrosszabb esetben is lineáris a futási ideje.
